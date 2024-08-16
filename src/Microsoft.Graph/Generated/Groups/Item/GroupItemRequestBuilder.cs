@@ -44,11 +44,11 @@ using Microsoft.Graph.Groups.Item.UnsubscribeByMail;
 using Microsoft.Graph.Groups.Item.ValidateProperties;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -57,225 +57,226 @@ namespace Microsoft.Graph.Groups.Item
     /// <summary>
     /// Provides operations to manage the collection of group entities.
     /// </summary>
-    public class GroupItemRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class GroupItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the acceptedSenders property of the microsoft.graph.group entity.</summary>
-        public Microsoft.Graph.Groups.Item.AcceptedSenders.AcceptedSendersRequestBuilder AcceptedSenders
+        public global::Microsoft.Graph.Groups.Item.AcceptedSenders.AcceptedSendersRequestBuilder AcceptedSenders
         {
-            get => new Microsoft.Graph.Groups.Item.AcceptedSenders.AcceptedSendersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.AcceptedSenders.AcceptedSendersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the addFavorite method.</summary>
-        public Microsoft.Graph.Groups.Item.AddFavorite.AddFavoriteRequestBuilder AddFavorite
+        public global::Microsoft.Graph.Groups.Item.AddFavorite.AddFavoriteRequestBuilder AddFavorite
         {
-            get => new Microsoft.Graph.Groups.Item.AddFavorite.AddFavoriteRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.AddFavorite.AddFavoriteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the appRoleAssignments property of the microsoft.graph.group entity.</summary>
-        public Microsoft.Graph.Groups.Item.AppRoleAssignments.AppRoleAssignmentsRequestBuilder AppRoleAssignments
+        public global::Microsoft.Graph.Groups.Item.AppRoleAssignments.AppRoleAssignmentsRequestBuilder AppRoleAssignments
         {
-            get => new Microsoft.Graph.Groups.Item.AppRoleAssignments.AppRoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.AppRoleAssignments.AppRoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the assignLicense method.</summary>
-        public Microsoft.Graph.Groups.Item.AssignLicense.AssignLicenseRequestBuilder AssignLicense
+        public global::Microsoft.Graph.Groups.Item.AssignLicense.AssignLicenseRequestBuilder AssignLicense
         {
-            get => new Microsoft.Graph.Groups.Item.AssignLicense.AssignLicenseRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.AssignLicense.AssignLicenseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the calendar property of the microsoft.graph.group entity.</summary>
-        public Microsoft.Graph.Groups.Item.Calendar.CalendarRequestBuilder Calendar
+        public global::Microsoft.Graph.Groups.Item.Calendar.CalendarRequestBuilder Calendar
         {
-            get => new Microsoft.Graph.Groups.Item.Calendar.CalendarRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Calendar.CalendarRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the calendarView property of the microsoft.graph.group entity.</summary>
-        public Microsoft.Graph.Groups.Item.CalendarView.CalendarViewRequestBuilder CalendarView
+        public global::Microsoft.Graph.Groups.Item.CalendarView.CalendarViewRequestBuilder CalendarView
         {
-            get => new Microsoft.Graph.Groups.Item.CalendarView.CalendarViewRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.CalendarView.CalendarViewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the checkGrantedPermissionsForApp method.</summary>
-        public Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp.CheckGrantedPermissionsForAppRequestBuilder CheckGrantedPermissionsForApp
+        public global::Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp.CheckGrantedPermissionsForAppRequestBuilder CheckGrantedPermissionsForApp
         {
-            get => new Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp.CheckGrantedPermissionsForAppRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp.CheckGrantedPermissionsForAppRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the checkMemberGroups method.</summary>
-        public Microsoft.Graph.Groups.Item.CheckMemberGroups.CheckMemberGroupsRequestBuilder CheckMemberGroups
+        public global::Microsoft.Graph.Groups.Item.CheckMemberGroups.CheckMemberGroupsRequestBuilder CheckMemberGroups
         {
-            get => new Microsoft.Graph.Groups.Item.CheckMemberGroups.CheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.CheckMemberGroups.CheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the checkMemberObjects method.</summary>
-        public Microsoft.Graph.Groups.Item.CheckMemberObjects.CheckMemberObjectsRequestBuilder CheckMemberObjects
+        public global::Microsoft.Graph.Groups.Item.CheckMemberObjects.CheckMemberObjectsRequestBuilder CheckMemberObjects
         {
-            get => new Microsoft.Graph.Groups.Item.CheckMemberObjects.CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.CheckMemberObjects.CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the conversations property of the microsoft.graph.group entity.</summary>
-        public Microsoft.Graph.Groups.Item.Conversations.ConversationsRequestBuilder Conversations
+        public global::Microsoft.Graph.Groups.Item.Conversations.ConversationsRequestBuilder Conversations
         {
-            get => new Microsoft.Graph.Groups.Item.Conversations.ConversationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Conversations.ConversationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the createdOnBehalfOf property of the microsoft.graph.group entity.</summary>
-        public Microsoft.Graph.Groups.Item.CreatedOnBehalfOf.CreatedOnBehalfOfRequestBuilder CreatedOnBehalfOf
+        public global::Microsoft.Graph.Groups.Item.CreatedOnBehalfOf.CreatedOnBehalfOfRequestBuilder CreatedOnBehalfOf
         {
-            get => new Microsoft.Graph.Groups.Item.CreatedOnBehalfOf.CreatedOnBehalfOfRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.CreatedOnBehalfOf.CreatedOnBehalfOfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the drive property of the microsoft.graph.group entity.</summary>
-        public Microsoft.Graph.Groups.Item.Drive.DriveRequestBuilder Drive
+        public global::Microsoft.Graph.Groups.Item.Drive.DriveRequestBuilder Drive
         {
-            get => new Microsoft.Graph.Groups.Item.Drive.DriveRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Drive.DriveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the drives property of the microsoft.graph.group entity.</summary>
-        public Microsoft.Graph.Groups.Item.Drives.DrivesRequestBuilder Drives
+        public global::Microsoft.Graph.Groups.Item.Drives.DrivesRequestBuilder Drives
         {
-            get => new Microsoft.Graph.Groups.Item.Drives.DrivesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Drives.DrivesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the events property of the microsoft.graph.group entity.</summary>
-        public Microsoft.Graph.Groups.Item.Events.EventsRequestBuilder Events
+        public global::Microsoft.Graph.Groups.Item.Events.EventsRequestBuilder Events
         {
-            get => new Microsoft.Graph.Groups.Item.Events.EventsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Events.EventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the extensions property of the microsoft.graph.group entity.</summary>
-        public Microsoft.Graph.Groups.Item.Extensions.ExtensionsRequestBuilder Extensions
+        public global::Microsoft.Graph.Groups.Item.Extensions.ExtensionsRequestBuilder Extensions
         {
-            get => new Microsoft.Graph.Groups.Item.Extensions.ExtensionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Extensions.ExtensionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getMemberGroups method.</summary>
-        public Microsoft.Graph.Groups.Item.GetMemberGroups.GetMemberGroupsRequestBuilder GetMemberGroups
+        public global::Microsoft.Graph.Groups.Item.GetMemberGroups.GetMemberGroupsRequestBuilder GetMemberGroups
         {
-            get => new Microsoft.Graph.Groups.Item.GetMemberGroups.GetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.GetMemberGroups.GetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getMemberObjects method.</summary>
-        public Microsoft.Graph.Groups.Item.GetMemberObjects.GetMemberObjectsRequestBuilder GetMemberObjects
+        public global::Microsoft.Graph.Groups.Item.GetMemberObjects.GetMemberObjectsRequestBuilder GetMemberObjects
         {
-            get => new Microsoft.Graph.Groups.Item.GetMemberObjects.GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.GetMemberObjects.GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the groupLifecyclePolicies property of the microsoft.graph.group entity.</summary>
-        public Microsoft.Graph.Groups.Item.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder GroupLifecyclePolicies
+        public global::Microsoft.Graph.Groups.Item.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder GroupLifecyclePolicies
         {
-            get => new Microsoft.Graph.Groups.Item.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.GroupLifecyclePolicies.GroupLifecyclePoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the memberOf property of the microsoft.graph.group entity.</summary>
-        public Microsoft.Graph.Groups.Item.MemberOf.MemberOfRequestBuilder MemberOf
+        public global::Microsoft.Graph.Groups.Item.MemberOf.MemberOfRequestBuilder MemberOf
         {
-            get => new Microsoft.Graph.Groups.Item.MemberOf.MemberOfRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.MemberOf.MemberOfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the members property of the microsoft.graph.group entity.</summary>
-        public Microsoft.Graph.Groups.Item.Members.MembersRequestBuilder Members
+        public global::Microsoft.Graph.Groups.Item.Members.MembersRequestBuilder Members
         {
-            get => new Microsoft.Graph.Groups.Item.Members.MembersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Members.MembersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the membersWithLicenseErrors property of the microsoft.graph.group entity.</summary>
-        public Microsoft.Graph.Groups.Item.MembersWithLicenseErrors.MembersWithLicenseErrorsRequestBuilder MembersWithLicenseErrors
+        public global::Microsoft.Graph.Groups.Item.MembersWithLicenseErrors.MembersWithLicenseErrorsRequestBuilder MembersWithLicenseErrors
         {
-            get => new Microsoft.Graph.Groups.Item.MembersWithLicenseErrors.MembersWithLicenseErrorsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.MembersWithLicenseErrors.MembersWithLicenseErrorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the onenote property of the microsoft.graph.group entity.</summary>
-        public Microsoft.Graph.Groups.Item.Onenote.OnenoteRequestBuilder Onenote
+        public global::Microsoft.Graph.Groups.Item.Onenote.OnenoteRequestBuilder Onenote
         {
-            get => new Microsoft.Graph.Groups.Item.Onenote.OnenoteRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Onenote.OnenoteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the owners property of the microsoft.graph.group entity.</summary>
-        public Microsoft.Graph.Groups.Item.Owners.OwnersRequestBuilder Owners
+        public global::Microsoft.Graph.Groups.Item.Owners.OwnersRequestBuilder Owners
         {
-            get => new Microsoft.Graph.Groups.Item.Owners.OwnersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Owners.OwnersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the permissionGrants property of the microsoft.graph.group entity.</summary>
-        public Microsoft.Graph.Groups.Item.PermissionGrants.PermissionGrantsRequestBuilder PermissionGrants
+        public global::Microsoft.Graph.Groups.Item.PermissionGrants.PermissionGrantsRequestBuilder PermissionGrants
         {
-            get => new Microsoft.Graph.Groups.Item.PermissionGrants.PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.PermissionGrants.PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the photo property of the microsoft.graph.group entity.</summary>
-        public Microsoft.Graph.Groups.Item.Photo.PhotoRequestBuilder Photo
+        public global::Microsoft.Graph.Groups.Item.Photo.PhotoRequestBuilder Photo
         {
-            get => new Microsoft.Graph.Groups.Item.Photo.PhotoRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Photo.PhotoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the photos property of the microsoft.graph.group entity.</summary>
-        public Microsoft.Graph.Groups.Item.Photos.PhotosRequestBuilder Photos
+        public global::Microsoft.Graph.Groups.Item.Photos.PhotosRequestBuilder Photos
         {
-            get => new Microsoft.Graph.Groups.Item.Photos.PhotosRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Photos.PhotosRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the planner property of the microsoft.graph.group entity.</summary>
-        public Microsoft.Graph.Groups.Item.Planner.PlannerRequestBuilder Planner
+        public global::Microsoft.Graph.Groups.Item.Planner.PlannerRequestBuilder Planner
         {
-            get => new Microsoft.Graph.Groups.Item.Planner.PlannerRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Planner.PlannerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the rejectedSenders property of the microsoft.graph.group entity.</summary>
-        public Microsoft.Graph.Groups.Item.RejectedSenders.RejectedSendersRequestBuilder RejectedSenders
+        public global::Microsoft.Graph.Groups.Item.RejectedSenders.RejectedSendersRequestBuilder RejectedSenders
         {
-            get => new Microsoft.Graph.Groups.Item.RejectedSenders.RejectedSendersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.RejectedSenders.RejectedSendersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the removeFavorite method.</summary>
-        public Microsoft.Graph.Groups.Item.RemoveFavorite.RemoveFavoriteRequestBuilder RemoveFavorite
+        public global::Microsoft.Graph.Groups.Item.RemoveFavorite.RemoveFavoriteRequestBuilder RemoveFavorite
         {
-            get => new Microsoft.Graph.Groups.Item.RemoveFavorite.RemoveFavoriteRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.RemoveFavorite.RemoveFavoriteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the renew method.</summary>
-        public Microsoft.Graph.Groups.Item.Renew.RenewRequestBuilder Renew
+        public global::Microsoft.Graph.Groups.Item.Renew.RenewRequestBuilder Renew
         {
-            get => new Microsoft.Graph.Groups.Item.Renew.RenewRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Renew.RenewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the resetUnseenCount method.</summary>
-        public Microsoft.Graph.Groups.Item.ResetUnseenCount.ResetUnseenCountRequestBuilder ResetUnseenCount
+        public global::Microsoft.Graph.Groups.Item.ResetUnseenCount.ResetUnseenCountRequestBuilder ResetUnseenCount
         {
-            get => new Microsoft.Graph.Groups.Item.ResetUnseenCount.ResetUnseenCountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.ResetUnseenCount.ResetUnseenCountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the restore method.</summary>
-        public Microsoft.Graph.Groups.Item.Restore.RestoreRequestBuilder Restore
+        public global::Microsoft.Graph.Groups.Item.Restore.RestoreRequestBuilder Restore
         {
-            get => new Microsoft.Graph.Groups.Item.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retryServiceProvisioning method.</summary>
-        public Microsoft.Graph.Groups.Item.RetryServiceProvisioning.RetryServiceProvisioningRequestBuilder RetryServiceProvisioning
+        public global::Microsoft.Graph.Groups.Item.RetryServiceProvisioning.RetryServiceProvisioningRequestBuilder RetryServiceProvisioning
         {
-            get => new Microsoft.Graph.Groups.Item.RetryServiceProvisioning.RetryServiceProvisioningRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.RetryServiceProvisioning.RetryServiceProvisioningRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The serviceProvisioningErrors property</summary>
-        public Microsoft.Graph.Groups.Item.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder ServiceProvisioningErrors
+        public global::Microsoft.Graph.Groups.Item.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder ServiceProvisioningErrors
         {
-            get => new Microsoft.Graph.Groups.Item.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the settings property of the microsoft.graph.group entity.</summary>
-        public Microsoft.Graph.Groups.Item.Settings.SettingsRequestBuilder Settings
+        public global::Microsoft.Graph.Groups.Item.Settings.SettingsRequestBuilder Settings
         {
-            get => new Microsoft.Graph.Groups.Item.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sites property of the microsoft.graph.group entity.</summary>
-        public Microsoft.Graph.Groups.Item.Sites.SitesRequestBuilder Sites
+        public global::Microsoft.Graph.Groups.Item.Sites.SitesRequestBuilder Sites
         {
-            get => new Microsoft.Graph.Groups.Item.Sites.SitesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Sites.SitesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the subscribeByMail method.</summary>
-        public Microsoft.Graph.Groups.Item.SubscribeByMail.SubscribeByMailRequestBuilder SubscribeByMail
+        public global::Microsoft.Graph.Groups.Item.SubscribeByMail.SubscribeByMailRequestBuilder SubscribeByMail
         {
-            get => new Microsoft.Graph.Groups.Item.SubscribeByMail.SubscribeByMailRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.SubscribeByMail.SubscribeByMailRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the team property of the microsoft.graph.group entity.</summary>
-        public Microsoft.Graph.Groups.Item.Team.TeamRequestBuilder Team
+        public global::Microsoft.Graph.Groups.Item.Team.TeamRequestBuilder Team
         {
-            get => new Microsoft.Graph.Groups.Item.Team.TeamRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Team.TeamRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the threads property of the microsoft.graph.group entity.</summary>
-        public Microsoft.Graph.Groups.Item.Threads.ThreadsRequestBuilder Threads
+        public global::Microsoft.Graph.Groups.Item.Threads.ThreadsRequestBuilder Threads
         {
-            get => new Microsoft.Graph.Groups.Item.Threads.ThreadsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Threads.ThreadsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the transitiveMemberOf property of the microsoft.graph.group entity.</summary>
-        public Microsoft.Graph.Groups.Item.TransitiveMemberOf.TransitiveMemberOfRequestBuilder TransitiveMemberOf
+        public global::Microsoft.Graph.Groups.Item.TransitiveMemberOf.TransitiveMemberOfRequestBuilder TransitiveMemberOf
         {
-            get => new Microsoft.Graph.Groups.Item.TransitiveMemberOf.TransitiveMemberOfRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.TransitiveMemberOf.TransitiveMemberOfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the transitiveMembers property of the microsoft.graph.group entity.</summary>
-        public Microsoft.Graph.Groups.Item.TransitiveMembers.TransitiveMembersRequestBuilder TransitiveMembers
+        public global::Microsoft.Graph.Groups.Item.TransitiveMembers.TransitiveMembersRequestBuilder TransitiveMembers
         {
-            get => new Microsoft.Graph.Groups.Item.TransitiveMembers.TransitiveMembersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.TransitiveMembers.TransitiveMembersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unsubscribeByMail method.</summary>
-        public Microsoft.Graph.Groups.Item.UnsubscribeByMail.UnsubscribeByMailRequestBuilder UnsubscribeByMail
+        public global::Microsoft.Graph.Groups.Item.UnsubscribeByMail.UnsubscribeByMailRequestBuilder UnsubscribeByMail
         {
-            get => new Microsoft.Graph.Groups.Item.UnsubscribeByMail.UnsubscribeByMailRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.UnsubscribeByMail.UnsubscribeByMailRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the validateProperties method.</summary>
-        public Microsoft.Graph.Groups.Item.ValidateProperties.ValidatePropertiesRequestBuilder ValidateProperties
+        public global::Microsoft.Graph.Groups.Item.ValidateProperties.ValidatePropertiesRequestBuilder ValidateProperties
         {
-            get => new Microsoft.Graph.Groups.Item.ValidateProperties.ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.ValidateProperties.ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Groups.Item.GroupItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Groups.Item.GroupItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -283,7 +284,7 @@ namespace Microsoft.Graph.Groups.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Groups.Item.GroupItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Groups.Item.GroupItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -296,7 +297,7 @@ namespace Microsoft.Graph.Groups.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -309,7 +310,7 @@ namespace Microsoft.Graph.Groups.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -317,51 +318,51 @@ namespace Microsoft.Graph.Groups.Item
         /// Get the properties and relationships of a group object. This operation returns by default only a subset of all the available properties, as noted in the Properties section. To get properties that aren&apos;t_ returned by default, specify them in a $select OData query option. The hasMembersWithLicenseErrors and isArchived properties are an exception and aren&apos;t returned in the $select query.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-get?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.Group"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.Group"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Group?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.GroupItemRequestBuilder.GroupItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Group?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Groups.Item.GroupItemRequestBuilder.GroupItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Group> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.GroupItemRequestBuilder.GroupItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Group> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Groups.Item.GroupItemRequestBuilder.GroupItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Group>(requestInfo, Microsoft.Graph.Models.Group.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Group>(requestInfo, global::Microsoft.Graph.Models.Group.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new group object if it doesn&apos;t exist, or update the properties of an existing group object.You can create or update the following types of group: By default, this operation returns only a subset of the properties for each group. For a list of properties that are returned by default, see the Properties section of the group resource. To get properties that are not returned by default, do a GET operation and specify the properties in a $select OData query option.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-upsert?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.Group"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.Group"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Group?> PatchAsync(Microsoft.Graph.Models.Group body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Group?> PatchAsync(global::Microsoft.Graph.Models.Group body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Group> PatchAsync(Microsoft.Graph.Models.Group body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Group> PatchAsync(global::Microsoft.Graph.Models.Group body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Group>(requestInfo, Microsoft.Graph.Models.Group.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Group>(requestInfo, global::Microsoft.Graph.Models.Group.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete group. When deleted, Microsoft 365 groups are moved to a temporary container and can be restored within 30 days. After that time, they&apos;re permanently deleted. This isn&apos;t applicable to Security groups and Distribution groups which are permanently deleted immediately. To learn more, see deletedItems.
@@ -389,11 +390,11 @@ namespace Microsoft.Graph.Groups.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.GroupItemRequestBuilder.GroupItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Groups.Item.GroupItemRequestBuilder.GroupItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.GroupItemRequestBuilder.GroupItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Groups.Item.GroupItemRequestBuilder.GroupItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -409,11 +410,11 @@ namespace Microsoft.Graph.Groups.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Group body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.Group body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Group body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.Group body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -426,23 +427,25 @@ namespace Microsoft.Graph.Groups.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Groups.Item.GroupItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Groups.Item.GroupItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Groups.Item.GroupItemRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Groups.Item.GroupItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Groups.Item.GroupItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Groups.Item.GroupItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GroupItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class GroupItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Get the properties and relationships of a group object. This operation returns by default only a subset of all the available properties, as noted in the Properties section. To get properties that aren&apos;t_ returned by default, specify them in a $select OData query option. The hasMembersWithLicenseErrors and isArchived properties are an exception and aren&apos;t returned in the $select query.
         /// </summary>
-        public class GroupItemRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class GroupItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -469,14 +472,16 @@ namespace Microsoft.Graph.Groups.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GroupItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Groups.Item.GroupItemRequestBuilder.GroupItemRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class GroupItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Groups.Item.GroupItemRequestBuilder.GroupItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GroupItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class GroupItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

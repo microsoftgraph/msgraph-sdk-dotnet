@@ -4,11 +4,11 @@ using Microsoft.Graph.Models;
 using Microsoft.Graph.Teams.Count;
 using Microsoft.Graph.Teams.GetAllMessages;
 using Microsoft.Graph.Teams.Item;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -17,32 +17,33 @@ namespace Microsoft.Graph.Teams
     /// <summary>
     /// Provides operations to manage the collection of team entities.
     /// </summary>
-    public class TeamsRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class TeamsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Teams.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Teams.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Teams.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Teams.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getAllMessages method.</summary>
-        public Microsoft.Graph.Teams.GetAllMessages.GetAllMessagesRequestBuilder GetAllMessages
+        public global::Microsoft.Graph.Teams.GetAllMessages.GetAllMessagesRequestBuilder GetAllMessages
         {
-            get => new Microsoft.Graph.Teams.GetAllMessages.GetAllMessagesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Teams.GetAllMessages.GetAllMessagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of team entities.</summary>
         /// <param name="position">The unique identifier of team</param>
-        /// <returns>A <see cref="Microsoft.Graph.Teams.Item.TeamItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Teams.Item.TeamItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Teams.Item.TeamItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Teams.Item.TeamItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("team%2Did", position);
-                return new Microsoft.Graph.Teams.Item.TeamItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Teams.Item.TeamItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Teams.TeamsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Teams.TeamsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -50,7 +51,7 @@ namespace Microsoft.Graph.Teams
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Teams.TeamsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Teams.TeamsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -61,51 +62,51 @@ namespace Microsoft.Graph.Teams
         /// List all teams in an organization.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/teams-list?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.TeamCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.TeamCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.TeamCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Teams.TeamsRequestBuilder.TeamsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.TeamCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Teams.TeamsRequestBuilder.TeamsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.TeamCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Teams.TeamsRequestBuilder.TeamsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.TeamCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Teams.TeamsRequestBuilder.TeamsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.TeamCollectionResponse>(requestInfo, Microsoft.Graph.Models.TeamCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.TeamCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.TeamCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new team.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-post?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.Team"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.Team"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Team?> PostAsync(Microsoft.Graph.Models.Team body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Team?> PostAsync(global::Microsoft.Graph.Models.Team body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Team> PostAsync(Microsoft.Graph.Models.Team body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Team> PostAsync(global::Microsoft.Graph.Models.Team body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Team>(requestInfo, Microsoft.Graph.Models.Team.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Team>(requestInfo, global::Microsoft.Graph.Models.Team.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List all teams in an organization.
@@ -114,11 +115,11 @@ namespace Microsoft.Graph.Teams
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Teams.TeamsRequestBuilder.TeamsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Teams.TeamsRequestBuilder.TeamsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Teams.TeamsRequestBuilder.TeamsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Teams.TeamsRequestBuilder.TeamsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -134,11 +135,11 @@ namespace Microsoft.Graph.Teams
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.Team body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.Team body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.Team body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.Team body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -151,16 +152,17 @@ namespace Microsoft.Graph.Teams
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Teams.TeamsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Teams.TeamsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Teams.TeamsRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Teams.TeamsRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Teams.TeamsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Teams.TeamsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// List all teams in an organization.
         /// </summary>
-        public class TeamsRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class TeamsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -226,14 +228,16 @@ namespace Microsoft.Graph.Teams
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TeamsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Teams.TeamsRequestBuilder.TeamsRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class TeamsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Teams.TeamsRequestBuilder.TeamsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TeamsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class TeamsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

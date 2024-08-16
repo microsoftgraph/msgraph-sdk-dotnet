@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>Auto restart required notification dismissal method</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum AutoRestartNotificationDismissalMethod
     {
         /// <summary>Not configured</summary>

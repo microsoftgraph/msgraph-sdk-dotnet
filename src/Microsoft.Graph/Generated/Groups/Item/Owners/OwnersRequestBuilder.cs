@@ -10,11 +10,11 @@ using Microsoft.Graph.Groups.Item.Owners.Item;
 using Microsoft.Graph.Groups.Item.Owners.Ref;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -23,62 +23,63 @@ namespace Microsoft.Graph.Groups.Item.Owners
     /// <summary>
     /// Provides operations to manage the owners property of the microsoft.graph.group entity.
     /// </summary>
-    public class OwnersRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class OwnersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Groups.Item.Owners.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Groups.Item.Owners.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Groups.Item.Owners.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Owners.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to application.</summary>
-        public Microsoft.Graph.Groups.Item.Owners.GraphApplication.GraphApplicationRequestBuilder GraphApplication
+        public global::Microsoft.Graph.Groups.Item.Owners.GraphApplication.GraphApplicationRequestBuilder GraphApplication
         {
-            get => new Microsoft.Graph.Groups.Item.Owners.GraphApplication.GraphApplicationRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Owners.GraphApplication.GraphApplicationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to device.</summary>
-        public Microsoft.Graph.Groups.Item.Owners.GraphDevice.GraphDeviceRequestBuilder GraphDevice
+        public global::Microsoft.Graph.Groups.Item.Owners.GraphDevice.GraphDeviceRequestBuilder GraphDevice
         {
-            get => new Microsoft.Graph.Groups.Item.Owners.GraphDevice.GraphDeviceRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Owners.GraphDevice.GraphDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to group.</summary>
-        public Microsoft.Graph.Groups.Item.Owners.GraphGroup.GraphGroupRequestBuilder GraphGroup
+        public global::Microsoft.Graph.Groups.Item.Owners.GraphGroup.GraphGroupRequestBuilder GraphGroup
         {
-            get => new Microsoft.Graph.Groups.Item.Owners.GraphGroup.GraphGroupRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Owners.GraphGroup.GraphGroupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to orgContact.</summary>
-        public Microsoft.Graph.Groups.Item.Owners.GraphOrgContact.GraphOrgContactRequestBuilder GraphOrgContact
+        public global::Microsoft.Graph.Groups.Item.Owners.GraphOrgContact.GraphOrgContactRequestBuilder GraphOrgContact
         {
-            get => new Microsoft.Graph.Groups.Item.Owners.GraphOrgContact.GraphOrgContactRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Owners.GraphOrgContact.GraphOrgContactRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to servicePrincipal.</summary>
-        public Microsoft.Graph.Groups.Item.Owners.GraphServicePrincipal.GraphServicePrincipalRequestBuilder GraphServicePrincipal
+        public global::Microsoft.Graph.Groups.Item.Owners.GraphServicePrincipal.GraphServicePrincipalRequestBuilder GraphServicePrincipal
         {
-            get => new Microsoft.Graph.Groups.Item.Owners.GraphServicePrincipal.GraphServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Owners.GraphServicePrincipal.GraphServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to user.</summary>
-        public Microsoft.Graph.Groups.Item.Owners.GraphUser.GraphUserRequestBuilder GraphUser
+        public global::Microsoft.Graph.Groups.Item.Owners.GraphUser.GraphUserRequestBuilder GraphUser
         {
-            get => new Microsoft.Graph.Groups.Item.Owners.GraphUser.GraphUserRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Owners.GraphUser.GraphUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of group entities.</summary>
-        public Microsoft.Graph.Groups.Item.Owners.Ref.RefRequestBuilder Ref
+        public global::Microsoft.Graph.Groups.Item.Owners.Ref.RefRequestBuilder Ref
         {
-            get => new Microsoft.Graph.Groups.Item.Owners.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Owners.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Microsoft.Graph.groups.item.owners.item collection</summary>
         /// <param name="position">The unique identifier of directoryObject</param>
-        /// <returns>A <see cref="Microsoft.Graph.Groups.Item.Owners.Item.DirectoryObjectItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Groups.Item.Owners.Item.DirectoryObjectItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Groups.Item.Owners.Item.DirectoryObjectItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Groups.Item.Owners.Item.DirectoryObjectItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("directoryObject%2Did", position);
-                return new Microsoft.Graph.Groups.Item.Owners.Item.DirectoryObjectItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Groups.Item.Owners.Item.DirectoryObjectItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Groups.Item.Owners.OwnersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Groups.Item.Owners.OwnersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -86,7 +87,7 @@ namespace Microsoft.Graph.Groups.Item.Owners
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Groups.Item.Owners.OwnersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Groups.Item.Owners.OwnersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -97,25 +98,25 @@ namespace Microsoft.Graph.Groups.Item.Owners
         /// Retrieve a list of the group&apos;s owners. The owners are a set of users or service principals who are allowed to modify the group object. Owners are currently not available in Microsoft Graph for groups that were created in Exchange or groups that are synchronized from an on-premises environment.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-list-owners?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.DirectoryObjectCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.DirectoryObjectCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Owners.OwnersRequestBuilder.OwnersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.DirectoryObjectCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Groups.Item.Owners.OwnersRequestBuilder.OwnersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.DirectoryObjectCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Owners.OwnersRequestBuilder.OwnersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.DirectoryObjectCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Groups.Item.Owners.OwnersRequestBuilder.OwnersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DirectoryObjectCollectionResponse>(requestInfo, Microsoft.Graph.Models.DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DirectoryObjectCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of the group&apos;s owners. The owners are a set of users or service principals who are allowed to modify the group object. Owners are currently not available in Microsoft Graph for groups that were created in Exchange or groups that are synchronized from an on-premises environment.
@@ -124,11 +125,11 @@ namespace Microsoft.Graph.Groups.Item.Owners
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Owners.OwnersRequestBuilder.OwnersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Groups.Item.Owners.OwnersRequestBuilder.OwnersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Owners.OwnersRequestBuilder.OwnersRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Groups.Item.Owners.OwnersRequestBuilder.OwnersRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -139,16 +140,17 @@ namespace Microsoft.Graph.Groups.Item.Owners
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Groups.Item.Owners.OwnersRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Groups.Item.Owners.OwnersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Groups.Item.Owners.OwnersRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Groups.Item.Owners.OwnersRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Groups.Item.Owners.OwnersRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Groups.Item.Owners.OwnersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve a list of the group&apos;s owners. The owners are a set of users or service principals who are allowed to modify the group object. Owners are currently not available in Microsoft Graph for groups that were created in Exchange or groups that are synchronized from an on-premises environment.
         /// </summary>
-        public class OwnersRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class OwnersRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -214,7 +216,8 @@ namespace Microsoft.Graph.Groups.Item.Owners
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class OwnersRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Groups.Item.Owners.OwnersRequestBuilder.OwnersRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class OwnersRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Groups.Item.Owners.OwnersRequestBuilder.OwnersRequestBuilderGetQueryParameters>
         {
         }
     }

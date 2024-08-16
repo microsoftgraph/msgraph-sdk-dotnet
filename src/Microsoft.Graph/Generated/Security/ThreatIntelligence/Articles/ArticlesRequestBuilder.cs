@@ -3,11 +3,11 @@ using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models.Security;
 using Microsoft.Graph.Security.ThreatIntelligence.Articles.Count;
 using Microsoft.Graph.Security.ThreatIntelligence.Articles.Item;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,27 +16,28 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Articles
     /// <summary>
     /// Provides operations to manage the articles property of the microsoft.graph.security.threatIntelligence entity.
     /// </summary>
-    public class ArticlesRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class ArticlesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Security.ThreatIntelligence.Articles.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Security.ThreatIntelligence.Articles.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Security.ThreatIntelligence.Articles.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Security.ThreatIntelligence.Articles.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the articles property of the microsoft.graph.security.threatIntelligence entity.</summary>
         /// <param name="position">The unique identifier of article</param>
-        /// <returns>A <see cref="Microsoft.Graph.Security.ThreatIntelligence.Articles.Item.ArticleItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Security.ThreatIntelligence.Articles.Item.ArticleItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Security.ThreatIntelligence.Articles.Item.ArticleItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Security.ThreatIntelligence.Articles.Item.ArticleItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("article%2Did", position);
-                return new Microsoft.Graph.Security.ThreatIntelligence.Articles.Item.ArticleItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Security.ThreatIntelligence.Articles.Item.ArticleItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Security.ThreatIntelligence.Articles.ArticlesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Security.ThreatIntelligence.Articles.ArticlesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +45,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Articles
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Security.ThreatIntelligence.Articles.ArticlesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Security.ThreatIntelligence.Articles.ArticlesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,50 +56,50 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Articles
         /// Get a list of article objects, including their properties and relationships.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-threatintelligence-list-articles?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.Security.ArticleCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.Security.ArticleCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Security.ArticleCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.ThreatIntelligence.Articles.ArticlesRequestBuilder.ArticlesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Security.ArticleCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Security.ThreatIntelligence.Articles.ArticlesRequestBuilder.ArticlesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Security.ArticleCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.ThreatIntelligence.Articles.ArticlesRequestBuilder.ArticlesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Security.ArticleCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Security.ThreatIntelligence.Articles.ArticlesRequestBuilder.ArticlesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.ArticleCollectionResponse>(requestInfo, Microsoft.Graph.Models.Security.ArticleCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Security.ArticleCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.Security.ArticleCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to articles for security
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.Security.Article"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.Security.Article"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Security.Article?> PostAsync(Microsoft.Graph.Models.Security.Article body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Security.Article?> PostAsync(global::Microsoft.Graph.Models.Security.Article body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Security.Article> PostAsync(Microsoft.Graph.Models.Security.Article body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Security.Article> PostAsync(global::Microsoft.Graph.Models.Security.Article body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.Article>(requestInfo, Microsoft.Graph.Models.Security.Article.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Security.Article>(requestInfo, global::Microsoft.Graph.Models.Security.Article.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of article objects, including their properties and relationships.
@@ -107,11 +108,11 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Articles
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.ThreatIntelligence.Articles.ArticlesRequestBuilder.ArticlesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Security.ThreatIntelligence.Articles.ArticlesRequestBuilder.ArticlesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.ThreatIntelligence.Articles.ArticlesRequestBuilder.ArticlesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Security.ThreatIntelligence.Articles.ArticlesRequestBuilder.ArticlesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -127,11 +128,11 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Articles
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.Security.Article body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.Security.Article body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.Security.Article body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.Security.Article body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -144,16 +145,17 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Articles
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Security.ThreatIntelligence.Articles.ArticlesRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Security.ThreatIntelligence.Articles.ArticlesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Security.ThreatIntelligence.Articles.ArticlesRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Security.ThreatIntelligence.Articles.ArticlesRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Security.ThreatIntelligence.Articles.ArticlesRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Security.ThreatIntelligence.Articles.ArticlesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of article objects, including their properties and relationships.
         /// </summary>
-        public class ArticlesRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ArticlesRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -219,14 +221,16 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Articles
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ArticlesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Security.ThreatIntelligence.Articles.ArticlesRequestBuilder.ArticlesRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ArticlesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Security.ThreatIntelligence.Articles.ArticlesRequestBuilder.ArticlesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ArticlesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ArticlesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

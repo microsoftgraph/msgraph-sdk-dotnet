@@ -7,11 +7,11 @@ using Microsoft.Graph.Users.GetAvailableExtensionProperties;
 using Microsoft.Graph.Users.GetByIds;
 using Microsoft.Graph.Users.Item;
 using Microsoft.Graph.Users.ValidateProperties;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -20,47 +20,48 @@ namespace Microsoft.Graph.Users
     /// <summary>
     /// Provides operations to manage the collection of user entities.
     /// </summary>
-    public class UsersRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class UsersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Users.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Users.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Users.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Users.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the delta method.</summary>
-        public Microsoft.Graph.Users.Delta.DeltaRequestBuilder Delta
+        public global::Microsoft.Graph.Users.Delta.DeltaRequestBuilder Delta
         {
-            get => new Microsoft.Graph.Users.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Users.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getAvailableExtensionProperties method.</summary>
-        public Microsoft.Graph.Users.GetAvailableExtensionProperties.GetAvailableExtensionPropertiesRequestBuilder GetAvailableExtensionProperties
+        public global::Microsoft.Graph.Users.GetAvailableExtensionProperties.GetAvailableExtensionPropertiesRequestBuilder GetAvailableExtensionProperties
         {
-            get => new Microsoft.Graph.Users.GetAvailableExtensionProperties.GetAvailableExtensionPropertiesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Users.GetAvailableExtensionProperties.GetAvailableExtensionPropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getByIds method.</summary>
-        public Microsoft.Graph.Users.GetByIds.GetByIdsRequestBuilder GetByIds
+        public global::Microsoft.Graph.Users.GetByIds.GetByIdsRequestBuilder GetByIds
         {
-            get => new Microsoft.Graph.Users.GetByIds.GetByIdsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Users.GetByIds.GetByIdsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the validateProperties method.</summary>
-        public Microsoft.Graph.Users.ValidateProperties.ValidatePropertiesRequestBuilder ValidateProperties
+        public global::Microsoft.Graph.Users.ValidateProperties.ValidatePropertiesRequestBuilder ValidateProperties
         {
-            get => new Microsoft.Graph.Users.ValidateProperties.ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Users.ValidateProperties.ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of user entities.</summary>
         /// <param name="position">The unique identifier of user</param>
-        /// <returns>A <see cref="Microsoft.Graph.Users.Item.UserItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Users.Item.UserItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Users.Item.UserItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Users.Item.UserItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("user%2Did", position);
-                return new Microsoft.Graph.Users.Item.UserItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Users.Item.UserItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Users.UsersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Users.UsersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -68,7 +69,7 @@ namespace Microsoft.Graph.Users
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Users.UsersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Users.UsersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -76,67 +77,67 @@ namespace Microsoft.Graph.Users
         {
         }
         /// <summary>
-        /// Retrieve a list of user objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list?view=graph-rest-1.0" />
+        /// List properties and relationships of the user objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-user-list?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.UserCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.UserCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.UserCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.UsersRequestBuilder.UsersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.UserCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Users.UsersRequestBuilder.UsersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.UserCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.UsersRequestBuilder.UsersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.UserCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Users.UsersRequestBuilder.UsersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.UserCollectionResponse>(requestInfo, Microsoft.Graph.Models.UserCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.UserCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.UserCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new user.The request body contains the user to create. At a minimum, you must specify the required properties for the user. You can optionally specify any other writable properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-post-users?view=graph-rest-1.0" />
+        /// Create a new user object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-user-create?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.User"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.User"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.User?> PostAsync(Microsoft.Graph.Models.User body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.User?> PostAsync(global::Microsoft.Graph.Models.User body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.User> PostAsync(Microsoft.Graph.Models.User body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.User> PostAsync(global::Microsoft.Graph.Models.User body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.User>(requestInfo, Microsoft.Graph.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.User>(requestInfo, global::Microsoft.Graph.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of user objects.
+        /// List properties and relationships of the user objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.UsersRequestBuilder.UsersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Users.UsersRequestBuilder.UsersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.UsersRequestBuilder.UsersRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Users.UsersRequestBuilder.UsersRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -145,18 +146,18 @@ namespace Microsoft.Graph.Users
             return requestInfo;
         }
         /// <summary>
-        /// Create a new user.The request body contains the user to create. At a minimum, you must specify the required properties for the user. You can optionally specify any other writable properties.
+        /// Create a new user object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.User body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.User body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.User body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.User body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -169,16 +170,17 @@ namespace Microsoft.Graph.Users
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Users.UsersRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Users.UsersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Users.UsersRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Users.UsersRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Users.UsersRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Users.UsersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of user objects.
+        /// List properties and relationships of the user objects.
         /// </summary>
-        public class UsersRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class UsersRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -241,14 +243,16 @@ namespace Microsoft.Graph.Users
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UsersRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Users.UsersRequestBuilder.UsersRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class UsersRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Users.UsersRequestBuilder.UsersRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UsersRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class UsersRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

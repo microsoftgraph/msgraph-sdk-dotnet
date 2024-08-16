@@ -3,11 +3,11 @@ using Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.Count;
 using Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.Item;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,27 +16,28 @@ namespace Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods
     /// <summary>
     /// Provides operations to manage the microsoftAuthenticatorMethods property of the microsoft.graph.authentication entity.
     /// </summary>
-    public class MicrosoftAuthenticatorMethodsRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class MicrosoftAuthenticatorMethodsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the microsoftAuthenticatorMethods property of the microsoft.graph.authentication entity.</summary>
         /// <param name="position">The unique identifier of microsoftAuthenticatorAuthenticationMethod</param>
-        /// <returns>A <see cref="Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.Item.MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.Item.MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.Item.MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.Item.MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("microsoftAuthenticatorAuthenticationMethod%2Did", position);
-                return new Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.Item.MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.Item.MicrosoftAuthenticatorAuthenticationMethodItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.MicrosoftAuthenticatorMethodsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.MicrosoftAuthenticatorMethodsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +45,7 @@ namespace Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.MicrosoftAuthenticatorMethodsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.MicrosoftAuthenticatorMethodsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,25 +55,25 @@ namespace Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods
         /// <summary>
         /// The details of the Microsoft Authenticator app registered to a user for authentication.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.MicrosoftAuthenticatorAuthenticationMethodCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.MicrosoftAuthenticatorAuthenticationMethodCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.MicrosoftAuthenticatorAuthenticationMethodCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.MicrosoftAuthenticatorMethodsRequestBuilder.MicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.MicrosoftAuthenticatorAuthenticationMethodCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.MicrosoftAuthenticatorMethodsRequestBuilder.MicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.MicrosoftAuthenticatorAuthenticationMethodCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.MicrosoftAuthenticatorMethodsRequestBuilder.MicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.MicrosoftAuthenticatorAuthenticationMethodCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.MicrosoftAuthenticatorMethodsRequestBuilder.MicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.MicrosoftAuthenticatorAuthenticationMethodCollectionResponse>(requestInfo, Microsoft.Graph.Models.MicrosoftAuthenticatorAuthenticationMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.MicrosoftAuthenticatorAuthenticationMethodCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.MicrosoftAuthenticatorAuthenticationMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The details of the Microsoft Authenticator app registered to a user for authentication.
@@ -81,11 +82,11 @@ namespace Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.MicrosoftAuthenticatorMethodsRequestBuilder.MicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.MicrosoftAuthenticatorMethodsRequestBuilder.MicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.MicrosoftAuthenticatorMethodsRequestBuilder.MicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.MicrosoftAuthenticatorMethodsRequestBuilder.MicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -96,16 +97,17 @@ namespace Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.MicrosoftAuthenticatorMethodsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.MicrosoftAuthenticatorMethodsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.MicrosoftAuthenticatorMethodsRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.MicrosoftAuthenticatorMethodsRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.MicrosoftAuthenticatorMethodsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.MicrosoftAuthenticatorMethodsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The details of the Microsoft Authenticator app registered to a user for authentication.
         /// </summary>
-        public class MicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class MicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -171,7 +173,8 @@ namespace Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MicrosoftAuthenticatorMethodsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.MicrosoftAuthenticatorMethodsRequestBuilder.MicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class MicrosoftAuthenticatorMethodsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Me.Authentication.MicrosoftAuthenticatorMethods.MicrosoftAuthenticatorMethodsRequestBuilder.MicrosoftAuthenticatorMethodsRequestBuilderGetQueryParameters>
         {
         }
     }

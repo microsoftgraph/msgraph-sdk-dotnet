@@ -3,11 +3,11 @@ using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models.Security;
 using Microsoft.Graph.Security.Incidents.Count;
 using Microsoft.Graph.Security.Incidents.Item;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,27 +16,28 @@ namespace Microsoft.Graph.Security.Incidents
     /// <summary>
     /// Provides operations to manage the incidents property of the microsoft.graph.security entity.
     /// </summary>
-    public class IncidentsRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class IncidentsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Security.Incidents.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Security.Incidents.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Security.Incidents.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Security.Incidents.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the incidents property of the microsoft.graph.security entity.</summary>
         /// <param name="position">The unique identifier of incident</param>
-        /// <returns>A <see cref="Microsoft.Graph.Security.Incidents.Item.IncidentItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Security.Incidents.Item.IncidentItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Security.Incidents.Item.IncidentItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Security.Incidents.Item.IncidentItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("incident%2Did", position);
-                return new Microsoft.Graph.Security.Incidents.Item.IncidentItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Security.Incidents.Item.IncidentItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Security.Incidents.IncidentsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Security.Incidents.IncidentsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +45,7 @@ namespace Microsoft.Graph.Security.Incidents
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Security.Incidents.IncidentsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Security.Incidents.IncidentsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,50 +56,50 @@ namespace Microsoft.Graph.Security.Incidents
         /// Get a list of incident objects that Microsoft 365 Defender created to track attacks in an organization. Attacks are typically inflicted on different types of entities, such as devices, users, and mailboxes, resulting in multiple alert objects. Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an incident. This operation allows you to filter and sort through incidents to create an informed cyber security response. It exposes a collection of incidents that were flagged in your network, within the time range you specified in your environment retention policy. The most recent incidents are displayed at the top of the list.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-list-incidents?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.Security.IncidentCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.Security.IncidentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Security.IncidentCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.Incidents.IncidentsRequestBuilder.IncidentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Security.IncidentCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Security.Incidents.IncidentsRequestBuilder.IncidentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Security.IncidentCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.Incidents.IncidentsRequestBuilder.IncidentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Security.IncidentCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Security.Incidents.IncidentsRequestBuilder.IncidentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.IncidentCollectionResponse>(requestInfo, Microsoft.Graph.Models.Security.IncidentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Security.IncidentCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.Security.IncidentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to incidents for security
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.Security.Incident"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.Security.Incident"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Security.Incident?> PostAsync(Microsoft.Graph.Models.Security.Incident body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Security.Incident?> PostAsync(global::Microsoft.Graph.Models.Security.Incident body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Security.Incident> PostAsync(Microsoft.Graph.Models.Security.Incident body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Security.Incident> PostAsync(global::Microsoft.Graph.Models.Security.Incident body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.Incident>(requestInfo, Microsoft.Graph.Models.Security.Incident.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Security.Incident>(requestInfo, global::Microsoft.Graph.Models.Security.Incident.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of incident objects that Microsoft 365 Defender created to track attacks in an organization. Attacks are typically inflicted on different types of entities, such as devices, users, and mailboxes, resulting in multiple alert objects. Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an incident. This operation allows you to filter and sort through incidents to create an informed cyber security response. It exposes a collection of incidents that were flagged in your network, within the time range you specified in your environment retention policy. The most recent incidents are displayed at the top of the list.
@@ -107,11 +108,11 @@ namespace Microsoft.Graph.Security.Incidents
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.Incidents.IncidentsRequestBuilder.IncidentsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Security.Incidents.IncidentsRequestBuilder.IncidentsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.Incidents.IncidentsRequestBuilder.IncidentsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Security.Incidents.IncidentsRequestBuilder.IncidentsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -127,11 +128,11 @@ namespace Microsoft.Graph.Security.Incidents
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.Security.Incident body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.Security.Incident body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.Security.Incident body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.Security.Incident body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -144,16 +145,17 @@ namespace Microsoft.Graph.Security.Incidents
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Security.Incidents.IncidentsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Security.Incidents.IncidentsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Security.Incidents.IncidentsRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Security.Incidents.IncidentsRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Security.Incidents.IncidentsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Security.Incidents.IncidentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of incident objects that Microsoft 365 Defender created to track attacks in an organization. Attacks are typically inflicted on different types of entities, such as devices, users, and mailboxes, resulting in multiple alert objects. Microsoft 365 Defender correlates alerts with the same attack techniques or the same attacker into an incident. This operation allows you to filter and sort through incidents to create an informed cyber security response. It exposes a collection of incidents that were flagged in your network, within the time range you specified in your environment retention policy. The most recent incidents are displayed at the top of the list.
         /// </summary>
-        public class IncidentsRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class IncidentsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -219,14 +221,16 @@ namespace Microsoft.Graph.Security.Incidents
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class IncidentsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Security.Incidents.IncidentsRequestBuilder.IncidentsRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class IncidentsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Security.Incidents.IncidentsRequestBuilder.IncidentsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class IncidentsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class IncidentsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

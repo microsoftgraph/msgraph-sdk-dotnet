@@ -3,11 +3,11 @@ using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments.Count;
 using Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments.Item;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,27 +16,28 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.A
     /// <summary>
     /// Provides operations to manage the accessAssignments property of the microsoft.graph.delegatedAdminRelationship entity.
     /// </summary>
-    public class AccessAssignmentsRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class AccessAssignmentsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the accessAssignments property of the microsoft.graph.delegatedAdminRelationship entity.</summary>
         /// <param name="position">The unique identifier of delegatedAdminAccessAssignment</param>
-        /// <returns>A <see cref="Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments.Item.DelegatedAdminAccessAssignmentItemRequestBuilder"/></returns>
-        public Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments.Item.DelegatedAdminAccessAssignmentItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments.Item.DelegatedAdminAccessAssignmentItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments.Item.DelegatedAdminAccessAssignmentItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("delegatedAdminAccessAssignment%2Did", position);
-                return new Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments.Item.DelegatedAdminAccessAssignmentItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments.Item.DelegatedAdminAccessAssignmentItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments.AccessAssignmentsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments.AccessAssignmentsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +45,7 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.A
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments.AccessAssignmentsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments.AccessAssignmentsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,51 +56,51 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.A
         /// Get a list of the delegatedAdminAccessAssignment objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/delegatedadminrelationship-list-accessassignments?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.DelegatedAdminAccessAssignmentCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.DelegatedAdminAccessAssignmentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.DelegatedAdminAccessAssignmentCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments.AccessAssignmentsRequestBuilder.AccessAssignmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.DelegatedAdminAccessAssignmentCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments.AccessAssignmentsRequestBuilder.AccessAssignmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.DelegatedAdminAccessAssignmentCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments.AccessAssignmentsRequestBuilder.AccessAssignmentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.DelegatedAdminAccessAssignmentCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments.AccessAssignmentsRequestBuilder.AccessAssignmentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DelegatedAdminAccessAssignmentCollectionResponse>(requestInfo, Microsoft.Graph.Models.DelegatedAdminAccessAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DelegatedAdminAccessAssignmentCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.DelegatedAdminAccessAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new delegatedAdminAccessAssignment object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/delegatedadminrelationship-post-accessassignments?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.DelegatedAdminAccessAssignment"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.DelegatedAdminAccessAssignment"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.DelegatedAdminAccessAssignment?> PostAsync(Microsoft.Graph.Models.DelegatedAdminAccessAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.DelegatedAdminAccessAssignment?> PostAsync(global::Microsoft.Graph.Models.DelegatedAdminAccessAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.DelegatedAdminAccessAssignment> PostAsync(Microsoft.Graph.Models.DelegatedAdminAccessAssignment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.DelegatedAdminAccessAssignment> PostAsync(global::Microsoft.Graph.Models.DelegatedAdminAccessAssignment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DelegatedAdminAccessAssignment>(requestInfo, Microsoft.Graph.Models.DelegatedAdminAccessAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DelegatedAdminAccessAssignment>(requestInfo, global::Microsoft.Graph.Models.DelegatedAdminAccessAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the delegatedAdminAccessAssignment objects and their properties.
@@ -108,11 +109,11 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.A
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments.AccessAssignmentsRequestBuilder.AccessAssignmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments.AccessAssignmentsRequestBuilder.AccessAssignmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments.AccessAssignmentsRequestBuilder.AccessAssignmentsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments.AccessAssignmentsRequestBuilder.AccessAssignmentsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -128,11 +129,11 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.A
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.DelegatedAdminAccessAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.DelegatedAdminAccessAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.DelegatedAdminAccessAssignment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.DelegatedAdminAccessAssignment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -145,16 +146,17 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.A
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments.AccessAssignmentsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments.AccessAssignmentsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments.AccessAssignmentsRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments.AccessAssignmentsRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments.AccessAssignmentsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments.AccessAssignmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of the delegatedAdminAccessAssignment objects and their properties.
         /// </summary>
-        public class AccessAssignmentsRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class AccessAssignmentsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -220,14 +222,16 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.A
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AccessAssignmentsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments.AccessAssignmentsRequestBuilder.AccessAssignmentsRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class AccessAssignmentsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.TenantRelationships.DelegatedAdminRelationships.Item.AccessAssignments.AccessAssignmentsRequestBuilder.AccessAssignmentsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AccessAssignmentsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class AccessAssignmentsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

@@ -4,11 +4,11 @@ using Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.It
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleAccessPackages.Ref;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -17,32 +17,33 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
     /// <summary>
     /// Provides operations to manage the incompatibleAccessPackages property of the microsoft.graph.accessPackage entity.
     /// </summary>
-    public class IncompatibleAccessPackagesRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class IncompatibleAccessPackagesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleAccessPackages.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleAccessPackages.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleAccessPackages.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleAccessPackages.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of identityGovernance entities.</summary>
-        public Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleAccessPackages.Ref.RefRequestBuilder Ref
+        public global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleAccessPackages.Ref.RefRequestBuilder Ref
         {
-            get => new Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleAccessPackages.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleAccessPackages.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Microsoft.Graph.identityGovernance.entitlementManagement.accessPackages.item.incompatibleAccessPackages.item collection</summary>
         /// <param name="position">The unique identifier of accessPackage</param>
-        /// <returns>A <see cref="Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleAccessPackages.Item.AccessPackageItemRequestBuilder"/></returns>
-        public Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleAccessPackages.Item.AccessPackageItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleAccessPackages.Item.AccessPackageItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleAccessPackages.Item.AccessPackageItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("accessPackage%2Did1", position);
-                return new Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleAccessPackages.Item.AccessPackageItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleAccessPackages.Item.AccessPackageItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleAccessPackages.IncompatibleAccessPackagesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleAccessPackages.IncompatibleAccessPackagesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -50,7 +51,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleAccessPackages.IncompatibleAccessPackagesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleAccessPackages.IncompatibleAccessPackagesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -61,25 +62,25 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
         /// Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.  
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackage-list-incompatibleaccesspackages?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.AccessPackageCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.AccessPackageCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.AccessPackageCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleAccessPackages.IncompatibleAccessPackagesRequestBuilder.IncompatibleAccessPackagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.AccessPackageCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleAccessPackages.IncompatibleAccessPackagesRequestBuilder.IncompatibleAccessPackagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.AccessPackageCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleAccessPackages.IncompatibleAccessPackagesRequestBuilder.IncompatibleAccessPackagesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.AccessPackageCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleAccessPackages.IncompatibleAccessPackagesRequestBuilder.IncompatibleAccessPackagesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AccessPackageCollectionResponse>(requestInfo, Microsoft.Graph.Models.AccessPackageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.AccessPackageCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.AccessPackageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.  
@@ -88,11 +89,11 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleAccessPackages.IncompatibleAccessPackagesRequestBuilder.IncompatibleAccessPackagesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleAccessPackages.IncompatibleAccessPackagesRequestBuilder.IncompatibleAccessPackagesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleAccessPackages.IncompatibleAccessPackagesRequestBuilder.IncompatibleAccessPackagesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleAccessPackages.IncompatibleAccessPackagesRequestBuilder.IncompatibleAccessPackagesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -103,16 +104,17 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleAccessPackages.IncompatibleAccessPackagesRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleAccessPackages.IncompatibleAccessPackagesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleAccessPackages.IncompatibleAccessPackagesRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleAccessPackages.IncompatibleAccessPackagesRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleAccessPackages.IncompatibleAccessPackagesRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleAccessPackages.IncompatibleAccessPackagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve a list of the accessPackage objects that have been marked as incompatible on an accessPackage.  
         /// </summary>
-        public class IncompatibleAccessPackagesRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class IncompatibleAccessPackagesRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -178,7 +180,8 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class IncompatibleAccessPackagesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleAccessPackages.IncompatibleAccessPackagesRequestBuilder.IncompatibleAccessPackagesRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class IncompatibleAccessPackagesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.IncompatibleAccessPackages.IncompatibleAccessPackagesRequestBuilder.IncompatibleAccessPackagesRequestBuilderGetQueryParameters>
         {
         }
     }

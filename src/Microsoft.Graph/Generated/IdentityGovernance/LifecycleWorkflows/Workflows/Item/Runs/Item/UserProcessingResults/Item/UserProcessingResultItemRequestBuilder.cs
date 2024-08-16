@@ -3,11 +3,11 @@ using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.UserProcessingResults.Item.TaskProcessingResults;
 using Microsoft.Graph.Models.IdentityGovernance;
 using Microsoft.Graph.Models.ODataErrors;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,20 +16,21 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.R
     /// <summary>
     /// Provides operations to manage the userProcessingResults property of the microsoft.graph.identityGovernance.run entity.
     /// </summary>
-    public class UserProcessingResultItemRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class UserProcessingResultItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the subject property of the microsoft.graph.identityGovernance.userProcessingResult entity.</summary>
-        public Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.UserProcessingResults.Item.Subject.SubjectRequestBuilder Subject
+        public global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.UserProcessingResults.Item.Subject.SubjectRequestBuilder Subject
         {
-            get => new Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.UserProcessingResults.Item.Subject.SubjectRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.UserProcessingResults.Item.Subject.SubjectRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the taskProcessingResults property of the microsoft.graph.identityGovernance.userProcessingResult entity.</summary>
-        public Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.UserProcessingResults.Item.TaskProcessingResults.TaskProcessingResultsRequestBuilder TaskProcessingResults
+        public global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.UserProcessingResults.Item.TaskProcessingResults.TaskProcessingResultsRequestBuilder TaskProcessingResults
         {
-            get => new Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.UserProcessingResults.Item.TaskProcessingResults.TaskProcessingResultsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.UserProcessingResults.Item.TaskProcessingResults.TaskProcessingResultsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.UserProcessingResults.Item.UserProcessingResultItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.UserProcessingResults.Item.UserProcessingResultItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +38,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.R
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.UserProcessingResults.Item.UserProcessingResultItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.UserProcessingResults.Item.UserProcessingResultItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -48,25 +49,25 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.R
         /// Get the user processing result of a user processing result of a run.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-userprocessingresult-get?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.IdentityGovernance.UserProcessingResult"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.IdentityGovernance.UserProcessingResult"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.IdentityGovernance.UserProcessingResult?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.UserProcessingResults.Item.UserProcessingResultItemRequestBuilder.UserProcessingResultItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.IdentityGovernance.UserProcessingResult?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.UserProcessingResults.Item.UserProcessingResultItemRequestBuilder.UserProcessingResultItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.IdentityGovernance.UserProcessingResult> GetAsync(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.UserProcessingResults.Item.UserProcessingResultItemRequestBuilder.UserProcessingResultItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.IdentityGovernance.UserProcessingResult> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.UserProcessingResults.Item.UserProcessingResultItemRequestBuilder.UserProcessingResultItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.IdentityGovernance.UserProcessingResult>(requestInfo, Microsoft.Graph.Models.IdentityGovernance.UserProcessingResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.IdentityGovernance.UserProcessingResult>(requestInfo, global::Microsoft.Graph.Models.IdentityGovernance.UserProcessingResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the user processing result of a user processing result of a run.
@@ -75,11 +76,11 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.R
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.UserProcessingResults.Item.UserProcessingResultItemRequestBuilder.UserProcessingResultItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.UserProcessingResults.Item.UserProcessingResultItemRequestBuilder.UserProcessingResultItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.UserProcessingResults.Item.UserProcessingResultItemRequestBuilder.UserProcessingResultItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.UserProcessingResults.Item.UserProcessingResultItemRequestBuilder.UserProcessingResultItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -90,16 +91,17 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.R
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.UserProcessingResults.Item.UserProcessingResultItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.UserProcessingResults.Item.UserProcessingResultItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.UserProcessingResults.Item.UserProcessingResultItemRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.UserProcessingResults.Item.UserProcessingResultItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.UserProcessingResults.Item.UserProcessingResultItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.UserProcessingResults.Item.UserProcessingResultItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the user processing result of a user processing result of a run.
         /// </summary>
-        public class UserProcessingResultItemRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class UserProcessingResultItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -126,7 +128,8 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.R
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UserProcessingResultItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.UserProcessingResults.Item.UserProcessingResultItemRequestBuilder.UserProcessingResultItemRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class UserProcessingResultItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.UserProcessingResults.Item.UserProcessingResultItemRequestBuilder.UserProcessingResultItemRequestBuilderGetQueryParameters>
         {
         }
     }

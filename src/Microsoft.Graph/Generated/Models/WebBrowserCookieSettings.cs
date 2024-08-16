@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>Web Browser Cookie Settings.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum WebBrowserCookieSettings
     {
         /// <summary>Browser default value, no intent.</summary>

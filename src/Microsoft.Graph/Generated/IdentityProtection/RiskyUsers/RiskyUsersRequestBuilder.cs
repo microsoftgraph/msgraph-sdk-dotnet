@@ -5,11 +5,11 @@ using Microsoft.Graph.IdentityProtection.RiskyUsers.Dismiss;
 using Microsoft.Graph.IdentityProtection.RiskyUsers.Item;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -18,37 +18,38 @@ namespace Microsoft.Graph.IdentityProtection.RiskyUsers
     /// <summary>
     /// Provides operations to manage the riskyUsers property of the microsoft.graph.identityProtectionRoot entity.
     /// </summary>
-    public class RiskyUsersRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class RiskyUsersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the confirmCompromised method.</summary>
-        public Microsoft.Graph.IdentityProtection.RiskyUsers.ConfirmCompromised.ConfirmCompromisedRequestBuilder ConfirmCompromised
+        public global::Microsoft.Graph.IdentityProtection.RiskyUsers.ConfirmCompromised.ConfirmCompromisedRequestBuilder ConfirmCompromised
         {
-            get => new Microsoft.Graph.IdentityProtection.RiskyUsers.ConfirmCompromised.ConfirmCompromisedRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.IdentityProtection.RiskyUsers.ConfirmCompromised.ConfirmCompromisedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.IdentityProtection.RiskyUsers.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.IdentityProtection.RiskyUsers.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.IdentityProtection.RiskyUsers.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.IdentityProtection.RiskyUsers.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dismiss method.</summary>
-        public Microsoft.Graph.IdentityProtection.RiskyUsers.Dismiss.DismissRequestBuilder Dismiss
+        public global::Microsoft.Graph.IdentityProtection.RiskyUsers.Dismiss.DismissRequestBuilder Dismiss
         {
-            get => new Microsoft.Graph.IdentityProtection.RiskyUsers.Dismiss.DismissRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.IdentityProtection.RiskyUsers.Dismiss.DismissRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the riskyUsers property of the microsoft.graph.identityProtectionRoot entity.</summary>
         /// <param name="position">The unique identifier of riskyUser</param>
-        /// <returns>A <see cref="Microsoft.Graph.IdentityProtection.RiskyUsers.Item.RiskyUserItemRequestBuilder"/></returns>
-        public Microsoft.Graph.IdentityProtection.RiskyUsers.Item.RiskyUserItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.IdentityProtection.RiskyUsers.Item.RiskyUserItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.IdentityProtection.RiskyUsers.Item.RiskyUserItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("riskyUser%2Did", position);
-                return new Microsoft.Graph.IdentityProtection.RiskyUsers.Item.RiskyUserItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.IdentityProtection.RiskyUsers.Item.RiskyUserItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.IdentityProtection.RiskyUsers.RiskyUsersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.IdentityProtection.RiskyUsers.RiskyUsersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -56,7 +57,7 @@ namespace Microsoft.Graph.IdentityProtection.RiskyUsers
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.IdentityProtection.RiskyUsers.RiskyUsersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.IdentityProtection.RiskyUsers.RiskyUsersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -67,50 +68,50 @@ namespace Microsoft.Graph.IdentityProtection.RiskyUsers
         /// Get a list of the riskyUser objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/riskyuser-list?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.RiskyUserCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.RiskyUserCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.RiskyUserCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.IdentityProtection.RiskyUsers.RiskyUsersRequestBuilder.RiskyUsersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.RiskyUserCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.IdentityProtection.RiskyUsers.RiskyUsersRequestBuilder.RiskyUsersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.RiskyUserCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.IdentityProtection.RiskyUsers.RiskyUsersRequestBuilder.RiskyUsersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.RiskyUserCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.IdentityProtection.RiskyUsers.RiskyUsersRequestBuilder.RiskyUsersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.RiskyUserCollectionResponse>(requestInfo, Microsoft.Graph.Models.RiskyUserCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.RiskyUserCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.RiskyUserCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to riskyUsers for identityProtection
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.RiskyUser"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.RiskyUser"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.RiskyUser?> PostAsync(Microsoft.Graph.Models.RiskyUser body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.RiskyUser?> PostAsync(global::Microsoft.Graph.Models.RiskyUser body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.RiskyUser> PostAsync(Microsoft.Graph.Models.RiskyUser body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.RiskyUser> PostAsync(global::Microsoft.Graph.Models.RiskyUser body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.RiskyUser>(requestInfo, Microsoft.Graph.Models.RiskyUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.RiskyUser>(requestInfo, global::Microsoft.Graph.Models.RiskyUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the riskyUser objects and their properties.
@@ -119,11 +120,11 @@ namespace Microsoft.Graph.IdentityProtection.RiskyUsers
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.IdentityProtection.RiskyUsers.RiskyUsersRequestBuilder.RiskyUsersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.IdentityProtection.RiskyUsers.RiskyUsersRequestBuilder.RiskyUsersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.IdentityProtection.RiskyUsers.RiskyUsersRequestBuilder.RiskyUsersRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.IdentityProtection.RiskyUsers.RiskyUsersRequestBuilder.RiskyUsersRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -139,11 +140,11 @@ namespace Microsoft.Graph.IdentityProtection.RiskyUsers
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.RiskyUser body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.RiskyUser body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.RiskyUser body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.RiskyUser body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -156,16 +157,17 @@ namespace Microsoft.Graph.IdentityProtection.RiskyUsers
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.IdentityProtection.RiskyUsers.RiskyUsersRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.IdentityProtection.RiskyUsers.RiskyUsersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.IdentityProtection.RiskyUsers.RiskyUsersRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.IdentityProtection.RiskyUsers.RiskyUsersRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.IdentityProtection.RiskyUsers.RiskyUsersRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.IdentityProtection.RiskyUsers.RiskyUsersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of the riskyUser objects and their properties.
         /// </summary>
-        public class RiskyUsersRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class RiskyUsersRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -231,14 +233,16 @@ namespace Microsoft.Graph.IdentityProtection.RiskyUsers
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RiskyUsersRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.IdentityProtection.RiskyUsers.RiskyUsersRequestBuilder.RiskyUsersRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class RiskyUsersRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.IdentityProtection.RiskyUsers.RiskyUsersRequestBuilder.RiskyUsersRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RiskyUsersRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class RiskyUsersRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

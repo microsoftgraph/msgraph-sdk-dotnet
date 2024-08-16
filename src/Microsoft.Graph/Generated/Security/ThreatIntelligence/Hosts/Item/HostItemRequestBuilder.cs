@@ -14,11 +14,11 @@ using Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.SslCertificates;
 using Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Subdomains;
 using Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Trackers;
 using Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Whois;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -27,75 +27,76 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item
     /// <summary>
     /// Provides operations to manage the hosts property of the microsoft.graph.security.threatIntelligence entity.
     /// </summary>
-    public class HostItemRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class HostItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the childHostPairs property of the microsoft.graph.security.host entity.</summary>
-        public Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.ChildHostPairs.ChildHostPairsRequestBuilder ChildHostPairs
+        public global::Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.ChildHostPairs.ChildHostPairsRequestBuilder ChildHostPairs
         {
-            get => new Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.ChildHostPairs.ChildHostPairsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.ChildHostPairs.ChildHostPairsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the components property of the microsoft.graph.security.host entity.</summary>
-        public Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Components.ComponentsRequestBuilder Components
+        public global::Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Components.ComponentsRequestBuilder Components
         {
-            get => new Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Components.ComponentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Components.ComponentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the cookies property of the microsoft.graph.security.host entity.</summary>
-        public Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Cookies.CookiesRequestBuilder Cookies
+        public global::Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Cookies.CookiesRequestBuilder Cookies
         {
-            get => new Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Cookies.CookiesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Cookies.CookiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the hostPairs property of the microsoft.graph.security.host entity.</summary>
-        public Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.HostPairs.HostPairsRequestBuilder HostPairs
+        public global::Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.HostPairs.HostPairsRequestBuilder HostPairs
         {
-            get => new Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.HostPairs.HostPairsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.HostPairs.HostPairsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the parentHostPairs property of the microsoft.graph.security.host entity.</summary>
-        public Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.ParentHostPairs.ParentHostPairsRequestBuilder ParentHostPairs
+        public global::Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.ParentHostPairs.ParentHostPairsRequestBuilder ParentHostPairs
         {
-            get => new Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.ParentHostPairs.ParentHostPairsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.ParentHostPairs.ParentHostPairsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the passiveDns property of the microsoft.graph.security.host entity.</summary>
-        public Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.PassiveDns.PassiveDnsRequestBuilder PassiveDns
+        public global::Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.PassiveDns.PassiveDnsRequestBuilder PassiveDns
         {
-            get => new Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.PassiveDns.PassiveDnsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.PassiveDns.PassiveDnsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the passiveDnsReverse property of the microsoft.graph.security.host entity.</summary>
-        public Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.PassiveDnsReverse.PassiveDnsReverseRequestBuilder PassiveDnsReverse
+        public global::Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.PassiveDnsReverse.PassiveDnsReverseRequestBuilder PassiveDnsReverse
         {
-            get => new Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.PassiveDnsReverse.PassiveDnsReverseRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.PassiveDnsReverse.PassiveDnsReverseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the ports property of the microsoft.graph.security.host entity.</summary>
-        public Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Ports.PortsRequestBuilder Ports
+        public global::Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Ports.PortsRequestBuilder Ports
         {
-            get => new Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Ports.PortsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Ports.PortsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the reputation property of the microsoft.graph.security.host entity.</summary>
-        public Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Reputation.ReputationRequestBuilder Reputation
+        public global::Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Reputation.ReputationRequestBuilder Reputation
         {
-            get => new Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Reputation.ReputationRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Reputation.ReputationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sslCertificates property of the microsoft.graph.security.host entity.</summary>
-        public Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.SslCertificates.SslCertificatesRequestBuilder SslCertificates
+        public global::Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.SslCertificates.SslCertificatesRequestBuilder SslCertificates
         {
-            get => new Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.SslCertificates.SslCertificatesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.SslCertificates.SslCertificatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the subdomains property of the microsoft.graph.security.host entity.</summary>
-        public Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Subdomains.SubdomainsRequestBuilder Subdomains
+        public global::Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Subdomains.SubdomainsRequestBuilder Subdomains
         {
-            get => new Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Subdomains.SubdomainsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Subdomains.SubdomainsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the trackers property of the microsoft.graph.security.host entity.</summary>
-        public Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Trackers.TrackersRequestBuilder Trackers
+        public global::Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Trackers.TrackersRequestBuilder Trackers
         {
-            get => new Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Trackers.TrackersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Trackers.TrackersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the whois property of the microsoft.graph.security.host entity.</summary>
-        public Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Whois.WhoisRequestBuilder Whois
+        public global::Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Whois.WhoisRequestBuilder Whois
         {
-            get => new Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Whois.WhoisRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.Whois.WhoisRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.HostItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.HostItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -103,7 +104,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.HostItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.HostItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -115,7 +116,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -128,7 +129,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -136,50 +137,50 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item
         /// Read the properties and relationships of a host object. The host resource is the abstract base type that returns an implementation. A host can be of one of the following types:
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-host-get?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.Security.Host"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.Security.Host"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Security.Host?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.HostItemRequestBuilder.HostItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Security.Host?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.HostItemRequestBuilder.HostItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Security.Host> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.HostItemRequestBuilder.HostItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Security.Host> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.HostItemRequestBuilder.HostItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.Host>(requestInfo, Microsoft.Graph.Models.Security.Host.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Security.Host>(requestInfo, global::Microsoft.Graph.Models.Security.Host.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property hosts in security
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.Security.Host"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.Security.Host"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Security.Host?> PatchAsync(Microsoft.Graph.Models.Security.Host body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Security.Host?> PatchAsync(global::Microsoft.Graph.Models.Security.Host body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Security.Host> PatchAsync(Microsoft.Graph.Models.Security.Host body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Security.Host> PatchAsync(global::Microsoft.Graph.Models.Security.Host body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.Host>(requestInfo, Microsoft.Graph.Models.Security.Host.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Security.Host>(requestInfo, global::Microsoft.Graph.Models.Security.Host.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property hosts for security
@@ -207,11 +208,11 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.HostItemRequestBuilder.HostItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.HostItemRequestBuilder.HostItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.HostItemRequestBuilder.HostItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.HostItemRequestBuilder.HostItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -227,11 +228,11 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Security.Host body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.Security.Host body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Security.Host body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.Security.Host body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -244,23 +245,25 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.HostItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.HostItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.HostItemRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.HostItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.HostItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.HostItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class HostItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class HostItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Read the properties and relationships of a host object. The host resource is the abstract base type that returns an implementation. A host can be of one of the following types:
         /// </summary>
-        public class HostItemRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class HostItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -287,14 +290,16 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class HostItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.HostItemRequestBuilder.HostItemRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class HostItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Security.ThreatIntelligence.Hosts.Item.HostItemRequestBuilder.HostItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class HostItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class HostItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

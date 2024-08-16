@@ -7,11 +7,11 @@ using Microsoft.Graph.Print.Printers;
 using Microsoft.Graph.Print.Services;
 using Microsoft.Graph.Print.Shares;
 using Microsoft.Graph.Print.TaskDefinitions;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -20,40 +20,41 @@ namespace Microsoft.Graph.Print
     /// <summary>
     /// Provides operations to manage the print singleton.
     /// </summary>
-    public class PrintRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class PrintRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the connectors property of the microsoft.graph.print entity.</summary>
-        public Microsoft.Graph.Print.Connectors.ConnectorsRequestBuilder Connectors
+        public global::Microsoft.Graph.Print.Connectors.ConnectorsRequestBuilder Connectors
         {
-            get => new Microsoft.Graph.Print.Connectors.ConnectorsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Print.Connectors.ConnectorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the operations property of the microsoft.graph.print entity.</summary>
-        public Microsoft.Graph.Print.Operations.OperationsRequestBuilder Operations
+        public global::Microsoft.Graph.Print.Operations.OperationsRequestBuilder Operations
         {
-            get => new Microsoft.Graph.Print.Operations.OperationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Print.Operations.OperationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the printers property of the microsoft.graph.print entity.</summary>
-        public Microsoft.Graph.Print.Printers.PrintersRequestBuilder Printers
+        public global::Microsoft.Graph.Print.Printers.PrintersRequestBuilder Printers
         {
-            get => new Microsoft.Graph.Print.Printers.PrintersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Print.Printers.PrintersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the services property of the microsoft.graph.print entity.</summary>
-        public Microsoft.Graph.Print.Services.ServicesRequestBuilder Services
+        public global::Microsoft.Graph.Print.Services.ServicesRequestBuilder Services
         {
-            get => new Microsoft.Graph.Print.Services.ServicesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Print.Services.ServicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the shares property of the microsoft.graph.print entity.</summary>
-        public Microsoft.Graph.Print.Shares.SharesRequestBuilder Shares
+        public global::Microsoft.Graph.Print.Shares.SharesRequestBuilder Shares
         {
-            get => new Microsoft.Graph.Print.Shares.SharesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Print.Shares.SharesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the taskDefinitions property of the microsoft.graph.print entity.</summary>
-        public Microsoft.Graph.Print.TaskDefinitions.TaskDefinitionsRequestBuilder TaskDefinitions
+        public global::Microsoft.Graph.Print.TaskDefinitions.TaskDefinitionsRequestBuilder TaskDefinitions
         {
-            get => new Microsoft.Graph.Print.TaskDefinitions.TaskDefinitionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Print.TaskDefinitions.TaskDefinitionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Print.PrintRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Print.PrintRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -61,7 +62,7 @@ namespace Microsoft.Graph.Print
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Print.PrintRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Print.PrintRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -71,50 +72,50 @@ namespace Microsoft.Graph.Print
         /// <summary>
         /// Get print
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.Print"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.Print"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Print?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Print.PrintRequestBuilder.PrintRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Print?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Print.PrintRequestBuilder.PrintRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Print> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Print.PrintRequestBuilder.PrintRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Print> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Print.PrintRequestBuilder.PrintRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Print>(requestInfo, Microsoft.Graph.Models.Print.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Print>(requestInfo, global::Microsoft.Graph.Models.Print.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update print
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.Print"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.Print"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Print?> PatchAsync(Microsoft.Graph.Models.Print body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Print?> PatchAsync(global::Microsoft.Graph.Models.Print body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Print> PatchAsync(Microsoft.Graph.Models.Print body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Print> PatchAsync(global::Microsoft.Graph.Models.Print body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Print>(requestInfo, Microsoft.Graph.Models.Print.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Print>(requestInfo, global::Microsoft.Graph.Models.Print.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get print
@@ -123,11 +124,11 @@ namespace Microsoft.Graph.Print
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Print.PrintRequestBuilder.PrintRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Print.PrintRequestBuilder.PrintRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Print.PrintRequestBuilder.PrintRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Print.PrintRequestBuilder.PrintRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -143,11 +144,11 @@ namespace Microsoft.Graph.Print
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Print body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.Print body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Print body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.Print body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -160,16 +161,17 @@ namespace Microsoft.Graph.Print
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Print.PrintRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Print.PrintRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Print.PrintRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Print.PrintRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Print.PrintRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Print.PrintRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get print
         /// </summary>
-        public class PrintRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class PrintRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -196,14 +198,16 @@ namespace Microsoft.Graph.Print
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PrintRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Print.PrintRequestBuilder.PrintRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class PrintRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Print.PrintRequestBuilder.PrintRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PrintRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class PrintRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

@@ -2,11 +2,11 @@
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings.Item.Content;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -15,15 +15,16 @@ namespace Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings.Item
     /// <summary>
     /// Provides operations to manage the recordings property of the microsoft.graph.onlineMeeting entity.
     /// </summary>
-    public class CallRecordingItemRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class CallRecordingItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the media for the user entity.</summary>
-        public Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings.Item.Content.ContentRequestBuilder Content
+        public global::Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings.Item.Content.ContentRequestBuilder Content
         {
-            get => new Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings.Item.Content.ContentRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings.Item.Content.ContentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings.Item.CallRecordingItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings.Item.CallRecordingItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,7 +32,7 @@ namespace Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings.Item.CallRecordingItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings.Item.CallRecordingItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -43,7 +44,7 @@ namespace Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -56,7 +57,7 @@ namespace Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -64,50 +65,50 @@ namespace Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings.Item
         /// Get a callRecording object associated with a scheduled onlineMeeting. This API doesn&apos;t support getting call recordings from channel meetings. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/callrecording-get?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.CallRecording"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.CallRecording"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.CallRecording?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings.Item.CallRecordingItemRequestBuilder.CallRecordingItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.CallRecording?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings.Item.CallRecordingItemRequestBuilder.CallRecordingItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.CallRecording> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings.Item.CallRecordingItemRequestBuilder.CallRecordingItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.CallRecording> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings.Item.CallRecordingItemRequestBuilder.CallRecordingItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.CallRecording>(requestInfo, Microsoft.Graph.Models.CallRecording.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.CallRecording>(requestInfo, global::Microsoft.Graph.Models.CallRecording.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property recordings in users
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.CallRecording"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.CallRecording"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.CallRecording?> PatchAsync(Microsoft.Graph.Models.CallRecording body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.CallRecording?> PatchAsync(global::Microsoft.Graph.Models.CallRecording body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.CallRecording> PatchAsync(Microsoft.Graph.Models.CallRecording body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.CallRecording> PatchAsync(global::Microsoft.Graph.Models.CallRecording body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.CallRecording>(requestInfo, Microsoft.Graph.Models.CallRecording.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.CallRecording>(requestInfo, global::Microsoft.Graph.Models.CallRecording.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property recordings for users
@@ -135,11 +136,11 @@ namespace Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings.Item.CallRecordingItemRequestBuilder.CallRecordingItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings.Item.CallRecordingItemRequestBuilder.CallRecordingItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings.Item.CallRecordingItemRequestBuilder.CallRecordingItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings.Item.CallRecordingItemRequestBuilder.CallRecordingItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -155,11 +156,11 @@ namespace Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.CallRecording body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.CallRecording body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.CallRecording body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.CallRecording body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -172,23 +173,25 @@ namespace Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings.Item.CallRecordingItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings.Item.CallRecordingItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings.Item.CallRecordingItemRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings.Item.CallRecordingItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings.Item.CallRecordingItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings.Item.CallRecordingItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CallRecordingItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class CallRecordingItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Get a callRecording object associated with a scheduled onlineMeeting. This API doesn&apos;t support getting call recordings from channel meetings. For a recording, this API returns the metadata of the single recording associated with the online meeting. For the content of a recording, this API returns the stream of bytes associated with the recording.
         /// </summary>
-        public class CallRecordingItemRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class CallRecordingItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -215,14 +218,16 @@ namespace Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CallRecordingItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings.Item.CallRecordingItemRequestBuilder.CallRecordingItemRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class CallRecordingItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Users.Item.OnlineMeetings.Item.Recordings.Item.CallRecordingItemRequestBuilder.CallRecordingItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CallRecordingItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class CallRecordingItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

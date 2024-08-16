@@ -3,11 +3,11 @@ using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails.Count;
 using Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails.Item;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,27 +16,28 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.Servi
     /// <summary>
     /// Provides operations to manage the serviceManagementDetails property of the microsoft.graph.delegatedAdminCustomer entity.
     /// </summary>
-    public class ServiceManagementDetailsRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class ServiceManagementDetailsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the serviceManagementDetails property of the microsoft.graph.delegatedAdminCustomer entity.</summary>
         /// <param name="position">The unique identifier of delegatedAdminServiceManagementDetail</param>
-        /// <returns>A <see cref="Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails.Item.DelegatedAdminServiceManagementDetailItemRequestBuilder"/></returns>
-        public Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails.Item.DelegatedAdminServiceManagementDetailItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails.Item.DelegatedAdminServiceManagementDetailItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails.Item.DelegatedAdminServiceManagementDetailItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("delegatedAdminServiceManagementDetail%2Did", position);
-                return new Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails.Item.DelegatedAdminServiceManagementDetailItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails.Item.DelegatedAdminServiceManagementDetailItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails.ServiceManagementDetailsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails.ServiceManagementDetailsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +45,7 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.Servi
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails.ServiceManagementDetailsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails.ServiceManagementDetailsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,50 +56,50 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.Servi
         /// Get a list of the delegatedAdminServiceManagementDetail objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/delegatedadmincustomer-list-servicemanagementdetails?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.DelegatedAdminServiceManagementDetailCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.DelegatedAdminServiceManagementDetailCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.DelegatedAdminServiceManagementDetailCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails.ServiceManagementDetailsRequestBuilder.ServiceManagementDetailsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.DelegatedAdminServiceManagementDetailCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails.ServiceManagementDetailsRequestBuilder.ServiceManagementDetailsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.DelegatedAdminServiceManagementDetailCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails.ServiceManagementDetailsRequestBuilder.ServiceManagementDetailsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.DelegatedAdminServiceManagementDetailCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails.ServiceManagementDetailsRequestBuilder.ServiceManagementDetailsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DelegatedAdminServiceManagementDetailCollectionResponse>(requestInfo, Microsoft.Graph.Models.DelegatedAdminServiceManagementDetailCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DelegatedAdminServiceManagementDetailCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.DelegatedAdminServiceManagementDetailCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to serviceManagementDetails for tenantRelationships
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.DelegatedAdminServiceManagementDetail"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.DelegatedAdminServiceManagementDetail"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.DelegatedAdminServiceManagementDetail?> PostAsync(Microsoft.Graph.Models.DelegatedAdminServiceManagementDetail body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.DelegatedAdminServiceManagementDetail?> PostAsync(global::Microsoft.Graph.Models.DelegatedAdminServiceManagementDetail body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.DelegatedAdminServiceManagementDetail> PostAsync(Microsoft.Graph.Models.DelegatedAdminServiceManagementDetail body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.DelegatedAdminServiceManagementDetail> PostAsync(global::Microsoft.Graph.Models.DelegatedAdminServiceManagementDetail body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DelegatedAdminServiceManagementDetail>(requestInfo, Microsoft.Graph.Models.DelegatedAdminServiceManagementDetail.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DelegatedAdminServiceManagementDetail>(requestInfo, global::Microsoft.Graph.Models.DelegatedAdminServiceManagementDetail.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the delegatedAdminServiceManagementDetail objects and their properties.
@@ -107,11 +108,11 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.Servi
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails.ServiceManagementDetailsRequestBuilder.ServiceManagementDetailsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails.ServiceManagementDetailsRequestBuilder.ServiceManagementDetailsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails.ServiceManagementDetailsRequestBuilder.ServiceManagementDetailsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails.ServiceManagementDetailsRequestBuilder.ServiceManagementDetailsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -127,11 +128,11 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.Servi
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.DelegatedAdminServiceManagementDetail body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.DelegatedAdminServiceManagementDetail body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.DelegatedAdminServiceManagementDetail body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.DelegatedAdminServiceManagementDetail body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -144,16 +145,17 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.Servi
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails.ServiceManagementDetailsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails.ServiceManagementDetailsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails.ServiceManagementDetailsRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails.ServiceManagementDetailsRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails.ServiceManagementDetailsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails.ServiceManagementDetailsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of the delegatedAdminServiceManagementDetail objects and their properties.
         /// </summary>
-        public class ServiceManagementDetailsRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ServiceManagementDetailsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -219,14 +221,16 @@ namespace Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.Servi
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ServiceManagementDetailsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails.ServiceManagementDetailsRequestBuilder.ServiceManagementDetailsRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ServiceManagementDetailsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.TenantRelationships.DelegatedAdminCustomers.Item.ServiceManagementDetails.ServiceManagementDetailsRequestBuilder.ServiceManagementDetailsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ServiceManagementDetailsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ServiceManagementDetailsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

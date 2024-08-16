@@ -6,11 +6,11 @@ using Microsoft.Graph.DirectoryObjects.Item.GetMemberObjects;
 using Microsoft.Graph.DirectoryObjects.Item.Restore;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -19,35 +19,36 @@ namespace Microsoft.Graph.DirectoryObjects.Item
     /// <summary>
     /// Provides operations to manage the collection of directoryObject entities.
     /// </summary>
-    public class DirectoryObjectItemRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class DirectoryObjectItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the checkMemberGroups method.</summary>
-        public Microsoft.Graph.DirectoryObjects.Item.CheckMemberGroups.CheckMemberGroupsRequestBuilder CheckMemberGroups
+        public global::Microsoft.Graph.DirectoryObjects.Item.CheckMemberGroups.CheckMemberGroupsRequestBuilder CheckMemberGroups
         {
-            get => new Microsoft.Graph.DirectoryObjects.Item.CheckMemberGroups.CheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.DirectoryObjects.Item.CheckMemberGroups.CheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the checkMemberObjects method.</summary>
-        public Microsoft.Graph.DirectoryObjects.Item.CheckMemberObjects.CheckMemberObjectsRequestBuilder CheckMemberObjects
+        public global::Microsoft.Graph.DirectoryObjects.Item.CheckMemberObjects.CheckMemberObjectsRequestBuilder CheckMemberObjects
         {
-            get => new Microsoft.Graph.DirectoryObjects.Item.CheckMemberObjects.CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.DirectoryObjects.Item.CheckMemberObjects.CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getMemberGroups method.</summary>
-        public Microsoft.Graph.DirectoryObjects.Item.GetMemberGroups.GetMemberGroupsRequestBuilder GetMemberGroups
+        public global::Microsoft.Graph.DirectoryObjects.Item.GetMemberGroups.GetMemberGroupsRequestBuilder GetMemberGroups
         {
-            get => new Microsoft.Graph.DirectoryObjects.Item.GetMemberGroups.GetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.DirectoryObjects.Item.GetMemberGroups.GetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getMemberObjects method.</summary>
-        public Microsoft.Graph.DirectoryObjects.Item.GetMemberObjects.GetMemberObjectsRequestBuilder GetMemberObjects
+        public global::Microsoft.Graph.DirectoryObjects.Item.GetMemberObjects.GetMemberObjectsRequestBuilder GetMemberObjects
         {
-            get => new Microsoft.Graph.DirectoryObjects.Item.GetMemberObjects.GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.DirectoryObjects.Item.GetMemberObjects.GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the restore method.</summary>
-        public Microsoft.Graph.DirectoryObjects.Item.Restore.RestoreRequestBuilder Restore
+        public global::Microsoft.Graph.DirectoryObjects.Item.Restore.RestoreRequestBuilder Restore
         {
-            get => new Microsoft.Graph.DirectoryObjects.Item.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.DirectoryObjects.Item.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.DirectoryObjects.Item.DirectoryObjectItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.DirectoryObjects.Item.DirectoryObjectItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,7 +56,7 @@ namespace Microsoft.Graph.DirectoryObjects.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.DirectoryObjects.Item.DirectoryObjectItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.DirectoryObjects.Item.DirectoryObjectItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -68,7 +69,7 @@ namespace Microsoft.Graph.DirectoryObjects.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -81,7 +82,7 @@ namespace Microsoft.Graph.DirectoryObjects.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -89,50 +90,50 @@ namespace Microsoft.Graph.DirectoryObjects.Item
         /// Retrieve the properties and relationships of a directoryObject object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryobject-get?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.DirectoryObject"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.DirectoryObject"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.DirectoryObject?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DirectoryObjects.Item.DirectoryObjectItemRequestBuilder.DirectoryObjectItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.DirectoryObject?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.DirectoryObjects.Item.DirectoryObjectItemRequestBuilder.DirectoryObjectItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.DirectoryObject> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DirectoryObjects.Item.DirectoryObjectItemRequestBuilder.DirectoryObjectItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.DirectoryObject> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.DirectoryObjects.Item.DirectoryObjectItemRequestBuilder.DirectoryObjectItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DirectoryObject>(requestInfo, Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DirectoryObject>(requestInfo, global::Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update entity in directoryObjects
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.DirectoryObject"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.DirectoryObject"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.DirectoryObject?> PatchAsync(Microsoft.Graph.Models.DirectoryObject body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.DirectoryObject?> PatchAsync(global::Microsoft.Graph.Models.DirectoryObject body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.DirectoryObject> PatchAsync(Microsoft.Graph.Models.DirectoryObject body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.DirectoryObject> PatchAsync(global::Microsoft.Graph.Models.DirectoryObject body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DirectoryObject>(requestInfo, Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DirectoryObject>(requestInfo, global::Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a directory object, for example, a group, user, application, or service principal.
@@ -160,11 +161,11 @@ namespace Microsoft.Graph.DirectoryObjects.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DirectoryObjects.Item.DirectoryObjectItemRequestBuilder.DirectoryObjectItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.DirectoryObjects.Item.DirectoryObjectItemRequestBuilder.DirectoryObjectItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DirectoryObjects.Item.DirectoryObjectItemRequestBuilder.DirectoryObjectItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.DirectoryObjects.Item.DirectoryObjectItemRequestBuilder.DirectoryObjectItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -180,11 +181,11 @@ namespace Microsoft.Graph.DirectoryObjects.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.DirectoryObject body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.DirectoryObject body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.DirectoryObject body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.DirectoryObject body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -197,23 +198,25 @@ namespace Microsoft.Graph.DirectoryObjects.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.DirectoryObjects.Item.DirectoryObjectItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.DirectoryObjects.Item.DirectoryObjectItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.DirectoryObjects.Item.DirectoryObjectItemRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.DirectoryObjects.Item.DirectoryObjectItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.DirectoryObjects.Item.DirectoryObjectItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.DirectoryObjects.Item.DirectoryObjectItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DirectoryObjectItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class DirectoryObjectItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Retrieve the properties and relationships of a directoryObject object.
         /// </summary>
-        public class DirectoryObjectItemRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class DirectoryObjectItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -240,14 +243,16 @@ namespace Microsoft.Graph.DirectoryObjects.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DirectoryObjectItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.DirectoryObjects.Item.DirectoryObjectItemRequestBuilder.DirectoryObjectItemRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class DirectoryObjectItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.DirectoryObjects.Item.DirectoryObjectItemRequestBuilder.DirectoryObjectItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DirectoryObjectItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class DirectoryObjectItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

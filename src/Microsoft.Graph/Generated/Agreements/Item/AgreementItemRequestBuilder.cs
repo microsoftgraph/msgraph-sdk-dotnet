@@ -4,11 +4,11 @@ using Microsoft.Graph.Agreements.Item.FileNamespace;
 using Microsoft.Graph.Agreements.Item.Files;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -17,25 +17,26 @@ namespace Microsoft.Graph.Agreements.Item
     /// <summary>
     /// Provides operations to manage the collection of agreement entities.
     /// </summary>
-    public class AgreementItemRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class AgreementItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the acceptances property of the microsoft.graph.agreement entity.</summary>
-        public Microsoft.Graph.Agreements.Item.Acceptances.AcceptancesRequestBuilder Acceptances
+        public global::Microsoft.Graph.Agreements.Item.Acceptances.AcceptancesRequestBuilder Acceptances
         {
-            get => new Microsoft.Graph.Agreements.Item.Acceptances.AcceptancesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Agreements.Item.Acceptances.AcceptancesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the file property of the microsoft.graph.agreement entity.</summary>
-        public Microsoft.Graph.Agreements.Item.FileNamespace.FileRequestBuilder File
+        public global::Microsoft.Graph.Agreements.Item.FileNamespace.FileRequestBuilder File
         {
-            get => new Microsoft.Graph.Agreements.Item.FileNamespace.FileRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Agreements.Item.FileNamespace.FileRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the files property of the microsoft.graph.agreement entity.</summary>
-        public Microsoft.Graph.Agreements.Item.Files.FilesRequestBuilder Files
+        public global::Microsoft.Graph.Agreements.Item.Files.FilesRequestBuilder Files
         {
-            get => new Microsoft.Graph.Agreements.Item.Files.FilesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Agreements.Item.Files.FilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Agreements.Item.AgreementItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Agreements.Item.AgreementItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -43,7 +44,7 @@ namespace Microsoft.Graph.Agreements.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Agreements.Item.AgreementItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Agreements.Item.AgreementItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,7 +56,7 @@ namespace Microsoft.Graph.Agreements.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -68,57 +69,57 @@ namespace Microsoft.Graph.Agreements.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get entity from agreements by key
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.Agreement"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.Agreement"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Agreement?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Agreements.Item.AgreementItemRequestBuilder.AgreementItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Agreement?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Agreements.Item.AgreementItemRequestBuilder.AgreementItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Agreement> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Agreements.Item.AgreementItemRequestBuilder.AgreementItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Agreement> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Agreements.Item.AgreementItemRequestBuilder.AgreementItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Agreement>(requestInfo, Microsoft.Graph.Models.Agreement.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Agreement>(requestInfo, global::Microsoft.Graph.Models.Agreement.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update entity in agreements
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.Agreement"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.Agreement"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Agreement?> PatchAsync(Microsoft.Graph.Models.Agreement body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Agreement?> PatchAsync(global::Microsoft.Graph.Models.Agreement body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Agreement> PatchAsync(Microsoft.Graph.Models.Agreement body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Agreement> PatchAsync(global::Microsoft.Graph.Models.Agreement body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Agreement>(requestInfo, Microsoft.Graph.Models.Agreement.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Agreement>(requestInfo, global::Microsoft.Graph.Models.Agreement.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete entity from agreements
@@ -146,11 +147,11 @@ namespace Microsoft.Graph.Agreements.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Agreements.Item.AgreementItemRequestBuilder.AgreementItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Agreements.Item.AgreementItemRequestBuilder.AgreementItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Agreements.Item.AgreementItemRequestBuilder.AgreementItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Agreements.Item.AgreementItemRequestBuilder.AgreementItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -166,11 +167,11 @@ namespace Microsoft.Graph.Agreements.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Agreement body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.Agreement body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Agreement body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.Agreement body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -183,23 +184,25 @@ namespace Microsoft.Graph.Agreements.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Agreements.Item.AgreementItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Agreements.Item.AgreementItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Agreements.Item.AgreementItemRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Agreements.Item.AgreementItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Agreements.Item.AgreementItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Agreements.Item.AgreementItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AgreementItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class AgreementItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Get entity from agreements by key
         /// </summary>
-        public class AgreementItemRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class AgreementItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Select properties to be returned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -216,14 +219,16 @@ namespace Microsoft.Graph.Agreements.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AgreementItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Agreements.Item.AgreementItemRequestBuilder.AgreementItemRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class AgreementItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Agreements.Item.AgreementItemRequestBuilder.AgreementItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AgreementItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class AgreementItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

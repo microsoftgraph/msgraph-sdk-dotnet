@@ -3,11 +3,11 @@ using Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.Count;
 using Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.Item;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,27 +16,28 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions
     /// <summary>
     /// Provides operations to manage the historyDefinitions property of the microsoft.graph.accessReviewSet entity.
     /// </summary>
-    public class HistoryDefinitionsRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class HistoryDefinitionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the historyDefinitions property of the microsoft.graph.accessReviewSet entity.</summary>
         /// <param name="position">The unique identifier of accessReviewHistoryDefinition</param>
-        /// <returns>A <see cref="Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.Item.AccessReviewHistoryDefinitionItemRequestBuilder"/></returns>
-        public Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.Item.AccessReviewHistoryDefinitionItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.Item.AccessReviewHistoryDefinitionItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.Item.AccessReviewHistoryDefinitionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("accessReviewHistoryDefinition%2Did", position);
-                return new Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.Item.AccessReviewHistoryDefinitionItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.Item.AccessReviewHistoryDefinitionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.HistoryDefinitionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.HistoryDefinitionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +45,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.HistoryDefinitionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.HistoryDefinitionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,51 +56,51 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions
         /// Retrieve the accessReviewHistoryDefinition objects created in the last 30 days, including all nested properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewset-list-historydefinitions?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.AccessReviewHistoryDefinitionCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.AccessReviewHistoryDefinitionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.AccessReviewHistoryDefinitionCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.HistoryDefinitionsRequestBuilder.HistoryDefinitionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.AccessReviewHistoryDefinitionCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.HistoryDefinitionsRequestBuilder.HistoryDefinitionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.AccessReviewHistoryDefinitionCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.HistoryDefinitionsRequestBuilder.HistoryDefinitionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.AccessReviewHistoryDefinitionCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.HistoryDefinitionsRequestBuilder.HistoryDefinitionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AccessReviewHistoryDefinitionCollectionResponse>(requestInfo, Microsoft.Graph.Models.AccessReviewHistoryDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.AccessReviewHistoryDefinitionCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.AccessReviewHistoryDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new accessReviewHistoryDefinition object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewset-post-historydefinitions?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.AccessReviewHistoryDefinition"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.AccessReviewHistoryDefinition"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.AccessReviewHistoryDefinition?> PostAsync(Microsoft.Graph.Models.AccessReviewHistoryDefinition body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.AccessReviewHistoryDefinition?> PostAsync(global::Microsoft.Graph.Models.AccessReviewHistoryDefinition body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.AccessReviewHistoryDefinition> PostAsync(Microsoft.Graph.Models.AccessReviewHistoryDefinition body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.AccessReviewHistoryDefinition> PostAsync(global::Microsoft.Graph.Models.AccessReviewHistoryDefinition body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AccessReviewHistoryDefinition>(requestInfo, Microsoft.Graph.Models.AccessReviewHistoryDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.AccessReviewHistoryDefinition>(requestInfo, global::Microsoft.Graph.Models.AccessReviewHistoryDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve the accessReviewHistoryDefinition objects created in the last 30 days, including all nested properties.
@@ -108,11 +109,11 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.HistoryDefinitionsRequestBuilder.HistoryDefinitionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.HistoryDefinitionsRequestBuilder.HistoryDefinitionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.HistoryDefinitionsRequestBuilder.HistoryDefinitionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.HistoryDefinitionsRequestBuilder.HistoryDefinitionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -128,11 +129,11 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.AccessReviewHistoryDefinition body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.AccessReviewHistoryDefinition body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.AccessReviewHistoryDefinition body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.AccessReviewHistoryDefinition body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -145,16 +146,17 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.HistoryDefinitionsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.HistoryDefinitionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.HistoryDefinitionsRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.HistoryDefinitionsRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.HistoryDefinitionsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.HistoryDefinitionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve the accessReviewHistoryDefinition objects created in the last 30 days, including all nested properties.
         /// </summary>
-        public class HistoryDefinitionsRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class HistoryDefinitionsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -220,14 +222,16 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class HistoryDefinitionsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.HistoryDefinitionsRequestBuilder.HistoryDefinitionsRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class HistoryDefinitionsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.HistoryDefinitionsRequestBuilder.HistoryDefinitionsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class HistoryDefinitionsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class HistoryDefinitionsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

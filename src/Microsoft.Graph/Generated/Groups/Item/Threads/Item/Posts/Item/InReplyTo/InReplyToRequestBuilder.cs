@@ -5,11 +5,11 @@ using Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.Forward;
 using Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.Reply;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -18,30 +18,31 @@ namespace Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo
     /// <summary>
     /// Provides operations to manage the inReplyTo property of the microsoft.graph.post entity.
     /// </summary>
-    public class InReplyToRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class InReplyToRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the attachments property of the microsoft.graph.post entity.</summary>
-        public Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.Attachments.AttachmentsRequestBuilder Attachments
+        public global::Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.Attachments.AttachmentsRequestBuilder Attachments
         {
-            get => new Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.Attachments.AttachmentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.Attachments.AttachmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the extensions property of the microsoft.graph.post entity.</summary>
-        public Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.Extensions.ExtensionsRequestBuilder Extensions
+        public global::Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.Extensions.ExtensionsRequestBuilder Extensions
         {
-            get => new Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.Extensions.ExtensionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.Extensions.ExtensionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the forward method.</summary>
-        public Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.Forward.ForwardRequestBuilder Forward
+        public global::Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.Forward.ForwardRequestBuilder Forward
         {
-            get => new Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.Forward.ForwardRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.Forward.ForwardRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the reply method.</summary>
-        public Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.Reply.ReplyRequestBuilder Reply
+        public global::Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.Reply.ReplyRequestBuilder Reply
         {
-            get => new Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.Reply.ReplyRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.Reply.ReplyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.InReplyToRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.InReplyToRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -49,7 +50,7 @@ namespace Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.InReplyToRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.InReplyToRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -59,25 +60,25 @@ namespace Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo
         /// <summary>
         /// Read-only. Supports $expand.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.Post"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.Post"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Post?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.InReplyToRequestBuilder.InReplyToRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Post?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.InReplyToRequestBuilder.InReplyToRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Post> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.InReplyToRequestBuilder.InReplyToRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Post> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.InReplyToRequestBuilder.InReplyToRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Post>(requestInfo, Microsoft.Graph.Models.Post.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Post>(requestInfo, global::Microsoft.Graph.Models.Post.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read-only. Supports $expand.
@@ -86,11 +87,11 @@ namespace Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.InReplyToRequestBuilder.InReplyToRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.InReplyToRequestBuilder.InReplyToRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.InReplyToRequestBuilder.InReplyToRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.InReplyToRequestBuilder.InReplyToRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -101,16 +102,17 @@ namespace Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.InReplyToRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.InReplyToRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.InReplyToRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.InReplyToRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.InReplyToRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.InReplyToRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Read-only. Supports $expand.
         /// </summary>
-        public class InReplyToRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class InReplyToRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -137,7 +139,8 @@ namespace Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class InReplyToRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.InReplyToRequestBuilder.InReplyToRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class InReplyToRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.InReplyTo.InReplyToRequestBuilder.InReplyToRequestBuilderGetQueryParameters>
         {
         }
     }

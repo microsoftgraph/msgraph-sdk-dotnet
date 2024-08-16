@@ -2,11 +2,11 @@
 using Microsoft.Graph.Groups.Item.Sites.Item.Pages.Item.GraphSitePage.CanvasLayout.HorizontalSections.Item.Columns;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -15,15 +15,16 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Pages.Item.GraphSitePage.Canvas
     /// <summary>
     /// Provides operations to manage the horizontalSections property of the microsoft.graph.canvasLayout entity.
     /// </summary>
-    public class HorizontalSectionItemRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class HorizontalSectionItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the columns property of the microsoft.graph.horizontalSection entity.</summary>
-        public Microsoft.Graph.Groups.Item.Sites.Item.Pages.Item.GraphSitePage.CanvasLayout.HorizontalSections.Item.Columns.ColumnsRequestBuilder Columns
+        public global::Microsoft.Graph.Groups.Item.Sites.Item.Pages.Item.GraphSitePage.CanvasLayout.HorizontalSections.Item.Columns.ColumnsRequestBuilder Columns
         {
-            get => new Microsoft.Graph.Groups.Item.Sites.Item.Pages.Item.GraphSitePage.CanvasLayout.HorizontalSections.Item.Columns.ColumnsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Sites.Item.Pages.Item.GraphSitePage.CanvasLayout.HorizontalSections.Item.Columns.ColumnsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Groups.Item.Sites.Item.Pages.Item.GraphSitePage.CanvasLayout.HorizontalSections.Item.HorizontalSectionItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Groups.Item.Sites.Item.Pages.Item.GraphSitePage.CanvasLayout.HorizontalSections.Item.HorizontalSectionItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,7 +32,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Pages.Item.GraphSitePage.Canvas
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Groups.Item.Sites.Item.Pages.Item.GraphSitePage.CanvasLayout.HorizontalSections.Item.HorizontalSectionItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Groups.Item.Sites.Item.Pages.Item.GraphSitePage.CanvasLayout.HorizontalSections.Item.HorizontalSectionItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -43,7 +44,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Pages.Item.GraphSitePage.Canvas
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -56,57 +57,57 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Pages.Item.GraphSitePage.Canvas
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Collection of horizontal sections on the SharePoint page.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.HorizontalSection"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.HorizontalSection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.HorizontalSection?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Sites.Item.Pages.Item.GraphSitePage.CanvasLayout.HorizontalSections.Item.HorizontalSectionItemRequestBuilder.HorizontalSectionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.HorizontalSection?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Groups.Item.Sites.Item.Pages.Item.GraphSitePage.CanvasLayout.HorizontalSections.Item.HorizontalSectionItemRequestBuilder.HorizontalSectionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.HorizontalSection> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Sites.Item.Pages.Item.GraphSitePage.CanvasLayout.HorizontalSections.Item.HorizontalSectionItemRequestBuilder.HorizontalSectionItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.HorizontalSection> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Groups.Item.Sites.Item.Pages.Item.GraphSitePage.CanvasLayout.HorizontalSections.Item.HorizontalSectionItemRequestBuilder.HorizontalSectionItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.HorizontalSection>(requestInfo, Microsoft.Graph.Models.HorizontalSection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.HorizontalSection>(requestInfo, global::Microsoft.Graph.Models.HorizontalSection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property horizontalSections in groups
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.HorizontalSection"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.HorizontalSection"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.HorizontalSection?> PatchAsync(Microsoft.Graph.Models.HorizontalSection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.HorizontalSection?> PatchAsync(global::Microsoft.Graph.Models.HorizontalSection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.HorizontalSection> PatchAsync(Microsoft.Graph.Models.HorizontalSection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.HorizontalSection> PatchAsync(global::Microsoft.Graph.Models.HorizontalSection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.HorizontalSection>(requestInfo, Microsoft.Graph.Models.HorizontalSection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.HorizontalSection>(requestInfo, global::Microsoft.Graph.Models.HorizontalSection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property horizontalSections for groups
@@ -134,11 +135,11 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Pages.Item.GraphSitePage.Canvas
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Sites.Item.Pages.Item.GraphSitePage.CanvasLayout.HorizontalSections.Item.HorizontalSectionItemRequestBuilder.HorizontalSectionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Groups.Item.Sites.Item.Pages.Item.GraphSitePage.CanvasLayout.HorizontalSections.Item.HorizontalSectionItemRequestBuilder.HorizontalSectionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Sites.Item.Pages.Item.GraphSitePage.CanvasLayout.HorizontalSections.Item.HorizontalSectionItemRequestBuilder.HorizontalSectionItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Groups.Item.Sites.Item.Pages.Item.GraphSitePage.CanvasLayout.HorizontalSections.Item.HorizontalSectionItemRequestBuilder.HorizontalSectionItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -154,11 +155,11 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Pages.Item.GraphSitePage.Canvas
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.HorizontalSection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.HorizontalSection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.HorizontalSection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.HorizontalSection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -171,23 +172,25 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Pages.Item.GraphSitePage.Canvas
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Groups.Item.Sites.Item.Pages.Item.GraphSitePage.CanvasLayout.HorizontalSections.Item.HorizontalSectionItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Groups.Item.Sites.Item.Pages.Item.GraphSitePage.CanvasLayout.HorizontalSections.Item.HorizontalSectionItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Groups.Item.Sites.Item.Pages.Item.GraphSitePage.CanvasLayout.HorizontalSections.Item.HorizontalSectionItemRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Groups.Item.Sites.Item.Pages.Item.GraphSitePage.CanvasLayout.HorizontalSections.Item.HorizontalSectionItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Groups.Item.Sites.Item.Pages.Item.GraphSitePage.CanvasLayout.HorizontalSections.Item.HorizontalSectionItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Groups.Item.Sites.Item.Pages.Item.GraphSitePage.CanvasLayout.HorizontalSections.Item.HorizontalSectionItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class HorizontalSectionItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class HorizontalSectionItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Collection of horizontal sections on the SharePoint page.
         /// </summary>
-        public class HorizontalSectionItemRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class HorizontalSectionItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -214,14 +217,16 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Pages.Item.GraphSitePage.Canvas
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class HorizontalSectionItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Groups.Item.Sites.Item.Pages.Item.GraphSitePage.CanvasLayout.HorizontalSections.Item.HorizontalSectionItemRequestBuilder.HorizontalSectionItemRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class HorizontalSectionItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Groups.Item.Sites.Item.Pages.Item.GraphSitePage.CanvasLayout.HorizontalSections.Item.HorizontalSectionItemRequestBuilder.HorizontalSectionItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class HorizontalSectionItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class HorizontalSectionItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

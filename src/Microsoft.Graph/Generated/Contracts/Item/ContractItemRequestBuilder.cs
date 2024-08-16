@@ -6,11 +6,11 @@ using Microsoft.Graph.Contracts.Item.GetMemberObjects;
 using Microsoft.Graph.Contracts.Item.Restore;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -19,35 +19,36 @@ namespace Microsoft.Graph.Contracts.Item
     /// <summary>
     /// Provides operations to manage the collection of contract entities.
     /// </summary>
-    public class ContractItemRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class ContractItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the checkMemberGroups method.</summary>
-        public Microsoft.Graph.Contracts.Item.CheckMemberGroups.CheckMemberGroupsRequestBuilder CheckMemberGroups
+        public global::Microsoft.Graph.Contracts.Item.CheckMemberGroups.CheckMemberGroupsRequestBuilder CheckMemberGroups
         {
-            get => new Microsoft.Graph.Contracts.Item.CheckMemberGroups.CheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Contracts.Item.CheckMemberGroups.CheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the checkMemberObjects method.</summary>
-        public Microsoft.Graph.Contracts.Item.CheckMemberObjects.CheckMemberObjectsRequestBuilder CheckMemberObjects
+        public global::Microsoft.Graph.Contracts.Item.CheckMemberObjects.CheckMemberObjectsRequestBuilder CheckMemberObjects
         {
-            get => new Microsoft.Graph.Contracts.Item.CheckMemberObjects.CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Contracts.Item.CheckMemberObjects.CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getMemberGroups method.</summary>
-        public Microsoft.Graph.Contracts.Item.GetMemberGroups.GetMemberGroupsRequestBuilder GetMemberGroups
+        public global::Microsoft.Graph.Contracts.Item.GetMemberGroups.GetMemberGroupsRequestBuilder GetMemberGroups
         {
-            get => new Microsoft.Graph.Contracts.Item.GetMemberGroups.GetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Contracts.Item.GetMemberGroups.GetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getMemberObjects method.</summary>
-        public Microsoft.Graph.Contracts.Item.GetMemberObjects.GetMemberObjectsRequestBuilder GetMemberObjects
+        public global::Microsoft.Graph.Contracts.Item.GetMemberObjects.GetMemberObjectsRequestBuilder GetMemberObjects
         {
-            get => new Microsoft.Graph.Contracts.Item.GetMemberObjects.GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Contracts.Item.GetMemberObjects.GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the restore method.</summary>
-        public Microsoft.Graph.Contracts.Item.Restore.RestoreRequestBuilder Restore
+        public global::Microsoft.Graph.Contracts.Item.Restore.RestoreRequestBuilder Restore
         {
-            get => new Microsoft.Graph.Contracts.Item.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Contracts.Item.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Contracts.Item.ContractItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Contracts.Item.ContractItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,7 +56,7 @@ namespace Microsoft.Graph.Contracts.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Contracts.Item.ContractItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Contracts.Item.ContractItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -67,7 +68,7 @@ namespace Microsoft.Graph.Contracts.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -80,7 +81,7 @@ namespace Microsoft.Graph.Contracts.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -88,50 +89,50 @@ namespace Microsoft.Graph.Contracts.Item
         /// Retrieve the properties and relationships of contract object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/contract-get?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.Contract"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.Contract"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Contract?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Contracts.Item.ContractItemRequestBuilder.ContractItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Contract?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Contracts.Item.ContractItemRequestBuilder.ContractItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Contract> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Contracts.Item.ContractItemRequestBuilder.ContractItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Contract> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Contracts.Item.ContractItemRequestBuilder.ContractItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Contract>(requestInfo, Microsoft.Graph.Models.Contract.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Contract>(requestInfo, global::Microsoft.Graph.Models.Contract.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update entity in contracts
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.Contract"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.Contract"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Contract?> PatchAsync(Microsoft.Graph.Models.Contract body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Contract?> PatchAsync(global::Microsoft.Graph.Models.Contract body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Contract> PatchAsync(Microsoft.Graph.Models.Contract body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Contract> PatchAsync(global::Microsoft.Graph.Models.Contract body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Contract>(requestInfo, Microsoft.Graph.Models.Contract.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Contract>(requestInfo, global::Microsoft.Graph.Models.Contract.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete entity from contracts
@@ -159,11 +160,11 @@ namespace Microsoft.Graph.Contracts.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Contracts.Item.ContractItemRequestBuilder.ContractItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Contracts.Item.ContractItemRequestBuilder.ContractItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Contracts.Item.ContractItemRequestBuilder.ContractItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Contracts.Item.ContractItemRequestBuilder.ContractItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -179,11 +180,11 @@ namespace Microsoft.Graph.Contracts.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Contract body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.Contract body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Contract body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.Contract body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -196,23 +197,25 @@ namespace Microsoft.Graph.Contracts.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Contracts.Item.ContractItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Contracts.Item.ContractItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Contracts.Item.ContractItemRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Contracts.Item.ContractItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Contracts.Item.ContractItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Contracts.Item.ContractItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ContractItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ContractItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Retrieve the properties and relationships of contract object.
         /// </summary>
-        public class ContractItemRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ContractItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -239,14 +242,16 @@ namespace Microsoft.Graph.Contracts.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ContractItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Contracts.Item.ContractItemRequestBuilder.ContractItemRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ContractItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Contracts.Item.ContractItemRequestBuilder.ContractItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ContractItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ContractItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

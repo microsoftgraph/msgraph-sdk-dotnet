@@ -3,11 +3,11 @@ using Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosVppApp.Assignm
 using Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosVppApp.Categories;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,20 +16,21 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosVppApp
     /// <summary>
     /// Casts the previous resource to iosVppApp.
     /// </summary>
-    public class GraphIosVppAppRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class GraphIosVppAppRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.</summary>
-        public Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosVppApp.Assignments.AssignmentsRequestBuilder Assignments
+        public global::Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosVppApp.Assignments.AssignmentsRequestBuilder Assignments
         {
-            get => new Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosVppApp.Assignments.AssignmentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosVppApp.Assignments.AssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the categories property of the microsoft.graph.mobileApp entity.</summary>
-        public Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosVppApp.Categories.CategoriesRequestBuilder Categories
+        public global::Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosVppApp.Categories.CategoriesRequestBuilder Categories
         {
-            get => new Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosVppApp.Categories.CategoriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosVppApp.Categories.CategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosVppApp.GraphIosVppAppRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosVppApp.GraphIosVppAppRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +38,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosVppApp
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosVppApp.GraphIosVppAppRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosVppApp.GraphIosVppAppRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -47,25 +48,25 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosVppApp
         /// <summary>
         /// Get the item of type microsoft.graph.mobileApp as microsoft.graph.iosVppApp
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.IosVppApp"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.IosVppApp"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.IosVppApp?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosVppApp.GraphIosVppAppRequestBuilder.GraphIosVppAppRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.IosVppApp?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosVppApp.GraphIosVppAppRequestBuilder.GraphIosVppAppRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.IosVppApp> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosVppApp.GraphIosVppAppRequestBuilder.GraphIosVppAppRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.IosVppApp> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosVppApp.GraphIosVppAppRequestBuilder.GraphIosVppAppRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.IosVppApp>(requestInfo, Microsoft.Graph.Models.IosVppApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.IosVppApp>(requestInfo, global::Microsoft.Graph.Models.IosVppApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the item of type microsoft.graph.mobileApp as microsoft.graph.iosVppApp
@@ -74,11 +75,11 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosVppApp
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosVppApp.GraphIosVppAppRequestBuilder.GraphIosVppAppRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosVppApp.GraphIosVppAppRequestBuilder.GraphIosVppAppRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosVppApp.GraphIosVppAppRequestBuilder.GraphIosVppAppRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosVppApp.GraphIosVppAppRequestBuilder.GraphIosVppAppRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -89,16 +90,17 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosVppApp
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosVppApp.GraphIosVppAppRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosVppApp.GraphIosVppAppRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosVppApp.GraphIosVppAppRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosVppApp.GraphIosVppAppRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosVppApp.GraphIosVppAppRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosVppApp.GraphIosVppAppRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the item of type microsoft.graph.mobileApp as microsoft.graph.iosVppApp
         /// </summary>
-        public class GraphIosVppAppRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class GraphIosVppAppRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -125,7 +127,8 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosVppApp
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GraphIosVppAppRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosVppApp.GraphIosVppAppRequestBuilder.GraphIosVppAppRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class GraphIosVppAppRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphIosVppApp.GraphIosVppAppRequestBuilder.GraphIosVppAppRequestBuilderGetQueryParameters>
         {
         }
     }

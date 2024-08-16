@@ -5,11 +5,11 @@ using Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.Item;
 using Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.SetOrder;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -18,37 +18,38 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments
     /// <summary>
     /// Provides operations to manage the userAttributeAssignments property of the microsoft.graph.b2xIdentityUserFlow entity.
     /// </summary>
-    public class UserAttributeAssignmentsRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class UserAttributeAssignmentsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getOrder method.</summary>
-        public Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.GetOrder.GetOrderRequestBuilder GetOrder
+        public global::Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.GetOrder.GetOrderRequestBuilder GetOrder
         {
-            get => new Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.GetOrder.GetOrderRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.GetOrder.GetOrderRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the setOrder method.</summary>
-        public Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.SetOrder.SetOrderRequestBuilder SetOrder
+        public global::Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.SetOrder.SetOrderRequestBuilder SetOrder
         {
-            get => new Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.SetOrder.SetOrderRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.SetOrder.SetOrderRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userAttributeAssignments property of the microsoft.graph.b2xIdentityUserFlow entity.</summary>
         /// <param name="position">The unique identifier of identityUserFlowAttributeAssignment</param>
-        /// <returns>A <see cref="Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.Item.IdentityUserFlowAttributeAssignmentItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.Item.IdentityUserFlowAttributeAssignmentItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.Item.IdentityUserFlowAttributeAssignmentItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.Item.IdentityUserFlowAttributeAssignmentItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("identityUserFlowAttributeAssignment%2Did", position);
-                return new Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.Item.IdentityUserFlowAttributeAssignmentItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.Item.IdentityUserFlowAttributeAssignmentItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.UserAttributeAssignmentsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.UserAttributeAssignmentsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -56,7 +57,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.UserAttributeAssignmentsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.UserAttributeAssignmentsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -67,51 +68,51 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments
         /// Get the identityUserFlowAttributeAssignment resources from the userAttributeAssignments navigation property in a b2xIdentityUserFlow.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/b2xidentityuserflow-list-userattributeassignments?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.IdentityUserFlowAttributeAssignmentCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.IdentityUserFlowAttributeAssignmentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.IdentityUserFlowAttributeAssignmentCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.UserAttributeAssignmentsRequestBuilder.UserAttributeAssignmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.IdentityUserFlowAttributeAssignmentCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.UserAttributeAssignmentsRequestBuilder.UserAttributeAssignmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.IdentityUserFlowAttributeAssignmentCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.UserAttributeAssignmentsRequestBuilder.UserAttributeAssignmentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.IdentityUserFlowAttributeAssignmentCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.UserAttributeAssignmentsRequestBuilder.UserAttributeAssignmentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.IdentityUserFlowAttributeAssignmentCollectionResponse>(requestInfo, Microsoft.Graph.Models.IdentityUserFlowAttributeAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.IdentityUserFlowAttributeAssignmentCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.IdentityUserFlowAttributeAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new identityUserFlowAttributeAssignment object in a b2xIdentityUserFlow.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/b2xidentityuserflow-post-userattributeassignments?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.IdentityUserFlowAttributeAssignment"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.IdentityUserFlowAttributeAssignment"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.IdentityUserFlowAttributeAssignment?> PostAsync(Microsoft.Graph.Models.IdentityUserFlowAttributeAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.IdentityUserFlowAttributeAssignment?> PostAsync(global::Microsoft.Graph.Models.IdentityUserFlowAttributeAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.IdentityUserFlowAttributeAssignment> PostAsync(Microsoft.Graph.Models.IdentityUserFlowAttributeAssignment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.IdentityUserFlowAttributeAssignment> PostAsync(global::Microsoft.Graph.Models.IdentityUserFlowAttributeAssignment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.IdentityUserFlowAttributeAssignment>(requestInfo, Microsoft.Graph.Models.IdentityUserFlowAttributeAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.IdentityUserFlowAttributeAssignment>(requestInfo, global::Microsoft.Graph.Models.IdentityUserFlowAttributeAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the identityUserFlowAttributeAssignment resources from the userAttributeAssignments navigation property in a b2xIdentityUserFlow.
@@ -120,11 +121,11 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.UserAttributeAssignmentsRequestBuilder.UserAttributeAssignmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.UserAttributeAssignmentsRequestBuilder.UserAttributeAssignmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.UserAttributeAssignmentsRequestBuilder.UserAttributeAssignmentsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.UserAttributeAssignmentsRequestBuilder.UserAttributeAssignmentsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -140,11 +141,11 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.IdentityUserFlowAttributeAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.IdentityUserFlowAttributeAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.IdentityUserFlowAttributeAssignment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.IdentityUserFlowAttributeAssignment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -157,16 +158,17 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.UserAttributeAssignmentsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.UserAttributeAssignmentsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.UserAttributeAssignmentsRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.UserAttributeAssignmentsRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.UserAttributeAssignmentsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.UserAttributeAssignmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the identityUserFlowAttributeAssignment resources from the userAttributeAssignments navigation property in a b2xIdentityUserFlow.
         /// </summary>
-        public class UserAttributeAssignmentsRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class UserAttributeAssignmentsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -232,14 +234,16 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UserAttributeAssignmentsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.UserAttributeAssignmentsRequestBuilder.UserAttributeAssignmentsRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class UserAttributeAssignmentsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.UserAttributeAssignmentsRequestBuilder.UserAttributeAssignmentsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UserAttributeAssignmentsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class UserAttributeAssignmentsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

@@ -14,11 +14,11 @@ using Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Ite
 using Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Worksheet;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -27,60 +27,61 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
     /// <summary>
     /// Provides operations to manage the charts property of the microsoft.graph.workbookWorksheet entity.
     /// </summary>
-    public class WorkbookChartItemRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class WorkbookChartItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the axes property of the microsoft.graph.workbookChart entity.</summary>
-        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Axes.AxesRequestBuilder Axes
+        public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Axes.AxesRequestBuilder Axes
         {
-            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Axes.AxesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Axes.AxesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the dataLabels property of the microsoft.graph.workbookChart entity.</summary>
-        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.DataLabels.DataLabelsRequestBuilder DataLabels
+        public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.DataLabels.DataLabelsRequestBuilder DataLabels
         {
-            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.DataLabels.DataLabelsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.DataLabels.DataLabelsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the format property of the microsoft.graph.workbookChart entity.</summary>
-        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Format.FormatRequestBuilder Format
+        public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Format.FormatRequestBuilder Format
         {
-            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Format.FormatRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Format.FormatRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the image method.</summary>
-        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Image.ImageRequestBuilder Image
+        public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Image.ImageRequestBuilder Image
         {
-            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Image.ImageRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Image.ImageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the legend property of the microsoft.graph.workbookChart entity.</summary>
-        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Legend.LegendRequestBuilder Legend
+        public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Legend.LegendRequestBuilder Legend
         {
-            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Legend.LegendRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Legend.LegendRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the series property of the microsoft.graph.workbookChart entity.</summary>
-        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Series.SeriesRequestBuilder Series
+        public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Series.SeriesRequestBuilder Series
         {
-            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Series.SeriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Series.SeriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the setData method.</summary>
-        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.SetData.SetDataRequestBuilder SetData
+        public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.SetData.SetDataRequestBuilder SetData
         {
-            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.SetData.SetDataRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.SetData.SetDataRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the setPosition method.</summary>
-        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.SetPosition.SetPositionRequestBuilder SetPosition
+        public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.SetPosition.SetPositionRequestBuilder SetPosition
         {
-            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.SetPosition.SetPositionRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.SetPosition.SetPositionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the title property of the microsoft.graph.workbookChart entity.</summary>
-        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Title.TitleRequestBuilder Title
+        public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Title.TitleRequestBuilder Title
         {
-            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Title.TitleRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Title.TitleRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the worksheet property of the microsoft.graph.workbookChart entity.</summary>
-        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Worksheet.WorksheetRequestBuilder Worksheet
+        public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Worksheet.WorksheetRequestBuilder Worksheet
         {
-            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Worksheet.WorksheetRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Worksheet.WorksheetRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.WorkbookChartItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.WorkbookChartItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -88,7 +89,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.WorkbookChartItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.WorkbookChartItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -100,7 +101,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -113,93 +114,93 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns collection of charts that are part of the worksheet. Read-only.
+        /// The list of charts that are part of the worksheet. Read-only.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.WorkbookChart"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.WorkbookChart"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.WorkbookChart?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.WorkbookChartItemRequestBuilder.WorkbookChartItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.WorkbookChart?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.WorkbookChartItemRequestBuilder.WorkbookChartItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.WorkbookChart> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.WorkbookChartItemRequestBuilder.WorkbookChartItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.WorkbookChart> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.WorkbookChartItemRequestBuilder.WorkbookChartItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.WorkbookChart>(requestInfo, Microsoft.Graph.Models.WorkbookChart.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.WorkbookChart>(requestInfo, global::Microsoft.Graph.Models.WorkbookChart.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to call the image method.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidth.ImageWithWidthRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidth.ImageWithWidthRequestBuilder"/></returns>
         /// <param name="width">Usage: width={width}</param>
-        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidth.ImageWithWidthRequestBuilder ImageWithWidth(int? width)
+        public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidth.ImageWithWidthRequestBuilder ImageWithWidth(int? width)
         {
             _ = width ?? throw new ArgumentNullException(nameof(width));
-            return new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidth.ImageWithWidthRequestBuilder(PathParameters, RequestAdapter, width);
+            return new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidth.ImageWithWidthRequestBuilder(PathParameters, RequestAdapter, width);
         }
         /// <summary>
         /// Provides operations to call the image method.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidthWithHeight.ImageWithWidthWithHeightRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidthWithHeight.ImageWithWidthWithHeightRequestBuilder"/></returns>
         /// <param name="height">Usage: height={height}</param>
         /// <param name="width">Usage: width={width}</param>
-        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidthWithHeight.ImageWithWidthWithHeightRequestBuilder ImageWithWidthWithHeight(int? height, int? width)
+        public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidthWithHeight.ImageWithWidthWithHeightRequestBuilder ImageWithWidthWithHeight(int? height, int? width)
         {
             _ = height ?? throw new ArgumentNullException(nameof(height));
             _ = width ?? throw new ArgumentNullException(nameof(width));
-            return new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidthWithHeight.ImageWithWidthWithHeightRequestBuilder(PathParameters, RequestAdapter, height, width);
+            return new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidthWithHeight.ImageWithWidthWithHeightRequestBuilder(PathParameters, RequestAdapter, height, width);
         }
         /// <summary>
         /// Provides operations to call the image method.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidthWithHeightWithFittingMode.ImageWithWidthWithHeightWithFittingModeRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidthWithHeightWithFittingMode.ImageWithWidthWithHeightWithFittingModeRequestBuilder"/></returns>
         /// <param name="fittingMode">Usage: fittingMode=&apos;{fittingMode}&apos;</param>
         /// <param name="height">Usage: height={height}</param>
         /// <param name="width">Usage: width={width}</param>
-        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidthWithHeightWithFittingMode.ImageWithWidthWithHeightWithFittingModeRequestBuilder ImageWithWidthWithHeightWithFittingMode(string fittingMode, int? height, int? width)
+        public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidthWithHeightWithFittingMode.ImageWithWidthWithHeightWithFittingModeRequestBuilder ImageWithWidthWithHeightWithFittingMode(string fittingMode, int? height, int? width)
         {
             if(string.IsNullOrEmpty(fittingMode)) throw new ArgumentNullException(nameof(fittingMode));
             _ = height ?? throw new ArgumentNullException(nameof(height));
             _ = width ?? throw new ArgumentNullException(nameof(width));
-            return new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidthWithHeightWithFittingMode.ImageWithWidthWithHeightWithFittingModeRequestBuilder(PathParameters, RequestAdapter, fittingMode, height, width);
+            return new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidthWithHeightWithFittingMode.ImageWithWidthWithHeightWithFittingModeRequestBuilder(PathParameters, RequestAdapter, fittingMode, height, width);
         }
         /// <summary>
         /// Update the navigation property charts in drives
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.WorkbookChart"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.WorkbookChart"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.WorkbookChart?> PatchAsync(Microsoft.Graph.Models.WorkbookChart body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.WorkbookChart?> PatchAsync(global::Microsoft.Graph.Models.WorkbookChart body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.WorkbookChart> PatchAsync(Microsoft.Graph.Models.WorkbookChart body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.WorkbookChart> PatchAsync(global::Microsoft.Graph.Models.WorkbookChart body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.WorkbookChart>(requestInfo, Microsoft.Graph.Models.WorkbookChart.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.WorkbookChart>(requestInfo, global::Microsoft.Graph.Models.WorkbookChart.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property charts for drives
@@ -221,17 +222,17 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
             return requestInfo;
         }
         /// <summary>
-        /// Returns collection of charts that are part of the worksheet. Read-only.
+        /// The list of charts that are part of the worksheet. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.WorkbookChartItemRequestBuilder.WorkbookChartItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.WorkbookChartItemRequestBuilder.WorkbookChartItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.WorkbookChartItemRequestBuilder.WorkbookChartItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.WorkbookChartItemRequestBuilder.WorkbookChartItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -247,11 +248,11 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.WorkbookChart body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.WorkbookChart body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.WorkbookChart body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.WorkbookChart body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -264,23 +265,25 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.WorkbookChartItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.WorkbookChartItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.WorkbookChartItemRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.WorkbookChartItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.WorkbookChartItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.WorkbookChartItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class WorkbookChartItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class WorkbookChartItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
-        /// Returns collection of charts that are part of the worksheet. Read-only.
+        /// The list of charts that are part of the worksheet. Read-only.
         /// </summary>
-        public class WorkbookChartItemRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class WorkbookChartItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -307,14 +310,16 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class WorkbookChartItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.WorkbookChartItemRequestBuilder.WorkbookChartItemRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class WorkbookChartItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.WorkbookChartItemRequestBuilder.WorkbookChartItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class WorkbookChartItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class WorkbookChartItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

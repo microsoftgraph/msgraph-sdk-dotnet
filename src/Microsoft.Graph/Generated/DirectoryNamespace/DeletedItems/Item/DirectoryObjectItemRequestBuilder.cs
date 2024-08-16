@@ -12,11 +12,11 @@ using Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GraphUser;
 using Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.Restore;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -25,65 +25,66 @@ namespace Microsoft.Graph.DirectoryNamespace.DeletedItems.Item
     /// <summary>
     /// Provides operations to manage the deletedItems property of the microsoft.graph.directory entity.
     /// </summary>
-    public class DirectoryObjectItemRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class DirectoryObjectItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the checkMemberGroups method.</summary>
-        public Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.CheckMemberGroups.CheckMemberGroupsRequestBuilder CheckMemberGroups
+        public global::Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.CheckMemberGroups.CheckMemberGroupsRequestBuilder CheckMemberGroups
         {
-            get => new Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.CheckMemberGroups.CheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.CheckMemberGroups.CheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the checkMemberObjects method.</summary>
-        public Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.CheckMemberObjects.CheckMemberObjectsRequestBuilder CheckMemberObjects
+        public global::Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.CheckMemberObjects.CheckMemberObjectsRequestBuilder CheckMemberObjects
         {
-            get => new Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.CheckMemberObjects.CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.CheckMemberObjects.CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getMemberGroups method.</summary>
-        public Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GetMemberGroups.GetMemberGroupsRequestBuilder GetMemberGroups
+        public global::Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GetMemberGroups.GetMemberGroupsRequestBuilder GetMemberGroups
         {
-            get => new Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GetMemberGroups.GetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GetMemberGroups.GetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getMemberObjects method.</summary>
-        public Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GetMemberObjects.GetMemberObjectsRequestBuilder GetMemberObjects
+        public global::Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GetMemberObjects.GetMemberObjectsRequestBuilder GetMemberObjects
         {
-            get => new Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GetMemberObjects.GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GetMemberObjects.GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to administrativeUnit.</summary>
-        public Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GraphAdministrativeUnit.GraphAdministrativeUnitRequestBuilder GraphAdministrativeUnit
+        public global::Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GraphAdministrativeUnit.GraphAdministrativeUnitRequestBuilder GraphAdministrativeUnit
         {
-            get => new Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GraphAdministrativeUnit.GraphAdministrativeUnitRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GraphAdministrativeUnit.GraphAdministrativeUnitRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to application.</summary>
-        public Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GraphApplication.GraphApplicationRequestBuilder GraphApplication
+        public global::Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GraphApplication.GraphApplicationRequestBuilder GraphApplication
         {
-            get => new Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GraphApplication.GraphApplicationRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GraphApplication.GraphApplicationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to device.</summary>
-        public Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GraphDevice.GraphDeviceRequestBuilder GraphDevice
+        public global::Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GraphDevice.GraphDeviceRequestBuilder GraphDevice
         {
-            get => new Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GraphDevice.GraphDeviceRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GraphDevice.GraphDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to group.</summary>
-        public Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GraphGroup.GraphGroupRequestBuilder GraphGroup
+        public global::Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GraphGroup.GraphGroupRequestBuilder GraphGroup
         {
-            get => new Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GraphGroup.GraphGroupRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GraphGroup.GraphGroupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to servicePrincipal.</summary>
-        public Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GraphServicePrincipal.GraphServicePrincipalRequestBuilder GraphServicePrincipal
+        public global::Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GraphServicePrincipal.GraphServicePrincipalRequestBuilder GraphServicePrincipal
         {
-            get => new Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GraphServicePrincipal.GraphServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GraphServicePrincipal.GraphServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to user.</summary>
-        public Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GraphUser.GraphUserRequestBuilder GraphUser
+        public global::Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GraphUser.GraphUserRequestBuilder GraphUser
         {
-            get => new Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GraphUser.GraphUserRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GraphUser.GraphUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the restore method.</summary>
-        public Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.Restore.RestoreRequestBuilder Restore
+        public global::Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.Restore.RestoreRequestBuilder Restore
         {
-            get => new Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.DirectoryObjectItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.DirectoryObjectItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -91,7 +92,7 @@ namespace Microsoft.Graph.DirectoryNamespace.DeletedItems.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.DirectoryObjectItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.DirectoryObjectItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -104,7 +105,7 @@ namespace Microsoft.Graph.DirectoryNamespace.DeletedItems.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -117,7 +118,7 @@ namespace Microsoft.Graph.DirectoryNamespace.DeletedItems.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -125,25 +126,25 @@ namespace Microsoft.Graph.DirectoryNamespace.DeletedItems.Item
         /// Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/directory-deleteditems-get?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.DirectoryObject"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.DirectoryObject"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.DirectoryObject?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.DirectoryObjectItemRequestBuilder.DirectoryObjectItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.DirectoryObject?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.DirectoryObjectItemRequestBuilder.DirectoryObjectItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.DirectoryObject> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.DirectoryObjectItemRequestBuilder.DirectoryObjectItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.DirectoryObject> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.DirectoryObjectItemRequestBuilder.DirectoryObjectItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DirectoryObject>(requestInfo, Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DirectoryObject>(requestInfo, global::Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Permanently delete a recently deleted application, group, servicePrincipal, or user object from deleted items. After an item is permanently deleted, it cannot be restored. Administrative units cannot be permanently deleted by using the deletedItems API. Soft-deleted administrative units will be permanently deleted 30 days after initial deletion unless they are restored.
@@ -171,11 +172,11 @@ namespace Microsoft.Graph.DirectoryNamespace.DeletedItems.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.DirectoryObjectItemRequestBuilder.DirectoryObjectItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.DirectoryObjectItemRequestBuilder.DirectoryObjectItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.DirectoryObjectItemRequestBuilder.DirectoryObjectItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.DirectoryObjectItemRequestBuilder.DirectoryObjectItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -186,23 +187,25 @@ namespace Microsoft.Graph.DirectoryNamespace.DeletedItems.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.DirectoryObjectItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.DirectoryObjectItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.DirectoryObjectItemRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.DirectoryObjectItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.DirectoryObjectItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.DirectoryObjectItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DirectoryObjectItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class DirectoryObjectItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Retrieve the properties of a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.
         /// </summary>
-        public class DirectoryObjectItemRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class DirectoryObjectItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -229,7 +232,8 @@ namespace Microsoft.Graph.DirectoryNamespace.DeletedItems.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DirectoryObjectItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.DirectoryObjectItemRequestBuilder.DirectoryObjectItemRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class DirectoryObjectItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.DirectoryObjectItemRequestBuilder.DirectoryObjectItemRequestBuilderGetQueryParameters>
         {
         }
     }

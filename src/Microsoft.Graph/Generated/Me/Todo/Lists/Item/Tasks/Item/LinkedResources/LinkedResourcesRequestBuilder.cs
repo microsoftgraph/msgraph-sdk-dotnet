@@ -3,11 +3,11 @@ using Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.Count;
 using Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.Item;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,27 +16,28 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources
     /// <summary>
     /// Provides operations to manage the linkedResources property of the microsoft.graph.todoTask entity.
     /// </summary>
-    public class LinkedResourcesRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class LinkedResourcesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the linkedResources property of the microsoft.graph.todoTask entity.</summary>
         /// <param name="position">The unique identifier of linkedResource</param>
-        /// <returns>A <see cref="Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.Item.LinkedResourceItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.Item.LinkedResourceItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.Item.LinkedResourceItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.Item.LinkedResourceItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("linkedResource%2Did", position);
-                return new Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.Item.LinkedResourceItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.Item.LinkedResourceItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.LinkedResourcesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.LinkedResourcesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +45,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.LinkedResourcesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.LinkedResourcesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,51 +56,51 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources
         /// Get information of one or more items in a partner application, based on which a specified task was created. The information is represented in a linkedResource object for each item. It includes an external ID for the item in the partner application, and if applicable, a deep link to that item in the application.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/todotask-list-linkedresources?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.LinkedResourceCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.LinkedResourceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.LinkedResourceCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.LinkedResourcesRequestBuilder.LinkedResourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.LinkedResourceCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.LinkedResourcesRequestBuilder.LinkedResourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.LinkedResourceCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.LinkedResourcesRequestBuilder.LinkedResourcesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.LinkedResourceCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.LinkedResourcesRequestBuilder.LinkedResourcesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.LinkedResourceCollectionResponse>(requestInfo, Microsoft.Graph.Models.LinkedResourceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.LinkedResourceCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.LinkedResourceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a linkedResource object to associate a specified task with an item in a partner application. For example, you can associate a task with an email item in Outlook that spurred the task, and you can create a linkedResource object to track its association. You can also create a linkedResource object while creating a task.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/todotask-post-linkedresources?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.LinkedResource"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.LinkedResource"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.LinkedResource?> PostAsync(Microsoft.Graph.Models.LinkedResource body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.LinkedResource?> PostAsync(global::Microsoft.Graph.Models.LinkedResource body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.LinkedResource> PostAsync(Microsoft.Graph.Models.LinkedResource body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.LinkedResource> PostAsync(global::Microsoft.Graph.Models.LinkedResource body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.LinkedResource>(requestInfo, Microsoft.Graph.Models.LinkedResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.LinkedResource>(requestInfo, global::Microsoft.Graph.Models.LinkedResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get information of one or more items in a partner application, based on which a specified task was created. The information is represented in a linkedResource object for each item. It includes an external ID for the item in the partner application, and if applicable, a deep link to that item in the application.
@@ -108,11 +109,11 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.LinkedResourcesRequestBuilder.LinkedResourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.LinkedResourcesRequestBuilder.LinkedResourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.LinkedResourcesRequestBuilder.LinkedResourcesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.LinkedResourcesRequestBuilder.LinkedResourcesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -128,11 +129,11 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.LinkedResource body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.LinkedResource body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.LinkedResource body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.LinkedResource body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -145,16 +146,17 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.LinkedResourcesRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.LinkedResourcesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.LinkedResourcesRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.LinkedResourcesRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.LinkedResourcesRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.LinkedResourcesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get information of one or more items in a partner application, based on which a specified task was created. The information is represented in a linkedResource object for each item. It includes an external ID for the item in the partner application, and if applicable, a deep link to that item in the application.
         /// </summary>
-        public class LinkedResourcesRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class LinkedResourcesRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -220,14 +222,16 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class LinkedResourcesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.LinkedResourcesRequestBuilder.LinkedResourcesRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class LinkedResourcesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item.LinkedResources.LinkedResourcesRequestBuilder.LinkedResourcesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class LinkedResourcesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class LinkedResourcesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

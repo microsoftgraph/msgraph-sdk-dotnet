@@ -3,11 +3,11 @@ using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Count;
 using Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Item;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,29 +16,30 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators
     /// <summary>
     /// Provides operations to manage the collaborators property of the microsoft.graph.subjectRightsRequest entity.
     /// </summary>
-    public class CollaboratorsRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class CollaboratorsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate")]
-        public Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collaborators property of the microsoft.graph.subjectRightsRequest entity.</summary>
         /// <param name="position">The unique identifier of user</param>
-        /// <returns>A <see cref="Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Item.UserItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Item.UserItemRequestBuilder"/></returns>
         [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate")]
-        public Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Item.UserItemRequestBuilder this[string position]
+        public global::Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Item.UserItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("user%2Did", position);
-                return new Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Item.UserItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.Item.UserItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.CollaboratorsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.CollaboratorsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -46,7 +47,7 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.CollaboratorsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.CollaboratorsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -56,26 +57,26 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators
         /// <summary>
         /// Collection of users who can collaborate on the request.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.UserCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.UserCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.UserCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.CollaboratorsRequestBuilder.CollaboratorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.UserCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.CollaboratorsRequestBuilder.CollaboratorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.UserCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.CollaboratorsRequestBuilder.CollaboratorsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.UserCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.CollaboratorsRequestBuilder.CollaboratorsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.UserCollectionResponse>(requestInfo, Microsoft.Graph.Models.UserCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.UserCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.UserCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Collection of users who can collaborate on the request.
@@ -85,11 +86,11 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators
         [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.CollaboratorsRequestBuilder.CollaboratorsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.CollaboratorsRequestBuilder.CollaboratorsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.CollaboratorsRequestBuilder.CollaboratorsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.CollaboratorsRequestBuilder.CollaboratorsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -100,17 +101,18 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.CollaboratorsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.CollaboratorsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate")]
-        public Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.CollaboratorsRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.CollaboratorsRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.CollaboratorsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.CollaboratorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Collection of users who can collaborate on the request.
         /// </summary>
-        public class CollaboratorsRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class CollaboratorsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -176,7 +178,8 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CollaboratorsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.CollaboratorsRequestBuilder.CollaboratorsRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class CollaboratorsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators.CollaboratorsRequestBuilder.CollaboratorsRequestBuilderGetQueryParameters>
         {
         }
     }

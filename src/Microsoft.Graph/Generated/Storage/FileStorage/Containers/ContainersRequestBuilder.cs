@@ -3,11 +3,11 @@ using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Storage.FileStorage.Containers.Count;
 using Microsoft.Graph.Storage.FileStorage.Containers.Item;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,27 +16,28 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers
     /// <summary>
     /// Provides operations to manage the containers property of the microsoft.graph.fileStorage entity.
     /// </summary>
-    public class ContainersRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class ContainersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Storage.FileStorage.Containers.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Storage.FileStorage.Containers.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Storage.FileStorage.Containers.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Storage.FileStorage.Containers.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the containers property of the microsoft.graph.fileStorage entity.</summary>
         /// <param name="position">The unique identifier of fileStorageContainer</param>
-        /// <returns>A <see cref="Microsoft.Graph.Storage.FileStorage.Containers.Item.FileStorageContainerItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Storage.FileStorage.Containers.Item.FileStorageContainerItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Storage.FileStorage.Containers.Item.FileStorageContainerItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Storage.FileStorage.Containers.Item.FileStorageContainerItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("fileStorageContainer%2Did", position);
-                return new Microsoft.Graph.Storage.FileStorage.Containers.Item.FileStorageContainerItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Storage.FileStorage.Containers.Item.FileStorageContainerItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Storage.FileStorage.Containers.ContainersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Storage.FileStorage.Containers.ContainersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +45,7 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Storage.FileStorage.Containers.ContainersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Storage.FileStorage.Containers.ContainersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,51 +56,51 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers
         /// Retrieve a list of fileStorageContainer objects that are visible to the caller. The containerTypeId filter parameter is required.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/filestorage-list-containers?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.FileStorageContainerCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.FileStorageContainerCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.FileStorageContainerCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Storage.FileStorage.Containers.ContainersRequestBuilder.ContainersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.FileStorageContainerCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Storage.FileStorage.Containers.ContainersRequestBuilder.ContainersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.FileStorageContainerCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Storage.FileStorage.Containers.ContainersRequestBuilder.ContainersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.FileStorageContainerCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Storage.FileStorage.Containers.ContainersRequestBuilder.ContainersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.FileStorageContainerCollectionResponse>(requestInfo, Microsoft.Graph.Models.FileStorageContainerCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.FileStorageContainerCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.FileStorageContainerCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new fileStorageContainer object.  The respective container type identified by containerTypeId must be enabled in the tenant.  For delegated calls, the calling user is set as the owner of the fileStorageContainer. 
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/filestoragecontainer-post?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.FileStorageContainer"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.FileStorageContainer"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.FileStorageContainer?> PostAsync(Microsoft.Graph.Models.FileStorageContainer body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.FileStorageContainer?> PostAsync(global::Microsoft.Graph.Models.FileStorageContainer body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.FileStorageContainer> PostAsync(Microsoft.Graph.Models.FileStorageContainer body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.FileStorageContainer> PostAsync(global::Microsoft.Graph.Models.FileStorageContainer body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.FileStorageContainer>(requestInfo, Microsoft.Graph.Models.FileStorageContainer.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.FileStorageContainer>(requestInfo, global::Microsoft.Graph.Models.FileStorageContainer.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of fileStorageContainer objects that are visible to the caller. The containerTypeId filter parameter is required.
@@ -108,11 +109,11 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Storage.FileStorage.Containers.ContainersRequestBuilder.ContainersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Storage.FileStorage.Containers.ContainersRequestBuilder.ContainersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Storage.FileStorage.Containers.ContainersRequestBuilder.ContainersRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Storage.FileStorage.Containers.ContainersRequestBuilder.ContainersRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -128,11 +129,11 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.FileStorageContainer body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.FileStorageContainer body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.FileStorageContainer body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.FileStorageContainer body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -145,16 +146,17 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Storage.FileStorage.Containers.ContainersRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Storage.FileStorage.Containers.ContainersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Storage.FileStorage.Containers.ContainersRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Storage.FileStorage.Containers.ContainersRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Storage.FileStorage.Containers.ContainersRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Storage.FileStorage.Containers.ContainersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve a list of fileStorageContainer objects that are visible to the caller. The containerTypeId filter parameter is required.
         /// </summary>
-        public class ContainersRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ContainersRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -220,14 +222,16 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ContainersRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Storage.FileStorage.Containers.ContainersRequestBuilder.ContainersRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ContainersRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Storage.FileStorage.Containers.ContainersRequestBuilder.ContainersRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ContainersRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ContainersRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }
