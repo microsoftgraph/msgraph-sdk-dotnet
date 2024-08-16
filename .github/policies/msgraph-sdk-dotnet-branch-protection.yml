@@ -9,9 +9,9 @@ resource: repository
 configuration:
   branchProtectionRules:
 
-  - branchNamePattern: master
+  - branchNamePattern: main
     # This branch pattern applies to the following branches as of 06/12/2023 10:31:13:
-    # master
+    # main
 
     # Specifies whether this branch can be deleted. boolean
     allowsDeletions: false
