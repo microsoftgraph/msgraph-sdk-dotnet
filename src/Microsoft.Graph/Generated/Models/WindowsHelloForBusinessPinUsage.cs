@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>Windows Hello for Business pin usage options</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum WindowsHelloForBusinessPinUsage
     {
         /// <summary>Allowed the usage of certain pin rule</summary>

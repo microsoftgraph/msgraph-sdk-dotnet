@@ -19,11 +19,11 @@ using Microsoft.Graph.Me.JoinedTeams.Item.Template;
 using Microsoft.Graph.Me.JoinedTeams.Item.Unarchive;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -32,100 +32,101 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item
     /// <summary>
     /// Provides operations to manage the joinedTeams property of the microsoft.graph.user entity.
     /// </summary>
-    public class TeamItemRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class TeamItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the allChannels property of the microsoft.graph.team entity.</summary>
-        public Microsoft.Graph.Me.JoinedTeams.Item.AllChannels.AllChannelsRequestBuilder AllChannels
+        public global::Microsoft.Graph.Me.JoinedTeams.Item.AllChannels.AllChannelsRequestBuilder AllChannels
         {
-            get => new Microsoft.Graph.Me.JoinedTeams.Item.AllChannels.AllChannelsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.JoinedTeams.Item.AllChannels.AllChannelsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the archive method.</summary>
-        public Microsoft.Graph.Me.JoinedTeams.Item.Archive.ArchiveRequestBuilder Archive
+        public global::Microsoft.Graph.Me.JoinedTeams.Item.Archive.ArchiveRequestBuilder Archive
         {
-            get => new Microsoft.Graph.Me.JoinedTeams.Item.Archive.ArchiveRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.JoinedTeams.Item.Archive.ArchiveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the channels property of the microsoft.graph.team entity.</summary>
-        public Microsoft.Graph.Me.JoinedTeams.Item.Channels.ChannelsRequestBuilder Channels
+        public global::Microsoft.Graph.Me.JoinedTeams.Item.Channels.ChannelsRequestBuilder Channels
         {
-            get => new Microsoft.Graph.Me.JoinedTeams.Item.Channels.ChannelsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.JoinedTeams.Item.Channels.ChannelsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the clone method.</summary>
-        public Microsoft.Graph.Me.JoinedTeams.Item.Clone.CloneRequestBuilder Clone
+        public global::Microsoft.Graph.Me.JoinedTeams.Item.Clone.CloneRequestBuilder Clone
         {
-            get => new Microsoft.Graph.Me.JoinedTeams.Item.Clone.CloneRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.JoinedTeams.Item.Clone.CloneRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the completeMigration method.</summary>
-        public Microsoft.Graph.Me.JoinedTeams.Item.CompleteMigration.CompleteMigrationRequestBuilder CompleteMigration
+        public global::Microsoft.Graph.Me.JoinedTeams.Item.CompleteMigration.CompleteMigrationRequestBuilder CompleteMigration
         {
-            get => new Microsoft.Graph.Me.JoinedTeams.Item.CompleteMigration.CompleteMigrationRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.JoinedTeams.Item.CompleteMigration.CompleteMigrationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the group property of the microsoft.graph.team entity.</summary>
-        public Microsoft.Graph.Me.JoinedTeams.Item.Group.GroupRequestBuilder Group
+        public global::Microsoft.Graph.Me.JoinedTeams.Item.Group.GroupRequestBuilder Group
         {
-            get => new Microsoft.Graph.Me.JoinedTeams.Item.Group.GroupRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.JoinedTeams.Item.Group.GroupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the incomingChannels property of the microsoft.graph.team entity.</summary>
-        public Microsoft.Graph.Me.JoinedTeams.Item.IncomingChannels.IncomingChannelsRequestBuilder IncomingChannels
+        public global::Microsoft.Graph.Me.JoinedTeams.Item.IncomingChannels.IncomingChannelsRequestBuilder IncomingChannels
         {
-            get => new Microsoft.Graph.Me.JoinedTeams.Item.IncomingChannels.IncomingChannelsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.JoinedTeams.Item.IncomingChannels.IncomingChannelsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the installedApps property of the microsoft.graph.team entity.</summary>
-        public Microsoft.Graph.Me.JoinedTeams.Item.InstalledApps.InstalledAppsRequestBuilder InstalledApps
+        public global::Microsoft.Graph.Me.JoinedTeams.Item.InstalledApps.InstalledAppsRequestBuilder InstalledApps
         {
-            get => new Microsoft.Graph.Me.JoinedTeams.Item.InstalledApps.InstalledAppsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.JoinedTeams.Item.InstalledApps.InstalledAppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the members property of the microsoft.graph.team entity.</summary>
-        public Microsoft.Graph.Me.JoinedTeams.Item.Members.MembersRequestBuilder Members
+        public global::Microsoft.Graph.Me.JoinedTeams.Item.Members.MembersRequestBuilder Members
         {
-            get => new Microsoft.Graph.Me.JoinedTeams.Item.Members.MembersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.JoinedTeams.Item.Members.MembersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the operations property of the microsoft.graph.team entity.</summary>
-        public Microsoft.Graph.Me.JoinedTeams.Item.Operations.OperationsRequestBuilder Operations
+        public global::Microsoft.Graph.Me.JoinedTeams.Item.Operations.OperationsRequestBuilder Operations
         {
-            get => new Microsoft.Graph.Me.JoinedTeams.Item.Operations.OperationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.JoinedTeams.Item.Operations.OperationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the permissionGrants property of the microsoft.graph.team entity.</summary>
-        public Microsoft.Graph.Me.JoinedTeams.Item.PermissionGrants.PermissionGrantsRequestBuilder PermissionGrants
+        public global::Microsoft.Graph.Me.JoinedTeams.Item.PermissionGrants.PermissionGrantsRequestBuilder PermissionGrants
         {
-            get => new Microsoft.Graph.Me.JoinedTeams.Item.PermissionGrants.PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.JoinedTeams.Item.PermissionGrants.PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the photo property of the microsoft.graph.team entity.</summary>
-        public Microsoft.Graph.Me.JoinedTeams.Item.Photo.PhotoRequestBuilder Photo
+        public global::Microsoft.Graph.Me.JoinedTeams.Item.Photo.PhotoRequestBuilder Photo
         {
-            get => new Microsoft.Graph.Me.JoinedTeams.Item.Photo.PhotoRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.JoinedTeams.Item.Photo.PhotoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the primaryChannel property of the microsoft.graph.team entity.</summary>
-        public Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.PrimaryChannelRequestBuilder PrimaryChannel
+        public global::Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.PrimaryChannelRequestBuilder PrimaryChannel
         {
-            get => new Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.PrimaryChannelRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.PrimaryChannelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the schedule property of the microsoft.graph.team entity.</summary>
-        public Microsoft.Graph.Me.JoinedTeams.Item.Schedule.ScheduleRequestBuilder Schedule
+        public global::Microsoft.Graph.Me.JoinedTeams.Item.Schedule.ScheduleRequestBuilder Schedule
         {
-            get => new Microsoft.Graph.Me.JoinedTeams.Item.Schedule.ScheduleRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.JoinedTeams.Item.Schedule.ScheduleRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sendActivityNotification method.</summary>
-        public Microsoft.Graph.Me.JoinedTeams.Item.SendActivityNotification.SendActivityNotificationRequestBuilder SendActivityNotification
+        public global::Microsoft.Graph.Me.JoinedTeams.Item.SendActivityNotification.SendActivityNotificationRequestBuilder SendActivityNotification
         {
-            get => new Microsoft.Graph.Me.JoinedTeams.Item.SendActivityNotification.SendActivityNotificationRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.JoinedTeams.Item.SendActivityNotification.SendActivityNotificationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tags property of the microsoft.graph.team entity.</summary>
-        public Microsoft.Graph.Me.JoinedTeams.Item.Tags.TagsRequestBuilder Tags
+        public global::Microsoft.Graph.Me.JoinedTeams.Item.Tags.TagsRequestBuilder Tags
         {
-            get => new Microsoft.Graph.Me.JoinedTeams.Item.Tags.TagsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.JoinedTeams.Item.Tags.TagsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the template property of the microsoft.graph.team entity.</summary>
-        public Microsoft.Graph.Me.JoinedTeams.Item.Template.TemplateRequestBuilder Template
+        public global::Microsoft.Graph.Me.JoinedTeams.Item.Template.TemplateRequestBuilder Template
         {
-            get => new Microsoft.Graph.Me.JoinedTeams.Item.Template.TemplateRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.JoinedTeams.Item.Template.TemplateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unarchive method.</summary>
-        public Microsoft.Graph.Me.JoinedTeams.Item.Unarchive.UnarchiveRequestBuilder Unarchive
+        public global::Microsoft.Graph.Me.JoinedTeams.Item.Unarchive.UnarchiveRequestBuilder Unarchive
         {
-            get => new Microsoft.Graph.Me.JoinedTeams.Item.Unarchive.UnarchiveRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.JoinedTeams.Item.Unarchive.UnarchiveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Me.JoinedTeams.Item.TeamItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Me.JoinedTeams.Item.TeamItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -133,7 +134,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Me.JoinedTeams.Item.TeamItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Me.JoinedTeams.Item.TeamItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -145,7 +146,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -158,57 +159,57 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get joinedTeams from me
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.Team"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.Team"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Team?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.JoinedTeams.Item.TeamItemRequestBuilder.TeamItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Team?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.JoinedTeams.Item.TeamItemRequestBuilder.TeamItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Team> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.JoinedTeams.Item.TeamItemRequestBuilder.TeamItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Team> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.JoinedTeams.Item.TeamItemRequestBuilder.TeamItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Team>(requestInfo, Microsoft.Graph.Models.Team.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Team>(requestInfo, global::Microsoft.Graph.Models.Team.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property joinedTeams in me
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.Team"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.Team"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Team?> PatchAsync(Microsoft.Graph.Models.Team body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Team?> PatchAsync(global::Microsoft.Graph.Models.Team body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Team> PatchAsync(Microsoft.Graph.Models.Team body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Team> PatchAsync(global::Microsoft.Graph.Models.Team body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Team>(requestInfo, Microsoft.Graph.Models.Team.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Team>(requestInfo, global::Microsoft.Graph.Models.Team.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property joinedTeams for me
@@ -236,11 +237,11 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.JoinedTeams.Item.TeamItemRequestBuilder.TeamItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Me.JoinedTeams.Item.TeamItemRequestBuilder.TeamItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.JoinedTeams.Item.TeamItemRequestBuilder.TeamItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Me.JoinedTeams.Item.TeamItemRequestBuilder.TeamItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -256,11 +257,11 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Team body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.Team body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Team body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.Team body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -273,23 +274,25 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Me.JoinedTeams.Item.TeamItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Me.JoinedTeams.Item.TeamItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Me.JoinedTeams.Item.TeamItemRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Me.JoinedTeams.Item.TeamItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Me.JoinedTeams.Item.TeamItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Me.JoinedTeams.Item.TeamItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TeamItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class TeamItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Get joinedTeams from me
         /// </summary>
-        public class TeamItemRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class TeamItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -316,14 +319,16 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TeamItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Me.JoinedTeams.Item.TeamItemRequestBuilder.TeamItemRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class TeamItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Me.JoinedTeams.Item.TeamItemRequestBuilder.TeamItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TeamItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class TeamItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

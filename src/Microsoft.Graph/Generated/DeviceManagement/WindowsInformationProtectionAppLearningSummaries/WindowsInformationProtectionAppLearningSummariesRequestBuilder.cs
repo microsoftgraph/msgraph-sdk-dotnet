@@ -3,11 +3,11 @@ using Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearningSu
 using Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.Item;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,27 +16,28 @@ namespace Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearni
     /// <summary>
     /// Provides operations to manage the windowsInformationProtectionAppLearningSummaries property of the microsoft.graph.deviceManagement entity.
     /// </summary>
-    public class WindowsInformationProtectionAppLearningSummariesRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class WindowsInformationProtectionAppLearningSummariesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windowsInformationProtectionAppLearningSummaries property of the microsoft.graph.deviceManagement entity.</summary>
         /// <param name="position">The unique identifier of windowsInformationProtectionAppLearningSummary</param>
-        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.Item.WindowsInformationProtectionAppLearningSummaryItemRequestBuilder"/></returns>
-        public Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.Item.WindowsInformationProtectionAppLearningSummaryItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.Item.WindowsInformationProtectionAppLearningSummaryItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.Item.WindowsInformationProtectionAppLearningSummaryItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("windowsInformationProtectionAppLearningSummary%2Did", position);
-                return new Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.Item.WindowsInformationProtectionAppLearningSummaryItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.Item.WindowsInformationProtectionAppLearningSummaryItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.WindowsInformationProtectionAppLearningSummariesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.WindowsInformationProtectionAppLearningSummariesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +45,7 @@ namespace Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearni
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.WindowsInformationProtectionAppLearningSummariesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.WindowsInformationProtectionAppLearningSummariesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,51 +56,51 @@ namespace Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearni
         /// List properties and relationships of the windowsInformationProtectionAppLearningSummary objects.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-wip-windowsinformationprotectionapplearningsummary-list?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.WindowsInformationProtectionAppLearningSummaryCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.WindowsInformationProtectionAppLearningSummaryCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.WindowsInformationProtectionAppLearningSummaryCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.WindowsInformationProtectionAppLearningSummariesRequestBuilder.WindowsInformationProtectionAppLearningSummariesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.WindowsInformationProtectionAppLearningSummaryCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.WindowsInformationProtectionAppLearningSummariesRequestBuilder.WindowsInformationProtectionAppLearningSummariesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.WindowsInformationProtectionAppLearningSummaryCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.WindowsInformationProtectionAppLearningSummariesRequestBuilder.WindowsInformationProtectionAppLearningSummariesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.WindowsInformationProtectionAppLearningSummaryCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.WindowsInformationProtectionAppLearningSummariesRequestBuilder.WindowsInformationProtectionAppLearningSummariesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.WindowsInformationProtectionAppLearningSummaryCollectionResponse>(requestInfo, Microsoft.Graph.Models.WindowsInformationProtectionAppLearningSummaryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.WindowsInformationProtectionAppLearningSummaryCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.WindowsInformationProtectionAppLearningSummaryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new windowsInformationProtectionAppLearningSummary object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-wip-windowsinformationprotectionapplearningsummary-create?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.WindowsInformationProtectionAppLearningSummary"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.WindowsInformationProtectionAppLearningSummary"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.WindowsInformationProtectionAppLearningSummary?> PostAsync(Microsoft.Graph.Models.WindowsInformationProtectionAppLearningSummary body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.WindowsInformationProtectionAppLearningSummary?> PostAsync(global::Microsoft.Graph.Models.WindowsInformationProtectionAppLearningSummary body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.WindowsInformationProtectionAppLearningSummary> PostAsync(Microsoft.Graph.Models.WindowsInformationProtectionAppLearningSummary body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.WindowsInformationProtectionAppLearningSummary> PostAsync(global::Microsoft.Graph.Models.WindowsInformationProtectionAppLearningSummary body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.WindowsInformationProtectionAppLearningSummary>(requestInfo, Microsoft.Graph.Models.WindowsInformationProtectionAppLearningSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.WindowsInformationProtectionAppLearningSummary>(requestInfo, global::Microsoft.Graph.Models.WindowsInformationProtectionAppLearningSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List properties and relationships of the windowsInformationProtectionAppLearningSummary objects.
@@ -108,11 +109,11 @@ namespace Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearni
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.WindowsInformationProtectionAppLearningSummariesRequestBuilder.WindowsInformationProtectionAppLearningSummariesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.WindowsInformationProtectionAppLearningSummariesRequestBuilder.WindowsInformationProtectionAppLearningSummariesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.WindowsInformationProtectionAppLearningSummariesRequestBuilder.WindowsInformationProtectionAppLearningSummariesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.WindowsInformationProtectionAppLearningSummariesRequestBuilder.WindowsInformationProtectionAppLearningSummariesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -128,11 +129,11 @@ namespace Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearni
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.WindowsInformationProtectionAppLearningSummary body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.WindowsInformationProtectionAppLearningSummary body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.WindowsInformationProtectionAppLearningSummary body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.WindowsInformationProtectionAppLearningSummary body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -145,16 +146,17 @@ namespace Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearni
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.WindowsInformationProtectionAppLearningSummariesRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.WindowsInformationProtectionAppLearningSummariesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.WindowsInformationProtectionAppLearningSummariesRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.WindowsInformationProtectionAppLearningSummariesRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.WindowsInformationProtectionAppLearningSummariesRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.WindowsInformationProtectionAppLearningSummariesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// List properties and relationships of the windowsInformationProtectionAppLearningSummary objects.
         /// </summary>
-        public class WindowsInformationProtectionAppLearningSummariesRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class WindowsInformationProtectionAppLearningSummariesRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -220,14 +222,16 @@ namespace Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearni
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class WindowsInformationProtectionAppLearningSummariesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.WindowsInformationProtectionAppLearningSummariesRequestBuilder.WindowsInformationProtectionAppLearningSummariesRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class WindowsInformationProtectionAppLearningSummariesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.DeviceManagement.WindowsInformationProtectionAppLearningSummaries.WindowsInformationProtectionAppLearningSummariesRequestBuilder.WindowsInformationProtectionAppLearningSummariesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class WindowsInformationProtectionAppLearningSummariesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class WindowsInformationProtectionAppLearningSummariesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

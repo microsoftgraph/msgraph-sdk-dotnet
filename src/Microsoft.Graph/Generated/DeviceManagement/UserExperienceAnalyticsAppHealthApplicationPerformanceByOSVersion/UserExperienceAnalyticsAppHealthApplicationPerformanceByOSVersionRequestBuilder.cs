@@ -3,11 +3,11 @@ using Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthApplicati
 using Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.Item;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,27 +16,28 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthAppli
     /// <summary>
     /// Provides operations to manage the userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion property of the microsoft.graph.deviceManagement entity.
     /// </summary>
-    public class UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion property of the microsoft.graph.deviceManagement entity.</summary>
         /// <param name="position">The unique identifier of userExperienceAnalyticsAppHealthAppPerformanceByOSVersion</param>
-        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.Item.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionItemRequestBuilder"/></returns>
-        public Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.Item.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.Item.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.Item.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("userExperienceAnalyticsAppHealthAppPerformanceByOSVersion%2Did", position);
-                return new Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.Item.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.Item.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +45,7 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthAppli
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +55,50 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthAppli
         /// <summary>
         /// User experience analytics appHealth Application Performance by OS Version
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilder.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilder.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilder.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilder.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionCollectionResponse>(requestInfo, Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion for deviceManagement
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion?> PostAsync(Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion?> PostAsync(global::Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion> PostAsync(Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion> PostAsync(global::Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion>(requestInfo, Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion>(requestInfo, global::Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// User experience analytics appHealth Application Performance by OS Version
@@ -106,11 +107,11 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthAppli
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilder.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilder.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilder.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilder.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +127,11 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthAppli
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,16 +144,17 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthAppli
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// User experience analytics appHealth Application Performance by OS Version
         /// </summary>
-        public class UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -218,14 +220,16 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthAppli
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilder.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilder.UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersionRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

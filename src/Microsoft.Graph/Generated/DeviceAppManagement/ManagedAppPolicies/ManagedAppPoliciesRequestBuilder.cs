@@ -3,11 +3,11 @@ using Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.Count;
 using Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.Item;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,27 +16,28 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies
     /// <summary>
     /// Provides operations to manage the managedAppPolicies property of the microsoft.graph.deviceAppManagement entity.
     /// </summary>
-    public class ManagedAppPoliciesRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class ManagedAppPoliciesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managedAppPolicies property of the microsoft.graph.deviceAppManagement entity.</summary>
         /// <param name="position">The unique identifier of managedAppPolicy</param>
-        /// <returns>A <see cref="Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.Item.ManagedAppPolicyItemRequestBuilder"/></returns>
-        public Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.Item.ManagedAppPolicyItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.Item.ManagedAppPolicyItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.Item.ManagedAppPolicyItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("managedAppPolicy%2Did", position);
-                return new Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.Item.ManagedAppPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.Item.ManagedAppPolicyItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.ManagedAppPoliciesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.ManagedAppPoliciesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +45,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.ManagedAppPoliciesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.ManagedAppPoliciesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -52,66 +53,66 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies
         {
         }
         /// <summary>
-        /// List properties and relationships of the windowsInformationProtection objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-windowsinformationprotection-list?view=graph-rest-1.0" />
+        /// List properties and relationships of the managedAppPolicy objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-managedapppolicy-list?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.ManagedAppPolicyCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.ManagedAppPolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.ManagedAppPolicyCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.ManagedAppPoliciesRequestBuilder.ManagedAppPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.ManagedAppPolicyCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.ManagedAppPoliciesRequestBuilder.ManagedAppPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.ManagedAppPolicyCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.ManagedAppPoliciesRequestBuilder.ManagedAppPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.ManagedAppPolicyCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.ManagedAppPoliciesRequestBuilder.ManagedAppPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ManagedAppPolicyCollectionResponse>(requestInfo, Microsoft.Graph.Models.ManagedAppPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ManagedAppPolicyCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.ManagedAppPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to managedAppPolicies for deviceAppManagement
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.ManagedAppPolicy"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.ManagedAppPolicy"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.ManagedAppPolicy?> PostAsync(Microsoft.Graph.Models.ManagedAppPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.ManagedAppPolicy?> PostAsync(global::Microsoft.Graph.Models.ManagedAppPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.ManagedAppPolicy> PostAsync(Microsoft.Graph.Models.ManagedAppPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.ManagedAppPolicy> PostAsync(global::Microsoft.Graph.Models.ManagedAppPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ManagedAppPolicy>(requestInfo, Microsoft.Graph.Models.ManagedAppPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ManagedAppPolicy>(requestInfo, global::Microsoft.Graph.Models.ManagedAppPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the windowsInformationProtection objects.
+        /// List properties and relationships of the managedAppPolicy objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.ManagedAppPoliciesRequestBuilder.ManagedAppPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.ManagedAppPoliciesRequestBuilder.ManagedAppPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.ManagedAppPoliciesRequestBuilder.ManagedAppPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.ManagedAppPoliciesRequestBuilder.ManagedAppPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -127,11 +128,11 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.ManagedAppPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.ManagedAppPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.ManagedAppPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.ManagedAppPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -144,16 +145,17 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.ManagedAppPoliciesRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.ManagedAppPoliciesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.ManagedAppPoliciesRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.ManagedAppPoliciesRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.ManagedAppPoliciesRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.ManagedAppPoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the windowsInformationProtection objects.
+        /// List properties and relationships of the managedAppPolicy objects.
         /// </summary>
-        public class ManagedAppPoliciesRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ManagedAppPoliciesRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -219,14 +221,16 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ManagedAppPoliciesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.ManagedAppPoliciesRequestBuilder.ManagedAppPoliciesRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ManagedAppPoliciesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.DeviceAppManagement.ManagedAppPolicies.ManagedAppPoliciesRequestBuilder.ManagedAppPoliciesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ManagedAppPoliciesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ManagedAppPoliciesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

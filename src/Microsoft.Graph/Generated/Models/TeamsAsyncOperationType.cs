@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models
 {
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     #pragma warning disable CS1591
     public enum TeamsAsyncOperationType
     #pragma warning restore CS1591
@@ -38,6 +39,14 @@ namespace Microsoft.Graph.Models
         [EnumMember(Value = "createChannel")]
         #pragma warning disable CS1591
         CreateChannel,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "archiveChannel")]
+        #pragma warning disable CS1591
+        ArchiveChannel,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "unarchiveChannel")]
+        #pragma warning disable CS1591
+        UnarchiveChannel,
         #pragma warning restore CS1591
     }
 }

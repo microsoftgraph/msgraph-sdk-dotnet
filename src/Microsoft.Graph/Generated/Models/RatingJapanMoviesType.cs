@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>Movies rating labels in Japan</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum RatingJapanMoviesType
     {
         /// <summary>Default value, allow all movies content</summary>

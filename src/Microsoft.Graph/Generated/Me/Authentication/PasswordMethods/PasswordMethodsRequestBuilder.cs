@@ -3,11 +3,11 @@ using Microsoft.Graph.Me.Authentication.PasswordMethods.Count;
 using Microsoft.Graph.Me.Authentication.PasswordMethods.Item;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,27 +16,28 @@ namespace Microsoft.Graph.Me.Authentication.PasswordMethods
     /// <summary>
     /// Provides operations to manage the passwordMethods property of the microsoft.graph.authentication entity.
     /// </summary>
-    public class PasswordMethodsRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class PasswordMethodsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Me.Authentication.PasswordMethods.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Me.Authentication.PasswordMethods.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Me.Authentication.PasswordMethods.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.Authentication.PasswordMethods.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the passwordMethods property of the microsoft.graph.authentication entity.</summary>
         /// <param name="position">The unique identifier of passwordAuthenticationMethod</param>
-        /// <returns>A <see cref="Microsoft.Graph.Me.Authentication.PasswordMethods.Item.PasswordAuthenticationMethodItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Me.Authentication.PasswordMethods.Item.PasswordAuthenticationMethodItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Me.Authentication.PasswordMethods.Item.PasswordAuthenticationMethodItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Me.Authentication.PasswordMethods.Item.PasswordAuthenticationMethodItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("passwordAuthenticationMethod%2Did", position);
-                return new Microsoft.Graph.Me.Authentication.PasswordMethods.Item.PasswordAuthenticationMethodItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Me.Authentication.PasswordMethods.Item.PasswordAuthenticationMethodItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Me.Authentication.PasswordMethods.PasswordMethodsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Me.Authentication.PasswordMethods.PasswordMethodsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +45,7 @@ namespace Microsoft.Graph.Me.Authentication.PasswordMethods
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Me.Authentication.PasswordMethods.PasswordMethodsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Me.Authentication.PasswordMethods.PasswordMethodsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -52,66 +53,66 @@ namespace Microsoft.Graph.Me.Authentication.PasswordMethods
         {
         }
         /// <summary>
-        /// Retrieve a list of the passwords registered to a user, represented by a passwordAuthenticationMethod object. This API returns exactly one object, as a user can have exactly one password. For security, the password itself will never be returned in the object and the password property is always null.
+        /// Retrieve a list of the passwords registered to a user, represented by a passwordAuthenticationMethod object. This API returns exactly one object referenced by ID 28c10230-6103-485e-b985-444c60001490, as a user can have exactly one password. For security, the password itself is never returned in the object and the password property is always null.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/authentication-list-passwordmethods?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.PasswordAuthenticationMethodCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.PasswordAuthenticationMethodCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.PasswordAuthenticationMethodCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.Authentication.PasswordMethods.PasswordMethodsRequestBuilder.PasswordMethodsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.PasswordAuthenticationMethodCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.Authentication.PasswordMethods.PasswordMethodsRequestBuilder.PasswordMethodsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.PasswordAuthenticationMethodCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.Authentication.PasswordMethods.PasswordMethodsRequestBuilder.PasswordMethodsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.PasswordAuthenticationMethodCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.Authentication.PasswordMethods.PasswordMethodsRequestBuilder.PasswordMethodsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.PasswordAuthenticationMethodCollectionResponse>(requestInfo, Microsoft.Graph.Models.PasswordAuthenticationMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.PasswordAuthenticationMethodCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.PasswordAuthenticationMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to passwordMethods for me
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.PasswordAuthenticationMethod"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.PasswordAuthenticationMethod"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.PasswordAuthenticationMethod?> PostAsync(Microsoft.Graph.Models.PasswordAuthenticationMethod body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.PasswordAuthenticationMethod?> PostAsync(global::Microsoft.Graph.Models.PasswordAuthenticationMethod body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.PasswordAuthenticationMethod> PostAsync(Microsoft.Graph.Models.PasswordAuthenticationMethod body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.PasswordAuthenticationMethod> PostAsync(global::Microsoft.Graph.Models.PasswordAuthenticationMethod body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.PasswordAuthenticationMethod>(requestInfo, Microsoft.Graph.Models.PasswordAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.PasswordAuthenticationMethod>(requestInfo, global::Microsoft.Graph.Models.PasswordAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of the passwords registered to a user, represented by a passwordAuthenticationMethod object. This API returns exactly one object, as a user can have exactly one password. For security, the password itself will never be returned in the object and the password property is always null.
+        /// Retrieve a list of the passwords registered to a user, represented by a passwordAuthenticationMethod object. This API returns exactly one object referenced by ID 28c10230-6103-485e-b985-444c60001490, as a user can have exactly one password. For security, the password itself is never returned in the object and the password property is always null.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.Authentication.PasswordMethods.PasswordMethodsRequestBuilder.PasswordMethodsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Me.Authentication.PasswordMethods.PasswordMethodsRequestBuilder.PasswordMethodsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.Authentication.PasswordMethods.PasswordMethodsRequestBuilder.PasswordMethodsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Me.Authentication.PasswordMethods.PasswordMethodsRequestBuilder.PasswordMethodsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -127,11 +128,11 @@ namespace Microsoft.Graph.Me.Authentication.PasswordMethods
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.PasswordAuthenticationMethod body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.PasswordAuthenticationMethod body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.PasswordAuthenticationMethod body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.PasswordAuthenticationMethod body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -144,16 +145,17 @@ namespace Microsoft.Graph.Me.Authentication.PasswordMethods
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Me.Authentication.PasswordMethods.PasswordMethodsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Me.Authentication.PasswordMethods.PasswordMethodsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Me.Authentication.PasswordMethods.PasswordMethodsRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Me.Authentication.PasswordMethods.PasswordMethodsRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Me.Authentication.PasswordMethods.PasswordMethodsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Me.Authentication.PasswordMethods.PasswordMethodsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of the passwords registered to a user, represented by a passwordAuthenticationMethod object. This API returns exactly one object, as a user can have exactly one password. For security, the password itself will never be returned in the object and the password property is always null.
+        /// Retrieve a list of the passwords registered to a user, represented by a passwordAuthenticationMethod object. This API returns exactly one object referenced by ID 28c10230-6103-485e-b985-444c60001490, as a user can have exactly one password. For security, the password itself is never returned in the object and the password property is always null.
         /// </summary>
-        public class PasswordMethodsRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class PasswordMethodsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -219,14 +221,16 @@ namespace Microsoft.Graph.Me.Authentication.PasswordMethods
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PasswordMethodsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Me.Authentication.PasswordMethods.PasswordMethodsRequestBuilder.PasswordMethodsRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class PasswordMethodsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Me.Authentication.PasswordMethods.PasswordMethodsRequestBuilder.PasswordMethodsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PasswordMethodsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class PasswordMethodsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

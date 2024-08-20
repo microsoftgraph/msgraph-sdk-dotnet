@@ -7,11 +7,11 @@ using Microsoft.Graph.DirectoryObjects.Item;
 using Microsoft.Graph.DirectoryObjects.ValidateProperties;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -20,47 +20,48 @@ namespace Microsoft.Graph.DirectoryObjects
     /// <summary>
     /// Provides operations to manage the collection of directoryObject entities.
     /// </summary>
-    public class DirectoryObjectsRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class DirectoryObjectsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.DirectoryObjects.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.DirectoryObjects.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.DirectoryObjects.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.DirectoryObjects.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the delta method.</summary>
-        public Microsoft.Graph.DirectoryObjects.Delta.DeltaRequestBuilder Delta
+        public global::Microsoft.Graph.DirectoryObjects.Delta.DeltaRequestBuilder Delta
         {
-            get => new Microsoft.Graph.DirectoryObjects.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.DirectoryObjects.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getAvailableExtensionProperties method.</summary>
-        public Microsoft.Graph.DirectoryObjects.GetAvailableExtensionProperties.GetAvailableExtensionPropertiesRequestBuilder GetAvailableExtensionProperties
+        public global::Microsoft.Graph.DirectoryObjects.GetAvailableExtensionProperties.GetAvailableExtensionPropertiesRequestBuilder GetAvailableExtensionProperties
         {
-            get => new Microsoft.Graph.DirectoryObjects.GetAvailableExtensionProperties.GetAvailableExtensionPropertiesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.DirectoryObjects.GetAvailableExtensionProperties.GetAvailableExtensionPropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getByIds method.</summary>
-        public Microsoft.Graph.DirectoryObjects.GetByIds.GetByIdsRequestBuilder GetByIds
+        public global::Microsoft.Graph.DirectoryObjects.GetByIds.GetByIdsRequestBuilder GetByIds
         {
-            get => new Microsoft.Graph.DirectoryObjects.GetByIds.GetByIdsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.DirectoryObjects.GetByIds.GetByIdsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the validateProperties method.</summary>
-        public Microsoft.Graph.DirectoryObjects.ValidateProperties.ValidatePropertiesRequestBuilder ValidateProperties
+        public global::Microsoft.Graph.DirectoryObjects.ValidateProperties.ValidatePropertiesRequestBuilder ValidateProperties
         {
-            get => new Microsoft.Graph.DirectoryObjects.ValidateProperties.ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.DirectoryObjects.ValidateProperties.ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of directoryObject entities.</summary>
         /// <param name="position">The unique identifier of directoryObject</param>
-        /// <returns>A <see cref="Microsoft.Graph.DirectoryObjects.Item.DirectoryObjectItemRequestBuilder"/></returns>
-        public Microsoft.Graph.DirectoryObjects.Item.DirectoryObjectItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.DirectoryObjects.Item.DirectoryObjectItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.DirectoryObjects.Item.DirectoryObjectItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("directoryObject%2Did", position);
-                return new Microsoft.Graph.DirectoryObjects.Item.DirectoryObjectItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.DirectoryObjects.Item.DirectoryObjectItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.DirectoryObjects.DirectoryObjectsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.DirectoryObjects.DirectoryObjectsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -68,7 +69,7 @@ namespace Microsoft.Graph.DirectoryObjects
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.DirectoryObjects.DirectoryObjectsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.DirectoryObjects.DirectoryObjectsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -78,50 +79,50 @@ namespace Microsoft.Graph.DirectoryObjects
         /// <summary>
         /// Get entities from directoryObjects
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.DirectoryObjectCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.DirectoryObjectCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DirectoryObjects.DirectoryObjectsRequestBuilder.DirectoryObjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.DirectoryObjectCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.DirectoryObjects.DirectoryObjectsRequestBuilder.DirectoryObjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.DirectoryObjectCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DirectoryObjects.DirectoryObjectsRequestBuilder.DirectoryObjectsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.DirectoryObjectCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.DirectoryObjects.DirectoryObjectsRequestBuilder.DirectoryObjectsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DirectoryObjectCollectionResponse>(requestInfo, Microsoft.Graph.Models.DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DirectoryObjectCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add new entity to directoryObjects
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.DirectoryObject"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.DirectoryObject"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.DirectoryObject?> PostAsync(Microsoft.Graph.Models.DirectoryObject body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.DirectoryObject?> PostAsync(global::Microsoft.Graph.Models.DirectoryObject body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.DirectoryObject> PostAsync(Microsoft.Graph.Models.DirectoryObject body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.DirectoryObject> PostAsync(global::Microsoft.Graph.Models.DirectoryObject body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DirectoryObject>(requestInfo, Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DirectoryObject>(requestInfo, global::Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get entities from directoryObjects
@@ -130,11 +131,11 @@ namespace Microsoft.Graph.DirectoryObjects
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DirectoryObjects.DirectoryObjectsRequestBuilder.DirectoryObjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.DirectoryObjects.DirectoryObjectsRequestBuilder.DirectoryObjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DirectoryObjects.DirectoryObjectsRequestBuilder.DirectoryObjectsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.DirectoryObjects.DirectoryObjectsRequestBuilder.DirectoryObjectsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -150,11 +151,11 @@ namespace Microsoft.Graph.DirectoryObjects
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.DirectoryObject body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.DirectoryObject body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.DirectoryObject body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.DirectoryObject body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -167,16 +168,17 @@ namespace Microsoft.Graph.DirectoryObjects
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.DirectoryObjects.DirectoryObjectsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.DirectoryObjects.DirectoryObjectsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.DirectoryObjects.DirectoryObjectsRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.DirectoryObjects.DirectoryObjectsRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.DirectoryObjects.DirectoryObjectsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.DirectoryObjects.DirectoryObjectsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get entities from directoryObjects
         /// </summary>
-        public class DirectoryObjectsRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class DirectoryObjectsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -242,14 +244,16 @@ namespace Microsoft.Graph.DirectoryObjects
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DirectoryObjectsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.DirectoryObjects.DirectoryObjectsRequestBuilder.DirectoryObjectsRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class DirectoryObjectsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.DirectoryObjects.DirectoryObjectsRequestBuilder.DirectoryObjectsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DirectoryObjectsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class DirectoryObjectsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

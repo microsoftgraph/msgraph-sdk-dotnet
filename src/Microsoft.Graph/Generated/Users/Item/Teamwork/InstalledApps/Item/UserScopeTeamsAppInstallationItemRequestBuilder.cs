@@ -4,11 +4,11 @@ using Microsoft.Graph.Models;
 using Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.Chat;
 using Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.TeamsApp;
 using Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.TeamsAppDefinition;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -17,25 +17,26 @@ namespace Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item
     /// <summary>
     /// Provides operations to manage the installedApps property of the microsoft.graph.userTeamwork entity.
     /// </summary>
-    public class UserScopeTeamsAppInstallationItemRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class UserScopeTeamsAppInstallationItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the chat property of the microsoft.graph.userScopeTeamsAppInstallation entity.</summary>
-        public Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.Chat.ChatRequestBuilder Chat
+        public global::Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.Chat.ChatRequestBuilder Chat
         {
-            get => new Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.Chat.ChatRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.Chat.ChatRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the teamsApp property of the microsoft.graph.teamsAppInstallation entity.</summary>
-        public Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.TeamsApp.TeamsAppRequestBuilder TeamsApp
+        public global::Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.TeamsApp.TeamsAppRequestBuilder TeamsApp
         {
-            get => new Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.TeamsApp.TeamsAppRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.TeamsApp.TeamsAppRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the teamsAppDefinition property of the microsoft.graph.teamsAppInstallation entity.</summary>
-        public Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.TeamsAppDefinition.TeamsAppDefinitionRequestBuilder TeamsAppDefinition
+        public global::Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.TeamsAppDefinition.TeamsAppDefinitionRequestBuilder TeamsAppDefinition
         {
-            get => new Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.TeamsAppDefinition.TeamsAppDefinitionRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.TeamsAppDefinition.TeamsAppDefinitionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.UserScopeTeamsAppInstallationItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.UserScopeTeamsAppInstallationItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -43,7 +44,7 @@ namespace Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.UserScopeTeamsAppInstallationItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.UserScopeTeamsAppInstallationItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -56,7 +57,7 @@ namespace Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -69,7 +70,7 @@ namespace Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -77,50 +78,50 @@ namespace Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item
         /// Retrieve the app installed in the personal scope of the specified user.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/userteamwork-get-installedapps?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.UserScopeTeamsAppInstallation"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.UserScopeTeamsAppInstallation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.UserScopeTeamsAppInstallation?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.UserScopeTeamsAppInstallationItemRequestBuilder.UserScopeTeamsAppInstallationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.UserScopeTeamsAppInstallation?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.UserScopeTeamsAppInstallationItemRequestBuilder.UserScopeTeamsAppInstallationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.UserScopeTeamsAppInstallation> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.UserScopeTeamsAppInstallationItemRequestBuilder.UserScopeTeamsAppInstallationItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.UserScopeTeamsAppInstallation> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.UserScopeTeamsAppInstallationItemRequestBuilder.UserScopeTeamsAppInstallationItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.UserScopeTeamsAppInstallation>(requestInfo, Microsoft.Graph.Models.UserScopeTeamsAppInstallation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.UserScopeTeamsAppInstallation>(requestInfo, global::Microsoft.Graph.Models.UserScopeTeamsAppInstallation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property installedApps in users
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.UserScopeTeamsAppInstallation"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.UserScopeTeamsAppInstallation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.UserScopeTeamsAppInstallation?> PatchAsync(Microsoft.Graph.Models.UserScopeTeamsAppInstallation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.UserScopeTeamsAppInstallation?> PatchAsync(global::Microsoft.Graph.Models.UserScopeTeamsAppInstallation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.UserScopeTeamsAppInstallation> PatchAsync(Microsoft.Graph.Models.UserScopeTeamsAppInstallation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.UserScopeTeamsAppInstallation> PatchAsync(global::Microsoft.Graph.Models.UserScopeTeamsAppInstallation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.UserScopeTeamsAppInstallation>(requestInfo, Microsoft.Graph.Models.UserScopeTeamsAppInstallation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.UserScopeTeamsAppInstallation>(requestInfo, global::Microsoft.Graph.Models.UserScopeTeamsAppInstallation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Uninstall an app from the personal scope of the specified user.
@@ -148,11 +149,11 @@ namespace Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.UserScopeTeamsAppInstallationItemRequestBuilder.UserScopeTeamsAppInstallationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.UserScopeTeamsAppInstallationItemRequestBuilder.UserScopeTeamsAppInstallationItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.UserScopeTeamsAppInstallationItemRequestBuilder.UserScopeTeamsAppInstallationItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.UserScopeTeamsAppInstallationItemRequestBuilder.UserScopeTeamsAppInstallationItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -168,11 +169,11 @@ namespace Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.UserScopeTeamsAppInstallation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.UserScopeTeamsAppInstallation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.UserScopeTeamsAppInstallation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.UserScopeTeamsAppInstallation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -185,23 +186,25 @@ namespace Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.UserScopeTeamsAppInstallationItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.UserScopeTeamsAppInstallationItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.UserScopeTeamsAppInstallationItemRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.UserScopeTeamsAppInstallationItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.UserScopeTeamsAppInstallationItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.UserScopeTeamsAppInstallationItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UserScopeTeamsAppInstallationItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class UserScopeTeamsAppInstallationItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Retrieve the app installed in the personal scope of the specified user.
         /// </summary>
-        public class UserScopeTeamsAppInstallationItemRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class UserScopeTeamsAppInstallationItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -228,14 +231,16 @@ namespace Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UserScopeTeamsAppInstallationItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.UserScopeTeamsAppInstallationItemRequestBuilder.UserScopeTeamsAppInstallationItemRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class UserScopeTeamsAppInstallationItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Users.Item.Teamwork.InstalledApps.Item.UserScopeTeamsAppInstallationItemRequestBuilder.UserScopeTeamsAppInstallationItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UserScopeTeamsAppInstallationItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class UserScopeTeamsAppInstallationItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

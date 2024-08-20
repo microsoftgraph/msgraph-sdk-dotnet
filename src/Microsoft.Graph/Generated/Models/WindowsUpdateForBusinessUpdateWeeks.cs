@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>Scheduled the update installation on the weeks of the month</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     [Flags]
     public enum WindowsUpdateForBusinessUpdateWeeks
     {

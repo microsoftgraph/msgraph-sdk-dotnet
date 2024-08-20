@@ -6,10 +6,10 @@ using Microsoft.Graph.Groups.Item.Members.Item.GraphOrgContact;
 using Microsoft.Graph.Groups.Item.Members.Item.GraphServicePrincipal;
 using Microsoft.Graph.Groups.Item.Members.Item.GraphUser;
 using Microsoft.Graph.Groups.Item.Members.Item.Ref;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System;
 namespace Microsoft.Graph.Groups.Item.Members.Item
@@ -17,45 +17,46 @@ namespace Microsoft.Graph.Groups.Item.Members.Item
     /// <summary>
     /// Builds and executes requests for operations under \groups\{group-id}\members\{directoryObject-id}
     /// </summary>
-    public class DirectoryObjectItemRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class DirectoryObjectItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Casts the previous resource to application.</summary>
-        public Microsoft.Graph.Groups.Item.Members.Item.GraphApplication.GraphApplicationRequestBuilder GraphApplication
+        public global::Microsoft.Graph.Groups.Item.Members.Item.GraphApplication.GraphApplicationRequestBuilder GraphApplication
         {
-            get => new Microsoft.Graph.Groups.Item.Members.Item.GraphApplication.GraphApplicationRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Members.Item.GraphApplication.GraphApplicationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to device.</summary>
-        public Microsoft.Graph.Groups.Item.Members.Item.GraphDevice.GraphDeviceRequestBuilder GraphDevice
+        public global::Microsoft.Graph.Groups.Item.Members.Item.GraphDevice.GraphDeviceRequestBuilder GraphDevice
         {
-            get => new Microsoft.Graph.Groups.Item.Members.Item.GraphDevice.GraphDeviceRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Members.Item.GraphDevice.GraphDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to group.</summary>
-        public Microsoft.Graph.Groups.Item.Members.Item.GraphGroup.GraphGroupRequestBuilder GraphGroup
+        public global::Microsoft.Graph.Groups.Item.Members.Item.GraphGroup.GraphGroupRequestBuilder GraphGroup
         {
-            get => new Microsoft.Graph.Groups.Item.Members.Item.GraphGroup.GraphGroupRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Members.Item.GraphGroup.GraphGroupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to orgContact.</summary>
-        public Microsoft.Graph.Groups.Item.Members.Item.GraphOrgContact.GraphOrgContactRequestBuilder GraphOrgContact
+        public global::Microsoft.Graph.Groups.Item.Members.Item.GraphOrgContact.GraphOrgContactRequestBuilder GraphOrgContact
         {
-            get => new Microsoft.Graph.Groups.Item.Members.Item.GraphOrgContact.GraphOrgContactRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Members.Item.GraphOrgContact.GraphOrgContactRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to servicePrincipal.</summary>
-        public Microsoft.Graph.Groups.Item.Members.Item.GraphServicePrincipal.GraphServicePrincipalRequestBuilder GraphServicePrincipal
+        public global::Microsoft.Graph.Groups.Item.Members.Item.GraphServicePrincipal.GraphServicePrincipalRequestBuilder GraphServicePrincipal
         {
-            get => new Microsoft.Graph.Groups.Item.Members.Item.GraphServicePrincipal.GraphServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Members.Item.GraphServicePrincipal.GraphServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to user.</summary>
-        public Microsoft.Graph.Groups.Item.Members.Item.GraphUser.GraphUserRequestBuilder GraphUser
+        public global::Microsoft.Graph.Groups.Item.Members.Item.GraphUser.GraphUserRequestBuilder GraphUser
         {
-            get => new Microsoft.Graph.Groups.Item.Members.Item.GraphUser.GraphUserRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Members.Item.GraphUser.GraphUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of group entities.</summary>
-        public Microsoft.Graph.Groups.Item.Members.Item.Ref.RefRequestBuilder Ref
+        public global::Microsoft.Graph.Groups.Item.Members.Item.Ref.RefRequestBuilder Ref
         {
-            get => new Microsoft.Graph.Groups.Item.Members.Item.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Members.Item.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Groups.Item.Members.Item.DirectoryObjectItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Groups.Item.Members.Item.DirectoryObjectItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -63,7 +64,7 @@ namespace Microsoft.Graph.Groups.Item.Members.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Groups.Item.Members.Item.DirectoryObjectItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Groups.Item.Members.Item.DirectoryObjectItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

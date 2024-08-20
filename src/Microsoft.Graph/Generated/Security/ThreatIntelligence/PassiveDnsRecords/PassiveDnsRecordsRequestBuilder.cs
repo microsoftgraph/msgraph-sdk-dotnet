@@ -3,11 +3,11 @@ using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models.Security;
 using Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords.Count;
 using Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords.Item;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,27 +16,28 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords
     /// <summary>
     /// Provides operations to manage the passiveDnsRecords property of the microsoft.graph.security.threatIntelligence entity.
     /// </summary>
-    public class PassiveDnsRecordsRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class PassiveDnsRecordsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the passiveDnsRecords property of the microsoft.graph.security.threatIntelligence entity.</summary>
         /// <param name="position">The unique identifier of passiveDnsRecord</param>
-        /// <returns>A <see cref="Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords.Item.PassiveDnsRecordItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords.Item.PassiveDnsRecordItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords.Item.PassiveDnsRecordItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords.Item.PassiveDnsRecordItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("passiveDnsRecord%2Did", position);
-                return new Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords.Item.PassiveDnsRecordItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords.Item.PassiveDnsRecordItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords.PassiveDnsRecordsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords.PassiveDnsRecordsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +45,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords.PassiveDnsRecordsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords.PassiveDnsRecordsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +55,50 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords
         /// <summary>
         /// Read the properties and relationships of a passiveDnsRecord object.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.Security.PassiveDnsRecordCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.Security.PassiveDnsRecordCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Security.PassiveDnsRecordCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords.PassiveDnsRecordsRequestBuilder.PassiveDnsRecordsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Security.PassiveDnsRecordCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords.PassiveDnsRecordsRequestBuilder.PassiveDnsRecordsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Security.PassiveDnsRecordCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords.PassiveDnsRecordsRequestBuilder.PassiveDnsRecordsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Security.PassiveDnsRecordCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords.PassiveDnsRecordsRequestBuilder.PassiveDnsRecordsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.PassiveDnsRecordCollectionResponse>(requestInfo, Microsoft.Graph.Models.Security.PassiveDnsRecordCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Security.PassiveDnsRecordCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.Security.PassiveDnsRecordCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to passiveDnsRecords for security
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.Security.PassiveDnsRecord"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.Security.PassiveDnsRecord"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Security.PassiveDnsRecord?> PostAsync(Microsoft.Graph.Models.Security.PassiveDnsRecord body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Security.PassiveDnsRecord?> PostAsync(global::Microsoft.Graph.Models.Security.PassiveDnsRecord body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Security.PassiveDnsRecord> PostAsync(Microsoft.Graph.Models.Security.PassiveDnsRecord body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Security.PassiveDnsRecord> PostAsync(global::Microsoft.Graph.Models.Security.PassiveDnsRecord body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.PassiveDnsRecord>(requestInfo, Microsoft.Graph.Models.Security.PassiveDnsRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Security.PassiveDnsRecord>(requestInfo, global::Microsoft.Graph.Models.Security.PassiveDnsRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read the properties and relationships of a passiveDnsRecord object.
@@ -106,11 +107,11 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords.PassiveDnsRecordsRequestBuilder.PassiveDnsRecordsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords.PassiveDnsRecordsRequestBuilder.PassiveDnsRecordsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords.PassiveDnsRecordsRequestBuilder.PassiveDnsRecordsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords.PassiveDnsRecordsRequestBuilder.PassiveDnsRecordsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +127,11 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.Security.PassiveDnsRecord body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.Security.PassiveDnsRecord body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.Security.PassiveDnsRecord body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.Security.PassiveDnsRecord body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,16 +144,17 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords.PassiveDnsRecordsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords.PassiveDnsRecordsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords.PassiveDnsRecordsRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords.PassiveDnsRecordsRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords.PassiveDnsRecordsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords.PassiveDnsRecordsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Read the properties and relationships of a passiveDnsRecord object.
         /// </summary>
-        public class PassiveDnsRecordsRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class PassiveDnsRecordsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -218,14 +220,16 @@ namespace Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PassiveDnsRecordsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords.PassiveDnsRecordsRequestBuilder.PassiveDnsRecordsRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class PassiveDnsRecordsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Security.ThreatIntelligence.PassiveDnsRecords.PassiveDnsRecordsRequestBuilder.PassiveDnsRecordsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PassiveDnsRecordsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class PassiveDnsRecordsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

@@ -2,10 +2,10 @@
 using Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item.MailboxSettings;
 using Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item.Ref;
 using Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item.ServiceProvisioningErrors;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System;
 namespace Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item
@@ -13,25 +13,26 @@ namespace Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item
     /// <summary>
     /// Builds and executes requests for operations under \print\shares\{printerShare-id}\allowedUsers\{user-id}
     /// </summary>
-    public class UserItemRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class UserItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The mailboxSettings property</summary>
-        public Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item.MailboxSettings.MailboxSettingsRequestBuilder MailboxSettings
+        public global::Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item.MailboxSettings.MailboxSettingsRequestBuilder MailboxSettings
         {
-            get => new Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item.MailboxSettings.MailboxSettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item.MailboxSettings.MailboxSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of print entities.</summary>
-        public Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item.Ref.RefRequestBuilder Ref
+        public global::Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item.Ref.RefRequestBuilder Ref
         {
-            get => new Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The serviceProvisioningErrors property</summary>
-        public Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder ServiceProvisioningErrors
+        public global::Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder ServiceProvisioningErrors
         {
-            get => new Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item.ServiceProvisioningErrors.ServiceProvisioningErrorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item.UserItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item.UserItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -39,7 +40,7 @@ namespace Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item.UserItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item.UserItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

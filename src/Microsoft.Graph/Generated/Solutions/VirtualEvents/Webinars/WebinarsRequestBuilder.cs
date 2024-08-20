@@ -5,11 +5,11 @@ using Microsoft.Graph.Solutions.VirtualEvents.Webinars.Count;
 using Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserIdAndRoleWithUserIdWithRole;
 using Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole;
 using Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -18,27 +18,28 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars
     /// <summary>
     /// Provides operations to manage the webinars property of the microsoft.graph.virtualEventsRoot entity.
     /// </summary>
-    public class WebinarsRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class WebinarsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Solutions.VirtualEvents.Webinars.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Solutions.VirtualEvents.Webinars.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Solutions.VirtualEvents.Webinars.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Solutions.VirtualEvents.Webinars.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the webinars property of the microsoft.graph.virtualEventsRoot entity.</summary>
         /// <param name="position">The unique identifier of virtualEventWebinar</param>
-        /// <returns>A <see cref="Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.VirtualEventWebinarItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.VirtualEventWebinarItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.VirtualEventWebinarItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.VirtualEventWebinarItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("virtualEventWebinar%2Did", position);
-                return new Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.VirtualEventWebinarItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.VirtualEventWebinarItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Solutions.VirtualEvents.Webinars.WebinarsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Solutions.VirtualEvents.Webinars.WebinarsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -46,7 +47,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Solutions.VirtualEvents.Webinars.WebinarsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Solutions.VirtualEvents.Webinars.WebinarsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -57,72 +58,73 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars
         /// Get the list of all virtualEventWebinar objects created in the tenant.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualeventsroot-list-webinars?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.VirtualEventWebinarCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.VirtualEventWebinarCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.VirtualEventWebinarCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Solutions.VirtualEvents.Webinars.WebinarsRequestBuilder.WebinarsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.VirtualEventWebinarCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Solutions.VirtualEvents.Webinars.WebinarsRequestBuilder.WebinarsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.VirtualEventWebinarCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Solutions.VirtualEvents.Webinars.WebinarsRequestBuilder.WebinarsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.VirtualEventWebinarCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Solutions.VirtualEvents.Webinars.WebinarsRequestBuilder.WebinarsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.VirtualEventWebinarCollectionResponse>(requestInfo, Microsoft.Graph.Models.VirtualEventWebinarCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.VirtualEventWebinarCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.VirtualEventWebinarCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to call the getByUserIdAndRole method.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder"/></returns>
         /// <param name="role">Usage: role=&apos;{role}&apos;</param>
         /// <param name="userId">Usage: userId=&apos;{userId}&apos;</param>
-        public Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder GetByUserIdAndRoleWithUserIdWithRole(string role, string userId)
+        public global::Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder GetByUserIdAndRoleWithUserIdWithRole(string role, string userId)
         {
             if(string.IsNullOrEmpty(role)) throw new ArgumentNullException(nameof(role));
             if(string.IsNullOrEmpty(userId)) throw new ArgumentNullException(nameof(userId));
-            return new Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder(PathParameters, RequestAdapter, role, userId);
+            return new global::Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder(PathParameters, RequestAdapter, role, userId);
         }
         /// <summary>
         /// Provides operations to call the getByUserRole method.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole.GetByUserRoleWithRoleRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole.GetByUserRoleWithRoleRequestBuilder"/></returns>
         /// <param name="role">Usage: role=&apos;{role}&apos;</param>
-        public Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole.GetByUserRoleWithRoleRequestBuilder GetByUserRoleWithRole(string role)
+        public global::Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole.GetByUserRoleWithRoleRequestBuilder GetByUserRoleWithRole(string role)
         {
             if(string.IsNullOrEmpty(role)) throw new ArgumentNullException(nameof(role));
-            return new Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole.GetByUserRoleWithRoleRequestBuilder(PathParameters, RequestAdapter, role);
+            return new global::Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole.GetByUserRoleWithRoleRequestBuilder(PathParameters, RequestAdapter, role);
         }
         /// <summary>
-        /// Create new navigation property to webinars for solutions
+        /// Create a new virtualEventWebinar object in draft mode.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualeventsroot-post-webinars?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.VirtualEventWebinar"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.VirtualEventWebinar"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.VirtualEventWebinar?> PostAsync(Microsoft.Graph.Models.VirtualEventWebinar body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.VirtualEventWebinar?> PostAsync(global::Microsoft.Graph.Models.VirtualEventWebinar body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.VirtualEventWebinar> PostAsync(Microsoft.Graph.Models.VirtualEventWebinar body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.VirtualEventWebinar> PostAsync(global::Microsoft.Graph.Models.VirtualEventWebinar body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.VirtualEventWebinar>(requestInfo, Microsoft.Graph.Models.VirtualEventWebinar.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.VirtualEventWebinar>(requestInfo, global::Microsoft.Graph.Models.VirtualEventWebinar.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the list of all virtualEventWebinar objects created in the tenant.
@@ -131,11 +133,11 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Solutions.VirtualEvents.Webinars.WebinarsRequestBuilder.WebinarsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Solutions.VirtualEvents.Webinars.WebinarsRequestBuilder.WebinarsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Solutions.VirtualEvents.Webinars.WebinarsRequestBuilder.WebinarsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Solutions.VirtualEvents.Webinars.WebinarsRequestBuilder.WebinarsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -144,18 +146,18 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to webinars for solutions
+        /// Create a new virtualEventWebinar object in draft mode.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.VirtualEventWebinar body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.VirtualEventWebinar body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.VirtualEventWebinar body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.VirtualEventWebinar body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -168,16 +170,17 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Solutions.VirtualEvents.Webinars.WebinarsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Solutions.VirtualEvents.Webinars.WebinarsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Solutions.VirtualEvents.Webinars.WebinarsRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Solutions.VirtualEvents.Webinars.WebinarsRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Solutions.VirtualEvents.Webinars.WebinarsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Solutions.VirtualEvents.Webinars.WebinarsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the list of all virtualEventWebinar objects created in the tenant.
         /// </summary>
-        public class WebinarsRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class WebinarsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -243,14 +246,16 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class WebinarsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Solutions.VirtualEvents.Webinars.WebinarsRequestBuilder.WebinarsRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class WebinarsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Solutions.VirtualEvents.Webinars.WebinarsRequestBuilder.WebinarsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class WebinarsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class WebinarsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

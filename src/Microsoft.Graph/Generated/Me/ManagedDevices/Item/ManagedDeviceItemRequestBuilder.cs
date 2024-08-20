@@ -25,11 +25,11 @@ using Microsoft.Graph.Me.ManagedDevices.Item.WindowsProtectionState;
 using Microsoft.Graph.Me.ManagedDevices.Item.Wipe;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -38,130 +38,131 @@ namespace Microsoft.Graph.Me.ManagedDevices.Item
     /// <summary>
     /// Provides operations to manage the managedDevices property of the microsoft.graph.user entity.
     /// </summary>
-    public class ManagedDeviceItemRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class ManagedDeviceItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the bypassActivationLock method.</summary>
-        public Microsoft.Graph.Me.ManagedDevices.Item.BypassActivationLock.BypassActivationLockRequestBuilder BypassActivationLock
+        public global::Microsoft.Graph.Me.ManagedDevices.Item.BypassActivationLock.BypassActivationLockRequestBuilder BypassActivationLock
         {
-            get => new Microsoft.Graph.Me.ManagedDevices.Item.BypassActivationLock.BypassActivationLockRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.ManagedDevices.Item.BypassActivationLock.BypassActivationLockRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the cleanWindowsDevice method.</summary>
-        public Microsoft.Graph.Me.ManagedDevices.Item.CleanWindowsDevice.CleanWindowsDeviceRequestBuilder CleanWindowsDevice
+        public global::Microsoft.Graph.Me.ManagedDevices.Item.CleanWindowsDevice.CleanWindowsDeviceRequestBuilder CleanWindowsDevice
         {
-            get => new Microsoft.Graph.Me.ManagedDevices.Item.CleanWindowsDevice.CleanWindowsDeviceRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.ManagedDevices.Item.CleanWindowsDevice.CleanWindowsDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the deleteUserFromSharedAppleDevice method.</summary>
-        public Microsoft.Graph.Me.ManagedDevices.Item.DeleteUserFromSharedAppleDevice.DeleteUserFromSharedAppleDeviceRequestBuilder DeleteUserFromSharedAppleDevice
+        public global::Microsoft.Graph.Me.ManagedDevices.Item.DeleteUserFromSharedAppleDevice.DeleteUserFromSharedAppleDeviceRequestBuilder DeleteUserFromSharedAppleDevice
         {
-            get => new Microsoft.Graph.Me.ManagedDevices.Item.DeleteUserFromSharedAppleDevice.DeleteUserFromSharedAppleDeviceRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.ManagedDevices.Item.DeleteUserFromSharedAppleDevice.DeleteUserFromSharedAppleDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceCategory property of the microsoft.graph.managedDevice entity.</summary>
-        public Microsoft.Graph.Me.ManagedDevices.Item.DeviceCategory.DeviceCategoryRequestBuilder DeviceCategory
+        public global::Microsoft.Graph.Me.ManagedDevices.Item.DeviceCategory.DeviceCategoryRequestBuilder DeviceCategory
         {
-            get => new Microsoft.Graph.Me.ManagedDevices.Item.DeviceCategory.DeviceCategoryRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.ManagedDevices.Item.DeviceCategory.DeviceCategoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceCompliancePolicyStates property of the microsoft.graph.managedDevice entity.</summary>
-        public Microsoft.Graph.Me.ManagedDevices.Item.DeviceCompliancePolicyStates.DeviceCompliancePolicyStatesRequestBuilder DeviceCompliancePolicyStates
+        public global::Microsoft.Graph.Me.ManagedDevices.Item.DeviceCompliancePolicyStates.DeviceCompliancePolicyStatesRequestBuilder DeviceCompliancePolicyStates
         {
-            get => new Microsoft.Graph.Me.ManagedDevices.Item.DeviceCompliancePolicyStates.DeviceCompliancePolicyStatesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.ManagedDevices.Item.DeviceCompliancePolicyStates.DeviceCompliancePolicyStatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceConfigurationStates property of the microsoft.graph.managedDevice entity.</summary>
-        public Microsoft.Graph.Me.ManagedDevices.Item.DeviceConfigurationStates.DeviceConfigurationStatesRequestBuilder DeviceConfigurationStates
+        public global::Microsoft.Graph.Me.ManagedDevices.Item.DeviceConfigurationStates.DeviceConfigurationStatesRequestBuilder DeviceConfigurationStates
         {
-            get => new Microsoft.Graph.Me.ManagedDevices.Item.DeviceConfigurationStates.DeviceConfigurationStatesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.ManagedDevices.Item.DeviceConfigurationStates.DeviceConfigurationStatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the disableLostMode method.</summary>
-        public Microsoft.Graph.Me.ManagedDevices.Item.DisableLostMode.DisableLostModeRequestBuilder DisableLostMode
+        public global::Microsoft.Graph.Me.ManagedDevices.Item.DisableLostMode.DisableLostModeRequestBuilder DisableLostMode
         {
-            get => new Microsoft.Graph.Me.ManagedDevices.Item.DisableLostMode.DisableLostModeRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.ManagedDevices.Item.DisableLostMode.DisableLostModeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the locateDevice method.</summary>
-        public Microsoft.Graph.Me.ManagedDevices.Item.LocateDevice.LocateDeviceRequestBuilder LocateDevice
+        public global::Microsoft.Graph.Me.ManagedDevices.Item.LocateDevice.LocateDeviceRequestBuilder LocateDevice
         {
-            get => new Microsoft.Graph.Me.ManagedDevices.Item.LocateDevice.LocateDeviceRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.ManagedDevices.Item.LocateDevice.LocateDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the logCollectionRequests property of the microsoft.graph.managedDevice entity.</summary>
-        public Microsoft.Graph.Me.ManagedDevices.Item.LogCollectionRequests.LogCollectionRequestsRequestBuilder LogCollectionRequests
+        public global::Microsoft.Graph.Me.ManagedDevices.Item.LogCollectionRequests.LogCollectionRequestsRequestBuilder LogCollectionRequests
         {
-            get => new Microsoft.Graph.Me.ManagedDevices.Item.LogCollectionRequests.LogCollectionRequestsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.ManagedDevices.Item.LogCollectionRequests.LogCollectionRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the logoutSharedAppleDeviceActiveUser method.</summary>
-        public Microsoft.Graph.Me.ManagedDevices.Item.LogoutSharedAppleDeviceActiveUser.LogoutSharedAppleDeviceActiveUserRequestBuilder LogoutSharedAppleDeviceActiveUser
+        public global::Microsoft.Graph.Me.ManagedDevices.Item.LogoutSharedAppleDeviceActiveUser.LogoutSharedAppleDeviceActiveUserRequestBuilder LogoutSharedAppleDeviceActiveUser
         {
-            get => new Microsoft.Graph.Me.ManagedDevices.Item.LogoutSharedAppleDeviceActiveUser.LogoutSharedAppleDeviceActiveUserRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.ManagedDevices.Item.LogoutSharedAppleDeviceActiveUser.LogoutSharedAppleDeviceActiveUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the rebootNow method.</summary>
-        public Microsoft.Graph.Me.ManagedDevices.Item.RebootNow.RebootNowRequestBuilder RebootNow
+        public global::Microsoft.Graph.Me.ManagedDevices.Item.RebootNow.RebootNowRequestBuilder RebootNow
         {
-            get => new Microsoft.Graph.Me.ManagedDevices.Item.RebootNow.RebootNowRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.ManagedDevices.Item.RebootNow.RebootNowRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the recoverPasscode method.</summary>
-        public Microsoft.Graph.Me.ManagedDevices.Item.RecoverPasscode.RecoverPasscodeRequestBuilder RecoverPasscode
+        public global::Microsoft.Graph.Me.ManagedDevices.Item.RecoverPasscode.RecoverPasscodeRequestBuilder RecoverPasscode
         {
-            get => new Microsoft.Graph.Me.ManagedDevices.Item.RecoverPasscode.RecoverPasscodeRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.ManagedDevices.Item.RecoverPasscode.RecoverPasscodeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the remoteLock method.</summary>
-        public Microsoft.Graph.Me.ManagedDevices.Item.RemoteLock.RemoteLockRequestBuilder RemoteLock
+        public global::Microsoft.Graph.Me.ManagedDevices.Item.RemoteLock.RemoteLockRequestBuilder RemoteLock
         {
-            get => new Microsoft.Graph.Me.ManagedDevices.Item.RemoteLock.RemoteLockRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.ManagedDevices.Item.RemoteLock.RemoteLockRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the requestRemoteAssistance method.</summary>
-        public Microsoft.Graph.Me.ManagedDevices.Item.RequestRemoteAssistance.RequestRemoteAssistanceRequestBuilder RequestRemoteAssistance
+        public global::Microsoft.Graph.Me.ManagedDevices.Item.RequestRemoteAssistance.RequestRemoteAssistanceRequestBuilder RequestRemoteAssistance
         {
-            get => new Microsoft.Graph.Me.ManagedDevices.Item.RequestRemoteAssistance.RequestRemoteAssistanceRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.ManagedDevices.Item.RequestRemoteAssistance.RequestRemoteAssistanceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the resetPasscode method.</summary>
-        public Microsoft.Graph.Me.ManagedDevices.Item.ResetPasscode.ResetPasscodeRequestBuilder ResetPasscode
+        public global::Microsoft.Graph.Me.ManagedDevices.Item.ResetPasscode.ResetPasscodeRequestBuilder ResetPasscode
         {
-            get => new Microsoft.Graph.Me.ManagedDevices.Item.ResetPasscode.ResetPasscodeRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.ManagedDevices.Item.ResetPasscode.ResetPasscodeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retire method.</summary>
-        public Microsoft.Graph.Me.ManagedDevices.Item.Retire.RetireRequestBuilder Retire
+        public global::Microsoft.Graph.Me.ManagedDevices.Item.Retire.RetireRequestBuilder Retire
         {
-            get => new Microsoft.Graph.Me.ManagedDevices.Item.Retire.RetireRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.ManagedDevices.Item.Retire.RetireRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the shutDown method.</summary>
-        public Microsoft.Graph.Me.ManagedDevices.Item.ShutDown.ShutDownRequestBuilder ShutDown
+        public global::Microsoft.Graph.Me.ManagedDevices.Item.ShutDown.ShutDownRequestBuilder ShutDown
         {
-            get => new Microsoft.Graph.Me.ManagedDevices.Item.ShutDown.ShutDownRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.ManagedDevices.Item.ShutDown.ShutDownRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the syncDevice method.</summary>
-        public Microsoft.Graph.Me.ManagedDevices.Item.SyncDevice.SyncDeviceRequestBuilder SyncDevice
+        public global::Microsoft.Graph.Me.ManagedDevices.Item.SyncDevice.SyncDeviceRequestBuilder SyncDevice
         {
-            get => new Microsoft.Graph.Me.ManagedDevices.Item.SyncDevice.SyncDeviceRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.ManagedDevices.Item.SyncDevice.SyncDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the updateWindowsDeviceAccount method.</summary>
-        public Microsoft.Graph.Me.ManagedDevices.Item.UpdateWindowsDeviceAccount.UpdateWindowsDeviceAccountRequestBuilder UpdateWindowsDeviceAccount
+        public global::Microsoft.Graph.Me.ManagedDevices.Item.UpdateWindowsDeviceAccount.UpdateWindowsDeviceAccountRequestBuilder UpdateWindowsDeviceAccount
         {
-            get => new Microsoft.Graph.Me.ManagedDevices.Item.UpdateWindowsDeviceAccount.UpdateWindowsDeviceAccountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.ManagedDevices.Item.UpdateWindowsDeviceAccount.UpdateWindowsDeviceAccountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the users property of the microsoft.graph.managedDevice entity.</summary>
-        public Microsoft.Graph.Me.ManagedDevices.Item.Users.UsersRequestBuilder Users
+        public global::Microsoft.Graph.Me.ManagedDevices.Item.Users.UsersRequestBuilder Users
         {
-            get => new Microsoft.Graph.Me.ManagedDevices.Item.Users.UsersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.ManagedDevices.Item.Users.UsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the windowsDefenderScan method.</summary>
-        public Microsoft.Graph.Me.ManagedDevices.Item.WindowsDefenderScan.WindowsDefenderScanRequestBuilder WindowsDefenderScan
+        public global::Microsoft.Graph.Me.ManagedDevices.Item.WindowsDefenderScan.WindowsDefenderScanRequestBuilder WindowsDefenderScan
         {
-            get => new Microsoft.Graph.Me.ManagedDevices.Item.WindowsDefenderScan.WindowsDefenderScanRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.ManagedDevices.Item.WindowsDefenderScan.WindowsDefenderScanRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the windowsDefenderUpdateSignatures method.</summary>
-        public Microsoft.Graph.Me.ManagedDevices.Item.WindowsDefenderUpdateSignatures.WindowsDefenderUpdateSignaturesRequestBuilder WindowsDefenderUpdateSignatures
+        public global::Microsoft.Graph.Me.ManagedDevices.Item.WindowsDefenderUpdateSignatures.WindowsDefenderUpdateSignaturesRequestBuilder WindowsDefenderUpdateSignatures
         {
-            get => new Microsoft.Graph.Me.ManagedDevices.Item.WindowsDefenderUpdateSignatures.WindowsDefenderUpdateSignaturesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.ManagedDevices.Item.WindowsDefenderUpdateSignatures.WindowsDefenderUpdateSignaturesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the windowsProtectionState property of the microsoft.graph.managedDevice entity.</summary>
-        public Microsoft.Graph.Me.ManagedDevices.Item.WindowsProtectionState.WindowsProtectionStateRequestBuilder WindowsProtectionState
+        public global::Microsoft.Graph.Me.ManagedDevices.Item.WindowsProtectionState.WindowsProtectionStateRequestBuilder WindowsProtectionState
         {
-            get => new Microsoft.Graph.Me.ManagedDevices.Item.WindowsProtectionState.WindowsProtectionStateRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.ManagedDevices.Item.WindowsProtectionState.WindowsProtectionStateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the wipe method.</summary>
-        public Microsoft.Graph.Me.ManagedDevices.Item.Wipe.WipeRequestBuilder Wipe
+        public global::Microsoft.Graph.Me.ManagedDevices.Item.Wipe.WipeRequestBuilder Wipe
         {
-            get => new Microsoft.Graph.Me.ManagedDevices.Item.Wipe.WipeRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.ManagedDevices.Item.Wipe.WipeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Me.ManagedDevices.Item.ManagedDeviceItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Me.ManagedDevices.Item.ManagedDeviceItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -169,7 +170,7 @@ namespace Microsoft.Graph.Me.ManagedDevices.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Me.ManagedDevices.Item.ManagedDeviceItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Me.ManagedDevices.Item.ManagedDeviceItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -181,7 +182,7 @@ namespace Microsoft.Graph.Me.ManagedDevices.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -194,57 +195,57 @@ namespace Microsoft.Graph.Me.ManagedDevices.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The managed devices associated with the user.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.ManagedDevice"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.ManagedDevice"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.ManagedDevice?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.ManagedDevices.Item.ManagedDeviceItemRequestBuilder.ManagedDeviceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.ManagedDevice?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.ManagedDevices.Item.ManagedDeviceItemRequestBuilder.ManagedDeviceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.ManagedDevice> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.ManagedDevices.Item.ManagedDeviceItemRequestBuilder.ManagedDeviceItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.ManagedDevice> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.ManagedDevices.Item.ManagedDeviceItemRequestBuilder.ManagedDeviceItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ManagedDevice>(requestInfo, Microsoft.Graph.Models.ManagedDevice.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ManagedDevice>(requestInfo, global::Microsoft.Graph.Models.ManagedDevice.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property managedDevices in me
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.ManagedDevice"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.ManagedDevice"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.ManagedDevice?> PatchAsync(Microsoft.Graph.Models.ManagedDevice body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.ManagedDevice?> PatchAsync(global::Microsoft.Graph.Models.ManagedDevice body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.ManagedDevice> PatchAsync(Microsoft.Graph.Models.ManagedDevice body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.ManagedDevice> PatchAsync(global::Microsoft.Graph.Models.ManagedDevice body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ManagedDevice>(requestInfo, Microsoft.Graph.Models.ManagedDevice.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ManagedDevice>(requestInfo, global::Microsoft.Graph.Models.ManagedDevice.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property managedDevices for me
@@ -272,11 +273,11 @@ namespace Microsoft.Graph.Me.ManagedDevices.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.ManagedDevices.Item.ManagedDeviceItemRequestBuilder.ManagedDeviceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Me.ManagedDevices.Item.ManagedDeviceItemRequestBuilder.ManagedDeviceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.ManagedDevices.Item.ManagedDeviceItemRequestBuilder.ManagedDeviceItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Me.ManagedDevices.Item.ManagedDeviceItemRequestBuilder.ManagedDeviceItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -292,11 +293,11 @@ namespace Microsoft.Graph.Me.ManagedDevices.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.ManagedDevice body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.ManagedDevice body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.ManagedDevice body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.ManagedDevice body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -309,23 +310,25 @@ namespace Microsoft.Graph.Me.ManagedDevices.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Me.ManagedDevices.Item.ManagedDeviceItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Me.ManagedDevices.Item.ManagedDeviceItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Me.ManagedDevices.Item.ManagedDeviceItemRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Me.ManagedDevices.Item.ManagedDeviceItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Me.ManagedDevices.Item.ManagedDeviceItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Me.ManagedDevices.Item.ManagedDeviceItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ManagedDeviceItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ManagedDeviceItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// The managed devices associated with the user.
         /// </summary>
-        public class ManagedDeviceItemRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ManagedDeviceItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -352,14 +355,16 @@ namespace Microsoft.Graph.Me.ManagedDevices.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ManagedDeviceItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Me.ManagedDevices.Item.ManagedDeviceItemRequestBuilder.ManagedDeviceItemRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ManagedDeviceItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Me.ManagedDevices.Item.ManagedDeviceItemRequestBuilder.ManagedDeviceItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ManagedDeviceItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ManagedDeviceItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

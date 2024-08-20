@@ -2,11 +2,11 @@
 using Microsoft.Graph.Me.Chats.Item.PinnedMessages.Item.Message;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -15,15 +15,16 @@ namespace Microsoft.Graph.Me.Chats.Item.PinnedMessages.Item
     /// <summary>
     /// Provides operations to manage the pinnedMessages property of the microsoft.graph.chat entity.
     /// </summary>
-    public class PinnedChatMessageInfoItemRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class PinnedChatMessageInfoItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the message property of the microsoft.graph.pinnedChatMessageInfo entity.</summary>
-        public Microsoft.Graph.Me.Chats.Item.PinnedMessages.Item.Message.MessageRequestBuilder Message
+        public global::Microsoft.Graph.Me.Chats.Item.PinnedMessages.Item.Message.MessageRequestBuilder Message
         {
-            get => new Microsoft.Graph.Me.Chats.Item.PinnedMessages.Item.Message.MessageRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.Chats.Item.PinnedMessages.Item.Message.MessageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Me.Chats.Item.PinnedMessages.Item.PinnedChatMessageInfoItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Me.Chats.Item.PinnedMessages.Item.PinnedChatMessageInfoItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,7 +32,7 @@ namespace Microsoft.Graph.Me.Chats.Item.PinnedMessages.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Me.Chats.Item.PinnedMessages.Item.PinnedChatMessageInfoItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Me.Chats.Item.PinnedMessages.Item.PinnedChatMessageInfoItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -43,7 +44,7 @@ namespace Microsoft.Graph.Me.Chats.Item.PinnedMessages.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -56,57 +57,57 @@ namespace Microsoft.Graph.Me.Chats.Item.PinnedMessages.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// A collection of all the pinned messages in the chat. Nullable.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.PinnedChatMessageInfo"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.PinnedChatMessageInfo"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.PinnedChatMessageInfo?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.Chats.Item.PinnedMessages.Item.PinnedChatMessageInfoItemRequestBuilder.PinnedChatMessageInfoItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.PinnedChatMessageInfo?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.Chats.Item.PinnedMessages.Item.PinnedChatMessageInfoItemRequestBuilder.PinnedChatMessageInfoItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.PinnedChatMessageInfo> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.Chats.Item.PinnedMessages.Item.PinnedChatMessageInfoItemRequestBuilder.PinnedChatMessageInfoItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.PinnedChatMessageInfo> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.Chats.Item.PinnedMessages.Item.PinnedChatMessageInfoItemRequestBuilder.PinnedChatMessageInfoItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.PinnedChatMessageInfo>(requestInfo, Microsoft.Graph.Models.PinnedChatMessageInfo.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.PinnedChatMessageInfo>(requestInfo, global::Microsoft.Graph.Models.PinnedChatMessageInfo.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property pinnedMessages in me
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.PinnedChatMessageInfo"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.PinnedChatMessageInfo"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.PinnedChatMessageInfo?> PatchAsync(Microsoft.Graph.Models.PinnedChatMessageInfo body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.PinnedChatMessageInfo?> PatchAsync(global::Microsoft.Graph.Models.PinnedChatMessageInfo body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.PinnedChatMessageInfo> PatchAsync(Microsoft.Graph.Models.PinnedChatMessageInfo body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.PinnedChatMessageInfo> PatchAsync(global::Microsoft.Graph.Models.PinnedChatMessageInfo body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.PinnedChatMessageInfo>(requestInfo, Microsoft.Graph.Models.PinnedChatMessageInfo.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.PinnedChatMessageInfo>(requestInfo, global::Microsoft.Graph.Models.PinnedChatMessageInfo.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property pinnedMessages for me
@@ -134,11 +135,11 @@ namespace Microsoft.Graph.Me.Chats.Item.PinnedMessages.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.Chats.Item.PinnedMessages.Item.PinnedChatMessageInfoItemRequestBuilder.PinnedChatMessageInfoItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Me.Chats.Item.PinnedMessages.Item.PinnedChatMessageInfoItemRequestBuilder.PinnedChatMessageInfoItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.Chats.Item.PinnedMessages.Item.PinnedChatMessageInfoItemRequestBuilder.PinnedChatMessageInfoItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Me.Chats.Item.PinnedMessages.Item.PinnedChatMessageInfoItemRequestBuilder.PinnedChatMessageInfoItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -154,11 +155,11 @@ namespace Microsoft.Graph.Me.Chats.Item.PinnedMessages.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.PinnedChatMessageInfo body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.PinnedChatMessageInfo body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.PinnedChatMessageInfo body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.PinnedChatMessageInfo body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -171,23 +172,25 @@ namespace Microsoft.Graph.Me.Chats.Item.PinnedMessages.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Me.Chats.Item.PinnedMessages.Item.PinnedChatMessageInfoItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Me.Chats.Item.PinnedMessages.Item.PinnedChatMessageInfoItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Me.Chats.Item.PinnedMessages.Item.PinnedChatMessageInfoItemRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Me.Chats.Item.PinnedMessages.Item.PinnedChatMessageInfoItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Me.Chats.Item.PinnedMessages.Item.PinnedChatMessageInfoItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Me.Chats.Item.PinnedMessages.Item.PinnedChatMessageInfoItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PinnedChatMessageInfoItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class PinnedChatMessageInfoItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// A collection of all the pinned messages in the chat. Nullable.
         /// </summary>
-        public class PinnedChatMessageInfoItemRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class PinnedChatMessageInfoItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -214,14 +217,16 @@ namespace Microsoft.Graph.Me.Chats.Item.PinnedMessages.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PinnedChatMessageInfoItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Me.Chats.Item.PinnedMessages.Item.PinnedChatMessageInfoItemRequestBuilder.PinnedChatMessageInfoItemRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class PinnedChatMessageInfoItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Me.Chats.Item.PinnedMessages.Item.PinnedChatMessageInfoItemRequestBuilder.PinnedChatMessageInfoItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PinnedChatMessageInfoItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class PinnedChatMessageInfoItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

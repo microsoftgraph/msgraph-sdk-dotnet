@@ -3,11 +3,11 @@ using Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.Count;
 using Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.Item;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,27 +16,28 @@ namespace Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks
     /// <summary>
     /// Provides operations to manage the tasks property of the microsoft.graph.plannerBucket entity.
     /// </summary>
-    public class TasksRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class TasksRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tasks property of the microsoft.graph.plannerBucket entity.</summary>
         /// <param name="position">The unique identifier of plannerTask</param>
-        /// <returns>A <see cref="Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.Item.PlannerTaskItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.Item.PlannerTaskItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.Item.PlannerTaskItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.Item.PlannerTaskItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("plannerTask%2Did", position);
-                return new Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.Item.PlannerTaskItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.Item.PlannerTaskItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.TasksRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.TasksRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +45,7 @@ namespace Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.TasksRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.TasksRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +55,50 @@ namespace Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks
         /// <summary>
         /// Read-only. Nullable. The collection of tasks in the bucket.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.PlannerTaskCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.PlannerTaskCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.PlannerTaskCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.TasksRequestBuilder.TasksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.PlannerTaskCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.TasksRequestBuilder.TasksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.PlannerTaskCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.TasksRequestBuilder.TasksRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.PlannerTaskCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.TasksRequestBuilder.TasksRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.PlannerTaskCollectionResponse>(requestInfo, Microsoft.Graph.Models.PlannerTaskCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.PlannerTaskCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.PlannerTaskCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to tasks for me
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.PlannerTask"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.PlannerTask"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.PlannerTask?> PostAsync(Microsoft.Graph.Models.PlannerTask body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.PlannerTask?> PostAsync(global::Microsoft.Graph.Models.PlannerTask body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.PlannerTask> PostAsync(Microsoft.Graph.Models.PlannerTask body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.PlannerTask> PostAsync(global::Microsoft.Graph.Models.PlannerTask body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.PlannerTask>(requestInfo, Microsoft.Graph.Models.PlannerTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.PlannerTask>(requestInfo, global::Microsoft.Graph.Models.PlannerTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read-only. Nullable. The collection of tasks in the bucket.
@@ -106,11 +107,11 @@ namespace Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.TasksRequestBuilder.TasksRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.TasksRequestBuilder.TasksRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.TasksRequestBuilder.TasksRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.TasksRequestBuilder.TasksRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +127,11 @@ namespace Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.PlannerTask body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.PlannerTask body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.PlannerTask body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.PlannerTask body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,16 +144,17 @@ namespace Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.TasksRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.TasksRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.TasksRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.TasksRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.TasksRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.TasksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Read-only. Nullable. The collection of tasks in the bucket.
         /// </summary>
-        public class TasksRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class TasksRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -218,14 +220,16 @@ namespace Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TasksRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.TasksRequestBuilder.TasksRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class TasksRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Me.Planner.Plans.Item.Buckets.Item.Tasks.TasksRequestBuilder.TasksRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TasksRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class TasksRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

@@ -3,11 +3,11 @@ using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Teams.Item.PermissionGrants.Count;
 using Microsoft.Graph.Teams.Item.PermissionGrants.Item;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,27 +16,28 @@ namespace Microsoft.Graph.Teams.Item.PermissionGrants
     /// <summary>
     /// Provides operations to manage the permissionGrants property of the microsoft.graph.team entity.
     /// </summary>
-    public class PermissionGrantsRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class PermissionGrantsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Teams.Item.PermissionGrants.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Teams.Item.PermissionGrants.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Teams.Item.PermissionGrants.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Teams.Item.PermissionGrants.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the permissionGrants property of the microsoft.graph.team entity.</summary>
         /// <param name="position">The unique identifier of resourceSpecificPermissionGrant</param>
-        /// <returns>A <see cref="Microsoft.Graph.Teams.Item.PermissionGrants.Item.ResourceSpecificPermissionGrantItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Teams.Item.PermissionGrants.Item.ResourceSpecificPermissionGrantItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Teams.Item.PermissionGrants.Item.ResourceSpecificPermissionGrantItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Teams.Item.PermissionGrants.Item.ResourceSpecificPermissionGrantItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("resourceSpecificPermissionGrant%2Did", position);
-                return new Microsoft.Graph.Teams.Item.PermissionGrants.Item.ResourceSpecificPermissionGrantItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Teams.Item.PermissionGrants.Item.ResourceSpecificPermissionGrantItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Teams.Item.PermissionGrants.PermissionGrantsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Teams.Item.PermissionGrants.PermissionGrantsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +45,7 @@ namespace Microsoft.Graph.Teams.Item.PermissionGrants
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Teams.Item.PermissionGrants.PermissionGrantsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Teams.Item.PermissionGrants.PermissionGrantsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,50 +56,50 @@ namespace Microsoft.Graph.Teams.Item.PermissionGrants
         /// List all resource-specific permission grants on the team. This list specifies the Microsoft Entra apps that have access to the team, along with each app&apos;s corresponding type of resource-specific access.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-list-permissiongrants?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.ResourceSpecificPermissionGrantCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.ResourceSpecificPermissionGrantCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.ResourceSpecificPermissionGrantCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Teams.Item.PermissionGrants.PermissionGrantsRequestBuilder.PermissionGrantsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.ResourceSpecificPermissionGrantCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Teams.Item.PermissionGrants.PermissionGrantsRequestBuilder.PermissionGrantsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.ResourceSpecificPermissionGrantCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Teams.Item.PermissionGrants.PermissionGrantsRequestBuilder.PermissionGrantsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.ResourceSpecificPermissionGrantCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Teams.Item.PermissionGrants.PermissionGrantsRequestBuilder.PermissionGrantsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ResourceSpecificPermissionGrantCollectionResponse>(requestInfo, Microsoft.Graph.Models.ResourceSpecificPermissionGrantCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ResourceSpecificPermissionGrantCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.ResourceSpecificPermissionGrantCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to permissionGrants for teams
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.ResourceSpecificPermissionGrant"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.ResourceSpecificPermissionGrant"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.ResourceSpecificPermissionGrant?> PostAsync(Microsoft.Graph.Models.ResourceSpecificPermissionGrant body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.ResourceSpecificPermissionGrant?> PostAsync(global::Microsoft.Graph.Models.ResourceSpecificPermissionGrant body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.ResourceSpecificPermissionGrant> PostAsync(Microsoft.Graph.Models.ResourceSpecificPermissionGrant body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.ResourceSpecificPermissionGrant> PostAsync(global::Microsoft.Graph.Models.ResourceSpecificPermissionGrant body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ResourceSpecificPermissionGrant>(requestInfo, Microsoft.Graph.Models.ResourceSpecificPermissionGrant.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ResourceSpecificPermissionGrant>(requestInfo, global::Microsoft.Graph.Models.ResourceSpecificPermissionGrant.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List all resource-specific permission grants on the team. This list specifies the Microsoft Entra apps that have access to the team, along with each app&apos;s corresponding type of resource-specific access.
@@ -107,11 +108,11 @@ namespace Microsoft.Graph.Teams.Item.PermissionGrants
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Teams.Item.PermissionGrants.PermissionGrantsRequestBuilder.PermissionGrantsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Teams.Item.PermissionGrants.PermissionGrantsRequestBuilder.PermissionGrantsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Teams.Item.PermissionGrants.PermissionGrantsRequestBuilder.PermissionGrantsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Teams.Item.PermissionGrants.PermissionGrantsRequestBuilder.PermissionGrantsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -127,11 +128,11 @@ namespace Microsoft.Graph.Teams.Item.PermissionGrants
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.ResourceSpecificPermissionGrant body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.ResourceSpecificPermissionGrant body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.ResourceSpecificPermissionGrant body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.ResourceSpecificPermissionGrant body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -144,16 +145,17 @@ namespace Microsoft.Graph.Teams.Item.PermissionGrants
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Teams.Item.PermissionGrants.PermissionGrantsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Teams.Item.PermissionGrants.PermissionGrantsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Teams.Item.PermissionGrants.PermissionGrantsRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Teams.Item.PermissionGrants.PermissionGrantsRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Teams.Item.PermissionGrants.PermissionGrantsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Teams.Item.PermissionGrants.PermissionGrantsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// List all resource-specific permission grants on the team. This list specifies the Microsoft Entra apps that have access to the team, along with each app&apos;s corresponding type of resource-specific access.
         /// </summary>
-        public class PermissionGrantsRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class PermissionGrantsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -219,14 +221,16 @@ namespace Microsoft.Graph.Teams.Item.PermissionGrants
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PermissionGrantsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Teams.Item.PermissionGrants.PermissionGrantsRequestBuilder.PermissionGrantsRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class PermissionGrantsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Teams.Item.PermissionGrants.PermissionGrantsRequestBuilder.PermissionGrantsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PermissionGrantsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class PermissionGrantsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

@@ -5,11 +5,11 @@ using Microsoft.Graph.Users.Item.DirectReports.Count;
 using Microsoft.Graph.Users.Item.DirectReports.GraphOrgContact;
 using Microsoft.Graph.Users.Item.DirectReports.GraphUser;
 using Microsoft.Graph.Users.Item.DirectReports.Item;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -18,37 +18,38 @@ namespace Microsoft.Graph.Users.Item.DirectReports
     /// <summary>
     /// Provides operations to manage the directReports property of the microsoft.graph.user entity.
     /// </summary>
-    public class DirectReportsRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class DirectReportsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Users.Item.DirectReports.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Users.Item.DirectReports.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Users.Item.DirectReports.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Users.Item.DirectReports.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to orgContact.</summary>
-        public Microsoft.Graph.Users.Item.DirectReports.GraphOrgContact.GraphOrgContactRequestBuilder GraphOrgContact
+        public global::Microsoft.Graph.Users.Item.DirectReports.GraphOrgContact.GraphOrgContactRequestBuilder GraphOrgContact
         {
-            get => new Microsoft.Graph.Users.Item.DirectReports.GraphOrgContact.GraphOrgContactRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Users.Item.DirectReports.GraphOrgContact.GraphOrgContactRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to user.</summary>
-        public Microsoft.Graph.Users.Item.DirectReports.GraphUser.GraphUserRequestBuilder GraphUser
+        public global::Microsoft.Graph.Users.Item.DirectReports.GraphUser.GraphUserRequestBuilder GraphUser
         {
-            get => new Microsoft.Graph.Users.Item.DirectReports.GraphUser.GraphUserRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Users.Item.DirectReports.GraphUser.GraphUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the directReports property of the microsoft.graph.user entity.</summary>
         /// <param name="position">The unique identifier of directoryObject</param>
-        /// <returns>A <see cref="Microsoft.Graph.Users.Item.DirectReports.Item.DirectoryObjectItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Users.Item.DirectReports.Item.DirectoryObjectItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Users.Item.DirectReports.Item.DirectoryObjectItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Users.Item.DirectReports.Item.DirectoryObjectItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("directoryObject%2Did", position);
-                return new Microsoft.Graph.Users.Item.DirectReports.Item.DirectoryObjectItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Users.Item.DirectReports.Item.DirectoryObjectItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.DirectReports.DirectReportsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Users.Item.DirectReports.DirectReportsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -56,7 +57,7 @@ namespace Microsoft.Graph.Users.Item.DirectReports
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.DirectReports.DirectReportsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Users.Item.DirectReports.DirectReportsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -66,25 +67,25 @@ namespace Microsoft.Graph.Users.Item.DirectReports
         /// <summary>
         /// The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.DirectoryObjectCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.DirectoryObjectCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.DirectReports.DirectReportsRequestBuilder.DirectReportsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.DirectoryObjectCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.DirectReports.DirectReportsRequestBuilder.DirectReportsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.DirectoryObjectCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.DirectReports.DirectReportsRequestBuilder.DirectReportsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.DirectoryObjectCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.DirectReports.DirectReportsRequestBuilder.DirectReportsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DirectoryObjectCollectionResponse>(requestInfo, Microsoft.Graph.Models.DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DirectoryObjectCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
@@ -93,11 +94,11 @@ namespace Microsoft.Graph.Users.Item.DirectReports
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.DirectReports.DirectReportsRequestBuilder.DirectReportsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.DirectReports.DirectReportsRequestBuilder.DirectReportsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.DirectReports.DirectReportsRequestBuilder.DirectReportsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.DirectReports.DirectReportsRequestBuilder.DirectReportsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -108,16 +109,17 @@ namespace Microsoft.Graph.Users.Item.DirectReports
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Users.Item.DirectReports.DirectReportsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Users.Item.DirectReports.DirectReportsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Users.Item.DirectReports.DirectReportsRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Users.Item.DirectReports.DirectReportsRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Users.Item.DirectReports.DirectReportsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Users.Item.DirectReports.DirectReportsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
         /// </summary>
-        public class DirectReportsRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class DirectReportsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -183,7 +185,8 @@ namespace Microsoft.Graph.Users.Item.DirectReports
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DirectReportsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Users.Item.DirectReports.DirectReportsRequestBuilder.DirectReportsRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class DirectReportsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Users.Item.DirectReports.DirectReportsRequestBuilder.DirectReportsRequestBuilderGetQueryParameters>
         {
         }
     }

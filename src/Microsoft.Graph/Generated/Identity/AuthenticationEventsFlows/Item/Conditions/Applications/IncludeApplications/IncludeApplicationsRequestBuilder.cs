@@ -3,11 +3,11 @@ using Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applica
 using Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.Item;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,27 +16,28 @@ namespace Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.App
     /// <summary>
     /// Provides operations to manage the includeApplications property of the microsoft.graph.authenticationConditionsApplications entity.
     /// </summary>
-    public class IncludeApplicationsRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class IncludeApplicationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the includeApplications property of the microsoft.graph.authenticationConditionsApplications entity.</summary>
         /// <param name="position">The unique identifier of authenticationConditionApplication</param>
-        /// <returns>A <see cref="Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.Item.AuthenticationConditionApplicationAppItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.Item.AuthenticationConditionApplicationAppItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.Item.AuthenticationConditionApplicationAppItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.Item.AuthenticationConditionApplicationAppItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("authenticationConditionApplication%2DappId", position);
-                return new Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.Item.AuthenticationConditionApplicationAppItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.Item.AuthenticationConditionApplicationAppItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.IncludeApplicationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.IncludeApplicationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +45,7 @@ namespace Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.App
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.IncludeApplicationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.IncludeApplicationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -52,67 +53,67 @@ namespace Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.App
         {
         }
         /// <summary>
-        /// List the applications linked to an authenticationEventsFlow. These are the applications for which the authentication experience defined by the user flow is enabled.
+        /// List the applications linked to an external identities self-service sign up user flow that&apos;s represented by an externalUsersSelfServiceSignupEventsFlow object. These are the applications for which the authentication experience that&apos;s defined by the user flow is enabled. To find the user flow that&apos;s linked to an application, see Example 4: List user flow associated with specific application ID.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationconditionsapplications-list-includeapplications?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.AuthenticationConditionApplicationCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.AuthenticationConditionApplicationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.AuthenticationConditionApplicationCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.IncludeApplicationsRequestBuilder.IncludeApplicationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.AuthenticationConditionApplicationCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.IncludeApplicationsRequestBuilder.IncludeApplicationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.AuthenticationConditionApplicationCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.IncludeApplicationsRequestBuilder.IncludeApplicationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.AuthenticationConditionApplicationCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.IncludeApplicationsRequestBuilder.IncludeApplicationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AuthenticationConditionApplicationCollectionResponse>(requestInfo, Microsoft.Graph.Models.AuthenticationConditionApplicationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.AuthenticationConditionApplicationCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.AuthenticationConditionApplicationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add or link an application to a user flow, or authenticationEventsFlow. This enables the authentication experience defined by the user flow to be enabled for the application. An application can only be linked to one user flow.
+        /// Add or link an application to a user flow, or authenticationEventsFlow. This enables the authentication experience defined by the user flow to be enabled for the application. An application can only be linked to one user flow. The app must have an associated service principal in the tenant.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationconditionsapplications-post-includeapplications?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.AuthenticationConditionApplication"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.AuthenticationConditionApplication"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.AuthenticationConditionApplication?> PostAsync(Microsoft.Graph.Models.AuthenticationConditionApplication body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.AuthenticationConditionApplication?> PostAsync(global::Microsoft.Graph.Models.AuthenticationConditionApplication body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.AuthenticationConditionApplication> PostAsync(Microsoft.Graph.Models.AuthenticationConditionApplication body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.AuthenticationConditionApplication> PostAsync(global::Microsoft.Graph.Models.AuthenticationConditionApplication body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AuthenticationConditionApplication>(requestInfo, Microsoft.Graph.Models.AuthenticationConditionApplication.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.AuthenticationConditionApplication>(requestInfo, global::Microsoft.Graph.Models.AuthenticationConditionApplication.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List the applications linked to an authenticationEventsFlow. These are the applications for which the authentication experience defined by the user flow is enabled.
+        /// List the applications linked to an external identities self-service sign up user flow that&apos;s represented by an externalUsersSelfServiceSignupEventsFlow object. These are the applications for which the authentication experience that&apos;s defined by the user flow is enabled. To find the user flow that&apos;s linked to an application, see Example 4: List user flow associated with specific application ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.IncludeApplicationsRequestBuilder.IncludeApplicationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.IncludeApplicationsRequestBuilder.IncludeApplicationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.IncludeApplicationsRequestBuilder.IncludeApplicationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.IncludeApplicationsRequestBuilder.IncludeApplicationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -121,18 +122,18 @@ namespace Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.App
             return requestInfo;
         }
         /// <summary>
-        /// Add or link an application to a user flow, or authenticationEventsFlow. This enables the authentication experience defined by the user flow to be enabled for the application. An application can only be linked to one user flow.
+        /// Add or link an application to a user flow, or authenticationEventsFlow. This enables the authentication experience defined by the user flow to be enabled for the application. An application can only be linked to one user flow. The app must have an associated service principal in the tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.AuthenticationConditionApplication body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.AuthenticationConditionApplication body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.AuthenticationConditionApplication body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.AuthenticationConditionApplication body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -145,16 +146,17 @@ namespace Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.App
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.IncludeApplicationsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.IncludeApplicationsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.IncludeApplicationsRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.IncludeApplicationsRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.IncludeApplicationsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.IncludeApplicationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List the applications linked to an authenticationEventsFlow. These are the applications for which the authentication experience defined by the user flow is enabled.
+        /// List the applications linked to an external identities self-service sign up user flow that&apos;s represented by an externalUsersSelfServiceSignupEventsFlow object. These are the applications for which the authentication experience that&apos;s defined by the user flow is enabled. To find the user flow that&apos;s linked to an application, see Example 4: List user flow associated with specific application ID.
         /// </summary>
-        public class IncludeApplicationsRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class IncludeApplicationsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -220,14 +222,16 @@ namespace Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.App
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class IncludeApplicationsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.IncludeApplicationsRequestBuilder.IncludeApplicationsRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class IncludeApplicationsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.Applications.IncludeApplications.IncludeApplicationsRequestBuilder.IncludeApplicationsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class IncludeApplicationsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class IncludeApplicationsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

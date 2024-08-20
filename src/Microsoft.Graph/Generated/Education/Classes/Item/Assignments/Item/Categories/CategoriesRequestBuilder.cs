@@ -5,11 +5,11 @@ using Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.Item;
 using Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.Ref;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -18,37 +18,38 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories
     /// <summary>
     /// Provides operations to manage the categories property of the microsoft.graph.educationAssignment entity.
     /// </summary>
-    public class CategoriesRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class CategoriesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the delta method.</summary>
-        public Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.Delta.DeltaRequestBuilder Delta
+        public global::Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.Delta.DeltaRequestBuilder Delta
         {
-            get => new Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of educationRoot entities.</summary>
-        public Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.Ref.RefRequestBuilder Ref
+        public global::Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.Ref.RefRequestBuilder Ref
         {
-            get => new Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Microsoft.Graph.education.classes.item.assignments.item.categories.item collection</summary>
         /// <param name="position">The unique identifier of educationCategory</param>
-        /// <returns>A <see cref="Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.Item.EducationCategoryItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.Item.EducationCategoryItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.Item.EducationCategoryItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.Item.EducationCategoryItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("educationCategory%2Did", position);
-                return new Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.Item.EducationCategoryItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.Item.EducationCategoryItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.CategoriesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.CategoriesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -56,7 +57,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.CategoriesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.CategoriesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -67,51 +68,51 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories
         /// List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.EducationCategoryCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.EducationCategoryCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.EducationCategoryCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.CategoriesRequestBuilder.CategoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.EducationCategoryCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.CategoriesRequestBuilder.CategoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.EducationCategoryCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.CategoriesRequestBuilder.CategoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.EducationCategoryCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.CategoriesRequestBuilder.CategoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.EducationCategoryCollectionResponse>(requestInfo, Microsoft.Graph.Models.EducationCategoryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.EducationCategoryCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.EducationCategoryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add one or more existing educationCategory objects to the specified  educationAssignment. Only teachers can perform this operation.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-post-categories?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.EducationCategory"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.EducationCategory"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.EducationCategory?> PostAsync(Microsoft.Graph.Models.EducationCategory body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.EducationCategory?> PostAsync(global::Microsoft.Graph.Models.EducationCategory body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.EducationCategory> PostAsync(Microsoft.Graph.Models.EducationCategory body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.EducationCategory> PostAsync(global::Microsoft.Graph.Models.EducationCategory body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.EducationCategory>(requestInfo, Microsoft.Graph.Models.EducationCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.EducationCategory>(requestInfo, global::Microsoft.Graph.Models.EducationCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
@@ -120,11 +121,11 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.CategoriesRequestBuilder.CategoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.CategoriesRequestBuilder.CategoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.CategoriesRequestBuilder.CategoriesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.CategoriesRequestBuilder.CategoriesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -140,11 +141,11 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.EducationCategory body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.EducationCategory body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.EducationCategory body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.EducationCategory body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -157,16 +158,17 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.CategoriesRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.CategoriesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.CategoriesRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.CategoriesRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.CategoriesRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.CategoriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
         /// </summary>
-        public class CategoriesRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class CategoriesRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -232,14 +234,16 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CategoriesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.CategoriesRequestBuilder.CategoriesRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class CategoriesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories.CategoriesRequestBuilder.CategoriesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CategoriesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class CategoriesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

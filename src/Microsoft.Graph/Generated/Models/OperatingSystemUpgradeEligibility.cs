@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>Work From Anywhere windows device upgrade eligibility status.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum OperatingSystemUpgradeEligibility
     {
         /// <summary>The device is upgraded to latest version of windows.</summary>
