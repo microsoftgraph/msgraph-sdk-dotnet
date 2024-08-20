@@ -11,11 +11,11 @@ using Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.Publish;
 using Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.Unpublish;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -24,60 +24,61 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item
     /// <summary>
     /// Provides operations to manage the contentTypes property of the microsoft.graph.site entity.
     /// </summary>
-    public class ContentTypeItemRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class ContentTypeItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the associateWithHubSites method.</summary>
-        public Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.AssociateWithHubSites.AssociateWithHubSitesRequestBuilder AssociateWithHubSites
+        public global::Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.AssociateWithHubSites.AssociateWithHubSitesRequestBuilder AssociateWithHubSites
         {
-            get => new Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.AssociateWithHubSites.AssociateWithHubSitesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.AssociateWithHubSites.AssociateWithHubSitesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the base property of the microsoft.graph.contentType entity.</summary>
-        public Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.Base.BaseRequestBuilderEscaped Base
+        public global::Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.Base.BaseRequestBuilderEscaped Base
         {
-            get => new Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.Base.BaseRequestBuilderEscaped(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.Base.BaseRequestBuilderEscaped(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the baseTypes property of the microsoft.graph.contentType entity.</summary>
-        public Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.BaseTypes.BaseTypesRequestBuilder BaseTypes
+        public global::Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.BaseTypes.BaseTypesRequestBuilder BaseTypes
         {
-            get => new Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.BaseTypes.BaseTypesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.BaseTypes.BaseTypesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the columnLinks property of the microsoft.graph.contentType entity.</summary>
-        public Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.ColumnLinks.ColumnLinksRequestBuilder ColumnLinks
+        public global::Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.ColumnLinks.ColumnLinksRequestBuilder ColumnLinks
         {
-            get => new Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.ColumnLinks.ColumnLinksRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.ColumnLinks.ColumnLinksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the columnPositions property of the microsoft.graph.contentType entity.</summary>
-        public Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.ColumnPositions.ColumnPositionsRequestBuilder ColumnPositions
+        public global::Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.ColumnPositions.ColumnPositionsRequestBuilder ColumnPositions
         {
-            get => new Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.ColumnPositions.ColumnPositionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.ColumnPositions.ColumnPositionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the columns property of the microsoft.graph.contentType entity.</summary>
-        public Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.Columns.ColumnsRequestBuilder Columns
+        public global::Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.Columns.ColumnsRequestBuilder Columns
         {
-            get => new Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.Columns.ColumnsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.Columns.ColumnsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the copyToDefaultContentLocation method.</summary>
-        public Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.CopyToDefaultContentLocation.CopyToDefaultContentLocationRequestBuilder CopyToDefaultContentLocation
+        public global::Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.CopyToDefaultContentLocation.CopyToDefaultContentLocationRequestBuilder CopyToDefaultContentLocation
         {
-            get => new Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.CopyToDefaultContentLocation.CopyToDefaultContentLocationRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.CopyToDefaultContentLocation.CopyToDefaultContentLocationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the isPublished method.</summary>
-        public Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.IsPublished.IsPublishedRequestBuilder IsPublished
+        public global::Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.IsPublished.IsPublishedRequestBuilder IsPublished
         {
-            get => new Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.IsPublished.IsPublishedRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.IsPublished.IsPublishedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the publish method.</summary>
-        public Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.Publish.PublishRequestBuilder Publish
+        public global::Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.Publish.PublishRequestBuilder Publish
         {
-            get => new Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.Publish.PublishRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.Publish.PublishRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unpublish method.</summary>
-        public Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.Unpublish.UnpublishRequestBuilder Unpublish
+        public global::Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.Unpublish.UnpublishRequestBuilder Unpublish
         {
-            get => new Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.Unpublish.UnpublishRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.Unpublish.UnpublishRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.ContentTypeItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.ContentTypeItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -85,7 +86,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.ContentTypeItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.ContentTypeItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -97,7 +98,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -110,57 +111,57 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The collection of content types defined for this site.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.ContentType"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.ContentType"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.ContentType?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.ContentTypeItemRequestBuilder.ContentTypeItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.ContentType?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.ContentTypeItemRequestBuilder.ContentTypeItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.ContentType> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.ContentTypeItemRequestBuilder.ContentTypeItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.ContentType> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.ContentTypeItemRequestBuilder.ContentTypeItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ContentType>(requestInfo, Microsoft.Graph.Models.ContentType.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ContentType>(requestInfo, global::Microsoft.Graph.Models.ContentType.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property contentTypes in groups
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.ContentType"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.ContentType"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.ContentType?> PatchAsync(Microsoft.Graph.Models.ContentType body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.ContentType?> PatchAsync(global::Microsoft.Graph.Models.ContentType body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.ContentType> PatchAsync(Microsoft.Graph.Models.ContentType body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.ContentType> PatchAsync(global::Microsoft.Graph.Models.ContentType body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ContentType>(requestInfo, Microsoft.Graph.Models.ContentType.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ContentType>(requestInfo, global::Microsoft.Graph.Models.ContentType.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property contentTypes for groups
@@ -188,11 +189,11 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.ContentTypeItemRequestBuilder.ContentTypeItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.ContentTypeItemRequestBuilder.ContentTypeItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.ContentTypeItemRequestBuilder.ContentTypeItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.ContentTypeItemRequestBuilder.ContentTypeItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -208,11 +209,11 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.ContentType body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.ContentType body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.ContentType body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.ContentType body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -225,23 +226,25 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.ContentTypeItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.ContentTypeItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.ContentTypeItemRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.ContentTypeItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.ContentTypeItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.ContentTypeItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ContentTypeItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ContentTypeItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// The collection of content types defined for this site.
         /// </summary>
-        public class ContentTypeItemRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ContentTypeItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -268,14 +271,16 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ContentTypeItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.ContentTypeItemRequestBuilder.ContentTypeItemRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ContentTypeItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.Item.ContentTypeItemRequestBuilder.ContentTypeItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ContentTypeItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ContentTypeItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

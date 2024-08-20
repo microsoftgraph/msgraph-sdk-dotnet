@@ -5,11 +5,11 @@ using Microsoft.Graph.Reports.Partners.Billing.Manifests;
 using Microsoft.Graph.Reports.Partners.Billing.Operations;
 using Microsoft.Graph.Reports.Partners.Billing.Reconciliation;
 using Microsoft.Graph.Reports.Partners.Billing.Usage;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -18,30 +18,31 @@ namespace Microsoft.Graph.Reports.Partners.Billing
     /// <summary>
     /// Provides operations to manage the billing property of the microsoft.graph.partners entity.
     /// </summary>
-    public class BillingRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class BillingRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the manifests property of the microsoft.graph.partners.billing.billing entity.</summary>
-        public Microsoft.Graph.Reports.Partners.Billing.Manifests.ManifestsRequestBuilder Manifests
+        public global::Microsoft.Graph.Reports.Partners.Billing.Manifests.ManifestsRequestBuilder Manifests
         {
-            get => new Microsoft.Graph.Reports.Partners.Billing.Manifests.ManifestsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Reports.Partners.Billing.Manifests.ManifestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the operations property of the microsoft.graph.partners.billing.billing entity.</summary>
-        public Microsoft.Graph.Reports.Partners.Billing.Operations.OperationsRequestBuilder Operations
+        public global::Microsoft.Graph.Reports.Partners.Billing.Operations.OperationsRequestBuilder Operations
         {
-            get => new Microsoft.Graph.Reports.Partners.Billing.Operations.OperationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Reports.Partners.Billing.Operations.OperationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the reconciliation property of the microsoft.graph.partners.billing.billing entity.</summary>
-        public Microsoft.Graph.Reports.Partners.Billing.Reconciliation.ReconciliationRequestBuilder Reconciliation
+        public global::Microsoft.Graph.Reports.Partners.Billing.Reconciliation.ReconciliationRequestBuilder Reconciliation
         {
-            get => new Microsoft.Graph.Reports.Partners.Billing.Reconciliation.ReconciliationRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Reports.Partners.Billing.Reconciliation.ReconciliationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the usage property of the microsoft.graph.partners.billing.billing entity.</summary>
-        public Microsoft.Graph.Reports.Partners.Billing.Usage.UsageRequestBuilder Usage
+        public global::Microsoft.Graph.Reports.Partners.Billing.Usage.UsageRequestBuilder Usage
         {
-            get => new Microsoft.Graph.Reports.Partners.Billing.Usage.UsageRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Reports.Partners.Billing.Usage.UsageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Reports.Partners.Billing.BillingRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Reports.Partners.Billing.BillingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -49,7 +50,7 @@ namespace Microsoft.Graph.Reports.Partners.Billing
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Reports.Partners.Billing.BillingRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Reports.Partners.Billing.BillingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -61,7 +62,7 @@ namespace Microsoft.Graph.Reports.Partners.Billing
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -74,57 +75,57 @@ namespace Microsoft.Graph.Reports.Partners.Billing
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Represents billing details for billed and unbilled data.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.Partners.Billing.Billing"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.Partners.Billing.Billing"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Partners.Billing.Billing?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Reports.Partners.Billing.BillingRequestBuilder.BillingRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Partners.Billing.Billing?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Reports.Partners.Billing.BillingRequestBuilder.BillingRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Partners.Billing.Billing> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Reports.Partners.Billing.BillingRequestBuilder.BillingRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Partners.Billing.Billing> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Reports.Partners.Billing.BillingRequestBuilder.BillingRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Partners.Billing.Billing>(requestInfo, Microsoft.Graph.Models.Partners.Billing.Billing.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Partners.Billing.Billing>(requestInfo, global::Microsoft.Graph.Models.Partners.Billing.Billing.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property billing in reports
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.Partners.Billing.Billing"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.Partners.Billing.Billing"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Partners.Billing.Billing?> PatchAsync(Microsoft.Graph.Models.Partners.Billing.Billing body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Partners.Billing.Billing?> PatchAsync(global::Microsoft.Graph.Models.Partners.Billing.Billing body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Partners.Billing.Billing> PatchAsync(Microsoft.Graph.Models.Partners.Billing.Billing body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Partners.Billing.Billing> PatchAsync(global::Microsoft.Graph.Models.Partners.Billing.Billing body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Partners.Billing.Billing>(requestInfo, Microsoft.Graph.Models.Partners.Billing.Billing.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Partners.Billing.Billing>(requestInfo, global::Microsoft.Graph.Models.Partners.Billing.Billing.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property billing for reports
@@ -152,11 +153,11 @@ namespace Microsoft.Graph.Reports.Partners.Billing
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Reports.Partners.Billing.BillingRequestBuilder.BillingRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Reports.Partners.Billing.BillingRequestBuilder.BillingRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Reports.Partners.Billing.BillingRequestBuilder.BillingRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Reports.Partners.Billing.BillingRequestBuilder.BillingRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -172,11 +173,11 @@ namespace Microsoft.Graph.Reports.Partners.Billing
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Partners.Billing.Billing body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.Partners.Billing.Billing body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Partners.Billing.Billing body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.Partners.Billing.Billing body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -189,23 +190,25 @@ namespace Microsoft.Graph.Reports.Partners.Billing
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Reports.Partners.Billing.BillingRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Reports.Partners.Billing.BillingRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Reports.Partners.Billing.BillingRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Reports.Partners.Billing.BillingRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Reports.Partners.Billing.BillingRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Reports.Partners.Billing.BillingRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class BillingRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class BillingRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Represents billing details for billed and unbilled data.
         /// </summary>
-        public class BillingRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class BillingRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -232,14 +235,16 @@ namespace Microsoft.Graph.Reports.Partners.Billing
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class BillingRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Reports.Partners.Billing.BillingRequestBuilder.BillingRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class BillingRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Reports.Partners.Billing.BillingRequestBuilder.BillingRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class BillingRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class BillingRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

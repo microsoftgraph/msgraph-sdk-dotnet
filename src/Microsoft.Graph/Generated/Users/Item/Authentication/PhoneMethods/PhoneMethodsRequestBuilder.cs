@@ -3,11 +3,11 @@ using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Users.Item.Authentication.PhoneMethods.Count;
 using Microsoft.Graph.Users.Item.Authentication.PhoneMethods.Item;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,27 +16,28 @@ namespace Microsoft.Graph.Users.Item.Authentication.PhoneMethods
     /// <summary>
     /// Provides operations to manage the phoneMethods property of the microsoft.graph.authentication entity.
     /// </summary>
-    public class PhoneMethodsRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class PhoneMethodsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Users.Item.Authentication.PhoneMethods.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Users.Item.Authentication.PhoneMethods.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Users.Item.Authentication.PhoneMethods.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Users.Item.Authentication.PhoneMethods.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the phoneMethods property of the microsoft.graph.authentication entity.</summary>
         /// <param name="position">The unique identifier of phoneAuthenticationMethod</param>
-        /// <returns>A <see cref="Microsoft.Graph.Users.Item.Authentication.PhoneMethods.Item.PhoneAuthenticationMethodItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Users.Item.Authentication.PhoneMethods.Item.PhoneAuthenticationMethodItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Users.Item.Authentication.PhoneMethods.Item.PhoneAuthenticationMethodItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Users.Item.Authentication.PhoneMethods.Item.PhoneAuthenticationMethodItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("phoneAuthenticationMethod%2Did", position);
-                return new Microsoft.Graph.Users.Item.Authentication.PhoneMethods.Item.PhoneAuthenticationMethodItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Users.Item.Authentication.PhoneMethods.Item.PhoneAuthenticationMethodItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.Authentication.PhoneMethods.PhoneMethodsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Users.Item.Authentication.PhoneMethods.PhoneMethodsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +45,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.PhoneMethods
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.Authentication.PhoneMethods.PhoneMethodsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Users.Item.Authentication.PhoneMethods.PhoneMethodsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,51 +55,51 @@ namespace Microsoft.Graph.Users.Item.Authentication.PhoneMethods
         /// <summary>
         /// The phone numbers registered to a user for authentication.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.PhoneAuthenticationMethodCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.PhoneAuthenticationMethodCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.PhoneAuthenticationMethodCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Authentication.PhoneMethods.PhoneMethodsRequestBuilder.PhoneMethodsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.PhoneAuthenticationMethodCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.Authentication.PhoneMethods.PhoneMethodsRequestBuilder.PhoneMethodsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.PhoneAuthenticationMethodCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Authentication.PhoneMethods.PhoneMethodsRequestBuilder.PhoneMethodsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.PhoneAuthenticationMethodCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.Authentication.PhoneMethods.PhoneMethodsRequestBuilder.PhoneMethodsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.PhoneAuthenticationMethodCollectionResponse>(requestInfo, Microsoft.Graph.Models.PhoneAuthenticationMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.PhoneAuthenticationMethodCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.PhoneAuthenticationMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add a new phone authentication method for a user. A user may only have one phone of each type, captured in the phoneType property. This means, for example, adding a mobile phone to a user with a pre-existing mobile phone fails. Additionally, a user must always have a mobile phone before adding an alternateMobile phone. Adding a phone number makes it available for use in both Azure multi-factor authentication (MFA) and self-service password reset (SSPR), if enabled. Additionally, if a user is enabled by policy to use SMS sign-in and a mobile number is added, the system attempts to register the number for use in that system.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/authentication-post-phonemethods?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.PhoneAuthenticationMethod"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.PhoneAuthenticationMethod"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.PhoneAuthenticationMethod?> PostAsync(Microsoft.Graph.Models.PhoneAuthenticationMethod body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.PhoneAuthenticationMethod?> PostAsync(global::Microsoft.Graph.Models.PhoneAuthenticationMethod body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.PhoneAuthenticationMethod> PostAsync(Microsoft.Graph.Models.PhoneAuthenticationMethod body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.PhoneAuthenticationMethod> PostAsync(global::Microsoft.Graph.Models.PhoneAuthenticationMethod body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.PhoneAuthenticationMethod>(requestInfo, Microsoft.Graph.Models.PhoneAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.PhoneAuthenticationMethod>(requestInfo, global::Microsoft.Graph.Models.PhoneAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The phone numbers registered to a user for authentication.
@@ -107,11 +108,11 @@ namespace Microsoft.Graph.Users.Item.Authentication.PhoneMethods
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Authentication.PhoneMethods.PhoneMethodsRequestBuilder.PhoneMethodsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.Authentication.PhoneMethods.PhoneMethodsRequestBuilder.PhoneMethodsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.Authentication.PhoneMethods.PhoneMethodsRequestBuilder.PhoneMethodsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.Authentication.PhoneMethods.PhoneMethodsRequestBuilder.PhoneMethodsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -127,11 +128,11 @@ namespace Microsoft.Graph.Users.Item.Authentication.PhoneMethods
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.PhoneAuthenticationMethod body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.PhoneAuthenticationMethod body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.PhoneAuthenticationMethod body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.PhoneAuthenticationMethod body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -144,16 +145,17 @@ namespace Microsoft.Graph.Users.Item.Authentication.PhoneMethods
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Users.Item.Authentication.PhoneMethods.PhoneMethodsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Users.Item.Authentication.PhoneMethods.PhoneMethodsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Users.Item.Authentication.PhoneMethods.PhoneMethodsRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Users.Item.Authentication.PhoneMethods.PhoneMethodsRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Users.Item.Authentication.PhoneMethods.PhoneMethodsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Users.Item.Authentication.PhoneMethods.PhoneMethodsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The phone numbers registered to a user for authentication.
         /// </summary>
-        public class PhoneMethodsRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class PhoneMethodsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -219,14 +221,16 @@ namespace Microsoft.Graph.Users.Item.Authentication.PhoneMethods
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PhoneMethodsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Users.Item.Authentication.PhoneMethods.PhoneMethodsRequestBuilder.PhoneMethodsRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class PhoneMethodsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Users.Item.Authentication.PhoneMethods.PhoneMethodsRequestBuilder.PhoneMethodsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PhoneMethodsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class PhoneMethodsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

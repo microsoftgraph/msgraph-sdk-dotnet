@@ -13,11 +13,11 @@ using Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.F
 using Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.Clear;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -26,70 +26,71 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.It
     /// <summary>
     /// Provides operations to manage the filter property of the microsoft.graph.workbookTableColumn entity.
     /// </summary>
-    public class FilterRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class FilterRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the apply method.</summary>
-        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.Apply.ApplyRequestBuilder Apply
+        public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.Apply.ApplyRequestBuilder Apply
         {
-            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.Apply.ApplyRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.Apply.ApplyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the applyBottomItemsFilter method.</summary>
-        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyBottomItemsFilter.ApplyBottomItemsFilterRequestBuilder ApplyBottomItemsFilter
+        public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyBottomItemsFilter.ApplyBottomItemsFilterRequestBuilder ApplyBottomItemsFilter
         {
-            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyBottomItemsFilter.ApplyBottomItemsFilterRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyBottomItemsFilter.ApplyBottomItemsFilterRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the applyBottomPercentFilter method.</summary>
-        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyBottomPercentFilter.ApplyBottomPercentFilterRequestBuilder ApplyBottomPercentFilter
+        public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyBottomPercentFilter.ApplyBottomPercentFilterRequestBuilder ApplyBottomPercentFilter
         {
-            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyBottomPercentFilter.ApplyBottomPercentFilterRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyBottomPercentFilter.ApplyBottomPercentFilterRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the applyCellColorFilter method.</summary>
-        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyCellColorFilter.ApplyCellColorFilterRequestBuilder ApplyCellColorFilter
+        public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyCellColorFilter.ApplyCellColorFilterRequestBuilder ApplyCellColorFilter
         {
-            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyCellColorFilter.ApplyCellColorFilterRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyCellColorFilter.ApplyCellColorFilterRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the applyCustomFilter method.</summary>
-        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyCustomFilter.ApplyCustomFilterRequestBuilder ApplyCustomFilter
+        public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyCustomFilter.ApplyCustomFilterRequestBuilder ApplyCustomFilter
         {
-            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyCustomFilter.ApplyCustomFilterRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyCustomFilter.ApplyCustomFilterRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the applyDynamicFilter method.</summary>
-        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyDynamicFilter.ApplyDynamicFilterRequestBuilder ApplyDynamicFilter
+        public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyDynamicFilter.ApplyDynamicFilterRequestBuilder ApplyDynamicFilter
         {
-            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyDynamicFilter.ApplyDynamicFilterRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyDynamicFilter.ApplyDynamicFilterRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the applyFontColorFilter method.</summary>
-        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyFontColorFilter.ApplyFontColorFilterRequestBuilder ApplyFontColorFilter
+        public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyFontColorFilter.ApplyFontColorFilterRequestBuilder ApplyFontColorFilter
         {
-            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyFontColorFilter.ApplyFontColorFilterRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyFontColorFilter.ApplyFontColorFilterRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the applyIconFilter method.</summary>
-        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyIconFilter.ApplyIconFilterRequestBuilder ApplyIconFilter
+        public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyIconFilter.ApplyIconFilterRequestBuilder ApplyIconFilter
         {
-            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyIconFilter.ApplyIconFilterRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyIconFilter.ApplyIconFilterRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the applyTopItemsFilter method.</summary>
-        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyTopItemsFilter.ApplyTopItemsFilterRequestBuilder ApplyTopItemsFilter
+        public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyTopItemsFilter.ApplyTopItemsFilterRequestBuilder ApplyTopItemsFilter
         {
-            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyTopItemsFilter.ApplyTopItemsFilterRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyTopItemsFilter.ApplyTopItemsFilterRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the applyTopPercentFilter method.</summary>
-        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyTopPercentFilter.ApplyTopPercentFilterRequestBuilder ApplyTopPercentFilter
+        public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyTopPercentFilter.ApplyTopPercentFilterRequestBuilder ApplyTopPercentFilter
         {
-            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyTopPercentFilter.ApplyTopPercentFilterRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyTopPercentFilter.ApplyTopPercentFilterRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the applyValuesFilter method.</summary>
-        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyValuesFilter.ApplyValuesFilterRequestBuilder ApplyValuesFilter
+        public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyValuesFilter.ApplyValuesFilterRequestBuilder ApplyValuesFilter
         {
-            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyValuesFilter.ApplyValuesFilterRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.ApplyValuesFilter.ApplyValuesFilterRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the clear method.</summary>
-        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.Clear.ClearRequestBuilder Clear
+        public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.Clear.ClearRequestBuilder Clear
         {
-            get => new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.Clear.ClearRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.Clear.ClearRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.FilterRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.FilterRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -97,7 +98,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.It
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.FilterRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.FilterRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -109,7 +110,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.It
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -122,57 +123,57 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.It
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the filter applied to the column. Read-only.
+        /// The filter applied to the column. Read-only.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.WorkbookFilter"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.WorkbookFilter"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.WorkbookFilter?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.FilterRequestBuilder.FilterRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.WorkbookFilter?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.FilterRequestBuilder.FilterRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.WorkbookFilter> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.FilterRequestBuilder.FilterRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.WorkbookFilter> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.FilterRequestBuilder.FilterRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.WorkbookFilter>(requestInfo, Microsoft.Graph.Models.WorkbookFilter.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.WorkbookFilter>(requestInfo, global::Microsoft.Graph.Models.WorkbookFilter.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property filter in drives
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.WorkbookFilter"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.WorkbookFilter"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.WorkbookFilter?> PatchAsync(Microsoft.Graph.Models.WorkbookFilter body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.WorkbookFilter?> PatchAsync(global::Microsoft.Graph.Models.WorkbookFilter body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.WorkbookFilter> PatchAsync(Microsoft.Graph.Models.WorkbookFilter body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.WorkbookFilter> PatchAsync(global::Microsoft.Graph.Models.WorkbookFilter body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.WorkbookFilter>(requestInfo, Microsoft.Graph.Models.WorkbookFilter.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.WorkbookFilter>(requestInfo, global::Microsoft.Graph.Models.WorkbookFilter.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property filter for drives
@@ -194,17 +195,17 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.It
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the filter applied to the column. Read-only.
+        /// The filter applied to the column. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.FilterRequestBuilder.FilterRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.FilterRequestBuilder.FilterRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.FilterRequestBuilder.FilterRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.FilterRequestBuilder.FilterRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -220,11 +221,11 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.It
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.WorkbookFilter body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.WorkbookFilter body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.WorkbookFilter body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.WorkbookFilter body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -237,23 +238,25 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.It
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.FilterRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.FilterRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.FilterRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.FilterRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.FilterRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.FilterRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class FilterRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class FilterRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
-        /// Retrieve the filter applied to the column. Read-only.
+        /// The filter applied to the column. Read-only.
         /// </summary>
-        public class FilterRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class FilterRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -280,14 +283,16 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.It
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class FilterRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.FilterRequestBuilder.FilterRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class FilterRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Item.Filter.FilterRequestBuilder.FilterRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class FilterRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class FilterRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

@@ -4,11 +4,11 @@ using Microsoft.Graph.Models;
 using Microsoft.Graph.Print.Shares.Item.AllowedUsers.Count;
 using Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item;
 using Microsoft.Graph.Print.Shares.Item.AllowedUsers.Ref;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -17,32 +17,33 @@ namespace Microsoft.Graph.Print.Shares.Item.AllowedUsers
     /// <summary>
     /// Provides operations to manage the allowedUsers property of the microsoft.graph.printerShare entity.
     /// </summary>
-    public class AllowedUsersRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class AllowedUsersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Print.Shares.Item.AllowedUsers.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Print.Shares.Item.AllowedUsers.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Print.Shares.Item.AllowedUsers.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Print.Shares.Item.AllowedUsers.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of print entities.</summary>
-        public Microsoft.Graph.Print.Shares.Item.AllowedUsers.Ref.RefRequestBuilder Ref
+        public global::Microsoft.Graph.Print.Shares.Item.AllowedUsers.Ref.RefRequestBuilder Ref
         {
-            get => new Microsoft.Graph.Print.Shares.Item.AllowedUsers.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Print.Shares.Item.AllowedUsers.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Microsoft.Graph.print.shares.item.allowedUsers.item collection</summary>
         /// <param name="position">The unique identifier of user</param>
-        /// <returns>A <see cref="Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item.UserItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item.UserItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item.UserItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item.UserItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("user%2Did", position);
-                return new Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item.UserItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item.UserItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Print.Shares.Item.AllowedUsers.AllowedUsersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Print.Shares.Item.AllowedUsers.AllowedUsersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -50,7 +51,7 @@ namespace Microsoft.Graph.Print.Shares.Item.AllowedUsers
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Print.Shares.Item.AllowedUsers.AllowedUsersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Print.Shares.Item.AllowedUsers.AllowedUsersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -61,25 +62,25 @@ namespace Microsoft.Graph.Print.Shares.Item.AllowedUsers
         /// Retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/printershare-list-allowedusers?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.UserCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.UserCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.UserCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Print.Shares.Item.AllowedUsers.AllowedUsersRequestBuilder.AllowedUsersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.UserCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Print.Shares.Item.AllowedUsers.AllowedUsersRequestBuilder.AllowedUsersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.UserCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Print.Shares.Item.AllowedUsers.AllowedUsersRequestBuilder.AllowedUsersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.UserCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Print.Shares.Item.AllowedUsers.AllowedUsersRequestBuilder.AllowedUsersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.UserCollectionResponse>(requestInfo, Microsoft.Graph.Models.UserCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.UserCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.UserCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
@@ -88,11 +89,11 @@ namespace Microsoft.Graph.Print.Shares.Item.AllowedUsers
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Print.Shares.Item.AllowedUsers.AllowedUsersRequestBuilder.AllowedUsersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Print.Shares.Item.AllowedUsers.AllowedUsersRequestBuilder.AllowedUsersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Print.Shares.Item.AllowedUsers.AllowedUsersRequestBuilder.AllowedUsersRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Print.Shares.Item.AllowedUsers.AllowedUsersRequestBuilder.AllowedUsersRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -103,16 +104,17 @@ namespace Microsoft.Graph.Print.Shares.Item.AllowedUsers
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Print.Shares.Item.AllowedUsers.AllowedUsersRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Print.Shares.Item.AllowedUsers.AllowedUsersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Print.Shares.Item.AllowedUsers.AllowedUsersRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Print.Shares.Item.AllowedUsers.AllowedUsersRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Print.Shares.Item.AllowedUsers.AllowedUsersRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Print.Shares.Item.AllowedUsers.AllowedUsersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve a list of users who have been granted access to submit print jobs to the associated printerShare.
         /// </summary>
-        public class AllowedUsersRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class AllowedUsersRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -178,7 +180,8 @@ namespace Microsoft.Graph.Print.Shares.Item.AllowedUsers
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AllowedUsersRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Print.Shares.Item.AllowedUsers.AllowedUsersRequestBuilder.AllowedUsersRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class AllowedUsersRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Print.Shares.Item.AllowedUsers.AllowedUsersRequestBuilder.AllowedUsersRequestBuilderGetQueryParameters>
         {
         }
     }

@@ -4,11 +4,11 @@ using Microsoft.Graph.Me.OwnedDevices.Item.GraphDevice;
 using Microsoft.Graph.Me.OwnedDevices.Item.GraphEndpoint;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -17,25 +17,26 @@ namespace Microsoft.Graph.Me.OwnedDevices.Item
     /// <summary>
     /// Provides operations to manage the ownedDevices property of the microsoft.graph.user entity.
     /// </summary>
-    public class DirectoryObjectItemRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class DirectoryObjectItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Casts the previous resource to appRoleAssignment.</summary>
-        public Microsoft.Graph.Me.OwnedDevices.Item.GraphAppRoleAssignment.GraphAppRoleAssignmentRequestBuilder GraphAppRoleAssignment
+        public global::Microsoft.Graph.Me.OwnedDevices.Item.GraphAppRoleAssignment.GraphAppRoleAssignmentRequestBuilder GraphAppRoleAssignment
         {
-            get => new Microsoft.Graph.Me.OwnedDevices.Item.GraphAppRoleAssignment.GraphAppRoleAssignmentRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.OwnedDevices.Item.GraphAppRoleAssignment.GraphAppRoleAssignmentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to device.</summary>
-        public Microsoft.Graph.Me.OwnedDevices.Item.GraphDevice.GraphDeviceRequestBuilder GraphDevice
+        public global::Microsoft.Graph.Me.OwnedDevices.Item.GraphDevice.GraphDeviceRequestBuilder GraphDevice
         {
-            get => new Microsoft.Graph.Me.OwnedDevices.Item.GraphDevice.GraphDeviceRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.OwnedDevices.Item.GraphDevice.GraphDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to endpoint.</summary>
-        public Microsoft.Graph.Me.OwnedDevices.Item.GraphEndpoint.GraphEndpointRequestBuilder GraphEndpoint
+        public global::Microsoft.Graph.Me.OwnedDevices.Item.GraphEndpoint.GraphEndpointRequestBuilder GraphEndpoint
         {
-            get => new Microsoft.Graph.Me.OwnedDevices.Item.GraphEndpoint.GraphEndpointRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.OwnedDevices.Item.GraphEndpoint.GraphEndpointRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Me.OwnedDevices.Item.DirectoryObjectItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Me.OwnedDevices.Item.DirectoryObjectItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -43,7 +44,7 @@ namespace Microsoft.Graph.Me.OwnedDevices.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Me.OwnedDevices.Item.DirectoryObjectItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Me.OwnedDevices.Item.DirectoryObjectItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -51,40 +52,40 @@ namespace Microsoft.Graph.Me.OwnedDevices.Item
         {
         }
         /// <summary>
-        /// Devices that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+        /// Devices the user owns. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.DirectoryObject"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.DirectoryObject"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.DirectoryObject?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.OwnedDevices.Item.DirectoryObjectItemRequestBuilder.DirectoryObjectItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.DirectoryObject?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.OwnedDevices.Item.DirectoryObjectItemRequestBuilder.DirectoryObjectItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.DirectoryObject> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.OwnedDevices.Item.DirectoryObjectItemRequestBuilder.DirectoryObjectItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.DirectoryObject> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.OwnedDevices.Item.DirectoryObjectItemRequestBuilder.DirectoryObjectItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DirectoryObject>(requestInfo, Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DirectoryObject>(requestInfo, global::Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Devices that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+        /// Devices the user owns. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.OwnedDevices.Item.DirectoryObjectItemRequestBuilder.DirectoryObjectItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Me.OwnedDevices.Item.DirectoryObjectItemRequestBuilder.DirectoryObjectItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.OwnedDevices.Item.DirectoryObjectItemRequestBuilder.DirectoryObjectItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Me.OwnedDevices.Item.DirectoryObjectItemRequestBuilder.DirectoryObjectItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -95,16 +96,17 @@ namespace Microsoft.Graph.Me.OwnedDevices.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Me.OwnedDevices.Item.DirectoryObjectItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Me.OwnedDevices.Item.DirectoryObjectItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Me.OwnedDevices.Item.DirectoryObjectItemRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Me.OwnedDevices.Item.DirectoryObjectItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Me.OwnedDevices.Item.DirectoryObjectItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Me.OwnedDevices.Item.DirectoryObjectItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Devices that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+        /// Devices the user owns. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
         /// </summary>
-        public class DirectoryObjectItemRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class DirectoryObjectItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -131,7 +133,8 @@ namespace Microsoft.Graph.Me.OwnedDevices.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DirectoryObjectItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Me.OwnedDevices.Item.DirectoryObjectItemRequestBuilder.DirectoryObjectItemRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class DirectoryObjectItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Me.OwnedDevices.Item.DirectoryObjectItemRequestBuilder.DirectoryObjectItemRequestBuilderGetQueryParameters>
         {
         }
     }

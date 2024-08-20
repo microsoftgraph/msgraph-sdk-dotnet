@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>Indicates the type of restart action.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum Win32LobAppRestartBehavior
     {
         /// <summary>Intune will restart the device after running the app installation if the operation returns a reboot code.</summary>

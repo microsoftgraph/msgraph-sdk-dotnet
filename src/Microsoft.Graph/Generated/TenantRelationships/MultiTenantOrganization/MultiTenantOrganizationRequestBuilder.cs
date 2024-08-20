@@ -3,11 +3,11 @@ using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.TenantRelationships.MultiTenantOrganization.JoinRequest;
 using Microsoft.Graph.TenantRelationships.MultiTenantOrganization.Tenants;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,20 +16,21 @@ namespace Microsoft.Graph.TenantRelationships.MultiTenantOrganization
     /// <summary>
     /// Provides operations to manage the multiTenantOrganization property of the microsoft.graph.tenantRelationship entity.
     /// </summary>
-    public class MultiTenantOrganizationRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class MultiTenantOrganizationRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the joinRequest property of the microsoft.graph.multiTenantOrganization entity.</summary>
-        public Microsoft.Graph.TenantRelationships.MultiTenantOrganization.JoinRequest.JoinRequestRequestBuilder JoinRequest
+        public global::Microsoft.Graph.TenantRelationships.MultiTenantOrganization.JoinRequest.JoinRequestRequestBuilder JoinRequest
         {
-            get => new Microsoft.Graph.TenantRelationships.MultiTenantOrganization.JoinRequest.JoinRequestRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.TenantRelationships.MultiTenantOrganization.JoinRequest.JoinRequestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tenants property of the microsoft.graph.multiTenantOrganization entity.</summary>
-        public Microsoft.Graph.TenantRelationships.MultiTenantOrganization.Tenants.TenantsRequestBuilder Tenants
+        public global::Microsoft.Graph.TenantRelationships.MultiTenantOrganization.Tenants.TenantsRequestBuilder Tenants
         {
-            get => new Microsoft.Graph.TenantRelationships.MultiTenantOrganization.Tenants.TenantsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.TenantRelationships.MultiTenantOrganization.Tenants.TenantsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.TenantRelationships.MultiTenantOrganization.MultiTenantOrganizationRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.TenantRelationships.MultiTenantOrganization.MultiTenantOrganizationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +38,7 @@ namespace Microsoft.Graph.TenantRelationships.MultiTenantOrganization
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.TenantRelationships.MultiTenantOrganization.MultiTenantOrganizationRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.TenantRelationships.MultiTenantOrganization.MultiTenantOrganizationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -48,51 +49,51 @@ namespace Microsoft.Graph.TenantRelationships.MultiTenantOrganization
         /// Get properties of the multitenant organization.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/multitenantorganization-get?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.MultiTenantOrganization"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.MultiTenantOrganization"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.MultiTenantOrganization?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.TenantRelationships.MultiTenantOrganization.MultiTenantOrganizationRequestBuilder.MultiTenantOrganizationRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.MultiTenantOrganization?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.TenantRelationships.MultiTenantOrganization.MultiTenantOrganizationRequestBuilder.MultiTenantOrganizationRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.MultiTenantOrganization> GetAsync(Action<RequestConfiguration<Microsoft.Graph.TenantRelationships.MultiTenantOrganization.MultiTenantOrganizationRequestBuilder.MultiTenantOrganizationRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.MultiTenantOrganization> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.TenantRelationships.MultiTenantOrganization.MultiTenantOrganizationRequestBuilder.MultiTenantOrganizationRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.MultiTenantOrganization>(requestInfo, Microsoft.Graph.Models.MultiTenantOrganization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.MultiTenantOrganization>(requestInfo, global::Microsoft.Graph.Models.MultiTenantOrganization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new multitenant organization. By default, the creator tenant becomes an owner tenant upon successful creation. Only owner tenants can manage a multitenant organization.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tenantrelationship-put-multitenantorganization?view=graph-rest-1.0" />
+        /// Update the properties of a multitenant organization.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/multitenantorganization-update?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.MultiTenantOrganization"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.MultiTenantOrganization"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.MultiTenantOrganization?> PatchAsync(Microsoft.Graph.Models.MultiTenantOrganization body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.MultiTenantOrganization?> PatchAsync(global::Microsoft.Graph.Models.MultiTenantOrganization body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.MultiTenantOrganization> PatchAsync(Microsoft.Graph.Models.MultiTenantOrganization body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.MultiTenantOrganization> PatchAsync(global::Microsoft.Graph.Models.MultiTenantOrganization body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.MultiTenantOrganization>(requestInfo, Microsoft.Graph.Models.MultiTenantOrganization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.MultiTenantOrganization>(requestInfo, global::Microsoft.Graph.Models.MultiTenantOrganization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get properties of the multitenant organization.
@@ -101,11 +102,11 @@ namespace Microsoft.Graph.TenantRelationships.MultiTenantOrganization
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.TenantRelationships.MultiTenantOrganization.MultiTenantOrganizationRequestBuilder.MultiTenantOrganizationRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.TenantRelationships.MultiTenantOrganization.MultiTenantOrganizationRequestBuilder.MultiTenantOrganizationRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.TenantRelationships.MultiTenantOrganization.MultiTenantOrganizationRequestBuilder.MultiTenantOrganizationRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.TenantRelationships.MultiTenantOrganization.MultiTenantOrganizationRequestBuilder.MultiTenantOrganizationRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -114,18 +115,18 @@ namespace Microsoft.Graph.TenantRelationships.MultiTenantOrganization
             return requestInfo;
         }
         /// <summary>
-        /// Create a new multitenant organization. By default, the creator tenant becomes an owner tenant upon successful creation. Only owner tenants can manage a multitenant organization.
+        /// Update the properties of a multitenant organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.MultiTenantOrganization body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.MultiTenantOrganization body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.MultiTenantOrganization body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.MultiTenantOrganization body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -138,16 +139,17 @@ namespace Microsoft.Graph.TenantRelationships.MultiTenantOrganization
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.TenantRelationships.MultiTenantOrganization.MultiTenantOrganizationRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.TenantRelationships.MultiTenantOrganization.MultiTenantOrganizationRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.TenantRelationships.MultiTenantOrganization.MultiTenantOrganizationRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.TenantRelationships.MultiTenantOrganization.MultiTenantOrganizationRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.TenantRelationships.MultiTenantOrganization.MultiTenantOrganizationRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.TenantRelationships.MultiTenantOrganization.MultiTenantOrganizationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get properties of the multitenant organization.
         /// </summary>
-        public class MultiTenantOrganizationRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class MultiTenantOrganizationRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -174,14 +176,16 @@ namespace Microsoft.Graph.TenantRelationships.MultiTenantOrganization
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MultiTenantOrganizationRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.TenantRelationships.MultiTenantOrganization.MultiTenantOrganizationRequestBuilder.MultiTenantOrganizationRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class MultiTenantOrganizationRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.TenantRelationships.MultiTenantOrganization.MultiTenantOrganizationRequestBuilder.MultiTenantOrganizationRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MultiTenantOrganizationRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class MultiTenantOrganizationRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

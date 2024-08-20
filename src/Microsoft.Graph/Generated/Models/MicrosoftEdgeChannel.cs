@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>The enum to specify the channels for Microsoft Edge apps.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum MicrosoftEdgeChannel
     {
         /// <summary>The Dev Channel is intended to help you plan and develop with the latest capabilities of Microsoft Edge.</summary>

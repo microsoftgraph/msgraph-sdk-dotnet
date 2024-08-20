@@ -3,11 +3,11 @@ using Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostF
 using Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostFederationSignup.UploadClientCertificate;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,20 +16,21 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.P
     /// <summary>
     /// Provides operations to manage the postFederationSignup property of the microsoft.graph.userFlowApiConnectorConfiguration entity.
     /// </summary>
-    public class PostFederationSignupRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class PostFederationSignupRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the collection of identityContainer entities.</summary>
-        public Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostFederationSignup.Ref.RefRequestBuilder Ref
+        public global::Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostFederationSignup.Ref.RefRequestBuilder Ref
         {
-            get => new Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostFederationSignup.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostFederationSignup.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the uploadClientCertificate method.</summary>
-        public Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostFederationSignup.UploadClientCertificate.UploadClientCertificateRequestBuilder UploadClientCertificate
+        public global::Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostFederationSignup.UploadClientCertificate.UploadClientCertificateRequestBuilder UploadClientCertificate
         {
-            get => new Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostFederationSignup.UploadClientCertificate.UploadClientCertificateRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostFederationSignup.UploadClientCertificate.UploadClientCertificateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostFederationSignup.PostFederationSignupRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostFederationSignup.PostFederationSignupRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +38,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.P
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostFederationSignup.PostFederationSignupRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostFederationSignup.PostFederationSignupRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -49,7 +50,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.P
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -62,57 +63,57 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.P
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get postFederationSignup from identity
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.IdentityApiConnector"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.IdentityApiConnector"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.IdentityApiConnector?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostFederationSignup.PostFederationSignupRequestBuilder.PostFederationSignupRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.IdentityApiConnector?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostFederationSignup.PostFederationSignupRequestBuilder.PostFederationSignupRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.IdentityApiConnector> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostFederationSignup.PostFederationSignupRequestBuilder.PostFederationSignupRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.IdentityApiConnector> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostFederationSignup.PostFederationSignupRequestBuilder.PostFederationSignupRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.IdentityApiConnector>(requestInfo, Microsoft.Graph.Models.IdentityApiConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.IdentityApiConnector>(requestInfo, global::Microsoft.Graph.Models.IdentityApiConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property postFederationSignup in identity
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.IdentityApiConnector"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.IdentityApiConnector"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.IdentityApiConnector?> PatchAsync(Microsoft.Graph.Models.IdentityApiConnector body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.IdentityApiConnector?> PatchAsync(global::Microsoft.Graph.Models.IdentityApiConnector body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.IdentityApiConnector> PatchAsync(Microsoft.Graph.Models.IdentityApiConnector body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.IdentityApiConnector> PatchAsync(global::Microsoft.Graph.Models.IdentityApiConnector body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.IdentityApiConnector>(requestInfo, Microsoft.Graph.Models.IdentityApiConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.IdentityApiConnector>(requestInfo, global::Microsoft.Graph.Models.IdentityApiConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property postFederationSignup for identity
@@ -140,11 +141,11 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.P
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostFederationSignup.PostFederationSignupRequestBuilder.PostFederationSignupRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostFederationSignup.PostFederationSignupRequestBuilder.PostFederationSignupRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostFederationSignup.PostFederationSignupRequestBuilder.PostFederationSignupRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostFederationSignup.PostFederationSignupRequestBuilder.PostFederationSignupRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -160,11 +161,11 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.P
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.IdentityApiConnector body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.IdentityApiConnector body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.IdentityApiConnector body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.IdentityApiConnector body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -177,23 +178,25 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.P
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostFederationSignup.PostFederationSignupRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostFederationSignup.PostFederationSignupRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostFederationSignup.PostFederationSignupRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostFederationSignup.PostFederationSignupRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostFederationSignup.PostFederationSignupRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostFederationSignup.PostFederationSignupRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PostFederationSignupRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class PostFederationSignupRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Get postFederationSignup from identity
         /// </summary>
-        public class PostFederationSignupRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class PostFederationSignupRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -220,14 +223,16 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.P
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PostFederationSignupRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostFederationSignup.PostFederationSignupRequestBuilder.PostFederationSignupRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class PostFederationSignupRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostFederationSignup.PostFederationSignupRequestBuilder.PostFederationSignupRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PostFederationSignupRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class PostFederationSignupRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

@@ -7,11 +7,11 @@ using Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.S
 using Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.SoftDelete;
 using Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.UndoSoftDelete;
 using Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.UnsetReaction;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -20,40 +20,41 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.It
     /// <summary>
     /// Provides operations to manage the messages property of the microsoft.graph.channel entity.
     /// </summary>
-    public class ChatMessageItemRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class ChatMessageItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the hostedContents property of the microsoft.graph.chatMessage entity.</summary>
-        public Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.HostedContents.HostedContentsRequestBuilder HostedContents
+        public global::Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.HostedContents.HostedContentsRequestBuilder HostedContents
         {
-            get => new Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.HostedContents.HostedContentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.HostedContents.HostedContentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the replies property of the microsoft.graph.chatMessage entity.</summary>
-        public Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.Replies.RepliesRequestBuilder Replies
+        public global::Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.Replies.RepliesRequestBuilder Replies
         {
-            get => new Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.Replies.RepliesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.Replies.RepliesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the setReaction method.</summary>
-        public Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.SetReaction.SetReactionRequestBuilder SetReaction
+        public global::Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.SetReaction.SetReactionRequestBuilder SetReaction
         {
-            get => new Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.SetReaction.SetReactionRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.SetReaction.SetReactionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the softDelete method.</summary>
-        public Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.SoftDelete.SoftDeleteRequestBuilder SoftDelete
+        public global::Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.SoftDelete.SoftDeleteRequestBuilder SoftDelete
         {
-            get => new Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.SoftDelete.SoftDeleteRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.SoftDelete.SoftDeleteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the undoSoftDelete method.</summary>
-        public Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.UndoSoftDelete.UndoSoftDeleteRequestBuilder UndoSoftDelete
+        public global::Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.UndoSoftDelete.UndoSoftDeleteRequestBuilder UndoSoftDelete
         {
-            get => new Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.UndoSoftDelete.UndoSoftDeleteRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.UndoSoftDelete.UndoSoftDeleteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unsetReaction method.</summary>
-        public Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.UnsetReaction.UnsetReactionRequestBuilder UnsetReaction
+        public global::Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.UnsetReaction.UnsetReactionRequestBuilder UnsetReaction
         {
-            get => new Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.UnsetReaction.UnsetReactionRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.UnsetReaction.UnsetReactionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.ChatMessageItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.ChatMessageItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -61,7 +62,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.It
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.ChatMessageItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.ChatMessageItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -73,7 +74,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.It
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -86,57 +87,57 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.It
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// A collection of all the messages in the channel. A navigation property. Nullable.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.ChatMessage"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.ChatMessage"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.ChatMessage?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.ChatMessageItemRequestBuilder.ChatMessageItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.ChatMessage?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.ChatMessageItemRequestBuilder.ChatMessageItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.ChatMessage> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.ChatMessageItemRequestBuilder.ChatMessageItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.ChatMessage> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.ChatMessageItemRequestBuilder.ChatMessageItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ChatMessage>(requestInfo, Microsoft.Graph.Models.ChatMessage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ChatMessage>(requestInfo, global::Microsoft.Graph.Models.ChatMessage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property messages in users
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.ChatMessage"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.ChatMessage"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.ChatMessage?> PatchAsync(Microsoft.Graph.Models.ChatMessage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.ChatMessage?> PatchAsync(global::Microsoft.Graph.Models.ChatMessage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.ChatMessage> PatchAsync(Microsoft.Graph.Models.ChatMessage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.ChatMessage> PatchAsync(global::Microsoft.Graph.Models.ChatMessage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ChatMessage>(requestInfo, Microsoft.Graph.Models.ChatMessage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ChatMessage>(requestInfo, global::Microsoft.Graph.Models.ChatMessage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property messages for users
@@ -164,11 +165,11 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.It
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.ChatMessageItemRequestBuilder.ChatMessageItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.ChatMessageItemRequestBuilder.ChatMessageItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.ChatMessageItemRequestBuilder.ChatMessageItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.ChatMessageItemRequestBuilder.ChatMessageItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -184,11 +185,11 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.It
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.ChatMessage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.ChatMessage body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.ChatMessage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.ChatMessage body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -201,23 +202,25 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.It
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.ChatMessageItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.ChatMessageItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.ChatMessageItemRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.ChatMessageItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.ChatMessageItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.ChatMessageItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ChatMessageItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ChatMessageItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// A collection of all the messages in the channel. A navigation property. Nullable.
         /// </summary>
-        public class ChatMessageItemRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ChatMessageItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -244,14 +247,16 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.It
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ChatMessageItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.ChatMessageItemRequestBuilder.ChatMessageItemRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ChatMessageItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item.ChatMessageItemRequestBuilder.ChatMessageItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ChatMessageItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ChatMessageItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

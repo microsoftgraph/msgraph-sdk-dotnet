@@ -3,11 +3,11 @@ using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Reports.MonthlyPrintUsageByUser.Count;
 using Microsoft.Graph.Reports.MonthlyPrintUsageByUser.Item;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,27 +16,28 @@ namespace Microsoft.Graph.Reports.MonthlyPrintUsageByUser
     /// <summary>
     /// Provides operations to manage the monthlyPrintUsageByUser property of the microsoft.graph.reportRoot entity.
     /// </summary>
-    public class MonthlyPrintUsageByUserRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class MonthlyPrintUsageByUserRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Reports.MonthlyPrintUsageByUser.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Reports.MonthlyPrintUsageByUser.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Reports.MonthlyPrintUsageByUser.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Reports.MonthlyPrintUsageByUser.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the monthlyPrintUsageByUser property of the microsoft.graph.reportRoot entity.</summary>
         /// <param name="position">The unique identifier of printUsageByUser</param>
-        /// <returns>A <see cref="Microsoft.Graph.Reports.MonthlyPrintUsageByUser.Item.PrintUsageByUserItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Reports.MonthlyPrintUsageByUser.Item.PrintUsageByUserItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Reports.MonthlyPrintUsageByUser.Item.PrintUsageByUserItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Reports.MonthlyPrintUsageByUser.Item.PrintUsageByUserItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("printUsageByUser%2Did", position);
-                return new Microsoft.Graph.Reports.MonthlyPrintUsageByUser.Item.PrintUsageByUserItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Reports.MonthlyPrintUsageByUser.Item.PrintUsageByUserItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Reports.MonthlyPrintUsageByUser.MonthlyPrintUsageByUserRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Reports.MonthlyPrintUsageByUser.MonthlyPrintUsageByUserRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +45,7 @@ namespace Microsoft.Graph.Reports.MonthlyPrintUsageByUser
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Reports.MonthlyPrintUsageByUser.MonthlyPrintUsageByUserRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Reports.MonthlyPrintUsageByUser.MonthlyPrintUsageByUserRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,50 +56,50 @@ namespace Microsoft.Graph.Reports.MonthlyPrintUsageByUser
         /// Retrieve a list of monthly print usage summaries, grouped by user.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-list-monthlyprintusagebyuser?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.PrintUsageByUserCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.PrintUsageByUserCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.PrintUsageByUserCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Reports.MonthlyPrintUsageByUser.MonthlyPrintUsageByUserRequestBuilder.MonthlyPrintUsageByUserRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.PrintUsageByUserCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Reports.MonthlyPrintUsageByUser.MonthlyPrintUsageByUserRequestBuilder.MonthlyPrintUsageByUserRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.PrintUsageByUserCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Reports.MonthlyPrintUsageByUser.MonthlyPrintUsageByUserRequestBuilder.MonthlyPrintUsageByUserRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.PrintUsageByUserCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Reports.MonthlyPrintUsageByUser.MonthlyPrintUsageByUserRequestBuilder.MonthlyPrintUsageByUserRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.PrintUsageByUserCollectionResponse>(requestInfo, Microsoft.Graph.Models.PrintUsageByUserCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.PrintUsageByUserCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.PrintUsageByUserCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to monthlyPrintUsageByUser for reports
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.PrintUsageByUser"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.PrintUsageByUser"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.PrintUsageByUser?> PostAsync(Microsoft.Graph.Models.PrintUsageByUser body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.PrintUsageByUser?> PostAsync(global::Microsoft.Graph.Models.PrintUsageByUser body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.PrintUsageByUser> PostAsync(Microsoft.Graph.Models.PrintUsageByUser body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.PrintUsageByUser> PostAsync(global::Microsoft.Graph.Models.PrintUsageByUser body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.PrintUsageByUser>(requestInfo, Microsoft.Graph.Models.PrintUsageByUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.PrintUsageByUser>(requestInfo, global::Microsoft.Graph.Models.PrintUsageByUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of monthly print usage summaries, grouped by user.
@@ -107,11 +108,11 @@ namespace Microsoft.Graph.Reports.MonthlyPrintUsageByUser
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Reports.MonthlyPrintUsageByUser.MonthlyPrintUsageByUserRequestBuilder.MonthlyPrintUsageByUserRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Reports.MonthlyPrintUsageByUser.MonthlyPrintUsageByUserRequestBuilder.MonthlyPrintUsageByUserRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Reports.MonthlyPrintUsageByUser.MonthlyPrintUsageByUserRequestBuilder.MonthlyPrintUsageByUserRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Reports.MonthlyPrintUsageByUser.MonthlyPrintUsageByUserRequestBuilder.MonthlyPrintUsageByUserRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -127,11 +128,11 @@ namespace Microsoft.Graph.Reports.MonthlyPrintUsageByUser
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.PrintUsageByUser body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.PrintUsageByUser body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.PrintUsageByUser body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.PrintUsageByUser body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -144,16 +145,17 @@ namespace Microsoft.Graph.Reports.MonthlyPrintUsageByUser
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Reports.MonthlyPrintUsageByUser.MonthlyPrintUsageByUserRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Reports.MonthlyPrintUsageByUser.MonthlyPrintUsageByUserRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Reports.MonthlyPrintUsageByUser.MonthlyPrintUsageByUserRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Reports.MonthlyPrintUsageByUser.MonthlyPrintUsageByUserRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Reports.MonthlyPrintUsageByUser.MonthlyPrintUsageByUserRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Reports.MonthlyPrintUsageByUser.MonthlyPrintUsageByUserRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve a list of monthly print usage summaries, grouped by user.
         /// </summary>
-        public class MonthlyPrintUsageByUserRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class MonthlyPrintUsageByUserRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -219,14 +221,16 @@ namespace Microsoft.Graph.Reports.MonthlyPrintUsageByUser
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MonthlyPrintUsageByUserRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Reports.MonthlyPrintUsageByUser.MonthlyPrintUsageByUserRequestBuilder.MonthlyPrintUsageByUserRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class MonthlyPrintUsageByUserRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Reports.MonthlyPrintUsageByUser.MonthlyPrintUsageByUserRequestBuilder.MonthlyPrintUsageByUserRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MonthlyPrintUsageByUserRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class MonthlyPrintUsageByUserRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

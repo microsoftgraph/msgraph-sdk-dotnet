@@ -4,10 +4,10 @@ using Microsoft.Graph.Devices.Item.RegisteredOwners.Item.GraphEndpoint;
 using Microsoft.Graph.Devices.Item.RegisteredOwners.Item.GraphServicePrincipal;
 using Microsoft.Graph.Devices.Item.RegisteredOwners.Item.GraphUser;
 using Microsoft.Graph.Devices.Item.RegisteredOwners.Item.Ref;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System;
 namespace Microsoft.Graph.Devices.Item.RegisteredOwners.Item
@@ -15,35 +15,36 @@ namespace Microsoft.Graph.Devices.Item.RegisteredOwners.Item
     /// <summary>
     /// Builds and executes requests for operations under \devices\{device-id}\registeredOwners\{directoryObject-id}
     /// </summary>
-    public class DirectoryObjectItemRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class DirectoryObjectItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Casts the previous resource to appRoleAssignment.</summary>
-        public Microsoft.Graph.Devices.Item.RegisteredOwners.Item.GraphAppRoleAssignment.GraphAppRoleAssignmentRequestBuilder GraphAppRoleAssignment
+        public global::Microsoft.Graph.Devices.Item.RegisteredOwners.Item.GraphAppRoleAssignment.GraphAppRoleAssignmentRequestBuilder GraphAppRoleAssignment
         {
-            get => new Microsoft.Graph.Devices.Item.RegisteredOwners.Item.GraphAppRoleAssignment.GraphAppRoleAssignmentRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Devices.Item.RegisteredOwners.Item.GraphAppRoleAssignment.GraphAppRoleAssignmentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to endpoint.</summary>
-        public Microsoft.Graph.Devices.Item.RegisteredOwners.Item.GraphEndpoint.GraphEndpointRequestBuilder GraphEndpoint
+        public global::Microsoft.Graph.Devices.Item.RegisteredOwners.Item.GraphEndpoint.GraphEndpointRequestBuilder GraphEndpoint
         {
-            get => new Microsoft.Graph.Devices.Item.RegisteredOwners.Item.GraphEndpoint.GraphEndpointRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Devices.Item.RegisteredOwners.Item.GraphEndpoint.GraphEndpointRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to servicePrincipal.</summary>
-        public Microsoft.Graph.Devices.Item.RegisteredOwners.Item.GraphServicePrincipal.GraphServicePrincipalRequestBuilder GraphServicePrincipal
+        public global::Microsoft.Graph.Devices.Item.RegisteredOwners.Item.GraphServicePrincipal.GraphServicePrincipalRequestBuilder GraphServicePrincipal
         {
-            get => new Microsoft.Graph.Devices.Item.RegisteredOwners.Item.GraphServicePrincipal.GraphServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Devices.Item.RegisteredOwners.Item.GraphServicePrincipal.GraphServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to user.</summary>
-        public Microsoft.Graph.Devices.Item.RegisteredOwners.Item.GraphUser.GraphUserRequestBuilder GraphUser
+        public global::Microsoft.Graph.Devices.Item.RegisteredOwners.Item.GraphUser.GraphUserRequestBuilder GraphUser
         {
-            get => new Microsoft.Graph.Devices.Item.RegisteredOwners.Item.GraphUser.GraphUserRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Devices.Item.RegisteredOwners.Item.GraphUser.GraphUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of device entities.</summary>
-        public Microsoft.Graph.Devices.Item.RegisteredOwners.Item.Ref.RefRequestBuilder Ref
+        public global::Microsoft.Graph.Devices.Item.RegisteredOwners.Item.Ref.RefRequestBuilder Ref
         {
-            get => new Microsoft.Graph.Devices.Item.RegisteredOwners.Item.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Devices.Item.RegisteredOwners.Item.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Devices.Item.RegisteredOwners.Item.DirectoryObjectItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Devices.Item.RegisteredOwners.Item.DirectoryObjectItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -51,7 +52,7 @@ namespace Microsoft.Graph.Devices.Item.RegisteredOwners.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Devices.Item.RegisteredOwners.Item.DirectoryObjectItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Devices.Item.RegisteredOwners.Item.DirectoryObjectItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

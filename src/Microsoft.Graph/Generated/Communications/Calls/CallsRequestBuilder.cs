@@ -4,11 +4,11 @@ using Microsoft.Graph.Communications.Calls.Item;
 using Microsoft.Graph.Communications.Calls.LogTeleconferenceDeviceQuality;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -17,32 +17,33 @@ namespace Microsoft.Graph.Communications.Calls
     /// <summary>
     /// Provides operations to manage the calls property of the microsoft.graph.cloudCommunications entity.
     /// </summary>
-    public class CallsRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class CallsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Communications.Calls.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Communications.Calls.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Communications.Calls.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Communications.Calls.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the logTeleconferenceDeviceQuality method.</summary>
-        public Microsoft.Graph.Communications.Calls.LogTeleconferenceDeviceQuality.LogTeleconferenceDeviceQualityRequestBuilder LogTeleconferenceDeviceQuality
+        public global::Microsoft.Graph.Communications.Calls.LogTeleconferenceDeviceQuality.LogTeleconferenceDeviceQualityRequestBuilder LogTeleconferenceDeviceQuality
         {
-            get => new Microsoft.Graph.Communications.Calls.LogTeleconferenceDeviceQuality.LogTeleconferenceDeviceQualityRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Communications.Calls.LogTeleconferenceDeviceQuality.LogTeleconferenceDeviceQualityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the calls property of the microsoft.graph.cloudCommunications entity.</summary>
         /// <param name="position">The unique identifier of call</param>
-        /// <returns>A <see cref="Microsoft.Graph.Communications.Calls.Item.CallItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Communications.Calls.Item.CallItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Communications.Calls.Item.CallItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Communications.Calls.Item.CallItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("call%2Did", position);
-                return new Microsoft.Graph.Communications.Calls.Item.CallItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Communications.Calls.Item.CallItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Communications.Calls.CallsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Communications.Calls.CallsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -50,7 +51,7 @@ namespace Microsoft.Graph.Communications.Calls
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Communications.Calls.CallsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Communications.Calls.CallsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -60,51 +61,51 @@ namespace Microsoft.Graph.Communications.Calls
         /// <summary>
         /// Retrieve the properties and relationships of a call object.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.CallCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.CallCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.CallCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Communications.Calls.CallsRequestBuilder.CallsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.CallCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Communications.Calls.CallsRequestBuilder.CallsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.CallCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Communications.Calls.CallsRequestBuilder.CallsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.CallCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Communications.Calls.CallsRequestBuilder.CallsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.CallCollectionResponse>(requestInfo, Microsoft.Graph.Models.CallCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.CallCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.CallCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting. You will need to register the calling bot and go through the list of permissions needed as mentioned below.
+        /// Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting. You will need to register the calling bot and go through the list of permissions needed as mentioned below. This API supports the following PSTN scenarios:
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-post-calls?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.Call"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.Call"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Call?> PostAsync(Microsoft.Graph.Models.Call body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Call?> PostAsync(global::Microsoft.Graph.Models.Call body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Call> PostAsync(Microsoft.Graph.Models.Call body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Call> PostAsync(global::Microsoft.Graph.Models.Call body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Call>(requestInfo, Microsoft.Graph.Models.Call.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Call>(requestInfo, global::Microsoft.Graph.Models.Call.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve the properties and relationships of a call object.
@@ -113,11 +114,11 @@ namespace Microsoft.Graph.Communications.Calls
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Communications.Calls.CallsRequestBuilder.CallsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Communications.Calls.CallsRequestBuilder.CallsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Communications.Calls.CallsRequestBuilder.CallsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Communications.Calls.CallsRequestBuilder.CallsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,18 +127,18 @@ namespace Microsoft.Graph.Communications.Calls
             return requestInfo;
         }
         /// <summary>
-        /// Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting. You will need to register the calling bot and go through the list of permissions needed as mentioned below.
+        /// Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting. You will need to register the calling bot and go through the list of permissions needed as mentioned below. This API supports the following PSTN scenarios:
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.Call body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.Call body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.Call body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.Call body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -150,16 +151,17 @@ namespace Microsoft.Graph.Communications.Calls
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Communications.Calls.CallsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Communications.Calls.CallsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Communications.Calls.CallsRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Communications.Calls.CallsRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Communications.Calls.CallsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Communications.Calls.CallsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve the properties and relationships of a call object.
         /// </summary>
-        public class CallsRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class CallsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -225,14 +227,16 @@ namespace Microsoft.Graph.Communications.Calls
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CallsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Communications.Calls.CallsRequestBuilder.CallsRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class CallsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Communications.Calls.CallsRequestBuilder.CallsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CallsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class CallsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

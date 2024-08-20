@@ -3,11 +3,11 @@ using Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostA
 using Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostFederationSignup;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,20 +16,21 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration
     /// <summary>
     /// Builds and executes requests for operations under \identity\b2xUserFlows\{b2xIdentityUserFlow-id}\apiConnectorConfiguration
     /// </summary>
-    public class ApiConnectorConfigurationRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class ApiConnectorConfigurationRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the postAttributeCollection property of the microsoft.graph.userFlowApiConnectorConfiguration entity.</summary>
-        public Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostAttributeCollection.PostAttributeCollectionRequestBuilder PostAttributeCollection
+        public global::Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostAttributeCollection.PostAttributeCollectionRequestBuilder PostAttributeCollection
         {
-            get => new Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostAttributeCollection.PostAttributeCollectionRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostAttributeCollection.PostAttributeCollectionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the postFederationSignup property of the microsoft.graph.userFlowApiConnectorConfiguration entity.</summary>
-        public Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostFederationSignup.PostFederationSignupRequestBuilder PostFederationSignup
+        public global::Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostFederationSignup.PostFederationSignupRequestBuilder PostFederationSignup
         {
-            get => new Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostFederationSignup.PostFederationSignupRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.PostFederationSignup.PostFederationSignupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.ApiConnectorConfigurationRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.ApiConnectorConfigurationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +38,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.ApiConnectorConfigurationRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.ApiConnectorConfigurationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -48,25 +49,25 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration
         /// Get the apiConnectorConfiguration property in a b2xIdentityUserFlow to detail the API connectors enabled for the user flow.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/b2xidentityuserflow-get-apiconnectorconfiguration?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.UserFlowApiConnectorConfiguration"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.UserFlowApiConnectorConfiguration"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.UserFlowApiConnectorConfiguration?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.ApiConnectorConfigurationRequestBuilder.ApiConnectorConfigurationRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.UserFlowApiConnectorConfiguration?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.ApiConnectorConfigurationRequestBuilder.ApiConnectorConfigurationRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.UserFlowApiConnectorConfiguration> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.ApiConnectorConfigurationRequestBuilder.ApiConnectorConfigurationRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.UserFlowApiConnectorConfiguration> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.ApiConnectorConfigurationRequestBuilder.ApiConnectorConfigurationRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.UserFlowApiConnectorConfiguration>(requestInfo, Microsoft.Graph.Models.UserFlowApiConnectorConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.UserFlowApiConnectorConfiguration>(requestInfo, global::Microsoft.Graph.Models.UserFlowApiConnectorConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the apiConnectorConfiguration property in a b2xIdentityUserFlow to detail the API connectors enabled for the user flow.
@@ -75,11 +76,11 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.ApiConnectorConfigurationRequestBuilder.ApiConnectorConfigurationRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.ApiConnectorConfigurationRequestBuilder.ApiConnectorConfigurationRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.ApiConnectorConfigurationRequestBuilder.ApiConnectorConfigurationRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.ApiConnectorConfigurationRequestBuilder.ApiConnectorConfigurationRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -90,16 +91,17 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.ApiConnectorConfigurationRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.ApiConnectorConfigurationRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.ApiConnectorConfigurationRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.ApiConnectorConfigurationRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.ApiConnectorConfigurationRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.ApiConnectorConfigurationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the apiConnectorConfiguration property in a b2xIdentityUserFlow to detail the API connectors enabled for the user flow.
         /// </summary>
-        public class ApiConnectorConfigurationRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ApiConnectorConfigurationRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -126,7 +128,8 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ApiConnectorConfigurationRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.ApiConnectorConfigurationRequestBuilder.ApiConnectorConfigurationRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ApiConnectorConfigurationRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Identity.B2xUserFlows.Item.ApiConnectorConfiguration.ApiConnectorConfigurationRequestBuilder.ApiConnectorConfigurationRequestBuilderGetQueryParameters>
         {
         }
     }

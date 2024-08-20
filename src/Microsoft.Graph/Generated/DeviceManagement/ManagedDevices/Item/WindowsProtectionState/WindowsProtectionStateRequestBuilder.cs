@@ -2,11 +2,11 @@
 using Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsProtectionState.DetectedMalwareState;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -15,15 +15,16 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsProtection
     /// <summary>
     /// Provides operations to manage the windowsProtectionState property of the microsoft.graph.managedDevice entity.
     /// </summary>
-    public class WindowsProtectionStateRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class WindowsProtectionStateRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the detectedMalwareState property of the microsoft.graph.windowsProtectionState entity.</summary>
-        public Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsProtectionState.DetectedMalwareState.DetectedMalwareStateRequestBuilder DetectedMalwareState
+        public global::Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsProtectionState.DetectedMalwareState.DetectedMalwareStateRequestBuilder DetectedMalwareState
         {
-            get => new Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsProtectionState.DetectedMalwareState.DetectedMalwareStateRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsProtectionState.DetectedMalwareState.DetectedMalwareStateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsProtectionState.WindowsProtectionStateRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsProtectionState.WindowsProtectionStateRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,7 +32,7 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsProtection
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsProtectionState.WindowsProtectionStateRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsProtectionState.WindowsProtectionStateRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -43,7 +44,7 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsProtection
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -56,57 +57,57 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsProtection
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The device protection status. This property is read-only.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.WindowsProtectionState"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.WindowsProtectionState"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.WindowsProtectionState?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsProtectionState.WindowsProtectionStateRequestBuilder.WindowsProtectionStateRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.WindowsProtectionState?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsProtectionState.WindowsProtectionStateRequestBuilder.WindowsProtectionStateRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.WindowsProtectionState> GetAsync(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsProtectionState.WindowsProtectionStateRequestBuilder.WindowsProtectionStateRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.WindowsProtectionState> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsProtectionState.WindowsProtectionStateRequestBuilder.WindowsProtectionStateRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.WindowsProtectionState>(requestInfo, Microsoft.Graph.Models.WindowsProtectionState.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.WindowsProtectionState>(requestInfo, global::Microsoft.Graph.Models.WindowsProtectionState.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property windowsProtectionState in deviceManagement
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.WindowsProtectionState"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.WindowsProtectionState"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.WindowsProtectionState?> PatchAsync(Microsoft.Graph.Models.WindowsProtectionState body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.WindowsProtectionState?> PatchAsync(global::Microsoft.Graph.Models.WindowsProtectionState body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.WindowsProtectionState> PatchAsync(Microsoft.Graph.Models.WindowsProtectionState body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.WindowsProtectionState> PatchAsync(global::Microsoft.Graph.Models.WindowsProtectionState body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.WindowsProtectionState>(requestInfo, Microsoft.Graph.Models.WindowsProtectionState.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.WindowsProtectionState>(requestInfo, global::Microsoft.Graph.Models.WindowsProtectionState.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property windowsProtectionState for deviceManagement
@@ -134,11 +135,11 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsProtection
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsProtectionState.WindowsProtectionStateRequestBuilder.WindowsProtectionStateRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsProtectionState.WindowsProtectionStateRequestBuilder.WindowsProtectionStateRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsProtectionState.WindowsProtectionStateRequestBuilder.WindowsProtectionStateRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsProtectionState.WindowsProtectionStateRequestBuilder.WindowsProtectionStateRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -154,11 +155,11 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsProtection
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.WindowsProtectionState body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.WindowsProtectionState body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.WindowsProtectionState body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.WindowsProtectionState body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -171,23 +172,25 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsProtection
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsProtectionState.WindowsProtectionStateRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsProtectionState.WindowsProtectionStateRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsProtectionState.WindowsProtectionStateRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsProtectionState.WindowsProtectionStateRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsProtectionState.WindowsProtectionStateRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsProtectionState.WindowsProtectionStateRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class WindowsProtectionStateRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class WindowsProtectionStateRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// The device protection status. This property is read-only.
         /// </summary>
-        public class WindowsProtectionStateRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class WindowsProtectionStateRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -214,14 +217,16 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsProtection
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class WindowsProtectionStateRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsProtectionState.WindowsProtectionStateRequestBuilder.WindowsProtectionStateRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class WindowsProtectionStateRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.DeviceManagement.ManagedDevices.Item.WindowsProtectionState.WindowsProtectionStateRequestBuilder.WindowsProtectionStateRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class WindowsProtectionStateRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class WindowsProtectionStateRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

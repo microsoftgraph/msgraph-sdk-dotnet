@@ -3,11 +3,11 @@ using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models.Security;
 using Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.ChildTags;
 using Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.Parent;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,20 +16,21 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item
     /// <summary>
     /// Provides operations to manage the tags property of the microsoft.graph.security.ediscoveryCase entity.
     /// </summary>
-    public class EdiscoveryReviewTagItemRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class EdiscoveryReviewTagItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the childTags property of the microsoft.graph.security.ediscoveryReviewTag entity.</summary>
-        public Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.ChildTags.ChildTagsRequestBuilder ChildTags
+        public global::Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.ChildTags.ChildTagsRequestBuilder ChildTags
         {
-            get => new Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.ChildTags.ChildTagsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.ChildTags.ChildTagsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the parent property of the microsoft.graph.security.ediscoveryReviewTag entity.</summary>
-        public Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.Parent.ParentRequestBuilder Parent
+        public global::Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.Parent.ParentRequestBuilder Parent
         {
-            get => new Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.Parent.ParentRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.Parent.ParentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.EdiscoveryReviewTagItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.EdiscoveryReviewTagItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +38,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.EdiscoveryReviewTagItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.EdiscoveryReviewTagItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -50,7 +51,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -63,7 +64,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -71,51 +72,51 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item
         /// Read the properties and relationships of an ediscoveryReviewTag object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoveryreviewtag-get?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.Security.EdiscoveryReviewTag"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.Security.EdiscoveryReviewTag"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Security.EdiscoveryReviewTag?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.EdiscoveryReviewTagItemRequestBuilder.EdiscoveryReviewTagItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Security.EdiscoveryReviewTag?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.EdiscoveryReviewTagItemRequestBuilder.EdiscoveryReviewTagItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Security.EdiscoveryReviewTag> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.EdiscoveryReviewTagItemRequestBuilder.EdiscoveryReviewTagItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Security.EdiscoveryReviewTag> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.EdiscoveryReviewTagItemRequestBuilder.EdiscoveryReviewTagItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.EdiscoveryReviewTag>(requestInfo, Microsoft.Graph.Models.Security.EdiscoveryReviewTag.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Security.EdiscoveryReviewTag>(requestInfo, global::Microsoft.Graph.Models.Security.EdiscoveryReviewTag.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the properties of an ediscoveryReviewTag object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoveryreviewtag-update?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.Security.EdiscoveryReviewTag"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.Security.EdiscoveryReviewTag"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Security.EdiscoveryReviewTag?> PatchAsync(Microsoft.Graph.Models.Security.EdiscoveryReviewTag body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Security.EdiscoveryReviewTag?> PatchAsync(global::Microsoft.Graph.Models.Security.EdiscoveryReviewTag body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Security.EdiscoveryReviewTag> PatchAsync(Microsoft.Graph.Models.Security.EdiscoveryReviewTag body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Security.EdiscoveryReviewTag> PatchAsync(global::Microsoft.Graph.Models.Security.EdiscoveryReviewTag body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Security.EdiscoveryReviewTag>(requestInfo, Microsoft.Graph.Models.Security.EdiscoveryReviewTag.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Security.EdiscoveryReviewTag>(requestInfo, global::Microsoft.Graph.Models.Security.EdiscoveryReviewTag.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Remove an ediscoveryReviewTag object.
@@ -143,11 +144,11 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.EdiscoveryReviewTagItemRequestBuilder.EdiscoveryReviewTagItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.EdiscoveryReviewTagItemRequestBuilder.EdiscoveryReviewTagItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.EdiscoveryReviewTagItemRequestBuilder.EdiscoveryReviewTagItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.EdiscoveryReviewTagItemRequestBuilder.EdiscoveryReviewTagItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -163,11 +164,11 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Security.EdiscoveryReviewTag body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.Security.EdiscoveryReviewTag body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.Security.EdiscoveryReviewTag body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.Security.EdiscoveryReviewTag body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -180,23 +181,25 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.EdiscoveryReviewTagItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.EdiscoveryReviewTagItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.EdiscoveryReviewTagItemRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.EdiscoveryReviewTagItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.EdiscoveryReviewTagItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.EdiscoveryReviewTagItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class EdiscoveryReviewTagItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class EdiscoveryReviewTagItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Read the properties and relationships of an ediscoveryReviewTag object.
         /// </summary>
-        public class EdiscoveryReviewTagItemRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class EdiscoveryReviewTagItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -223,14 +226,16 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class EdiscoveryReviewTagItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.EdiscoveryReviewTagItemRequestBuilder.EdiscoveryReviewTagItemRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class EdiscoveryReviewTagItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.EdiscoveryReviewTagItemRequestBuilder.EdiscoveryReviewTagItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class EdiscoveryReviewTagItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class EdiscoveryReviewTagItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

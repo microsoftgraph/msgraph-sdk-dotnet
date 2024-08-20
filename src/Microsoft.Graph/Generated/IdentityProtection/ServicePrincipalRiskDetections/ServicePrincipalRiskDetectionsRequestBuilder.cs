@@ -3,11 +3,11 @@ using Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections.Count;
 using Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections.Item;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,27 +16,28 @@ namespace Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections
     /// <summary>
     /// Provides operations to manage the servicePrincipalRiskDetections property of the microsoft.graph.identityProtectionRoot entity.
     /// </summary>
-    public class ServicePrincipalRiskDetectionsRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class ServicePrincipalRiskDetectionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the servicePrincipalRiskDetections property of the microsoft.graph.identityProtectionRoot entity.</summary>
         /// <param name="position">The unique identifier of servicePrincipalRiskDetection</param>
-        /// <returns>A <see cref="Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections.Item.ServicePrincipalRiskDetectionItemRequestBuilder"/></returns>
-        public Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections.Item.ServicePrincipalRiskDetectionItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections.Item.ServicePrincipalRiskDetectionItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections.Item.ServicePrincipalRiskDetectionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("servicePrincipalRiskDetection%2Did", position);
-                return new Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections.Item.ServicePrincipalRiskDetectionItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections.Item.ServicePrincipalRiskDetectionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections.ServicePrincipalRiskDetectionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections.ServicePrincipalRiskDetectionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +45,7 @@ namespace Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections.ServicePrincipalRiskDetectionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections.ServicePrincipalRiskDetectionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,50 +56,50 @@ namespace Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections
         /// Retrieve the properties of a collection of servicePrincipalRiskDetection objects.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityprotectionroot-list-serviceprincipalriskdetections?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.ServicePrincipalRiskDetectionCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.ServicePrincipalRiskDetectionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.ServicePrincipalRiskDetectionCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections.ServicePrincipalRiskDetectionsRequestBuilder.ServicePrincipalRiskDetectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.ServicePrincipalRiskDetectionCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections.ServicePrincipalRiskDetectionsRequestBuilder.ServicePrincipalRiskDetectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.ServicePrincipalRiskDetectionCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections.ServicePrincipalRiskDetectionsRequestBuilder.ServicePrincipalRiskDetectionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.ServicePrincipalRiskDetectionCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections.ServicePrincipalRiskDetectionsRequestBuilder.ServicePrincipalRiskDetectionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ServicePrincipalRiskDetectionCollectionResponse>(requestInfo, Microsoft.Graph.Models.ServicePrincipalRiskDetectionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ServicePrincipalRiskDetectionCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.ServicePrincipalRiskDetectionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to servicePrincipalRiskDetections for identityProtection
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.ServicePrincipalRiskDetection"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.ServicePrincipalRiskDetection"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.ServicePrincipalRiskDetection?> PostAsync(Microsoft.Graph.Models.ServicePrincipalRiskDetection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.ServicePrincipalRiskDetection?> PostAsync(global::Microsoft.Graph.Models.ServicePrincipalRiskDetection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.ServicePrincipalRiskDetection> PostAsync(Microsoft.Graph.Models.ServicePrincipalRiskDetection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.ServicePrincipalRiskDetection> PostAsync(global::Microsoft.Graph.Models.ServicePrincipalRiskDetection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ServicePrincipalRiskDetection>(requestInfo, Microsoft.Graph.Models.ServicePrincipalRiskDetection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ServicePrincipalRiskDetection>(requestInfo, global::Microsoft.Graph.Models.ServicePrincipalRiskDetection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve the properties of a collection of servicePrincipalRiskDetection objects.
@@ -107,11 +108,11 @@ namespace Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections.ServicePrincipalRiskDetectionsRequestBuilder.ServicePrincipalRiskDetectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections.ServicePrincipalRiskDetectionsRequestBuilder.ServicePrincipalRiskDetectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections.ServicePrincipalRiskDetectionsRequestBuilder.ServicePrincipalRiskDetectionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections.ServicePrincipalRiskDetectionsRequestBuilder.ServicePrincipalRiskDetectionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -127,11 +128,11 @@ namespace Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.ServicePrincipalRiskDetection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.ServicePrincipalRiskDetection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.ServicePrincipalRiskDetection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.ServicePrincipalRiskDetection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -144,16 +145,17 @@ namespace Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections.ServicePrincipalRiskDetectionsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections.ServicePrincipalRiskDetectionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections.ServicePrincipalRiskDetectionsRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections.ServicePrincipalRiskDetectionsRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections.ServicePrincipalRiskDetectionsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections.ServicePrincipalRiskDetectionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve the properties of a collection of servicePrincipalRiskDetection objects.
         /// </summary>
-        public class ServicePrincipalRiskDetectionsRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ServicePrincipalRiskDetectionsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -219,14 +221,16 @@ namespace Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ServicePrincipalRiskDetectionsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections.ServicePrincipalRiskDetectionsRequestBuilder.ServicePrincipalRiskDetectionsRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ServicePrincipalRiskDetectionsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.IdentityProtection.ServicePrincipalRiskDetections.ServicePrincipalRiskDetectionsRequestBuilder.ServicePrincipalRiskDetectionsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ServicePrincipalRiskDetectionsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ServicePrincipalRiskDetectionsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

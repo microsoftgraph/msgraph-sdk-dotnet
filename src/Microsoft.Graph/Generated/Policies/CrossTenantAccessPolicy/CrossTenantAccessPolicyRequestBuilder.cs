@@ -4,11 +4,11 @@ using Microsoft.Graph.Models;
 using Microsoft.Graph.Policies.CrossTenantAccessPolicy.Default;
 using Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners;
 using Microsoft.Graph.Policies.CrossTenantAccessPolicy.Templates;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -17,25 +17,26 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy
     /// <summary>
     /// Provides operations to manage the crossTenantAccessPolicy property of the microsoft.graph.policyRoot entity.
     /// </summary>
-    public class CrossTenantAccessPolicyRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class CrossTenantAccessPolicyRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the default property of the microsoft.graph.crossTenantAccessPolicy entity.</summary>
-        public Microsoft.Graph.Policies.CrossTenantAccessPolicy.Default.DefaultRequestBuilder Default
+        public global::Microsoft.Graph.Policies.CrossTenantAccessPolicy.Default.DefaultRequestBuilder Default
         {
-            get => new Microsoft.Graph.Policies.CrossTenantAccessPolicy.Default.DefaultRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Policies.CrossTenantAccessPolicy.Default.DefaultRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the partners property of the microsoft.graph.crossTenantAccessPolicy entity.</summary>
-        public Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.PartnersRequestBuilder Partners
+        public global::Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.PartnersRequestBuilder Partners
         {
-            get => new Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.PartnersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.PartnersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the templates property of the microsoft.graph.crossTenantAccessPolicy entity.</summary>
-        public Microsoft.Graph.Policies.CrossTenantAccessPolicy.Templates.TemplatesRequestBuilder Templates
+        public global::Microsoft.Graph.Policies.CrossTenantAccessPolicy.Templates.TemplatesRequestBuilder Templates
         {
-            get => new Microsoft.Graph.Policies.CrossTenantAccessPolicy.Templates.TemplatesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Policies.CrossTenantAccessPolicy.Templates.TemplatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Policies.CrossTenantAccessPolicy.CrossTenantAccessPolicyRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Policies.CrossTenantAccessPolicy.CrossTenantAccessPolicyRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -43,7 +44,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Policies.CrossTenantAccessPolicy.CrossTenantAccessPolicyRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Policies.CrossTenantAccessPolicy.CrossTenantAccessPolicyRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,7 +56,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -68,7 +69,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -76,51 +77,51 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy
         /// Read the properties and relationships of a crossTenantAccessPolicy object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantaccesspolicy-get?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.CrossTenantAccessPolicy"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.CrossTenantAccessPolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.CrossTenantAccessPolicy?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Policies.CrossTenantAccessPolicy.CrossTenantAccessPolicyRequestBuilder.CrossTenantAccessPolicyRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.CrossTenantAccessPolicy?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Policies.CrossTenantAccessPolicy.CrossTenantAccessPolicyRequestBuilder.CrossTenantAccessPolicyRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.CrossTenantAccessPolicy> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Policies.CrossTenantAccessPolicy.CrossTenantAccessPolicyRequestBuilder.CrossTenantAccessPolicyRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.CrossTenantAccessPolicy> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Policies.CrossTenantAccessPolicy.CrossTenantAccessPolicyRequestBuilder.CrossTenantAccessPolicyRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.CrossTenantAccessPolicy>(requestInfo, Microsoft.Graph.Models.CrossTenantAccessPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.CrossTenantAccessPolicy>(requestInfo, global::Microsoft.Graph.Models.CrossTenantAccessPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the properties of a cross-tenant access policy.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantaccesspolicy-update?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.CrossTenantAccessPolicy"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.CrossTenantAccessPolicy"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.CrossTenantAccessPolicy?> PatchAsync(Microsoft.Graph.Models.CrossTenantAccessPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.CrossTenantAccessPolicy?> PatchAsync(global::Microsoft.Graph.Models.CrossTenantAccessPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.CrossTenantAccessPolicy> PatchAsync(Microsoft.Graph.Models.CrossTenantAccessPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.CrossTenantAccessPolicy> PatchAsync(global::Microsoft.Graph.Models.CrossTenantAccessPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.CrossTenantAccessPolicy>(requestInfo, Microsoft.Graph.Models.CrossTenantAccessPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.CrossTenantAccessPolicy>(requestInfo, global::Microsoft.Graph.Models.CrossTenantAccessPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property crossTenantAccessPolicy for policies
@@ -148,11 +149,11 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Policies.CrossTenantAccessPolicy.CrossTenantAccessPolicyRequestBuilder.CrossTenantAccessPolicyRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Policies.CrossTenantAccessPolicy.CrossTenantAccessPolicyRequestBuilder.CrossTenantAccessPolicyRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Policies.CrossTenantAccessPolicy.CrossTenantAccessPolicyRequestBuilder.CrossTenantAccessPolicyRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Policies.CrossTenantAccessPolicy.CrossTenantAccessPolicyRequestBuilder.CrossTenantAccessPolicyRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -168,11 +169,11 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.CrossTenantAccessPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.CrossTenantAccessPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.CrossTenantAccessPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.CrossTenantAccessPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -185,23 +186,25 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Policies.CrossTenantAccessPolicy.CrossTenantAccessPolicyRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Policies.CrossTenantAccessPolicy.CrossTenantAccessPolicyRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Policies.CrossTenantAccessPolicy.CrossTenantAccessPolicyRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Policies.CrossTenantAccessPolicy.CrossTenantAccessPolicyRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Policies.CrossTenantAccessPolicy.CrossTenantAccessPolicyRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Policies.CrossTenantAccessPolicy.CrossTenantAccessPolicyRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CrossTenantAccessPolicyRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class CrossTenantAccessPolicyRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Read the properties and relationships of a crossTenantAccessPolicy object.
         /// </summary>
-        public class CrossTenantAccessPolicyRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class CrossTenantAccessPolicyRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -228,14 +231,16 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CrossTenantAccessPolicyRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Policies.CrossTenantAccessPolicy.CrossTenantAccessPolicyRequestBuilder.CrossTenantAccessPolicyRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class CrossTenantAccessPolicyRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Policies.CrossTenantAccessPolicy.CrossTenantAccessPolicyRequestBuilder.CrossTenantAccessPolicyRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CrossTenantAccessPolicyRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class CrossTenantAccessPolicyRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

@@ -5,11 +5,11 @@ using Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroup
 using Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -18,30 +18,31 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionG
     /// <summary>
     /// Provides operations to manage the sectionGroups property of the microsoft.graph.notebook entity.
     /// </summary>
-    public class SectionGroupItemRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class SectionGroupItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the parentNotebook property of the microsoft.graph.sectionGroup entity.</summary>
-        public Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.ParentNotebook.ParentNotebookRequestBuilder ParentNotebook
+        public global::Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.ParentNotebook.ParentNotebookRequestBuilder ParentNotebook
         {
-            get => new Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.ParentNotebook.ParentNotebookRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.ParentNotebook.ParentNotebookRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the parentSectionGroup property of the microsoft.graph.sectionGroup entity.</summary>
-        public Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.ParentSectionGroup.ParentSectionGroupRequestBuilder ParentSectionGroup
+        public global::Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.ParentSectionGroup.ParentSectionGroupRequestBuilder ParentSectionGroup
         {
-            get => new Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.ParentSectionGroup.ParentSectionGroupRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.ParentSectionGroup.ParentSectionGroupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sectionGroups property of the microsoft.graph.sectionGroup entity.</summary>
-        public Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.SectionGroups.SectionGroupsRequestBuilder SectionGroups
+        public global::Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.SectionGroups.SectionGroupsRequestBuilder SectionGroups
         {
-            get => new Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.SectionGroups.SectionGroupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.SectionGroups.SectionGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sections property of the microsoft.graph.sectionGroup entity.</summary>
-        public Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.SectionsRequestBuilder Sections
+        public global::Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.SectionsRequestBuilder Sections
         {
-            get => new Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.SectionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.Sections.SectionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.SectionGroupItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.SectionGroupItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -49,7 +50,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionG
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.SectionGroupItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.SectionGroupItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -61,7 +62,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionG
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -74,57 +75,57 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionG
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The section groups in the notebook. Read-only. Nullable.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.SectionGroup"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.SectionGroup"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.SectionGroup?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.SectionGroupItemRequestBuilder.SectionGroupItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.SectionGroup?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.SectionGroupItemRequestBuilder.SectionGroupItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.SectionGroup> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.SectionGroupItemRequestBuilder.SectionGroupItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.SectionGroup> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.SectionGroupItemRequestBuilder.SectionGroupItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.SectionGroup>(requestInfo, Microsoft.Graph.Models.SectionGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.SectionGroup>(requestInfo, global::Microsoft.Graph.Models.SectionGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property sectionGroups in groups
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.SectionGroup"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.SectionGroup"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.SectionGroup?> PatchAsync(Microsoft.Graph.Models.SectionGroup body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.SectionGroup?> PatchAsync(global::Microsoft.Graph.Models.SectionGroup body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.SectionGroup> PatchAsync(Microsoft.Graph.Models.SectionGroup body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.SectionGroup> PatchAsync(global::Microsoft.Graph.Models.SectionGroup body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.SectionGroup>(requestInfo, Microsoft.Graph.Models.SectionGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.SectionGroup>(requestInfo, global::Microsoft.Graph.Models.SectionGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property sectionGroups for groups
@@ -152,11 +153,11 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionG
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.SectionGroupItemRequestBuilder.SectionGroupItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.SectionGroupItemRequestBuilder.SectionGroupItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.SectionGroupItemRequestBuilder.SectionGroupItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.SectionGroupItemRequestBuilder.SectionGroupItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -172,11 +173,11 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionG
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.SectionGroup body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.SectionGroup body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.SectionGroup body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.SectionGroup body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -189,23 +190,25 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionG
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.SectionGroupItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.SectionGroupItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.SectionGroupItemRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.SectionGroupItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.SectionGroupItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.SectionGroupItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SectionGroupItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class SectionGroupItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// The section groups in the notebook. Read-only. Nullable.
         /// </summary>
-        public class SectionGroupItemRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class SectionGroupItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -232,14 +235,16 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionG
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SectionGroupItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.SectionGroupItemRequestBuilder.SectionGroupItemRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class SectionGroupItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Groups.Item.Sites.Item.Onenote.Notebooks.Item.SectionGroups.Item.SectionGroupItemRequestBuilder.SectionGroupItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SectionGroupItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class SectionGroupItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

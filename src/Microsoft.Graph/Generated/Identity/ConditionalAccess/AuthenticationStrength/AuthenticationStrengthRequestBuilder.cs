@@ -3,11 +3,11 @@ using Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.Authenti
 using Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.Policies;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,20 +16,21 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength
     /// <summary>
     /// Provides operations to manage the authenticationStrength property of the microsoft.graph.conditionalAccessRoot entity.
     /// </summary>
-    public class AuthenticationStrengthRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class AuthenticationStrengthRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the authenticationMethodModes property of the microsoft.graph.authenticationStrengthRoot entity.</summary>
-        public Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.AuthenticationMethodModes.AuthenticationMethodModesRequestBuilder AuthenticationMethodModes
+        public global::Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.AuthenticationMethodModes.AuthenticationMethodModesRequestBuilder AuthenticationMethodModes
         {
-            get => new Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.AuthenticationMethodModes.AuthenticationMethodModesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.AuthenticationMethodModes.AuthenticationMethodModesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the policies property of the microsoft.graph.authenticationStrengthRoot entity.</summary>
-        public Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.Policies.PoliciesRequestBuilder Policies
+        public global::Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.Policies.PoliciesRequestBuilder Policies
         {
-            get => new Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.Policies.PoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.Policies.PoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.AuthenticationStrengthRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.AuthenticationStrengthRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +38,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.AuthenticationStrengthRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.AuthenticationStrengthRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -49,7 +50,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -62,57 +63,57 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get authenticationStrength from identity
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.AuthenticationStrengthRoot"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.AuthenticationStrengthRoot"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.AuthenticationStrengthRoot?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.AuthenticationStrengthRequestBuilder.AuthenticationStrengthRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.AuthenticationStrengthRoot?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.AuthenticationStrengthRequestBuilder.AuthenticationStrengthRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.AuthenticationStrengthRoot> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.AuthenticationStrengthRequestBuilder.AuthenticationStrengthRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.AuthenticationStrengthRoot> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.AuthenticationStrengthRequestBuilder.AuthenticationStrengthRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AuthenticationStrengthRoot>(requestInfo, Microsoft.Graph.Models.AuthenticationStrengthRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.AuthenticationStrengthRoot>(requestInfo, global::Microsoft.Graph.Models.AuthenticationStrengthRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property authenticationStrength in identity
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.AuthenticationStrengthRoot"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.AuthenticationStrengthRoot"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.AuthenticationStrengthRoot?> PatchAsync(Microsoft.Graph.Models.AuthenticationStrengthRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.AuthenticationStrengthRoot?> PatchAsync(global::Microsoft.Graph.Models.AuthenticationStrengthRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.AuthenticationStrengthRoot> PatchAsync(Microsoft.Graph.Models.AuthenticationStrengthRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.AuthenticationStrengthRoot> PatchAsync(global::Microsoft.Graph.Models.AuthenticationStrengthRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.AuthenticationStrengthRoot>(requestInfo, Microsoft.Graph.Models.AuthenticationStrengthRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.AuthenticationStrengthRoot>(requestInfo, global::Microsoft.Graph.Models.AuthenticationStrengthRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property authenticationStrength for identity
@@ -140,11 +141,11 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.AuthenticationStrengthRequestBuilder.AuthenticationStrengthRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.AuthenticationStrengthRequestBuilder.AuthenticationStrengthRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.AuthenticationStrengthRequestBuilder.AuthenticationStrengthRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.AuthenticationStrengthRequestBuilder.AuthenticationStrengthRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -160,11 +161,11 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.AuthenticationStrengthRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.AuthenticationStrengthRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Models.AuthenticationStrengthRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.AuthenticationStrengthRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -177,23 +178,25 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.AuthenticationStrengthRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.AuthenticationStrengthRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.AuthenticationStrengthRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.AuthenticationStrengthRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.AuthenticationStrengthRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.AuthenticationStrengthRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AuthenticationStrengthRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class AuthenticationStrengthRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
         /// Get authenticationStrength from identity
         /// </summary>
-        public class AuthenticationStrengthRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class AuthenticationStrengthRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -220,14 +223,16 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AuthenticationStrengthRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.AuthenticationStrengthRequestBuilder.AuthenticationStrengthRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class AuthenticationStrengthRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.AuthenticationStrengthRequestBuilder.AuthenticationStrengthRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AuthenticationStrengthRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class AuthenticationStrengthRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

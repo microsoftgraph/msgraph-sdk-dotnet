@@ -8,11 +8,11 @@ using Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.GraphEndpoint;
 using Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.GraphGroup;
 using Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.GraphServicePrincipal;
 using Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.Item;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -21,52 +21,53 @@ namespace Microsoft.Graph.ServicePrincipals.Item.OwnedObjects
     /// <summary>
     /// Provides operations to manage the ownedObjects property of the microsoft.graph.servicePrincipal entity.
     /// </summary>
-    public class OwnedObjectsRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class OwnedObjectsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to application.</summary>
-        public Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.GraphApplication.GraphApplicationRequestBuilder GraphApplication
+        public global::Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.GraphApplication.GraphApplicationRequestBuilder GraphApplication
         {
-            get => new Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.GraphApplication.GraphApplicationRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.GraphApplication.GraphApplicationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to appRoleAssignment.</summary>
-        public Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.GraphAppRoleAssignment.GraphAppRoleAssignmentRequestBuilder GraphAppRoleAssignment
+        public global::Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.GraphAppRoleAssignment.GraphAppRoleAssignmentRequestBuilder GraphAppRoleAssignment
         {
-            get => new Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.GraphAppRoleAssignment.GraphAppRoleAssignmentRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.GraphAppRoleAssignment.GraphAppRoleAssignmentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to endpoint.</summary>
-        public Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.GraphEndpoint.GraphEndpointRequestBuilder GraphEndpoint
+        public global::Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.GraphEndpoint.GraphEndpointRequestBuilder GraphEndpoint
         {
-            get => new Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.GraphEndpoint.GraphEndpointRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.GraphEndpoint.GraphEndpointRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to group.</summary>
-        public Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.GraphGroup.GraphGroupRequestBuilder GraphGroup
+        public global::Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.GraphGroup.GraphGroupRequestBuilder GraphGroup
         {
-            get => new Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.GraphGroup.GraphGroupRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.GraphGroup.GraphGroupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Casts the previous resource to servicePrincipal.</summary>
-        public Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.GraphServicePrincipal.GraphServicePrincipalRequestBuilder GraphServicePrincipal
+        public global::Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.GraphServicePrincipal.GraphServicePrincipalRequestBuilder GraphServicePrincipal
         {
-            get => new Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.GraphServicePrincipal.GraphServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.GraphServicePrincipal.GraphServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the ownedObjects property of the microsoft.graph.servicePrincipal entity.</summary>
         /// <param name="position">The unique identifier of directoryObject</param>
-        /// <returns>A <see cref="Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.Item.DirectoryObjectItemRequestBuilder"/></returns>
-        public Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.Item.DirectoryObjectItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.Item.DirectoryObjectItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.Item.DirectoryObjectItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("directoryObject%2Did", position);
-                return new Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.Item.DirectoryObjectItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.Item.DirectoryObjectItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.OwnedObjectsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.OwnedObjectsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -74,7 +75,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.OwnedObjects
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.OwnedObjectsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.OwnedObjectsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -84,25 +85,25 @@ namespace Microsoft.Graph.ServicePrincipals.Item.OwnedObjects
         /// <summary>
         /// Directory objects that this service principal owns. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.DirectoryObjectCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.DirectoryObjectCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.OwnedObjectsRequestBuilder.OwnedObjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.DirectoryObjectCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.OwnedObjectsRequestBuilder.OwnedObjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.DirectoryObjectCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.OwnedObjectsRequestBuilder.OwnedObjectsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.DirectoryObjectCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.OwnedObjectsRequestBuilder.OwnedObjectsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.DirectoryObjectCollectionResponse>(requestInfo, Microsoft.Graph.Models.DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DirectoryObjectCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Directory objects that this service principal owns. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
@@ -111,11 +112,11 @@ namespace Microsoft.Graph.ServicePrincipals.Item.OwnedObjects
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.OwnedObjectsRequestBuilder.OwnedObjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.OwnedObjectsRequestBuilder.OwnedObjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.OwnedObjectsRequestBuilder.OwnedObjectsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.OwnedObjectsRequestBuilder.OwnedObjectsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,16 +127,17 @@ namespace Microsoft.Graph.ServicePrincipals.Item.OwnedObjects
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.OwnedObjectsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.OwnedObjectsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.OwnedObjectsRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.OwnedObjectsRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.OwnedObjectsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.OwnedObjectsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Directory objects that this service principal owns. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
         /// </summary>
-        public class OwnedObjectsRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class OwnedObjectsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -201,7 +203,8 @@ namespace Microsoft.Graph.ServicePrincipals.Item.OwnedObjects
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class OwnedObjectsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.OwnedObjectsRequestBuilder.OwnedObjectsRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class OwnedObjectsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.OwnedObjectsRequestBuilder.OwnedObjectsRequestBuilderGetQueryParameters>
         {
         }
     }

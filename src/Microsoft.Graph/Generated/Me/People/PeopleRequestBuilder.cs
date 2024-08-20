@@ -3,11 +3,11 @@ using Microsoft.Graph.Me.People.Count;
 using Microsoft.Graph.Me.People.Item;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -16,27 +16,28 @@ namespace Microsoft.Graph.Me.People
     /// <summary>
     /// Provides operations to manage the people property of the microsoft.graph.user entity.
     /// </summary>
-    public class PeopleRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class PeopleRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Me.People.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Me.People.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Me.People.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.People.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the people property of the microsoft.graph.user entity.</summary>
         /// <param name="position">The unique identifier of person</param>
-        /// <returns>A <see cref="Microsoft.Graph.Me.People.Item.PersonItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Me.People.Item.PersonItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Me.People.Item.PersonItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Me.People.Item.PersonItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("person%2Did", position);
-                return new Microsoft.Graph.Me.People.Item.PersonItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Me.People.Item.PersonItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Me.People.PeopleRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Me.People.PeopleRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +45,7 @@ namespace Microsoft.Graph.Me.People
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Me.People.PeopleRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Me.People.PeopleRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,25 +56,25 @@ namespace Microsoft.Graph.Me.People
         /// Retrieve a collection of person objects ordered by their relevance to the user, which is determined by the user&apos;s communication and collaboration patterns, and business relationships. You can get this information via the People API. For examples, see the Examples section and the article Use the People API to get information about the people most relevant to you.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-people?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.PersonCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.PersonCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.PersonCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.People.PeopleRequestBuilder.PeopleRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.PersonCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.People.PeopleRequestBuilder.PeopleRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.PersonCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.People.PeopleRequestBuilder.PeopleRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.PersonCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.People.PeopleRequestBuilder.PeopleRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.PersonCollectionResponse>(requestInfo, Microsoft.Graph.Models.PersonCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.PersonCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.PersonCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a collection of person objects ordered by their relevance to the user, which is determined by the user&apos;s communication and collaboration patterns, and business relationships. You can get this information via the People API. For examples, see the Examples section and the article Use the People API to get information about the people most relevant to you.
@@ -82,11 +83,11 @@ namespace Microsoft.Graph.Me.People
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.People.PeopleRequestBuilder.PeopleRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Me.People.PeopleRequestBuilder.PeopleRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.People.PeopleRequestBuilder.PeopleRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Me.People.PeopleRequestBuilder.PeopleRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -97,16 +98,17 @@ namespace Microsoft.Graph.Me.People
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Me.People.PeopleRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Me.People.PeopleRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Me.People.PeopleRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Me.People.PeopleRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Me.People.PeopleRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Me.People.PeopleRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve a collection of person objects ordered by their relevance to the user, which is determined by the user&apos;s communication and collaboration patterns, and business relationships. You can get this information via the People API. For examples, see the Examples section and the article Use the People API to get information about the people most relevant to you.
         /// </summary>
-        public class PeopleRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class PeopleRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -172,7 +174,8 @@ namespace Microsoft.Graph.Me.People
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PeopleRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Me.People.PeopleRequestBuilder.PeopleRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class PeopleRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Me.People.PeopleRequestBuilder.PeopleRequestBuilderGetQueryParameters>
         {
         }
     }

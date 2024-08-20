@@ -4,11 +4,11 @@ using Microsoft.Graph.Me.ContactFolders.Item.Contacts.Delta;
 using Microsoft.Graph.Me.ContactFolders.Item.Contacts.Item;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
@@ -17,32 +17,33 @@ namespace Microsoft.Graph.Me.ContactFolders.Item.Contacts
     /// <summary>
     /// Provides operations to manage the contacts property of the microsoft.graph.contactFolder entity.
     /// </summary>
-    public class ContactsRequestBuilder : BaseRequestBuilder
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    public partial class ContactsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public Microsoft.Graph.Me.ContactFolders.Item.Contacts.Count.CountRequestBuilder Count
+        public global::Microsoft.Graph.Me.ContactFolders.Item.Contacts.Count.CountRequestBuilder Count
         {
-            get => new Microsoft.Graph.Me.ContactFolders.Item.Contacts.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.ContactFolders.Item.Contacts.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the delta method.</summary>
-        public Microsoft.Graph.Me.ContactFolders.Item.Contacts.Delta.DeltaRequestBuilder Delta
+        public global::Microsoft.Graph.Me.ContactFolders.Item.Contacts.Delta.DeltaRequestBuilder Delta
         {
-            get => new Microsoft.Graph.Me.ContactFolders.Item.Contacts.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Microsoft.Graph.Me.ContactFolders.Item.Contacts.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the contacts property of the microsoft.graph.contactFolder entity.</summary>
         /// <param name="position">The unique identifier of contact</param>
-        /// <returns>A <see cref="Microsoft.Graph.Me.ContactFolders.Item.Contacts.Item.ContactItemRequestBuilder"/></returns>
-        public Microsoft.Graph.Me.ContactFolders.Item.Contacts.Item.ContactItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Microsoft.Graph.Me.ContactFolders.Item.Contacts.Item.ContactItemRequestBuilder"/></returns>
+        public global::Microsoft.Graph.Me.ContactFolders.Item.Contacts.Item.ContactItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("contact%2Did", position);
-                return new Microsoft.Graph.Me.ContactFolders.Item.Contacts.Item.ContactItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Microsoft.Graph.Me.ContactFolders.Item.Contacts.Item.ContactItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Me.ContactFolders.Item.Contacts.ContactsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Me.ContactFolders.Item.Contacts.ContactsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -50,7 +51,7 @@ namespace Microsoft.Graph.Me.ContactFolders.Item.Contacts
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="Microsoft.Graph.Me.ContactFolders.Item.Contacts.ContactsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Me.ContactFolders.Item.Contacts.ContactsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -61,51 +62,51 @@ namespace Microsoft.Graph.Me.ContactFolders.Item.Contacts
         /// Get a contact collection from the default Contacts folder of the signed-in user (.../me/contacts), or from the specified contact folder.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/contactfolder-list-contacts?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.ContactCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.ContactCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.ContactCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.ContactFolders.Item.Contacts.ContactsRequestBuilder.ContactsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.ContactCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.ContactFolders.Item.Contacts.ContactsRequestBuilder.ContactsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.ContactCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Me.ContactFolders.Item.Contacts.ContactsRequestBuilder.ContactsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.ContactCollectionResponse> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.ContactFolders.Item.Contacts.ContactsRequestBuilder.ContactsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.ContactCollectionResponse>(requestInfo, Microsoft.Graph.Models.ContactCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ContactCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.ContactCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add a contact to the root Contacts folder or to the contacts endpoint of another contact folder.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/contactfolder-post-contacts?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Models.Contact"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.Contact"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Models.Contact?> PostAsync(Microsoft.Graph.Models.Contact body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Contact?> PostAsync(global::Microsoft.Graph.Models.Contact body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Models.Contact> PostAsync(Microsoft.Graph.Models.Contact body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Models.Contact> PostAsync(global::Microsoft.Graph.Models.Contact body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Models.Contact>(requestInfo, Microsoft.Graph.Models.Contact.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Contact>(requestInfo, global::Microsoft.Graph.Models.Contact.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a contact collection from the default Contacts folder of the signed-in user (.../me/contacts), or from the specified contact folder.
@@ -114,11 +115,11 @@ namespace Microsoft.Graph.Me.ContactFolders.Item.Contacts
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.ContactFolders.Item.Contacts.ContactsRequestBuilder.ContactsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Me.ContactFolders.Item.Contacts.ContactsRequestBuilder.ContactsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Me.ContactFolders.Item.Contacts.ContactsRequestBuilder.ContactsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Me.ContactFolders.Item.Contacts.ContactsRequestBuilder.ContactsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -134,11 +135,11 @@ namespace Microsoft.Graph.Me.ContactFolders.Item.Contacts
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.Contact body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.Contact body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Models.Contact body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.Contact body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -151,16 +152,17 @@ namespace Microsoft.Graph.Me.ContactFolders.Item.Contacts
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="Microsoft.Graph.Me.ContactFolders.Item.Contacts.ContactsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Me.ContactFolders.Item.Contacts.ContactsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public Microsoft.Graph.Me.ContactFolders.Item.Contacts.ContactsRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Me.ContactFolders.Item.Contacts.ContactsRequestBuilder WithUrl(string rawUrl)
         {
-            return new Microsoft.Graph.Me.ContactFolders.Item.Contacts.ContactsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Me.ContactFolders.Item.Contacts.ContactsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a contact collection from the default Contacts folder of the signed-in user (.../me/contacts), or from the specified contact folder.
         /// </summary>
-        public class ContactsRequestBuilderGetQueryParameters 
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ContactsRequestBuilderGetQueryParameters 
         {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -226,14 +228,16 @@ namespace Microsoft.Graph.Me.ContactFolders.Item.Contacts
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ContactsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Me.ContactFolders.Item.Contacts.ContactsRequestBuilder.ContactsRequestBuilderGetQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ContactsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Me.ContactFolders.Item.Contacts.ContactsRequestBuilder.ContactsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ContactsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+        public partial class ContactsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }
