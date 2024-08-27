@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>Delivery optimization mode for peer distribution</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum WindowsDeliveryOptimizationMode
     {
         /// <summary>Allow the user to set.</summary>

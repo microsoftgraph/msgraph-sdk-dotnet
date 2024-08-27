@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>Possible values for firewallCertificateRevocationListCheckMethod</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum FirewallCertificateRevocationListCheckMethodType
     {
         /// <summary>No value configured by Intune, do not override the user-configured device default value</summary>

@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>Edition Upgrade License type</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum EditionUpgradeLicenseType
     {
         /// <summary>Product Key Type</summary>
