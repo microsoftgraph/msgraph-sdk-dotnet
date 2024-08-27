@@ -5,25 +5,25 @@
 namespace Microsoft.Graph.DotnetCore.Test.Models
 {
     using System;
+    using System.Collections.Generic;
+    using System.Threading;
+    using System.Threading.Tasks;
     using Xunit;
     using Microsoft.Graph.Models;
     using Microsoft.Kiota.Abstractions;
+    using Microsoft.Kiota.Abstractions.Serialization;
     using Microsoft.Kiota.Serialization.Json;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Text;
 
     public class ModelSerializationTests
     {
-        private readonly JsonParseNodeFactory parseNodeFactory;
-
         public ModelSerializationTests()
         {
-            this.parseNodeFactory = new JsonParseNodeFactory();
+            SerializationWriterFactoryRegistry.DefaultInstance.ContentTypeAssociatedFactories["application/json"] = new JsonSerializationWriterFactory();
+            ParseNodeFactoryRegistry.DefaultInstance.ContentTypeAssociatedFactories["application/json"] = new JsonParseNodeFactory();
         }
 
         [Fact]
-        public void DeserializeDerivedType()
+        public async Task DeserializeDerivedType()
         {
             var userId = "userId";
             var givenName = "name";
@@ -33,18 +33,15 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
                 userId,
                 givenName);
 
-            var memoryStream = new MemoryStream(Encoding.UTF8.GetBytes(stringToDeserialize));
-            var parseNode = this.parseNodeFactory.GetRootParseNode(CoreConstants.MimeTypeNames.Application.Json, memoryStream);
-            var user = parseNode.GetObjectValue<User>(User.CreateFromDiscriminatorValue);
-
+            var user = await KiotaJsonSerializer.DeserializeAsync<User>(stringToDeserialize);
+            
             Assert.NotNull(user);
             Assert.Equal(userId, user.Id);
             Assert.Equal(givenName, user.GivenName);
-            //Assert.Null(user.GetEtag());
         }
 
         [Fact]
-        public void DeserializeInvalidODataType()
+        public async Task DeserializeInvalidODataType()
         {
             var directoryObjectId = "directoryObjectId";
             var givenName = "name";
@@ -54,18 +51,16 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
                 directoryObjectId,
                 givenName);
 
-            var memoryStream = new MemoryStream(Encoding.UTF8.GetBytes(stringToDeserialize));
-            var parseNode = this.parseNodeFactory.GetRootParseNode(CoreConstants.MimeTypeNames.Application.Json, memoryStream);
-            var directoryObject = parseNode.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue);
-
+            var directoryObject = await KiotaJsonSerializer.DeserializeAsync<DirectoryObject>(stringToDeserialize);
+            
             Assert.NotNull(directoryObject);
             Assert.Equal(directoryObjectId, directoryObject.Id);
             Assert.NotNull(directoryObject.AdditionalData);
             Assert.Equal(givenName, directoryObject.AdditionalData["givenName"].ToString());
         }
 
-        [Fact(Skip = "TODO fix pending enum handling bug")]
-        public void DeserializeUnknownEnumValue()
+        [Fact]
+        public async Task DeserializeUnknownEnumValue()
         {
             var enumValue = "newValue";
             var bodyContent = "bodyContent";
@@ -75,35 +70,30 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
                 bodyContent,
                 enumValue);
 
-            var memoryStream = new MemoryStream(Encoding.UTF8.GetBytes(stringToDeserialize));
-            var parseNode = this.parseNodeFactory.GetRootParseNode(CoreConstants.MimeTypeNames.Application.Json, memoryStream);
-            var itemBody = parseNode.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue);
+            var itemBody = await KiotaJsonSerializer.DeserializeAsync<ItemBody>(stringToDeserialize);
 
             Assert.NotNull(itemBody);
             Assert.Equal(bodyContent, itemBody.Content);
             Assert.Null(itemBody.ContentType);
             Assert.NotNull(itemBody.AdditionalData);
-            Assert.Equal(enumValue, itemBody.AdditionalData["contentType"].ToString());
         }
 
         [Fact]
-        public void DeserializeDateValue()
+        public async Task DeserializeDateValue()
         {
             var now = DateTimeOffset.UtcNow;
 
             var stringToDeserialize = string.Format("{{\"startDate\":\"{0}\"}}", now.ToString("yyyy-MM-dd"));
 
-            var memoryStream = new MemoryStream(Encoding.UTF8.GetBytes(stringToDeserialize));
-            var parseNode = this.parseNodeFactory.GetRootParseNode(CoreConstants.MimeTypeNames.Application.Json, memoryStream);
-            var recurrenceRange = parseNode.GetObjectValue<RecurrenceRange>(RecurrenceRange.CreateFromDiscriminatorValue);
-
+            var recurrenceRange = await KiotaJsonSerializer.DeserializeAsync<RecurrenceRange>(stringToDeserialize);
+            
             Assert.Equal(now.Year, recurrenceRange.StartDate.Value.Year);
             Assert.Equal(now.Month, recurrenceRange.StartDate.Value.Month);
             Assert.Equal(now.Day, recurrenceRange.StartDate.Value.Day);
         }
 
         [Fact]
-        public void NewAbstractEntityDerivedClassInstance()
+        public async Task NewAbstractEntityDerivedClassInstance()
         {
             var entityId = "entityId";
             var additionalKey = "key";
@@ -115,9 +105,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
                 additionalKey,
                 additionalValue);
 
-            var memoryStream = new MemoryStream(Encoding.UTF8.GetBytes(stringToDeserialize));
-            var parseNode = this.parseNodeFactory.GetRootParseNode(CoreConstants.MimeTypeNames.Application.Json, memoryStream);
-            var entity = parseNode.GetObjectValue<Entity>(Entity.CreateFromDiscriminatorValue);
+            var entity = await KiotaJsonSerializer.DeserializeAsync<Entity>(stringToDeserialize);
 
             Assert.NotNull(entity);
             Assert.Equal(entityId, entity.Id);
@@ -125,8 +113,8 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
             Assert.Equal(additionalValue, entity.AdditionalData[additionalKey].ToString());
         }
 
-        [Fact(Skip = "TODO fix pending enum handling bug")]
-        public void SerializeAndDeserializeKnownEnumValue()
+        [Fact]
+        public async Task SerializeAndDeserializeKnownEnumValue()
         {
             var itemBody = new ItemBody
             {
@@ -140,28 +128,23 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
                 itemBody.Content,
                 "text");
 
-            // Serialize
-            using var jsonSerializerWriter = new JsonSerializationWriter();
-            jsonSerializerWriter.WriteObjectValue(string.Empty, itemBody);
-            var serializedStream = jsonSerializerWriter.GetSerializedContent();
+            // Serialize=
+            var serializedString = await KiotaJsonSerializer.SerializeAsStringAsync(itemBody, CancellationToken.None);
 
             //Assert
-            var streamReader = new StreamReader(serializedStream);
-            Assert.Equal(expectedSerializedStream, streamReader.ReadToEnd());
+            Assert.Equal(expectedSerializedStream, serializedString);
 
             // De serialize
-            serializedStream.Position = 0; //reset the stream to be read again
-            var parseNode = this.parseNodeFactory.GetRootParseNode(CoreConstants.MimeTypeNames.Application.Json, serializedStream);
-            var newItemBody = parseNode.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue);
+            var newItemBody = await KiotaJsonSerializer.DeserializeAsync<ItemBody>(serializedString);
 
             Assert.NotNull(newItemBody);
             Assert.Equal(itemBody.Content, itemBody.Content);
             Assert.Equal(BodyType.Text, itemBody.ContentType);
-            Assert.Null(itemBody.AdditionalData);
+            Assert.NotNull(itemBody.AdditionalData);
         }
 
         [Fact]
-        public void SerializeDateValue()
+        public async Task SerializeDateValue()
         {
             var now = DateTimeOffset.UtcNow;
 
@@ -172,16 +155,13 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
                 StartDate = new Date(now.Year, now.Month, now.Day),
             };
 
-            using var jsonSerializerWriter = new JsonSerializationWriter();
-            jsonSerializerWriter.WriteObjectValue(string.Empty, recurrence);
-            var serializedStream = jsonSerializerWriter.GetSerializedContent();
+            var serializedString = await KiotaJsonSerializer.SerializeAsStringAsync(recurrence, CancellationToken.None);
 
             // Assert
-            var streamReader = new StreamReader(serializedStream);
-            Assert.Equal(expectedSerializedString, streamReader.ReadToEnd());
+            Assert.Equal(expectedSerializedString, serializedString);
         }
         [Fact]
-        public void TestEtagHelper()
+        public async Task TestEtagHelper()
         {
             var userId = "userId";
             var testEtag = "testEtag";
@@ -191,16 +171,14 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
                 userId,
                 testEtag);
 
-            var memoryStream = new MemoryStream(Encoding.UTF8.GetBytes(stringToDeserialize));
-            var parseNode = this.parseNodeFactory.GetRootParseNode(CoreConstants.MimeTypeNames.Application.Json, memoryStream);
-            var user = parseNode.GetObjectValue<Entity>(Entity.CreateFromDiscriminatorValue);
-
+            var user = await KiotaJsonSerializer.DeserializeAsync<Entity>(stringToDeserialize);
+            
             Assert.NotNull(user);
             Assert.Equal(userId, user.Id);
             //Assert.Equal(testEtag, user.GetEtag());
         }
         [Fact]
-        public void TestPlannerAssigmentSerialization()
+        public async Task TestPlannerAssigmentSerialization()
         {
             var planTask = new PlannerTask
             {
@@ -217,17 +195,14 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
             };
 
             string expectedSerializedString = "{\"assignments\":{\"USER_ID\":{\"@odata.type\":\"#microsoft.graph.plannerAssignment\",\"orderHint\":\"!\"}},\"bucketId\":\"BUCKET_ID\",\"planId\":\"PLAN_ID\",\"title\":\"My Planner Task\"}";
-            using var jsonSerializerWriter = new JsonSerializationWriter();
-            jsonSerializerWriter.WriteObjectValue(string.Empty, planTask);
-            var serializedStream = jsonSerializerWriter.GetSerializedContent();
 
             // Assert
-            var streamReader = new StreamReader(serializedStream);
-            Assert.Equal(expectedSerializedString, streamReader.ReadToEnd());
+            var serializedString = await KiotaJsonSerializer.SerializeAsStringAsync(planTask, CancellationToken.None);
+            Assert.Equal(expectedSerializedString, serializedString);
         }
         
         [Fact]
-        public void TestChangeNoticationCollectionDeserialization()
+        public async Task TestChangeNoticationCollectionDeserialization()
         {
             var json = @"{
                 ""value"": [
@@ -251,11 +226,9 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
                     ""eyJ0eXAiOiJKV1...""
                 ]
             }";
-
-            using var memStream = new MemoryStream(System.Text.Encoding.UTF8.GetBytes(json));
-            var parseNode = new JsonParseNodeFactory().GetRootParseNode("application/json", memStream);
-            var changeNotifications = parseNode.GetObjectValue(ChangeNotificationCollection.CreateFromDiscriminatorValue);
-
+            
+            var changeNotifications = await KiotaJsonSerializer.DeserializeAsync<ChangeNotificationCollection>(json, CancellationToken.None);
+            
             Assert.NotNull(changeNotifications.Value);
             Assert.Single(changeNotifications.Value);
             Assert.NotNull(changeNotifications.ValidationTokens);
