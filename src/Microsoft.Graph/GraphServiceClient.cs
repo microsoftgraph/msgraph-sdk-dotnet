@@ -12,7 +12,6 @@ namespace Microsoft.Graph
     using Microsoft.Graph.Requests;
     using Microsoft.Graph.Core.Requests;
     using Microsoft.Kiota.Abstractions.Authentication;
-    using Microsoft.Kiota.Authentication.Azure;
     using Microsoft.Kiota.Abstractions;
     using Azure.Core;
 
@@ -48,7 +47,7 @@ namespace Microsoft.Graph
             TokenCredential tokenCredential,
             IEnumerable<string> scopes = null,
             string baseUrl = null
-            ):this(new Microsoft.Graph.Authentication.AzureIdentityAuthenticationProvider(tokenCredential, null, null,scopes?.ToArray() ?? Array.Empty<string>()), baseUrl)
+            ):this(new Microsoft.Graph.Authentication.AzureIdentityAuthenticationProvider(tokenCredential, null, null,true,scopes?.ToArray() ?? []), baseUrl)
         {
         }
 
@@ -64,7 +63,7 @@ namespace Microsoft.Graph
             TokenCredential tokenCredential,
             IEnumerable<string> scopes = null,
             string baseUrl = null
-            ):this(httpClient, new Microsoft.Graph.Authentication.AzureIdentityAuthenticationProvider(tokenCredential, null, null, scopes?.ToArray() ?? Array.Empty<string>()), baseUrl)
+            ):this(httpClient, new Microsoft.Graph.Authentication.AzureIdentityAuthenticationProvider(tokenCredential, null, null,true, scopes?.ToArray() ?? []), baseUrl)
         {
         }
 
