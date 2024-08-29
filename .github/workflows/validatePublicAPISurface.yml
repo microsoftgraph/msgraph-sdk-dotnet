@@ -1,0 +1,47 @@
+name: Validate Public API surface changes
+
+on:
+  workflow_dispatch:
+  push:
+  pull_request:
+    branches: [ 'main' ]
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  validate-public-api-surface:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: microsoftgraph/kiota-dom-export-diff-tool/export@main
+        id: generatePatch
+      - uses: microsoftgraph/kiota-dom-export-diff-tool/tool@main
+        if: ${{ steps.generatePatch.outputs.patchFilePath != '' }}
+        with:
+          path: ${{ steps.generatePatch.outputs.patchFilePath }}
+          fail-on-removal: true
+        id: diff
+      - uses: microsoftgraph/kiota-dom-export-diff-tool/comment@main
+        if: ${{ always() && steps.generatePatch.outputs.patchFilePath != '' && steps.diff.outputs.hasExplanations != '' && github.event_name == 'pull_request' }}
+        continue-on-error: true
+        with:
+          comment: ${{ steps.diff.outputs.explanationsFilePath }}
+          prNumber: ${{ github.event.pull_request.number }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload patch file as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        continue-on-error: true
+        with:
+          name: patch
+          path: '*.patch'
+      - name: Upload explanations file as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        continue-on-error: true
+        with:
+          name: explanations
+          path: 'explanations.txt'
