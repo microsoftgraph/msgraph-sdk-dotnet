@@ -12,7 +12,7 @@ permissions:
   issues: write
 
 jobs:
-  build:
+  validate-public-api-surface:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
