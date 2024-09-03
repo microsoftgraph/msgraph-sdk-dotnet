@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>Indicates the type of execution context the app runs in.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum RunAsAccountType
     {
         /// <summary>System context</summary>

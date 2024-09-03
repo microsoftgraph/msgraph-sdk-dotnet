@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>Allow the device to send diagnostic and usage telemetry data, such as Watson.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum DiagnosticDataSubmissionMode
     {
         /// <summary>Allow the user to set.</summary>

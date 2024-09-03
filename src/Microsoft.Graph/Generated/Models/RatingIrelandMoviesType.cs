@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>Movies rating labels in Ireland</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum RatingIrelandMoviesType
     {
         /// <summary>Default value, allow all movies content</summary>

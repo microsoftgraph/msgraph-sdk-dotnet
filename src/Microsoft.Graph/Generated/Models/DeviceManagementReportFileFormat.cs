@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>Possible values for the file format of a report.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum DeviceManagementReportFileFormat
     {
         /// <summary>CSV Format.</summary>

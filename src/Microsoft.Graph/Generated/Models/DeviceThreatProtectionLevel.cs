@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>Device threat protection levels for the Device Threat Protection API.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum DeviceThreatProtectionLevel
     {
         /// <summary>Default Value. Do not use.</summary>

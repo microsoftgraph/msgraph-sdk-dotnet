@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>Defender’s default action to take on detected Malware threats.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum DefenderThreatAction
     {
         /// <summary>Apply action based on the update definition.</summary>

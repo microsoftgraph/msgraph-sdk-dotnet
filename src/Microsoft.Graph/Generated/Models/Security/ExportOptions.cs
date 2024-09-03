@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models.Security
 {
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     [Flags]
     #pragma warning disable CS1591
     public enum ExportOptions

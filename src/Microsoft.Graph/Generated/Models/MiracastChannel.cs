@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>Possible values for Miracast channel.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum MiracastChannel
     {
         /// <summary>User Defined, default value, no intent.</summary>
