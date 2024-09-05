@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>Possible ways of adding a mobile device to management.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum DeviceEnrollmentType
     {
         /// <summary>Default value, enrollment type was not collected.</summary>

@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>Allows IT admind to set a predefined default search engine for MDM-Controlled devices</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum WindowsSpotlightEnablementSettings
     {
         /// <summary>Spotlight on lock screen is not configured</summary>

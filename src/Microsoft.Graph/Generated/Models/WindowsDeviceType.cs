@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>Contains properties for Windows device type. Multiple values can be selected. Default value is `none`.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     [Flags]
     public enum WindowsDeviceType
     {

@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>Indicates the package type of an MSI Win32LobApp.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum Win32LobAppMsiPackageType
     {
         /// <summary>Indicates a per-machine app package.</summary>

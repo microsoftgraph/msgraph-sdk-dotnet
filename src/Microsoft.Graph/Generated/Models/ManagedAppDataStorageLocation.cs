@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>Storage locations where managed apps can potentially store their data</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum ManagedAppDataStorageLocation
     {
         /// <summary>OneDrive for business</summary>

@@ -4,6 +4,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>Represents the level to which the device&apos;s clipboard may be shared between apps</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
     public enum ManagedAppClipboardSharingLevel
     {
         /// <summary>Sharing is allowed between all apps, managed or not</summary>
