@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project does adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.57.0](https://github.com/microsoftgraph/msgraph-sdk-dotnet/compare/v5.56.1...5.57.0) (2024-09-05)
+
+
+### Features
+
+* **generation:** update request builders and models ([3af197e](https://github.com/microsoftgraph/msgraph-sdk-dotnet/commit/3af197eec839cdfb9457988b21bb5f731cfdf3ab))
+
+
+### Bug Fixes
+
+* updated the UploadSession model to implement IUploadSession from the core package. ([a637159](https://github.com/microsoftgraph/msgraph-sdk-dotnet/commit/a6371592fe150886d7de6c898fd5e4f69787e8df))
+
 ## [5.56.1](https://github.com/microsoftgraph/msgraph-sdk-dotnet/compare/v5.56.0...5.56.1) (2024-08-27)
 
 
