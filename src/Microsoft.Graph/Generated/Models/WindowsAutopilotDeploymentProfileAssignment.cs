@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// An assignment of a Windows Autopilot deployment profile to an AAD group.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WindowsAutopilotDeploymentProfileAssignment : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>

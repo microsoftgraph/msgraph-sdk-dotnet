@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Windows Log Collection request entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeviceLogCollectionResponse : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The User Principal Name (UPN) of the user that enrolled the device.</summary>

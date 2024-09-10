@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Device Enrollment Configuration that restricts the types of devices a user can enroll
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeviceEnrollmentPlatformRestrictionsConfiguration : global::Microsoft.Graph.Models.DeviceEnrollmentConfiguration, IParsable
     {
         /// <summary>Android restrictions based on platform, platform operating system version, and device ownership</summary>

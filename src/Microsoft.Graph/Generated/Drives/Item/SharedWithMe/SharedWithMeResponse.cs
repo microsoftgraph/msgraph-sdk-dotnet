@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Drives.Item.SharedWithMe
 {
     [Obsolete("This class is obsolete. Use SharedWithMeGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class SharedWithMeResponse : global::Microsoft.Graph.Drives.Item.SharedWithMe.SharedWithMeGetResponse, IParsable
     #pragma warning restore CS1591

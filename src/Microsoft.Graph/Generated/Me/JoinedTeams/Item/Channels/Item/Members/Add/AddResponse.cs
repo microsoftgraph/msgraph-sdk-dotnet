@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Me.JoinedTeams.Item.Channels.Item.Members.Add
 {
     [Obsolete("This class is obsolete. Use AddPostResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class AddResponse : global::Microsoft.Graph.Me.JoinedTeams.Item.Channels.Item.Members.Add.AddPostResponse, IParsable
     #pragma warning restore CS1591

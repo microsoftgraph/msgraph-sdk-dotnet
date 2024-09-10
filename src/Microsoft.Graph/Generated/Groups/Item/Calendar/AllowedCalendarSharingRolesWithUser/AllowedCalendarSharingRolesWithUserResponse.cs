@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Groups.Item.Calendar.AllowedCalendarSharingRolesWithUser
 {
     [Obsolete("This class is obsolete. Use AllowedCalendarSharingRolesWithUserGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class AllowedCalendarSharingRolesWithUserResponse : global::Microsoft.Graph.Groups.Item.Calendar.AllowedCalendarSharingRolesWithUser.AllowedCalendarSharingRolesWithUserGetResponse, IParsable
     #pragma warning restore CS1591

@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Groups.Item.Sites.Item.GetApplicableContentTypesForListWithListId
 {
     [Obsolete("This class is obsolete. Use GetApplicableContentTypesForListWithListIdGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class GetApplicableContentTypesForListWithListIdResponse : global::Microsoft.Graph.Groups.Item.Sites.Item.GetApplicableContentTypesForListWithListId.GetApplicableContentTypesForListWithListIdGetResponse, IParsable
     #pragma warning restore CS1591

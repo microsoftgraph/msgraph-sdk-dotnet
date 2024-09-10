@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Configuration used to deliver a set of custom settings as-is to all users in the targeted security group
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class TargetedManagedAppConfiguration : global::Microsoft.Graph.Models.ManagedAppConfiguration, IParsable
     {
         /// <summary>List of apps to which the policy is deployed.</summary>

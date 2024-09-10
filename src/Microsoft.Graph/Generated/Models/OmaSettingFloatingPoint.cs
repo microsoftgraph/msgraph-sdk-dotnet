@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// OMA Settings Floating Point definition.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class OmaSettingFloatingPoint : global::Microsoft.Graph.Models.OmaSetting, IParsable
     {
         /// <summary>Value.</summary>

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// The identifier for the deployment an app.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class ManagedMobileApp : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The identifier for an app with it&apos;s operating system type.</summary>

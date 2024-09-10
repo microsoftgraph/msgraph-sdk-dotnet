@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.DirectoryObjects.GetByIds
 {
     [Obsolete("This class is obsolete. Use GetByIdsPostResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class GetByIdsResponse : global::Microsoft.Graph.DirectoryObjects.GetByIds.GetByIdsPostResponse, IParsable
     #pragma warning restore CS1591

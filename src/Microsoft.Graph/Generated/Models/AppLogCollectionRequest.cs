@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Entity for AppLogCollectionRequest contains all logs values.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class AppLogCollectionRequest : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Time at which the upload log request reached a completed state if not completed yet NULL will be returned.</summary>

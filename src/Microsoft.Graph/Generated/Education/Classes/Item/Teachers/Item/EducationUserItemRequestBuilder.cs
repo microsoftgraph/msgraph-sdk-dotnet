@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Teachers.Item
     /// <summary>
     /// Builds and executes requests for operations under \education\classes\{educationClass-id}\teachers\{educationUser-id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class EducationUserItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the collection of educationRoot entities.</summary>

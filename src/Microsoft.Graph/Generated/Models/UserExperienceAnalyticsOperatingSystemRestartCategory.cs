@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>Operating System restart category.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum UserExperienceAnalyticsOperatingSystemRestartCategory
     {
         /// <summary>Default. Set to unknown if device operating system restart category has not yet been calculated.</summary>

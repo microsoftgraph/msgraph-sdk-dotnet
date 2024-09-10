@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// telecomExpenseManagementPartner resources represent the metadata and status of a given TEM service. Once your organization has onboarded with a partner, the partner can be enabled or disabled to switch TEM functionality on or off.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class TelecomExpenseManagementPartner : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Whether the partner&apos;s AAD app has been authorized to access Intune.</summary>

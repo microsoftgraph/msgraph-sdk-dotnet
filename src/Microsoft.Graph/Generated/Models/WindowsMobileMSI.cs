@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Contains properties and inherited properties for Windows Mobile MSI Line Of Business apps.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WindowsMobileMSI : global::Microsoft.Graph.Models.MobileLobApp, IParsable
     {
         /// <summary>The command line.</summary>

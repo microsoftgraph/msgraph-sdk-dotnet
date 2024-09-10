@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// An abstract base class containing properties for all mobile line of business apps.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class MobileLobApp : global::Microsoft.Graph.Models.MobileApp, IParsable
     {
         /// <summary>The internal committed content version.</summary>

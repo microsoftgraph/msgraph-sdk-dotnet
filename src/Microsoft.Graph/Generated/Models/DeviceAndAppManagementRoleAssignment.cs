@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// The Role Assignment resource. Role assignments tie together a role definition with members and scopes. There can be one or more role assignments per role. This applies to custom and built-in roles.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeviceAndAppManagementRoleAssignment : global::Microsoft.Graph.Models.RoleAssignment, IParsable
     {
         /// <summary>The list of ids of role member security groups. These are IDs from Azure Active Directory.</summary>

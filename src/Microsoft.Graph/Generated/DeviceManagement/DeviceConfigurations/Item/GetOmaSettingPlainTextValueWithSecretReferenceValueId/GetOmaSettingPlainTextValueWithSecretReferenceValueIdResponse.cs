@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.GetOmaSettingPlainTextValueWithSecretReferenceValueId
 {
     [Obsolete("This class is obsolete. Use GetOmaSettingPlainTextValueWithSecretReferenceValueIdGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class GetOmaSettingPlainTextValueWithSecretReferenceValueIdResponse : global::Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.GetOmaSettingPlainTextValueWithSecretReferenceValueId.GetOmaSettingPlainTextValueWithSecretReferenceValueIdGetResponse, IParsable
     #pragma warning restore CS1591

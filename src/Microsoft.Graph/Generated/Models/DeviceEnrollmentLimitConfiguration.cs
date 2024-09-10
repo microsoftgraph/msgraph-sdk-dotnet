@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Device Enrollment Configuration that restricts the number of devices a user can enroll
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeviceEnrollmentLimitConfiguration : global::Microsoft.Graph.Models.DeviceEnrollmentConfiguration, IParsable
     {
         /// <summary>The maximum number of devices that a user can enroll</summary>

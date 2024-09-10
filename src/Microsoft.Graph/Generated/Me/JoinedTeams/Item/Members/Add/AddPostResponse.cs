@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Me.JoinedTeams.Item.Members.Add
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class AddPostResponse : global::Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591

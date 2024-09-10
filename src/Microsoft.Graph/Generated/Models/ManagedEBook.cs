@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// An abstract class containing the base properties for Managed eBook.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class ManagedEBook : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The list of assignments for this eBook.</summary>
