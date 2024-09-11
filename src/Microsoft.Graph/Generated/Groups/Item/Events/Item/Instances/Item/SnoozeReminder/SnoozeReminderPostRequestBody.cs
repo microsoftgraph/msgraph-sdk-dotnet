@@ -9,7 +9,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Groups.Item.Events.Item.Instances.Item.SnoozeReminder
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class SnoozeReminderPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591

@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes
 {
     [Obsolete("This class is obsolete. Use GetCompatibleHubContentTypesGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class GetCompatibleHubContentTypesResponse : global::Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesGetResponse, IParsable
     #pragma warning restore CS1591

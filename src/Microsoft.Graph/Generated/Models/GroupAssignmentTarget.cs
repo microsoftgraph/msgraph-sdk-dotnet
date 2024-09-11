@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Represents an assignment to a group.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class GroupAssignmentTarget : global::Microsoft.Graph.Models.DeviceAndAppManagementAssignmentTarget, IParsable
     {
         /// <summary>The group Id that is the target of the assignment.</summary>

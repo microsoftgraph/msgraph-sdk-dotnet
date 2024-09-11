@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Android Work Profile general device configuration.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class AndroidWorkProfileGeneralDeviceConfiguration : global::Microsoft.Graph.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Indicates whether or not to block fingerprint unlock.</summary>

@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.Grant
 {
     [Obsolete("This class is obsolete. Use GrantPostResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class GrantResponse : global::Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.Grant.GrantPostResponse, IParsable
     #pragma warning restore CS1591

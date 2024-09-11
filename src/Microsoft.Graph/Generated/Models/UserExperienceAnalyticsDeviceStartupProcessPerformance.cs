@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// The user experience analytics device startup process performance.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class UserExperienceAnalyticsDeviceStartupProcessPerformance : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The count of devices which initiated this process on startup. Supports: $filter, $select, $OrderBy. Read-only.</summary>

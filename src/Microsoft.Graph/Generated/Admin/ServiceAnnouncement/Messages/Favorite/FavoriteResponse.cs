@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite
 {
     [Obsolete("This class is obsolete. Use FavoritePostResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class FavoriteResponse : global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite.FavoritePostResponse, IParsable
     #pragma warning restore CS1591

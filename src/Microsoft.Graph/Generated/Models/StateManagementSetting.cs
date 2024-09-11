@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>State Management Setting.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum StateManagementSetting
     {
         /// <summary>Not configured.</summary>

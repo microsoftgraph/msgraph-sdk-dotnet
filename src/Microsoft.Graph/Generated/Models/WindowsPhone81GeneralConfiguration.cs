@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// This topic provides descriptions of the declared methods, properties and relationships exposed by the windowsPhone81GeneralConfiguration resource.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WindowsPhone81GeneralConfiguration : global::Microsoft.Graph.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Value indicating whether this policy only applies to Windows Phone 8.1. This property is read-only.</summary>

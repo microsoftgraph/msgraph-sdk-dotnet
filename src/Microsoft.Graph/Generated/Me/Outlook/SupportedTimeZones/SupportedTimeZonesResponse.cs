@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Me.Outlook.SupportedTimeZones
 {
     [Obsolete("This class is obsolete. Use SupportedTimeZonesGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class SupportedTimeZonesResponse : global::Microsoft.Graph.Me.Outlook.SupportedTimeZones.SupportedTimeZonesGetResponse, IParsable
     #pragma warning restore CS1591

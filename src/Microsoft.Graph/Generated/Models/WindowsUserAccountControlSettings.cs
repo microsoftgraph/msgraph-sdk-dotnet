@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>Possible values for Windows user account control settings.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum WindowsUserAccountControlSettings
     {
         /// <summary>User Defined, default value, no intent.</summary>

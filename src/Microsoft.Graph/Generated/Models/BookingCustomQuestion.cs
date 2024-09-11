@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Represents a custom question of the business.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class BookingCustomQuestion : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The expected answer type. The possible values are: text, radioButton, unknownFutureValue.</summary>

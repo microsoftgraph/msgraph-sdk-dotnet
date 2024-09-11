@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// A complex type to store the PowerShell script rule data for a Win32 LOB app.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class Win32LobAppPowerShellScriptRule : global::Microsoft.Graph.Models.Win32LobAppRule, IParsable
     {
         /// <summary>The script output comparison value. Do not specify a value if the rule is used for detection.</summary>

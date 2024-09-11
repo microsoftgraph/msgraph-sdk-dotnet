@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Contains properties for a single Intune app category.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class MobileAppCategory : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The name of the app category.</summary>

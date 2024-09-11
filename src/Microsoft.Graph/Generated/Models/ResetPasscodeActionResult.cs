@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Reset passcode action result
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class ResetPasscodeActionResult : global::Microsoft.Graph.Models.DeviceActionResult, IParsable
     {
         /// <summary>RotateBitLockerKeys action error code. Valid values 0 to 2147483647</summary>

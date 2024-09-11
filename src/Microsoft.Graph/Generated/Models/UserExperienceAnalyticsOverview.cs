@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// The user experience analytics overview entity contains the overall score and the scores and insights of every metric of all categories.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class UserExperienceAnalyticsOverview : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The user experience analytics insights. Read-only.</summary>

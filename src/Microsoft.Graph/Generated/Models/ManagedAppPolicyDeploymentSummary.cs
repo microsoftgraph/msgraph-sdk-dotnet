@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class ManagedAppPolicyDeploymentSummary : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Not yet documented</summary>

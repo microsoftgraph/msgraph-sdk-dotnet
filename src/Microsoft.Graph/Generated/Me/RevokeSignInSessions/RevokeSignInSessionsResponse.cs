@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Me.RevokeSignInSessions
 {
     [Obsolete("This class is obsolete. Use RevokeSignInSessionsPostResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class RevokeSignInSessionsResponse : global::Microsoft.Graph.Me.RevokeSignInSessions.RevokeSignInSessionsPostResponse, IParsable
     #pragma warning restore CS1591

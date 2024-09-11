@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Device compliance setting State for a given device.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeviceComplianceSettingState : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The DateTime when device compliance grace period expires</summary>

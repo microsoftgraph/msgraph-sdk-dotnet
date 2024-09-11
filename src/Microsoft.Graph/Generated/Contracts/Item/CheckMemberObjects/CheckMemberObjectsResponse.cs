@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Contracts.Item.CheckMemberObjects
 {
     [Obsolete("This class is obsolete. Use CheckMemberObjectsPostResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class CheckMemberObjectsResponse : global::Microsoft.Graph.Contracts.Item.CheckMemberObjects.CheckMemberObjectsPostResponse, IParsable
     #pragma warning restore CS1591

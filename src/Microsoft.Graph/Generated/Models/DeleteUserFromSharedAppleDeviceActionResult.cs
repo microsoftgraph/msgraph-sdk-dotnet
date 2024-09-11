@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Delete user from shared apple device action result
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeleteUserFromSharedAppleDeviceActionResult : global::Microsoft.Graph.Models.DeviceActionResult, IParsable
     {
         /// <summary>User principal name of the user to be deleted</summary>

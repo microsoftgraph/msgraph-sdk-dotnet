@@ -12,7 +12,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.HomeRealmDiscoveryPolicies.Item
     /// <summary>
     /// Builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\homeRealmDiscoveryPolicies\{homeRealmDiscoveryPolicy-id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class HomeRealmDiscoveryPolicyItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the collection of servicePrincipal entities.</summary>

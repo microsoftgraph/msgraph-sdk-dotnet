@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// This topic provides descriptions of the declared methods, properties and relationships exposed by the secureAssessment resource.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class Windows10SecureAssessmentConfiguration : global::Microsoft.Graph.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Indicates whether or not to allow the app from printing during the test.</summary>

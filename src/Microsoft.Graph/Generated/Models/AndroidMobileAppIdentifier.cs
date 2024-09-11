@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// The identifier for an Android app.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class AndroidMobileAppIdentifier : global::Microsoft.Graph.Models.MobileAppIdentifier, IParsable
     {
         /// <summary>The identifier for an app, as specified in the play store.</summary>

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Device Configuration.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeviceConfiguration : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The list of assignments for the device configuration profile.</summary>

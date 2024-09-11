@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Windows Information Protection AppLearning Summary entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WindowsInformationProtectionAppLearningSummary : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Application Name</summary>

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Singleton entity that acts as a container for all reports functionality.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeviceManagementReports : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Entity representing a job to export a report</summary>

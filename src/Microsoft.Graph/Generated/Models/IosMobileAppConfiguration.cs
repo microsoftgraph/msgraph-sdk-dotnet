@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Contains properties, inherited properties and actions for iOS mobile app configurations.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class IosMobileAppConfiguration : global::Microsoft.Graph.Models.ManagedDeviceMobileAppConfiguration, IParsable
     {
         /// <summary>mdm app configuration Base64 binary.</summary>

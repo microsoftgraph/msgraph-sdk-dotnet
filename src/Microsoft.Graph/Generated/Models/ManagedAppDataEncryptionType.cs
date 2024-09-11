@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>Represents the level to which app data is encrypted for managed apps</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum ManagedAppDataEncryptionType
     {
         /// <summary>App data is encrypted based on the default settings on the device.</summary>

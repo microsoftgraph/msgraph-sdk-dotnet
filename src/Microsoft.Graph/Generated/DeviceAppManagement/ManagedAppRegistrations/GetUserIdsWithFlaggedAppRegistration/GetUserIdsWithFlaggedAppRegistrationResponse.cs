@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.GetUserIdsWithFlaggedAppRegistration
 {
     [Obsolete("This class is obsolete. Use GetUserIdsWithFlaggedAppRegistrationGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class GetUserIdsWithFlaggedAppRegistrationResponse : global::Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.GetUserIdsWithFlaggedAppRegistration.GetUserIdsWithFlaggedAppRegistrationGetResponse, IParsable
     #pragma warning restore CS1591

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// A class containing the properties used for Group Assignment of a Mobile App.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class MobileAppAssignment : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Possible values for the install intent chosen by the admin.</summary>

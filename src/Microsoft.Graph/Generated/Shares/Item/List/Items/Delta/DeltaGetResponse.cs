@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Shares.Item.List.Items.Delta
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class DeltaGetResponse : global::Microsoft.Graph.Models.BaseDeltaFunctionResponse, IParsable
     #pragma warning restore CS1591

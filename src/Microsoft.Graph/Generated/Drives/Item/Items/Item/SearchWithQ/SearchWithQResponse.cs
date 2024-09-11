@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Drives.Item.Items.Item.SearchWithQ
 {
     [Obsolete("This class is obsolete. Use SearchWithQGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class SearchWithQResponse : global::Microsoft.Graph.Drives.Item.Items.Item.SearchWithQ.SearchWithQGetResponse, IParsable
     #pragma warning restore CS1591

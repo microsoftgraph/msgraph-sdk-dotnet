@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Assignments.AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageId
 {
     [Obsolete("This class is obsolete. Use AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdResponse : global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.Assignments.AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageId.AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdGetResponse, IParsable
     #pragma warning restore CS1591

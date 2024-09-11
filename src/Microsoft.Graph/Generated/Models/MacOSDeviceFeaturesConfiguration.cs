@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// MacOS device features configuration profile.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class MacOSDeviceFeaturesConfiguration : global::Microsoft.Graph.Models.AppleDeviceFeaturesConfigurationBase, IParsable
     {
         /// <summary>

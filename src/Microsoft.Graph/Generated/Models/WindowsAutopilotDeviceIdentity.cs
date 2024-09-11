@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// The windowsAutopilotDeviceIdentity resource represents a Windows Autopilot Device.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WindowsAutopilotDeviceIdentity : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Addressable user name.</summary>

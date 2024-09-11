@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies.Delta
 {
     [Obsolete("This class is obsolete. Use DeltaGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     #pragma warning disable CS1591
     public partial class DeltaResponse : global::Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies.Delta.DeltaGetResponse, IParsable
     #pragma warning restore CS1591

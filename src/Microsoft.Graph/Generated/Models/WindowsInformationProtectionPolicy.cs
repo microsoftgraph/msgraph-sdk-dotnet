@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Policy for Windows information protection without MDM
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WindowsInformationProtectionPolicy : global::Microsoft.Graph.Models.WindowsInformationProtection, IParsable
     {
         /// <summary>Offline interval before app data is wiped (days)</summary>

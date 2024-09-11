@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// The user experience analytics metric contains the score and units of a metric of a user experience anlaytics category.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class UserExperienceAnalyticsMetric : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The unit of the user experience analytics metric. Examples: none, percentage, count, seconds, score.</summary>

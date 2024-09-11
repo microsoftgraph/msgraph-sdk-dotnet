@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Singleton entity which represents the Exchange OnPremises Conditional Access Settings for a tenant.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class OnPremisesConditionalAccessSettings : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Indicates if on premises conditional access is enabled for this organization</summary>

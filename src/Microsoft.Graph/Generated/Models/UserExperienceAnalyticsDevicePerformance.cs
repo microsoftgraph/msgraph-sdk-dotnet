@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// The user experience analytics device performance entity contains device boot performance details.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class UserExperienceAnalyticsDevicePerformance : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Average (mean) number of Blue Screens per device in the last 30 days. Valid values 0 to 9999999</summary>

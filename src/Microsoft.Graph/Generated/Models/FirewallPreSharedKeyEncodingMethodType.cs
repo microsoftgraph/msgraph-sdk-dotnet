@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>Possible values for firewallPreSharedKeyEncodingMethod</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public enum FirewallPreSharedKeyEncodingMethodType
     {
         /// <summary>No value configured by Intune, do not override the user-configured device default value</summary>

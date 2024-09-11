@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Contains properties and inherited properties for web apps.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class WebApp : global::Microsoft.Graph.Models.MobileApp, IParsable
     {
         /// <summary>The web app URL. This property cannot be PATCHed.</summary>

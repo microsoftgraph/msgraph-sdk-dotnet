@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// This topic provides descriptions of the declared methods, properties and relationships exposed by the iosCustomConfiguration resource.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class IosCustomConfiguration : global::Microsoft.Graph.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Payload. (UTF8 encoded byte array)</summary>

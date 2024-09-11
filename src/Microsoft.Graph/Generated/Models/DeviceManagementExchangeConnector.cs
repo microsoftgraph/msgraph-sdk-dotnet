@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Entity which represents a connection to an Exchange environment.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.18.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
     public partial class DeviceManagementExchangeConnector : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The name of the server hosting the Exchange Connector.</summary>
