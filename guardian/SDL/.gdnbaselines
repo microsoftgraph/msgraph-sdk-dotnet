@@ -1,8 +1,6 @@
 {
-  "hydrated": false,
   "properties": {
-    "helpUri": "https://eng.ms/docs/microsoft-security/security/azure-security/cloudai-security-fundamentals-engineering/security-integration/guardian-wiki/microsoft-guardian/general/baselines",
-    "hydrationStatus": "This file does not contain identifying data. It is safe to check into your repo. To hydrate this file with identifying data, run `guardian hydrate --help` and follow the guidance."
+    "helpUri": "https://eng.ms/docs/microsoft-security/security/azure-security/cloudai-security-fundamentals-engineering/security-integration/guardian-wiki/microsoft-guardian/general/baselines"
   },
   "version": "1.0.0",
   "baselines": {
@@ -284,6 +282,76 @@
         "default"
       ],
       "createdDate": "2024-09-05 11:00:07Z"
+    },
+    "d02d560dfa2b990239a116442fa49696a9f86107683300985856426fb4afa2a6": {
+      "signature": "d02d560dfa2b990239a116442fa49696a9f86107683300985856426fb4afa2a6",
+      "alternativeSignatures": [],
+      "target": "docs/v4-reference-docs/authenticationmethod-resetpassword.md",
+      "line": 109,
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2024-09-11 21:54:16Z",
+      "expirationDate": "2025-03-01 06:12:42Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2024-09-12 06:12:42Z"
+    },
+    "ac3bfa7c3028669618563f9295b4746774a51880defa826dd9c5b51bdb8af319": {
+      "signature": "ac3bfa7c3028669618563f9295b4746774a51880defa826dd9c5b51bdb8af319",
+      "alternativeSignatures": [],
+      "target": "docs/v4-reference-docs/authenticationmethod-resetpassword.md",
+      "line": 203,
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2024-09-11 21:54:16Z",
+      "expirationDate": "2025-03-01 06:12:42Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2024-09-12 06:12:42Z"
+    },
+    "ce5fb869bd8e8a1e75f5f4a54b7309cd16f76ce9af950bb2358da70269857142": {
+      "signature": "ce5fb869bd8e8a1e75f5f4a54b7309cd16f76ce9af950bb2358da70269857142",
+      "alternativeSignatures": [],
+      "target": "docs/v4-reference-docs/user-changepassword.md",
+      "line": 66,
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2024-09-11 21:54:16Z",
+      "expirationDate": "2025-03-01 06:12:42Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2024-09-12 06:12:42Z"
+    },
+    "d9e6949d68f096882005442a0619fd2aaa61192ae6ed3f6cc2b7572f4f9b6dc0": {
+      "signature": "d9e6949d68f096882005442a0619fd2aaa61192ae6ed3f6cc2b7572f4f9b6dc0",
+      "alternativeSignatures": [],
+      "target": "docs/v4-reference-docs/user-changepassword.md",
+      "line": 78,
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2024-09-11 21:54:16Z",
+      "expirationDate": "2025-03-01 06:12:42Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2024-09-12 06:12:42Z"
+    },
+    "390d21d9ca1233762b9b807625a7748863063253e1e7cf529266e5d328bd0f4c": {
+      "signature": "390d21d9ca1233762b9b807625a7748863063253e1e7cf529266e5d328bd0f4c",
+      "alternativeSignatures": [],
+      "target": "src/Microsoft.Graph/Generated/Models/SynchronizationSecret.cs",
+      "line": 99,
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0120",
+      "createdDate": "2024-09-11 21:54:16Z",
+      "expirationDate": "2025-03-01 06:12:42Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2024-09-12 06:12:42Z"
     }
   }
 }
