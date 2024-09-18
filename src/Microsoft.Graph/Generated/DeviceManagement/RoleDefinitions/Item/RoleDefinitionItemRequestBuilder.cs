@@ -41,8 +41,8 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions.Item
         {
         }
         /// <summary>
-        /// Deletes a deviceAndAppManagementRoleDefinition.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroledefinition-delete?view=graph-rest-1.0" />
+        /// Deletes a roleDefinition.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-rbac-roledefinition-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.RoleDefinition>(requestInfo, global::Microsoft.Graph.Models.RoleDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a deviceAndAppManagementRoleDefinition.
+        /// Deletes a roleDefinition.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -19,67 +19,67 @@ namespace Microsoft.Graph.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>Indicates whether the worksheet protection option to allow the use of the autofilter feature is enabled.</summary>
+        /// <summary>Represents the worksheet protection option of allowing using auto filter feature.</summary>
         public bool? AllowAutoFilter
         {
             get { return BackingStore?.Get<bool?>("allowAutoFilter"); }
             set { BackingStore?.Set("allowAutoFilter", value); }
         }
-        /// <summary>Indicates whether the worksheet protection option to allow deleting columns is enabled.</summary>
+        /// <summary>Represents the worksheet protection option of allowing deleting columns.</summary>
         public bool? AllowDeleteColumns
         {
             get { return BackingStore?.Get<bool?>("allowDeleteColumns"); }
             set { BackingStore?.Set("allowDeleteColumns", value); }
         }
-        /// <summary>Indicates whether the worksheet protection option to allow deleting rows is enabled.</summary>
+        /// <summary>Represents the worksheet protection option of allowing deleting rows.</summary>
         public bool? AllowDeleteRows
         {
             get { return BackingStore?.Get<bool?>("allowDeleteRows"); }
             set { BackingStore?.Set("allowDeleteRows", value); }
         }
-        /// <summary>Indicates whether the worksheet protection option to allow formatting cells is enabled.</summary>
+        /// <summary>Represents the worksheet protection option of allowing formatting cells.</summary>
         public bool? AllowFormatCells
         {
             get { return BackingStore?.Get<bool?>("allowFormatCells"); }
             set { BackingStore?.Set("allowFormatCells", value); }
         }
-        /// <summary>Indicates whether the worksheet protection option to allow formatting columns is enabled.</summary>
+        /// <summary>Represents the worksheet protection option of allowing formatting columns.</summary>
         public bool? AllowFormatColumns
         {
             get { return BackingStore?.Get<bool?>("allowFormatColumns"); }
             set { BackingStore?.Set("allowFormatColumns", value); }
         }
-        /// <summary>Indicates whether the worksheet protection option to allow formatting rows is enabled.</summary>
+        /// <summary>Represents the worksheet protection option of allowing formatting rows.</summary>
         public bool? AllowFormatRows
         {
             get { return BackingStore?.Get<bool?>("allowFormatRows"); }
             set { BackingStore?.Set("allowFormatRows", value); }
         }
-        /// <summary>Indicates whether the worksheet protection option to allow inserting columns is enabled.</summary>
+        /// <summary>Represents the worksheet protection option of allowing inserting columns.</summary>
         public bool? AllowInsertColumns
         {
             get { return BackingStore?.Get<bool?>("allowInsertColumns"); }
             set { BackingStore?.Set("allowInsertColumns", value); }
         }
-        /// <summary>Indicates whether the worksheet protection option to allow inserting hyperlinks is enabled.</summary>
+        /// <summary>Represents the worksheet protection option of allowing inserting hyperlinks.</summary>
         public bool? AllowInsertHyperlinks
         {
             get { return BackingStore?.Get<bool?>("allowInsertHyperlinks"); }
             set { BackingStore?.Set("allowInsertHyperlinks", value); }
         }
-        /// <summary>Indicates whether the worksheet protection option to allow inserting rows is enabled.</summary>
+        /// <summary>Represents the worksheet protection option of allowing inserting rows.</summary>
         public bool? AllowInsertRows
         {
             get { return BackingStore?.Get<bool?>("allowInsertRows"); }
             set { BackingStore?.Set("allowInsertRows", value); }
         }
-        /// <summary>Indicates whether the worksheet protection option to allow the use of the pivot table feature is enabled.</summary>
+        /// <summary>Represents the worksheet protection option of allowing using pivot table feature.</summary>
         public bool? AllowPivotTables
         {
             get { return BackingStore?.Get<bool?>("allowPivotTables"); }
             set { BackingStore?.Set("allowPivotTables", value); }
         }
-        /// <summary>Indicates whether the worksheet protection option to allow the use of the sort feature is enabled.</summary>
+        /// <summary>Represents the worksheet protection option of allowing using sort feature.</summary>
         public bool? AllowSort
         {
             get { return BackingStore?.Get<bool?>("allowSort"); }

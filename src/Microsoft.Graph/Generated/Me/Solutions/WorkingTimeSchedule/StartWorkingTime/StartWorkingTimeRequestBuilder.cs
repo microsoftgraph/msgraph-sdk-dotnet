@@ -34,7 +34,8 @@ namespace Microsoft.Graph.Me.Solutions.WorkingTimeSchedule.StartWorkingTime
         {
         }
         /// <summary>
-        /// Triggers the policies associated with the start of working hours for user.
+        /// Trigger the policies associated with the start of working hours for a specific user.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/workingtimeschedule-startworkingtime?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -56,7 +57,7 @@ namespace Microsoft.Graph.Me.Solutions.WorkingTimeSchedule.StartWorkingTime
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Triggers the policies associated with the start of working hours for user.
+        /// Trigger the policies associated with the start of working hours for a specific user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

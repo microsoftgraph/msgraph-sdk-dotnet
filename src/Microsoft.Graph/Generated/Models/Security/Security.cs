@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("cases", value); }
         }
 #endif
-        /// <summary>The identities property</summary>
+        /// <summary>A container for security identities APIs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.Security.IdentityContainer? Identities
