@@ -338,6 +338,12 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("isAssignableToRole"); }
             set { BackingStore?.Set("isAssignableToRole", value); }
         }
+        /// <summary>The isManagementRestricted property</summary>
+        public bool? IsManagementRestricted
+        {
+            get { return BackingStore?.Get<bool?>("isManagementRestricted"); }
+            set { BackingStore?.Set("isManagementRestricted", value); }
+        }
         /// <summary>Indicates whether the signed-in user is subscribed to receive email conversations. The default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).</summary>
         public bool? IsSubscribedByMail
         {
@@ -586,7 +592,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("onPremisesSyncEnabled"); }
             set { BackingStore?.Set("onPremisesSyncEnabled", value); }
         }
-        /// <summary>The owners of the group. Limited to 100 owners. Nullable. If this property isn&apos;t specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1). Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,&apos;Role&apos;)&amp;$select=id,displayName&amp;$expand=owners($select=id,userPrincipalName,displayName).</summary>
+        /// <summary>The owners of the group who can be users or service principals. Limited to 100 owners. Nullable. If this property isn&apos;t specified when creating a Microsoft 365 group the calling user (admin or non-admin) is automatically assigned as the group owner. A non-admin user can&apos;t explicitly add themselves to this collection when they&apos;re creating the group. For more information, see the related known issue. For security groups, the admin user isn&apos;t automatically added to this collection. For more information, see the related known issue. Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1); Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,&apos;Role&apos;)&amp;$select=id,displayName&amp;$expand=owners($select=id,userPrincipalName,displayName).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.DirectoryObject>? Owners
@@ -975,6 +981,7 @@ namespace Microsoft.Graph.Models
                 { "hideFromOutlookClients", n => { HideFromOutlookClients = n.GetBoolValue(); } },
                 { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
                 { "isAssignableToRole", n => { IsAssignableToRole = n.GetBoolValue(); } },
+                { "isManagementRestricted", n => { IsManagementRestricted = n.GetBoolValue(); } },
                 { "isSubscribedByMail", n => { IsSubscribedByMail = n.GetBoolValue(); } },
                 { "licenseProcessingState", n => { LicenseProcessingState = n.GetObjectValue<global::Microsoft.Graph.Models.LicenseProcessingState>(global::Microsoft.Graph.Models.LicenseProcessingState.CreateFromDiscriminatorValue); } },
                 { "mail", n => { Mail = n.GetStringValue(); } },
@@ -1052,6 +1059,7 @@ namespace Microsoft.Graph.Models
             writer.WriteBoolValue("hideFromOutlookClients", HideFromOutlookClients);
             writer.WriteBoolValue("isArchived", IsArchived);
             writer.WriteBoolValue("isAssignableToRole", IsAssignableToRole);
+            writer.WriteBoolValue("isManagementRestricted", IsManagementRestricted);
             writer.WriteBoolValue("isSubscribedByMail", IsSubscribedByMail);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.LicenseProcessingState>("licenseProcessingState", LicenseProcessingState);
             writer.WriteStringValue("mail", Mail);

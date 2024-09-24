@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models.Security
     public partial class IdentityContainer : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The healthIssues property</summary>
+        /// <summary>Represents potential issues identified by Microsoft Defender for Identity within a customer&apos;s Microsoft Defender for Identity configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.Security.HealthIssue>? HealthIssues

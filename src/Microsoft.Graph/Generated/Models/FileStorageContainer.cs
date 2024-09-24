@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("permissions", value); }
         }
 #endif
-        /// <summary>Status of the fileStorageContainer. Containers are created as inactive and require activation. Inactive containers are subjected to automatic deletion in 24 hours. The possible values are: inactive,  active. Read-only.</summary>
+        /// <summary>Status of the fileStorageContainer. Containers are created as inactive and require activation. Inactive containers are subjected to automatic deletion in 24 hours. The possible values are: inactive, active. Read-only.</summary>
         public global::Microsoft.Graph.Models.FileStorageContainerStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.FileStorageContainerStatus?>("status"); }

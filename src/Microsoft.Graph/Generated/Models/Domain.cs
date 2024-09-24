@@ -150,6 +150,22 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<int?>("passwordValidityPeriodInDays"); }
             set { BackingStore?.Set("passwordValidityPeriodInDays", value); }
         }
+        /// <summary>The rootDomain property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.Domain? RootDomain
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Domain?>("rootDomain"); }
+            set { BackingStore?.Set("rootDomain", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.Domain RootDomain
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Domain>("rootDomain"); }
+            set { BackingStore?.Set("rootDomain", value); }
+        }
+#endif
         /// <summary>DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -245,6 +261,7 @@ namespace Microsoft.Graph.Models
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "passwordNotificationWindowInDays", n => { PasswordNotificationWindowInDays = n.GetIntValue(); } },
                 { "passwordValidityPeriodInDays", n => { PasswordValidityPeriodInDays = n.GetIntValue(); } },
+                { "rootDomain", n => { RootDomain = n.GetObjectValue<global::Microsoft.Graph.Models.Domain>(global::Microsoft.Graph.Models.Domain.CreateFromDiscriminatorValue); } },
                 { "serviceConfigurationRecords", n => { ServiceConfigurationRecords = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DomainDnsRecord>(global::Microsoft.Graph.Models.DomainDnsRecord.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "state", n => { State = n.GetObjectValue<global::Microsoft.Graph.Models.DomainState>(global::Microsoft.Graph.Models.DomainState.CreateFromDiscriminatorValue); } },
                 { "supportedServices", n => { SupportedServices = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -272,6 +289,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("model", Model);
             writer.WriteIntValue("passwordNotificationWindowInDays", PasswordNotificationWindowInDays);
             writer.WriteIntValue("passwordValidityPeriodInDays", PasswordValidityPeriodInDays);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.Domain>("rootDomain", RootDomain);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DomainDnsRecord>("serviceConfigurationRecords", ServiceConfigurationRecords);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.DomainState>("state", State);
             writer.WriteCollectionOfPrimitiveValues<string>("supportedServices", SupportedServices);

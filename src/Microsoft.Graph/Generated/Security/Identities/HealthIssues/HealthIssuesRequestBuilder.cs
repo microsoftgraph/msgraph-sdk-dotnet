@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Security.Identities.HealthIssues
         {
         }
         /// <summary>
-        /// Get healthIssues from security
+        /// Get a list of healthIssue objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-identitycontainer-list-healthissues?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Security.HealthIssueCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Security.Identities.HealthIssues
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Security.HealthIssue>(requestInfo, global::Microsoft.Graph.Models.Security.HealthIssue.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get healthIssues from security
+        /// Get a list of healthIssue objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +153,7 @@ namespace Microsoft.Graph.Security.Identities.HealthIssues
             return new global::Microsoft.Graph.Security.Identities.HealthIssues.HealthIssuesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get healthIssues from security
+        /// Get a list of healthIssue objects and their properties.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class HealthIssuesRequestBuilderGetQueryParameters 

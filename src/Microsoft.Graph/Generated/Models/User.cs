@@ -796,6 +796,12 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("interests", value); }
         }
 #endif
+        /// <summary>The isManagementRestricted property</summary>
+        public bool? IsManagementRestricted
+        {
+            get { return BackingStore?.Get<bool?>("isManagementRestricted"); }
+            set { BackingStore?.Set("isManagementRestricted", value); }
+        }
         /// <summary>Don&apos;t use – reserved for future use.</summary>
         public bool? IsResourceAccount
         {
@@ -1744,7 +1750,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("skills", value); }
         }
 #endif
-        /// <summary>The solutions property</summary>
+        /// <summary>The identifier that relates the user to the working time schedule triggers. Read-Only. Nullable</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.UserSolutionRoot? Solutions
@@ -1999,6 +2005,7 @@ namespace Microsoft.Graph.Models
                 { "inferenceClassification", n => { InferenceClassification = n.GetObjectValue<global::Microsoft.Graph.Models.InferenceClassification>(global::Microsoft.Graph.Models.InferenceClassification.CreateFromDiscriminatorValue); } },
                 { "insights", n => { Insights = n.GetObjectValue<global::Microsoft.Graph.Models.ItemInsights>(global::Microsoft.Graph.Models.ItemInsights.CreateFromDiscriminatorValue); } },
                 { "interests", n => { Interests = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "isManagementRestricted", n => { IsManagementRestricted = n.GetBoolValue(); } },
                 { "isResourceAccount", n => { IsResourceAccount = n.GetBoolValue(); } },
                 { "jobTitle", n => { JobTitle = n.GetStringValue(); } },
                 { "joinedTeams", n => { JoinedTeams = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Team>(global::Microsoft.Graph.Models.Team.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -2137,6 +2144,7 @@ namespace Microsoft.Graph.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Models.InferenceClassification>("inferenceClassification", InferenceClassification);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ItemInsights>("insights", Insights);
             writer.WriteCollectionOfPrimitiveValues<string>("interests", Interests);
+            writer.WriteBoolValue("isManagementRestricted", IsManagementRestricted);
             writer.WriteBoolValue("isResourceAccount", IsResourceAccount);
             writer.WriteStringValue("jobTitle", JobTitle);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Team>("joinedTeams", JoinedTeams);
