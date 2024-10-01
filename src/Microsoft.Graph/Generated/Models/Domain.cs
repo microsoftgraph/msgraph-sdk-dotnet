@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("availabilityStatus", value); }
         }
 #endif
-        /// <summary>The objects such as users and groups that reference the domain ID. Read-only, Nullable. Supports $expand and $filter by the OData type of objects returned. For example, /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.</summary>
+        /// <summary>The objects such as users and groups that reference the domain ID. Read-only, Nullable. Doesn&apos;t support $expand. Supports $filter by the OData type of objects returned. For example, /domains/{domainId}/domainNameReferences/microsoft.graph.user and /domains/{domainId}/domainNameReferences/microsoft.graph.group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.DirectoryObject>? DomainNameReferences
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("domainNameReferences", value); }
         }
 #endif
-        /// <summary>Domain settings configured by a customer when federated with Microsoft Entra ID. Supports $expand.</summary>
+        /// <summary>Domain settings configured by a customer when federated with Microsoft Entra ID. Doesn&apos;t support $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.InternalDomainFederation>? FederationConfiguration
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("isAdminManaged"); }
             set { BackingStore?.Set("isAdminManaged", value); }
         }
-        /// <summary>true if this is the default domain that is used for user creation. There&apos;s only one default domain per company. Not nullable</summary>
+        /// <summary>true if this is the default domain that is used for user creation. There&apos;s only one default domain per company. Not nullable.</summary>
         public bool? IsDefault
         {
             get { return BackingStore?.Get<bool?>("isDefault"); }
@@ -94,13 +94,13 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("isInitial"); }
             set { BackingStore?.Set("isInitial", value); }
         }
-        /// <summary>true if the domain is a verified root domain. Otherwise, false if the domain is a subdomain or unverified. Not nullable</summary>
+        /// <summary>true if the domain is a verified root domain. Otherwise, false if the domain is a subdomain or unverified. Not nullable.</summary>
         public bool? IsRoot
         {
             get { return BackingStore?.Get<bool?>("isRoot"); }
             set { BackingStore?.Set("isRoot", value); }
         }
-        /// <summary>true if the domain has completed domain ownership verification. Not nullable</summary>
+        /// <summary>true if the domain completed domain ownership verification. Not nullable.</summary>
         public bool? IsVerified
         {
             get { return BackingStore?.Get<bool?>("isVerified"); }
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("model", value); }
         }
 #endif
-        /// <summary>Specifies the number of days before a user receives notification that their password will expire. If the property isn&apos;t set, a default value of 14 days is used.</summary>
+        /// <summary>Specifies the number of days before a user receives notification that their password expires. If the property isn&apos;t set, a default value of 14 days is used.</summary>
         public int? PasswordNotificationWindowInDays
         {
             get { return BackingStore?.Get<int?>("passwordNotificationWindowInDays"); }
@@ -150,7 +150,23 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<int?>("passwordValidityPeriodInDays"); }
             set { BackingStore?.Set("passwordValidityPeriodInDays", value); }
         }
-        /// <summary>DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Supports $expand.</summary>
+        /// <summary>The rootDomain property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.Domain? RootDomain
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Domain?>("rootDomain"); }
+            set { BackingStore?.Set("rootDomain", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.Domain RootDomain
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Domain>("rootDomain"); }
+            set { BackingStore?.Set("rootDomain", value); }
+        }
+#endif
+        /// <summary>DNS records the customer adds to the DNS zone file of the domain before the domain can be used by Microsoft Online services. Read-only, Nullable. Doesn&apos;t support $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.DomainDnsRecord>? ServiceConfigurationRecords
@@ -198,7 +214,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("supportedServices", value); }
         }
 #endif
-        /// <summary>DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Microsoft Entra ID. Read-only, Nullable. Supports $expand.</summary>
+        /// <summary>DNS records that the customer adds to the DNS zone file of the domain before the customer can complete domain ownership verification with Microsoft Entra ID. Read-only, Nullable. Doesn&apos;t support $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.DomainDnsRecord>? VerificationDnsRecords
@@ -245,6 +261,7 @@ namespace Microsoft.Graph.Models
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "passwordNotificationWindowInDays", n => { PasswordNotificationWindowInDays = n.GetIntValue(); } },
                 { "passwordValidityPeriodInDays", n => { PasswordValidityPeriodInDays = n.GetIntValue(); } },
+                { "rootDomain", n => { RootDomain = n.GetObjectValue<global::Microsoft.Graph.Models.Domain>(global::Microsoft.Graph.Models.Domain.CreateFromDiscriminatorValue); } },
                 { "serviceConfigurationRecords", n => { ServiceConfigurationRecords = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DomainDnsRecord>(global::Microsoft.Graph.Models.DomainDnsRecord.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "state", n => { State = n.GetObjectValue<global::Microsoft.Graph.Models.DomainState>(global::Microsoft.Graph.Models.DomainState.CreateFromDiscriminatorValue); } },
                 { "supportedServices", n => { SupportedServices = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -272,6 +289,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("model", Model);
             writer.WriteIntValue("passwordNotificationWindowInDays", PasswordNotificationWindowInDays);
             writer.WriteIntValue("passwordValidityPeriodInDays", PasswordValidityPeriodInDays);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.Domain>("rootDomain", RootDomain);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DomainDnsRecord>("serviceConfigurationRecords", ServiceConfigurationRecords);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.DomainState>("state", State);
             writer.WriteCollectionOfPrimitiveValues<string>("supportedServices", SupportedServices);

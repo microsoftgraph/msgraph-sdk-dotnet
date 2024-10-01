@@ -3,22 +3,18 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models
 {
+    /// <summary>Types of communityPrivacy.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
-    #pragma warning disable CS1591
     public enum CommunityPrivacy
-    #pragma warning restore CS1591
     {
+        /// <summary>Any user from the tenant can join and participate in the community.</summary>
         [EnumMember(Value = "public")]
-        #pragma warning disable CS1591
         Public,
-        #pragma warning restore CS1591
+        /// <summary>A community administrator must add tenant users to the community before they can participate.</summary>
         [EnumMember(Value = "private")]
-        #pragma warning disable CS1591
         Private,
-        #pragma warning restore CS1591
+        /// <summary>A marker value for members added after the release of this API.</summary>
         [EnumMember(Value = "unknownFutureValue")]
-        #pragma warning disable CS1591
         UnknownFutureValue,
-        #pragma warning restore CS1591
     }
 }

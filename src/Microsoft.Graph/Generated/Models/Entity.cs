@@ -724,6 +724,7 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.security.ediscoveryReviewSetQuery" => new global::Microsoft.Graph.Models.Security.EdiscoveryReviewSetQuery(),
                 "#microsoft.graph.security.ediscoveryReviewTag" => new global::Microsoft.Graph.Models.Security.EdiscoveryReviewTag(),
                 "#microsoft.graph.security.ediscoverySearch" => new global::Microsoft.Graph.Models.Security.EdiscoverySearch(),
+                "#microsoft.graph.security.ediscoverySearchExportOperation" => new global::Microsoft.Graph.Models.Security.EdiscoverySearchExportOperation(),
                 "#microsoft.graph.security.ediscoveryTagOperation" => new global::Microsoft.Graph.Models.Security.EdiscoveryTagOperation(),
                 "#microsoft.graph.security.filePlanDescriptor" => new global::Microsoft.Graph.Models.Security.FilePlanDescriptor(),
                 "#microsoft.graph.security.filePlanDescriptorTemplate" => new global::Microsoft.Graph.Models.Security.FilePlanDescriptorTemplate(),

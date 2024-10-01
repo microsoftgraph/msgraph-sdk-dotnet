@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Models
 {
+    /// <summary>
+    /// Represents a community in Viva Engage that is a central place for conversations,files, events, and updates for people sharing a common interest or goal.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
-    #pragma warning disable CS1591
     public partial class Community : global::Microsoft.Graph.Models.Entity, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>The description of the community. The maximum length is 1,024 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -92,7 +93,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("owners", value); }
         }
 #endif
-        /// <summary>The privacy property</summary>
+        /// <summary>Types of communityPrivacy.</summary>
         public global::Microsoft.Graph.Models.CommunityPrivacy? Privacy
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.CommunityPrivacy?>("privacy"); }

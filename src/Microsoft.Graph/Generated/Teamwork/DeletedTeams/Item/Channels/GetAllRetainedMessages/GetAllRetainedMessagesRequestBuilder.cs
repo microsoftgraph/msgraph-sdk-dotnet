@@ -34,7 +34,8 @@ namespace Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.GetAllRetainedMess
         {
         }
         /// <summary>
-        /// Invoke function getAllRetainedMessages
+        /// Get all retained messages across all channels in a team. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-getallretainedmessages?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.GetAllRetainedMessages.GetAllRetainedMessagesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +58,8 @@ namespace Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.GetAllRetainedMess
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.GetAllRetainedMessages.GetAllRetainedMessagesGetResponse>(requestInfo, global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.GetAllRetainedMessages.GetAllRetainedMessagesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getAllRetainedMessages
+        /// Get all retained messages across all channels in a team. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-getallretainedmessages?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.GetAllRetainedMessages.GetAllRetainedMessagesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +83,7 @@ namespace Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.GetAllRetainedMess
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.GetAllRetainedMessages.GetAllRetainedMessagesResponse>(requestInfo, global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.GetAllRetainedMessages.GetAllRetainedMessagesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function getAllRetainedMessages
+        /// Get all retained messages across all channels in a team. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,7 +111,7 @@ namespace Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.GetAllRetainedMess
             return new global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.GetAllRetainedMessages.GetAllRetainedMessagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function getAllRetainedMessages
+        /// Get all retained messages across all channels in a team. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class GetAllRetainedMessagesRequestBuilderGetQueryParameters 

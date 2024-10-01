@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models.Security
     public partial class HealthIssue : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The additionalInformation property</summary>
+        /// <summary>Contains additional information about the issue, such as a list of items to fix.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AdditionalInformation
@@ -28,13 +28,13 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("additionalInformation", value); }
         }
 #endif
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The date and time when the health issue was generated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The description property</summary>
+        /// <summary>Contains more detailed information about the health issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name of the health issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The domainNames property</summary>
+        /// <summary>A list of the fully qualified domain names of the domains or the sensors the health issue is related to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? DomainNames
@@ -82,13 +82,13 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("domainNames", value); }
         }
 #endif
-        /// <summary>The healthIssueType property</summary>
+        /// <summary>The type of the health issue. The possible values are: sensor, global, unknownFutureValue. For a list of all health issues and their identifiers, see Microsoft Defender for Identity health issues.</summary>
         public global::Microsoft.Graph.Models.Security.HealthIssueType? HealthIssueType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.HealthIssueType?>("healthIssueType"); }
             set { BackingStore?.Set("healthIssueType", value); }
         }
-        /// <summary>The issueTypeId property</summary>
+        /// <summary>The type identifier of the health issue. For a list of all health issues and their identifiers, see Microsoft Defender for Identity health issues.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IssueTypeId
@@ -104,13 +104,13 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("issueTypeId", value); }
         }
 #endif
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>The date and time when the health issue was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The recommendations property</summary>
+        /// <summary>A list of recommended actions that can be taken to resolve the issue effectively and efficiently. These actions might include instructions for further investigation and aren&apos;t limited to prewritten responses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Recommendations
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("recommendations", value); }
         }
 #endif
-        /// <summary>The recommendedActionCommands property</summary>
+        /// <summary>A list of commands from the PowerShell module for the product that can be used to resolve the issue, if available. If no commands can be used to solve the issue, this property is empty. The commands, if present, provide a quick and efficient way to address the issue. These commands run in sequence for the single recommended fix.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? RecommendedActionCommands
@@ -142,7 +142,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("recommendedActionCommands", value); }
         }
 #endif
-        /// <summary>The sensorDNSNames property</summary>
+        /// <summary>A list of the DNS names of the sensors the health issue is related to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SensorDNSNames
@@ -158,13 +158,13 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("sensorDNSNames", value); }
         }
 #endif
-        /// <summary>The severity property</summary>
+        /// <summary>The severity of the health issue. The possible values are: low, medium, high, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.Security.HealthIssueSeverity? Severity
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.HealthIssueSeverity?>("severity"); }
             set { BackingStore?.Set("severity", value); }
         }
-        /// <summary>The status property</summary>
+        /// <summary>The status of the health issue. The possible values are: open, closed, suppressed, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.Security.HealthIssueStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.HealthIssueStatus?>("status"); }

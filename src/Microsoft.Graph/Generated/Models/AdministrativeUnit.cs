@@ -60,6 +60,12 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("extensions", value); }
         }
 #endif
+        /// <summary>The isMemberManagementRestricted property</summary>
+        public bool? IsMemberManagementRestricted
+        {
+            get { return BackingStore?.Get<bool?>("isMemberManagementRestricted"); }
+            set { BackingStore?.Set("isMemberManagementRestricted", value); }
+        }
         /// <summary>Users and groups that are members of this administrative unit. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,6 +80,54 @@ namespace Microsoft.Graph.Models
         {
             get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.DirectoryObject>>("members"); }
             set { BackingStore?.Set("members", value); }
+        }
+#endif
+        /// <summary>The membershipRule property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MembershipRule
+        {
+            get { return BackingStore?.Get<string?>("membershipRule"); }
+            set { BackingStore?.Set("membershipRule", value); }
+        }
+#nullable restore
+#else
+        public string MembershipRule
+        {
+            get { return BackingStore?.Get<string>("membershipRule"); }
+            set { BackingStore?.Set("membershipRule", value); }
+        }
+#endif
+        /// <summary>The membershipRuleProcessingState property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MembershipRuleProcessingState
+        {
+            get { return BackingStore?.Get<string?>("membershipRuleProcessingState"); }
+            set { BackingStore?.Set("membershipRuleProcessingState", value); }
+        }
+#nullable restore
+#else
+        public string MembershipRuleProcessingState
+        {
+            get { return BackingStore?.Get<string>("membershipRuleProcessingState"); }
+            set { BackingStore?.Set("membershipRuleProcessingState", value); }
+        }
+#endif
+        /// <summary>The membershipType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MembershipType
+        {
+            get { return BackingStore?.Get<string?>("membershipType"); }
+            set { BackingStore?.Set("membershipType", value); }
+        }
+#nullable restore
+#else
+        public string MembershipType
+        {
+            get { return BackingStore?.Get<string>("membershipType"); }
+            set { BackingStore?.Set("membershipType", value); }
         }
 #endif
         /// <summary>Scoped-role members of this administrative unit.</summary>
@@ -136,7 +190,11 @@ namespace Microsoft.Graph.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Extension>(global::Microsoft.Graph.Models.Extension.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "isMemberManagementRestricted", n => { IsMemberManagementRestricted = n.GetBoolValue(); } },
                 { "members", n => { Members = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DirectoryObject>(global::Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "membershipRule", n => { MembershipRule = n.GetStringValue(); } },
+                { "membershipRuleProcessingState", n => { MembershipRuleProcessingState = n.GetStringValue(); } },
+                { "membershipType", n => { MembershipType = n.GetStringValue(); } },
                 { "scopedRoleMembers", n => { ScopedRoleMembers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ScopedRoleMembership>(global::Microsoft.Graph.Models.ScopedRoleMembership.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "visibility", n => { Visibility = n.GetStringValue(); } },
             };
@@ -152,7 +210,11 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Extension>("extensions", Extensions);
+            writer.WriteBoolValue("isMemberManagementRestricted", IsMemberManagementRestricted);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DirectoryObject>("members", Members);
+            writer.WriteStringValue("membershipRule", MembershipRule);
+            writer.WriteStringValue("membershipRuleProcessingState", MembershipRuleProcessingState);
+            writer.WriteStringValue("membershipType", MembershipType);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ScopedRoleMembership>("scopedRoleMembers", ScopedRoleMembers);
             writer.WriteStringValue("visibility", Visibility);
         }

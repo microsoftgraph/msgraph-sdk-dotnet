@@ -3,18 +3,15 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models
 {
+    /// <summary>Types of engagementAsyncOperationType. Members will be added here as more async operations are supported.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
-    #pragma warning disable CS1591
     public enum EngagementAsyncOperationType
-    #pragma warning restore CS1591
     {
+        /// <summary>Operation to create a Viva Engage community.</summary>
         [EnumMember(Value = "createCommunity")]
-        #pragma warning disable CS1591
         CreateCommunity,
-        #pragma warning restore CS1591
+        /// <summary>A marker value for members added after the release of this API.</summary>
         [EnumMember(Value = "unknownFutureValue")]
-        #pragma warning disable CS1591
         UnknownFutureValue,
-        #pragma warning restore CS1591
     }
 }

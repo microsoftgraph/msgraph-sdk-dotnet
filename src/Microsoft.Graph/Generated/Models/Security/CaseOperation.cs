@@ -91,6 +91,7 @@ namespace Microsoft.Graph.Models.Security
                 "#microsoft.graph.security.ediscoveryHoldOperation" => new global::Microsoft.Graph.Models.Security.EdiscoveryHoldOperation(),
                 "#microsoft.graph.security.ediscoveryIndexOperation" => new global::Microsoft.Graph.Models.Security.EdiscoveryIndexOperation(),
                 "#microsoft.graph.security.ediscoveryPurgeDataOperation" => new global::Microsoft.Graph.Models.Security.EdiscoveryPurgeDataOperation(),
+                "#microsoft.graph.security.ediscoverySearchExportOperation" => new global::Microsoft.Graph.Models.Security.EdiscoverySearchExportOperation(),
                 "#microsoft.graph.security.ediscoveryTagOperation" => new global::Microsoft.Graph.Models.Security.EdiscoveryTagOperation(),
                 _ => new global::Microsoft.Graph.Models.Security.CaseOperation(),
             };
