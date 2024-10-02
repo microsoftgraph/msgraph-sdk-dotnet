@@ -192,6 +192,12 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("isManaged"); }
             set { BackingStore?.Set("isManaged", value); }
         }
+        /// <summary>The isManagementRestricted property</summary>
+        public bool? IsManagementRestricted
+        {
+            get { return BackingStore?.Get<bool?>("isManagementRestricted"); }
+            set { BackingStore?.Set("isManagementRestricted", value); }
+        }
         /// <summary>true if the device is rooted or jail-broken. This property can only be updated by Intune.</summary>
         public bool? IsRooted
         {
@@ -496,6 +502,7 @@ namespace Microsoft.Graph.Models
                 { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Extension>(global::Microsoft.Graph.Models.Extension.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "isCompliant", n => { IsCompliant = n.GetBoolValue(); } },
                 { "isManaged", n => { IsManaged = n.GetBoolValue(); } },
+                { "isManagementRestricted", n => { IsManagementRestricted = n.GetBoolValue(); } },
                 { "isRooted", n => { IsRooted = n.GetBoolValue(); } },
                 { "managementType", n => { ManagementType = n.GetStringValue(); } },
                 { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
@@ -540,6 +547,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Extension>("extensions", Extensions);
             writer.WriteBoolValue("isCompliant", IsCompliant);
             writer.WriteBoolValue("isManaged", IsManaged);
+            writer.WriteBoolValue("isManagementRestricted", IsManagementRestricted);
             writer.WriteBoolValue("isRooted", IsRooted);
             writer.WriteStringValue("managementType", ManagementType);
             writer.WriteStringValue("manufacturer", Manufacturer);

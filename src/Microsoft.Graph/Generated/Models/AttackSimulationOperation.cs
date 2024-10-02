@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Models
 {
+    /// <summary>
+    /// The status of a long-running operation.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
-    #pragma warning disable CS1591
     public partial class AttackSimulationOperation : global::Microsoft.Graph.Models.LongRunningOperation, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Percentage of completion of the respective operation.</summary>
         public int? PercentageCompleted
