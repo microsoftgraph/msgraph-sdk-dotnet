@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.Enable
         {
         }
         /// <summary>
-        /// Enable the Microsoft 365 Backup Storage service for a tenant. Before you call this API, call List protection policies to initialize the data store in the tenant. Data store initialization takes about 5 minutes. If you call this API before the data store is initialized, the call results in an error.
+        /// Enable the Microsoft 365 Backup Storage service for a tenant.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/backuprestoreroot-enable?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ServiceStatus"/></returns>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.Enable
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ServiceStatus>(requestInfo, global::Microsoft.Graph.Models.ServiceStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Enable the Microsoft 365 Backup Storage service for a tenant. Before you call this API, call List protection policies to initialize the data store in the tenant. Data store initialization takes about 5 minutes. If you call this API before the data store is initialized, the call results in an error.
+        /// Enable the Microsoft 365 Backup Storage service for a tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

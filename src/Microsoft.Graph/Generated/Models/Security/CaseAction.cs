@@ -44,5 +44,13 @@ namespace Microsoft.Graph.Models.Security
         #pragma warning disable CS1591
         PurgeData,
         #pragma warning restore CS1591
+        [EnumMember(Value = "exportReport")]
+        #pragma warning disable CS1591
+        ExportReport,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "exportResult")]
+        #pragma warning disable CS1591
+        ExportResult,
+        #pragma warning restore CS1591
     }
 }

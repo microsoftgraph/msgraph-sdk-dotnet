@@ -7,6 +7,8 @@ using Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.Addition
 using Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.CustodianSources;
 using Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.LastEstimateStatisticsOperation;
 using Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.MicrosoftGraphSecurityEstimateStatistics;
+using Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.MicrosoftGraphSecurityExportReport;
+using Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.MicrosoftGraphSecurityExportResult;
 using Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.MicrosoftGraphSecurityPurgeData;
 using Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.NoncustodialSources;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -49,6 +51,16 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item
         public global::Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.MicrosoftGraphSecurityEstimateStatistics.MicrosoftGraphSecurityEstimateStatisticsRequestBuilder MicrosoftGraphSecurityEstimateStatistics
         {
             get => new global::Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.MicrosoftGraphSecurityEstimateStatistics.MicrosoftGraphSecurityEstimateStatisticsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the exportReport method.</summary>
+        public global::Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.MicrosoftGraphSecurityExportReport.MicrosoftGraphSecurityExportReportRequestBuilder MicrosoftGraphSecurityExportReport
+        {
+            get => new global::Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.MicrosoftGraphSecurityExportReport.MicrosoftGraphSecurityExportReportRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the exportResult method.</summary>
+        public global::Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.MicrosoftGraphSecurityExportResult.MicrosoftGraphSecurityExportResultRequestBuilder MicrosoftGraphSecurityExportResult
+        {
+            get => new global::Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.MicrosoftGraphSecurityExportResult.MicrosoftGraphSecurityExportResultRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the purgeData method.</summary>
         public global::Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Searches.Item.MicrosoftGraphSecurityPurgeData.MicrosoftGraphSecurityPurgeDataRequestBuilder MicrosoftGraphSecurityPurgeData

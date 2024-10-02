@@ -50,6 +50,22 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("deviceDnsName", value); }
         }
 #endif
+        /// <summary>The DNS domain that this computer belongs to. A sequence of labels separated by dots.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DnsDomain
+        {
+            get { return BackingStore?.Get<string?>("dnsDomain"); }
+            set { BackingStore?.Set("dnsDomain", value); }
+        }
+#nullable restore
+#else
+        public string DnsDomain
+        {
+            get { return BackingStore?.Get<string>("dnsDomain"); }
+            set { BackingStore?.Set("dnsDomain", value); }
+        }
+#endif
         /// <summary>The date and time when the device was first seen.</summary>
         public DateTimeOffset? FirstSeenDateTime
         {
@@ -62,6 +78,22 @@ namespace Microsoft.Graph.Models.Security
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.DeviceHealthStatus?>("healthStatus"); }
             set { BackingStore?.Set("healthStatus", value); }
         }
+        /// <summary>The hostname without the domain suffix.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? HostName
+        {
+            get { return BackingStore?.Get<string?>("hostName"); }
+            set { BackingStore?.Set("hostName", value); }
+        }
+#nullable restore
+#else
+        public string HostName
+        {
+            get { return BackingStore?.Get<string>("hostName"); }
+            set { BackingStore?.Set("hostName", value); }
+        }
+#endif
         /// <summary>Ip interfaces of the device during the time of the alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -140,6 +172,22 @@ namespace Microsoft.Graph.Models.Security
         {
             get { return BackingStore?.Get<string>("mdeDeviceId"); }
             set { BackingStore?.Set("mdeDeviceId", value); }
+        }
+#endif
+        /// <summary>A logical grouping of computers within a Microsoft Windows network.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? NtDomain
+        {
+            get { return BackingStore?.Get<string?>("ntDomain"); }
+            set { BackingStore?.Set("ntDomain", value); }
+        }
+#nullable restore
+#else
+        public string NtDomain
+        {
+            get { return BackingStore?.Get<string>("ntDomain"); }
+            set { BackingStore?.Set("ntDomain", value); }
         }
 #endif
         /// <summary>The status of the machine onboarding to Microsoft Defender for Endpoint. The possible values are: insufficientInfo, onboarded, canBeOnboarded, unsupported, unknownFutureValue.</summary>
@@ -258,13 +306,16 @@ namespace Microsoft.Graph.Models.Security
                 { "azureAdDeviceId", n => { AzureAdDeviceId = n.GetStringValue(); } },
                 { "defenderAvStatus", n => { DefenderAvStatus = n.GetEnumValue<global::Microsoft.Graph.Models.Security.DefenderAvStatus>(); } },
                 { "deviceDnsName", n => { DeviceDnsName = n.GetStringValue(); } },
+                { "dnsDomain", n => { DnsDomain = n.GetStringValue(); } },
                 { "firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
                 { "healthStatus", n => { HealthStatus = n.GetEnumValue<global::Microsoft.Graph.Models.Security.DeviceHealthStatus>(); } },
+                { "hostName", n => { HostName = n.GetStringValue(); } },
                 { "ipInterfaces", n => { IpInterfaces = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "lastExternalIpAddress", n => { LastExternalIpAddress = n.GetStringValue(); } },
                 { "lastIpAddress", n => { LastIpAddress = n.GetStringValue(); } },
                 { "loggedOnUsers", n => { LoggedOnUsers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.LoggedOnUser>(global::Microsoft.Graph.Models.Security.LoggedOnUser.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "mdeDeviceId", n => { MdeDeviceId = n.GetStringValue(); } },
+                { "ntDomain", n => { NtDomain = n.GetStringValue(); } },
                 { "onboardingStatus", n => { OnboardingStatus = n.GetEnumValue<global::Microsoft.Graph.Models.Security.OnboardingStatus>(); } },
                 { "osBuild", n => { OsBuild = n.GetLongValue(); } },
                 { "osPlatform", n => { OsPlatform = n.GetStringValue(); } },
@@ -286,13 +337,16 @@ namespace Microsoft.Graph.Models.Security
             writer.WriteStringValue("azureAdDeviceId", AzureAdDeviceId);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.Security.DefenderAvStatus>("defenderAvStatus", DefenderAvStatus);
             writer.WriteStringValue("deviceDnsName", DeviceDnsName);
+            writer.WriteStringValue("dnsDomain", DnsDomain);
             writer.WriteDateTimeOffsetValue("firstSeenDateTime", FirstSeenDateTime);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.Security.DeviceHealthStatus>("healthStatus", HealthStatus);
+            writer.WriteStringValue("hostName", HostName);
             writer.WriteCollectionOfPrimitiveValues<string>("ipInterfaces", IpInterfaces);
             writer.WriteStringValue("lastExternalIpAddress", LastExternalIpAddress);
             writer.WriteStringValue("lastIpAddress", LastIpAddress);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.LoggedOnUser>("loggedOnUsers", LoggedOnUsers);
             writer.WriteStringValue("mdeDeviceId", MdeDeviceId);
+            writer.WriteStringValue("ntDomain", NtDomain);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.Security.OnboardingStatus>("onboardingStatus", OnboardingStatus);
             writer.WriteLongValue("osBuild", OsBuild);
             writer.WriteStringValue("osPlatform", OsPlatform);

@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class UserSolutionRoot : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The workingTimeSchedule property</summary>
+        /// <summary>The working time schedule entity associated with the solution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.WorkingTimeSchedule? WorkingTimeSchedule

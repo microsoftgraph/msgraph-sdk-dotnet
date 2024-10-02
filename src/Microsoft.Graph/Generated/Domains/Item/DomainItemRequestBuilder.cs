@@ -4,6 +4,7 @@ using Microsoft.Graph.Domains.Item.DomainNameReferences;
 using Microsoft.Graph.Domains.Item.FederationConfiguration;
 using Microsoft.Graph.Domains.Item.ForceDelete;
 using Microsoft.Graph.Domains.Item.Promote;
+using Microsoft.Graph.Domains.Item.RootDomain;
 using Microsoft.Graph.Domains.Item.ServiceConfigurationRecords;
 using Microsoft.Graph.Domains.Item.VerificationDnsRecords;
 using Microsoft.Graph.Domains.Item.Verify;
@@ -44,6 +45,11 @@ namespace Microsoft.Graph.Domains.Item
         public global::Microsoft.Graph.Domains.Item.Promote.PromoteRequestBuilder Promote
         {
             get => new global::Microsoft.Graph.Domains.Item.Promote.PromoteRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the rootDomain property of the microsoft.graph.domain entity.</summary>
+        public global::Microsoft.Graph.Domains.Item.RootDomain.RootDomainRequestBuilder RootDomain
+        {
+            get => new global::Microsoft.Graph.Domains.Item.RootDomain.RootDomainRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the serviceConfigurationRecords property of the microsoft.graph.domain entity.</summary>
         public global::Microsoft.Graph.Domains.Item.ServiceConfigurationRecords.ServiceConfigurationRecordsRequestBuilder ServiceConfigurationRecords

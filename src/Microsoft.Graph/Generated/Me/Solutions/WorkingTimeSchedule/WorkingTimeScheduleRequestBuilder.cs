@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Me.Solutions.WorkingTimeSchedule
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get workingTimeSchedule from me
+        /// The working time schedule entity associated with the solution.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.WorkingTimeSchedule"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Me.Solutions.WorkingTimeSchedule
             return requestInfo;
         }
         /// <summary>
-        /// Get workingTimeSchedule from me
+        /// The working time schedule entity associated with the solution.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Me.Solutions.WorkingTimeSchedule
         {
         }
         /// <summary>
-        /// Get workingTimeSchedule from me
+        /// The working time schedule entity associated with the solution.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
         public partial class WorkingTimeScheduleRequestBuilderGetQueryParameters 
