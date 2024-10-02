@@ -5,6 +5,7 @@ on:
   push:
   pull_request:
     branches: [ 'main' ]
+    paths: 'src/**/Generated/**'
 
 permissions:
   contents: read
