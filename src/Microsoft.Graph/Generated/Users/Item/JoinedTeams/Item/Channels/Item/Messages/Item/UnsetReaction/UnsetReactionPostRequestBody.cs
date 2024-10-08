@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item.Messages.Item.UnsetReaction
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     #pragma warning disable CS1591
     public partial class UnsetReactionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591

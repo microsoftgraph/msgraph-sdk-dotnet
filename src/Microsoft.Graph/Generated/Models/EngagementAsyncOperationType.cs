@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>Types of engagementAsyncOperationType. Members will be added here as more async operations are supported.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public enum EngagementAsyncOperationType
     {
         /// <summary>Operation to create a Viva Engage community.</summary>

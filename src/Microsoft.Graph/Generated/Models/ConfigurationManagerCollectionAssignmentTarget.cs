@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Represents an assignment to a Configuration Manager Collection.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class ConfigurationManagerCollectionAssignmentTarget : global::Microsoft.Graph.Models.DeviceAndAppManagementAssignmentTarget, IParsable
     {
         /// <summary>The collection Id that is the target of the assignment.</summary>

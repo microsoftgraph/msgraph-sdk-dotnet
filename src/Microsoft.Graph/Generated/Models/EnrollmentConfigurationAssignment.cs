@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Enrollment Configuration Assignment
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class EnrollmentConfigurationAssignment : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Represents an assignment to managed devices in the tenant</summary>

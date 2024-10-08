@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Microsoft Store for Business Apps. This class does not support Create, Delete, or Update.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class MicrosoftStoreForBusinessApp : global::Microsoft.Graph.Models.MobileApp, IParsable
     {
         /// <summary>The licenseType property</summary>

@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Sites.Item.Onenote.Notebooks.Item.Sections.Item.Pages.Item.CopyToSection
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     #pragma warning disable CS1591
     public partial class CopyToSectionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591

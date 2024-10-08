@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Represents the status of a Viva Engage async operation that is an operation that transcends thelifetime of a single API request. These operations are long-running or too expensive to completewithin the time frame of their original request.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class EngagementAsyncOperation : global::Microsoft.Graph.Models.LongRunningOperation, IParsable
     {
         /// <summary>The type of the long-running operation. The possible values are: createCommunity, unknownFutureValue.</summary>

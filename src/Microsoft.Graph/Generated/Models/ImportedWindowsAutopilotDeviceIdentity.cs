@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Imported windows autopilot devices.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class ImportedWindowsAutopilotDeviceIdentity : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>UPN of the user the device will be assigned</summary>

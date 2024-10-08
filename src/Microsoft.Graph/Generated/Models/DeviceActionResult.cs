@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Device action result
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class DeviceActionResult : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Action name</summary>

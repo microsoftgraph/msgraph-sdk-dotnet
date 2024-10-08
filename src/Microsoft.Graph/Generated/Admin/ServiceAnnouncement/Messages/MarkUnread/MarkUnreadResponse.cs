@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkUnread
 {
     [Obsolete("This class is obsolete. Use MarkUnreadPostResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     #pragma warning disable CS1591
     public partial class MarkUnreadResponse : global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkUnread.MarkUnreadPostResponse, IParsable
     #pragma warning restore CS1591

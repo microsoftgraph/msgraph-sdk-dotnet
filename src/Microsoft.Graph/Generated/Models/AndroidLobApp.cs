@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Contains properties and inherited properties for Android Line Of Business apps.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class AndroidLobApp : global::Microsoft.Graph.Models.MobileLobApp, IParsable
     {
         /// <summary>The value for the minimum applicable operating system.</summary>

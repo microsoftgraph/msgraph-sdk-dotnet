@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     #pragma warning disable CS1591
     public partial class OnPremisesDirectorySynchronizationFeature : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("passwordSyncEnabled"); }
             set { BackingStore?.Set("passwordSyncEnabled", value); }
         }
-        /// <summary>Used to indicate that writeback of password resets from Microsoft Entra ID to on-premises AD is enabled.</summary>
+        /// <summary>Used to indicate that writeback of password resets from Microsoft Entra ID to on-premises AD is enabled. This property isn&apos;t in use and updating it isn&apos;t supported.</summary>
         public bool? PasswordWritebackEnabled
         {
             get { return BackingStore?.Get<bool?>("passwordWritebackEnabled"); }

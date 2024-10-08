@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Contains properties and inherited properties for the Microsoft Edge app on Windows.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class WindowsMicrosoftEdgeApp : global::Microsoft.Graph.Models.MobileApp, IParsable
     {
         /// <summary>The enum to specify the channels for Microsoft Edge apps.</summary>

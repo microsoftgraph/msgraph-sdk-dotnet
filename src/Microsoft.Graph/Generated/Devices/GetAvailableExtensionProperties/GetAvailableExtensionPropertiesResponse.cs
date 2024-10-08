@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Devices.GetAvailableExtensionProperties
 {
     [Obsolete("This class is obsolete. Use GetAvailableExtensionPropertiesPostResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     #pragma warning disable CS1591
     public partial class GetAvailableExtensionPropertiesResponse : global::Microsoft.Graph.Devices.GetAvailableExtensionProperties.GetAvailableExtensionPropertiesPostResponse, IParsable
     #pragma warning restore CS1591

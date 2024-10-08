@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// A class containing the properties used for Group Assignment of an iOS LOB App Provisioning and Configuration.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class IosLobAppProvisioningConfigurationAssignment : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The target group assignment defined by the admin.</summary>

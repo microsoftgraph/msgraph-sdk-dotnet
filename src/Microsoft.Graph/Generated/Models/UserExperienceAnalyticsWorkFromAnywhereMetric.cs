@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// The user experience analytics metric for work from anywhere report.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class UserExperienceAnalyticsWorkFromAnywhereMetric : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The work from anywhere metric devices. Read-only.</summary>

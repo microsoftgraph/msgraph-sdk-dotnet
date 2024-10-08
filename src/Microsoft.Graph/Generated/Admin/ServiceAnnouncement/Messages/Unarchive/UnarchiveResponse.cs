@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unarchive
 {
     [Obsolete("This class is obsolete. Use UnarchivePostResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     #pragma warning disable CS1591
     public partial class UnarchiveResponse : global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unarchive.UnarchivePostResponse, IParsable
     #pragma warning restore CS1591

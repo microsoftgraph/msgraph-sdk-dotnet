@@ -9,7 +9,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.ReplyAll
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     #pragma warning disable CS1591
     public partial class ReplyAllPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591

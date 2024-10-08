@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>The current TeamViewer connector status</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public enum RemoteAssistanceOnboardingStatus
     {
         /// <summary>The status reported when there is no active TeamViewer connector configured or active</summary>

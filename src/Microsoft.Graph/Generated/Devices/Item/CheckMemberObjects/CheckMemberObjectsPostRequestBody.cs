@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Devices.Item.CheckMemberObjects
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     #pragma warning disable CS1591
     public partial class CheckMemberObjectsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591

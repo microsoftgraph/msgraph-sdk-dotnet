@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.FilterOperators
 {
     [Obsolete("This class is obsolete. Use FilterOperatorsGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     #pragma warning disable CS1591
     public partial class FilterOperatorsResponse : global::Microsoft.Graph.Applications.Item.Synchronization.Templates.Item.Schema.FilterOperators.FilterOperatorsGetResponse, IParsable
     #pragma warning restore CS1591

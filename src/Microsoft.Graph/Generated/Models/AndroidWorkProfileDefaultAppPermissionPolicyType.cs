@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>Android Work Profile default app permission policy type.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public enum AndroidWorkProfileDefaultAppPermissionPolicyType
     {
         /// <summary>Device default value, no intent.</summary>

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Event representing an general failure.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class DeviceManagementTroubleshootingEvent : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Id used for tracing the failure in the service.</summary>

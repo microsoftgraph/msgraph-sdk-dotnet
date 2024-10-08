@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Me.GetMailTips
 {
     [Obsolete("This class is obsolete. Use GetMailTipsPostResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     #pragma warning disable CS1591
     public partial class GetMailTipsResponse : global::Microsoft.Graph.Me.GetMailTips.GetMailTipsPostResponse, IParsable
     #pragma warning restore CS1591

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Windows Information Protection AppLocker File
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class WindowsInformationProtectionAppLockerFile : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The friendly name</summary>

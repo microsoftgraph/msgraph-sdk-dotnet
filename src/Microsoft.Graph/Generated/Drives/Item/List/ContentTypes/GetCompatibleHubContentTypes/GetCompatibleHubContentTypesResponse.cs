@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Drives.Item.List.ContentTypes.GetCompatibleHubContentTypes
 {
     [Obsolete("This class is obsolete. Use GetCompatibleHubContentTypesGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     #pragma warning disable CS1591
     public partial class GetCompatibleHubContentTypesResponse : global::Microsoft.Graph.Drives.Item.List.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesGetResponse, IParsable
     #pragma warning restore CS1591
