@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Represents an operation applied against an app registration.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class ManagedAppOperation : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The operation name.</summary>

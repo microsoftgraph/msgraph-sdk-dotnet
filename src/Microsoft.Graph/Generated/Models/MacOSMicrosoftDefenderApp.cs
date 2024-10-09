@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Contains properties and inherited properties for the macOS Microsoft Defender App.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class MacOSMicrosoftDefenderApp : global::Microsoft.Graph.Models.MobileApp, IParsable
     {
         /// <summary>

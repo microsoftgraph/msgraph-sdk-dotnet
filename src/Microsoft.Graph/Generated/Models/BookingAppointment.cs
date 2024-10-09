@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Represents a booked appointment of a service by a customer in a business.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class BookingAppointment : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Additional information that is sent to the customer when an appointment is confirmed.</summary>

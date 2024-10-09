@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Windows10 Enterprise Modern App Management Configuration.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class Windows10EnterpriseModernAppManagementConfiguration : global::Microsoft.Graph.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Indicates whether or not to uninstall a fixed list of built-in Windows apps.</summary>

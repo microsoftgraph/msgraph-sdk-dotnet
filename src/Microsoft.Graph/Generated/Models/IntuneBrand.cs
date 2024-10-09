@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// intuneBrand contains data which is used in customizing the appearance of the Company Portal applications as well as the end user web portal.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class IntuneBrand : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Device compliance policy assignment.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class DeviceCompliancePolicyAssignment : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Target for the compliance policy assignment.</summary>

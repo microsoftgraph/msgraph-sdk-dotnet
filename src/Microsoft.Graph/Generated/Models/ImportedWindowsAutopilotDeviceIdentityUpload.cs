@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Import windows autopilot devices using upload.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class ImportedWindowsAutopilotDeviceIdentityUpload : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>DateTime when the entity is created.</summary>

@@ -9,7 +9,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Instances.Item.TentativelyAccept
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     #pragma warning disable CS1591
     public partial class TentativelyAcceptPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591

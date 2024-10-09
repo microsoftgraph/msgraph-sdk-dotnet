@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidthWithHeight
 {
     [Obsolete("This class is obsolete. Use ImageWithWidthWithHeightGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     #pragma warning disable CS1591
     public partial class ImageWithWidthWithHeightResponse : global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidthWithHeight.ImageWithWidthWithHeightGetResponse, IParsable
     #pragma warning restore CS1591

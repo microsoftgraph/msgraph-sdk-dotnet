@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Assignments.AdditionalAccess
 {
     [Obsolete("This class is obsolete. Use AdditionalAccessGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     #pragma warning disable CS1591
     public partial class AdditionalAccessResponse : global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.Assignments.AdditionalAccess.AdditionalAccessGetResponse, IParsable
     #pragma warning restore CS1591

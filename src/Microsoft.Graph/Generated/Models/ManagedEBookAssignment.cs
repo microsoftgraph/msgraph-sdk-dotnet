@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Contains properties used to assign a eBook to a group.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class ManagedEBookAssignment : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Possible values for the install intent chosen by the admin.</summary>

@@ -18,7 +18,7 @@ namespace Microsoft.Graph.DirectoryRoles.Item.Members.Item
     /// <summary>
     /// Builds and executes requests for operations under \directoryRoles\{directoryRole-id}\members\{directoryObject-id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class DirectoryObjectItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Casts the previous resource to application.</summary>

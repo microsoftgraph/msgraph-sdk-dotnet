@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.MicrosoftGraphSecurityApplyHold
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     #pragma warning disable CS1591
     public partial class ApplyHoldPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591

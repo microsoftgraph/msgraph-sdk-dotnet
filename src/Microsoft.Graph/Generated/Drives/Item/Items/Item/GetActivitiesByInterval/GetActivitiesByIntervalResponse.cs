@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Drives.Item.Items.Item.GetActivitiesByInterval
 {
     [Obsolete("This class is obsolete. Use GetActivitiesByIntervalGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     #pragma warning disable CS1591
     public partial class GetActivitiesByIntervalResponse : global::Microsoft.Graph.Drives.Item.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalGetResponse, IParsable
     #pragma warning restore CS1591

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// The device configuration assignment entity assigns an AAD group to a specific device configuration.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class DeviceConfigurationAssignment : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The assignment target for the device configuration.</summary>

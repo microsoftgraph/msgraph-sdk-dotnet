@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Windows Autopilot Deployment Profile
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class WindowsAutopilotDeploymentProfile : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The list of assigned devices for the profile.</summary>

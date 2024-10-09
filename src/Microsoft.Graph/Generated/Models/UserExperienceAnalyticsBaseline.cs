@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// The user experience analytics baseline entity contains baseline values against which to compare the user experience analytics scores.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class UserExperienceAnalyticsBaseline : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The scores and insights for the application health metrics.</summary>

@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// SharedPC Account Manager Policy. Only applies when the account manager is enabled.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class SharedPCAccountManagerPolicy : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Possible values for when accounts are deleted on a shared PC.</summary>

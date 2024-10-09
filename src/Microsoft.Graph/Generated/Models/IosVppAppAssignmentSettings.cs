@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Contains properties used to assign an iOS VPP mobile app to a group.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class IosVppAppAssignmentSettings : global::Microsoft.Graph.Models.MobileAppAssignmentSettings, IParsable
     {
         /// <summary>Whether or not to use device licensing.</summary>

@@ -91,7 +91,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The main entry point of the SDK, exposes the configuration and the fluent API.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class BaseGraphServiceClient : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the admin singleton.</summary>

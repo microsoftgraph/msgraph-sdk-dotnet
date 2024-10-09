@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Contains properties and inherited properties for iOS Volume-Purchased Program (VPP) Apps.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class IosVppApp : global::Microsoft.Graph.Models.MobileApp, IParsable
     {
         /// <summary>The applicable iOS Device Type.</summary>

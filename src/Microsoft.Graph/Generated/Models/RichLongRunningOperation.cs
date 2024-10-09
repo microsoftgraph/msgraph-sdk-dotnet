@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// The status of a long-running operation.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class RichLongRunningOperation : global::Microsoft.Graph.Models.LongRunningOperation, IParsable
     {
         /// <summary>Error that caused the operation to fail.</summary>

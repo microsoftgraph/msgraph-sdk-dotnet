@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Represents a group that should be excluded from an assignment.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class ExclusionGroupAssignmentTarget : global::Microsoft.Graph.Models.GroupAssignmentTarget, IParsable
     {
         /// <summary>

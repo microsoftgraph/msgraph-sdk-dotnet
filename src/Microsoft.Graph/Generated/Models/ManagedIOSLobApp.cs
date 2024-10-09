@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Contains properties and inherited properties for Managed iOS Line Of Business apps.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.19.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
     public partial class ManagedIOSLobApp : global::Microsoft.Graph.Models.ManagedMobileLobApp, IParsable
     {
         /// <summary>Contains properties of the possible iOS device types the mobile app can run on.</summary>
