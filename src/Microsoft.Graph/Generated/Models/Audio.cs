@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class Audio : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -108,15 +108,15 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The number of the disc this audio file came from.</summary>
-        public int? Disc
+        public double? Disc
         {
-            get { return BackingStore?.Get<int?>("disc"); }
+            get { return BackingStore?.Get<double?>("disc"); }
             set { BackingStore?.Set("disc", value); }
         }
         /// <summary>The total number of discs in this album.</summary>
-        public int? DiscCount
+        public double? DiscCount
         {
-            get { return BackingStore?.Get<int?>("discCount"); }
+            get { return BackingStore?.Get<double?>("discCount"); }
             set { BackingStore?.Set("discCount", value); }
         }
         /// <summary>Duration of the audio file, expressed in milliseconds</summary>
@@ -235,8 +235,8 @@ namespace Microsoft.Graph.Models
                 { "bitrate", n => { Bitrate = n.GetLongValue(); } },
                 { "composers", n => { Composers = n.GetStringValue(); } },
                 { "copyright", n => { Copyright = n.GetStringValue(); } },
-                { "disc", n => { Disc = n.GetIntValue(); } },
-                { "discCount", n => { DiscCount = n.GetIntValue(); } },
+                { "disc", n => { Disc = n.GetDoubleValue(); } },
+                { "discCount", n => { DiscCount = n.GetDoubleValue(); } },
                 { "duration", n => { Duration = n.GetLongValue(); } },
                 { "genre", n => { Genre = n.GetStringValue(); } },
                 { "hasDrm", n => { HasDrm = n.GetBoolValue(); } },
@@ -261,8 +261,8 @@ namespace Microsoft.Graph.Models
             writer.WriteLongValue("bitrate", Bitrate);
             writer.WriteStringValue("composers", Composers);
             writer.WriteStringValue("copyright", Copyright);
-            writer.WriteIntValue("disc", Disc);
-            writer.WriteIntValue("discCount", DiscCount);
+            writer.WriteDoubleValue("disc", Disc);
+            writer.WriteDoubleValue("discCount", DiscCount);
             writer.WriteLongValue("duration", Duration);
             writer.WriteStringValue("genre", Genre);
             writer.WriteBoolValue("hasDrm", HasDrm);

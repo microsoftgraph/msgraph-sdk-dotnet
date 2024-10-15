@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Groups.Item.Team.Channels.GetAllMessages
 {
     [Obsolete("This class is obsolete. Use GetAllMessagesGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class GetAllMessagesResponse : global::Microsoft.Graph.Groups.Item.Team.Channels.GetAllMessages.GetAllMessagesGetResponse, IParsable
     #pragma warning restore CS1591

@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Applications.Item.Owners.Item
     /// <summary>
     /// Builds and executes requests for operations under \applications\{application-id}\owners\{directoryObject-id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DirectoryObjectItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Casts the previous resource to appRoleAssignment.</summary>

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// A complex type to store registry rule data for a Win32 LOB app.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Win32LobAppRegistryRule : global::Microsoft.Graph.Models.Win32LobAppRule, IParsable
     {
         /// <summary>A value indicating whether to search the 32-bit registry on 64-bit systems.</summary>
