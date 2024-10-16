@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Apple push notification certificate.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ApplePushNotificationCertificate : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Apple Id of the account used to create the MDM push certificate.</summary>

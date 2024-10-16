@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class Photo : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -100,9 +100,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>The orientation value from the camera. Writable on OneDrive Personal.</summary>
-        public int? Orientation
+        public double? Orientation
         {
-            get { return BackingStore?.Get<int?>("orientation"); }
+            get { return BackingStore?.Get<double?>("orientation"); }
             set { BackingStore?.Set("orientation", value); }
         }
         /// <summary>Represents the date and time the photo was taken. Read-only.</summary>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Models
                 { "focalLength", n => { FocalLength = n.GetDoubleValue(); } },
                 { "iso", n => { Iso = n.GetIntValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "orientation", n => { Orientation = n.GetIntValue(); } },
+                { "orientation", n => { Orientation = n.GetDoubleValue(); } },
                 { "takenDateTime", n => { TakenDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Models
             writer.WriteDoubleValue("focalLength", FocalLength);
             writer.WriteIntValue("iso", Iso);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteIntValue("orientation", Orientation);
+            writer.WriteDoubleValue("orientation", Orientation);
             writer.WriteDateTimeOffsetValue("takenDateTime", TakenDateTime);
             writer.WriteAdditionalData(AdditionalData);
         }

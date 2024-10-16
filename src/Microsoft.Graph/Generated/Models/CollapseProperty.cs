@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class CollapseProperty : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
@@ -38,9 +38,9 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>Defines a maximum limit count for this field. This numeric value must be a positive integer. Required.</summary>
-        public int? Limit
+        public double? Limit
         {
-            get { return BackingStore?.Get<int?>("limit"); }
+            get { return BackingStore?.Get<double?>("limit"); }
             set { BackingStore?.Set("limit", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "fields", n => { Fields = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "limit", n => { Limit = n.GetIntValue(); } },
+                { "limit", n => { Limit = n.GetDoubleValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("fields", Fields);
-            writer.WriteIntValue("limit", Limit);
+            writer.WriteDoubleValue("limit", Limit);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

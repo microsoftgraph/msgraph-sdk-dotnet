@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Groups.Item.GroupLifecyclePolicies.Item.AddGroup
 {
     [Obsolete("This class is obsolete. Use AddGroupPostResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class AddGroupResponse : global::Microsoft.Graph.Groups.Item.GroupLifecyclePolicies.Item.AddGroup.AddGroupPostResponse, IParsable
     #pragma warning restore CS1591

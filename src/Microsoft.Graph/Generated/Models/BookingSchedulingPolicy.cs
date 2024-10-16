@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// This type represents the set of policies that dictate how bookings can be created in a Booking Calendar.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BookingSchedulingPolicy : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
