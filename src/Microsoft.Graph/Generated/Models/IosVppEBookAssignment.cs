@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Contains properties used to assign an iOS VPP EBook to a group.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IosVppEBookAssignment : global::Microsoft.Graph.Models.ManagedEBookAssignment, IParsable
     {
         /// <summary>

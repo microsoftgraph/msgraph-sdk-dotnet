@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>Represents the type of pricing of a booking service.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum BookingPriceType
     {
         /// <summary>The price of the service is not defined.</summary>

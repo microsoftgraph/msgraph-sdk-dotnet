@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class Fido2CombinationConfiguration : global::Microsoft.Graph.Models.AuthenticationCombinationConfiguration, IParsable
     #pragma warning restore CS1591

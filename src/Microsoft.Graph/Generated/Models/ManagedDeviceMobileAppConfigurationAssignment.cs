@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Contains the properties used to assign an MDM app configuration to a group.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ManagedDeviceMobileAppConfigurationAssignment : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Assignment target that the T&amp;C policy is assigned to.</summary>

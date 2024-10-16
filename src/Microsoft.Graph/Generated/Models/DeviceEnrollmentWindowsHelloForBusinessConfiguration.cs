@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Windows Hello for Business settings lets users access their devices using a gesture, such as biometric authentication, or a PIN. Configure settings for enrolled Windows 10, Windows 10 Mobile and later.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceEnrollmentWindowsHelloForBusinessConfiguration : global::Microsoft.Graph.Models.DeviceEnrollmentConfiguration, IParsable
     {
         /// <summary>Possible values of a property</summary>

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// A termsAndConditionsAssignment entity represents the assignment of a given Terms and Conditions (T&amp;C) policy to a given group. Users in the group will be required to accept the terms in order to have devices enrolled into Intune.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TermsAndConditionsAssignment : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Assignment target that the T&amp;C policy is assigned to.</summary>

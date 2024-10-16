@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Represents an assignment to all managed devices in the tenant.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AllDevicesAssignmentTarget : global::Microsoft.Graph.Models.DeviceAndAppManagementAssignmentTarget, IParsable
     {
         /// <summary>

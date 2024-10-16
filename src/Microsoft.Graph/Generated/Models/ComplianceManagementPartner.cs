@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Compliance management partner for all platforms
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ComplianceManagementPartner : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>User groups which enroll Android devices through partner.</summary>

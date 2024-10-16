@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on an Android device
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AndroidManagedAppProtection : global::Microsoft.Graph.Models.TargetedManagedAppProtection, IParsable
     {
         /// <summary>List of apps to which the policy is deployed.</summary>

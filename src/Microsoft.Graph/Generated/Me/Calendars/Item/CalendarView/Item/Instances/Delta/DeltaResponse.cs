@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Me.Calendars.Item.CalendarView.Item.Instances.Delta
 {
     [Obsolete("This class is obsolete. Use DeltaGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class DeltaResponse : global::Microsoft.Graph.Me.Calendars.Item.CalendarView.Item.Instances.Delta.DeltaGetResponse, IParsable
     #pragma warning restore CS1591

@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Identity.AuthenticationEventsFlows.Item.Conditions.App
     /// <summary>
     /// Builds and executes requests for operations under \identity\authenticationEventsFlows\{authenticationEventsFlow-id}\conditions\applications
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ApplicationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the includeApplications property of the microsoft.graph.authenticationConditionsApplications entity.</summary>

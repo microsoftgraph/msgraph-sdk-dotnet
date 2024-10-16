@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Represents a customer of the business.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BookingCustomer : global::Microsoft.Graph.Models.BookingCustomerBase, IParsable
     {
         /// <summary>Addresses associated with the customer. The attribute type of physicalAddress isn&apos;t supported in v1.0. Internally we map the addresses to the type others.</summary>

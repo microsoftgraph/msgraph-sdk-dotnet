@@ -12,7 +12,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.ClaimsMappingPolicies.Item
     /// <summary>
     /// Builds and executes requests for operations under \servicePrincipals\{servicePrincipal-id}\claimsMappingPolicies\{claimsMappingPolicy-id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ClaimsMappingPolicyItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the collection of servicePrincipal entities.</summary>

@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Print.Shares.Item.AllowedUsers.Item
     /// <summary>
     /// Builds and executes requests for operations under \print\shares\{printerShare-id}\allowedUsers\{user-id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The mailboxSettings property</summary>

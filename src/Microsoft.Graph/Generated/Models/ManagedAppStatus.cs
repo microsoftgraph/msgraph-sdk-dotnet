@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Represents app protection and configuration status for the organization.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ManagedAppStatus : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Friendly name of the status report.</summary>

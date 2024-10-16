@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// The user experience analytics device model performance entity contains device model performance details.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserExperienceAnalyticsAppHealthDeviceModelPerformance : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The number of active devices for the model. Valid values 0 to 2147483647. Supports: $filter, $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647</summary>

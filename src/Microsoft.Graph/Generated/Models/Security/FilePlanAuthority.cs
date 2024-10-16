@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Models.Security
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class FilePlanAuthority : global::Microsoft.Graph.Models.Security.FilePlanDescriptorBase, IParsable
     #pragma warning restore CS1591

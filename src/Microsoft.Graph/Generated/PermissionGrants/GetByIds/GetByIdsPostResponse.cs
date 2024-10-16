@@ -8,7 +8,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.PermissionGrants.GetByIds
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class GetByIdsPostResponse : global::Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591

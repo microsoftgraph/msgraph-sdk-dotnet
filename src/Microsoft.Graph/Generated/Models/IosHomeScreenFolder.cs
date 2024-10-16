@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// A folder containing pages of apps and web clips on the Home Screen.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IosHomeScreenFolder : global::Microsoft.Graph.Models.IosHomeScreenItem, IParsable
     {
         /// <summary>Pages of Home Screen Layout Icons which must be applications or web clips. This collection can contain a maximum of 500 elements.</summary>

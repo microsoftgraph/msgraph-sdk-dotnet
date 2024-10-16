@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class Drive : global::Microsoft.Graph.Models.BaseItem, IParsable
     #pragma warning restore CS1591
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("bundles", value); }
         }
 #endif
-        /// <summary>Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.</summary>
+        /// <summary>Describes the type of drive represented by this resource. OneDrive personal drives return personal. OneDrive for Business returns business. SharePoint document libraries return documentLibrary. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DriveType
@@ -172,7 +172,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("special", value); }
         }
 #endif
-        /// <summary>If present, indicates that this is a system-managed drive. Read-only.</summary>
+        /// <summary>If present, indicates that it&apos;s a system-managed drive. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.SystemFacet? System

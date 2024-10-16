@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// RemoteAssistPartner resources represent the metadata and status of a given Remote Assistance partner service.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RemoteAssistancePartner : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Display name of the partner.</summary>

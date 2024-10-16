@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// This class contains compliance settings for Windows 8.1.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Windows81CompliancePolicy : global::Microsoft.Graph.Models.DeviceCompliancePolicy, IParsable
     {
         /// <summary>Maximum Windows 8.1 version.</summary>

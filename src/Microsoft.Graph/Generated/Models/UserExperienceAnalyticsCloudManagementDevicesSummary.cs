@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// The user experience work from anywhere Cloud management devices summary.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserExperienceAnalyticsCloudManagementDevicesSummary : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Entity which represents a connection to device management partner.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceManagementPartner : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Partner display name</summary>

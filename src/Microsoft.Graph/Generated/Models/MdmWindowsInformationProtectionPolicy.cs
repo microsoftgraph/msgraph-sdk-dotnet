@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Policy for Windows information protection with MDM
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MdmWindowsInformationProtectionPolicy : global::Microsoft.Graph.Models.WindowsInformationProtection, IParsable
     {
         /// <summary>

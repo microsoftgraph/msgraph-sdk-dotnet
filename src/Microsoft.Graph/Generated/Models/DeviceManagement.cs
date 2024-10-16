@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Singleton entity that acts as a container for all device management functionality.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceManagement : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Apple push notification certificate.</summary>

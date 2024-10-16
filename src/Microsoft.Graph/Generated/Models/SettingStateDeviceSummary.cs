@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Device Compilance Policy and Configuration for a Setting State summary
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SettingStateDeviceSummary : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Device Compliant count for the setting</summary>

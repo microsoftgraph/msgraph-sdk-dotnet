@@ -4,7 +4,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>Configures how the requested export job is localized.</summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum DeviceManagementExportJobLocalizationType
     {
         /// <summary>Configures the export job to expose localized values as an additional column.</summary>

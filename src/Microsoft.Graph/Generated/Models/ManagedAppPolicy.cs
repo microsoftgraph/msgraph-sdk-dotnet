@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// The ManagedAppPolicy resource represents a base type for platform specific policies.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ManagedAppPolicy : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The date and time the policy was created.</summary>

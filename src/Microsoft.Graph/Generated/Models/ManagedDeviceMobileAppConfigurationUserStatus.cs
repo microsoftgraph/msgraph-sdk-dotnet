@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Contains properties, inherited properties and actions for an MDM mobile app configuration status for a user.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ManagedDeviceMobileAppConfigurationUserStatus : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Devices count for that user.</summary>

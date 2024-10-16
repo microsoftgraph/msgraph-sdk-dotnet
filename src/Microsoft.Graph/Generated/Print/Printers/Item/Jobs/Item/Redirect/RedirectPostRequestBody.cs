@@ -9,7 +9,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Print.Printers.Item.Jobs.Item.Redirect
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class RedirectPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591

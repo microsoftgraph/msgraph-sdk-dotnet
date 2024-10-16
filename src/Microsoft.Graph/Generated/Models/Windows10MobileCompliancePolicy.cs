@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// This class contains compliance settings for Windows 10 Mobile.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Windows10MobileCompliancePolicy : global::Microsoft.Graph.Models.DeviceCompliancePolicy, IParsable
     {
         /// <summary>Require devices to be reported healthy by Windows Device Health Attestation - bit locker is enabled</summary>

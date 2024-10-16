@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// The type for deployment of groups or apps.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TargetedManagedAppPolicyAssignment : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>Identifier for deployment to a group or app</summary>

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Policy used to configure detailed management settings targeted to specific security groups
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TargetedManagedAppProtection : global::Microsoft.Graph.Models.ManagedAppProtection, IParsable
     {
         /// <summary>Navigation property to list of inclusion and exclusion groups to which the policy is deployed.</summary>

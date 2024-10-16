@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Models
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class Domain : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
@@ -150,7 +150,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<int?>("passwordValidityPeriodInDays"); }
             set { BackingStore?.Set("passwordValidityPeriodInDays", value); }
         }
-        /// <summary>The rootDomain property</summary>
+        /// <summary>Root domain of a subdomain. Read-only, Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.Domain? RootDomain

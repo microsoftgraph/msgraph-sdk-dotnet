@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Event representing an enrollment failure.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EnrollmentTroubleshootingEvent : global::Microsoft.Graph.Models.DeviceManagementTroubleshootingEvent, IParsable
     {
         /// <summary>Azure AD device identifier.</summary>

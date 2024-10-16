@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Policy for Windows information protection to configure detailed management settings
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WindowsInformationProtection : global::Microsoft.Graph.Models.ManagedAppPolicy, IParsable
     {
         /// <summary>Navigation property to list of security groups targeted for policy.</summary>

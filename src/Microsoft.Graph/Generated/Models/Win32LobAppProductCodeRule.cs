@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// A complex type to store the product code and version rule data for a Win32 LOB app. This rule is not supported as a requirement rule.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Win32LobAppProductCodeRule : global::Microsoft.Graph.Models.Win32LobAppRule, IParsable
     {
         /// <summary>The product code of the app.</summary>
