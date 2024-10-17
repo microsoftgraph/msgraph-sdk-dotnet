@@ -7,7 +7,7 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Models.Security
 {
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class IoTDeviceEvidence : global::Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
@@ -215,16 +215,16 @@ namespace Microsoft.Graph.Models.Security
         /// <summary>The nics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Microsoft.Graph.Models.Security.NicEvidence? Nics
+        public List<global::Microsoft.Graph.Models.Security.NicEvidence>? Nics
         {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.NicEvidence?>("nics"); }
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Security.NicEvidence>?>("nics"); }
             set { BackingStore?.Set("nics", value); }
         }
 #nullable restore
 #else
-        public global::Microsoft.Graph.Models.Security.NicEvidence Nics
+        public List<global::Microsoft.Graph.Models.Security.NicEvidence> Nics
         {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.NicEvidence>("nics"); }
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Security.NicEvidence>>("nics"); }
             set { BackingStore?.Set("nics", value); }
         }
 #endif
@@ -428,7 +428,7 @@ namespace Microsoft.Graph.Models.Security
                 { "macAddress", n => { MacAddress = n.GetStringValue(); } },
                 { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
-                { "nics", n => { Nics = n.GetObjectValue<global::Microsoft.Graph.Models.Security.NicEvidence>(global::Microsoft.Graph.Models.Security.NicEvidence.CreateFromDiscriminatorValue); } },
+                { "nics", n => { Nics = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.NicEvidence>(global::Microsoft.Graph.Models.Security.NicEvidence.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "operatingSystem", n => { OperatingSystem = n.GetStringValue(); } },
                 { "owners", n => { Owners = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "protocols", n => { Protocols = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -464,7 +464,7 @@ namespace Microsoft.Graph.Models.Security
             writer.WriteStringValue("macAddress", MacAddress);
             writer.WriteStringValue("manufacturer", Manufacturer);
             writer.WriteStringValue("model", Model);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.NicEvidence>("nics", Nics);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.NicEvidence>("nics", Nics);
             writer.WriteStringValue("operatingSystem", OperatingSystem);
             writer.WriteCollectionOfPrimitiveValues<string>("owners", Owners);
             writer.WriteCollectionOfPrimitiveValues<string>("protocols", Protocols);

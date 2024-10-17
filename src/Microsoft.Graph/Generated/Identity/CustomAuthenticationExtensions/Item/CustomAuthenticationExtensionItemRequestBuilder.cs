@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Identity.CustomAuthenticationExtensions.Item
     /// <summary>
     /// Provides operations to manage the customAuthenticationExtensions property of the microsoft.graph.identityContainer entity.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomAuthenticationExtensionItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the validateAuthenticationConfiguration method.</summary>
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Identity.CustomAuthenticationExtensions.Item
         {
         }
         /// <summary>
-        /// Delete a customAuthenticationExtension object.
+        /// Delete a customAuthenticationExtension object. The following derived types are currently supported.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/customauthenticationextension-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Identity.CustomAuthenticationExtensions.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a customAuthenticationExtension object.
+        /// Read the properties and relationships of a customAuthenticationExtension object. The following derived types are currently supported.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/customauthenticationextension-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.CustomAuthenticationExtension"/></returns>
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Identity.CustomAuthenticationExtensions.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.CustomAuthenticationExtension>(requestInfo, global::Microsoft.Graph.Models.CustomAuthenticationExtension.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a customAuthenticationExtension object.
+        /// Update the properties of a customAuthenticationExtension object. The following derived types are currently supported.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/customauthenticationextension-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.CustomAuthenticationExtension"/></returns>
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Identity.CustomAuthenticationExtensions.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.CustomAuthenticationExtension>(requestInfo, global::Microsoft.Graph.Models.CustomAuthenticationExtension.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a customAuthenticationExtension object.
+        /// Delete a customAuthenticationExtension object. The following derived types are currently supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Identity.CustomAuthenticationExtensions.Item
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a customAuthenticationExtension object.
+        /// Read the properties and relationships of a customAuthenticationExtension object. The following derived types are currently supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Identity.CustomAuthenticationExtensions.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a customAuthenticationExtension object.
+        /// Update the properties of a customAuthenticationExtension object. The following derived types are currently supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -186,14 +186,14 @@ namespace Microsoft.Graph.Identity.CustomAuthenticationExtensions.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CustomAuthenticationExtensionItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a customAuthenticationExtension object.
+        /// Read the properties and relationships of a customAuthenticationExtension object. The following derived types are currently supported.
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CustomAuthenticationExtensionItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Expand related entities</summary>
@@ -221,7 +221,7 @@ namespace Microsoft.Graph.Identity.CustomAuthenticationExtensions.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CustomAuthenticationExtensionItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Identity.CustomAuthenticationExtensions.Item.CustomAuthenticationExtensionItemRequestBuilder.CustomAuthenticationExtensionItemRequestBuilderGetQueryParameters>
         {
         }
@@ -229,7 +229,7 @@ namespace Microsoft.Graph.Identity.CustomAuthenticationExtensions.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CustomAuthenticationExtensionItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }

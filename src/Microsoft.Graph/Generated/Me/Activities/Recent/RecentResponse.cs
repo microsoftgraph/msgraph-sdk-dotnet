@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Me.Activities.Recent
 {
     [Obsolete("This class is obsolete. Use RecentGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class RecentResponse : global::Microsoft.Graph.Me.Activities.Recent.RecentGetResponse, IParsable
     #pragma warning restore CS1591

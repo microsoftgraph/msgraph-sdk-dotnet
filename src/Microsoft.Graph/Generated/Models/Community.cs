@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Represents a community in Viva Engage that is a central place for conversations,files, events, and updates for people sharing a common interest or goal.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Community : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The description of the community. The maximum length is 1,024 characters.</summary>
