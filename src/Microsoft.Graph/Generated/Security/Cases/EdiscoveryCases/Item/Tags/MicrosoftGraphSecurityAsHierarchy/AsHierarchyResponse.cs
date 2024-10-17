@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGraphSecurityAsHierarchy
 {
     [Obsolete("This class is obsolete. Use AsHierarchyGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class AsHierarchyResponse : global::Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.MicrosoftGraphSecurityAsHierarchy.AsHierarchyGetResponse, IParsable
     #pragma warning restore CS1591

@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Groups.Item.Owners.Item
     /// <summary>
     /// Builds and executes requests for operations under \groups\{group-id}\owners\{directoryObject-id}
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DirectoryObjectItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Casts the previous resource to application.</summary>

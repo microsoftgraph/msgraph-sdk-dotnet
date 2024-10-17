@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Me.GetMemberGroups
 {
     [Obsolete("This class is obsolete. Use GetMemberGroupsPostResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class GetMemberGroupsResponse : global::Microsoft.Graph.Me.GetMemberGroups.GetMemberGroupsPostResponse, IParsable
     #pragma warning restore CS1591

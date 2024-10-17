@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Applications.Item.GetMemberObjects
 {
     [Obsolete("This class is obsolete. Use GetMemberObjectsPostResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class GetMemberObjectsResponse : global::Microsoft.Graph.Applications.Item.GetMemberObjects.GetMemberObjectsPostResponse, IParsable
     #pragma warning restore CS1591

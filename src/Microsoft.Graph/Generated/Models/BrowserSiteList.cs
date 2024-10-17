@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// A singleton entity which is used to specify IE mode site list metadata
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BrowserSiteList : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The description of the site list.</summary>

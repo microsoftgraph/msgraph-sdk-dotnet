@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// An abstract class for Mobile app configuration for enrolled devices.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ManagedDeviceMobileAppConfiguration : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The list of group assignemenets for app configration.</summary>

@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Users.Item.OnlineMeetings.Item.GetVirtualAppointmentJoinWebUrl
 {
     [Obsolete("This class is obsolete. Use GetVirtualAppointmentJoinWebUrlGetResponse instead.")]
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class GetVirtualAppointmentJoinWebUrlResponse : global::Microsoft.Graph.Users.Item.OnlineMeetings.Item.GetVirtualAppointmentJoinWebUrl.GetVirtualAppointmentJoinWebUrlGetResponse, IParsable
     #pragma warning restore CS1591

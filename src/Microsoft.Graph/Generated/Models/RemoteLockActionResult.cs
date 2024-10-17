@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// Lock action result with a pin to unlock
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RemoteLockActionResult : global::Microsoft.Graph.Models.DeviceActionResult, IParsable
     {
         /// <summary>Pin to unlock the client</summary>

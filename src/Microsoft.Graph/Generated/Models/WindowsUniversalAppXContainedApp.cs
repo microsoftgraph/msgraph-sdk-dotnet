@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// A class that represents a contained app of a WindowsUniversalAppX app.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WindowsUniversalAppXContainedApp : global::Microsoft.Graph.Models.MobileContainedApp, IParsable
     {
         /// <summary>The app user model ID of the contained app of a WindowsUniversalAppX app.</summary>

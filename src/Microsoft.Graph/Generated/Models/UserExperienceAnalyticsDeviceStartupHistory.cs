@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Models
     /// <summary>
     /// The user experience analytics device startup history entity contains device boot performance history details.
     /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.20.0")]
+    [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserExperienceAnalyticsDeviceStartupHistory : global::Microsoft.Graph.Models.Entity, IParsable
     {
         /// <summary>The device core boot time in milliseconds. Supports: $select, $OrderBy. Read-only.</summary>
