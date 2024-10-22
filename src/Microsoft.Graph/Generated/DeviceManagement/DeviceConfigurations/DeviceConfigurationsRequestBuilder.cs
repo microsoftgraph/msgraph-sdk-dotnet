@@ -54,8 +54,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations
         {
         }
         /// <summary>
-        /// List properties and relationships of the androidCustomConfiguration objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-androidcustomconfiguration-list?view=graph-rest-1.0" />
+        /// List properties and relationships of the androidGeneralDeviceConfiguration objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-androidgeneraldeviceconfiguration-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DeviceConfigurationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +78,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DeviceConfigurationCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.DeviceConfigurationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new windowsUpdateForBusinessConfiguration object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-windowsupdateforbusinessconfiguration-create?view=graph-rest-1.0" />
+        /// Create a new windows10EndpointProtectionConfiguration object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10endpointprotectionconfiguration-create?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DeviceConfiguration"/></returns>
         /// <param name="body">The request body</param>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DeviceConfiguration>(requestInfo, global::Microsoft.Graph.Models.DeviceConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the androidCustomConfiguration objects.
+        /// List properties and relationships of the androidGeneralDeviceConfiguration objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations
             return requestInfo;
         }
         /// <summary>
-        /// Create a new windowsUpdateForBusinessConfiguration object.
+        /// Create a new windows10EndpointProtectionConfiguration object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations
             return new global::Microsoft.Graph.DeviceManagement.DeviceConfigurations.DeviceConfigurationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the androidCustomConfiguration objects.
+        /// List properties and relationships of the androidGeneralDeviceConfiguration objects.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeviceConfigurationsRequestBuilderGetQueryParameters 

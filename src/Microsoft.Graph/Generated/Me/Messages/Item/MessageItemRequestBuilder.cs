@@ -130,8 +130,8 @@ namespace Microsoft.Graph.Me.Messages.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a message object. You can use the $value parameter to get the MIME content of a message. See also an example below. There are two scenarios where an app can get a message in another user&apos;s mail folder: Since the message resource supports extensions, you can also use the GET operation to get custom properties and extension data in a message instance.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/message-get?view=graph-rest-1.0" />
+        /// Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Message"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -199,7 +199,7 @@ namespace Microsoft.Graph.Me.Messages.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a message object. You can use the $value parameter to get the MIME content of a message. See also an example below. There are two scenarios where an app can get a message in another user&apos;s mail folder: Since the message resource supports extensions, you can also use the GET operation to get custom properties and extension data in a message instance.
+        /// Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -257,7 +257,7 @@ namespace Microsoft.Graph.Me.Messages.Item
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a message object. You can use the $value parameter to get the MIME content of a message. See also an example below. There are two scenarios where an app can get a message in another user&apos;s mail folder: Since the message resource supports extensions, you can also use the GET operation to get custom properties and extension data in a message instance.
+        /// Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MessageItemRequestBuilderGetQueryParameters 

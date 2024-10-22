@@ -150,8 +150,8 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps
         {
         }
         /// <summary>
-        /// List properties and relationships of the iosLobApp objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-ioslobapp-list?view=graph-rest-1.0" />
+        /// List properties and relationships of the iosVppApp objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-iosvppapp-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.MobileAppCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -174,8 +174,8 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.MobileAppCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.MobileAppCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new iosVppApp object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-iosvppapp-create?view=graph-rest-1.0" />
+        /// Create a new microsoftStoreForBusinessApp object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-microsoftstoreforbusinessapp-create?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.MobileApp"/></returns>
         /// <param name="body">The request body</param>
@@ -200,7 +200,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.MobileApp>(requestInfo, global::Microsoft.Graph.Models.MobileApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the iosLobApp objects.
+        /// List properties and relationships of the iosVppApp objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -219,7 +219,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps
             return requestInfo;
         }
         /// <summary>
-        /// Create a new iosVppApp object.
+        /// Create a new microsoftStoreForBusinessApp object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -250,7 +250,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps
             return new global::Microsoft.Graph.DeviceAppManagement.MobileApps.MobileAppsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the iosLobApp objects.
+        /// List properties and relationships of the iosVppApp objects.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MobileAppsRequestBuilderGetQueryParameters 
