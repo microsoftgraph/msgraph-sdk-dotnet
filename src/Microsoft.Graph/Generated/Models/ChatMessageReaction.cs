@@ -21,12 +21,28 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
+        /// <summary>The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
+        /// <summary>The name of the reaction.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DisplayName
+        {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#nullable restore
+#else
+        public string DisplayName
+        {
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -43,7 +59,23 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Supported values are like, angry, sad, laugh, heart, surprised.</summary>
+        /// <summary>The hosted content URL for the custom reaction type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ReactionContentUrl
+        {
+            get { return BackingStore?.Get<string?>("reactionContentUrl"); }
+            set { BackingStore?.Set("reactionContentUrl", value); }
+        }
+#nullable restore
+#else
+        public string ReactionContentUrl
+        {
+            get { return BackingStore?.Get<string>("reactionContentUrl"); }
+            set { BackingStore?.Set("reactionContentUrl", value); }
+        }
+#endif
+        /// <summary>The reaction type. Supported values include Unicode characters, custom, and some backward-compatible reaction types, such as like, angry, sad, laugh, heart, and surprised.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReactionType
@@ -102,7 +134,9 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "reactionContentUrl", n => { ReactionContentUrl = n.GetStringValue(); } },
                 { "reactionType", n => { ReactionType = n.GetStringValue(); } },
                 { "user", n => { User = n.GetObjectValue<global::Microsoft.Graph.Models.ChatMessageReactionIdentitySet>(global::Microsoft.Graph.Models.ChatMessageReactionIdentitySet.CreateFromDiscriminatorValue); } },
             };
@@ -115,7 +149,9 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
+            writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteStringValue("reactionContentUrl", ReactionContentUrl);
             writer.WriteStringValue("reactionType", ReactionType);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ChatMessageReactionIdentitySet>("user", User);
             writer.WriteAdditionalData(AdditionalData);

@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The status of the protection rule. The possible values are: draft, active, completed, completedWithErrors, unknownFutureValue.</summary>
+        /// <summary>The status of the protection rule. The possible values are: draft, active, completed, completedWithErrors, unknownFutureValue. The draft member is currently unsupported.</summary>
         public global::Microsoft.Graph.Models.ProtectionRuleStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.ProtectionRuleStatus?>("status"); }

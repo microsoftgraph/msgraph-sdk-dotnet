@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Contracts.Delta
         {
         }
         /// <summary>
-        /// Get newly created, updated, or deleted directory objects without performing a full read of the entire directoryObject collection. For more information about the delta function, see Use delta query to track changes in Microsoft Graph data for details.
+        /// Get newly created, updated, or deleted directory objects without performing a full read of the entire directoryObject collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryobject-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Contracts.Delta.DeltaGetResponse"/></returns>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Contracts.Delta
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Contracts.Delta.DeltaGetResponse>(requestInfo, global::Microsoft.Graph.Contracts.Delta.DeltaGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get newly created, updated, or deleted directory objects without performing a full read of the entire directoryObject collection. For more information about the delta function, see Use delta query to track changes in Microsoft Graph data for details.
+        /// Get newly created, updated, or deleted directory objects without performing a full read of the entire directoryObject collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryobject-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Contracts.Delta.DeltaResponse"/></returns>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Contracts.Delta
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Contracts.Delta.DeltaResponse>(requestInfo, global::Microsoft.Graph.Contracts.Delta.DeltaResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get newly created, updated, or deleted directory objects without performing a full read of the entire directoryObject collection. For more information about the delta function, see Use delta query to track changes in Microsoft Graph data for details.
+        /// Get newly created, updated, or deleted directory objects without performing a full read of the entire directoryObject collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Contracts.Delta
             return new global::Microsoft.Graph.Contracts.Delta.DeltaRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get newly created, updated, or deleted directory objects without performing a full read of the entire directoryObject collection. For more information about the delta function, see Use delta query to track changes in Microsoft Graph data for details.
+        /// Get newly created, updated, or deleted directory objects without performing a full read of the entire directoryObject collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeltaRequestBuilderGetQueryParameters 
