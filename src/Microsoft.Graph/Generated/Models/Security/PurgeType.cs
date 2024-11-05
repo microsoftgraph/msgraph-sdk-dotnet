@@ -12,13 +12,13 @@ namespace Microsoft.Graph.Models.Security
         #pragma warning disable CS1591
         Recoverable,
         #pragma warning restore CS1591
-        [EnumMember(Value = "permanentlyDeleted")]
-        #pragma warning disable CS1591
-        PermanentlyDeleted,
-        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
         #pragma warning disable CS1591
         UnknownFutureValue,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "permanentlyDelete")]
+        #pragma warning disable CS1591
+        PermanentlyDelete,
         #pragma warning restore CS1591
     }
 }

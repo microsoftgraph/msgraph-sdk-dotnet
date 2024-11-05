@@ -34,7 +34,7 @@ namespace Microsoft.Graph.ServicePrincipals.Delta
         {
         }
         /// <summary>
-        /// Get newly created, updated, or deleted service principals without having to perform a full read of the entire resource collection.
+        /// Get newly created, updated, or deleted service principals without having to perform a full read of the entire resource collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.ServicePrincipals.Delta.DeltaGetResponse"/></returns>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.ServicePrincipals.Delta
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.ServicePrincipals.Delta.DeltaGetResponse>(requestInfo, global::Microsoft.Graph.ServicePrincipals.Delta.DeltaGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get newly created, updated, or deleted service principals without having to perform a full read of the entire resource collection.
+        /// Get newly created, updated, or deleted service principals without having to perform a full read of the entire resource collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.ServicePrincipals.Delta.DeltaResponse"/></returns>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.ServicePrincipals.Delta
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.ServicePrincipals.Delta.DeltaResponse>(requestInfo, global::Microsoft.Graph.ServicePrincipals.Delta.DeltaResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get newly created, updated, or deleted service principals without having to perform a full read of the entire resource collection.
+        /// Get newly created, updated, or deleted service principals without having to perform a full read of the entire resource collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.ServicePrincipals.Delta
             return new global::Microsoft.Graph.ServicePrincipals.Delta.DeltaRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get newly created, updated, or deleted service principals without having to perform a full read of the entire resource collection.
+        /// Get newly created, updated, or deleted service principals without having to perform a full read of the entire resource collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeltaRequestBuilderGetQueryParameters 

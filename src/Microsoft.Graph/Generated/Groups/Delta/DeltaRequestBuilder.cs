@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Groups.Delta
         {
         }
         /// <summary>
-        /// Get newly created, updated, or deleted groups, including group membership changes, without having to perform a full read of the entire group collection. See Using Delta Query for details.
+        /// Get newly created, updated, or deleted groups, including group membership changes, without having to perform a full read of the entire group collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Groups.Delta.DeltaGetResponse"/></returns>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Groups.Delta
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Groups.Delta.DeltaGetResponse>(requestInfo, global::Microsoft.Graph.Groups.Delta.DeltaGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get newly created, updated, or deleted groups, including group membership changes, without having to perform a full read of the entire group collection. See Using Delta Query for details.
+        /// Get newly created, updated, or deleted groups, including group membership changes, without having to perform a full read of the entire group collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Groups.Delta.DeltaResponse"/></returns>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Groups.Delta
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Groups.Delta.DeltaResponse>(requestInfo, global::Microsoft.Graph.Groups.Delta.DeltaResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get newly created, updated, or deleted groups, including group membership changes, without having to perform a full read of the entire group collection. See Using Delta Query for details.
+        /// Get newly created, updated, or deleted groups, including group membership changes, without having to perform a full read of the entire group collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Groups.Delta
             return new global::Microsoft.Graph.Groups.Delta.DeltaRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get newly created, updated, or deleted groups, including group membership changes, without having to perform a full read of the entire group collection. See Using Delta Query for details.
+        /// Get newly created, updated, or deleted groups, including group membership changes, without having to perform a full read of the entire group collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeltaRequestBuilderGetQueryParameters 

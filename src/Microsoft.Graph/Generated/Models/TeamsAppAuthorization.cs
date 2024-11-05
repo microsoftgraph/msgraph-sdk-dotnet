@@ -21,6 +21,22 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The registration ID of the Microsoft Entra app ID associated with the teamsApp.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClientAppId
+        {
+            get { return BackingStore?.Get<string?>("clientAppId"); }
+            set { BackingStore?.Set("clientAppId", value); }
+        }
+#nullable restore
+#else
+        public string ClientAppId
+        {
+            get { return BackingStore?.Get<string>("clientAppId"); }
+            set { BackingStore?.Set("clientAppId", value); }
+        }
+#endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,6 +95,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "clientAppId", n => { ClientAppId = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "requiredPermissionSet", n => { RequiredPermissionSet = n.GetObjectValue<global::Microsoft.Graph.Models.TeamsAppPermissionSet>(global::Microsoft.Graph.Models.TeamsAppPermissionSet.CreateFromDiscriminatorValue); } },
             };
@@ -90,6 +107,7 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("clientAppId", ClientAppId);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.TeamsAppPermissionSet>("requiredPermissionSet", RequiredPermissionSet);
             writer.WriteAdditionalData(AdditionalData);

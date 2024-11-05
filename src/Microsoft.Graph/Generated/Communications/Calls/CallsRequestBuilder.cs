@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Communications.Calls
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.CallCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.CallCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting. You will need to register the calling bot and go through the list of permissions needed as mentioned below. This API supports the following PSTN scenarios:
+        /// Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting. You need to register the calling bot and go through the list of permissions needed. This API supports the following PSTN scenarios:
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-post-calls?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Call"/></returns>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Communications.Calls
             return requestInfo;
         }
         /// <summary>
-        /// Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting. You will need to register the calling bot and go through the list of permissions needed as mentioned below. This API supports the following PSTN scenarios:
+        /// Create call enables your bot to create a new outgoing peer-to-peer or group call, or join an existing meeting. You need to register the calling bot and go through the list of permissions needed. This API supports the following PSTN scenarios:
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

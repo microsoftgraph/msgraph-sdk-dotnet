@@ -54,8 +54,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies
         {
         }
         /// <summary>
-        /// List properties and relationships of the windows10MobileCompliancePolicy objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10mobilecompliancepolicy-list?view=graph-rest-1.0" />
+        /// List properties and relationships of the iosCompliancePolicy objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-ioscompliancepolicy-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DeviceCompliancePolicyCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +78,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DeviceCompliancePolicyCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.DeviceCompliancePolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new iosCompliancePolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-ioscompliancepolicy-create?view=graph-rest-1.0" />
+        /// Create a new windows10CompliancePolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10compliancepolicy-create?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DeviceCompliancePolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DeviceCompliancePolicy>(requestInfo, global::Microsoft.Graph.Models.DeviceCompliancePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the windows10MobileCompliancePolicy objects.
+        /// List properties and relationships of the iosCompliancePolicy objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies
             return requestInfo;
         }
         /// <summary>
-        /// Create a new iosCompliancePolicy object.
+        /// Create a new windows10CompliancePolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies
             return new global::Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.DeviceCompliancePoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the windows10MobileCompliancePolicy objects.
+        /// List properties and relationships of the iosCompliancePolicy objects.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeviceCompliancePoliciesRequestBuilderGetQueryParameters 
