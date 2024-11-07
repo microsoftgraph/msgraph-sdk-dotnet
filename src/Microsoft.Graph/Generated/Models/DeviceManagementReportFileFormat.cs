@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models
 {
-    /// <summary>Possible values for the file format of a report.</summary>
+    /// <summary>Possible values for the file format of a report to be exported.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum DeviceManagementReportFileFormat
     {

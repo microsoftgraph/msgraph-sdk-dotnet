@@ -104,6 +104,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("permissions", value); }
         }
 #endif
+        /// <summary>The settings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.FileStorageContainerSettings? Settings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.FileStorageContainerSettings?>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.FileStorageContainerSettings Settings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.FileStorageContainerSettings>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#endif
         /// <summary>Status of the fileStorageContainer. Containers are created as inactive and require activation. Inactive containers are subjected to automatic deletion in 24 hours. The possible values are: inactive, active. Read-only.</summary>
         public global::Microsoft.Graph.Models.FileStorageContainerStatus? Status
         {
@@ -151,6 +167,7 @@ namespace Microsoft.Graph.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "drive", n => { Drive = n.GetObjectValue<global::Microsoft.Graph.Models.Drive>(global::Microsoft.Graph.Models.Drive.CreateFromDiscriminatorValue); } },
                 { "permissions", n => { Permissions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Permission>(global::Microsoft.Graph.Models.Permission.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Models.FileStorageContainerSettings>(global::Microsoft.Graph.Models.FileStorageContainerSettings.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Microsoft.Graph.Models.FileStorageContainerStatus>(); } },
                 { "viewpoint", n => { Viewpoint = n.GetObjectValue<global::Microsoft.Graph.Models.FileStorageContainerViewpoint>(global::Microsoft.Graph.Models.FileStorageContainerViewpoint.CreateFromDiscriminatorValue); } },
             };
@@ -170,6 +187,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Drive>("drive", Drive);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Permission>("permissions", Permissions);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.FileStorageContainerSettings>("settings", Settings);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.FileStorageContainerStatus>("status", Status);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.FileStorageContainerViewpoint>("viewpoint", Viewpoint);
         }

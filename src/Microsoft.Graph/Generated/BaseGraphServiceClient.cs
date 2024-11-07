@@ -75,6 +75,7 @@ using Microsoft.Graph.TeamsTemplates;
 using Microsoft.Graph.Teamwork;
 using Microsoft.Graph.TenantRelationships;
 using Microsoft.Graph.Users;
+using Microsoft.Graph.UsersWithUserPrincipalName;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Store;
 using Microsoft.Kiota.Abstractions;
@@ -519,6 +520,16 @@ namespace Microsoft.Graph
         {
             if(string.IsNullOrEmpty(appId)) throw new ArgumentNullException(nameof(appId));
             return new global::Microsoft.Graph.ServicePrincipalsWithAppId.ServicePrincipalsWithAppIdRequestBuilder(PathParameters, RequestAdapter, appId);
+        }
+        /// <summary>
+        /// Provides operations to manage the collection of user entities.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.UsersWithUserPrincipalName.UsersWithUserPrincipalNameRequestBuilder"/></returns>
+        /// <param name="userPrincipalName">Alternate key of user</param>
+        public global::Microsoft.Graph.UsersWithUserPrincipalName.UsersWithUserPrincipalNameRequestBuilder UsersWithUserPrincipalName(string userPrincipalName)
+        {
+            if(string.IsNullOrEmpty(userPrincipalName)) throw new ArgumentNullException(nameof(userPrincipalName));
+            return new global::Microsoft.Graph.UsersWithUserPrincipalName.UsersWithUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter, userPrincipalName);
         }
     }
 }

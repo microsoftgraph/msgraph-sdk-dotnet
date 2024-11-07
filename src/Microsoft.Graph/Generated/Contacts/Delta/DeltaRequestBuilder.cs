@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Contacts.Delta
         {
         }
         /// <summary>
-        /// Get newly created, updated, or deleted organizational contacts without having to perform a full read of the entire collection. See change tracking for details.
+        /// Get newly created, updated, or deleted organizational contacts without having to perform a full read of the entire collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/orgcontact-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Contacts.Delta.DeltaGetResponse"/></returns>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Contacts.Delta
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Contacts.Delta.DeltaGetResponse>(requestInfo, global::Microsoft.Graph.Contacts.Delta.DeltaGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get newly created, updated, or deleted organizational contacts without having to perform a full read of the entire collection. See change tracking for details.
+        /// Get newly created, updated, or deleted organizational contacts without having to perform a full read of the entire collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/orgcontact-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Contacts.Delta.DeltaResponse"/></returns>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Contacts.Delta
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Contacts.Delta.DeltaResponse>(requestInfo, global::Microsoft.Graph.Contacts.Delta.DeltaResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get newly created, updated, or deleted organizational contacts without having to perform a full read of the entire collection. See change tracking for details.
+        /// Get newly created, updated, or deleted organizational contacts without having to perform a full read of the entire collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Contacts.Delta
             return new global::Microsoft.Graph.Contacts.Delta.DeltaRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get newly created, updated, or deleted organizational contacts without having to perform a full read of the entire collection. See change tracking for details.
+        /// Get newly created, updated, or deleted organizational contacts without having to perform a full read of the entire collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeltaRequestBuilderGetQueryParameters 

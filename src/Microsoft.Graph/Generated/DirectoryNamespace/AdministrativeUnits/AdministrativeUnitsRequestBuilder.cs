@@ -84,7 +84,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.AdministrativeUnitCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.AdministrativeUnitCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this API to create a new administrativeUnit.
+        /// Create a new administrativeUnit.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/directory-post-administrativeunits?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.AdministrativeUnit"/></returns>
@@ -129,7 +129,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to create a new administrativeUnit.
+        /// Create a new administrativeUnit.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

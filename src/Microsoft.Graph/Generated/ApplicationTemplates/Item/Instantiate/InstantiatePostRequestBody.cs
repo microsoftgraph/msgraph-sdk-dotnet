@@ -37,6 +37,22 @@ namespace Microsoft.Graph.ApplicationTemplates.Item.Instantiate
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>The serviceManagementReference property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ServiceManagementReference
+        {
+            get { return BackingStore?.Get<string?>("serviceManagementReference"); }
+            set { BackingStore?.Set("serviceManagementReference", value); }
+        }
+#nullable restore
+#else
+        public string ServiceManagementReference
+        {
+            get { return BackingStore?.Get<string>("serviceManagementReference"); }
+            set { BackingStore?.Set("serviceManagementReference", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.ApplicationTemplates.Item.Instantiate.InstantiatePostRequestBody"/> and sets the default values.
         /// </summary>
@@ -64,6 +80,7 @@ namespace Microsoft.Graph.ApplicationTemplates.Item.Instantiate
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "serviceManagementReference", n => { ServiceManagementReference = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -74,6 +91,7 @@ namespace Microsoft.Graph.ApplicationTemplates.Item.Instantiate
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteStringValue("serviceManagementReference", ServiceManagementReference);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

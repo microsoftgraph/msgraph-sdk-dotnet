@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.Us
         {
         }
         /// <summary>
-        /// Get a list of the userSource objects associated with an ediscoveryCustodian.
+        /// Get a list of the userSource objects associated with an ediscoveryCustodian or ediscoveryHoldPolicy.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycustodian-list-usersources?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Security.UserSourceCollectionResponse"/></returns>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.Us
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Security.UserSource>(requestInfo, global::Microsoft.Graph.Models.Security.UserSource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the userSource objects associated with an ediscoveryCustodian.
+        /// Get a list of the userSource objects associated with an ediscoveryCustodian or ediscoveryHoldPolicy.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.Us
             return new global::Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.UserSources.UserSourcesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the userSource objects associated with an ediscoveryCustodian.
+        /// Get a list of the userSource objects associated with an ediscoveryCustodian or ediscoveryHoldPolicy.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UserSourcesRequestBuilderGetQueryParameters 

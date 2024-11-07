@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("filter", value); }
         }
 #endif
-        /// <summary>Possible values for the file format of a report.</summary>
+        /// <summary>Possible values for the file format of a report to be exported.</summary>
         public global::Microsoft.Graph.Models.DeviceManagementReportFileFormat? Format
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.DeviceManagementReportFileFormat?>("format"); }

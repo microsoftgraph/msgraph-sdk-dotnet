@@ -33,6 +33,12 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("isContentSharingNotificationEnabled"); }
             set { BackingStore?.Set("isContentSharingNotificationEnabled", value); }
         }
+        /// <summary>Indicates whether delta roster is enabled for the call.</summary>
+        public bool? IsDeltaRosterEnabled
+        {
+            get { return BackingStore?.Get<bool?>("isDeltaRosterEnabled"); }
+            set { BackingStore?.Set("isDeltaRosterEnabled", value); }
+        }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -83,6 +89,7 @@ namespace Microsoft.Graph.Models
             {
                 { "hideBotAfterEscalation", n => { HideBotAfterEscalation = n.GetBoolValue(); } },
                 { "isContentSharingNotificationEnabled", n => { IsContentSharingNotificationEnabled = n.GetBoolValue(); } },
+                { "isDeltaRosterEnabled", n => { IsDeltaRosterEnabled = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -95,6 +102,7 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("hideBotAfterEscalation", HideBotAfterEscalation);
             writer.WriteBoolValue("isContentSharingNotificationEnabled", IsContentSharingNotificationEnabled);
+            writer.WriteBoolValue("isDeltaRosterEnabled", IsDeltaRosterEnabled);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

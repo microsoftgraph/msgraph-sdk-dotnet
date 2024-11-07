@@ -3,7 +3,9 @@
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Approvers;
+using Microsoft.Graph.Privacy.SubjectRightsRequests.Item.ApproversWithUserPrincipalName;
 using Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Collaborators;
+using Microsoft.Graph.Privacy.SubjectRightsRequests.Item.CollaboratorsWithUserPrincipalName;
 using Microsoft.Graph.Privacy.SubjectRightsRequests.Item.GetFinalAttachment;
 using Microsoft.Graph.Privacy.SubjectRightsRequests.Item.GetFinalReport;
 using Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Notes;
@@ -59,6 +61,28 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests.Item
         public global::Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Team.TeamRequestBuilder Team
         {
             get => new global::Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Team.TeamRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>
+        /// Provides operations to manage the approvers property of the microsoft.graph.subjectRightsRequest entity.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Privacy.SubjectRightsRequests.Item.ApproversWithUserPrincipalName.ApproversWithUserPrincipalNameRequestBuilder"/></returns>
+        /// <param name="userPrincipalName">Alternate key of user</param>
+        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate")]
+        public global::Microsoft.Graph.Privacy.SubjectRightsRequests.Item.ApproversWithUserPrincipalName.ApproversWithUserPrincipalNameRequestBuilder ApproversWithUserPrincipalName(string userPrincipalName)
+        {
+            if(string.IsNullOrEmpty(userPrincipalName)) throw new ArgumentNullException(nameof(userPrincipalName));
+            return new global::Microsoft.Graph.Privacy.SubjectRightsRequests.Item.ApproversWithUserPrincipalName.ApproversWithUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter, userPrincipalName);
+        }
+        /// <summary>
+        /// Provides operations to manage the collaborators property of the microsoft.graph.subjectRightsRequest entity.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Privacy.SubjectRightsRequests.Item.CollaboratorsWithUserPrincipalName.CollaboratorsWithUserPrincipalNameRequestBuilder"/></returns>
+        /// <param name="userPrincipalName">Alternate key of user</param>
+        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate")]
+        public global::Microsoft.Graph.Privacy.SubjectRightsRequests.Item.CollaboratorsWithUserPrincipalName.CollaboratorsWithUserPrincipalNameRequestBuilder CollaboratorsWithUserPrincipalName(string userPrincipalName)
+        {
+            if(string.IsNullOrEmpty(userPrincipalName)) throw new ArgumentNullException(nameof(userPrincipalName));
+            return new global::Microsoft.Graph.Privacy.SubjectRightsRequests.Item.CollaboratorsWithUserPrincipalName.CollaboratorsWithUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter, userPrincipalName);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Privacy.SubjectRightsRequests.Item.SubjectRightsRequestItemRequestBuilder"/> and sets the default values.

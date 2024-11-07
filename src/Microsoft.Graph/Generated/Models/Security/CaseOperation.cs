@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models.Security
     public partial class CaseOperation : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The type of action the operation represents. Possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics, purgeData</summary>
+        /// <summary>The type of action the operation represents. Possible values are: contentExport,  applyTags, convertToPdf, index, estimateStatistics, addToReviewSet, holdUpdate, unknownFutureValue, purgeData, exportReport, exportResult. You must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: purgeData, exportReport, exportResult.</summary>
         public global::Microsoft.Graph.Models.Security.CaseAction? Action
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.CaseAction?>("action"); }

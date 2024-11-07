@@ -19,6 +19,7 @@ using Microsoft.Graph.DeviceManagement.Reports.GetPolicyNonComplianceReport;
 using Microsoft.Graph.DeviceManagement.Reports.GetPolicyNonComplianceSummaryReport;
 using Microsoft.Graph.DeviceManagement.Reports.GetReportFilters;
 using Microsoft.Graph.DeviceManagement.Reports.GetSettingNonComplianceReport;
+using Microsoft.Graph.DeviceManagement.Reports.RetrieveDeviceAppInstallationStatusReport;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -131,6 +132,11 @@ namespace Microsoft.Graph.DeviceManagement.Reports
         public global::Microsoft.Graph.DeviceManagement.Reports.GetSettingNonComplianceReport.GetSettingNonComplianceReportRequestBuilder GetSettingNonComplianceReport
         {
             get => new global::Microsoft.Graph.DeviceManagement.Reports.GetSettingNonComplianceReport.GetSettingNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveDeviceAppInstallationStatusReport method.</summary>
+        public global::Microsoft.Graph.DeviceManagement.Reports.RetrieveDeviceAppInstallationStatusReport.RetrieveDeviceAppInstallationStatusReportRequestBuilder RetrieveDeviceAppInstallationStatusReport
+        {
+            get => new global::Microsoft.Graph.DeviceManagement.Reports.RetrieveDeviceAppInstallationStatusReport.RetrieveDeviceAppInstallationStatusReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.DeviceManagement.Reports.ReportsRequestBuilder"/> and sets the default values.
