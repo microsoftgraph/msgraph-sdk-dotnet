@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Indicates whether optical character recognition (OCR) is enabled for a given container. When OCR is enabled on a container, OCR extraction is performed for new and updated documents of supported types. The extracted fields are added to the metadata of the document, enabling end-user search and search-driven solutions. Changing this property from true to false doesn&apos;t remove OCR metadata that was created while it was true. Default value is false.</summary>
+        /// <summary>Indicates whether Optical Character Recognition (OCR) is enabled for the container. The default value is false. When set to true, OCR extraction is performed for new and updated documents of supported document types, and the extracted fields in the metadata of the document enable end-user search and search-driven solutions. When set to false, existing OCR metadata is not impacted. Optional. Read-write.</summary>
         public bool? IsOcrEnabled
         {
             get { return BackingStore?.Get<bool?>("isOcrEnabled"); }

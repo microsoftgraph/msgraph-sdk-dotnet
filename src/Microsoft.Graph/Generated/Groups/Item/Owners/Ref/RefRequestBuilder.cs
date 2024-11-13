@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Groups.Item.Owners.Ref
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of the group&apos;s owners. The owners are a set of users or service principals who are allowed to modify the group object. Owners are currently not available in Microsoft Graph for groups that were created in Exchange or groups that are synchronized from an on-premises environment.
+        /// Retrieve a list of the group&apos;s owners. The owners are a set of users or service principals who are allowed to modify the group object. Owners are currently not available in Microsoft Graph for groups that were created in Exchange, distribution groups, or groups that are synchronized from an on-premises environment.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-list-owners?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.StringCollectionResponse"/></returns>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Groups.Item.Owners.Ref
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a list of the group&apos;s owners. The owners are a set of users or service principals who are allowed to modify the group object. Owners are currently not available in Microsoft Graph for groups that were created in Exchange or groups that are synchronized from an on-premises environment.
+        /// Retrieve a list of the group&apos;s owners. The owners are a set of users or service principals who are allowed to modify the group object. Owners are currently not available in Microsoft Graph for groups that were created in Exchange, distribution groups, or groups that are synchronized from an on-premises environment.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -201,7 +201,7 @@ namespace Microsoft.Graph.Groups.Item.Owners.Ref
         {
         }
         /// <summary>
-        /// Retrieve a list of the group&apos;s owners. The owners are a set of users or service principals who are allowed to modify the group object. Owners are currently not available in Microsoft Graph for groups that were created in Exchange or groups that are synchronized from an on-premises environment.
+        /// Retrieve a list of the group&apos;s owners. The owners are a set of users or service principals who are allowed to modify the group object. Owners are currently not available in Microsoft Graph for groups that were created in Exchange, distribution groups, or groups that are synchronized from an on-premises environment.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RefRequestBuilderGetQueryParameters 
