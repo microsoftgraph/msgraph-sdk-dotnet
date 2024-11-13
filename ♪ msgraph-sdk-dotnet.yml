@@ -1,3 +1,5 @@
+# https://github.com/DANISHAHMEDKM/msgraph-sdk-dotnet/edit/main/msgraph-sdk-dotnet.yml
+
 page_type: sample
 products:
   - office-excel
@@ -32,6 +34,5 @@ extensions:
     - Security
     - SharePoint
     - Users
-  createdDate: '3/2/2016 10:39:37 PM'
 title: Microsoft Graph .NET Client Library
 description: Microsoft Graph Client Library for .NET
