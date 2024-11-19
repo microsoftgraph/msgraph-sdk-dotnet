@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.FileStorageContainerCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.FileStorageContainerCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new fileStorageContainer object.  The container type identified by containerTypeId must be enabled in the tenant.  For delegated calls, the calling user is set as the owner of the fileStorageContainer. 
+        /// Create a new fileStorageContainer object.  The container type identified by containerTypeId must be registered in the tenant.  For delegated calls, the calling user is set as the owner of the fileStorageContainer. 
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/filestoragecontainer-post?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.FileStorageContainer"/></returns>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers
             return requestInfo;
         }
         /// <summary>
-        /// Create a new fileStorageContainer object.  The container type identified by containerTypeId must be enabled in the tenant.  For delegated calls, the calling user is set as the owner of the fileStorageContainer. 
+        /// Create a new fileStorageContainer object.  The container type identified by containerTypeId must be registered in the tenant.  For delegated calls, the calling user is set as the owner of the fileStorageContainer. 
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

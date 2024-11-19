@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models.Security
     public partial class NicEvidence : global::Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The ipAddress property</summary>
+        /// <summary>The current IP address of the NIC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.Security.IpEvidence? IpAddress
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("ipAddress", value); }
         }
 #endif
-        /// <summary>The macAddress property</summary>
+        /// <summary>The MAC address of the NIC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MacAddress
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("macAddress", value); }
         }
 #endif
-        /// <summary>The vlans property</summary>
+        /// <summary>The current virtual local area networks of the NIC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Vlans

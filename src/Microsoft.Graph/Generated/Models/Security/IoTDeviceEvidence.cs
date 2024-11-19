@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models.Security
     public partial class IoTDeviceEvidence : global::Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The deviceId property</summary>
+        /// <summary>The device ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceId
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("deviceId", value); }
         }
 #endif
-        /// <summary>The deviceName property</summary>
+        /// <summary>The friendly name of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceName
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("deviceName", value); }
         }
 #endif
-        /// <summary>The devicePageLink property</summary>
+        /// <summary>The URL to the device page in the IoT Defender portal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DevicePageLink
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("devicePageLink", value); }
         }
 #endif
-        /// <summary>The deviceSubType property</summary>
+        /// <summary>The device subtype.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceSubType
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("deviceSubType", value); }
         }
 #endif
-        /// <summary>The deviceType property</summary>
+        /// <summary>The type of the device. For example, &apos;temperature sensor,&apos; &apos;freezer,&apos; &apos;wind turbine,&apos; and so on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceType
@@ -92,13 +92,13 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("deviceType", value); }
         }
 #endif
-        /// <summary>The importance property</summary>
+        /// <summary>The importance level for the IoT device. Possible values are low, normal, high, and unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.Security.IoTDeviceImportanceType? Importance
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.IoTDeviceImportanceType?>("importance"); }
             set { BackingStore?.Set("importance", value); }
         }
-        /// <summary>The ioTHub property</summary>
+        /// <summary>The azureResourceEvidence entity that represents the IoT Hub that the device belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.Security.AzureResourceEvidence? IoTHub
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("ioTHub", value); }
         }
 #endif
-        /// <summary>The ioTSecurityAgentId property</summary>
+        /// <summary>The ID of the Azure Security Center for the IoT agent that is running on the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IoTSecurityAgentId
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("ioTSecurityAgentId", value); }
         }
 #endif
-        /// <summary>The ipAddress property</summary>
+        /// <summary>The current IP address of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.Security.IpEvidence? IpAddress
@@ -146,25 +146,25 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("ipAddress", value); }
         }
 #endif
-        /// <summary>The isAuthorized property</summary>
+        /// <summary>Indicates whether the device classified as an authorized device.</summary>
         public bool? IsAuthorized
         {
             get { return BackingStore?.Get<bool?>("isAuthorized"); }
             set { BackingStore?.Set("isAuthorized", value); }
         }
-        /// <summary>The isProgramming property</summary>
+        /// <summary>Indicates whether the device classified as a programming device.</summary>
         public bool? IsProgramming
         {
             get { return BackingStore?.Get<bool?>("isProgramming"); }
             set { BackingStore?.Set("isProgramming", value); }
         }
-        /// <summary>The isScanner property</summary>
+        /// <summary>Indicates whether the device classified as a scanner.</summary>
         public bool? IsScanner
         {
             get { return BackingStore?.Get<bool?>("isScanner"); }
             set { BackingStore?.Set("isScanner", value); }
         }
-        /// <summary>The macAddress property</summary>
+        /// <summary>The MAC address of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MacAddress
@@ -180,7 +180,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("macAddress", value); }
         }
 #endif
-        /// <summary>The manufacturer property</summary>
+        /// <summary>The manufacturer of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Manufacturer
@@ -196,7 +196,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("manufacturer", value); }
         }
 #endif
-        /// <summary>The model property</summary>
+        /// <summary>The model of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Model
@@ -212,7 +212,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("model", value); }
         }
 #endif
-        /// <summary>The nics property</summary>
+        /// <summary>The current network interface controllers on the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.Security.NicEvidence>? Nics
@@ -228,7 +228,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("nics", value); }
         }
 #endif
-        /// <summary>The operatingSystem property</summary>
+        /// <summary>The operating system the device is running.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OperatingSystem
@@ -244,7 +244,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("operatingSystem", value); }
         }
 #endif
-        /// <summary>The owners property</summary>
+        /// <summary>The owners for the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Owners
@@ -260,7 +260,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("owners", value); }
         }
 #endif
-        /// <summary>The protocols property</summary>
+        /// <summary>The list of protocols that the device supports.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Protocols
@@ -276,7 +276,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("protocols", value); }
         }
 #endif
-        /// <summary>The purdueLayer property</summary>
+        /// <summary>The Purdue Layer of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PurdueLayer
@@ -292,7 +292,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("purdueLayer", value); }
         }
 #endif
-        /// <summary>The sensor property</summary>
+        /// <summary>The sensor that monitors the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Sensor
@@ -308,7 +308,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("sensor", value); }
         }
 #endif
-        /// <summary>The serialNumber property</summary>
+        /// <summary>The serial number of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SerialNumber
@@ -324,7 +324,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("serialNumber", value); }
         }
 #endif
-        /// <summary>The site property</summary>
+        /// <summary>The site location of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Site
@@ -340,7 +340,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("site", value); }
         }
 #endif
-        /// <summary>The source property</summary>
+        /// <summary>The source (microsoft/vendor) of the device entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Source
@@ -356,7 +356,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("source", value); }
         }
 #endif
-        /// <summary>The sourceRef property</summary>
+        /// <summary>A URL reference to the source item where the device is managed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.Security.UrlEvidence? SourceRef
@@ -372,7 +372,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("sourceRef", value); }
         }
 #endif
-        /// <summary>The zone property</summary>
+        /// <summary>The zone location of the device within a site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Zone
