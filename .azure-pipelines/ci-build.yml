@@ -243,6 +243,13 @@ extends:
       dependsOn: build
       jobs:
         - deployment: deploy_nuget
+          templateContext:
+            type: releaseJob
+            isProduction: true
+            inputs:
+            - input: pipelineArtifact
+              artifactName: ReadyForReleasePipeline
+              targetPath: '$(Pipeline.Workspace)'
           pool:
             name: Azure-Pipelines-1ESPT-ExDShared
             os: windows
