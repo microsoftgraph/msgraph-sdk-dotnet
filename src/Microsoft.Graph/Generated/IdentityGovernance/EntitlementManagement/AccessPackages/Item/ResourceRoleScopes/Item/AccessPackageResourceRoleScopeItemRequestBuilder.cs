@@ -47,7 +47,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
         {
         }
         /// <summary>
-        /// Remove a accessPackageResourceRoleScope from an accessPackage list of resource role scopes.
+        /// Remove an accessPackageResourceRoleScope from an accessPackage list of resource role scopes.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackage-delete-resourcerolescopes?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.AccessPackageResourceRoleScope>(requestInfo, global::Microsoft.Graph.Models.AccessPackageResourceRoleScope.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a accessPackageResourceRoleScope from an accessPackage list of resource role scopes.
+        /// Remove an accessPackageResourceRoleScope from an accessPackage list of resource role scopes.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

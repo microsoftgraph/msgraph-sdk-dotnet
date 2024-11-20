@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Value that can be used as the maximum duration in days, hours, minutes, or seconds from the date of key creation, for which the key is valid.  Defined in ISO 8601 format for Durations. For example, P4DT12H30M5S represents a duration of four days, twelve hours, thirty minutes, and five seconds. This property is required when restrictionType is set to keyLifetime.</summary>
+        /// <summary>String value that indicates the maximum lifetime for key expiration, defined as an ISO 8601 duration. For example, P4DT12H30M5S represents four days, 12 hours, 30 minutes, and five seconds. This property is required when restrictionType is set to keyLifetime.</summary>
         public TimeSpan? MaxLifetime
         {
             get { return BackingStore?.Get<TimeSpan?>("maxLifetime"); }
@@ -43,13 +43,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Timestamp when the policy is enforced for all apps created on or after the specified date. For existing applications, the enforcement date would be back dated. To apply to all applications regardless of their creation date, this property would be null. Nullable.</summary>
+        /// <summary>Specifies the date from which the policy restriction applies to newly created applications. For existing applications, the enforcement date can be retroactively applied.</summary>
         public DateTimeOffset? RestrictForAppsCreatedAfterDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("restrictForAppsCreatedAfterDateTime"); }
             set { BackingStore?.Set("restrictForAppsCreatedAfterDateTime", value); }
         }
-        /// <summary>The type of restriction being applied. Possible values are asymmetricKeyLifetime, unknownFutureValue. Each value of restrictionType can be used only once per policy.</summary>
+        /// <summary>The type of restriction being applied. Possible values are asymmetricKeyLifetime, and unknownFutureValue. Each value of restrictionType can be used only once per policy.</summary>
         public global::Microsoft.Graph.Models.AppKeyCredentialRestrictionType? RestrictionType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.AppKeyCredentialRestrictionType?>("restrictionType"); }

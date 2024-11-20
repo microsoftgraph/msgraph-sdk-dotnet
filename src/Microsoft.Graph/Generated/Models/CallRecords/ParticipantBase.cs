@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models.CallRecords
     public partial class ParticipantBase : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The administrativeUnitInfos property</summary>
+        /// <summary>List of administrativeUnitInfo objects for the call participant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.CallRecords.AdministrativeUnitInfo>? AdministrativeUnitInfos
