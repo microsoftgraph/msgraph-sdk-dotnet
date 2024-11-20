@@ -265,11 +265,6 @@ extends:
                   inputs:
                     versionSpec: '>=5.2.0'
                     checkLatest: true
-                - task: DownloadPipelineArtifact@2
-                  displayName: Download nupkg from artifacts
-                  inputs:
-                    artifact: ReadyForReleasePipeline
-                    source: current
                 - task: PowerShell@2
                   displayName: 'Get Latest Commit SHA from repo'
                   inputs:
