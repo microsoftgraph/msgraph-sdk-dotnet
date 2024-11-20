@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project does adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.63.0](https://github.com/microsoftgraph/msgraph-sdk-dotnet/compare/5.62.0...5.63.0) (2024-11-20)
+
+
+### Features
+
+* **generation:** update request builders and models ([aa9f964](https://github.com/microsoftgraph/msgraph-sdk-dotnet/commit/aa9f964b1e55be8507177f9224b675af099f7147))
+
 ## [5.62.0](https://github.com/microsoftgraph/msgraph-sdk-dotnet/compare/5.61.0...5.62.0) (2024-11-07)
 
 
