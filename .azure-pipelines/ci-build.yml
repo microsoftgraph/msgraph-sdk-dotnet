@@ -243,6 +243,13 @@ extends:
       dependsOn: build
       jobs:
         - deployment: deploy_nuget
+          templateContext:
+            type: releaseJob
+            isProduction: true
+            inputs:
+            - input: pipelineArtifact
+              artifactName: ReadyForReleasePipeline
+              targetPath: '$(Pipeline.Workspace)'
           pool:
             name: Azure-Pipelines-1ESPT-ExDShared
             os: windows
@@ -258,11 +265,6 @@ extends:
                   inputs:
                     versionSpec: '>=5.2.0'
                     checkLatest: true
-                - task: DownloadPipelineArtifact@2
-                  displayName: Download nupkg from artifacts
-                  inputs:
-                    artifact: ReadyForReleasePipeline
-                    source: current
                 - task: PowerShell@2
                   displayName: 'Get Latest Commit SHA from repo'
                   inputs:
