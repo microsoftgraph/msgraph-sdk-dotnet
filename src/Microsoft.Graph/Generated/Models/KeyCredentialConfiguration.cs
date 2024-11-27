@@ -55,6 +55,12 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.AppKeyCredentialRestrictionType?>("restrictionType"); }
             set { BackingStore?.Set("restrictionType", value); }
         }
+        /// <summary>The state property</summary>
+        public global::Microsoft.Graph.Models.AppManagementRestrictionState? State
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.AppManagementRestrictionState?>("state"); }
+            set { BackingStore?.Set("state", value); }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Models.KeyCredentialConfiguration"/> and sets the default values.
         /// </summary>
@@ -85,6 +91,7 @@ namespace Microsoft.Graph.Models
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "restrictForAppsCreatedAfterDateTime", n => { RestrictForAppsCreatedAfterDateTime = n.GetDateTimeOffsetValue(); } },
                 { "restrictionType", n => { RestrictionType = n.GetEnumValue<global::Microsoft.Graph.Models.AppKeyCredentialRestrictionType>(); } },
+                { "state", n => { State = n.GetEnumValue<global::Microsoft.Graph.Models.AppManagementRestrictionState>(); } },
             };
         }
         /// <summary>
@@ -98,6 +105,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteDateTimeOffsetValue("restrictForAppsCreatedAfterDateTime", RestrictForAppsCreatedAfterDateTime);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.AppKeyCredentialRestrictionType>("restrictionType", RestrictionType);
+            writer.WriteEnumValue<global::Microsoft.Graph.Models.AppManagementRestrictionState>("state", State);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

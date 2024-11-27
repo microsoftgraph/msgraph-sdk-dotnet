@@ -3,6 +3,7 @@
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models.Security;
 using Microsoft.Graph.Security.Identities.HealthIssues;
+using Microsoft.Graph.Security.Identities.Sensors;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -23,6 +24,11 @@ namespace Microsoft.Graph.Security.Identities
         public global::Microsoft.Graph.Security.Identities.HealthIssues.HealthIssuesRequestBuilder HealthIssues
         {
             get => new global::Microsoft.Graph.Security.Identities.HealthIssues.HealthIssuesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the sensors property of the microsoft.graph.security.identityContainer entity.</summary>
+        public global::Microsoft.Graph.Security.Identities.Sensors.SensorsRequestBuilder Sensors
+        {
+            get => new global::Microsoft.Graph.Security.Identities.Sensors.SensorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Security.Identities.IdentitiesRequestBuilder"/> and sets the default values.

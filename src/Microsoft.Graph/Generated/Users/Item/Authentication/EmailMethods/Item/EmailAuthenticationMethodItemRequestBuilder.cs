@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.EmailMethods.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.EmailAuthenticationMethod>(requestInfo, global::Microsoft.Graph.Models.EmailAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a user&apos;s email address represented by an emailAuthenticationMethod object.
+        /// Update a user&apos;s email address represented by an emailAuthenticationMethod object. Self-service operations aren&apos;t supported.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/emailauthenticationmethod-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.EmailAuthenticationMethod"/></returns>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.EmailMethods.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update a user&apos;s email address represented by an emailAuthenticationMethod object.
+        /// Update a user&apos;s email address represented by an emailAuthenticationMethod object. Self-service operations aren&apos;t supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Townhalls
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a virtualEventTownhall object.
+        /// Read the properties and relationships of a virtualEventTownhall object. All roles can get the details of a townhall event.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.VirtualEventTownhallCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Townhalls
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.VirtualEventTownhall>(requestInfo, global::Microsoft.Graph.Models.VirtualEventTownhall.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a virtualEventTownhall object.
+        /// Read the properties and relationships of a virtualEventTownhall object. All roles can get the details of a townhall event.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Townhalls
             return new global::Microsoft.Graph.Solutions.VirtualEvents.Townhalls.TownhallsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read the properties and relationships of a virtualEventTownhall object.
+        /// Read the properties and relationships of a virtualEventTownhall object. All roles can get the details of a townhall event.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TownhallsRequestBuilderGetQueryParameters 

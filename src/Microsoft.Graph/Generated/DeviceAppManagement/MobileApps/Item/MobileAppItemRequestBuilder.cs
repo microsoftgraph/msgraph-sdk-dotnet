@@ -149,8 +149,8 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item
         {
         }
         /// <summary>
-        /// Deletes a windowsUniversalAppX.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-windowsuniversalappx-delete?view=graph-rest-1.0" />
+        /// Deletes a windowsMobileMSI.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-windowsmobilemsi-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -172,8 +172,8 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the managedAndroidLobApp object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-managedandroidlobapp-get?view=graph-rest-1.0" />
+        /// Read properties and relationships of the macOSOfficeSuiteApp object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-macosofficesuiteapp-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.MobileApp"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -196,8 +196,8 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.MobileApp>(requestInfo, global::Microsoft.Graph.Models.MobileApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a windowsMicrosoftEdgeApp object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-windowsmicrosoftedgeapp-update?view=graph-rest-1.0" />
+        /// Update the properties of a windowsWebApp object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-windowswebapp-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.MobileApp"/></returns>
         /// <param name="body">The request body</param>
@@ -222,7 +222,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.MobileApp>(requestInfo, global::Microsoft.Graph.Models.MobileApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a windowsUniversalAppX.
+        /// Deletes a windowsMobileMSI.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -241,7 +241,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the managedAndroidLobApp object.
+        /// Read properties and relationships of the macOSOfficeSuiteApp object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -260,7 +260,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a windowsMicrosoftEdgeApp object.
+        /// Update the properties of a windowsWebApp object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -299,7 +299,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item
         {
         }
         /// <summary>
-        /// Read properties and relationships of the managedAndroidLobApp object.
+        /// Read properties and relationships of the macOSOfficeSuiteApp object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MobileAppItemRequestBuilderGetQueryParameters 
