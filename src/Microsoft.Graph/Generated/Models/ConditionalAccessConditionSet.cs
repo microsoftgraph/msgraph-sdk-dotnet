@@ -35,6 +35,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("applications", value); }
         }
 #endif
+        /// <summary>The authenticationFlows property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.ConditionalAccessAuthenticationFlows? AuthenticationFlows
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ConditionalAccessAuthenticationFlows?>("authenticationFlows"); }
+            set { BackingStore?.Set("authenticationFlows", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.ConditionalAccessAuthenticationFlows AuthenticationFlows
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ConditionalAccessAuthenticationFlows>("authenticationFlows"); }
+            set { BackingStore?.Set("authenticationFlows", value); }
+        }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Client applications (service principals and workload identities) included in and excluded from the policy. Either users or clientApplications is required.</summary>
@@ -230,6 +246,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "applications", n => { Applications = n.GetObjectValue<global::Microsoft.Graph.Models.ConditionalAccessApplications>(global::Microsoft.Graph.Models.ConditionalAccessApplications.CreateFromDiscriminatorValue); } },
+                { "authenticationFlows", n => { AuthenticationFlows = n.GetObjectValue<global::Microsoft.Graph.Models.ConditionalAccessAuthenticationFlows>(global::Microsoft.Graph.Models.ConditionalAccessAuthenticationFlows.CreateFromDiscriminatorValue); } },
                 { "clientAppTypes", n => { ClientAppTypes = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Models.ConditionalAccessClientApp>()?.AsList(); } },
                 { "clientApplications", n => { ClientApplications = n.GetObjectValue<global::Microsoft.Graph.Models.ConditionalAccessClientApplications>(global::Microsoft.Graph.Models.ConditionalAccessClientApplications.CreateFromDiscriminatorValue); } },
                 { "devices", n => { Devices = n.GetObjectValue<global::Microsoft.Graph.Models.ConditionalAccessDevices>(global::Microsoft.Graph.Models.ConditionalAccessDevices.CreateFromDiscriminatorValue); } },
@@ -251,6 +268,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ConditionalAccessApplications>("applications", Applications);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.ConditionalAccessAuthenticationFlows>("authenticationFlows", AuthenticationFlows);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ConditionalAccessClientApplications>("clientApplications", ClientApplications);
             writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Models.ConditionalAccessClientApp>("clientAppTypes", ClientAppTypes);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ConditionalAccessDevices>("devices", Devices);

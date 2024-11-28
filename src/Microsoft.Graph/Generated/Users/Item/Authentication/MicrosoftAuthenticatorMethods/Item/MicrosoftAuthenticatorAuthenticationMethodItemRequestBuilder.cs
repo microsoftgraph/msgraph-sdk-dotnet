@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.MicrosoftAuthenticatorMethod
         {
         }
         /// <summary>
-        /// Deletes a microsoftAuthenticatorAuthenticationMethod object.
+        /// Delete a microsoftAuthenticatorAuthenticationMethod object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/microsoftauthenticatorauthenticationmethod-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.MicrosoftAuthenticatorMethod
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.MicrosoftAuthenticatorAuthenticationMethod>(requestInfo, global::Microsoft.Graph.Models.MicrosoftAuthenticatorAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a microsoftAuthenticatorAuthenticationMethod object.
+        /// Delete a microsoftAuthenticatorAuthenticationMethod object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.EmailMethods
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.EmailAuthenticationMethodCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.EmailAuthenticationMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Set a user&apos;s emailAuthenticationMethod object. Email authentication is a self-service password reset method. A user may only have one email authentication method.
+        /// Set a user&apos;s emailAuthenticationMethod object. Email authentication is a self-service password reset method. A user may only have one email authentication method. Self-service operations aren&apos;t supported.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/authentication-post-emailmethods?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.EmailAuthenticationMethod"/></returns>
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.EmailMethods
             return requestInfo;
         }
         /// <summary>
-        /// Set a user&apos;s emailAuthenticationMethod object. Email authentication is a self-service password reset method. A user may only have one email authentication method.
+        /// Set a user&apos;s emailAuthenticationMethod object. Email authentication is a self-service password reset method. A user may only have one email authentication method. Self-service operations aren&apos;t supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

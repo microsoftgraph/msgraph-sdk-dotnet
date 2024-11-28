@@ -32,5 +32,29 @@ namespace Microsoft.Graph.Models.Security
         #pragma warning disable CS1591
         UnknownFutureValue,
         #pragma warning restore CS1591
+        [EnumMember(Value = "active")]
+        #pragma warning disable CS1591
+        Active,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "pendingApproval")]
+        #pragma warning disable CS1591
+        PendingApproval,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "declined")]
+        #pragma warning disable CS1591
+        Declined,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "unremediated")]
+        #pragma warning disable CS1591
+        Unremediated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "running")]
+        #pragma warning disable CS1591
+        Running,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "partiallyRemediated")]
+        #pragma warning disable CS1591
+        PartiallyRemediated,
+        #pragma warning restore CS1591
     }
 }
