@@ -299,4 +299,4 @@ extends:
                     assetUploadMode: replace
                     assets: |
                       !**/**
-                      $(Pipeline.Workspace)/Microsoft.Graph.Core.*.*nupkg
+                      $(Pipeline.Workspace)/Microsoft.Graph.*.*nupkg
