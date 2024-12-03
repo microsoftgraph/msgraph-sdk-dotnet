@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<int?>("deviceVersion"); }
             set { BackingStore?.Set("deviceVersion", value); }
         }
-        /// <summary>The display name for the device. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.</summary>
+        /// <summary>The display name for the device. Maximum length is 256 characters. Required. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName

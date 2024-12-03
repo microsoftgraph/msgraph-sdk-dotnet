@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The display name of the user, group, or service principal that was granted the app role assignment. Read-only. Supports $filter (eq and startswith).</summary>
+        /// <summary>The display name of the user, group, or service principal that was granted the app role assignment. Maximum length is 256 characters. Read-only. Supports $filter (eq and startswith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrincipalDisplayName
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("principalType", value); }
         }
 #endif
-        /// <summary>The display name of the resource app&apos;s service principal to which the assignment is made.</summary>
+        /// <summary>The display name of the resource app&apos;s service principal to which the assignment is made. Maximum length is 256 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ResourceDisplayName

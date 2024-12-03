@@ -21,11 +21,23 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The isItemVersioningEnabled property</summary>
+        public bool? IsItemVersioningEnabled
+        {
+            get { return BackingStore?.Get<bool?>("isItemVersioningEnabled"); }
+            set { BackingStore?.Set("isItemVersioningEnabled", value); }
+        }
         /// <summary>Indicates whether Optical Character Recognition (OCR) is enabled for the container. The default value is false. When set to true, OCR extraction is performed for new and updated documents of supported document types, and the extracted fields in the metadata of the document enable end-user search and search-driven solutions. When set to false, existing OCR metadata is not impacted. Optional. Read-write.</summary>
         public bool? IsOcrEnabled
         {
             get { return BackingStore?.Get<bool?>("isOcrEnabled"); }
             set { BackingStore?.Set("isOcrEnabled", value); }
+        }
+        /// <summary>The itemMajorVersionLimit property</summary>
+        public int? ItemMajorVersionLimit
+        {
+            get { return BackingStore?.Get<int?>("itemMajorVersionLimit"); }
+            set { BackingStore?.Set("itemMajorVersionLimit", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -69,7 +81,9 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "isItemVersioningEnabled", n => { IsItemVersioningEnabled = n.GetBoolValue(); } },
                 { "isOcrEnabled", n => { IsOcrEnabled = n.GetBoolValue(); } },
+                { "itemMajorVersionLimit", n => { ItemMajorVersionLimit = n.GetIntValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -80,7 +94,9 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("isItemVersioningEnabled", IsItemVersioningEnabled);
             writer.WriteBoolValue("isOcrEnabled", IsOcrEnabled);
+            writer.WriteIntValue("itemMajorVersionLimit", ItemMajorVersionLimit);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
