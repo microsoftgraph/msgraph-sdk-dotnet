@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("appDescription", value); }
         }
 #endif
-        /// <summary>The display name exposed by the associated application.</summary>
+        /// <summary>The display name exposed by the associated application. Maximum length is 256 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppDisplayName
