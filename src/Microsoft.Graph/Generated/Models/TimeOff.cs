@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class TimeOff : global::Microsoft.Graph.Models.ChangeTrackedEntity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The draft version of this timeOff item that is viewable by managers. It must be shared before it is visible to team members. Required.</summary>
+        /// <summary>The draft version of this timeOff item that is viewable by managers. It must be shared before it&apos;s visible to team members. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.TimeOffItem? DraftTimeOff

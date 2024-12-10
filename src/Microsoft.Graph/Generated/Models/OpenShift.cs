@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class OpenShift : global::Microsoft.Graph.Models.ChangeTrackedEntity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>An unpublished open shift.</summary>
+        /// <summary>Draft changes in the openShift are only visible to managers until they&apos;re shared.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.OpenShiftItem? DraftOpenShift
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("draftOpenShift", value); }
         }
 #endif
-        /// <summary>ID for the scheduling group that the open shift belongs to.</summary>
+        /// <summary>The ID of the schedulingGroup that contains the openShift.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SchedulingGroupId
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("schedulingGroupId", value); }
         }
 #endif
-        /// <summary>A published open shift.</summary>
+        /// <summary>The shared version of this openShift that is viewable by both employees and managers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.OpenShiftItem? SharedOpenShift
