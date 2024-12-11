@@ -35,8 +35,8 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.NamedLocations.Item
         {
         }
         /// <summary>
-        /// Delete a namedLocation object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/namedlocation-delete?view=graph-rest-1.0" />
+        /// Delete an ipNamedLocation object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ipnamedlocation-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.NamedLocations.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.NamedLocation>(requestInfo, global::Microsoft.Graph.Models.NamedLocation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a namedLocation object.
+        /// Delete an ipNamedLocation object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
