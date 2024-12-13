@@ -4,8 +4,12 @@ using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Storage.FileStorage.Containers.Item.Activate;
 using Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive;
+using Microsoft.Graph.Storage.FileStorage.Containers.Item.Lock;
 using Microsoft.Graph.Storage.FileStorage.Containers.Item.PermanentDelete;
 using Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions;
+using Microsoft.Graph.Storage.FileStorage.Containers.Item.RecycleBin;
+using Microsoft.Graph.Storage.FileStorage.Containers.Item.Restore;
+using Microsoft.Graph.Storage.FileStorage.Containers.Item.Unlock;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -32,6 +36,11 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item
         {
             get => new global::Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive.DriveRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the lock method.</summary>
+        public global::Microsoft.Graph.Storage.FileStorage.Containers.Item.Lock.LockRequestBuilder Lock
+        {
+            get => new global::Microsoft.Graph.Storage.FileStorage.Containers.Item.Lock.LockRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the permanentDelete method.</summary>
         public global::Microsoft.Graph.Storage.FileStorage.Containers.Item.PermanentDelete.PermanentDeleteRequestBuilder PermanentDelete
         {
@@ -41,6 +50,21 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item
         public global::Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.PermissionsRequestBuilder Permissions
         {
             get => new global::Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.PermissionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the recycleBin property of the microsoft.graph.fileStorageContainer entity.</summary>
+        public global::Microsoft.Graph.Storage.FileStorage.Containers.Item.RecycleBin.RecycleBinRequestBuilder RecycleBin
+        {
+            get => new global::Microsoft.Graph.Storage.FileStorage.Containers.Item.RecycleBin.RecycleBinRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the restore method.</summary>
+        public global::Microsoft.Graph.Storage.FileStorage.Containers.Item.Restore.RestoreRequestBuilder Restore
+        {
+            get => new global::Microsoft.Graph.Storage.FileStorage.Containers.Item.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the unlock method.</summary>
+        public global::Microsoft.Graph.Storage.FileStorage.Containers.Item.Unlock.UnlockRequestBuilder Unlock
+        {
+            get => new global::Microsoft.Graph.Storage.FileStorage.Containers.Item.Unlock.UnlockRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Storage.FileStorage.Containers.Item.FileStorageContainerItemRequestBuilder"/> and sets the default values.

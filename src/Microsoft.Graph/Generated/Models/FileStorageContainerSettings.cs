@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The isItemVersioningEnabled property</summary>
+        /// <summary>Indicates whether versioning is enabled for items in the container. Optional. Read-write.</summary>
         public bool? IsItemVersioningEnabled
         {
             get { return BackingStore?.Get<bool?>("isItemVersioningEnabled"); }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("isOcrEnabled"); }
             set { BackingStore?.Set("isOcrEnabled", value); }
         }
-        /// <summary>The itemMajorVersionLimit property</summary>
+        /// <summary>The maximum major versions allowed for items in the container. Optional. Read-write.</summary>
         public int? ItemMajorVersionLimit
         {
             get { return BackingStore?.Get<int?>("itemMajorVersionLimit"); }

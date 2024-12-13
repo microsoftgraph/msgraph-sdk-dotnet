@@ -28,6 +28,12 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("draftOpenShift", value); }
         }
 #endif
+        /// <summary>The openShift is marked for deletion, a process that is finalized when the schedule is shared.</summary>
+        public bool? IsStagedForDeletion
+        {
+            get { return BackingStore?.Get<bool?>("isStagedForDeletion"); }
+            set { BackingStore?.Set("isStagedForDeletion", value); }
+        }
         /// <summary>The ID of the schedulingGroup that contains the openShift.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -86,6 +92,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "draftOpenShift", n => { DraftOpenShift = n.GetObjectValue<global::Microsoft.Graph.Models.OpenShiftItem>(global::Microsoft.Graph.Models.OpenShiftItem.CreateFromDiscriminatorValue); } },
+                { "isStagedForDeletion", n => { IsStagedForDeletion = n.GetBoolValue(); } },
                 { "schedulingGroupId", n => { SchedulingGroupId = n.GetStringValue(); } },
                 { "sharedOpenShift", n => { SharedOpenShift = n.GetObjectValue<global::Microsoft.Graph.Models.OpenShiftItem>(global::Microsoft.Graph.Models.OpenShiftItem.CreateFromDiscriminatorValue); } },
             };
@@ -99,6 +106,7 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.OpenShiftItem>("draftOpenShift", DraftOpenShift);
+            writer.WriteBoolValue("isStagedForDeletion", IsStagedForDeletion);
             writer.WriteStringValue("schedulingGroupId", SchedulingGroupId);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.OpenShiftItem>("sharedOpenShift", SharedOpenShift);
         }

@@ -3,6 +3,7 @@
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Storage.FileStorage.Containers;
+using Microsoft.Graph.Storage.FileStorage.DeletedContainers;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -23,6 +24,11 @@ namespace Microsoft.Graph.Storage.FileStorage
         public global::Microsoft.Graph.Storage.FileStorage.Containers.ContainersRequestBuilder Containers
         {
             get => new global::Microsoft.Graph.Storage.FileStorage.Containers.ContainersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the deletedContainers property of the microsoft.graph.fileStorage entity.</summary>
+        public global::Microsoft.Graph.Storage.FileStorage.DeletedContainers.DeletedContainersRequestBuilder DeletedContainers
+        {
+            get => new global::Microsoft.Graph.Storage.FileStorage.DeletedContainers.DeletedContainersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Storage.FileStorage.FileStorageRequestBuilder"/> and sets the default values.

@@ -28,6 +28,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("containers", value); }
         }
 #endif
+        /// <summary>The deletedContainers property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.FileStorageContainer>? DeletedContainers
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.FileStorageContainer>?>("deletedContainers"); }
+            set { BackingStore?.Set("deletedContainers", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.FileStorageContainer> DeletedContainers
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.FileStorageContainer>>("deletedContainers"); }
+            set { BackingStore?.Set("deletedContainers", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,6 +63,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "containers", n => { Containers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.FileStorageContainer>(global::Microsoft.Graph.Models.FileStorageContainer.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "deletedContainers", n => { DeletedContainers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.FileStorageContainer>(global::Microsoft.Graph.Models.FileStorageContainer.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -58,6 +75,7 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.FileStorageContainer>("containers", Containers);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.FileStorageContainer>("deletedContainers", DeletedContainers);
         }
     }
 }

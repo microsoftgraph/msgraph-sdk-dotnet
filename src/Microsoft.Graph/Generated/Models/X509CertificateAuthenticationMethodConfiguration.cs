@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("certificateUserBindings", value); }
         }
 #endif
+        /// <summary>The crlValidationConfiguration property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.X509CertificateCRLValidationConfiguration? CrlValidationConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.X509CertificateCRLValidationConfiguration?>("crlValidationConfiguration"); }
+            set { BackingStore?.Set("crlValidationConfiguration", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.X509CertificateCRLValidationConfiguration CrlValidationConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.X509CertificateCRLValidationConfiguration>("crlValidationConfiguration"); }
+            set { BackingStore?.Set("crlValidationConfiguration", value); }
+        }
+#endif
         /// <summary>A collection of groups that are enabled to use the authentication method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,6 +103,7 @@ namespace Microsoft.Graph.Models
             {
                 { "authenticationModeConfiguration", n => { AuthenticationModeConfiguration = n.GetObjectValue<global::Microsoft.Graph.Models.X509CertificateAuthenticationModeConfiguration>(global::Microsoft.Graph.Models.X509CertificateAuthenticationModeConfiguration.CreateFromDiscriminatorValue); } },
                 { "certificateUserBindings", n => { CertificateUserBindings = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.X509CertificateUserBinding>(global::Microsoft.Graph.Models.X509CertificateUserBinding.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "crlValidationConfiguration", n => { CrlValidationConfiguration = n.GetObjectValue<global::Microsoft.Graph.Models.X509CertificateCRLValidationConfiguration>(global::Microsoft.Graph.Models.X509CertificateCRLValidationConfiguration.CreateFromDiscriminatorValue); } },
                 { "includeTargets", n => { IncludeTargets = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AuthenticationMethodTarget>(global::Microsoft.Graph.Models.AuthenticationMethodTarget.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -100,6 +117,7 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.X509CertificateAuthenticationModeConfiguration>("authenticationModeConfiguration", AuthenticationModeConfiguration);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.X509CertificateUserBinding>("certificateUserBindings", CertificateUserBindings);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.X509CertificateCRLValidationConfiguration>("crlValidationConfiguration", CrlValidationConfiguration);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AuthenticationMethodTarget>("includeTargets", IncludeTargets);
         }
     }

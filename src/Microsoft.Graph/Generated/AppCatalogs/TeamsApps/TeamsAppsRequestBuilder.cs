@@ -54,7 +54,7 @@ namespace Microsoft.Graph.AppCatalogs.TeamsApps
         {
         }
         /// <summary>
-        /// List apps from the Microsoft Teams app catalog.This includes apps from the Microsoft Teams store and apps from your organization&apos;s app catalog (the tenant app catalog). To get apps from your organization&apos;s app catalog only, specify organization as the distributionMethod in the request.
+        /// List apps from the Microsoft Teams app catalog, including apps from the Microsoft Teams store and apps from your organization&apos;s app catalog (the tenant app catalog). To get apps from your organization&apos;s app catalog only, specify organization as the distributionMethod in the request.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/appcatalogs-list-teamsapps?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.TeamsAppCollectionResponse"/></returns>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.AppCatalogs.TeamsApps
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.TeamsApp>(requestInfo, global::Microsoft.Graph.Models.TeamsApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List apps from the Microsoft Teams app catalog.This includes apps from the Microsoft Teams store and apps from your organization&apos;s app catalog (the tenant app catalog). To get apps from your organization&apos;s app catalog only, specify organization as the distributionMethod in the request.
+        /// List apps from the Microsoft Teams app catalog, including apps from the Microsoft Teams store and apps from your organization&apos;s app catalog (the tenant app catalog). To get apps from your organization&apos;s app catalog only, specify organization as the distributionMethod in the request.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.AppCatalogs.TeamsApps
             return new global::Microsoft.Graph.AppCatalogs.TeamsApps.TeamsAppsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List apps from the Microsoft Teams app catalog.This includes apps from the Microsoft Teams store and apps from your organization&apos;s app catalog (the tenant app catalog). To get apps from your organization&apos;s app catalog only, specify organization as the distributionMethod in the request.
+        /// List apps from the Microsoft Teams app catalog, including apps from the Microsoft Teams store and apps from your organization&apos;s app catalog (the tenant app catalog). To get apps from your organization&apos;s app catalog only, specify organization as the distributionMethod in the request.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TeamsAppsRequestBuilderGetQueryParameters 

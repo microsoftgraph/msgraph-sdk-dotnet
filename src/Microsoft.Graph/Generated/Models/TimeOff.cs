@@ -28,6 +28,12 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("draftTimeOff", value); }
         }
 #endif
+        /// <summary>The timeOff is marked for deletion, a process that is finalized when the schedule is shared.</summary>
+        public bool? IsStagedForDeletion
+        {
+            get { return BackingStore?.Get<bool?>("isStagedForDeletion"); }
+            set { BackingStore?.Set("isStagedForDeletion", value); }
+        }
         /// <summary>The shared version of this timeOff that is viewable by both employees and managers. Updates to the sharedTimeOff property send notifications to users in the Teams client. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -86,6 +92,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "draftTimeOff", n => { DraftTimeOff = n.GetObjectValue<global::Microsoft.Graph.Models.TimeOffItem>(global::Microsoft.Graph.Models.TimeOffItem.CreateFromDiscriminatorValue); } },
+                { "isStagedForDeletion", n => { IsStagedForDeletion = n.GetBoolValue(); } },
                 { "sharedTimeOff", n => { SharedTimeOff = n.GetObjectValue<global::Microsoft.Graph.Models.TimeOffItem>(global::Microsoft.Graph.Models.TimeOffItem.CreateFromDiscriminatorValue); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
             };
@@ -99,6 +106,7 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.TimeOffItem>("draftTimeOff", DraftTimeOff);
+            writer.WriteBoolValue("isStagedForDeletion", IsStagedForDeletion);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.TimeOffItem>("sharedTimeOff", SharedTimeOff);
             writer.WriteStringValue("userId", UserId);
         }
