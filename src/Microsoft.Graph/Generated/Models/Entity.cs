@@ -658,6 +658,8 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.provisioningObjectSummary" => new global::Microsoft.Graph.Models.ProvisioningObjectSummary(),
                 "#microsoft.graph.rbacApplication" => new global::Microsoft.Graph.Models.RbacApplication(),
                 "#microsoft.graph.recordOperation" => new global::Microsoft.Graph.Models.RecordOperation(),
+                "#microsoft.graph.recycleBin" => new global::Microsoft.Graph.Models.RecycleBin(),
+                "#microsoft.graph.recycleBinItem" => new global::Microsoft.Graph.Models.RecycleBinItem(),
                 "#microsoft.graph.referenceAttachment" => new global::Microsoft.Graph.Models.ReferenceAttachment(),
                 "#microsoft.graph.relyingPartyDetailedSummary" => new global::Microsoft.Graph.Models.RelyingPartyDetailedSummary(),
                 "#microsoft.graph.remoteAssistancePartner" => new global::Microsoft.Graph.Models.RemoteAssistancePartner(),

@@ -56,6 +56,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("nextSigningCertificate", value); }
         }
 #endif
+        /// <summary>The passwordResetUri property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PasswordResetUri
+        {
+            get { return BackingStore?.Get<string?>("passwordResetUri"); }
+            set { BackingStore?.Set("passwordResetUri", value); }
+        }
+#nullable restore
+#else
+        public string PasswordResetUri
+        {
+            get { return BackingStore?.Get<string>("passwordResetUri"); }
+            set { BackingStore?.Set("passwordResetUri", value); }
+        }
+#endif
         /// <summary>Sets the preferred behavior for the sign-in prompt. The possible values are: translateToFreshPasswordAuthentication, nativeSupport, disabled, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.PromptLoginBehavior? PromptLoginBehavior
         {
@@ -123,6 +139,7 @@ namespace Microsoft.Graph.Models
                 { "federatedIdpMfaBehavior", n => { FederatedIdpMfaBehavior = n.GetEnumValue<global::Microsoft.Graph.Models.FederatedIdpMfaBehavior>(); } },
                 { "isSignedAuthenticationRequestRequired", n => { IsSignedAuthenticationRequestRequired = n.GetBoolValue(); } },
                 { "nextSigningCertificate", n => { NextSigningCertificate = n.GetStringValue(); } },
+                { "passwordResetUri", n => { PasswordResetUri = n.GetStringValue(); } },
                 { "promptLoginBehavior", n => { PromptLoginBehavior = n.GetEnumValue<global::Microsoft.Graph.Models.PromptLoginBehavior>(); } },
                 { "signOutUri", n => { SignOutUri = n.GetStringValue(); } },
                 { "signingCertificateUpdateStatus", n => { SigningCertificateUpdateStatus = n.GetObjectValue<global::Microsoft.Graph.Models.SigningCertificateUpdateStatus>(global::Microsoft.Graph.Models.SigningCertificateUpdateStatus.CreateFromDiscriminatorValue); } },
@@ -140,6 +157,7 @@ namespace Microsoft.Graph.Models
             writer.WriteEnumValue<global::Microsoft.Graph.Models.FederatedIdpMfaBehavior>("federatedIdpMfaBehavior", FederatedIdpMfaBehavior);
             writer.WriteBoolValue("isSignedAuthenticationRequestRequired", IsSignedAuthenticationRequestRequired);
             writer.WriteStringValue("nextSigningCertificate", NextSigningCertificate);
+            writer.WriteStringValue("passwordResetUri", PasswordResetUri);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.PromptLoginBehavior>("promptLoginBehavior", PromptLoginBehavior);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.SigningCertificateUpdateStatus>("signingCertificateUpdateStatus", SigningCertificateUpdateStatus);
             writer.WriteStringValue("signOutUri", SignOutUri);

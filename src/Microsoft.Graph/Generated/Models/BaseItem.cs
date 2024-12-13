@@ -184,6 +184,8 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.driveItem" => new global::Microsoft.Graph.Models.DriveItem(),
                 "#microsoft.graph.list" => new global::Microsoft.Graph.Models.List(),
                 "#microsoft.graph.listItem" => new global::Microsoft.Graph.Models.ListItem(),
+                "#microsoft.graph.recycleBin" => new global::Microsoft.Graph.Models.RecycleBin(),
+                "#microsoft.graph.recycleBinItem" => new global::Microsoft.Graph.Models.RecycleBinItem(),
                 "#microsoft.graph.sharedDriveItem" => new global::Microsoft.Graph.Models.SharedDriveItem(),
                 "#microsoft.graph.site" => new global::Microsoft.Graph.Models.Site(),
                 "#microsoft.graph.sitePage" => new global::Microsoft.Graph.Models.SitePage(),

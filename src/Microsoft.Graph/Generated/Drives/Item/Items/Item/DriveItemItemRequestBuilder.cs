@@ -12,6 +12,7 @@ using Microsoft.Graph.Drives.Item.Items.Item.CreateUploadSession;
 using Microsoft.Graph.Drives.Item.Items.Item.CreatedByUser;
 using Microsoft.Graph.Drives.Item.Items.Item.Delta;
 using Microsoft.Graph.Drives.Item.Items.Item.DeltaWithToken;
+using Microsoft.Graph.Drives.Item.Items.Item.DiscardCheckout;
 using Microsoft.Graph.Drives.Item.Items.Item.ExtractSensitivityLabels;
 using Microsoft.Graph.Drives.Item.Items.Item.Follow;
 using Microsoft.Graph.Drives.Item.Items.Item.GetActivitiesByInterval;
@@ -103,6 +104,11 @@ namespace Microsoft.Graph.Drives.Item.Items.Item
         public global::Microsoft.Graph.Drives.Item.Items.Item.Delta.DeltaRequestBuilder Delta
         {
             get => new global::Microsoft.Graph.Drives.Item.Items.Item.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the discardCheckout method.</summary>
+        public global::Microsoft.Graph.Drives.Item.Items.Item.DiscardCheckout.DiscardCheckoutRequestBuilder DiscardCheckout
+        {
+            get => new global::Microsoft.Graph.Drives.Item.Items.Item.DiscardCheckout.DiscardCheckoutRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the extractSensitivityLabels method.</summary>
         public global::Microsoft.Graph.Drives.Item.Items.Item.ExtractSensitivityLabels.ExtractSensitivityLabelsRequestBuilder ExtractSensitivityLabels

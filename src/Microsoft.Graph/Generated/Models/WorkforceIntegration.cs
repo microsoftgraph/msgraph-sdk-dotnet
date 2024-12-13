@@ -34,6 +34,12 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>Support to view eligibility-filtered results. Possible values are: none, swapRequest, offerShiftRequest, unknownFutureValue, timeOffReason. You must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: timeOffReason.</summary>
+        public global::Microsoft.Graph.Models.EligibilityFilteringEnabledEntities? EligibilityFilteringEnabledEntities
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.EligibilityFilteringEnabledEntities?>("eligibilityFilteringEnabledEntities"); }
+            set { BackingStore?.Set("eligibilityFilteringEnabledEntities", value); }
+        }
         /// <summary>The workforce integration encryption resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -105,6 +111,7 @@ namespace Microsoft.Graph.Models
             {
                 { "apiVersion", n => { ApiVersion = n.GetIntValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "eligibilityFilteringEnabledEntities", n => { EligibilityFilteringEnabledEntities = n.GetEnumValue<global::Microsoft.Graph.Models.EligibilityFilteringEnabledEntities>(); } },
                 { "encryption", n => { Encryption = n.GetObjectValue<global::Microsoft.Graph.Models.WorkforceIntegrationEncryption>(global::Microsoft.Graph.Models.WorkforceIntegrationEncryption.CreateFromDiscriminatorValue); } },
                 { "isActive", n => { IsActive = n.GetBoolValue(); } },
                 { "supportedEntities", n => { SupportedEntities = n.GetEnumValue<global::Microsoft.Graph.Models.WorkforceIntegrationSupportedEntities>(); } },
@@ -121,6 +128,7 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteIntValue("apiVersion", ApiVersion);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteEnumValue<global::Microsoft.Graph.Models.EligibilityFilteringEnabledEntities>("eligibilityFilteringEnabledEntities", EligibilityFilteringEnabledEntities);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.WorkforceIntegrationEncryption>("encryption", Encryption);
             writer.WriteBoolValue("isActive", IsActive);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.WorkforceIntegrationSupportedEntities>("supportedEntities", SupportedEntities);

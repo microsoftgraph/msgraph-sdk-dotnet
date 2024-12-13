@@ -88,6 +88,12 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("drive", value); }
         }
 #endif
+        /// <summary>Indicates the lock state of the fileStorageContainer. The possible values are unlocked and lockedReadOnly. Read-only.</summary>
+        public global::Microsoft.Graph.Models.SiteLockState? LockState
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.SiteLockState?>("lockState"); }
+            set { BackingStore?.Set("lockState", value); }
+        }
         /// <summary>The set of permissions for users in the fileStorageContainer. Permission for each user is set by the roles property. The possible values are: reader, writer, manager, and owner. Read-write.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,6 +108,22 @@ namespace Microsoft.Graph.Models
         {
             get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Permission>>("permissions"); }
             set { BackingStore?.Set("permissions", value); }
+        }
+#endif
+        /// <summary>Recycle bin of the fileStorageContainer. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.RecycleBin? RecycleBin
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.RecycleBin?>("recycleBin"); }
+            set { BackingStore?.Set("recycleBin", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.RecycleBin RecycleBin
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.RecycleBin>("recycleBin"); }
+            set { BackingStore?.Set("recycleBin", value); }
         }
 #endif
         /// <summary>The settings property</summary>
@@ -166,7 +188,9 @@ namespace Microsoft.Graph.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "drive", n => { Drive = n.GetObjectValue<global::Microsoft.Graph.Models.Drive>(global::Microsoft.Graph.Models.Drive.CreateFromDiscriminatorValue); } },
+                { "lockState", n => { LockState = n.GetEnumValue<global::Microsoft.Graph.Models.SiteLockState>(); } },
                 { "permissions", n => { Permissions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Permission>(global::Microsoft.Graph.Models.Permission.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "recycleBin", n => { RecycleBin = n.GetObjectValue<global::Microsoft.Graph.Models.RecycleBin>(global::Microsoft.Graph.Models.RecycleBin.CreateFromDiscriminatorValue); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Models.FileStorageContainerSettings>(global::Microsoft.Graph.Models.FileStorageContainerSettings.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Microsoft.Graph.Models.FileStorageContainerStatus>(); } },
                 { "viewpoint", n => { Viewpoint = n.GetObjectValue<global::Microsoft.Graph.Models.FileStorageContainerViewpoint>(global::Microsoft.Graph.Models.FileStorageContainerViewpoint.CreateFromDiscriminatorValue); } },
@@ -186,7 +210,9 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Drive>("drive", Drive);
+            writer.WriteEnumValue<global::Microsoft.Graph.Models.SiteLockState>("lockState", LockState);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Permission>("permissions", Permissions);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.RecycleBin>("recycleBin", RecycleBin);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.FileStorageContainerSettings>("settings", Settings);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.FileStorageContainerStatus>("status", Status);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.FileStorageContainerViewpoint>("viewpoint", Viewpoint);
