@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("channels", value); }
         }
 #endif
-        /// <summary>An optional label. Typically describes the data or business sensitivity of the team. Must match one of a pre-configured set in the tenant&apos;s directory.</summary>
+        /// <summary>An optional label. Typically describes the data or business sensitivity of the team. Must match one of a preconfigured set in the tenant&apos;s directory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Classification
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>An optional description for the team. Maximum length: 1024 characters.</summary>
+        /// <summary>An optional description for the team. Maximum length: 1,024 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description
@@ -178,7 +178,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("installedApps", value); }
         }
 #endif
-        /// <summary>A unique ID for the team that has been used in a few places such as the audit log/Office 365 Management Activity API.</summary>
+        /// <summary>A unique ID for the team that was used in a few places such as the audit log/Office 365 Management Activity API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InternalId
@@ -328,7 +328,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("schedule", value); }
         }
 #endif
-        /// <summary>Optional. Indicates whether the team is intended for a particular use case.  Each team specialization has access to unique behaviors and experiences targeted to its use case.</summary>
+        /// <summary>Optional. Indicates whether the team is intended for a particular use case. Each team specialization has access to unique behaviors and experiences targeted to its use case.</summary>
         public global::Microsoft.Graph.Models.TeamSpecialization? Specialization
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.TeamSpecialization?>("specialization"); }
@@ -404,7 +404,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.TeamVisibilityType?>("visibility"); }
             set { BackingStore?.Set("visibility", value); }
         }
-        /// <summary>A hyperlink that will go to the team in the Microsoft Teams client. This is the URL that you get when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.</summary>
+        /// <summary>A hyperlink that goes to the team in the Microsoft Teams client. You get this URL when you right-click a team in the Microsoft Teams client and select Get link to team. This URL should be treated as an opaque blob, and not parsed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WebUrl
