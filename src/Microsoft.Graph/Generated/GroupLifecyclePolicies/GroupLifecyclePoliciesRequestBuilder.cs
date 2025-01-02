@@ -78,7 +78,7 @@ namespace Microsoft.Graph.GroupLifecyclePolicies
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.GroupLifecyclePolicyCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.GroupLifecyclePolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new groupLifecyclePolicy.
+        /// Creates a new groupLifecyclePolicy. Only one policy exists in the tenant.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/grouplifecyclepolicy-post-grouplifecyclepolicies?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.GroupLifecyclePolicy"/></returns>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.GroupLifecyclePolicies
             return requestInfo;
         }
         /// <summary>
-        /// Creates a new groupLifecyclePolicy.
+        /// Creates a new groupLifecyclePolicy. Only one policy exists in the tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

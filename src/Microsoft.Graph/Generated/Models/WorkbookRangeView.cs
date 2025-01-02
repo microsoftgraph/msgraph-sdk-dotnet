@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<int?>("rowCount"); }
             set { BackingStore?.Set("rowCount", value); }
         }
-        /// <summary>The collection of range views associated with the range. Read-only. Read-only.</summary>
+        /// <summary>The collection of range views associated with the range. Read-only.Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.WorkbookRangeView>? Rows

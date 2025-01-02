@@ -3,6 +3,7 @@
 using Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.Members.Add;
 using Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.Members.Count;
 using Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.Members.Item;
+using Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.Members.Remove;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -30,6 +31,11 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.Members
         public global::Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.Members.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.Members.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the remove method.</summary>
+        public global::Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.Members.Remove.RemoveRequestBuilder Remove
+        {
+            get => new global::Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.Members.Remove.RemoveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the members property of the microsoft.graph.channel entity.</summary>
         /// <param name="position">The unique identifier of conversationMember</param>

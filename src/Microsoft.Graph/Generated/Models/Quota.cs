@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Total space remaining before reaching the quota limit, in bytes. Read-only.</summary>
+        /// <summary>Total space remaining before reaching the capacity limit, in bytes. Read-only.</summary>
         public long? Remaining
         {
             get { return BackingStore?.Get<long?>("remaining"); }

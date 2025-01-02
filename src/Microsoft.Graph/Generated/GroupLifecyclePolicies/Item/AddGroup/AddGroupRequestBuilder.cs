@@ -34,7 +34,7 @@ namespace Microsoft.Graph.GroupLifecyclePolicies.Item.AddGroup
         {
         }
         /// <summary>
-        /// Adds specific groups to a lifecycle policy. This action limits the group lifecycle policy to a set of groups only if the managedGroupTypes property of groupLifecyclePolicy is set to Selected.
+        /// Add a group to a groupLifecyclePolicy. This action is supported only if the managedGroupTypes property of the policy is set to Selected.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/grouplifecyclepolicy-addgroup?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.GroupLifecyclePolicies.Item.AddGroup.AddGroupPostResponse"/></returns>
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.GroupLifecyclePolicies.Item.AddGroup
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.GroupLifecyclePolicies.Item.AddGroup.AddGroupPostResponse>(requestInfo, global::Microsoft.Graph.GroupLifecyclePolicies.Item.AddGroup.AddGroupPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Adds specific groups to a lifecycle policy. This action limits the group lifecycle policy to a set of groups only if the managedGroupTypes property of groupLifecyclePolicy is set to Selected.
+        /// Add a group to a groupLifecyclePolicy. This action is supported only if the managedGroupTypes property of the policy is set to Selected.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/grouplifecyclepolicy-addgroup?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.GroupLifecyclePolicies.Item.AddGroup.AddGroupResponse"/></returns>
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.GroupLifecyclePolicies.Item.AddGroup
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.GroupLifecyclePolicies.Item.AddGroup.AddGroupResponse>(requestInfo, global::Microsoft.Graph.GroupLifecyclePolicies.Item.AddGroup.AddGroupResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Adds specific groups to a lifecycle policy. This action limits the group lifecycle policy to a set of groups only if the managedGroupTypes property of groupLifecyclePolicy is set to Selected.
+        /// Add a group to a groupLifecyclePolicy. This action is supported only if the managedGroupTypes property of the policy is set to Selected.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
