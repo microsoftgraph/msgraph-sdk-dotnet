@@ -35,8 +35,8 @@ namespace Microsoft.Graph.Communications.Calls.Item.Participants.Invite
         {
         }
         /// <summary>
-        /// Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled. 
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/participant-delete?view=graph-rest-1.0" />
+        /// Invite participants to the active call. For more information about how to handle operations, see commsOperation.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/participant-invite?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.InviteParticipantsOperation"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.Participants.Invite
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.InviteParticipantsOperation>(requestInfo, global::Microsoft.Graph.Models.InviteParticipantsOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a specific participant in a call. In some situations, it is appropriate for an application to remove a participant from an active call. This action can be done before or after the participant answers the call. When an active caller is removed, they are immediately dropped from the call with no pre- or post-removal notification. When an invited participant is removed, any outstanding add participant request is canceled. 
+        /// Invite participants to the active call. For more information about how to handle operations, see commsOperation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
