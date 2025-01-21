@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class ChatMessageMentionedIdentitySet : global::Microsoft.Graph.Models.IdentitySet, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>If present, represents a conversation (for example, team or channel) @mentioned in a message.</summary>
+        /// <summary>If present, represents a conversation (for example, team, channel, or chat) @mentioned in a message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.TeamworkConversationIdentity? Conversation

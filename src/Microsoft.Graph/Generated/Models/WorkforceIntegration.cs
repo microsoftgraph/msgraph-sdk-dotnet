@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Support to view eligibility-filtered results. Possible values are: none, swapRequest, offerShiftRequest, unknownFutureValue, timeOffReason. You must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: timeOffReason.</summary>
+        /// <summary>Support to view eligibility-filtered results. Possible values are: none, swapRequest, offerShiftRequest, unknownFutureValue, timeOffReason. Use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: timeOffReason.</summary>
         public global::Microsoft.Graph.Models.EligibilityFilteringEnabledEntities? EligibilityFilteringEnabledEntities
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.EligibilityFilteringEnabledEntities?>("eligibilityFilteringEnabledEntities"); }
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("isActive"); }
             set { BackingStore?.Set("isActive", value); }
         }
-        /// <summary>The Shifts entities supported for synchronous change notifications. Shifts call back to the provided URL when client changes occur to the entities specified in this property. By default, no entities are supported for change notifications. Possible values are: none, shift, swapRequest, userShiftPreferences, openShift, openShiftRequest, offerShiftRequest, unknownFutureValue, timeOffReason, timeOff, timeOffRequest. You must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: timeOffReason, timeOff, timeOffRequest.</summary>
+        /// <summary>The Shifts entities supported for synchronous change notifications. Shifts call back to the provided URL when client changes occur to the entities specified in this property. By default, no entities are supported for change notifications. Possible values are: none, shift, swapRequest, userShiftPreferences, openShift, openShiftRequest, offerShiftRequest, unknownFutureValue, timeOffReason, timeOff, timeOffRequest. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: timeOffReason, timeOff, timeOffRequest.</summary>
         public global::Microsoft.Graph.Models.WorkforceIntegrationSupportedEntities? SupportedEntities
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.WorkforceIntegrationSupportedEntities?>("supportedEntities"); }

@@ -42,11 +42,23 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("allowParticipantsToChangeName"); }
             set { BackingStore?.Set("allowParticipantsToChangeName", value); }
         }
+        /// <summary>Indicates whether recording is enabled for the meeting.</summary>
+        public bool? AllowRecording
+        {
+            get { return BackingStore?.Get<bool?>("allowRecording"); }
+            set { BackingStore?.Set("allowRecording", value); }
+        }
         /// <summary>Indicates if Teams reactions are enabled for the meeting.</summary>
         public bool? AllowTeamworkReactions
         {
             get { return BackingStore?.Get<bool?>("allowTeamworkReactions"); }
             set { BackingStore?.Set("allowTeamworkReactions", value); }
+        }
+        /// <summary>Indicates whether transcription is enabled for the meeting.</summary>
+        public bool? AllowTranscription
+        {
+            get { return BackingStore?.Get<bool?>("allowTranscription"); }
+            set { BackingStore?.Set("allowTranscription", value); }
         }
         /// <summary>The attendance reports of an online meeting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -94,6 +106,22 @@ namespace Microsoft.Graph.Models
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.ChatInfo>("chatInfo"); }
             set { BackingStore?.Set("chatInfo", value); }
+        }
+#endif
+        /// <summary>The chatRestrictions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.ChatRestrictions? ChatRestrictions
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ChatRestrictions?>("chatRestrictions"); }
+            set { BackingStore?.Set("chatRestrictions", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.ChatRestrictions ChatRestrictions
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ChatRestrictions>("chatRestrictions"); }
+            set { BackingStore?.Set("chatRestrictions", value); }
         }
 #endif
         /// <summary>Indicates whether to announce when callers join or leave.</summary>
@@ -254,11 +282,14 @@ namespace Microsoft.Graph.Models
                 { "allowAttendeeToEnableMic", n => { AllowAttendeeToEnableMic = n.GetBoolValue(); } },
                 { "allowMeetingChat", n => { AllowMeetingChat = n.GetEnumValue<global::Microsoft.Graph.Models.MeetingChatMode>(); } },
                 { "allowParticipantsToChangeName", n => { AllowParticipantsToChangeName = n.GetBoolValue(); } },
+                { "allowRecording", n => { AllowRecording = n.GetBoolValue(); } },
                 { "allowTeamworkReactions", n => { AllowTeamworkReactions = n.GetBoolValue(); } },
+                { "allowTranscription", n => { AllowTranscription = n.GetBoolValue(); } },
                 { "allowedPresenters", n => { AllowedPresenters = n.GetEnumValue<global::Microsoft.Graph.Models.OnlineMeetingPresenters>(); } },
                 { "attendanceReports", n => { AttendanceReports = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.MeetingAttendanceReport>(global::Microsoft.Graph.Models.MeetingAttendanceReport.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "audioConferencing", n => { AudioConferencing = n.GetObjectValue<global::Microsoft.Graph.Models.AudioConferencing>(global::Microsoft.Graph.Models.AudioConferencing.CreateFromDiscriminatorValue); } },
                 { "chatInfo", n => { ChatInfo = n.GetObjectValue<global::Microsoft.Graph.Models.ChatInfo>(global::Microsoft.Graph.Models.ChatInfo.CreateFromDiscriminatorValue); } },
+                { "chatRestrictions", n => { ChatRestrictions = n.GetObjectValue<global::Microsoft.Graph.Models.ChatRestrictions>(global::Microsoft.Graph.Models.ChatRestrictions.CreateFromDiscriminatorValue); } },
                 { "isEntryExitAnnounced", n => { IsEntryExitAnnounced = n.GetBoolValue(); } },
                 { "joinInformation", n => { JoinInformation = n.GetObjectValue<global::Microsoft.Graph.Models.ItemBody>(global::Microsoft.Graph.Models.ItemBody.CreateFromDiscriminatorValue); } },
                 { "joinMeetingIdSettings", n => { JoinMeetingIdSettings = n.GetObjectValue<global::Microsoft.Graph.Models.JoinMeetingIdSettings>(global::Microsoft.Graph.Models.JoinMeetingIdSettings.CreateFromDiscriminatorValue); } },
@@ -284,10 +315,13 @@ namespace Microsoft.Graph.Models
             writer.WriteEnumValue<global::Microsoft.Graph.Models.OnlineMeetingPresenters>("allowedPresenters", AllowedPresenters);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.MeetingChatMode>("allowMeetingChat", AllowMeetingChat);
             writer.WriteBoolValue("allowParticipantsToChangeName", AllowParticipantsToChangeName);
+            writer.WriteBoolValue("allowRecording", AllowRecording);
             writer.WriteBoolValue("allowTeamworkReactions", AllowTeamworkReactions);
+            writer.WriteBoolValue("allowTranscription", AllowTranscription);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.MeetingAttendanceReport>("attendanceReports", AttendanceReports);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.AudioConferencing>("audioConferencing", AudioConferencing);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ChatInfo>("chatInfo", ChatInfo);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.ChatRestrictions>("chatRestrictions", ChatRestrictions);
             writer.WriteBoolValue("isEntryExitAnnounced", IsEntryExitAnnounced);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ItemBody>("joinInformation", JoinInformation);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.JoinMeetingIdSettings>("joinMeetingIdSettings", JoinMeetingIdSettings);

@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("members", value); }
         }
 #endif
-        /// <summary>The type of the channel. Can be set during creation and can&apos;t be changed. The possible values are: standard, private, unknownFutureValue, shared. The default value is standard. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: shared.</summary>
+        /// <summary>The type of the channel. Can be set during creation and can&apos;t be changed. The possible values are: standard, private, unknownFutureValue, shared. The default value is standard. Use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: shared.</summary>
         public global::Microsoft.Graph.Models.ChannelMembershipType? MembershipType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.ChannelMembershipType?>("membershipType"); }
