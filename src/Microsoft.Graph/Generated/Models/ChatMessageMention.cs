@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<int?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
-        /// <summary>The entity (user, application, team, or channel) that was @mentioned.</summary>
+        /// <summary>The entity (user, application, team, channel, or chat) that was @mentioned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.ChatMessageMentionedIdentitySet? Mentioned

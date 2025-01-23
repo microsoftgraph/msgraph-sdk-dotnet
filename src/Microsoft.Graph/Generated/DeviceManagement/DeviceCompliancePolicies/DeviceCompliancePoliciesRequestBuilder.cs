@@ -78,8 +78,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DeviceCompliancePolicyCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.DeviceCompliancePolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new windows10CompliancePolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10compliancepolicy-create?view=graph-rest-1.0" />
+        /// Create a new windows81CompliancePolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-windows81compliancepolicy-create?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DeviceCompliancePolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies
             return requestInfo;
         }
         /// <summary>
-        /// Create a new windows10CompliancePolicy object.
+        /// Create a new windows81CompliancePolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

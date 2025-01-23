@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("ccRecipients", value); }
         }
 #endif
-        /// <summary>Customized message body you want to send if you don&apos;t want the default message.</summary>
+        /// <summary>Customized message body you want to send if you don&apos;t want the default message. Only plain text is allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomizedMessageBody

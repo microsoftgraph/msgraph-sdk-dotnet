@@ -40,6 +40,12 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("installedApps", value); }
         }
 #endif
+        /// <summary>Indicates whether the chat is hidden for all its members. Read-only.</summary>
+        public bool? IsHiddenForAllMembers
+        {
+            get { return BackingStore?.Get<bool?>("isHiddenForAllMembers"); }
+            set { BackingStore?.Set("isHiddenForAllMembers", value); }
+        }
         /// <summary>Preview of the last message sent in the chat. Null if no messages were sent in the chat. Currently, only the list chats operation supports this property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -243,6 +249,7 @@ namespace Microsoft.Graph.Models
                 { "chatType", n => { ChatType = n.GetEnumValue<global::Microsoft.Graph.Models.ChatType>(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "installedApps", n => { InstalledApps = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.TeamsAppInstallation>(global::Microsoft.Graph.Models.TeamsAppInstallation.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "isHiddenForAllMembers", n => { IsHiddenForAllMembers = n.GetBoolValue(); } },
                 { "lastMessagePreview", n => { LastMessagePreview = n.GetObjectValue<global::Microsoft.Graph.Models.ChatMessageInfo>(global::Microsoft.Graph.Models.ChatMessageInfo.CreateFromDiscriminatorValue); } },
                 { "lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "members", n => { Members = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ConversationMember>(global::Microsoft.Graph.Models.ConversationMember.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -268,6 +275,7 @@ namespace Microsoft.Graph.Models
             writer.WriteEnumValue<global::Microsoft.Graph.Models.ChatType>("chatType", ChatType);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.TeamsAppInstallation>("installedApps", InstalledApps);
+            writer.WriteBoolValue("isHiddenForAllMembers", IsHiddenForAllMembers);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ChatMessageInfo>("lastMessagePreview", LastMessagePreview);
             writer.WriteDateTimeOffsetValue("lastUpdatedDateTime", LastUpdatedDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ConversationMember>("members", Members);

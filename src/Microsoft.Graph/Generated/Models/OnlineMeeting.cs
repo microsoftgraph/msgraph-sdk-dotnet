@@ -78,6 +78,22 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("isBroadcast"); }
             set { BackingStore?.Set("isBroadcast", value); }
         }
+        /// <summary>The ID of the meeting template.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MeetingTemplateId
+        {
+            get { return BackingStore?.Get<string?>("meetingTemplateId"); }
+            set { BackingStore?.Set("meetingTemplateId", value); }
+        }
+#nullable restore
+#else
+        public string MeetingTemplateId
+        {
+            get { return BackingStore?.Get<string>("meetingTemplateId"); }
+            set { BackingStore?.Set("meetingTemplateId", value); }
+        }
+#endif
         /// <summary>The participants associated with the online meeting, including the organizer and the attendees.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -163,6 +179,7 @@ namespace Microsoft.Graph.Models
                 { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
                 { "externalId", n => { ExternalId = n.GetStringValue(); } },
                 { "isBroadcast", n => { IsBroadcast = n.GetBoolValue(); } },
+                { "meetingTemplateId", n => { MeetingTemplateId = n.GetStringValue(); } },
                 { "participants", n => { Participants = n.GetObjectValue<global::Microsoft.Graph.Models.MeetingParticipants>(global::Microsoft.Graph.Models.MeetingParticipants.CreateFromDiscriminatorValue); } },
                 { "recordings", n => { Recordings = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.CallRecording>(global::Microsoft.Graph.Models.CallRecording.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
@@ -183,6 +200,7 @@ namespace Microsoft.Graph.Models
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
             writer.WriteStringValue("externalId", ExternalId);
             writer.WriteBoolValue("isBroadcast", IsBroadcast);
+            writer.WriteStringValue("meetingTemplateId", MeetingTemplateId);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.MeetingParticipants>("participants", Participants);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.CallRecording>("recordings", Recordings);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);

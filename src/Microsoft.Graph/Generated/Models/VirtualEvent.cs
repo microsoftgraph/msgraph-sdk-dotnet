@@ -76,6 +76,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("endDateTime", value); }
         }
 #endif
+        /// <summary>The external information of a virtual event. Returned only for event organizers or coorganizers; otherwise, null.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.VirtualEventExternalInformation>? ExternalEventInformation
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.VirtualEventExternalInformation>?>("externalEventInformation"); }
+            set { BackingStore?.Set("externalEventInformation", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.VirtualEventExternalInformation> ExternalEventInformation
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.VirtualEventExternalInformation>>("externalEventInformation"); }
+            set { BackingStore?.Set("externalEventInformation", value); }
+        }
+#endif
         /// <summary>The virtual event presenters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -174,6 +190,7 @@ namespace Microsoft.Graph.Models
                 { "description", n => { Description = n.GetObjectValue<global::Microsoft.Graph.Models.ItemBody>(global::Microsoft.Graph.Models.ItemBody.CreateFromDiscriminatorValue); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "endDateTime", n => { EndDateTime = n.GetObjectValue<global::Microsoft.Graph.Models.DateTimeTimeZone>(global::Microsoft.Graph.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "externalEventInformation", n => { ExternalEventInformation = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.VirtualEventExternalInformation>(global::Microsoft.Graph.Models.VirtualEventExternalInformation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "presenters", n => { Presenters = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.VirtualEventPresenter>(global::Microsoft.Graph.Models.VirtualEventPresenter.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sessions", n => { Sessions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.VirtualEventSession>(global::Microsoft.Graph.Models.VirtualEventSession.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Models.VirtualEventSettings>(global::Microsoft.Graph.Models.VirtualEventSettings.CreateFromDiscriminatorValue); } },
@@ -193,6 +210,7 @@ namespace Microsoft.Graph.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ItemBody>("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.DateTimeTimeZone>("endDateTime", EndDateTime);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.VirtualEventExternalInformation>("externalEventInformation", ExternalEventInformation);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.VirtualEventPresenter>("presenters", Presenters);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.VirtualEventSession>("sessions", Sessions);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.VirtualEventSettings>("settings", Settings);

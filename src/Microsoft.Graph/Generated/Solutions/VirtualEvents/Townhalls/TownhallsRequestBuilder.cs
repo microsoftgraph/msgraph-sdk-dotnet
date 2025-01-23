@@ -3,6 +3,8 @@
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Solutions.VirtualEvents.Townhalls.Count;
+using Microsoft.Graph.Solutions.VirtualEvents.Townhalls.GetByUserIdAndRoleWithUserIdWithRole;
+using Microsoft.Graph.Solutions.VirtualEvents.Townhalls.GetByUserRoleWithRole;
 using Microsoft.Graph.Solutions.VirtualEvents.Townhalls.Item;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -75,6 +77,28 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Townhalls
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.VirtualEventTownhallCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.VirtualEventTownhallCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Provides operations to call the getByUserIdAndRole method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Solutions.VirtualEvents.Townhalls.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder"/></returns>
+        /// <param name="role">Usage: role=&apos;{role}&apos;</param>
+        /// <param name="userId">Usage: userId=&apos;{userId}&apos;</param>
+        public global::Microsoft.Graph.Solutions.VirtualEvents.Townhalls.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder GetByUserIdAndRoleWithUserIdWithRole(string role, string userId)
+        {
+            if(string.IsNullOrEmpty(role)) throw new ArgumentNullException(nameof(role));
+            if(string.IsNullOrEmpty(userId)) throw new ArgumentNullException(nameof(userId));
+            return new global::Microsoft.Graph.Solutions.VirtualEvents.Townhalls.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder(PathParameters, RequestAdapter, role, userId);
+        }
+        /// <summary>
+        /// Provides operations to call the getByUserRole method.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Solutions.VirtualEvents.Townhalls.GetByUserRoleWithRole.GetByUserRoleWithRoleRequestBuilder"/></returns>
+        /// <param name="role">Usage: role=&apos;{role}&apos;</param>
+        public global::Microsoft.Graph.Solutions.VirtualEvents.Townhalls.GetByUserRoleWithRole.GetByUserRoleWithRoleRequestBuilder GetByUserRoleWithRole(string role)
+        {
+            if(string.IsNullOrEmpty(role)) throw new ArgumentNullException(nameof(role));
+            return new global::Microsoft.Graph.Solutions.VirtualEvents.Townhalls.GetByUserRoleWithRole.GetByUserRoleWithRoleRequestBuilder(PathParameters, RequestAdapter, role);
         }
         /// <summary>
         /// Create a new virtualEventTownhall object in draft mode.
