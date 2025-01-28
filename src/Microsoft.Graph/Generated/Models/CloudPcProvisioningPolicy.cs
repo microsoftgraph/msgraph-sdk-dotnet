@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
+        /// <summary>The autopatch property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.CloudPcProvisioningPolicyAutopatch? Autopatch
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.CloudPcProvisioningPolicyAutopatch?>("autopatch"); }
+            set { BackingStore?.Set("autopatch", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.CloudPcProvisioningPolicyAutopatch Autopatch
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.CloudPcProvisioningPolicyAutopatch>("autopatch"); }
+            set { BackingStore?.Set("autopatch", value); }
+        }
+#endif
         /// <summary>The display name of the Cloud PC group that the Cloud PCs reside in. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -238,6 +254,7 @@ namespace Microsoft.Graph.Models
             {
                 { "alternateResourceUrl", n => { AlternateResourceUrl = n.GetStringValue(); } },
                 { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.CloudPcProvisioningPolicyAssignment>(global::Microsoft.Graph.Models.CloudPcProvisioningPolicyAssignment.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "autopatch", n => { Autopatch = n.GetObjectValue<global::Microsoft.Graph.Models.CloudPcProvisioningPolicyAutopatch>(global::Microsoft.Graph.Models.CloudPcProvisioningPolicyAutopatch.CreateFromDiscriminatorValue); } },
                 { "cloudPcGroupDisplayName", n => { CloudPcGroupDisplayName = n.GetStringValue(); } },
                 { "cloudPcNamingTemplate", n => { CloudPcNamingTemplate = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -264,6 +281,7 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteStringValue("alternateResourceUrl", AlternateResourceUrl);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.CloudPcProvisioningPolicyAssignment>("assignments", Assignments);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.CloudPcProvisioningPolicyAutopatch>("autopatch", Autopatch);
             writer.WriteStringValue("cloudPcGroupDisplayName", CloudPcGroupDisplayName);
             writer.WriteStringValue("cloudPcNamingTemplate", CloudPcNamingTemplate);
             writer.WriteStringValue("description", Description);

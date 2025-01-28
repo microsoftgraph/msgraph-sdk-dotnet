@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Me.CheckMemberObjects
         {
         }
         /// <summary>
-        /// Check for membership in a list of group IDs, administrative unit IDs, or directory role IDs, for the IDs of the specified user, group, service principal, organizational contact, device, or directory object. This method is transitive.
+        /// Check for membership in a list of group IDs, administrative unit IDs, or directory role IDs, for the IDs of the specified - user- group- service principal- organizational contact- device- directory object. This method is transitive.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Me.CheckMemberObjects.CheckMemberObjectsPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Me.CheckMemberObjects
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Me.CheckMemberObjects.CheckMemberObjectsPostResponse>(requestInfo, global::Microsoft.Graph.Me.CheckMemberObjects.CheckMemberObjectsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Check for membership in a list of group IDs, administrative unit IDs, or directory role IDs, for the IDs of the specified user, group, service principal, organizational contact, device, or directory object. This method is transitive.
+        /// Check for membership in a list of group IDs, administrative unit IDs, or directory role IDs, for the IDs of the specified - user- group- service principal- organizational contact- device- directory object. This method is transitive.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Me.CheckMemberObjects.CheckMemberObjectsResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Me.CheckMemberObjects
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Me.CheckMemberObjects.CheckMemberObjectsResponse>(requestInfo, global::Microsoft.Graph.Me.CheckMemberObjects.CheckMemberObjectsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Check for membership in a list of group IDs, administrative unit IDs, or directory role IDs, for the IDs of the specified user, group, service principal, organizational contact, device, or directory object. This method is transitive.
+        /// Check for membership in a list of group IDs, administrative unit IDs, or directory role IDs, for the IDs of the specified - user- group- service principal- organizational contact- device- directory object. This method is transitive.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

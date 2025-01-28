@@ -7,14 +7,17 @@ namespace Microsoft.Graph.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ManagedDeviceOwnerType
     {
-        /// <summary>Unknown.</summary>
+        /// <summary>Unknown device owner type.</summary>
         [EnumMember(Value = "unknown")]
         Unknown,
-        /// <summary>Owned by company.</summary>
+        /// <summary>Corporate device owner type.</summary>
         [EnumMember(Value = "company")]
         Company,
-        /// <summary>Owned by person.</summary>
+        /// <summary>Personal device owner type.</summary>
         [EnumMember(Value = "personal")]
         Personal,
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
     }
 }
