@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("chatInfo", value); }
         }
 #endif
-        /// <summary>The chatRestrictions property</summary>
+        /// <summary>Specifies the configuration settings for meeting chat restrictions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.ChatRestrictions? ChatRestrictions

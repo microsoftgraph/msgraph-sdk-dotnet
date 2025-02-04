@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Models
 {
+    /// <summary>
+    /// Support for this Entity is being deprecated starting May 2026 &amp; will no longer be supported.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class DeviceConfigurationDeviceStatus : global::Microsoft.Graph.Models.Entity, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>The DateTime when device compliance grace period expires</summary>
         public DateTimeOffset? ComplianceGracePeriodExpirationDateTime
