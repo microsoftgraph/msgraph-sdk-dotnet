@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class Shift : global::Microsoft.Graph.Models.ChangeTrackedEntity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Draft changes in the shift. Draft changes are only visible to managers. The changes are visible to employees when they are shared, which copies the changes from the draftShift to the sharedShift property.</summary>
+        /// <summary>Draft changes in the shift. Draft changes are only visible to managers. The changes are visible to employees when they&apos;re shared, which copies the changes from the draftShift to the sharedShift property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.ShiftItem? DraftShift

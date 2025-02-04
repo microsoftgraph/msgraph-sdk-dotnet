@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class WorkforceIntegration : global::Microsoft.Graph.Models.ChangeTrackedEntity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>API version for the call back URL. Start with 1.</summary>
+        /// <summary>API version for the callback URL. Start with 1.</summary>
         public int? ApiVersion
         {
             get { return BackingStore?.Get<int?>("apiVersion"); }
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("isActive"); }
             set { BackingStore?.Set("isActive", value); }
         }
-        /// <summary>The Shifts entities supported for synchronous change notifications. Shifts call back to the provided URL when client changes occur to the entities specified in this property. By default, no entities are supported for change notifications. Possible values are: none, shift, swapRequest, userShiftPreferences, openShift, openShiftRequest, offerShiftRequest, unknownFutureValue, timeOffReason, timeOff, timeOffRequest. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: timeOffReason, timeOff, timeOffRequest.</summary>
+        /// <summary>The Shifts entities supported for synchronous change notifications. Shifts call back to the provided URL when client changes occur to the entities specified in this property. By default, no entities are supported for change notifications. Possible values are: none, shift, swapRequest, userShiftPreferences, openShift, openShiftRequest, offerShiftRequest, unknownFutureValue, timeCard, timeOffReason, timeOff, timeOffRequest. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: timeCard , timeOffReason , timeOff , timeOffRequest.</summary>
         public global::Microsoft.Graph.Models.WorkforceIntegrationSupportedEntities? SupportedEntities
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.WorkforceIntegrationSupportedEntities?>("supportedEntities"); }
