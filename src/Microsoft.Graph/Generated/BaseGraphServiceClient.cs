@@ -4,6 +4,7 @@ using Microsoft.Graph.Admin;
 using Microsoft.Graph.AgreementAcceptances;
 using Microsoft.Graph.Agreements;
 using Microsoft.Graph.AppCatalogs;
+using Microsoft.Graph.AppRoleAssignments;
 using Microsoft.Graph.ApplicationTemplates;
 using Microsoft.Graph.Applications;
 using Microsoft.Graph.ApplicationsWithAppId;
@@ -124,6 +125,11 @@ namespace Microsoft.Graph
         public global::Microsoft.Graph.ApplicationTemplates.ApplicationTemplatesRequestBuilder ApplicationTemplates
         {
             get => new global::Microsoft.Graph.ApplicationTemplates.ApplicationTemplatesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the collection of appRoleAssignment entities.</summary>
+        public global::Microsoft.Graph.AppRoleAssignments.AppRoleAssignmentsRequestBuilder AppRoleAssignments
+        {
+            get => new global::Microsoft.Graph.AppRoleAssignments.AppRoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the auditLogRoot singleton.</summary>
         public global::Microsoft.Graph.AuditLogs.AuditLogsRequestBuilder AuditLogs
