@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("installedApps", value); }
         }
 #endif
-        /// <summary>Represents the location that a user selected in Microsoft Teams and doesn&apos;t follow the Office&apos;s locale setting. A user’s locale is represented by their preferred language and country or region. For example, en-us. The language component follows two-letter codes as defined in ISO 639-1, and the country component follows two-letter codes as defined in ISO 3166-1 alpha-2.</summary>
+        /// <summary>Represents the location that a user selected in Microsoft Teams and doesn&apos;t follow the Office&apos;s locale setting. A user&apos;s locale is represented by their preferred language and country or region. For example, en-us. The language component follows two-letter codes as defined in ISO 639-1, and the country component follows two-letter codes as defined in ISO 3166-1 alpha-2.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Locale

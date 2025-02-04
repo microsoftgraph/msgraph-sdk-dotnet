@@ -84,8 +84,8 @@ namespace Microsoft.Graph.Chats.Item.Messages
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ChatMessageCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.ChatMessageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Send a new chatMessage in the specified chat. This API can&apos;t create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-post-messages?view=graph-rest-1.0" />
+        /// Send a new chatMessage in the specified channel or a chat.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ChatMessage"/></returns>
         /// <param name="body">The request body</param>
@@ -129,7 +129,7 @@ namespace Microsoft.Graph.Chats.Item.Messages
             return requestInfo;
         }
         /// <summary>
-        /// Send a new chatMessage in the specified chat. This API can&apos;t create a new chat; you must use the list chats method to retrieve the ID of an existing chat before you can create a chat message.
+        /// Send a new chatMessage in the specified channel or a chat.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
