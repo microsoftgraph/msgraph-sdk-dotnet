@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>
-    /// Device Configuration State for a given device.
+    /// Support for this Entity is being deprecated starting May 2026 &amp; will no longer be supported.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceConfigurationState : global::Microsoft.Graph.Models.Entity, IParsable
