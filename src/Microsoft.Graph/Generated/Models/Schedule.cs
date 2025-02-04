@@ -230,7 +230,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("timeZone", value); }
         }
 #endif
-        /// <summary>The workforceIntegrationIds property</summary>
+        /// <summary>The IDs for the workforce integrations associated with this schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? WorkforceIntegrationIds
