@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Teamwork.WorkforceIntegrations
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.WorkforceIntegrationCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.WorkforceIntegrationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new workforceIntegration object.You can set up which entities you want to receive Shifts synchronous change notifications on and set entities to configure filtering by WFM rules eligibility for, including swap requests.
+        /// Create a new workforceIntegration object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/workforceintegration-post?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.WorkforceIntegration"/></returns>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Teamwork.WorkforceIntegrations
             return requestInfo;
         }
         /// <summary>
-        /// Create a new workforceIntegration object.You can set up which entities you want to receive Shifts synchronous change notifications on and set entities to configure filtering by WFM rules eligibility for, including swap requests.
+        /// Create a new workforceIntegration object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
