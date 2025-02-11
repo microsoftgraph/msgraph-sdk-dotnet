@@ -2,7 +2,6 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
-using Microsoft.Graph.Users.Item.Manager.Ref;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -19,11 +18,6 @@ namespace Microsoft.Graph.Users.Item.Manager
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ManagerRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Provides operations to manage the collection of user entities.</summary>
-        public global::Microsoft.Graph.Users.Item.Manager.Ref.RefRequestBuilder Ref
-        {
-            get => new global::Microsoft.Graph.Users.Item.Manager.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Users.Item.Manager.ManagerRequestBuilder"/> and sets the default values.
         /// </summary>

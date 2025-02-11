@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>The allowTextOnly property</summary>
+        /// <summary>Indicates whether only text is allowed in the meeting chat. Optional.</summary>
         public bool? AllowTextOnly
         {
             get { return BackingStore?.Get<bool?>("allowTextOnly"); }

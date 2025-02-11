@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.DayNotes;
 using Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.OfferShiftRequests;
 using Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.OpenShiftChangeRequests;
 using Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.OpenShifts;
@@ -9,6 +10,7 @@ using Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.SchedulingGroups;
 using Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.Share;
 using Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.Shifts;
 using Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.SwapShiftsChangeRequests;
+using Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.TimeCards;
 using Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.TimeOffReasons;
 using Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.TimeOffRequests;
 using Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.TimesOff;
@@ -28,6 +30,11 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ScheduleRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to manage the dayNotes property of the microsoft.graph.schedule entity.</summary>
+        public global::Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.DayNotes.DayNotesRequestBuilder DayNotes
+        {
+            get => new global::Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.DayNotes.DayNotesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the offerShiftRequests property of the microsoft.graph.schedule entity.</summary>
         public global::Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.OfferShiftRequests.OfferShiftRequestsRequestBuilder OfferShiftRequests
         {
@@ -62,6 +69,11 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule
         public global::Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.SwapShiftsChangeRequests.SwapShiftsChangeRequestsRequestBuilder SwapShiftsChangeRequests
         {
             get => new global::Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.SwapShiftsChangeRequests.SwapShiftsChangeRequestsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the timeCards property of the microsoft.graph.schedule entity.</summary>
+        public global::Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.TimeCards.TimeCardsRequestBuilder TimeCards
+        {
+            get => new global::Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.TimeCards.TimeCardsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the timeOffReasons property of the microsoft.graph.schedule entity.</summary>
         public global::Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.TimeOffReasons.TimeOffReasonsRequestBuilder TimeOffReasons

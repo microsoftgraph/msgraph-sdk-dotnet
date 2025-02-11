@@ -12,11 +12,33 @@ namespace Microsoft.Graph.Models
     public partial class Schedule : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The day notes in the schedule.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.DayNote>? DayNotes
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.DayNote>?>("dayNotes"); }
+            set { BackingStore?.Set("dayNotes", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.DayNote> DayNotes
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.DayNote>>("dayNotes"); }
+            set { BackingStore?.Set("dayNotes", value); }
+        }
+#endif
         /// <summary>Indicates whether the schedule is enabled for the team. Required.</summary>
         public bool? Enabled
         {
             get { return BackingStore?.Get<bool?>("enabled"); }
             set { BackingStore?.Set("enabled", value); }
+        }
+        /// <summary>Indicates whether copied shifts include activities from the original shift.</summary>
+        public bool? IsActivitiesIncludedWhenCopyingShiftsEnabled
+        {
+            get { return BackingStore?.Get<bool?>("isActivitiesIncludedWhenCopyingShiftsEnabled"); }
+            set { BackingStore?.Set("isActivitiesIncludedWhenCopyingShiftsEnabled", value); }
         }
         /// <summary>The offer requests for shifts in the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -132,6 +154,12 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("shifts", value); }
         }
 #endif
+        /// <summary>Indicates the start day of the week. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday.</summary>
+        public global::Microsoft.Graph.Models.DayOfWeekObject? StartDayOfWeek
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.DayOfWeekObject?>("startDayOfWeek"); }
+            set { BackingStore?.Set("startDayOfWeek", value); }
+        }
         /// <summary>The swap requests for shifts in the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -154,12 +182,44 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("swapShiftsRequestsEnabled"); }
             set { BackingStore?.Set("swapShiftsRequestsEnabled", value); }
         }
+        /// <summary>The time cards in the schedule.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.TimeCard>? TimeCards
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.TimeCard>?>("timeCards"); }
+            set { BackingStore?.Set("timeCards", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.TimeCard> TimeCards
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.TimeCard>>("timeCards"); }
+            set { BackingStore?.Set("timeCards", value); }
+        }
+#endif
         /// <summary>Indicates whether time clock is enabled for the schedule.</summary>
         public bool? TimeClockEnabled
         {
             get { return BackingStore?.Get<bool?>("timeClockEnabled"); }
             set { BackingStore?.Set("timeClockEnabled", value); }
         }
+        /// <summary>The time clock location settings for this schedule.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.TimeClockSettings? TimeClockSettings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.TimeClockSettings?>("timeClockSettings"); }
+            set { BackingStore?.Set("timeClockSettings", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.TimeClockSettings TimeClockSettings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.TimeClockSettings>("timeClockSettings"); }
+            set { BackingStore?.Set("timeClockSettings", value); }
+        }
+#endif
         /// <summary>The set of reasons for a time off in the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -230,7 +290,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("timeZone", value); }
         }
 #endif
-        /// <summary>The workforceIntegrationIds property</summary>
+        /// <summary>The IDs for the workforce integrations associated with this schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? WorkforceIntegrationIds
@@ -264,7 +324,9 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "dayNotes", n => { DayNotes = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DayNote>(global::Microsoft.Graph.Models.DayNote.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "isActivitiesIncludedWhenCopyingShiftsEnabled", n => { IsActivitiesIncludedWhenCopyingShiftsEnabled = n.GetBoolValue(); } },
                 { "offerShiftRequests", n => { OfferShiftRequests = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.OfferShiftRequest>(global::Microsoft.Graph.Models.OfferShiftRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "offerShiftRequestsEnabled", n => { OfferShiftRequestsEnabled = n.GetBoolValue(); } },
                 { "openShiftChangeRequests", n => { OpenShiftChangeRequests = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.OpenShiftChangeRequest>(global::Microsoft.Graph.Models.OpenShiftChangeRequest.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -274,9 +336,12 @@ namespace Microsoft.Graph.Models
                 { "provisionStatusCode", n => { ProvisionStatusCode = n.GetStringValue(); } },
                 { "schedulingGroups", n => { SchedulingGroups = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.SchedulingGroup>(global::Microsoft.Graph.Models.SchedulingGroup.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "shifts", n => { Shifts = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Shift>(global::Microsoft.Graph.Models.Shift.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "startDayOfWeek", n => { StartDayOfWeek = n.GetEnumValue<global::Microsoft.Graph.Models.DayOfWeekObject>(); } },
                 { "swapShiftsChangeRequests", n => { SwapShiftsChangeRequests = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.SwapShiftsChangeRequest>(global::Microsoft.Graph.Models.SwapShiftsChangeRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "swapShiftsRequestsEnabled", n => { SwapShiftsRequestsEnabled = n.GetBoolValue(); } },
+                { "timeCards", n => { TimeCards = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.TimeCard>(global::Microsoft.Graph.Models.TimeCard.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "timeClockEnabled", n => { TimeClockEnabled = n.GetBoolValue(); } },
+                { "timeClockSettings", n => { TimeClockSettings = n.GetObjectValue<global::Microsoft.Graph.Models.TimeClockSettings>(global::Microsoft.Graph.Models.TimeClockSettings.CreateFromDiscriminatorValue); } },
                 { "timeOffReasons", n => { TimeOffReasons = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.TimeOffReason>(global::Microsoft.Graph.Models.TimeOffReason.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "timeOffRequests", n => { TimeOffRequests = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.TimeOffRequest>(global::Microsoft.Graph.Models.TimeOffRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "timeOffRequestsEnabled", n => { TimeOffRequestsEnabled = n.GetBoolValue(); } },
@@ -293,7 +358,9 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DayNote>("dayNotes", DayNotes);
             writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteBoolValue("isActivitiesIncludedWhenCopyingShiftsEnabled", IsActivitiesIncludedWhenCopyingShiftsEnabled);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.OfferShiftRequest>("offerShiftRequests", OfferShiftRequests);
             writer.WriteBoolValue("offerShiftRequestsEnabled", OfferShiftRequestsEnabled);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.OpenShiftChangeRequest>("openShiftChangeRequests", OpenShiftChangeRequests);
@@ -301,9 +368,12 @@ namespace Microsoft.Graph.Models
             writer.WriteBoolValue("openShiftsEnabled", OpenShiftsEnabled);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.SchedulingGroup>("schedulingGroups", SchedulingGroups);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Shift>("shifts", Shifts);
+            writer.WriteEnumValue<global::Microsoft.Graph.Models.DayOfWeekObject>("startDayOfWeek", StartDayOfWeek);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.SwapShiftsChangeRequest>("swapShiftsChangeRequests", SwapShiftsChangeRequests);
             writer.WriteBoolValue("swapShiftsRequestsEnabled", SwapShiftsRequestsEnabled);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.TimeCard>("timeCards", TimeCards);
             writer.WriteBoolValue("timeClockEnabled", TimeClockEnabled);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.TimeClockSettings>("timeClockSettings", TimeClockSettings);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.TimeOffReason>("timeOffReasons", TimeOffReasons);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.TimeOffRequest>("timeOffRequests", TimeOffRequests);
             writer.WriteBoolValue("timeOffRequestsEnabled", TimeOffRequestsEnabled);

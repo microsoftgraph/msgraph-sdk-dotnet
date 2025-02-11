@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Graph.Teams.Item.Schedule.DayNotes;
 using Microsoft.Graph.Teams.Item.Schedule.OfferShiftRequests;
 using Microsoft.Graph.Teams.Item.Schedule.OpenShiftChangeRequests;
 using Microsoft.Graph.Teams.Item.Schedule.OpenShifts;
@@ -9,6 +10,7 @@ using Microsoft.Graph.Teams.Item.Schedule.SchedulingGroups;
 using Microsoft.Graph.Teams.Item.Schedule.Share;
 using Microsoft.Graph.Teams.Item.Schedule.Shifts;
 using Microsoft.Graph.Teams.Item.Schedule.SwapShiftsChangeRequests;
+using Microsoft.Graph.Teams.Item.Schedule.TimeCards;
 using Microsoft.Graph.Teams.Item.Schedule.TimeOffReasons;
 using Microsoft.Graph.Teams.Item.Schedule.TimeOffRequests;
 using Microsoft.Graph.Teams.Item.Schedule.TimesOff;
@@ -28,6 +30,11 @@ namespace Microsoft.Graph.Teams.Item.Schedule
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ScheduleRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to manage the dayNotes property of the microsoft.graph.schedule entity.</summary>
+        public global::Microsoft.Graph.Teams.Item.Schedule.DayNotes.DayNotesRequestBuilder DayNotes
+        {
+            get => new global::Microsoft.Graph.Teams.Item.Schedule.DayNotes.DayNotesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the offerShiftRequests property of the microsoft.graph.schedule entity.</summary>
         public global::Microsoft.Graph.Teams.Item.Schedule.OfferShiftRequests.OfferShiftRequestsRequestBuilder OfferShiftRequests
         {
@@ -62,6 +69,11 @@ namespace Microsoft.Graph.Teams.Item.Schedule
         public global::Microsoft.Graph.Teams.Item.Schedule.SwapShiftsChangeRequests.SwapShiftsChangeRequestsRequestBuilder SwapShiftsChangeRequests
         {
             get => new global::Microsoft.Graph.Teams.Item.Schedule.SwapShiftsChangeRequests.SwapShiftsChangeRequestsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the timeCards property of the microsoft.graph.schedule entity.</summary>
+        public global::Microsoft.Graph.Teams.Item.Schedule.TimeCards.TimeCardsRequestBuilder TimeCards
+        {
+            get => new global::Microsoft.Graph.Teams.Item.Schedule.TimeCards.TimeCardsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the timeOffReasons property of the microsoft.graph.schedule entity.</summary>
         public global::Microsoft.Graph.Teams.Item.Schedule.TimeOffReasons.TimeOffReasonsRequestBuilder TimeOffReasons
