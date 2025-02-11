@@ -394,7 +394,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("optionalClaims", value); }
         }
 #endif
-        /// <summary>Directory objects that are owners of the application. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.</summary>
+        /// <summary>Directory objects that are owners of this application. The owners are a set of nonadmin users or servicePrincipals who are allowed to modify this object. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.DirectoryObject>? Owners

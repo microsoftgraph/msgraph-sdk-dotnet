@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("isCertifiedByMicrosoft"); }
             set { BackingStore?.Set("isCertifiedByMicrosoft", value); }
         }
-        /// <summary>Indicates whether the application has been self-attested by the application developer or the publisher.</summary>
+        /// <summary>Indicates whether the application developer or publisher completed Publisher Attestation.</summary>
         public bool? IsPublisherAttested
         {
             get { return BackingStore?.Get<bool?>("isPublisherAttested"); }

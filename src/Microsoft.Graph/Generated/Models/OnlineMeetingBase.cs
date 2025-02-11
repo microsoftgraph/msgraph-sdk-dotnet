@@ -24,11 +24,29 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("allowAttendeeToEnableMic"); }
             set { BackingStore?.Set("allowAttendeeToEnableMic", value); }
         }
+        /// <summary>Indicates whether breakout rooms are enabled for the meeting.</summary>
+        public bool? AllowBreakoutRooms
+        {
+            get { return BackingStore?.Get<bool?>("allowBreakoutRooms"); }
+            set { BackingStore?.Set("allowBreakoutRooms", value); }
+        }
+        /// <summary>Specifies the users who can admit from the lobby. Possible values are: organizerAndCoOrganizersAndPresenters, organizerAndCoOrganizers, unknownFutureValue.</summary>
+        public global::Microsoft.Graph.Models.AllowedLobbyAdmitterRoles? AllowedLobbyAdmitters
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.AllowedLobbyAdmitterRoles?>("allowedLobbyAdmitters"); }
+            set { BackingStore?.Set("allowedLobbyAdmitters", value); }
+        }
         /// <summary>Specifies who can be a presenter in a meeting.</summary>
         public global::Microsoft.Graph.Models.OnlineMeetingPresenters? AllowedPresenters
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.OnlineMeetingPresenters?>("allowedPresenters"); }
             set { BackingStore?.Set("allowedPresenters", value); }
+        }
+        /// <summary>Indicates whether live share is enabled for the meeting. Possible values are: enabled, disabled, unknownFutureValue.</summary>
+        public global::Microsoft.Graph.Models.MeetingLiveShareOptions? AllowLiveShare
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.MeetingLiveShareOptions?>("allowLiveShare"); }
+            set { BackingStore?.Set("allowLiveShare", value); }
         }
         /// <summary>Specifies the mode of the meeting chat.</summary>
         public global::Microsoft.Graph.Models.MeetingChatMode? AllowMeetingChat
@@ -41,6 +59,12 @@ namespace Microsoft.Graph.Models
         {
             get { return BackingStore?.Get<bool?>("allowParticipantsToChangeName"); }
             set { BackingStore?.Set("allowParticipantsToChangeName", value); }
+        }
+        /// <summary>Indicates whether PowerPoint live is enabled for the meeting.</summary>
+        public bool? AllowPowerPointSharing
+        {
+            get { return BackingStore?.Get<bool?>("allowPowerPointSharing"); }
+            set { BackingStore?.Set("allowPowerPointSharing", value); }
         }
         /// <summary>Indicates whether recording is enabled for the meeting.</summary>
         public bool? AllowRecording
@@ -59,6 +83,12 @@ namespace Microsoft.Graph.Models
         {
             get { return BackingStore?.Get<bool?>("allowTranscription"); }
             set { BackingStore?.Set("allowTranscription", value); }
+        }
+        /// <summary>Indicates whether whiteboard is enabled for the meeting.</summary>
+        public bool? AllowWhiteboard
+        {
+            get { return BackingStore?.Get<bool?>("allowWhiteboard"); }
+            set { BackingStore?.Set("allowWhiteboard", value); }
         }
         /// <summary>The attendance reports of an online meeting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,7 +138,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("chatInfo", value); }
         }
 #endif
-        /// <summary>The chatRestrictions property</summary>
+        /// <summary>Specifies the configuration settings for meeting chat restrictions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.ChatRestrictions? ChatRestrictions
@@ -280,11 +310,16 @@ namespace Microsoft.Graph.Models
             {
                 { "allowAttendeeToEnableCamera", n => { AllowAttendeeToEnableCamera = n.GetBoolValue(); } },
                 { "allowAttendeeToEnableMic", n => { AllowAttendeeToEnableMic = n.GetBoolValue(); } },
+                { "allowBreakoutRooms", n => { AllowBreakoutRooms = n.GetBoolValue(); } },
+                { "allowLiveShare", n => { AllowLiveShare = n.GetEnumValue<global::Microsoft.Graph.Models.MeetingLiveShareOptions>(); } },
                 { "allowMeetingChat", n => { AllowMeetingChat = n.GetEnumValue<global::Microsoft.Graph.Models.MeetingChatMode>(); } },
                 { "allowParticipantsToChangeName", n => { AllowParticipantsToChangeName = n.GetBoolValue(); } },
+                { "allowPowerPointSharing", n => { AllowPowerPointSharing = n.GetBoolValue(); } },
                 { "allowRecording", n => { AllowRecording = n.GetBoolValue(); } },
                 { "allowTeamworkReactions", n => { AllowTeamworkReactions = n.GetBoolValue(); } },
                 { "allowTranscription", n => { AllowTranscription = n.GetBoolValue(); } },
+                { "allowWhiteboard", n => { AllowWhiteboard = n.GetBoolValue(); } },
+                { "allowedLobbyAdmitters", n => { AllowedLobbyAdmitters = n.GetEnumValue<global::Microsoft.Graph.Models.AllowedLobbyAdmitterRoles>(); } },
                 { "allowedPresenters", n => { AllowedPresenters = n.GetEnumValue<global::Microsoft.Graph.Models.OnlineMeetingPresenters>(); } },
                 { "attendanceReports", n => { AttendanceReports = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.MeetingAttendanceReport>(global::Microsoft.Graph.Models.MeetingAttendanceReport.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "audioConferencing", n => { AudioConferencing = n.GetObjectValue<global::Microsoft.Graph.Models.AudioConferencing>(global::Microsoft.Graph.Models.AudioConferencing.CreateFromDiscriminatorValue); } },
@@ -312,12 +347,17 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteBoolValue("allowAttendeeToEnableCamera", AllowAttendeeToEnableCamera);
             writer.WriteBoolValue("allowAttendeeToEnableMic", AllowAttendeeToEnableMic);
+            writer.WriteBoolValue("allowBreakoutRooms", AllowBreakoutRooms);
+            writer.WriteEnumValue<global::Microsoft.Graph.Models.AllowedLobbyAdmitterRoles>("allowedLobbyAdmitters", AllowedLobbyAdmitters);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.OnlineMeetingPresenters>("allowedPresenters", AllowedPresenters);
+            writer.WriteEnumValue<global::Microsoft.Graph.Models.MeetingLiveShareOptions>("allowLiveShare", AllowLiveShare);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.MeetingChatMode>("allowMeetingChat", AllowMeetingChat);
             writer.WriteBoolValue("allowParticipantsToChangeName", AllowParticipantsToChangeName);
+            writer.WriteBoolValue("allowPowerPointSharing", AllowPowerPointSharing);
             writer.WriteBoolValue("allowRecording", AllowRecording);
             writer.WriteBoolValue("allowTeamworkReactions", AllowTeamworkReactions);
             writer.WriteBoolValue("allowTranscription", AllowTranscription);
+            writer.WriteBoolValue("allowWhiteboard", AllowWhiteboard);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.MeetingAttendanceReport>("attendanceReports", AttendanceReports);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.AudioConferencing>("audioConferencing", AudioConferencing);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ChatInfo>("chatInfo", ChatInfo);
