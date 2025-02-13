@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Graph.Teams.Item.PrimaryChannel.AllMembers;
 using Microsoft.Graph.Teams.Item.PrimaryChannel.Archive;
 using Microsoft.Graph.Teams.Item.PrimaryChannel.CompleteMigration;
 using Microsoft.Graph.Teams.Item.PrimaryChannel.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName;
@@ -29,6 +30,11 @@ namespace Microsoft.Graph.Teams.Item.PrimaryChannel
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PrimaryChannelRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to manage the allMembers property of the microsoft.graph.channel entity.</summary>
+        public global::Microsoft.Graph.Teams.Item.PrimaryChannel.AllMembers.AllMembersRequestBuilder AllMembers
+        {
+            get => new global::Microsoft.Graph.Teams.Item.PrimaryChannel.AllMembers.AllMembersRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the archive method.</summary>
         public global::Microsoft.Graph.Teams.Item.PrimaryChannel.Archive.ArchiveRequestBuilder Archive
         {

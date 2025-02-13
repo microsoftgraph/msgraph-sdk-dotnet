@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Models
     public partial class Channel : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>A collection of membership records associated with the channel, including both direct and indirect members of shared channels.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.ConversationMember>? AllMembers
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.ConversationMember>?>("allMembers"); }
+            set { BackingStore?.Set("allMembers", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.ConversationMember> AllMembers
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.ConversationMember>>("allMembers"); }
+            set { BackingStore?.Set("allMembers", value); }
+        }
+#endif
         /// <summary>Read only. Timestamp at which the channel was created.</summary>
         public DateTimeOffset? CreatedDateTime
         {
@@ -230,6 +246,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "allMembers", n => { AllMembers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ConversationMember>(global::Microsoft.Graph.Models.ConversationMember.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
@@ -255,6 +272,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ConversationMember>("allMembers", AllMembers);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);

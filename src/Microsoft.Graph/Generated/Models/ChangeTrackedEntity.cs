@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Models
     public partial class ChangeTrackedEntity : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Identity of the creator of the entity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.IdentitySet? CreatedBy
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.IdentitySet?>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.IdentitySet CreatedBy
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.IdentitySet>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
+        }
+#endif
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? CreatedDateTime
         {
@@ -51,6 +67,7 @@ namespace Microsoft.Graph.Models
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.dayNote" => new global::Microsoft.Graph.Models.DayNote(),
                 "#microsoft.graph.offerShiftRequest" => new global::Microsoft.Graph.Models.OfferShiftRequest(),
                 "#microsoft.graph.openShift" => new global::Microsoft.Graph.Models.OpenShift(),
                 "#microsoft.graph.openShiftChangeRequest" => new global::Microsoft.Graph.Models.OpenShiftChangeRequest(),
@@ -59,6 +76,7 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.shift" => new global::Microsoft.Graph.Models.Shift(),
                 "#microsoft.graph.shiftPreferences" => new global::Microsoft.Graph.Models.ShiftPreferences(),
                 "#microsoft.graph.swapShiftsChangeRequest" => new global::Microsoft.Graph.Models.SwapShiftsChangeRequest(),
+                "#microsoft.graph.timeCard" => new global::Microsoft.Graph.Models.TimeCard(),
                 "#microsoft.graph.timeOff" => new global::Microsoft.Graph.Models.TimeOff(),
                 "#microsoft.graph.timeOffReason" => new global::Microsoft.Graph.Models.TimeOffReason(),
                 "#microsoft.graph.timeOffRequest" => new global::Microsoft.Graph.Models.TimeOffRequest(),
@@ -74,6 +92,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<global::Microsoft.Graph.Models.IdentitySet>(global::Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<global::Microsoft.Graph.Models.IdentitySet>(global::Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -87,6 +106,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.IdentitySet>("createdBy", CreatedBy);
         }
     }
 }
