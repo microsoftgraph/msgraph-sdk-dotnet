@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.ChildTag
         {
         }
         /// <summary>
-        /// Returns the tags that are a child of a tag.
+        /// List eDiscovery review tags with the tag hierarchy shown.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoveryreviewtag-ashierarchy?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Security.EdiscoveryReviewTagCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.ChildTag
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Security.EdiscoveryReviewTagCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.Security.EdiscoveryReviewTagCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the tags that are a child of a tag.
+        /// List eDiscovery review tags with the tag hierarchy shown.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +106,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.ChildTag
             return new global::Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Tags.Item.ChildTags.ChildTagsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns the tags that are a child of a tag.
+        /// List eDiscovery review tags with the tag hierarchy shown.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ChildTagsRequestBuilderGetQueryParameters 

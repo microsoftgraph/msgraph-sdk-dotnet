@@ -41,17 +41,21 @@ namespace Microsoft.Graph.Models
         #pragma warning disable CS1591
         UnknownFutureValue = 128,
         #pragma warning restore CS1591
+        [EnumMember(Value = "timeCard")]
+        #pragma warning disable CS1591
+        TimeCard = 256,
+        #pragma warning restore CS1591
         [EnumMember(Value = "timeOffReason")]
         #pragma warning disable CS1591
-        TimeOffReason = 256,
+        TimeOffReason = 512,
         #pragma warning restore CS1591
         [EnumMember(Value = "timeOff")]
         #pragma warning disable CS1591
-        TimeOff = 512,
+        TimeOff = 1024,
         #pragma warning restore CS1591
         [EnumMember(Value = "timeOffRequest")]
         #pragma warning disable CS1591
-        TimeOffRequest = 1024,
+        TimeOffRequest = 2048,
         #pragma warning restore CS1591
     }
 }

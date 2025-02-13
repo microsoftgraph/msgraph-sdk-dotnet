@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.AllMembers;
 using Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.Archive;
 using Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.CompleteMigration;
 using Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName;
@@ -29,6 +30,11 @@ namespace Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ChannelItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to manage the allMembers property of the microsoft.graph.channel entity.</summary>
+        public global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.AllMembers.AllMembersRequestBuilder AllMembers
+        {
+            get => new global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.AllMembers.AllMembersRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the archive method.</summary>
         public global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.Archive.ArchiveRequestBuilder Archive
         {

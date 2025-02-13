@@ -58,8 +58,8 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Catalogs.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-get?view=graph-rest-1.0" />
+        /// Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.CustomCalloutExtension"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,8 +82,8 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Catalogs.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.CustomCalloutExtension>(requestInfo, global::Microsoft.Graph.Models.CustomCalloutExtension.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an accessPackageAssignmentWorkflowExtension object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-update?view=graph-rest-1.0" />
+        /// Update the properties of an accessPackageAssignmentRequestWorkflowExtension object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.CustomCalloutExtension"/></returns>
         /// <param name="body">The request body</param>
@@ -127,7 +127,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Catalogs.Item
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
+        /// Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -146,7 +146,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Catalogs.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an accessPackageAssignmentWorkflowExtension object.
+        /// Update the properties of an accessPackageAssignmentRequestWorkflowExtension object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -185,7 +185,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Catalogs.Item
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
+        /// Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CustomCalloutExtensionItemRequestBuilderGetQueryParameters 

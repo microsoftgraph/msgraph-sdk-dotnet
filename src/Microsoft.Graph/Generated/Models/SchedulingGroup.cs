@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Models
     public partial class SchedulingGroup : global::Microsoft.Graph.Models.ChangeTrackedEntity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The code for the schedulingGroup to represent an external identifier. This field must be unique within the team in Microsoft Teams and uses an alphanumeric format, with a maximum of 100 characters.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Code
+        {
+            get { return BackingStore?.Get<string?>("code"); }
+            set { BackingStore?.Set("code", value); }
+        }
+#nullable restore
+#else
+        public string Code
+        {
+            get { return BackingStore?.Get<string>("code"); }
+            set { BackingStore?.Set("code", value); }
+        }
+#endif
         /// <summary>The display name for the schedulingGroup. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,6 +91,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "code", n => { Code = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "isActive", n => { IsActive = n.GetBoolValue(); } },
                 { "userIds", n => { UserIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -88,6 +105,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteStringValue("code", Code);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteCollectionOfPrimitiveValues<string>("userIds", UserIds);
         }
