@@ -108,6 +108,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("appRoles", value); }
         }
 #endif
+        /// <summary>The authenticationBehaviors property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.AuthenticationBehaviors? AuthenticationBehaviors
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.AuthenticationBehaviors?>("authenticationBehaviors"); }
+            set { BackingStore?.Set("authenticationBehaviors", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.AuthenticationBehaviors AuthenticationBehaviors
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.AuthenticationBehaviors>("authenticationBehaviors"); }
+            set { BackingStore?.Set("authenticationBehaviors", value); }
+        }
+#endif
         /// <summary>Specifies the certification status of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -735,6 +751,7 @@ namespace Microsoft.Graph.Models
                 { "appManagementPolicies", n => { AppManagementPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AppManagementPolicy>(global::Microsoft.Graph.Models.AppManagementPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "appRoles", n => { AppRoles = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AppRole>(global::Microsoft.Graph.Models.AppRole.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "applicationTemplateId", n => { ApplicationTemplateId = n.GetStringValue(); } },
+                { "authenticationBehaviors", n => { AuthenticationBehaviors = n.GetObjectValue<global::Microsoft.Graph.Models.AuthenticationBehaviors>(global::Microsoft.Graph.Models.AuthenticationBehaviors.CreateFromDiscriminatorValue); } },
                 { "certification", n => { Certification = n.GetObjectValue<global::Microsoft.Graph.Models.Certification>(global::Microsoft.Graph.Models.Certification.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "createdOnBehalfOf", n => { CreatedOnBehalfOf = n.GetObjectValue<global::Microsoft.Graph.Models.DirectoryObject>(global::Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue); } },
@@ -792,6 +809,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("applicationTemplateId", ApplicationTemplateId);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AppManagementPolicy>("appManagementPolicies", AppManagementPolicies);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AppRole>("appRoles", AppRoles);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.AuthenticationBehaviors>("authenticationBehaviors", AuthenticationBehaviors);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Certification>("certification", Certification);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.DirectoryObject>("createdOnBehalfOf", CreatedOnBehalfOf);

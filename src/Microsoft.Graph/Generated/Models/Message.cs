@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("extensions", value); }
         }
 #endif
-        /// <summary>The flag value that indicates the status, start date, due date, or completion date for the message.</summary>
+        /// <summary>Indicates the status, start date, due date, or completion date for the message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.FollowupFlag? Flag
@@ -300,7 +300,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("replyTo", value); }
         }
 #endif
-        /// <summary>The account that is actually used to generate the message. In most cases, this value is the same as the from property. You can set this property to a different value when sending a message from a shared mailbox, for a shared calendar, or as a delegate. In any case, the value must correspond to the actual mailbox used. Find out more about setting the from and sender properties of a message.</summary>
+        /// <summary>The account that is used to generate the message. In most cases, this value is the same as the from property. You can set this property to a different value when sending a message from a shared mailbox, for a shared calendar, or as a delegate. In any case, the value must correspond to the actual mailbox used. Find out more about setting the from and sender properties of a message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.Recipient? Sender

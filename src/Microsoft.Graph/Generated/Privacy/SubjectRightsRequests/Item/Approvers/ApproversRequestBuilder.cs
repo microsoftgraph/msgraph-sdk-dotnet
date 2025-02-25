@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Approvers
     public partial class ApproversRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate")]
+        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20")]
         public global::Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Approvers.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Approvers.Count.CountRequestBuilder(PathParameters, RequestAdapter);
@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Approvers
         /// <summary>Provides operations to manage the approvers property of the microsoft.graph.subjectRightsRequest entity.</summary>
         /// <param name="position">The unique identifier of user</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Approvers.Item.UserItemRequestBuilder"/></returns>
-        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate")]
+        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20")]
         public global::Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Approvers.Item.UserItemRequestBuilder this[string position]
         {
             get
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Approvers
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate")]
+        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Models.UserCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Approvers.ApproversRequestBuilder.ApproversRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Approvers
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate")]
+        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Approvers.ApproversRequestBuilder.ApproversRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Approvers
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Approvers.ApproversRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate")]
+        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20")]
         public global::Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Approvers.ApproversRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Privacy.SubjectRightsRequests.Item.Approvers.ApproversRequestBuilder(rawUrl, RequestAdapter);
