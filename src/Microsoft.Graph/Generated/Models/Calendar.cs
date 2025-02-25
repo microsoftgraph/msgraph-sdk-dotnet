@@ -60,19 +60,19 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("calendarView", value); }
         }
 #endif
-        /// <summary>true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access.</summary>
+        /// <summary>true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who shared a calendar and granted write access.</summary>
         public bool? CanEdit
         {
             get { return BackingStore?.Get<bool?>("canEdit"); }
             set { BackingStore?.Set("canEdit", value); }
         }
-        /// <summary>true if the user has the permission to share the calendar, false otherwise. Only the user who created the calendar can share it.</summary>
+        /// <summary>true if the user has permission to share the calendar, false otherwise. Only the user who created the calendar can share it.</summary>
         public bool? CanShare
         {
             get { return BackingStore?.Get<bool?>("canShare"); }
             set { BackingStore?.Set("canShare", value); }
         }
-        /// <summary>true if the user can read calendar items that have been marked private, false otherwise.</summary>
+        /// <summary>If true, the user can read calendar items that have been marked private, false otherwise.</summary>
         public bool? CanViewPrivateItems
         {
             get { return BackingStore?.Get<bool?>("canViewPrivateItems"); }

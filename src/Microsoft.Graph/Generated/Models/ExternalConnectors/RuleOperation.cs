@@ -8,6 +8,10 @@ namespace Microsoft.Graph.Models.ExternalConnectors
     public enum RuleOperation
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "null")]
+        #pragma warning disable CS1591
+        Null,
+        #pragma warning restore CS1591
         [EnumMember(Value = "equals")]
         #pragma warning disable CS1591
         Equals,

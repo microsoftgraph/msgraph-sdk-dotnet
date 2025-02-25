@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class Event : global::Microsoft.Graph.Models.OutlookItem, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>true if the meeting organizer allows invitees to propose a new time when responding; otherwise, false. Optional. Default is true.</summary>
+        /// <summary>true if the meeting organizer allows invitees to propose a new time when responding; otherwise, false. Optional. The default is true.</summary>
         public bool? AllowNewTimeProposals
         {
             get { return BackingStore?.Get<bool?>("allowNewTimeProposals"); }
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("body", value); }
         }
 #endif
-        /// <summary>The preview of the message associated with the event. It is in text format.</summary>
+        /// <summary>The preview of the message associated with the event. It&apos;s in text format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BodyPreview
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("hasAttachments"); }
             set { BackingStore?.Set("hasAttachments", value); }
         }
-        /// <summary>When set to true, each attendee only sees themselves in the meeting request and meeting Tracking list. Default is false.</summary>
+        /// <summary>When set to true, each attendee only sees themselves in the meeting request and meeting Tracking list. The default is false.</summary>
         public bool? HideAttendees
         {
             get { return BackingStore?.Get<bool?>("hideAttendees"); }
@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Importance?>("importance"); }
             set { BackingStore?.Set("importance", value); }
         }
-        /// <summary>The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.</summary>
+        /// <summary>The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions modified, but doesn&apos;t include occurrences cancelled from the series. Navigation property. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.Event>? Instances
@@ -180,7 +180,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("instances", value); }
         }
 #endif
-        /// <summary>Set to true if the event lasts all day. If true, regardless of whether it&apos;s a single-day or multi-day event, start and end time must be set to midnight and be in the same time zone.</summary>
+        /// <summary>Set to true if the event lasts all day. If true, regardless of whether it&apos;s a single-day or multi-day event, start, and endtime must be set to midnight and be in the same time zone.</summary>
         public bool? IsAllDay
         {
             get { return BackingStore?.Get<bool?>("isAllDay"); }
@@ -192,19 +192,19 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("isCancelled"); }
             set { BackingStore?.Set("isCancelled", value); }
         }
-        /// <summary>Set to true if the user has updated the meeting in Outlook but has not sent the updates to attendees. Set to false if all changes have been sent, or if the event is an appointment without any attendees.</summary>
+        /// <summary>Set to true if the user has updated the meeting in Outlook but hasn&apos;t sent the updates to attendees. Set to false if all changes are sent, or if the event is an appointment without any attendees.</summary>
         public bool? IsDraft
         {
             get { return BackingStore?.Get<bool?>("isDraft"); }
             set { BackingStore?.Set("isDraft", value); }
         }
-        /// <summary>True if this event has online meeting information (that is, onlineMeeting points to an onlineMeetingInfo resource), false otherwise. Default is false (onlineMeeting is null). Optional.  After you set isOnlineMeeting to true, Microsoft Graph initializes onlineMeeting. Subsequently Outlook ignores any further changes to isOnlineMeeting, and the meeting remains available online.</summary>
+        /// <summary>True if this event has online meeting information (that is, onlineMeeting points to an onlineMeetingInfo resource), false otherwise. Default is false (onlineMeeting is null). Optional.  After you set isOnlineMeeting to true, Microsoft Graph initializes onlineMeeting. Subsequently, Outlook ignores any further changes to isOnlineMeeting, and the meeting remains available online.</summary>
         public bool? IsOnlineMeeting
         {
             get { return BackingStore?.Get<bool?>("isOnlineMeeting"); }
             set { BackingStore?.Set("isOnlineMeeting", value); }
         }
-        /// <summary>Set to true if the calendar owner (specified by the owner property of the calendar) is the organizer of the event (specified by the organizer property of the event). This also applies if a delegate organized the event on behalf of the owner.</summary>
+        /// <summary>Set to true if the calendar owner (specified by the owner property of the calendar) is the organizer of the event (specified by the organizer property of the event). It also applies if a delegate organized the event on behalf of the owner.</summary>
         public bool? IsOrganizer
         {
             get { return BackingStore?.Get<bool?>("isOrganizer"); }
@@ -232,7 +232,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("location", value); }
         }
 #endif
-        /// <summary>The locations where the event is held or attended from. The location and locations properties always correspond with each other. If you update the location property, any prior locations in the locations collection would be removed and replaced by the new location value.</summary>
+        /// <summary>The locations where the event is held or attended from. The location and locations properties always correspond with each other. If you update the location property, any prior locations in the locations collection are removed and replaced by the new location value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.Location>? Locations
@@ -264,7 +264,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
 #endif
-        /// <summary>Details for an attendee to join the meeting online. Default is null. Read-only. After you set the isOnlineMeeting and onlineMeetingProvider properties to enable a meeting online, Microsoft Graph initializes onlineMeeting. When set, the meeting remains available online, and you cannot change the isOnlineMeeting, onlineMeetingProvider, and onlneMeeting properties again.</summary>
+        /// <summary>Details for an attendee to join the meeting online. The default is null. Read-only. After you set the isOnlineMeeting and onlineMeetingProvider properties to enable a meeting online, Microsoft Graph initializes onlineMeeting. When set, the meeting remains available online, and you can&apos;t change the isOnlineMeeting, onlineMeetingProvider, and onlneMeeting properties again.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.OnlineMeetingInfo? OnlineMeeting
@@ -280,7 +280,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("onlineMeeting", value); }
         }
 #endif
-        /// <summary>Represents the online meeting service provider. By default, onlineMeetingProvider is unknown. The possible values are unknown, teamsForBusiness, skypeForBusiness, and skypeForConsumer. Optional.  After you set onlineMeetingProvider, Microsoft Graph initializes onlineMeeting. Subsequently you cannot change onlineMeetingProvider again, and the meeting remains available online.</summary>
+        /// <summary>Represents the online meeting service provider. By default, onlineMeetingProvider is unknown. The possible values are unknown, teamsForBusiness, skypeForBusiness, and skypeForConsumer. Optional.  After you set onlineMeetingProvider, Microsoft Graph initializes onlineMeeting. Subsequently, you can&apos;t change onlineMeetingProvider again, and the meeting remains available online.</summary>
         public global::Microsoft.Graph.Models.OnlineMeetingProviderType? OnlineMeetingProvider
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.OnlineMeetingProviderType?>("onlineMeetingProvider"); }
@@ -334,7 +334,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("originalEndTimeZone", value); }
         }
 #endif
-        /// <summary>Represents the start time of an event when it is initially created as an occurrence or exception in a recurring series. This property is not returned for events that are single instances. Its date and time information is expressed in ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
+        /// <summary>Represents the start time of an event when it&apos;s initially created as an occurrence or exception in a recurring series. This property is not returned for events that are single instances. Its date and time information is expressed in ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? OriginalStart
         {
             get { return BackingStore?.Get<DateTimeOffset?>("originalStart"); }
@@ -400,7 +400,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("responseStatus", value); }
         }
 #endif
-        /// <summary>Possible values are: normal, personal, private, confidential.</summary>
+        /// <summary>Possible values are: normal, personal, private, and confidential.</summary>
         public global::Microsoft.Graph.Models.Sensitivity? Sensitivity
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Sensitivity?>("sensitivity"); }
@@ -476,7 +476,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("subject", value); }
         }
 #endif
-        /// <summary>A custom identifier specified by a client app for the server to avoid redundant POST operations in case of client retries to create the same event. This is useful when low network connectivity causes the client to time out before receiving a response from the server for the client&apos;s prior create-event request. After you set transactionId when creating an event, you cannot change transactionId in a subsequent update. This property is only returned in a response payload if an app has set it. Optional.</summary>
+        /// <summary>A custom identifier specified by a client app for the server to avoid redundant POST operations in case of client retries to create the same event. It&apos;s useful when low network connectivity causes the client to time out before receiving a response from the server for the client&apos;s prior create-event request. After you set transactionId when creating an event, you can&apos;t change transactionId in a subsequent update. This property is only returned in a response payload if an app has set it. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TransactionId
@@ -498,7 +498,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.EventType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
-        /// <summary>The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you are signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL cannot be accessed from within an iFrame.</summary>
+        /// <summary>The URL to open the event in Outlook on the web.Outlook on the web opens the event in the browser if you are signed in to your mailbox. Otherwise, Outlook on the web prompts you to sign in.This URL can&apos;t be accessed from within an iFrame.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WebLink

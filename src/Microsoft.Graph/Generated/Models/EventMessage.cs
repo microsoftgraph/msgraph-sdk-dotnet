@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("isAllDay"); }
             set { BackingStore?.Set("isAllDay", value); }
         }
-        /// <summary>True if this meeting request is accessible to a delegate, false otherwise. Default is false.</summary>
+        /// <summary>True if this meeting request is accessible to a delegate, false otherwise. The default is false.</summary>
         public bool? IsDelegated
         {
             get { return BackingStore?.Get<bool?>("isDelegated"); }
