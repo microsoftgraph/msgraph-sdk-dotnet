@@ -5,6 +5,7 @@ using Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarPermissions;
 using Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarView;
 using Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.Events;
 using Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.GetSchedule;
+using Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.PermanentDelete;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -42,6 +43,11 @@ namespace Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item
         public global::Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.GetSchedule.GetScheduleRequestBuilder GetSchedule
         {
             get => new global::Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.GetSchedule.GetScheduleRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the permanentDelete method.</summary>
+        public global::Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.PermanentDelete.PermanentDeleteRequestBuilder PermanentDelete
+        {
+            get => new global::Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.PermanentDelete.PermanentDeleteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Provides operations to call the allowedCalendarSharingRoles method.

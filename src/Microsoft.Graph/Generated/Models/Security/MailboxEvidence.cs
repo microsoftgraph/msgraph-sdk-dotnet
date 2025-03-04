@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("primaryAddress", value); }
         }
 #endif
+        /// <summary>The user principal name of the mailbox.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Upn
+        {
+            get { return BackingStore?.Get<string?>("upn"); }
+            set { BackingStore?.Set("upn", value); }
+        }
+#nullable restore
+#else
+        public string Upn
+        {
+            get { return BackingStore?.Get<string>("upn"); }
+            set { BackingStore?.Set("upn", value); }
+        }
+#endif
         /// <summary>The user account of the mailbox.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,6 +103,7 @@ namespace Microsoft.Graph.Models.Security
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "primaryAddress", n => { PrimaryAddress = n.GetStringValue(); } },
+                { "upn", n => { Upn = n.GetStringValue(); } },
                 { "userAccount", n => { UserAccount = n.GetObjectValue<global::Microsoft.Graph.Models.Security.UserAccount>(global::Microsoft.Graph.Models.Security.UserAccount.CreateFromDiscriminatorValue); } },
             };
         }
@@ -100,6 +117,7 @@ namespace Microsoft.Graph.Models.Security
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("primaryAddress", PrimaryAddress);
+            writer.WriteStringValue("upn", Upn);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.UserAccount>("userAccount", UserAccount);
         }
     }

@@ -98,6 +98,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>The firstChannelName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FirstChannelName
+        {
+            get { return BackingStore?.Get<string?>("firstChannelName"); }
+            set { BackingStore?.Set("firstChannelName", value); }
+        }
+#nullable restore
+#else
+        public string FirstChannelName
+        {
+            get { return BackingStore?.Get<string>("firstChannelName"); }
+            set { BackingStore?.Set("firstChannelName", value); }
+        }
+#endif
         /// <summary>Settings to configure use of Giphy, memes, and stickers in the team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -444,6 +460,7 @@ namespace Microsoft.Graph.Models
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "firstChannelName", n => { FirstChannelName = n.GetStringValue(); } },
                 { "funSettings", n => { FunSettings = n.GetObjectValue<global::Microsoft.Graph.Models.TeamFunSettings>(global::Microsoft.Graph.Models.TeamFunSettings.CreateFromDiscriminatorValue); } },
                 { "group", n => { Group = n.GetObjectValue<global::Microsoft.Graph.Models.Group>(global::Microsoft.Graph.Models.Group.CreateFromDiscriminatorValue); } },
                 { "guestSettings", n => { GuestSettings = n.GetObjectValue<global::Microsoft.Graph.Models.TeamGuestSettings>(global::Microsoft.Graph.Models.TeamGuestSettings.CreateFromDiscriminatorValue); } },
@@ -482,6 +499,7 @@ namespace Microsoft.Graph.Models
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteStringValue("firstChannelName", FirstChannelName);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.TeamFunSettings>("funSettings", FunSettings);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Group>("group", Group);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.TeamGuestSettings>("guestSettings", GuestSettings);

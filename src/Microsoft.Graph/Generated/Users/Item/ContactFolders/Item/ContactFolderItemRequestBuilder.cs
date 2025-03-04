@@ -4,6 +4,7 @@ using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Users.Item.ContactFolders.Item.ChildFolders;
 using Microsoft.Graph.Users.Item.ContactFolders.Item.Contacts;
+using Microsoft.Graph.Users.Item.ContactFolders.Item.PermanentDelete;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -29,6 +30,11 @@ namespace Microsoft.Graph.Users.Item.ContactFolders.Item
         public global::Microsoft.Graph.Users.Item.ContactFolders.Item.Contacts.ContactsRequestBuilder Contacts
         {
             get => new global::Microsoft.Graph.Users.Item.ContactFolders.Item.Contacts.ContactsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the permanentDelete method.</summary>
+        public global::Microsoft.Graph.Users.Item.ContactFolders.Item.PermanentDelete.PermanentDeleteRequestBuilder PermanentDelete
+        {
+            get => new global::Microsoft.Graph.Users.Item.ContactFolders.Item.PermanentDelete.PermanentDeleteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Users.Item.ContactFolders.Item.ContactFolderItemRequestBuilder"/> and sets the default values.

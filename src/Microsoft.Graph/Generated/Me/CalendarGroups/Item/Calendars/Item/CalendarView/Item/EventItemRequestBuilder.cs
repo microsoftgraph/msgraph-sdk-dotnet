@@ -9,6 +9,7 @@ using Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Di
 using Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Extensions;
 using Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Forward;
 using Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Instances;
+using Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Item.PermanentDelete;
 using Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Item.SnoozeReminder;
 using Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Item.TentativelyAccept;
 using Microsoft.Graph.Models.ODataErrors;
@@ -73,6 +74,11 @@ namespace Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Ite
         public global::Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Instances.InstancesRequestBuilder Instances
         {
             get => new global::Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Instances.InstancesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the permanentDelete method.</summary>
+        public global::Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Item.PermanentDelete.PermanentDeleteRequestBuilder PermanentDelete
+        {
+            get => new global::Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Item.PermanentDelete.PermanentDeleteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the snoozeReminder method.</summary>
         public global::Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Item.SnoozeReminder.SnoozeReminderRequestBuilder SnoozeReminder

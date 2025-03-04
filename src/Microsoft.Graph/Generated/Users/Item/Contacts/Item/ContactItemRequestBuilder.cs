@@ -3,6 +3,7 @@
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Users.Item.Contacts.Item.Extensions;
+using Microsoft.Graph.Users.Item.Contacts.Item.PermanentDelete;
 using Microsoft.Graph.Users.Item.Contacts.Item.Photo;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -24,6 +25,11 @@ namespace Microsoft.Graph.Users.Item.Contacts.Item
         public global::Microsoft.Graph.Users.Item.Contacts.Item.Extensions.ExtensionsRequestBuilder Extensions
         {
             get => new global::Microsoft.Graph.Users.Item.Contacts.Item.Extensions.ExtensionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the permanentDelete method.</summary>
+        public global::Microsoft.Graph.Users.Item.Contacts.Item.PermanentDelete.PermanentDeleteRequestBuilder PermanentDelete
+        {
+            get => new global::Microsoft.Graph.Users.Item.Contacts.Item.PermanentDelete.PermanentDeleteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the photo property of the microsoft.graph.contact entity.</summary>
         public global::Microsoft.Graph.Users.Item.Contacts.Item.Photo.PhotoRequestBuilder Photo

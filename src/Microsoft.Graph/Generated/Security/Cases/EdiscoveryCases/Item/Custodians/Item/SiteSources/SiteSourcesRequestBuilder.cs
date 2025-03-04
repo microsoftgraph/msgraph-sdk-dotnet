@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.Si
         {
         }
         /// <summary>
-        /// Get a list of the siteSource objects associated with an ediscoveryCustodian or ediscoveryHoldPolicy.
+        /// Get a list of the siteSource objects associated with an ediscoveryCustodian.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycustodian-list-sitesources?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Security.SiteSourceCollectionResponse"/></returns>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.Si
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Security.SiteSource>(requestInfo, global::Microsoft.Graph.Models.Security.SiteSource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the siteSource objects associated with an ediscoveryCustodian or ediscoveryHoldPolicy.
+        /// Get a list of the siteSource objects associated with an ediscoveryCustodian.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.Si
             return new global::Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.SiteSources.SiteSourcesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the siteSource objects associated with an ediscoveryCustodian or ediscoveryHoldPolicy.
+        /// Get a list of the siteSource objects associated with an ediscoveryCustodian.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SiteSourcesRequestBuilderGetQueryParameters 

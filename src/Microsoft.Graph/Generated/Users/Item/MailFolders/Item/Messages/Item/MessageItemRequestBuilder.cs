@@ -10,6 +10,7 @@ using Microsoft.Graph.Users.Item.MailFolders.Item.Messages.Item.CreateReplyAll;
 using Microsoft.Graph.Users.Item.MailFolders.Item.Messages.Item.Extensions;
 using Microsoft.Graph.Users.Item.MailFolders.Item.Messages.Item.Forward;
 using Microsoft.Graph.Users.Item.MailFolders.Item.Messages.Item.Move;
+using Microsoft.Graph.Users.Item.MailFolders.Item.Messages.Item.PermanentDelete;
 using Microsoft.Graph.Users.Item.MailFolders.Item.Messages.Item.Reply;
 using Microsoft.Graph.Users.Item.MailFolders.Item.Messages.Item.ReplyAll;
 using Microsoft.Graph.Users.Item.MailFolders.Item.Messages.Item.Send;
@@ -74,6 +75,11 @@ namespace Microsoft.Graph.Users.Item.MailFolders.Item.Messages.Item
         public global::Microsoft.Graph.Users.Item.MailFolders.Item.Messages.Item.Move.MoveRequestBuilder Move
         {
             get => new global::Microsoft.Graph.Users.Item.MailFolders.Item.Messages.Item.Move.MoveRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the permanentDelete method.</summary>
+        public global::Microsoft.Graph.Users.Item.MailFolders.Item.Messages.Item.PermanentDelete.PermanentDeleteRequestBuilder PermanentDelete
+        {
+            get => new global::Microsoft.Graph.Users.Item.MailFolders.Item.Messages.Item.PermanentDelete.PermanentDeleteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the reply method.</summary>
         public global::Microsoft.Graph.Users.Item.MailFolders.Item.Messages.Item.Reply.ReplyRequestBuilder Reply

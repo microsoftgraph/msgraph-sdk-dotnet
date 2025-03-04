@@ -181,6 +181,7 @@ namespace Microsoft.Graph.Models.Security
                 "#microsoft.graph.security.securityGroupEvidence" => new global::Microsoft.Graph.Models.Security.SecurityGroupEvidence(),
                 "#microsoft.graph.security.servicePrincipalEvidence" => new global::Microsoft.Graph.Models.Security.ServicePrincipalEvidence(),
                 "#microsoft.graph.security.submissionMailEvidence" => new global::Microsoft.Graph.Models.Security.SubmissionMailEvidence(),
+                "#microsoft.graph.security.teamsMessageEvidence" => new global::Microsoft.Graph.Models.Security.TeamsMessageEvidence(),
                 "#microsoft.graph.security.urlEvidence" => new global::Microsoft.Graph.Models.Security.UrlEvidence(),
                 "#microsoft.graph.security.userEvidence" => new global::Microsoft.Graph.Models.Security.UserEvidence(),
                 _ => new global::Microsoft.Graph.Models.Security.AlertEvidence(),
