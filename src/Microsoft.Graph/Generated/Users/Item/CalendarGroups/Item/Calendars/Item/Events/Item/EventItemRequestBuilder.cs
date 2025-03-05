@@ -11,6 +11,7 @@ using Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.
 using Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.Extensions;
 using Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.Forward;
 using Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.Instances;
+using Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.PermanentDelete;
 using Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.SnoozeReminder;
 using Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.TentativelyAccept;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -73,6 +74,11 @@ namespace Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.Events.I
         public global::Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.Instances.InstancesRequestBuilder Instances
         {
             get => new global::Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.Instances.InstancesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the permanentDelete method.</summary>
+        public global::Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.PermanentDelete.PermanentDeleteRequestBuilder PermanentDelete
+        {
+            get => new global::Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.PermanentDelete.PermanentDeleteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the snoozeReminder method.</summary>
         public global::Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.SnoozeReminder.SnoozeReminderRequestBuilder SnoozeReminder

@@ -7,6 +7,7 @@ using Microsoft.Graph.Users.Item.MailFolders.Item.Copy;
 using Microsoft.Graph.Users.Item.MailFolders.Item.MessageRules;
 using Microsoft.Graph.Users.Item.MailFolders.Item.Messages;
 using Microsoft.Graph.Users.Item.MailFolders.Item.Move;
+using Microsoft.Graph.Users.Item.MailFolders.Item.PermanentDelete;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -47,6 +48,11 @@ namespace Microsoft.Graph.Users.Item.MailFolders.Item
         public global::Microsoft.Graph.Users.Item.MailFolders.Item.Move.MoveRequestBuilder Move
         {
             get => new global::Microsoft.Graph.Users.Item.MailFolders.Item.Move.MoveRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the permanentDelete method.</summary>
+        public global::Microsoft.Graph.Users.Item.MailFolders.Item.PermanentDelete.PermanentDeleteRequestBuilder PermanentDelete
+        {
+            get => new global::Microsoft.Graph.Users.Item.MailFolders.Item.PermanentDelete.PermanentDeleteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Users.Item.MailFolders.Item.MailFolderItemRequestBuilder"/> and sets the default values.

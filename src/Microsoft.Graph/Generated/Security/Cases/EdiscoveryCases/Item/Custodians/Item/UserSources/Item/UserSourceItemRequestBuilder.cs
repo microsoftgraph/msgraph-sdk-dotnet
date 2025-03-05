@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.Us
         {
         }
         /// <summary>
-        /// Delete navigation property userSources for security
+        /// Delete a userSource object associated with an ediscoveryCustodian.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycustodian-delete-usersources?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +106,7 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.Us
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Security.UserSource>(requestInfo, global::Microsoft.Graph.Models.Security.UserSource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property userSources for security
+        /// Delete a userSource object associated with an ediscoveryCustodian.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

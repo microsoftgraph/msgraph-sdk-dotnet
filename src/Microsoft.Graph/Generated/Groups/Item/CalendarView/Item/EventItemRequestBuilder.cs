@@ -9,6 +9,7 @@ using Microsoft.Graph.Groups.Item.CalendarView.Item.DismissReminder;
 using Microsoft.Graph.Groups.Item.CalendarView.Item.Extensions;
 using Microsoft.Graph.Groups.Item.CalendarView.Item.Forward;
 using Microsoft.Graph.Groups.Item.CalendarView.Item.Instances;
+using Microsoft.Graph.Groups.Item.CalendarView.Item.PermanentDelete;
 using Microsoft.Graph.Groups.Item.CalendarView.Item.SnoozeReminder;
 using Microsoft.Graph.Groups.Item.CalendarView.Item.TentativelyAccept;
 using Microsoft.Graph.Models.ODataErrors;
@@ -73,6 +74,11 @@ namespace Microsoft.Graph.Groups.Item.CalendarView.Item
         public global::Microsoft.Graph.Groups.Item.CalendarView.Item.Instances.InstancesRequestBuilder Instances
         {
             get => new global::Microsoft.Graph.Groups.Item.CalendarView.Item.Instances.InstancesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the permanentDelete method.</summary>
+        public global::Microsoft.Graph.Groups.Item.CalendarView.Item.PermanentDelete.PermanentDeleteRequestBuilder PermanentDelete
+        {
+            get => new global::Microsoft.Graph.Groups.Item.CalendarView.Item.PermanentDelete.PermanentDeleteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the snoozeReminder method.</summary>
         public global::Microsoft.Graph.Groups.Item.CalendarView.Item.SnoozeReminder.SnoozeReminderRequestBuilder SnoozeReminder

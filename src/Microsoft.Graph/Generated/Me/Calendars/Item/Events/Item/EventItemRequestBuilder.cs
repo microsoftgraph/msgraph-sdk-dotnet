@@ -9,6 +9,7 @@ using Microsoft.Graph.Me.Calendars.Item.Events.Item.DismissReminder;
 using Microsoft.Graph.Me.Calendars.Item.Events.Item.Extensions;
 using Microsoft.Graph.Me.Calendars.Item.Events.Item.Forward;
 using Microsoft.Graph.Me.Calendars.Item.Events.Item.Instances;
+using Microsoft.Graph.Me.Calendars.Item.Events.Item.PermanentDelete;
 using Microsoft.Graph.Me.Calendars.Item.Events.Item.SnoozeReminder;
 using Microsoft.Graph.Me.Calendars.Item.Events.Item.TentativelyAccept;
 using Microsoft.Graph.Models.ODataErrors;
@@ -73,6 +74,11 @@ namespace Microsoft.Graph.Me.Calendars.Item.Events.Item
         public global::Microsoft.Graph.Me.Calendars.Item.Events.Item.Instances.InstancesRequestBuilder Instances
         {
             get => new global::Microsoft.Graph.Me.Calendars.Item.Events.Item.Instances.InstancesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the permanentDelete method.</summary>
+        public global::Microsoft.Graph.Me.Calendars.Item.Events.Item.PermanentDelete.PermanentDeleteRequestBuilder PermanentDelete
+        {
+            get => new global::Microsoft.Graph.Me.Calendars.Item.Events.Item.PermanentDelete.PermanentDeleteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the snoozeReminder method.</summary>
         public global::Microsoft.Graph.Me.Calendars.Item.Events.Item.SnoozeReminder.SnoozeReminderRequestBuilder SnoozeReminder
