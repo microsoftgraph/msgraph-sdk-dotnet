@@ -43,6 +43,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>Specifies settings that affect printer discovery when using Universal Print.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.PrinterDiscoverySettings? PrinterDiscoverySettings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.PrinterDiscoverySettings?>("printerDiscoverySettings"); }
+            set { BackingStore?.Set("printerDiscoverySettings", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.PrinterDiscoverySettings PrinterDiscoverySettings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.PrinterDiscoverySettings>("printerDiscoverySettings"); }
+            set { BackingStore?.Set("printerDiscoverySettings", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Models.PrintSettings"/> and sets the default values.
         /// </summary>
@@ -71,6 +87,7 @@ namespace Microsoft.Graph.Models
             {
                 { "documentConversionEnabled", n => { DocumentConversionEnabled = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "printerDiscoverySettings", n => { PrinterDiscoverySettings = n.GetObjectValue<global::Microsoft.Graph.Models.PrinterDiscoverySettings>(global::Microsoft.Graph.Models.PrinterDiscoverySettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -82,6 +99,7 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("documentConversionEnabled", DocumentConversionEnabled);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.PrinterDiscoverySettings>("printerDiscoverySettings", PrinterDiscoverySettings);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

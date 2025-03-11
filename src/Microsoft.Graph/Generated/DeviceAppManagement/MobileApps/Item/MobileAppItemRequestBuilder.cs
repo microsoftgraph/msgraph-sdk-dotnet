@@ -172,8 +172,8 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the managedApp object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-managedapp-get?view=graph-rest-1.0" />
+        /// Read properties and relationships of the macOSLobApp object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-macoslobapp-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.MobileApp"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -196,8 +196,8 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.MobileApp>(requestInfo, global::Microsoft.Graph.Models.MobileApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a managedAndroidStoreApp object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-managedandroidstoreapp-update?view=graph-rest-1.0" />
+        /// Update the properties of a managedIOSLobApp object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-managedioslobapp-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.MobileApp"/></returns>
         /// <param name="body">The request body</param>
@@ -241,7 +241,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the managedApp object.
+        /// Read properties and relationships of the macOSLobApp object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -260,7 +260,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a managedAndroidStoreApp object.
+        /// Update the properties of a managedIOSLobApp object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -299,7 +299,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item
         {
         }
         /// <summary>
-        /// Read properties and relationships of the managedApp object.
+        /// Read properties and relationships of the macOSLobApp object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MobileAppItemRequestBuilderGetQueryParameters 
