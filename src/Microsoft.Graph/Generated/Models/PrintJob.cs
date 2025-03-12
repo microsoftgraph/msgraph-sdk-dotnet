@@ -12,6 +12,12 @@ namespace Microsoft.Graph.Models
     public partial class PrintJob : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The dateTimeOffset when the job was acknowledged. Read-only.</summary>
+        public DateTimeOffset? AcknowledgedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("acknowledgedDateTime"); }
+            set { BackingStore?.Set("acknowledgedDateTime", value); }
+        }
         /// <summary>The configuration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,6 +72,12 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("documents", value); }
         }
 #endif
+        /// <summary>The error code of the print job. Read-only.</summary>
+        public int? ErrorCode
+        {
+            get { return BackingStore?.Get<int?>("errorCode"); }
+            set { BackingStore?.Set("errorCode", value); }
+        }
         /// <summary>If true, document can be fetched by printer.</summary>
         public bool? IsFetchable
         {
@@ -154,10 +166,12 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "acknowledgedDateTime", n => { AcknowledgedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "configuration", n => { Configuration = n.GetObjectValue<global::Microsoft.Graph.Models.PrintJobConfiguration>(global::Microsoft.Graph.Models.PrintJobConfiguration.CreateFromDiscriminatorValue); } },
                 { "createdBy", n => { CreatedBy = n.GetObjectValue<global::Microsoft.Graph.Models.UserIdentity>(global::Microsoft.Graph.Models.UserIdentity.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "documents", n => { Documents = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.PrintDocument>(global::Microsoft.Graph.Models.PrintDocument.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "errorCode", n => { ErrorCode = n.GetIntValue(); } },
                 { "isFetchable", n => { IsFetchable = n.GetBoolValue(); } },
                 { "redirectedFrom", n => { RedirectedFrom = n.GetStringValue(); } },
                 { "redirectedTo", n => { RedirectedTo = n.GetStringValue(); } },
@@ -173,10 +187,12 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteDateTimeOffsetValue("acknowledgedDateTime", AcknowledgedDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.PrintJobConfiguration>("configuration", Configuration);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.UserIdentity>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.PrintDocument>("documents", Documents);
+            writer.WriteIntValue("errorCode", ErrorCode);
             writer.WriteBoolValue("isFetchable", IsFetchable);
             writer.WriteStringValue("redirectedFrom", RedirectedFrom);
             writer.WriteStringValue("redirectedTo", RedirectedTo);

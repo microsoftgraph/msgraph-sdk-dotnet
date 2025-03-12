@@ -60,8 +60,8 @@ namespace Microsoft.Graph.Me.Messages.Item.Attachments
         {
         }
         /// <summary>
-        /// Retrieve a list of attachment objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/eventmessage-list-attachments?view=graph-rest-1.0" />
+        /// Retrieve a list of attachment objects attached to a message.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.AttachmentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -84,8 +84,8 @@ namespace Microsoft.Graph.Me.Messages.Item.Attachments
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.AttachmentCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.AttachmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this API to add an attachment to a message. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource. You can add an attachment to an existing message by posting to its attachments collection, or you canadd an attachment to a message that is being created and sent on the fly. This operation limits the size of the attachment you can add to under 3 MB.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/message-post-attachments?view=graph-rest-1.0" />
+        /// Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Attachment"/></returns>
         /// <param name="body">The request body</param>
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Me.Messages.Item.Attachments
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Attachment>(requestInfo, global::Microsoft.Graph.Models.Attachment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of attachment objects.
+        /// Retrieve a list of attachment objects attached to a message.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -129,7 +129,7 @@ namespace Microsoft.Graph.Me.Messages.Item.Attachments
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to add an attachment to a message. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource. You can add an attachment to an existing message by posting to its attachments collection, or you canadd an attachment to a message that is being created and sent on the fly. This operation limits the size of the attachment you can add to under 3 MB.
+        /// Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -160,7 +160,7 @@ namespace Microsoft.Graph.Me.Messages.Item.Attachments
             return new global::Microsoft.Graph.Me.Messages.Item.Attachments.AttachmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of attachment objects.
+        /// Retrieve a list of attachment objects attached to a message.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AttachmentsRequestBuilderGetQueryParameters 

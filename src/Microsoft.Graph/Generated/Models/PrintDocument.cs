@@ -44,11 +44,23 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>The time the document was downloaded. Read-only</summary>
+        public DateTimeOffset? DownloadedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("downloadedDateTime"); }
+            set { BackingStore?.Set("downloadedDateTime", value); }
+        }
         /// <summary>The document&apos;s size in bytes. Read-only.</summary>
         public long? Size
         {
             get { return BackingStore?.Get<long?>("size"); }
             set { BackingStore?.Set("size", value); }
+        }
+        /// <summary>The time the document was uploaded. Read-only</summary>
+        public DateTimeOffset? UploadedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("uploadedDateTime"); }
+            set { BackingStore?.Set("uploadedDateTime", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -70,7 +82,9 @@ namespace Microsoft.Graph.Models
             {
                 { "contentType", n => { ContentType = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "downloadedDateTime", n => { DownloadedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "size", n => { Size = n.GetLongValue(); } },
+                { "uploadedDateTime", n => { UploadedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -83,7 +97,9 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteStringValue("contentType", ContentType);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteDateTimeOffsetValue("downloadedDateTime", DownloadedDateTime);
             writer.WriteLongValue("size", Size);
+            writer.WriteDateTimeOffsetValue("uploadedDateTime", UploadedDateTime);
         }
     }
 }
