@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Me.RevokeSignInSessions
         {
         }
         /// <summary>
-        /// Invalidates all the refresh tokens issued to applications for a user (as well as session cookies in a user&apos;s browser), by resetting the signInSessionsValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device. This operation prevents access to the organization&apos;s data through applications on the device by requiring the user to sign in again to all applications that they have previously consented to, independent of device.
+        /// Invalidates all the refresh tokens issued to applications for a user (and session cookies in a user&apos;s browser), by resetting the signInSessionsValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device. This operation prevents access to the organization&apos;s data through applications on the device by requiring the user to sign in again to all applications that they consented to previously, independent of device.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-revokesigninsessions?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Me.RevokeSignInSessions.RevokeSignInSessionsPostResponse"/></returns>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Me.RevokeSignInSessions
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Me.RevokeSignInSessions.RevokeSignInSessionsPostResponse>(requestInfo, global::Microsoft.Graph.Me.RevokeSignInSessions.RevokeSignInSessionsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invalidates all the refresh tokens issued to applications for a user (as well as session cookies in a user&apos;s browser), by resetting the signInSessionsValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device. This operation prevents access to the organization&apos;s data through applications on the device by requiring the user to sign in again to all applications that they have previously consented to, independent of device.
+        /// Invalidates all the refresh tokens issued to applications for a user (and session cookies in a user&apos;s browser), by resetting the signInSessionsValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device. This operation prevents access to the organization&apos;s data through applications on the device by requiring the user to sign in again to all applications that they consented to previously, independent of device.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-revokesigninsessions?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Me.RevokeSignInSessions.RevokeSignInSessionsResponse"/></returns>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Me.RevokeSignInSessions
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Me.RevokeSignInSessions.RevokeSignInSessionsResponse>(requestInfo, global::Microsoft.Graph.Me.RevokeSignInSessions.RevokeSignInSessionsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invalidates all the refresh tokens issued to applications for a user (as well as session cookies in a user&apos;s browser), by resetting the signInSessionsValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device. This operation prevents access to the organization&apos;s data through applications on the device by requiring the user to sign in again to all applications that they have previously consented to, independent of device.
+        /// Invalidates all the refresh tokens issued to applications for a user (and session cookies in a user&apos;s browser), by resetting the signInSessionsValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device. This operation prevents access to the organization&apos;s data through applications on the device by requiring the user to sign in again to all applications that they consented to previously, independent of device.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
