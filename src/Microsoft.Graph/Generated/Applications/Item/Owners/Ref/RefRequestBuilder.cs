@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Applications.Item.Owners.Ref
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.StringCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add an owner to an application. Currently, only individual users are supported as owners of applications.
+        /// Add an owner to an application. Application owners can be individual users, the associated service principal, or another service principal.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-post-owners?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Applications.Item.Owners.Ref
             return requestInfo;
         }
         /// <summary>
-        /// Add an owner to an application. Currently, only individual users are supported as owners of applications.
+        /// Add an owner to an application. Application owners can be individual users, the associated service principal, or another service principal.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
