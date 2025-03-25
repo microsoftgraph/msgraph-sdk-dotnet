@@ -60,8 +60,8 @@ namespace Microsoft.Graph.Me.Messages.Item.Attachments
         {
         }
         /// <summary>
-        /// Retrieve a list of attachment objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/eventmessage-list-attachments?view=graph-rest-1.0" />
+        /// Retrieve a list of attachment objects attached to a message.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/message-list-attachments?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.AttachmentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Me.Messages.Item.Attachments
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Attachment>(requestInfo, global::Microsoft.Graph.Models.Attachment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of attachment objects.
+        /// Retrieve a list of attachment objects attached to a message.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -160,7 +160,7 @@ namespace Microsoft.Graph.Me.Messages.Item.Attachments
             return new global::Microsoft.Graph.Me.Messages.Item.Attachments.AttachmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of attachment objects.
+        /// Retrieve a list of attachment objects attached to a message.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AttachmentsRequestBuilderGetQueryParameters 
