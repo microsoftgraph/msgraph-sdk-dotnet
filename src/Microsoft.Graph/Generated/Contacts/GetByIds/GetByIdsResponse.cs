@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Contacts.GetByIds
 {
-    [Obsolete("This class is obsolete. Use GetByIdsPostResponse instead.")]
+    [Obsolete("This class is obsolete. Use GetByIdspostResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetByIdsResponse : global::Microsoft.Graph.Contacts.GetByIds.GetByIdsPostResponse, IParsable
+    public partial class GetByIdsResponse : global::Microsoft.Graph.Contacts.GetByIds.GetByIdspostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

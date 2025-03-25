@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Connections.Item.Items.Item.MicrosoftGraphExternalConnectorsAddActivities
 {
-    [Obsolete("This class is obsolete. Use AddActivitiesPostResponse instead.")]
+    [Obsolete("This class is obsolete. Use AddActivitiespostResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AddActivitiesResponse : global::Microsoft.Graph.Connections.Item.Items.Item.MicrosoftGraphExternalConnectorsAddActivities.AddActivitiesPostResponse, IParsable
+    public partial class AddActivitiesResponse : global::Microsoft.Graph.Connections.Item.Items.Item.MicrosoftGraphExternalConnectorsAddActivities.AddActivitiespostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

@@ -42,18 +42,18 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Secrets
         /// <summary>
         /// Update property secrets value.
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Applications.Item.Synchronization.Secrets.SecretsPutResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Applications.Item.Synchronization.Secrets.SecretsputResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Applications.Item.Synchronization.Secrets.SecretsPutResponse?> PutAsSecretsPutResponseAsync(global::Microsoft.Graph.Applications.Item.Synchronization.Secrets.SecretsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Applications.Item.Synchronization.Secrets.SecretsputResponse?> PutAsSecretsputResponseAsync(global::Microsoft.Graph.Applications.Item.Synchronization.Secrets.SecretsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Applications.Item.Synchronization.Secrets.SecretsPutResponse> PutAsSecretsPutResponseAsync(global::Microsoft.Graph.Applications.Item.Synchronization.Secrets.SecretsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Applications.Item.Synchronization.Secrets.SecretsputResponse> PutAsSecretsputResponseAsync(global::Microsoft.Graph.Applications.Item.Synchronization.Secrets.SecretsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Secrets
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Applications.Item.Synchronization.Secrets.SecretsPutResponse>(requestInfo, global::Microsoft.Graph.Applications.Item.Synchronization.Secrets.SecretsPutResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Applications.Item.Synchronization.Secrets.SecretsputResponse>(requestInfo, global::Microsoft.Graph.Applications.Item.Synchronization.Secrets.SecretsputResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update property secrets value.
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Secrets
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use PutAsSecretsPutResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use PutAsSecretsputResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Applications.Item.Synchronization.Secrets.SecretsResponse?> PutAsync(global::Microsoft.Graph.Applications.Item.Synchronization.Secrets.SecretsPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

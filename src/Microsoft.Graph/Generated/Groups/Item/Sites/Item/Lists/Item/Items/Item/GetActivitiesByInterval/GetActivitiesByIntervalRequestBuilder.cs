@@ -36,17 +36,17 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.GetActivi
         /// <summary>
         /// Invoke function getActivitiesByInterval
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalGetResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalgetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalGetResponse?> GetAsGetActivitiesByIntervalGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalRequestBuilder.GetActivitiesByIntervalRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalgetResponse?> GetAsGetActivitiesByIntervalgetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalRequestBuilder.GetActivitiesByIntervalRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalGetResponse> GetAsGetActivitiesByIntervalGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalRequestBuilder.GetActivitiesByIntervalRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalgetResponse> GetAsGetActivitiesByIntervalgetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalRequestBuilder.GetActivitiesByIntervalRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.GetActivi
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalGetResponse>(requestInfo, global::Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalgetResponse>(requestInfo, global::Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalgetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getActivitiesByInterval
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.GetActivi
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsGetActivitiesByIntervalGetResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use GetAsGetActivitiesByIntervalgetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.GetActivitiesByInterval.GetActivitiesByIntervalRequestBuilder.GetActivitiesByIntervalRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

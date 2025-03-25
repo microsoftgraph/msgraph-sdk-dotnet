@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Series.Count
 {
-    [Obsolete("This class is obsolete. Use CountGetResponse instead.")]
+    [Obsolete("This class is obsolete. Use CountgetResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CountResponse : global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Series.Count.CountGetResponse, IParsable
+    public partial class CountResponse : global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.Series.Count.CountgetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

@@ -37,17 +37,17 @@ namespace Microsoft.Graph.Me.GetManagedAppDiagnosticStatuses
         /// Gets diagnostics validation status for a given user.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-user-getmanagedappdiagnosticstatuses?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Me.GetManagedAppDiagnosticStatuses.GetManagedAppDiagnosticStatusesGetResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Me.GetManagedAppDiagnosticStatuses.GetManagedAppDiagnosticStatusesgetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Me.GetManagedAppDiagnosticStatuses.GetManagedAppDiagnosticStatusesGetResponse?> GetAsGetManagedAppDiagnosticStatusesGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.GetManagedAppDiagnosticStatuses.GetManagedAppDiagnosticStatusesRequestBuilder.GetManagedAppDiagnosticStatusesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Me.GetManagedAppDiagnosticStatuses.GetManagedAppDiagnosticStatusesgetResponse?> GetAsGetManagedAppDiagnosticStatusesgetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.GetManagedAppDiagnosticStatuses.GetManagedAppDiagnosticStatusesRequestBuilder.GetManagedAppDiagnosticStatusesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Me.GetManagedAppDiagnosticStatuses.GetManagedAppDiagnosticStatusesGetResponse> GetAsGetManagedAppDiagnosticStatusesGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.GetManagedAppDiagnosticStatuses.GetManagedAppDiagnosticStatusesRequestBuilder.GetManagedAppDiagnosticStatusesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Me.GetManagedAppDiagnosticStatuses.GetManagedAppDiagnosticStatusesgetResponse> GetAsGetManagedAppDiagnosticStatusesgetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.GetManagedAppDiagnosticStatuses.GetManagedAppDiagnosticStatusesRequestBuilder.GetManagedAppDiagnosticStatusesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Me.GetManagedAppDiagnosticStatuses
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Me.GetManagedAppDiagnosticStatuses.GetManagedAppDiagnosticStatusesGetResponse>(requestInfo, global::Microsoft.Graph.Me.GetManagedAppDiagnosticStatuses.GetManagedAppDiagnosticStatusesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Me.GetManagedAppDiagnosticStatuses.GetManagedAppDiagnosticStatusesgetResponse>(requestInfo, global::Microsoft.Graph.Me.GetManagedAppDiagnosticStatuses.GetManagedAppDiagnosticStatusesgetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets diagnostics validation status for a given user.
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Me.GetManagedAppDiagnosticStatuses
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsGetManagedAppDiagnosticStatusesGetResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use GetAsGetManagedAppDiagnosticStatusesgetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Me.GetManagedAppDiagnosticStatuses.GetManagedAppDiagnosticStatusesResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.GetManagedAppDiagnosticStatuses.GetManagedAppDiagnosticStatusesRequestBuilder.GetManagedAppDiagnosticStatusesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

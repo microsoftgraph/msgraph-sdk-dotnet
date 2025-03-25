@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Groups.Item.Sites.GetAllSites
 {
-    [Obsolete("This class is obsolete. Use GetAllSitesGetResponse instead.")]
+    [Obsolete("This class is obsolete. Use GetAllSitesgetResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetAllSitesResponse : global::Microsoft.Graph.Groups.Item.Sites.GetAllSites.GetAllSitesGetResponse, IParsable
+    public partial class GetAllSitesResponse : global::Microsoft.Graph.Groups.Item.Sites.GetAllSites.GetAllSitesgetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

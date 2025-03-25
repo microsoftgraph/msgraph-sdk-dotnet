@@ -37,17 +37,17 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Delta
         /// Get newly created, updated, or deleted list items without having to perform a full read of the entire items collection. Your app begins by calling delta without any parameters.The service starts enumerating the hierarchy of the list, returning pages of items, and either an @odata.nextLink or an @odata.deltaLink.Your app should continue calling with the @odata.nextLink until you see an @odata.deltaLink returned. After you received all the changes, you can apply them to your local state.To check for changes in the future, call delta again with the @odata.deltaLink from the previous response. The delta feed shows the latest state for each item, not each change. If an item was renamed twice, it only shows up once, with its latest name.The same item might appear more than once in a delta feed, for various reasons. You should use the last occurrence you see. Items with this property should be removed from your local state.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/listitem-delta?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Delta.DeltaGetResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Delta.DeltagetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Delta.DeltaGetResponse?> GetAsDeltaGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Delta.DeltaRequestBuilder.DeltaRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Delta.DeltagetResponse?> GetAsDeltagetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Delta.DeltaRequestBuilder.DeltaRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Delta.DeltaGetResponse> GetAsDeltaGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Delta.DeltaRequestBuilder.DeltaRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Delta.DeltagetResponse> GetAsDeltagetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Delta.DeltaRequestBuilder.DeltaRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Delta
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Delta.DeltaGetResponse>(requestInfo, global::Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Delta.DeltaGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Delta.DeltagetResponse>(requestInfo, global::Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Delta.DeltagetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get newly created, updated, or deleted list items without having to perform a full read of the entire items collection. Your app begins by calling delta without any parameters.The service starts enumerating the hierarchy of the list, returning pages of items, and either an @odata.nextLink or an @odata.deltaLink.Your app should continue calling with the @odata.nextLink until you see an @odata.deltaLink returned. After you received all the changes, you can apply them to your local state.To check for changes in the future, call delta again with the @odata.deltaLink from the previous response. The delta feed shows the latest state for each item, not each change. If an item was renamed twice, it only shows up once, with its latest name.The same item might appear more than once in a delta feed, for various reasons. You should use the last occurrence you see. Items with this property should be removed from your local state.
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Delta
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsDeltaGetResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use GetAsDeltagetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Delta.DeltaResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Delta.DeltaRequestBuilder.DeltaRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

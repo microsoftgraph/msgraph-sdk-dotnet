@@ -37,18 +37,18 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Archive
         /// Archive a list of serviceUpdateMessages for the signed in user.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceupdatemessage-archive?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Archive.ArchivePostResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Archive.ArchivepostResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Archive.ArchivePostResponse?> PostAsArchivePostResponseAsync(global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Archive.ArchivePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Archive.ArchivepostResponse?> PostAsArchivepostResponseAsync(global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Archive.ArchivePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Archive.ArchivePostResponse> PostAsArchivePostResponseAsync(global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Archive.ArchivePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Archive.ArchivepostResponse> PostAsArchivepostResponseAsync(global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Archive.ArchivePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Archive
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Archive.ArchivePostResponse>(requestInfo, global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Archive.ArchivePostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Archive.ArchivepostResponse>(requestInfo, global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Archive.ArchivepostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Archive a list of serviceUpdateMessages for the signed in user.
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Archive
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use PostAsArchivePostResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use PostAsArchivepostResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Archive.ArchiveResponse?> PostAsync(global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Archive.ArchivePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

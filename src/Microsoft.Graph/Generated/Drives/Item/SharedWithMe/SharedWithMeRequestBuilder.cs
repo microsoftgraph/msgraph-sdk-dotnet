@@ -37,17 +37,17 @@ namespace Microsoft.Graph.Drives.Item.SharedWithMe
         /// Get a list of driveItem objects shared with the owner of a drive. The driveItems returned from the sharedWithMe method always include the remoteItem facet that indicates they are items from a different drive.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/drive-sharedwithme?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Drives.Item.SharedWithMe.SharedWithMeGetResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Drives.Item.SharedWithMe.SharedWithMegetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Drives.Item.SharedWithMe.SharedWithMeGetResponse?> GetAsSharedWithMeGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Drives.Item.SharedWithMe.SharedWithMeRequestBuilder.SharedWithMeRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Drives.Item.SharedWithMe.SharedWithMegetResponse?> GetAsSharedWithMegetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Drives.Item.SharedWithMe.SharedWithMeRequestBuilder.SharedWithMeRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Drives.Item.SharedWithMe.SharedWithMeGetResponse> GetAsSharedWithMeGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Drives.Item.SharedWithMe.SharedWithMeRequestBuilder.SharedWithMeRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Drives.Item.SharedWithMe.SharedWithMegetResponse> GetAsSharedWithMegetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Drives.Item.SharedWithMe.SharedWithMeRequestBuilder.SharedWithMeRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Drives.Item.SharedWithMe
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Drives.Item.SharedWithMe.SharedWithMeGetResponse>(requestInfo, global::Microsoft.Graph.Drives.Item.SharedWithMe.SharedWithMeGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Drives.Item.SharedWithMe.SharedWithMegetResponse>(requestInfo, global::Microsoft.Graph.Drives.Item.SharedWithMe.SharedWithMegetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of driveItem objects shared with the owner of a drive. The driveItems returned from the sharedWithMe method always include the remoteItem facet that indicates they are items from a different drive.
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Drives.Item.SharedWithMe
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsSharedWithMeGetResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use GetAsSharedWithMegetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Drives.Item.SharedWithMe.SharedWithMeResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Drives.Item.SharedWithMe.SharedWithMeRequestBuilder.SharedWithMeRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

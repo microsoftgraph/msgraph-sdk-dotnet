@@ -38,17 +38,17 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDevicePerforma
         /// <summary>
         /// Invoke function summarizeDevicePerformanceDevices
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDevicePerformance.SummarizeDevicePerformanceDevicesWithSummarizeBy.SummarizeDevicePerformanceDevicesWithSummarizeByGetResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDevicePerformance.SummarizeDevicePerformanceDevicesWithSummarizeBy.SummarizeDevicePerformanceDevicesWithSummarizeBygetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDevicePerformance.SummarizeDevicePerformanceDevicesWithSummarizeBy.SummarizeDevicePerformanceDevicesWithSummarizeByGetResponse?> GetAsSummarizeDevicePerformanceDevicesWithSummarizeByGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDevicePerformance.SummarizeDevicePerformanceDevicesWithSummarizeBy.SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder.SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDevicePerformance.SummarizeDevicePerformanceDevicesWithSummarizeBy.SummarizeDevicePerformanceDevicesWithSummarizeBygetResponse?> GetAsSummarizeDevicePerformanceDevicesWithSummarizeBygetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDevicePerformance.SummarizeDevicePerformanceDevicesWithSummarizeBy.SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder.SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDevicePerformance.SummarizeDevicePerformanceDevicesWithSummarizeBy.SummarizeDevicePerformanceDevicesWithSummarizeByGetResponse> GetAsSummarizeDevicePerformanceDevicesWithSummarizeByGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDevicePerformance.SummarizeDevicePerformanceDevicesWithSummarizeBy.SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder.SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDevicePerformance.SummarizeDevicePerformanceDevicesWithSummarizeBy.SummarizeDevicePerformanceDevicesWithSummarizeBygetResponse> GetAsSummarizeDevicePerformanceDevicesWithSummarizeBygetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDevicePerformance.SummarizeDevicePerformanceDevicesWithSummarizeBy.SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder.SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDevicePerforma
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDevicePerformance.SummarizeDevicePerformanceDevicesWithSummarizeBy.SummarizeDevicePerformanceDevicesWithSummarizeByGetResponse>(requestInfo, global::Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDevicePerformance.SummarizeDevicePerformanceDevicesWithSummarizeBy.SummarizeDevicePerformanceDevicesWithSummarizeByGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDevicePerformance.SummarizeDevicePerformanceDevicesWithSummarizeBy.SummarizeDevicePerformanceDevicesWithSummarizeBygetResponse>(requestInfo, global::Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDevicePerformance.SummarizeDevicePerformanceDevicesWithSummarizeBy.SummarizeDevicePerformanceDevicesWithSummarizeBygetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function summarizeDevicePerformanceDevices
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDevicePerforma
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsSummarizeDevicePerformanceDevicesWithSummarizeByGetResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use GetAsSummarizeDevicePerformanceDevicesWithSummarizeBygetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDevicePerformance.SummarizeDevicePerformanceDevicesWithSummarizeBy.SummarizeDevicePerformanceDevicesWithSummarizeByResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDevicePerformance.SummarizeDevicePerformanceDevicesWithSummarizeBy.SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder.SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

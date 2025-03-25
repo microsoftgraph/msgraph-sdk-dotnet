@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Communications.CallRecords.MicrosoftGraphCallRecordsGetPstnCallsWithFromDateTimeWithToDateTime
 {
-    [Obsolete("This class is obsolete. Use GetPstnCallsWithFromDateTimeWithToDateTimeGetResponse instead.")]
+    [Obsolete("This class is obsolete. Use GetPstnCallsWithFromDateTimeWithToDateTimegetResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetPstnCallsWithFromDateTimeWithToDateTimeResponse : global::Microsoft.Graph.Communications.CallRecords.MicrosoftGraphCallRecordsGetPstnCallsWithFromDateTimeWithToDateTime.GetPstnCallsWithFromDateTimeWithToDateTimeGetResponse, IParsable
+    public partial class GetPstnCallsWithFromDateTimeWithToDateTimeResponse : global::Microsoft.Graph.Communications.CallRecords.MicrosoftGraphCallRecordsGetPstnCallsWithFromDateTimeWithToDateTime.GetPstnCallsWithFromDateTimeWithToDateTimegetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

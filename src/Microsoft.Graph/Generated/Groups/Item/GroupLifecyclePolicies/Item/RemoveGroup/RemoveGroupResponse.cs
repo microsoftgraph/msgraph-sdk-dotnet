@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Groups.Item.GroupLifecyclePolicies.Item.RemoveGroup
 {
-    [Obsolete("This class is obsolete. Use RemoveGroupPostResponse instead.")]
+    [Obsolete("This class is obsolete. Use RemoveGrouppostResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RemoveGroupResponse : global::Microsoft.Graph.Groups.Item.GroupLifecyclePolicies.Item.RemoveGroup.RemoveGroupPostResponse, IParsable
+    public partial class RemoveGroupResponse : global::Microsoft.Graph.Groups.Item.GroupLifecyclePolicies.Item.RemoveGroup.RemoveGrouppostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

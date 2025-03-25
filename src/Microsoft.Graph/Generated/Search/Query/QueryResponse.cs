@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Search.Query
 {
-    [Obsolete("This class is obsolete. Use QueryPostResponse instead.")]
+    [Obsolete("This class is obsolete. Use QuerypostResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class QueryResponse : global::Microsoft.Graph.Search.Query.QueryPostResponse, IParsable
+    public partial class QueryResponse : global::Microsoft.Graph.Search.Query.QuerypostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

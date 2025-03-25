@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Reports.GetRelyingPartyDetailedSummaryWithPeriod
 {
-    [Obsolete("This class is obsolete. Use GetRelyingPartyDetailedSummaryWithPeriodGetResponse instead.")]
+    [Obsolete("This class is obsolete. Use GetRelyingPartyDetailedSummaryWithPeriodgetResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetRelyingPartyDetailedSummaryWithPeriodResponse : global::Microsoft.Graph.Reports.GetRelyingPartyDetailedSummaryWithPeriod.GetRelyingPartyDetailedSummaryWithPeriodGetResponse, IParsable
+    public partial class GetRelyingPartyDetailedSummaryWithPeriodResponse : global::Microsoft.Graph.Reports.GetRelyingPartyDetailedSummaryWithPeriod.GetRelyingPartyDetailedSummaryWithPeriodgetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

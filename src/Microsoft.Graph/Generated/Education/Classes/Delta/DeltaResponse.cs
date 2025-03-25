@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Education.Classes.Delta
 {
-    [Obsolete("This class is obsolete. Use DeltaGetResponse instead.")]
+    [Obsolete("This class is obsolete. Use DeltagetResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class DeltaResponse : global::Microsoft.Graph.Education.Classes.Delta.DeltaGetResponse, IParsable
+    public partial class DeltaResponse : global::Microsoft.Graph.Education.Classes.Delta.DeltagetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

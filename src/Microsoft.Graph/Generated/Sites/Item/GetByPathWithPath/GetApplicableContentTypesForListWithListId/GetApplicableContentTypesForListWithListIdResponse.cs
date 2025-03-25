@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Sites.Item.GetByPathWithPath.GetApplicableContentTypesForListWithListId
 {
-    [Obsolete("This class is obsolete. Use GetApplicableContentTypesForListWithListIdGetResponse instead.")]
+    [Obsolete("This class is obsolete. Use GetApplicableContentTypesForListWithListIdgetResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetApplicableContentTypesForListWithListIdResponse : global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetApplicableContentTypesForListWithListId.GetApplicableContentTypesForListWithListIdGetResponse, IParsable
+    public partial class GetApplicableContentTypesForListWithListIdResponse : global::Microsoft.Graph.Sites.Item.GetByPathWithPath.GetApplicableContentTypesForListWithListId.GetApplicableContentTypesForListWithListIdgetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

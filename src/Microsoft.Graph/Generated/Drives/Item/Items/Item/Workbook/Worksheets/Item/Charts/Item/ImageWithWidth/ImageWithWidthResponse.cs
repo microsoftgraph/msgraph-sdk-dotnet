@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidth
 {
-    [Obsolete("This class is obsolete. Use ImageWithWidthGetResponse instead.")]
+    [Obsolete("This class is obsolete. Use ImageWithWidthgetResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ImageWithWidthResponse : global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidth.ImageWithWidthGetResponse, IParsable
+    public partial class ImageWithWidthResponse : global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidth.ImageWithWidthgetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

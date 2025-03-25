@@ -37,17 +37,17 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourc
         /// Get cloudPcSourceDeviceImage objects that can be uploaded and used on Cloud PCs. View a list of all the managed image resources from your Microsoft Entra subscriptions.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcdeviceimage-getsourceimages?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourceImages.GetSourceImagesGetResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourceImages.GetSourceImagesgetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourceImages.GetSourceImagesGetResponse?> GetAsGetSourceImagesGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourceImages.GetSourceImagesRequestBuilder.GetSourceImagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourceImages.GetSourceImagesgetResponse?> GetAsGetSourceImagesgetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourceImages.GetSourceImagesRequestBuilder.GetSourceImagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourceImages.GetSourceImagesGetResponse> GetAsGetSourceImagesGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourceImages.GetSourceImagesRequestBuilder.GetSourceImagesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourceImages.GetSourceImagesgetResponse> GetAsGetSourceImagesgetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourceImages.GetSourceImagesRequestBuilder.GetSourceImagesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourc
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourceImages.GetSourceImagesGetResponse>(requestInfo, global::Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourceImages.GetSourceImagesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourceImages.GetSourceImagesgetResponse>(requestInfo, global::Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourceImages.GetSourceImagesgetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get cloudPcSourceDeviceImage objects that can be uploaded and used on Cloud PCs. View a list of all the managed image resources from your Microsoft Entra subscriptions.
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourc
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsGetSourceImagesGetResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use GetAsGetSourceImagesgetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourceImages.GetSourceImagesResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourceImages.GetSourceImagesRequestBuilder.GetSourceImagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

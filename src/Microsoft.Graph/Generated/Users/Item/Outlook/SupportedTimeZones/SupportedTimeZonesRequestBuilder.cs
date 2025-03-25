@@ -36,17 +36,17 @@ namespace Microsoft.Graph.Users.Item.Outlook.SupportedTimeZones
         /// <summary>
         /// Invoke function supportedTimeZones
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Users.Item.Outlook.SupportedTimeZones.SupportedTimeZonesGetResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Users.Item.Outlook.SupportedTimeZones.SupportedTimeZonesgetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Users.Item.Outlook.SupportedTimeZones.SupportedTimeZonesGetResponse?> GetAsSupportedTimeZonesGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.Outlook.SupportedTimeZones.SupportedTimeZonesRequestBuilder.SupportedTimeZonesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Users.Item.Outlook.SupportedTimeZones.SupportedTimeZonesgetResponse?> GetAsSupportedTimeZonesgetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.Outlook.SupportedTimeZones.SupportedTimeZonesRequestBuilder.SupportedTimeZonesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Users.Item.Outlook.SupportedTimeZones.SupportedTimeZonesGetResponse> GetAsSupportedTimeZonesGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.Outlook.SupportedTimeZones.SupportedTimeZonesRequestBuilder.SupportedTimeZonesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Users.Item.Outlook.SupportedTimeZones.SupportedTimeZonesgetResponse> GetAsSupportedTimeZonesgetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.Outlook.SupportedTimeZones.SupportedTimeZonesRequestBuilder.SupportedTimeZonesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Users.Item.Outlook.SupportedTimeZones
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Users.Item.Outlook.SupportedTimeZones.SupportedTimeZonesGetResponse>(requestInfo, global::Microsoft.Graph.Users.Item.Outlook.SupportedTimeZones.SupportedTimeZonesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Users.Item.Outlook.SupportedTimeZones.SupportedTimeZonesgetResponse>(requestInfo, global::Microsoft.Graph.Users.Item.Outlook.SupportedTimeZones.SupportedTimeZonesgetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function supportedTimeZones
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Users.Item.Outlook.SupportedTimeZones
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsSupportedTimeZonesGetResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use GetAsSupportedTimeZonesgetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Users.Item.Outlook.SupportedTimeZones.SupportedTimeZonesResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.Outlook.SupportedTimeZones.SupportedTimeZonesRequestBuilder.SupportedTimeZonesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

@@ -36,18 +36,18 @@ namespace Microsoft.Graph.DirectoryRoleTemplates.Item.CheckMemberObjects
         /// <summary>
         /// Invoke action checkMemberObjects
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.DirectoryRoleTemplates.Item.CheckMemberObjects.CheckMemberObjectsPostResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.DirectoryRoleTemplates.Item.CheckMemberObjects.CheckMemberObjectspostResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.DirectoryRoleTemplates.Item.CheckMemberObjects.CheckMemberObjectsPostResponse?> PostAsCheckMemberObjectsPostResponseAsync(global::Microsoft.Graph.DirectoryRoleTemplates.Item.CheckMemberObjects.CheckMemberObjectsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.DirectoryRoleTemplates.Item.CheckMemberObjects.CheckMemberObjectspostResponse?> PostAsCheckMemberObjectspostResponseAsync(global::Microsoft.Graph.DirectoryRoleTemplates.Item.CheckMemberObjects.CheckMemberObjectsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.DirectoryRoleTemplates.Item.CheckMemberObjects.CheckMemberObjectsPostResponse> PostAsCheckMemberObjectsPostResponseAsync(global::Microsoft.Graph.DirectoryRoleTemplates.Item.CheckMemberObjects.CheckMemberObjectsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.DirectoryRoleTemplates.Item.CheckMemberObjects.CheckMemberObjectspostResponse> PostAsCheckMemberObjectspostResponseAsync(global::Microsoft.Graph.DirectoryRoleTemplates.Item.CheckMemberObjects.CheckMemberObjectsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.DirectoryRoleTemplates.Item.CheckMemberObjects
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.DirectoryRoleTemplates.Item.CheckMemberObjects.CheckMemberObjectsPostResponse>(requestInfo, global::Microsoft.Graph.DirectoryRoleTemplates.Item.CheckMemberObjects.CheckMemberObjectsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.DirectoryRoleTemplates.Item.CheckMemberObjects.CheckMemberObjectspostResponse>(requestInfo, global::Microsoft.Graph.DirectoryRoleTemplates.Item.CheckMemberObjects.CheckMemberObjectspostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke action checkMemberObjects
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.DirectoryRoleTemplates.Item.CheckMemberObjects
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use PostAsCheckMemberObjectsPostResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use PostAsCheckMemberObjectspostResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.DirectoryRoleTemplates.Item.CheckMemberObjects.CheckMemberObjectsResponse?> PostAsync(global::Microsoft.Graph.DirectoryRoleTemplates.Item.CheckMemberObjects.CheckMemberObjectsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

@@ -37,18 +37,18 @@ namespace Microsoft.Graph.DirectoryRoles.GetByIds
         /// Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.DirectoryRoles.GetByIds.GetByIdsPostResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.DirectoryRoles.GetByIds.GetByIdspostResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.DirectoryRoles.GetByIds.GetByIdsPostResponse?> PostAsGetByIdsPostResponseAsync(global::Microsoft.Graph.DirectoryRoles.GetByIds.GetByIdsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.DirectoryRoles.GetByIds.GetByIdspostResponse?> PostAsGetByIdspostResponseAsync(global::Microsoft.Graph.DirectoryRoles.GetByIds.GetByIdsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.DirectoryRoles.GetByIds.GetByIdsPostResponse> PostAsGetByIdsPostResponseAsync(global::Microsoft.Graph.DirectoryRoles.GetByIds.GetByIdsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.DirectoryRoles.GetByIds.GetByIdspostResponse> PostAsGetByIdspostResponseAsync(global::Microsoft.Graph.DirectoryRoles.GetByIds.GetByIdsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.DirectoryRoles.GetByIds
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.DirectoryRoles.GetByIds.GetByIdsPostResponse>(requestInfo, global::Microsoft.Graph.DirectoryRoles.GetByIds.GetByIdsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.DirectoryRoles.GetByIds.GetByIdspostResponse>(requestInfo, global::Microsoft.Graph.DirectoryRoles.GetByIds.GetByIdspostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.DirectoryRoles.GetByIds
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use PostAsGetByIdsPostResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use PostAsGetByIdspostResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.DirectoryRoles.GetByIds.GetByIdsResponse?> PostAsync(global::Microsoft.Graph.DirectoryRoles.GetByIds.GetByIdsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

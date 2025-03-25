@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Teams.GetAllMessages
 {
-    [Obsolete("This class is obsolete. Use GetAllMessagesGetResponse instead.")]
+    [Obsolete("This class is obsolete. Use GetAllMessagesgetResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetAllMessagesResponse : global::Microsoft.Graph.Teams.GetAllMessages.GetAllMessagesGetResponse, IParsable
+    public partial class GetAllMessagesResponse : global::Microsoft.Graph.Teams.GetAllMessages.GetAllMessagesgetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

@@ -37,18 +37,18 @@ namespace Microsoft.Graph.Groups.Item.GetMemberObjects
         /// Return all IDs for the groups, administrative units, and directory roles that an object of one of the following types is a member of:- user- group- service principal- organizational contact- device- directory object This function is transitive. Only users and role-enabled groups can be members of directory roles.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Groups.Item.GetMemberObjects.GetMemberObjectsPostResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Groups.Item.GetMemberObjects.GetMemberObjectspostResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Groups.Item.GetMemberObjects.GetMemberObjectsPostResponse?> PostAsGetMemberObjectsPostResponseAsync(global::Microsoft.Graph.Groups.Item.GetMemberObjects.GetMemberObjectsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Groups.Item.GetMemberObjects.GetMemberObjectspostResponse?> PostAsGetMemberObjectspostResponseAsync(global::Microsoft.Graph.Groups.Item.GetMemberObjects.GetMemberObjectsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Groups.Item.GetMemberObjects.GetMemberObjectsPostResponse> PostAsGetMemberObjectsPostResponseAsync(global::Microsoft.Graph.Groups.Item.GetMemberObjects.GetMemberObjectsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Groups.Item.GetMemberObjects.GetMemberObjectspostResponse> PostAsGetMemberObjectspostResponseAsync(global::Microsoft.Graph.Groups.Item.GetMemberObjects.GetMemberObjectsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Groups.Item.GetMemberObjects
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Groups.Item.GetMemberObjects.GetMemberObjectsPostResponse>(requestInfo, global::Microsoft.Graph.Groups.Item.GetMemberObjects.GetMemberObjectsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Groups.Item.GetMemberObjects.GetMemberObjectspostResponse>(requestInfo, global::Microsoft.Graph.Groups.Item.GetMemberObjects.GetMemberObjectspostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Return all IDs for the groups, administrative units, and directory roles that an object of one of the following types is a member of:- user- group- service principal- organizational contact- device- directory object This function is transitive. Only users and role-enabled groups can be members of directory roles.
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Groups.Item.GetMemberObjects
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use PostAsGetMemberObjectsPostResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use PostAsGetMemberObjectspostResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Groups.Item.GetMemberObjects.GetMemberObjectsResponse?> PostAsync(global::Microsoft.Graph.Groups.Item.GetMemberObjects.GetMemberObjectsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

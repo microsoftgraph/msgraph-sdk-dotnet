@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Users.Item.GetManagedDevicesWithAppFailures
 {
-    [Obsolete("This class is obsolete. Use GetManagedDevicesWithAppFailuresGetResponse instead.")]
+    [Obsolete("This class is obsolete. Use GetManagedDevicesWithAppFailuresgetResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetManagedDevicesWithAppFailuresResponse : global::Microsoft.Graph.Users.Item.GetManagedDevicesWithAppFailures.GetManagedDevicesWithAppFailuresGetResponse, IParsable
+    public partial class GetManagedDevicesWithAppFailuresResponse : global::Microsoft.Graph.Users.Item.GetManagedDevicesWithAppFailures.GetManagedDevicesWithAppFailuresgetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

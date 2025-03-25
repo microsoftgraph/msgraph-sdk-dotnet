@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope
 {
-    [Obsolete("This class is obsolete. Use GetEffectivePermissionsWithScopeGetResponse instead.")]
+    [Obsolete("This class is obsolete. Use GetEffectivePermissionsWithScopegetResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetEffectivePermissionsWithScopeResponse : global::Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeGetResponse, IParsable
+    public partial class GetEffectivePermissionsWithScopeResponse : global::Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopegetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Insights.MicrosoftGraphIdentityGovernanceTopTasksProcessedSummaryWithStartDateTimeWithEndDateTime
 {
-    [Obsolete("This class is obsolete. Use TopTasksProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse instead.")]
+    [Obsolete("This class is obsolete. Use TopTasksProcessedSummaryWithStartDateTimeWithEndDateTimegetResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TopTasksProcessedSummaryWithStartDateTimeWithEndDateTimeResponse : global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Insights.MicrosoftGraphIdentityGovernanceTopTasksProcessedSummaryWithStartDateTimeWithEndDateTime.TopTasksProcessedSummaryWithStartDateTimeWithEndDateTimeGetResponse, IParsable
+    public partial class TopTasksProcessedSummaryWithStartDateTimeWithEndDateTimeResponse : global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Insights.MicrosoftGraphIdentityGovernanceTopTasksProcessedSummaryWithStartDateTimeWithEndDateTime.TopTasksProcessedSummaryWithStartDateTimeWithEndDateTimegetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

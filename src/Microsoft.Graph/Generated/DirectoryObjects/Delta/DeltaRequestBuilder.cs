@@ -37,17 +37,17 @@ namespace Microsoft.Graph.DirectoryObjects.Delta
         /// Get newly created, updated, or deleted directory objects without performing a full read of the entire directoryObject collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryobject-delta?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.DirectoryObjects.Delta.DeltaGetResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.DirectoryObjects.Delta.DeltagetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.DirectoryObjects.Delta.DeltaGetResponse?> GetAsDeltaGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.DirectoryObjects.Delta.DeltaRequestBuilder.DeltaRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.DirectoryObjects.Delta.DeltagetResponse?> GetAsDeltagetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.DirectoryObjects.Delta.DeltaRequestBuilder.DeltaRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.DirectoryObjects.Delta.DeltaGetResponse> GetAsDeltaGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.DirectoryObjects.Delta.DeltaRequestBuilder.DeltaRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.DirectoryObjects.Delta.DeltagetResponse> GetAsDeltagetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.DirectoryObjects.Delta.DeltaRequestBuilder.DeltaRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.DirectoryObjects.Delta
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.DirectoryObjects.Delta.DeltaGetResponse>(requestInfo, global::Microsoft.Graph.DirectoryObjects.Delta.DeltaGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.DirectoryObjects.Delta.DeltagetResponse>(requestInfo, global::Microsoft.Graph.DirectoryObjects.Delta.DeltagetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get newly created, updated, or deleted directory objects without performing a full read of the entire directoryObject collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.DirectoryObjects.Delta
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsDeltaGetResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use GetAsDeltagetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.DirectoryObjects.Delta.DeltaResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.DirectoryObjects.Delta.DeltaRequestBuilder.DeltaRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

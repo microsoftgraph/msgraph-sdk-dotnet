@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.GetApplicablePolicyRequirements
 {
-    [Obsolete("This class is obsolete. Use GetApplicablePolicyRequirementsPostResponse instead.")]
+    [Obsolete("This class is obsolete. Use GetApplicablePolicyRequirementspostResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetApplicablePolicyRequirementsResponse : global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.GetApplicablePolicyRequirements.GetApplicablePolicyRequirementsPostResponse, IParsable
+    public partial class GetApplicablePolicyRequirementsResponse : global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.GetApplicablePolicyRequirements.GetApplicablePolicyRequirementspostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

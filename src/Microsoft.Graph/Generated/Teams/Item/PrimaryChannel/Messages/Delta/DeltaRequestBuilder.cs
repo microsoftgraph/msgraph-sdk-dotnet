@@ -37,17 +37,17 @@ namespace Microsoft.Graph.Teams.Item.PrimaryChannel.Messages.Delta
         /// Get the list of messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. When you use delta query, you can get new or updated messages. To get the replies for a message, use the list message replies or the get message reply operations. A GET request with the delta function returns one of the following: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call. An @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after you acquire @odata.deltaLink). For more information, see the delta query documentation.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chatmessage-delta?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Teams.Item.PrimaryChannel.Messages.Delta.DeltaGetResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Teams.Item.PrimaryChannel.Messages.Delta.DeltagetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Teams.Item.PrimaryChannel.Messages.Delta.DeltaGetResponse?> GetAsDeltaGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Teams.Item.PrimaryChannel.Messages.Delta.DeltaRequestBuilder.DeltaRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Teams.Item.PrimaryChannel.Messages.Delta.DeltagetResponse?> GetAsDeltagetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Teams.Item.PrimaryChannel.Messages.Delta.DeltaRequestBuilder.DeltaRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Teams.Item.PrimaryChannel.Messages.Delta.DeltaGetResponse> GetAsDeltaGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Teams.Item.PrimaryChannel.Messages.Delta.DeltaRequestBuilder.DeltaRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Teams.Item.PrimaryChannel.Messages.Delta.DeltagetResponse> GetAsDeltagetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Teams.Item.PrimaryChannel.Messages.Delta.DeltaRequestBuilder.DeltaRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Teams.Item.PrimaryChannel.Messages.Delta
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Teams.Item.PrimaryChannel.Messages.Delta.DeltaGetResponse>(requestInfo, global::Microsoft.Graph.Teams.Item.PrimaryChannel.Messages.Delta.DeltaGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Teams.Item.PrimaryChannel.Messages.Delta.DeltagetResponse>(requestInfo, global::Microsoft.Graph.Teams.Item.PrimaryChannel.Messages.Delta.DeltagetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the list of messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. When you use delta query, you can get new or updated messages. To get the replies for a message, use the list message replies or the get message reply operations. A GET request with the delta function returns one of the following: State tokens are opaque to the client. To proceed with a round of change tracking, copy and apply the @odata.nextLink or @odata.deltaLink URL returned from the last GET request to the next delta function call. An @odata.deltaLink returned in a response signifies that the current round of change tracking is complete. You can save and use the @odata.deltaLink URL when you begin to retrieve more changes (messages changed or posted after you acquire @odata.deltaLink). For more information, see the delta query documentation.
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Teams.Item.PrimaryChannel.Messages.Delta
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsDeltaGetResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use GetAsDeltagetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Teams.Item.PrimaryChannel.Messages.Delta.DeltaResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Teams.Item.PrimaryChannel.Messages.Delta.DeltaRequestBuilder.DeltaRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

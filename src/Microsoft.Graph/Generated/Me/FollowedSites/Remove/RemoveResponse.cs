@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Me.FollowedSites.Remove
 {
-    [Obsolete("This class is obsolete. Use RemovePostResponse instead.")]
+    [Obsolete("This class is obsolete. Use RemovepostResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RemoveResponse : global::Microsoft.Graph.Me.FollowedSites.Remove.RemovePostResponse, IParsable
+    public partial class RemoveResponse : global::Microsoft.Graph.Me.FollowedSites.Remove.RemovepostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

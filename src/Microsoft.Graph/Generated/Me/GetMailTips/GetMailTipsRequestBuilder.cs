@@ -37,18 +37,18 @@ namespace Microsoft.Graph.Me.GetMailTips
         /// Get the MailTips of one or more recipients as available to the signed-in user. Note that by making a POST call to the getMailTips action, you can request specific types of MailTips tobe returned for more than one recipient at one time. The requested MailTips are returned in a mailTips collection.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-getmailtips?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Me.GetMailTips.GetMailTipsPostResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Me.GetMailTips.GetMailTipspostResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Me.GetMailTips.GetMailTipsPostResponse?> PostAsGetMailTipsPostResponseAsync(global::Microsoft.Graph.Me.GetMailTips.GetMailTipsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Me.GetMailTips.GetMailTipspostResponse?> PostAsGetMailTipspostResponseAsync(global::Microsoft.Graph.Me.GetMailTips.GetMailTipsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Me.GetMailTips.GetMailTipsPostResponse> PostAsGetMailTipsPostResponseAsync(global::Microsoft.Graph.Me.GetMailTips.GetMailTipsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Me.GetMailTips.GetMailTipspostResponse> PostAsGetMailTipspostResponseAsync(global::Microsoft.Graph.Me.GetMailTips.GetMailTipsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Me.GetMailTips
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Me.GetMailTips.GetMailTipsPostResponse>(requestInfo, global::Microsoft.Graph.Me.GetMailTips.GetMailTipsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Me.GetMailTips.GetMailTipspostResponse>(requestInfo, global::Microsoft.Graph.Me.GetMailTips.GetMailTipspostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the MailTips of one or more recipients as available to the signed-in user. Note that by making a POST call to the getMailTips action, you can request specific types of MailTips tobe returned for more than one recipient at one time. The requested MailTips are returned in a mailTips collection.
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Me.GetMailTips
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use PostAsGetMailTipsPostResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use PostAsGetMailTipspostResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Me.GetMailTips.GetMailTipsResponse?> PostAsync(global::Microsoft.Graph.Me.GetMailTips.GetMailTipsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

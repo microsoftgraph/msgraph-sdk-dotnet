@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkRead
 {
-    [Obsolete("This class is obsolete. Use MarkReadPostResponse instead.")]
+    [Obsolete("This class is obsolete. Use MarkReadpostResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class MarkReadResponse : global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkRead.MarkReadPostResponse, IParsable
+    public partial class MarkReadResponse : global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkRead.MarkReadpostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

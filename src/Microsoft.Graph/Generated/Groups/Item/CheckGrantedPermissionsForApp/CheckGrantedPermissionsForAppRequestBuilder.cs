@@ -36,17 +36,17 @@ namespace Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp
         /// <summary>
         /// Invoke action checkGrantedPermissionsForApp
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp.CheckGrantedPermissionsForAppPostResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp.CheckGrantedPermissionsForApppostResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp.CheckGrantedPermissionsForAppPostResponse?> PostAsCheckGrantedPermissionsForAppPostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp.CheckGrantedPermissionsForApppostResponse?> PostAsCheckGrantedPermissionsForApppostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp.CheckGrantedPermissionsForAppPostResponse> PostAsCheckGrantedPermissionsForAppPostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp.CheckGrantedPermissionsForApppostResponse> PostAsCheckGrantedPermissionsForApppostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp.CheckGrantedPermissionsForAppPostResponse>(requestInfo, global::Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp.CheckGrantedPermissionsForAppPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp.CheckGrantedPermissionsForApppostResponse>(requestInfo, global::Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp.CheckGrantedPermissionsForApppostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke action checkGrantedPermissionsForApp
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use PostAsCheckGrantedPermissionsForAppPostResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use PostAsCheckGrantedPermissionsForApppostResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Groups.Item.CheckGrantedPermissionsForApp.CheckGrantedPermissionsForAppResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

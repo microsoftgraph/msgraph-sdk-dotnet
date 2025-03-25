@@ -37,18 +37,18 @@ namespace Microsoft.Graph.Me.TranslateExchangeIds
         /// Translate identifiers of Outlook-related resources between formats.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-translateexchangeids?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Me.TranslateExchangeIds.TranslateExchangeIdsPostResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Me.TranslateExchangeIds.TranslateExchangeIdspostResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Me.TranslateExchangeIds.TranslateExchangeIdsPostResponse?> PostAsTranslateExchangeIdsPostResponseAsync(global::Microsoft.Graph.Me.TranslateExchangeIds.TranslateExchangeIdsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Me.TranslateExchangeIds.TranslateExchangeIdspostResponse?> PostAsTranslateExchangeIdspostResponseAsync(global::Microsoft.Graph.Me.TranslateExchangeIds.TranslateExchangeIdsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Me.TranslateExchangeIds.TranslateExchangeIdsPostResponse> PostAsTranslateExchangeIdsPostResponseAsync(global::Microsoft.Graph.Me.TranslateExchangeIds.TranslateExchangeIdsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Me.TranslateExchangeIds.TranslateExchangeIdspostResponse> PostAsTranslateExchangeIdspostResponseAsync(global::Microsoft.Graph.Me.TranslateExchangeIds.TranslateExchangeIdsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Me.TranslateExchangeIds
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Me.TranslateExchangeIds.TranslateExchangeIdsPostResponse>(requestInfo, global::Microsoft.Graph.Me.TranslateExchangeIds.TranslateExchangeIdsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Me.TranslateExchangeIds.TranslateExchangeIdspostResponse>(requestInfo, global::Microsoft.Graph.Me.TranslateExchangeIds.TranslateExchangeIdspostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Translate identifiers of Outlook-related resources between formats.
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Me.TranslateExchangeIds
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use PostAsTranslateExchangeIdsPostResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use PostAsTranslateExchangeIdspostResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Me.TranslateExchangeIds.TranslateExchangeIdsResponse?> PostAsync(global::Microsoft.Graph.Me.TranslateExchangeIds.TranslateExchangeIdsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

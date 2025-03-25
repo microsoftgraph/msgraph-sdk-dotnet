@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Users.Item.RevokeSignInSessions
 {
-    [Obsolete("This class is obsolete. Use RevokeSignInSessionsPostResponse instead.")]
+    [Obsolete("This class is obsolete. Use RevokeSignInSessionspostResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RevokeSignInSessionsResponse : global::Microsoft.Graph.Users.Item.RevokeSignInSessions.RevokeSignInSessionsPostResponse, IParsable
+    public partial class RevokeSignInSessionsResponse : global::Microsoft.Graph.Users.Item.RevokeSignInSessions.RevokeSignInSessionspostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Organization.Item.SetMobileDeviceManagementAuthority
 {
-    [Obsolete("This class is obsolete. Use SetMobileDeviceManagementAuthorityPostResponse instead.")]
+    [Obsolete("This class is obsolete. Use SetMobileDeviceManagementAuthoritypostResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SetMobileDeviceManagementAuthorityResponse : global::Microsoft.Graph.Organization.Item.SetMobileDeviceManagementAuthority.SetMobileDeviceManagementAuthorityPostResponse, IParsable
+    public partial class SetMobileDeviceManagementAuthorityResponse : global::Microsoft.Graph.Organization.Item.SetMobileDeviceManagementAuthority.SetMobileDeviceManagementAuthoritypostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

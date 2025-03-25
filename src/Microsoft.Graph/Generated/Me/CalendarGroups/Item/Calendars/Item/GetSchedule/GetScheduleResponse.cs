@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.GetSchedule
 {
-    [Obsolete("This class is obsolete. Use GetSchedulePostResponse instead.")]
+    [Obsolete("This class is obsolete. Use GetSchedulepostResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetScheduleResponse : global::Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.GetSchedule.GetSchedulePostResponse, IParsable
+    public partial class GetScheduleResponse : global::Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.GetSchedule.GetSchedulepostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

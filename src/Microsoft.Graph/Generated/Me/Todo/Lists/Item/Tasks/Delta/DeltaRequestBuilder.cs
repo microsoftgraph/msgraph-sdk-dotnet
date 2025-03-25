@@ -37,17 +37,17 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Delta
         /// Get a set of todoTask resources that have been added, deleted, or updated in a specified todoTaskList. A delta function call for todoTask resources in a todoTaskList is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the todoTask in that todoTaskList. This allows you to maintain and synchronize a local store of a user&apos;s todoTask resources without having to fetch the entire set from the server every time.  
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/todotask-delta?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Delta.DeltaGetResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Delta.DeltagetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Delta.DeltaGetResponse?> GetAsDeltaGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Delta.DeltaRequestBuilder.DeltaRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Delta.DeltagetResponse?> GetAsDeltagetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Delta.DeltaRequestBuilder.DeltaRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Delta.DeltaGetResponse> GetAsDeltaGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Delta.DeltaRequestBuilder.DeltaRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Delta.DeltagetResponse> GetAsDeltagetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Delta.DeltaRequestBuilder.DeltaRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Delta
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Delta.DeltaGetResponse>(requestInfo, global::Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Delta.DeltaGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Delta.DeltagetResponse>(requestInfo, global::Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Delta.DeltagetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a set of todoTask resources that have been added, deleted, or updated in a specified todoTaskList. A delta function call for todoTask resources in a todoTaskList is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the todoTask in that todoTaskList. This allows you to maintain and synchronize a local store of a user&apos;s todoTask resources without having to fetch the entire set from the server every time.  
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Delta
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsDeltaGetResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use GetAsDeltagetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Delta.DeltaResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Delta.DeltaRequestBuilder.DeltaRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

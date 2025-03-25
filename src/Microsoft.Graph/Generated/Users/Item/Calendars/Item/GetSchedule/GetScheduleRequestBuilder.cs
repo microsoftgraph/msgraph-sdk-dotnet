@@ -37,18 +37,18 @@ namespace Microsoft.Graph.Users.Item.Calendars.Item.GetSchedule
         /// Get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/calendar-getschedule?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Users.Item.Calendars.Item.GetSchedule.GetSchedulePostResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Users.Item.Calendars.Item.GetSchedule.GetSchedulepostResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Users.Item.Calendars.Item.GetSchedule.GetSchedulePostResponse?> PostAsGetSchedulePostResponseAsync(global::Microsoft.Graph.Users.Item.Calendars.Item.GetSchedule.GetSchedulePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Users.Item.Calendars.Item.GetSchedule.GetSchedulepostResponse?> PostAsGetSchedulepostResponseAsync(global::Microsoft.Graph.Users.Item.Calendars.Item.GetSchedule.GetSchedulePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Users.Item.Calendars.Item.GetSchedule.GetSchedulePostResponse> PostAsGetSchedulePostResponseAsync(global::Microsoft.Graph.Users.Item.Calendars.Item.GetSchedule.GetSchedulePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Users.Item.Calendars.Item.GetSchedule.GetSchedulepostResponse> PostAsGetSchedulepostResponseAsync(global::Microsoft.Graph.Users.Item.Calendars.Item.GetSchedule.GetSchedulePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Users.Item.Calendars.Item.GetSchedule
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Users.Item.Calendars.Item.GetSchedule.GetSchedulePostResponse>(requestInfo, global::Microsoft.Graph.Users.Item.Calendars.Item.GetSchedule.GetSchedulePostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Users.Item.Calendars.Item.GetSchedule.GetSchedulepostResponse>(requestInfo, global::Microsoft.Graph.Users.Item.Calendars.Item.GetSchedule.GetSchedulepostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Users.Item.Calendars.Item.GetSchedule
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use PostAsGetSchedulePostResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use PostAsGetSchedulepostResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Users.Item.Calendars.Item.GetSchedule.GetScheduleResponse?> PostAsync(global::Microsoft.Graph.Users.Item.Calendars.Item.GetSchedule.GetSchedulePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

@@ -37,17 +37,17 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubCon
         /// Get a list of compatible content types from the content type hub that can be added to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a &apos;push everywhere&apos; to &apos;pull as needed&apos; approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see contentType: addCopyFromContentTypeHub and the blog post Syntex Product Updates – August 2021.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/contenttype-getcompatiblehubcontenttypes?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesGetResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesgetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesGetResponse?> GetAsGetCompatibleHubContentTypesGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesRequestBuilder.GetCompatibleHubContentTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesgetResponse?> GetAsGetCompatibleHubContentTypesgetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesRequestBuilder.GetCompatibleHubContentTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesGetResponse> GetAsGetCompatibleHubContentTypesGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesRequestBuilder.GetCompatibleHubContentTypesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesgetResponse> GetAsGetCompatibleHubContentTypesgetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesRequestBuilder.GetCompatibleHubContentTypesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubCon
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesGetResponse>(requestInfo, global::Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesgetResponse>(requestInfo, global::Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesgetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of compatible content types from the content type hub that can be added to a target site or a list. This method is part of the content type publishing changes to optimize the syncing of published content types to sites and lists, effectively switching from a &apos;push everywhere&apos; to &apos;pull as needed&apos; approach. The method allows users to pull content types directly from the content type hub to a site or list. For more information, see contentType: addCopyFromContentTypeHub and the blog post Syntex Product Updates – August 2021.
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubCon
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsGetCompatibleHubContentTypesGetResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use GetAsGetCompatibleHubContentTypesgetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes.GetCompatibleHubContentTypes.GetCompatibleHubContentTypesRequestBuilder.GetCompatibleHubContentTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

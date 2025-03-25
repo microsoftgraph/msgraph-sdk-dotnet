@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Communications.GetPresencesByUserId
 {
-    [Obsolete("This class is obsolete. Use GetPresencesByUserIdPostResponse instead.")]
+    [Obsolete("This class is obsolete. Use GetPresencesByUserIdpostResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetPresencesByUserIdResponse : global::Microsoft.Graph.Communications.GetPresencesByUserId.GetPresencesByUserIdPostResponse, IParsable
+    public partial class GetPresencesByUserIdResponse : global::Microsoft.Graph.Communications.GetPresencesByUserId.GetPresencesByUserIdpostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

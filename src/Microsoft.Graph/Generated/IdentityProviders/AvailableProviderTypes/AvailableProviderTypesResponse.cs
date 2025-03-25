@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.IdentityProviders.AvailableProviderTypes
 {
-    [Obsolete("This class is obsolete. Use AvailableProviderTypesGetResponse instead.")]
+    [Obsolete("This class is obsolete. Use AvailableProviderTypesgetResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AvailableProviderTypesResponse : global::Microsoft.Graph.IdentityProviders.AvailableProviderTypes.AvailableProviderTypesGetResponse, IParsable
+    public partial class AvailableProviderTypesResponse : global::Microsoft.Graph.IdentityProviders.AvailableProviderTypes.AvailableProviderTypesgetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

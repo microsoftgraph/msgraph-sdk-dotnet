@@ -37,17 +37,17 @@ namespace Microsoft.Graph.Me.RevokeSignInSessions
         /// Invalidates all the refresh tokens issued to applications for a user (and session cookies in a user&apos;s browser), by resetting the signInSessionsValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device. This operation prevents access to the organization&apos;s data through applications on the device by requiring the user to sign in again to all applications that they consented to previously, independent of device.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-revokesigninsessions?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Me.RevokeSignInSessions.RevokeSignInSessionsPostResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Me.RevokeSignInSessions.RevokeSignInSessionspostResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Me.RevokeSignInSessions.RevokeSignInSessionsPostResponse?> PostAsRevokeSignInSessionsPostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Me.RevokeSignInSessions.RevokeSignInSessionspostResponse?> PostAsRevokeSignInSessionspostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Me.RevokeSignInSessions.RevokeSignInSessionsPostResponse> PostAsRevokeSignInSessionsPostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Me.RevokeSignInSessions.RevokeSignInSessionspostResponse> PostAsRevokeSignInSessionspostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Me.RevokeSignInSessions
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Me.RevokeSignInSessions.RevokeSignInSessionsPostResponse>(requestInfo, global::Microsoft.Graph.Me.RevokeSignInSessions.RevokeSignInSessionsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Me.RevokeSignInSessions.RevokeSignInSessionspostResponse>(requestInfo, global::Microsoft.Graph.Me.RevokeSignInSessions.RevokeSignInSessionspostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invalidates all the refresh tokens issued to applications for a user (and session cookies in a user&apos;s browser), by resetting the signInSessionsValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device. This operation prevents access to the organization&apos;s data through applications on the device by requiring the user to sign in again to all applications that they consented to previously, independent of device.
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Me.RevokeSignInSessions
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use PostAsRevokeSignInSessionsPostResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use PostAsRevokeSignInSessionspostResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Me.RevokeSignInSessions.RevokeSignInSessionsResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

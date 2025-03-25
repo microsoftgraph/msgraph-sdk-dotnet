@@ -37,18 +37,18 @@ namespace Microsoft.Graph.Groups.Item.Sites.Add
         /// Follow a user&apos;s site or multiple sites.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-follow?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Groups.Item.Sites.Add.AddPostResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Groups.Item.Sites.Add.AddpostResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Groups.Item.Sites.Add.AddPostResponse?> PostAsAddPostResponseAsync(global::Microsoft.Graph.Groups.Item.Sites.Add.AddPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Groups.Item.Sites.Add.AddpostResponse?> PostAsAddpostResponseAsync(global::Microsoft.Graph.Groups.Item.Sites.Add.AddPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Groups.Item.Sites.Add.AddPostResponse> PostAsAddPostResponseAsync(global::Microsoft.Graph.Groups.Item.Sites.Add.AddPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Groups.Item.Sites.Add.AddpostResponse> PostAsAddpostResponseAsync(global::Microsoft.Graph.Groups.Item.Sites.Add.AddPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Add
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Groups.Item.Sites.Add.AddPostResponse>(requestInfo, global::Microsoft.Graph.Groups.Item.Sites.Add.AddPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Groups.Item.Sites.Add.AddpostResponse>(requestInfo, global::Microsoft.Graph.Groups.Item.Sites.Add.AddpostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Follow a user&apos;s site or multiple sites.
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Add
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use PostAsAddPostResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use PostAsAddpostResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Groups.Item.Sites.Add.AddResponse?> PostAsync(global::Microsoft.Graph.Groups.Item.Sites.Add.AddPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

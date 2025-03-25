@@ -38,17 +38,17 @@ namespace Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditActivityTypesWith
         /// <summary>
         /// Invoke function getAuditActivityTypes
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditActivityTypesWithCategory.GetAuditActivityTypesWithCategoryGetResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditActivityTypesWithCategory.GetAuditActivityTypesWithCategorygetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditActivityTypesWithCategory.GetAuditActivityTypesWithCategoryGetResponse?> GetAsGetAuditActivityTypesWithCategoryGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditActivityTypesWithCategory.GetAuditActivityTypesWithCategoryRequestBuilder.GetAuditActivityTypesWithCategoryRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditActivityTypesWithCategory.GetAuditActivityTypesWithCategorygetResponse?> GetAsGetAuditActivityTypesWithCategorygetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditActivityTypesWithCategory.GetAuditActivityTypesWithCategoryRequestBuilder.GetAuditActivityTypesWithCategoryRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditActivityTypesWithCategory.GetAuditActivityTypesWithCategoryGetResponse> GetAsGetAuditActivityTypesWithCategoryGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditActivityTypesWithCategory.GetAuditActivityTypesWithCategoryRequestBuilder.GetAuditActivityTypesWithCategoryRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditActivityTypesWithCategory.GetAuditActivityTypesWithCategorygetResponse> GetAsGetAuditActivityTypesWithCategorygetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditActivityTypesWithCategory.GetAuditActivityTypesWithCategoryRequestBuilder.GetAuditActivityTypesWithCategoryRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditActivityTypesWith
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditActivityTypesWithCategory.GetAuditActivityTypesWithCategoryGetResponse>(requestInfo, global::Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditActivityTypesWithCategory.GetAuditActivityTypesWithCategoryGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditActivityTypesWithCategory.GetAuditActivityTypesWithCategorygetResponse>(requestInfo, global::Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditActivityTypesWithCategory.GetAuditActivityTypesWithCategorygetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getAuditActivityTypes
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditActivityTypesWith
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsGetAuditActivityTypesWithCategoryGetResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use GetAsGetAuditActivityTypesWithCategorygetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditActivityTypesWithCategory.GetAuditActivityTypesWithCategoryResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditActivityTypesWithCategory.GetAuditActivityTypesWithCategoryRequestBuilder.GetAuditActivityTypesWithCategoryRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

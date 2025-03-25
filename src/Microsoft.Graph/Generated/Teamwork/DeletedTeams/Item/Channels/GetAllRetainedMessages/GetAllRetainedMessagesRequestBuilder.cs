@@ -37,17 +37,17 @@ namespace Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.GetAllRetainedMess
         /// Get all retained messages across all channels in a team. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-getallretainedmessages?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.GetAllRetainedMessages.GetAllRetainedMessagesGetResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.GetAllRetainedMessages.GetAllRetainedMessagesgetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.GetAllRetainedMessages.GetAllRetainedMessagesGetResponse?> GetAsGetAllRetainedMessagesGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.GetAllRetainedMessages.GetAllRetainedMessagesRequestBuilder.GetAllRetainedMessagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.GetAllRetainedMessages.GetAllRetainedMessagesgetResponse?> GetAsGetAllRetainedMessagesgetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.GetAllRetainedMessages.GetAllRetainedMessagesRequestBuilder.GetAllRetainedMessagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.GetAllRetainedMessages.GetAllRetainedMessagesGetResponse> GetAsGetAllRetainedMessagesGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.GetAllRetainedMessages.GetAllRetainedMessagesRequestBuilder.GetAllRetainedMessagesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.GetAllRetainedMessages.GetAllRetainedMessagesgetResponse> GetAsGetAllRetainedMessagesgetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.GetAllRetainedMessages.GetAllRetainedMessagesRequestBuilder.GetAllRetainedMessagesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.GetAllRetainedMess
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.GetAllRetainedMessages.GetAllRetainedMessagesGetResponse>(requestInfo, global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.GetAllRetainedMessages.GetAllRetainedMessagesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.GetAllRetainedMessages.GetAllRetainedMessagesgetResponse>(requestInfo, global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.GetAllRetainedMessages.GetAllRetainedMessagesgetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get all retained messages across all channels in a team. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.GetAllRetainedMess
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsGetAllRetainedMessagesGetResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use GetAsGetAllRetainedMessagesgetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.GetAllRetainedMessages.GetAllRetainedMessagesResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.GetAllRetainedMessages.GetAllRetainedMessagesRequestBuilder.GetAllRetainedMessagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

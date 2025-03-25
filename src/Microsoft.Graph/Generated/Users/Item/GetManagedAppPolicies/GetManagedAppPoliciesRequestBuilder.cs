@@ -37,17 +37,17 @@ namespace Microsoft.Graph.Users.Item.GetManagedAppPolicies
         /// Gets app restrictions for a given user.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-user-getmanagedapppolicies?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesGetResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesgetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesGetResponse?> GetAsGetManagedAppPoliciesGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesRequestBuilder.GetManagedAppPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesgetResponse?> GetAsGetManagedAppPoliciesgetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesRequestBuilder.GetManagedAppPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesGetResponse> GetAsGetManagedAppPoliciesGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesRequestBuilder.GetManagedAppPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesgetResponse> GetAsGetManagedAppPoliciesgetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesRequestBuilder.GetManagedAppPoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Users.Item.GetManagedAppPolicies
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesGetResponse>(requestInfo, global::Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesgetResponse>(requestInfo, global::Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesgetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets app restrictions for a given user.
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Users.Item.GetManagedAppPolicies
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsGetManagedAppPoliciesGetResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use GetAsGetManagedAppPoliciesgetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.GetManagedAppPolicies.GetManagedAppPoliciesRequestBuilder.GetManagedAppPoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

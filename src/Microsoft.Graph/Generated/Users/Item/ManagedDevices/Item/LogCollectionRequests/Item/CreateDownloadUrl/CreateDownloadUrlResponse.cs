@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Users.Item.ManagedDevices.Item.LogCollectionRequests.Item.CreateDownloadUrl
 {
-    [Obsolete("This class is obsolete. Use CreateDownloadUrlPostResponse instead.")]
+    [Obsolete("This class is obsolete. Use CreateDownloadUrlpostResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CreateDownloadUrlResponse : global::Microsoft.Graph.Users.Item.ManagedDevices.Item.LogCollectionRequests.Item.CreateDownloadUrl.CreateDownloadUrlPostResponse, IParsable
+    public partial class CreateDownloadUrlResponse : global::Microsoft.Graph.Users.Item.ManagedDevices.Item.LogCollectionRequests.Item.CreateDownloadUrl.CreateDownloadUrlpostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.Schema.FilterOperators
 {
-    [Obsolete("This class is obsolete. Use FilterOperatorsGetResponse instead.")]
+    [Obsolete("This class is obsolete. Use FilterOperatorsgetResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class FilterOperatorsResponse : global::Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.Schema.FilterOperators.FilterOperatorsGetResponse, IParsable
+    public partial class FilterOperatorsResponse : global::Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.Item.Schema.FilterOperators.FilterOperatorsgetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Users.Item.Outlook.SupportedLanguages
 {
-    [Obsolete("This class is obsolete. Use SupportedLanguagesGetResponse instead.")]
+    [Obsolete("This class is obsolete. Use SupportedLanguagesgetResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SupportedLanguagesResponse : global::Microsoft.Graph.Users.Item.Outlook.SupportedLanguages.SupportedLanguagesGetResponse, IParsable
+    public partial class SupportedLanguagesResponse : global::Microsoft.Graph.Users.Item.Outlook.SupportedLanguages.SupportedLanguagesgetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Users.Item.GetManagedAppDiagnosticStatuses
 {
-    [Obsolete("This class is obsolete. Use GetManagedAppDiagnosticStatusesGetResponse instead.")]
+    [Obsolete("This class is obsolete. Use GetManagedAppDiagnosticStatusesgetResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetManagedAppDiagnosticStatusesResponse : global::Microsoft.Graph.Users.Item.GetManagedAppDiagnosticStatuses.GetManagedAppDiagnosticStatusesGetResponse, IParsable
+    public partial class GetManagedAppDiagnosticStatusesResponse : global::Microsoft.Graph.Users.Item.GetManagedAppDiagnosticStatuses.GetManagedAppDiagnosticStatusesgetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

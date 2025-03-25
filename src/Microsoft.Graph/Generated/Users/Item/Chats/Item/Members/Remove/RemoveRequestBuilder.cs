@@ -37,18 +37,18 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.Members.Remove
         /// Remove multiple members from a team in a single request. The response provides details about which memberships could and couldn&apos;t be removed.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/conversationmember-remove?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Users.Item.Chats.Item.Members.Remove.RemovePostResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Users.Item.Chats.Item.Members.Remove.RemovepostResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Users.Item.Chats.Item.Members.Remove.RemovePostResponse?> PostAsRemovePostResponseAsync(global::Microsoft.Graph.Users.Item.Chats.Item.Members.Remove.RemovePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Users.Item.Chats.Item.Members.Remove.RemovepostResponse?> PostAsRemovepostResponseAsync(global::Microsoft.Graph.Users.Item.Chats.Item.Members.Remove.RemovePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Users.Item.Chats.Item.Members.Remove.RemovePostResponse> PostAsRemovePostResponseAsync(global::Microsoft.Graph.Users.Item.Chats.Item.Members.Remove.RemovePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Users.Item.Chats.Item.Members.Remove.RemovepostResponse> PostAsRemovepostResponseAsync(global::Microsoft.Graph.Users.Item.Chats.Item.Members.Remove.RemovePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.Members.Remove
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Users.Item.Chats.Item.Members.Remove.RemovePostResponse>(requestInfo, global::Microsoft.Graph.Users.Item.Chats.Item.Members.Remove.RemovePostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Users.Item.Chats.Item.Members.Remove.RemovepostResponse>(requestInfo, global::Microsoft.Graph.Users.Item.Chats.Item.Members.Remove.RemovepostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Remove multiple members from a team in a single request. The response provides details about which memberships could and couldn&apos;t be removed.
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.Members.Remove
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use PostAsRemovePostResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use PostAsRemovepostResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Users.Item.Chats.Item.Members.Remove.RemoveResponse?> PostAsync(global::Microsoft.Graph.Users.Item.Chats.Item.Members.Remove.RemovePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

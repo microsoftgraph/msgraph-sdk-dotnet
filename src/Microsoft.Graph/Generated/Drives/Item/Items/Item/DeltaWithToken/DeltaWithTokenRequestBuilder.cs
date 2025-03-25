@@ -38,17 +38,17 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.DeltaWithToken
         /// <summary>
         /// Invoke function delta
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Drives.Item.Items.Item.DeltaWithToken.DeltaWithTokenGetResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Drives.Item.Items.Item.DeltaWithToken.DeltaWithTokengetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Drives.Item.Items.Item.DeltaWithToken.DeltaWithTokenGetResponse?> GetAsDeltaWithTokenGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Drives.Item.Items.Item.DeltaWithToken.DeltaWithTokenRequestBuilder.DeltaWithTokenRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Drives.Item.Items.Item.DeltaWithToken.DeltaWithTokengetResponse?> GetAsDeltaWithTokengetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Drives.Item.Items.Item.DeltaWithToken.DeltaWithTokenRequestBuilder.DeltaWithTokenRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Drives.Item.Items.Item.DeltaWithToken.DeltaWithTokenGetResponse> GetAsDeltaWithTokenGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Drives.Item.Items.Item.DeltaWithToken.DeltaWithTokenRequestBuilder.DeltaWithTokenRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Drives.Item.Items.Item.DeltaWithToken.DeltaWithTokengetResponse> GetAsDeltaWithTokengetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Drives.Item.Items.Item.DeltaWithToken.DeltaWithTokenRequestBuilder.DeltaWithTokenRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.DeltaWithToken
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Drives.Item.Items.Item.DeltaWithToken.DeltaWithTokenGetResponse>(requestInfo, global::Microsoft.Graph.Drives.Item.Items.Item.DeltaWithToken.DeltaWithTokenGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Drives.Item.Items.Item.DeltaWithToken.DeltaWithTokengetResponse>(requestInfo, global::Microsoft.Graph.Drives.Item.Items.Item.DeltaWithToken.DeltaWithTokengetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function delta
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.DeltaWithToken
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsDeltaWithTokenGetResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use GetAsDeltaWithTokengetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Drives.Item.Items.Item.DeltaWithToken.DeltaWithTokenResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Drives.Item.Items.Item.DeltaWithToken.DeltaWithTokenRequestBuilder.DeltaWithTokenRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

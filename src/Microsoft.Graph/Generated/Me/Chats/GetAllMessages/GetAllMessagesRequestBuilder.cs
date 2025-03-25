@@ -37,17 +37,17 @@ namespace Microsoft.Graph.Me.Chats.GetAllMessages
         /// Get all messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chats-getallmessages?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Me.Chats.GetAllMessages.GetAllMessagesGetResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Me.Chats.GetAllMessages.GetAllMessagesgetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Me.Chats.GetAllMessages.GetAllMessagesGetResponse?> GetAsGetAllMessagesGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.Chats.GetAllMessages.GetAllMessagesRequestBuilder.GetAllMessagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Me.Chats.GetAllMessages.GetAllMessagesgetResponse?> GetAsGetAllMessagesgetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.Chats.GetAllMessages.GetAllMessagesRequestBuilder.GetAllMessagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Me.Chats.GetAllMessages.GetAllMessagesGetResponse> GetAsGetAllMessagesGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.Chats.GetAllMessages.GetAllMessagesRequestBuilder.GetAllMessagesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Me.Chats.GetAllMessages.GetAllMessagesgetResponse> GetAsGetAllMessagesgetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.Chats.GetAllMessages.GetAllMessagesRequestBuilder.GetAllMessagesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Me.Chats.GetAllMessages
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Me.Chats.GetAllMessages.GetAllMessagesGetResponse>(requestInfo, global::Microsoft.Graph.Me.Chats.GetAllMessages.GetAllMessagesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Me.Chats.GetAllMessages.GetAllMessagesgetResponse>(requestInfo, global::Microsoft.Graph.Me.Chats.GetAllMessages.GetAllMessagesgetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get all messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats.
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Me.Chats.GetAllMessages
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsGetAllMessagesGetResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use GetAsGetAllMessagesgetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Me.Chats.GetAllMessages.GetAllMessagesResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.Chats.GetAllMessages.GetAllMessagesRequestBuilder.GetAllMessagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

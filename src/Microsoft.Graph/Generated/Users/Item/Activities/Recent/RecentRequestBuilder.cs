@@ -37,17 +37,17 @@ namespace Microsoft.Graph.Users.Item.Activities.Recent
         /// Get recent activities for a given user. This OData function has some default behaviors included to make it operate like a &apos;most recently used&apos; API. The service queries for the most recent activityHistoryItems, and then pull those related activities. Activities are sorted according to the most recent lastModified on the activityHistoryItem. This means that activities without activityHistoryItems won&apos;t be included in the response. The UserActivity.ReadWrite.CreatedByApp permission will also apply extra filtering to the response, so that only activities created by your application are returned. This server-side filtering might result in empty pages if the user is active and other applications have created more recent activities. To get your application&apos;s activities, use the nextLink property to paginate.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/projectrome-get-recent-activities?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Users.Item.Activities.Recent.RecentGetResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Users.Item.Activities.Recent.RecentgetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Users.Item.Activities.Recent.RecentGetResponse?> GetAsRecentGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.Activities.Recent.RecentRequestBuilder.RecentRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Users.Item.Activities.Recent.RecentgetResponse?> GetAsRecentgetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.Activities.Recent.RecentRequestBuilder.RecentRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Users.Item.Activities.Recent.RecentGetResponse> GetAsRecentGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.Activities.Recent.RecentRequestBuilder.RecentRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Users.Item.Activities.Recent.RecentgetResponse> GetAsRecentgetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.Activities.Recent.RecentRequestBuilder.RecentRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Users.Item.Activities.Recent
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Users.Item.Activities.Recent.RecentGetResponse>(requestInfo, global::Microsoft.Graph.Users.Item.Activities.Recent.RecentGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Users.Item.Activities.Recent.RecentgetResponse>(requestInfo, global::Microsoft.Graph.Users.Item.Activities.Recent.RecentgetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get recent activities for a given user. This OData function has some default behaviors included to make it operate like a &apos;most recently used&apos; API. The service queries for the most recent activityHistoryItems, and then pull those related activities. Activities are sorted according to the most recent lastModified on the activityHistoryItem. This means that activities without activityHistoryItems won&apos;t be included in the response. The UserActivity.ReadWrite.CreatedByApp permission will also apply extra filtering to the response, so that only activities created by your application are returned. This server-side filtering might result in empty pages if the user is active and other applications have created more recent activities. To get your application&apos;s activities, use the nextLink property to paginate.
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Users.Item.Activities.Recent
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsRecentGetResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use GetAsRecentgetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Users.Item.Activities.Recent.RecentResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.Activities.Recent.RecentRequestBuilder.RecentRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

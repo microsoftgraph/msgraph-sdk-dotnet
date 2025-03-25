@@ -37,17 +37,17 @@ namespace Microsoft.Graph.Sites.GetAllSites
         /// List sites across geographies in an organization. This API can also be used to enumerate all sites in a non-multi-geo tenant. For more information, see Best practices for discovering files and detecting changes at scale.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-getallsites?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Sites.GetAllSites.GetAllSitesGetResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Sites.GetAllSites.GetAllSitesgetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Sites.GetAllSites.GetAllSitesGetResponse?> GetAsGetAllSitesGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Sites.GetAllSites.GetAllSitesRequestBuilder.GetAllSitesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Sites.GetAllSites.GetAllSitesgetResponse?> GetAsGetAllSitesgetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Sites.GetAllSites.GetAllSitesRequestBuilder.GetAllSitesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Sites.GetAllSites.GetAllSitesGetResponse> GetAsGetAllSitesGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Sites.GetAllSites.GetAllSitesRequestBuilder.GetAllSitesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Sites.GetAllSites.GetAllSitesgetResponse> GetAsGetAllSitesgetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Sites.GetAllSites.GetAllSitesRequestBuilder.GetAllSitesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Sites.GetAllSites
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Sites.GetAllSites.GetAllSitesGetResponse>(requestInfo, global::Microsoft.Graph.Sites.GetAllSites.GetAllSitesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Sites.GetAllSites.GetAllSitesgetResponse>(requestInfo, global::Microsoft.Graph.Sites.GetAllSites.GetAllSitesgetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List sites across geographies in an organization. This API can also be used to enumerate all sites in a non-multi-geo tenant. For more information, see Best practices for discovering files and detecting changes at scale.
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Sites.GetAllSites
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsGetAllSitesGetResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use GetAsGetAllSitesgetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Sites.GetAllSites.GetAllSitesResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Sites.GetAllSites.GetAllSitesRequestBuilder.GetAllSitesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

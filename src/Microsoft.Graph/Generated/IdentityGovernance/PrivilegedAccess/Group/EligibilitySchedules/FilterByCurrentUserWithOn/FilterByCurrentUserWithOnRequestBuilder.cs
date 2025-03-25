@@ -39,17 +39,17 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
         /// Retrieve schedules of membership and ownership eligibility requests for the calling principal.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/privilegedaccessgroupeligibilityschedule-filterbycurrentuser?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilitySchedules.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnGetResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilitySchedules.FilterByCurrentUserWithOn.FilterByCurrentUserWithOngetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilitySchedules.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnGetResponse?> GetAsFilterByCurrentUserWithOnGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilitySchedules.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnRequestBuilder.FilterByCurrentUserWithOnRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilitySchedules.FilterByCurrentUserWithOn.FilterByCurrentUserWithOngetResponse?> GetAsFilterByCurrentUserWithOngetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilitySchedules.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnRequestBuilder.FilterByCurrentUserWithOnRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilitySchedules.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnGetResponse> GetAsFilterByCurrentUserWithOnGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilitySchedules.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnRequestBuilder.FilterByCurrentUserWithOnRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilitySchedules.FilterByCurrentUserWithOn.FilterByCurrentUserWithOngetResponse> GetAsFilterByCurrentUserWithOngetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilitySchedules.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnRequestBuilder.FilterByCurrentUserWithOnRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilitySchedules.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnGetResponse>(requestInfo, global::Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilitySchedules.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilitySchedules.FilterByCurrentUserWithOn.FilterByCurrentUserWithOngetResponse>(requestInfo, global::Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilitySchedules.FilterByCurrentUserWithOn.FilterByCurrentUserWithOngetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve schedules of membership and ownership eligibility requests for the calling principal.
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsFilterByCurrentUserWithOnGetResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use GetAsFilterByCurrentUserWithOngetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilitySchedules.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilitySchedules.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnRequestBuilder.FilterByCurrentUserWithOnRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

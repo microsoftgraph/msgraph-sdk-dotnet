@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Sites.Item.GetActivitiesByInterval
 {
-    [Obsolete("This class is obsolete. Use GetActivitiesByIntervalGetResponse instead.")]
+    [Obsolete("This class is obsolete. Use GetActivitiesByIntervalgetResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetActivitiesByIntervalResponse : global::Microsoft.Graph.Sites.Item.GetActivitiesByInterval.GetActivitiesByIntervalGetResponse, IParsable
+    public partial class GetActivitiesByIntervalResponse : global::Microsoft.Graph.Sites.Item.GetActivitiesByInterval.GetActivitiesByIntervalgetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

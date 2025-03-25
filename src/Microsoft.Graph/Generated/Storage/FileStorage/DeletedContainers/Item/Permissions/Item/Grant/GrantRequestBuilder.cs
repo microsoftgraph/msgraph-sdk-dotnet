@@ -37,18 +37,18 @@ namespace Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions
         /// Grant users access to a link represented by a permission.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.Grant.GrantPostResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.Grant.GrantpostResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.Grant.GrantPostResponse?> PostAsGrantPostResponseAsync(global::Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.Grant.GrantPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.Grant.GrantpostResponse?> PostAsGrantpostResponseAsync(global::Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.Grant.GrantPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.Grant.GrantPostResponse> PostAsGrantPostResponseAsync(global::Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.Grant.GrantPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.Grant.GrantpostResponse> PostAsGrantpostResponseAsync(global::Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.Grant.GrantPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.Grant.GrantPostResponse>(requestInfo, global::Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.Grant.GrantPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.Grant.GrantpostResponse>(requestInfo, global::Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.Grant.GrantpostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Grant users access to a link represented by a permission.
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use PostAsGrantPostResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use PostAsGrantpostResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.Grant.GrantResponse?> PostAsync(global::Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.Grant.GrantPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

@@ -37,17 +37,17 @@ namespace Microsoft.Graph.Drives.Item.Recent
         /// List a set of items that have been recently used by the signed in user.This collection includes items that are in the user&apos;s drive and items they have access to from other drives.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/drive-recent?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Drives.Item.Recent.RecentGetResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Drives.Item.Recent.RecentgetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Drives.Item.Recent.RecentGetResponse?> GetAsRecentGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Drives.Item.Recent.RecentRequestBuilder.RecentRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Drives.Item.Recent.RecentgetResponse?> GetAsRecentgetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Drives.Item.Recent.RecentRequestBuilder.RecentRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Drives.Item.Recent.RecentGetResponse> GetAsRecentGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Drives.Item.Recent.RecentRequestBuilder.RecentRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Drives.Item.Recent.RecentgetResponse> GetAsRecentgetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Drives.Item.Recent.RecentRequestBuilder.RecentRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Drives.Item.Recent
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Drives.Item.Recent.RecentGetResponse>(requestInfo, global::Microsoft.Graph.Drives.Item.Recent.RecentGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Drives.Item.Recent.RecentgetResponse>(requestInfo, global::Microsoft.Graph.Drives.Item.Recent.RecentgetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List a set of items that have been recently used by the signed in user.This collection includes items that are in the user&apos;s drive and items they have access to from other drives.
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Drives.Item.Recent
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsRecentGetResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use GetAsRecentgetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Drives.Item.Recent.RecentResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Drives.Item.Recent.RecentRequestBuilder.RecentRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

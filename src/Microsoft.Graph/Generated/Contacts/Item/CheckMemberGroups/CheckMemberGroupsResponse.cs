@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Contacts.Item.CheckMemberGroups
 {
-    [Obsolete("This class is obsolete. Use CheckMemberGroupsPostResponse instead.")]
+    [Obsolete("This class is obsolete. Use CheckMemberGroupspostResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CheckMemberGroupsResponse : global::Microsoft.Graph.Contacts.Item.CheckMemberGroups.CheckMemberGroupsPostResponse, IParsable
+    public partial class CheckMemberGroupsResponse : global::Microsoft.Graph.Contacts.Item.CheckMemberGroups.CheckMemberGroupspostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Archive
 {
-    [Obsolete("This class is obsolete. Use ArchivePostResponse instead.")]
+    [Obsolete("This class is obsolete. Use ArchivepostResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ArchiveResponse : global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Archive.ArchivePostResponse, IParsable
+    public partial class ArchiveResponse : global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Archive.ArchivepostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

@@ -37,17 +37,17 @@ namespace Microsoft.Graph.Organization.Item.SetMobileDeviceManagementAuthority
         /// Set mobile device management authority
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-organization-setmobiledevicemanagementauthority?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Organization.Item.SetMobileDeviceManagementAuthority.SetMobileDeviceManagementAuthorityPostResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Organization.Item.SetMobileDeviceManagementAuthority.SetMobileDeviceManagementAuthoritypostResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Organization.Item.SetMobileDeviceManagementAuthority.SetMobileDeviceManagementAuthorityPostResponse?> PostAsSetMobileDeviceManagementAuthorityPostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Organization.Item.SetMobileDeviceManagementAuthority.SetMobileDeviceManagementAuthoritypostResponse?> PostAsSetMobileDeviceManagementAuthoritypostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Organization.Item.SetMobileDeviceManagementAuthority.SetMobileDeviceManagementAuthorityPostResponse> PostAsSetMobileDeviceManagementAuthorityPostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Organization.Item.SetMobileDeviceManagementAuthority.SetMobileDeviceManagementAuthoritypostResponse> PostAsSetMobileDeviceManagementAuthoritypostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Organization.Item.SetMobileDeviceManagementAuthority
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Organization.Item.SetMobileDeviceManagementAuthority.SetMobileDeviceManagementAuthorityPostResponse>(requestInfo, global::Microsoft.Graph.Organization.Item.SetMobileDeviceManagementAuthority.SetMobileDeviceManagementAuthorityPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Organization.Item.SetMobileDeviceManagementAuthority.SetMobileDeviceManagementAuthoritypostResponse>(requestInfo, global::Microsoft.Graph.Organization.Item.SetMobileDeviceManagementAuthority.SetMobileDeviceManagementAuthoritypostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Set mobile device management authority
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Organization.Item.SetMobileDeviceManagementAuthority
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use PostAsSetMobileDeviceManagementAuthorityPostResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use PostAsSetMobileDeviceManagementAuthoritypostResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Organization.Item.SetMobileDeviceManagementAuthority.SetMobileDeviceManagementAuthorityResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

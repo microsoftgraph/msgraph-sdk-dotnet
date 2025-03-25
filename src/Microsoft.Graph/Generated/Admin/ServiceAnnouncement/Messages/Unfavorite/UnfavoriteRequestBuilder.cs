@@ -37,18 +37,18 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unfavorite
         /// Remove the favorite status of serviceUpdateMessages for the signed in user.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceupdatemessage-unfavorite?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unfavorite.UnfavoritePostResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unfavorite.UnfavoritepostResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unfavorite.UnfavoritePostResponse?> PostAsUnfavoritePostResponseAsync(global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unfavorite.UnfavoritePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unfavorite.UnfavoritepostResponse?> PostAsUnfavoritepostResponseAsync(global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unfavorite.UnfavoritePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unfavorite.UnfavoritePostResponse> PostAsUnfavoritePostResponseAsync(global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unfavorite.UnfavoritePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unfavorite.UnfavoritepostResponse> PostAsUnfavoritepostResponseAsync(global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unfavorite.UnfavoritePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unfavorite
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unfavorite.UnfavoritePostResponse>(requestInfo, global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unfavorite.UnfavoritePostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unfavorite.UnfavoritepostResponse>(requestInfo, global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unfavorite.UnfavoritepostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Remove the favorite status of serviceUpdateMessages for the signed in user.
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unfavorite
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use PostAsUnfavoritePostResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use PostAsUnfavoritepostResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unfavorite.UnfavoriteResponse?> PostAsync(global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unfavorite.UnfavoritePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

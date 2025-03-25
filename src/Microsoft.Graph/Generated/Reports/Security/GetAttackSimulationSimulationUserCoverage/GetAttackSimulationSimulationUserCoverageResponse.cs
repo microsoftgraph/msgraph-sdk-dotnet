@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Reports.Security.GetAttackSimulationSimulationUserCoverage
 {
-    [Obsolete("This class is obsolete. Use GetAttackSimulationSimulationUserCoverageGetResponse instead.")]
+    [Obsolete("This class is obsolete. Use GetAttackSimulationSimulationUserCoveragegetResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetAttackSimulationSimulationUserCoverageResponse : global::Microsoft.Graph.Reports.Security.GetAttackSimulationSimulationUserCoverage.GetAttackSimulationSimulationUserCoverageGetResponse, IParsable
+    public partial class GetAttackSimulationSimulationUserCoverageResponse : global::Microsoft.Graph.Reports.Security.GetAttackSimulationSimulationUserCoverage.GetAttackSimulationSimulationUserCoveragegetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

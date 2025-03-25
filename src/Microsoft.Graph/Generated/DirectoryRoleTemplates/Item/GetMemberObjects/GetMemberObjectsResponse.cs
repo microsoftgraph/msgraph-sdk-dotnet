@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.DirectoryRoleTemplates.Item.GetMemberObjects
 {
-    [Obsolete("This class is obsolete. Use GetMemberObjectsPostResponse instead.")]
+    [Obsolete("This class is obsolete. Use GetMemberObjectspostResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetMemberObjectsResponse : global::Microsoft.Graph.DirectoryRoleTemplates.Item.GetMemberObjects.GetMemberObjectsPostResponse, IParsable
+    public partial class GetMemberObjectsResponse : global::Microsoft.Graph.DirectoryRoleTemplates.Item.GetMemberObjects.GetMemberObjectspostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Domains.Item.Promote
 {
-    [Obsolete("This class is obsolete. Use PromotePostResponse instead.")]
+    [Obsolete("This class is obsolete. Use PromotepostResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PromoteResponse : global::Microsoft.Graph.Domains.Item.Promote.PromotePostResponse, IParsable
+    public partial class PromoteResponse : global::Microsoft.Graph.Domains.Item.Promote.PromotepostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

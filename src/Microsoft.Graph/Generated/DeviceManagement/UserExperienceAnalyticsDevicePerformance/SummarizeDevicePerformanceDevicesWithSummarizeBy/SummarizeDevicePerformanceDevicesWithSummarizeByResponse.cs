@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDevicePerformance.SummarizeDevicePerformanceDevicesWithSummarizeBy
 {
-    [Obsolete("This class is obsolete. Use SummarizeDevicePerformanceDevicesWithSummarizeByGetResponse instead.")]
+    [Obsolete("This class is obsolete. Use SummarizeDevicePerformanceDevicesWithSummarizeBygetResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SummarizeDevicePerformanceDevicesWithSummarizeByResponse : global::Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDevicePerformance.SummarizeDevicePerformanceDevicesWithSummarizeBy.SummarizeDevicePerformanceDevicesWithSummarizeByGetResponse, IParsable
+    public partial class SummarizeDevicePerformanceDevicesWithSummarizeByResponse : global::Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsDevicePerformance.SummarizeDevicePerformanceDevicesWithSummarizeBy.SummarizeDevicePerformanceDevicesWithSummarizeBygetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

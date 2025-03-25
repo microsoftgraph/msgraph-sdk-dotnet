@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Assignments.FilterByCurrentUserWithOn
 {
-    [Obsolete("This class is obsolete. Use FilterByCurrentUserWithOnGetResponse instead.")]
+    [Obsolete("This class is obsolete. Use FilterByCurrentUserWithOngetResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class FilterByCurrentUserWithOnResponse : global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.Assignments.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnGetResponse, IParsable
+    public partial class FilterByCurrentUserWithOnResponse : global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.Assignments.FilterByCurrentUserWithOn.FilterByCurrentUserWithOngetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

@@ -37,18 +37,18 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite
         /// Change the status of a list of serviceUpdateMessages to favorite for the signed in user.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceupdatemessage-favorite?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite.FavoritePostResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite.FavoritepostResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite.FavoritePostResponse?> PostAsFavoritePostResponseAsync(global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite.FavoritePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite.FavoritepostResponse?> PostAsFavoritepostResponseAsync(global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite.FavoritePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite.FavoritePostResponse> PostAsFavoritePostResponseAsync(global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite.FavoritePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite.FavoritepostResponse> PostAsFavoritepostResponseAsync(global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite.FavoritePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite.FavoritePostResponse>(requestInfo, global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite.FavoritePostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite.FavoritepostResponse>(requestInfo, global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite.FavoritepostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Change the status of a list of serviceUpdateMessages to favorite for the signed in user.
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use PostAsFavoritePostResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use PostAsFavoritepostResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite.FavoriteResponse?> PostAsync(global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Favorite.FavoritePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

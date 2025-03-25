@@ -36,17 +36,17 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.GetAllMessages
         /// <summary>
         /// Invoke function getAllMessages
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Users.Item.JoinedTeams.GetAllMessages.GetAllMessagesGetResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Users.Item.JoinedTeams.GetAllMessages.GetAllMessagesgetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Users.Item.JoinedTeams.GetAllMessages.GetAllMessagesGetResponse?> GetAsGetAllMessagesGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.JoinedTeams.GetAllMessages.GetAllMessagesRequestBuilder.GetAllMessagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Users.Item.JoinedTeams.GetAllMessages.GetAllMessagesgetResponse?> GetAsGetAllMessagesgetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.JoinedTeams.GetAllMessages.GetAllMessagesRequestBuilder.GetAllMessagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Users.Item.JoinedTeams.GetAllMessages.GetAllMessagesGetResponse> GetAsGetAllMessagesGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.JoinedTeams.GetAllMessages.GetAllMessagesRequestBuilder.GetAllMessagesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Users.Item.JoinedTeams.GetAllMessages.GetAllMessagesgetResponse> GetAsGetAllMessagesgetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.JoinedTeams.GetAllMessages.GetAllMessagesRequestBuilder.GetAllMessagesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.GetAllMessages
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Users.Item.JoinedTeams.GetAllMessages.GetAllMessagesGetResponse>(requestInfo, global::Microsoft.Graph.Users.Item.JoinedTeams.GetAllMessages.GetAllMessagesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Users.Item.JoinedTeams.GetAllMessages.GetAllMessagesgetResponse>(requestInfo, global::Microsoft.Graph.Users.Item.JoinedTeams.GetAllMessages.GetAllMessagesgetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getAllMessages
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.GetAllMessages
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsGetAllMessagesGetResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use GetAsGetAllMessagesgetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Users.Item.JoinedTeams.GetAllMessages.GetAllMessagesResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.JoinedTeams.GetAllMessages.GetAllMessagesRequestBuilder.GetAllMessagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

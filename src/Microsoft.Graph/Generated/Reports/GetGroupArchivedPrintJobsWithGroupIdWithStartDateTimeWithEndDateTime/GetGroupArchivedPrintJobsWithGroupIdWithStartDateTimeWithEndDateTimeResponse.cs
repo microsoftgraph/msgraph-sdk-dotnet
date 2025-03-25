@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Reports.GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTime
 {
-    [Obsolete("This class is obsolete. Use GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeGetResponse instead.")]
+    [Obsolete("This class is obsolete. Use GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimegetResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeResponse : global::Microsoft.Graph.Reports.GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTime.GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeGetResponse, IParsable
+    public partial class GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeResponse : global::Microsoft.Graph.Reports.GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTime.GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimegetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

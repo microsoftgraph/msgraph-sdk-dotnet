@@ -36,18 +36,18 @@ namespace Microsoft.Graph.Me.CheckMemberObjects
         /// <summary>
         /// Check for membership in a list of group IDs, administrative unit IDs, or directory role IDs, for the IDs of the specified - user- group- service principal- organizational contact- device- directory object. This method is transitive.
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Me.CheckMemberObjects.CheckMemberObjectsPostResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Me.CheckMemberObjects.CheckMemberObjectspostResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Me.CheckMemberObjects.CheckMemberObjectsPostResponse?> PostAsCheckMemberObjectsPostResponseAsync(global::Microsoft.Graph.Me.CheckMemberObjects.CheckMemberObjectsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Me.CheckMemberObjects.CheckMemberObjectspostResponse?> PostAsCheckMemberObjectspostResponseAsync(global::Microsoft.Graph.Me.CheckMemberObjects.CheckMemberObjectsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Me.CheckMemberObjects.CheckMemberObjectsPostResponse> PostAsCheckMemberObjectsPostResponseAsync(global::Microsoft.Graph.Me.CheckMemberObjects.CheckMemberObjectsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Me.CheckMemberObjects.CheckMemberObjectspostResponse> PostAsCheckMemberObjectspostResponseAsync(global::Microsoft.Graph.Me.CheckMemberObjects.CheckMemberObjectsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Me.CheckMemberObjects
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Me.CheckMemberObjects.CheckMemberObjectsPostResponse>(requestInfo, global::Microsoft.Graph.Me.CheckMemberObjects.CheckMemberObjectsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Me.CheckMemberObjects.CheckMemberObjectspostResponse>(requestInfo, global::Microsoft.Graph.Me.CheckMemberObjects.CheckMemberObjectspostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Check for membership in a list of group IDs, administrative unit IDs, or directory role IDs, for the IDs of the specified - user- group- service principal- organizational contact- device- directory object. This method is transitive.
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Me.CheckMemberObjects
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use PostAsCheckMemberObjectsPostResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use PostAsCheckMemberObjectspostResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Me.CheckMemberObjects.CheckMemberObjectsResponse?> PostAsync(global::Microsoft.Graph.Me.CheckMemberObjects.CheckMemberObjectsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

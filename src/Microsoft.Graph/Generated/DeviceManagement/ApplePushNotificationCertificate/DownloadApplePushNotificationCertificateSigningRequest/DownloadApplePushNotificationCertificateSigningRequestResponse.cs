@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.DeviceManagement.ApplePushNotificationCertificate.DownloadApplePushNotificationCertificateSigningRequest
 {
-    [Obsolete("This class is obsolete. Use DownloadApplePushNotificationCertificateSigningRequestGetResponse instead.")]
+    [Obsolete("This class is obsolete. Use DownloadApplePushNotificationCertificateSigningRequestgetResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class DownloadApplePushNotificationCertificateSigningRequestResponse : global::Microsoft.Graph.DeviceManagement.ApplePushNotificationCertificate.DownloadApplePushNotificationCertificateSigningRequest.DownloadApplePushNotificationCertificateSigningRequestGetResponse, IParsable
+    public partial class DownloadApplePushNotificationCertificateSigningRequestResponse : global::Microsoft.Graph.DeviceManagement.ApplePushNotificationCertificate.DownloadApplePushNotificationCertificateSigningRequest.DownloadApplePushNotificationCertificateSigningRequestgetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

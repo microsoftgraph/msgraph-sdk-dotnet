@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Sites.Item.Permissions.Item.Grant
 {
-    [Obsolete("This class is obsolete. Use GrantPostResponse instead.")]
+    [Obsolete("This class is obsolete. Use GrantpostResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GrantResponse : global::Microsoft.Graph.Sites.Item.Permissions.Item.Grant.GrantPostResponse, IParsable
+    public partial class GrantResponse : global::Microsoft.Graph.Sites.Item.Permissions.Item.Grant.GrantpostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

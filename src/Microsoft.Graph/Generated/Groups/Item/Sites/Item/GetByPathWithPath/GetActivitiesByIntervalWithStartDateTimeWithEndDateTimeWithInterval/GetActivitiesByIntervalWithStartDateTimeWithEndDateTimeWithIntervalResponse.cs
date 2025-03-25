@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval
 {
-    [Obsolete("This class is obsolete. Use GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalGetResponse instead.")]
+    [Obsolete("This class is obsolete. Use GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalgetResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalResponse : global::Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalGetResponse, IParsable
+    public partial class GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalResponse : global::Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalgetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

@@ -39,17 +39,17 @@ namespace Microsoft.Graph.Drives.Item.SearchWithQ
         /// Search the hierarchy of items for items matching a query.You can search within a folder hierarchy, a whole drive, or files shared with the current user.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-search?view=graph-rest-1.0" />
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Drives.Item.SearchWithQ.SearchWithQGetResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Drives.Item.SearchWithQ.SearchWithQgetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Microsoft.Graph.Drives.Item.SearchWithQ.SearchWithQGetResponse?> GetAsSearchWithQGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Drives.Item.SearchWithQ.SearchWithQRequestBuilder.SearchWithQRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Drives.Item.SearchWithQ.SearchWithQgetResponse?> GetAsSearchWithQgetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Drives.Item.SearchWithQ.SearchWithQRequestBuilder.SearchWithQRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Microsoft.Graph.Drives.Item.SearchWithQ.SearchWithQGetResponse> GetAsSearchWithQGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Drives.Item.SearchWithQ.SearchWithQRequestBuilder.SearchWithQRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Microsoft.Graph.Drives.Item.SearchWithQ.SearchWithQgetResponse> GetAsSearchWithQgetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Drives.Item.SearchWithQ.SearchWithQRequestBuilder.SearchWithQRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Drives.Item.SearchWithQ
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Drives.Item.SearchWithQ.SearchWithQGetResponse>(requestInfo, global::Microsoft.Graph.Drives.Item.SearchWithQ.SearchWithQGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Drives.Item.SearchWithQ.SearchWithQgetResponse>(requestInfo, global::Microsoft.Graph.Drives.Item.SearchWithQ.SearchWithQgetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Search the hierarchy of items for items matching a query.You can search within a folder hierarchy, a whole drive, or files shared with the current user.
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Drives.Item.SearchWithQ
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsSearchWithQGetResponseAsync instead.")]
+        [Obsolete("This method is obsolete. Use GetAsSearchWithQgetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Drives.Item.SearchWithQ.SearchWithQResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Drives.Item.SearchWithQ.SearchWithQRequestBuilder.SearchWithQRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)

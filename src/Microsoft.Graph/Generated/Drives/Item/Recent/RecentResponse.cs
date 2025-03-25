@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Drives.Item.Recent
 {
-    [Obsolete("This class is obsolete. Use RecentGetResponse instead.")]
+    [Obsolete("This class is obsolete. Use RecentgetResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RecentResponse : global::Microsoft.Graph.Drives.Item.Recent.RecentGetResponse, IParsable
+    public partial class RecentResponse : global::Microsoft.Graph.Drives.Item.Recent.RecentgetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

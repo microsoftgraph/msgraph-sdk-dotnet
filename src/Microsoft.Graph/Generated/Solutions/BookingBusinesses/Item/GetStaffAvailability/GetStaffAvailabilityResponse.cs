@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.GetStaffAvailability
 {
-    [Obsolete("This class is obsolete. Use GetStaffAvailabilityPostResponse instead.")]
+    [Obsolete("This class is obsolete. Use GetStaffAvailabilitypostResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetStaffAvailabilityResponse : global::Microsoft.Graph.Solutions.BookingBusinesses.Item.GetStaffAvailability.GetStaffAvailabilityPostResponse, IParsable
+    public partial class GetStaffAvailabilityResponse : global::Microsoft.Graph.Solutions.BookingBusinesses.Item.GetStaffAvailability.GetStaffAvailabilitypostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

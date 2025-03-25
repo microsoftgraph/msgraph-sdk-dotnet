@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Drives.Item.Items.Item.Invite
 {
-    [Obsolete("This class is obsolete. Use InvitePostResponse instead.")]
+    [Obsolete("This class is obsolete. Use InvitepostResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class InviteResponse : global::Microsoft.Graph.Drives.Item.Items.Item.Invite.InvitePostResponse, IParsable
+    public partial class InviteResponse : global::Microsoft.Graph.Drives.Item.Items.Item.Invite.InvitepostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

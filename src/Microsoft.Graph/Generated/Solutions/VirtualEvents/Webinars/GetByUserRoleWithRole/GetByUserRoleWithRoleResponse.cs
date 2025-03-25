@@ -7,10 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole
 {
-    [Obsolete("This class is obsolete. Use GetByUserRoleWithRoleGetResponse instead.")]
+    [Obsolete("This class is obsolete. Use GetByUserRoleWithRolegetResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetByUserRoleWithRoleResponse : global::Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole.GetByUserRoleWithRoleGetResponse, IParsable
+    public partial class GetByUserRoleWithRoleResponse : global::Microsoft.Graph.Solutions.VirtualEvents.Webinars.GetByUserRoleWithRole.GetByUserRoleWithRolegetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
