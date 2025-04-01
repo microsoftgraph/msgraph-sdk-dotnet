@@ -142,6 +142,22 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<DateTimeOffset?>("modifiedDateTime"); }
             set { BackingStore?.Set("modifiedDateTime", value); }
         }
+        /// <summary>The notificationSettings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.AccessPackageNotificationSettings? NotificationSettings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.AccessPackageNotificationSettings?>("notificationSettings"); }
+            set { BackingStore?.Set("notificationSettings", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.AccessPackageNotificationSettings NotificationSettings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.AccessPackageNotificationSettings>("notificationSettings"); }
+            set { BackingStore?.Set("notificationSettings", value); }
+        }
+#endif
         /// <summary>Questions that are posed to the  requestor.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -250,6 +266,7 @@ namespace Microsoft.Graph.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "expiration", n => { Expiration = n.GetObjectValue<global::Microsoft.Graph.Models.ExpirationPattern>(global::Microsoft.Graph.Models.ExpirationPattern.CreateFromDiscriminatorValue); } },
                 { "modifiedDateTime", n => { ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "notificationSettings", n => { NotificationSettings = n.GetObjectValue<global::Microsoft.Graph.Models.AccessPackageNotificationSettings>(global::Microsoft.Graph.Models.AccessPackageNotificationSettings.CreateFromDiscriminatorValue); } },
                 { "questions", n => { Questions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageQuestion>(global::Microsoft.Graph.Models.AccessPackageQuestion.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "requestApprovalSettings", n => { RequestApprovalSettings = n.GetObjectValue<global::Microsoft.Graph.Models.AccessPackageAssignmentApprovalSettings>(global::Microsoft.Graph.Models.AccessPackageAssignmentApprovalSettings.CreateFromDiscriminatorValue); } },
                 { "requestorSettings", n => { RequestorSettings = n.GetObjectValue<global::Microsoft.Graph.Models.AccessPackageAssignmentRequestorSettings>(global::Microsoft.Graph.Models.AccessPackageAssignmentRequestorSettings.CreateFromDiscriminatorValue); } },
@@ -275,6 +292,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ExpirationPattern>("expiration", Expiration);
             writer.WriteDateTimeOffsetValue("modifiedDateTime", ModifiedDateTime);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.AccessPackageNotificationSettings>("notificationSettings", NotificationSettings);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageQuestion>("questions", Questions);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.AccessPackageAssignmentApprovalSettings>("requestApprovalSettings", RequestApprovalSettings);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.AccessPackageAssignmentRequestorSettings>("requestorSettings", RequestorSettings);

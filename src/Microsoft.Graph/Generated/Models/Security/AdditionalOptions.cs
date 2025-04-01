@@ -37,5 +37,41 @@ namespace Microsoft.Graph.Models.Security
         #pragma warning disable CS1591
         UnknownFutureValue = 64,
         #pragma warning restore CS1591
+        [EnumMember(Value = "htmlTranscripts")]
+        #pragma warning disable CS1591
+        HtmlTranscripts = 128,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "advancedIndexing")]
+        #pragma warning disable CS1591
+        AdvancedIndexing = 256,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "allItemsInFolder")]
+        #pragma warning disable CS1591
+        AllItemsInFolder = 512,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "includeFolderAndPath")]
+        #pragma warning disable CS1591
+        IncludeFolderAndPath = 1024,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "condensePaths")]
+        #pragma warning disable CS1591
+        CondensePaths = 2048,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "friendlyName")]
+        #pragma warning disable CS1591
+        FriendlyName = 4096,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "splitSource")]
+        #pragma warning disable CS1591
+        SplitSource = 8192,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "optimizedPartitionSize")]
+        #pragma warning disable CS1591
+        OptimizedPartitionSize = 16384,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "includeReport")]
+        #pragma warning disable CS1591
+        IncludeReport = 32768,
+        #pragma warning restore CS1591
     }
 }
