@@ -39,6 +39,12 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("isApprovalRequiredForUpdate"); }
             set { BackingStore?.Set("isApprovalRequiredForUpdate", value); }
         }
+        /// <summary>The isRequestorJustificationRequired property</summary>
+        public bool? IsRequestorJustificationRequired
+        {
+            get { return BackingStore?.Get<bool?>("isRequestorJustificationRequired"); }
+            set { BackingStore?.Set("isRequestorJustificationRequired", value); }
+        }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -164,6 +170,7 @@ namespace Microsoft.Graph.Models
                 { "allowCustomAssignmentSchedule", n => { AllowCustomAssignmentSchedule = n.GetBoolValue(); } },
                 { "isApprovalRequiredForAdd", n => { IsApprovalRequiredForAdd = n.GetBoolValue(); } },
                 { "isApprovalRequiredForUpdate", n => { IsApprovalRequiredForUpdate = n.GetBoolValue(); } },
+                { "isRequestorJustificationRequired", n => { IsRequestorJustificationRequired = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "policyDescription", n => { PolicyDescription = n.GetStringValue(); } },
                 { "policyDisplayName", n => { PolicyDisplayName = n.GetStringValue(); } },
@@ -182,6 +189,7 @@ namespace Microsoft.Graph.Models
             writer.WriteBoolValue("allowCustomAssignmentSchedule", AllowCustomAssignmentSchedule);
             writer.WriteBoolValue("isApprovalRequiredForAdd", IsApprovalRequiredForAdd);
             writer.WriteBoolValue("isApprovalRequiredForUpdate", IsApprovalRequiredForUpdate);
+            writer.WriteBoolValue("isRequestorJustificationRequired", IsRequestorJustificationRequired);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("policyDescription", PolicyDescription);
             writer.WriteStringValue("policyDisplayName", PolicyDisplayName);

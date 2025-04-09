@@ -71,7 +71,6 @@ namespace Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Ite
 #endif
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

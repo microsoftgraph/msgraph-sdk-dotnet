@@ -120,7 +120,6 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item.AllMembers.I
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

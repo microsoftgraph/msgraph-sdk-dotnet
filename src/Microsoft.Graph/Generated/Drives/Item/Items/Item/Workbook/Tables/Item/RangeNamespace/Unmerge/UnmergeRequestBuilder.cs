@@ -71,7 +71,6 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.RangeNames
 #endif
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
