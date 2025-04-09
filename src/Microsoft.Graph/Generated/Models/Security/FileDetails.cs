@@ -91,6 +91,22 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("issuer", value); }
         }
 #endif
+        /// <summary>The Md5 cryptographic hash of the file content.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Md5
+        {
+            get { return BackingStore?.Get<string?>("md5"); }
+            set { BackingStore?.Set("md5", value); }
+        }
+#nullable restore
+#else
+        public string Md5
+        {
+            get { return BackingStore?.Get<string>("md5"); }
+            set { BackingStore?.Set("md5", value); }
+        }
+#endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -137,6 +153,22 @@ namespace Microsoft.Graph.Models.Security
         {
             get { return BackingStore?.Get<string>("sha256"); }
             set { BackingStore?.Set("sha256", value); }
+        }
+#endif
+        /// <summary>The sha256Ac property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Sha256Ac
+        {
+            get { return BackingStore?.Get<string?>("sha256Ac"); }
+            set { BackingStore?.Set("sha256Ac", value); }
+        }
+#nullable restore
+#else
+        public string Sha256Ac
+        {
+            get { return BackingStore?.Get<string>("sha256Ac"); }
+            set { BackingStore?.Set("sha256Ac", value); }
         }
 #endif
         /// <summary>The signer of the signed file.</summary>
@@ -186,9 +218,11 @@ namespace Microsoft.Graph.Models.Security
                 { "filePublisher", n => { FilePublisher = n.GetStringValue(); } },
                 { "fileSize", n => { FileSize = n.GetLongValue(); } },
                 { "issuer", n => { Issuer = n.GetStringValue(); } },
+                { "md5", n => { Md5 = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "sha1", n => { Sha1 = n.GetStringValue(); } },
                 { "sha256", n => { Sha256 = n.GetStringValue(); } },
+                { "sha256Ac", n => { Sha256Ac = n.GetStringValue(); } },
                 { "signer", n => { Signer = n.GetStringValue(); } },
             };
         }
@@ -204,9 +238,11 @@ namespace Microsoft.Graph.Models.Security
             writer.WriteStringValue("filePublisher", FilePublisher);
             writer.WriteLongValue("fileSize", FileSize);
             writer.WriteStringValue("issuer", Issuer);
+            writer.WriteStringValue("md5", Md5);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("sha1", Sha1);
             writer.WriteStringValue("sha256", Sha256);
+            writer.WriteStringValue("sha256Ac", Sha256Ac);
             writer.WriteStringValue("signer", Signer);
             writer.WriteAdditionalData(AdditionalData);
         }

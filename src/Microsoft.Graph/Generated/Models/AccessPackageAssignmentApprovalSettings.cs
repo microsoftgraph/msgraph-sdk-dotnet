@@ -33,6 +33,12 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("isApprovalRequiredForUpdate"); }
             set { BackingStore?.Set("isApprovalRequiredForUpdate", value); }
         }
+        /// <summary>The isRequestorJustificationRequired property</summary>
+        public bool? IsRequestorJustificationRequired
+        {
+            get { return BackingStore?.Get<bool?>("isRequestorJustificationRequired"); }
+            set { BackingStore?.Set("isRequestorJustificationRequired", value); }
+        }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -93,6 +99,7 @@ namespace Microsoft.Graph.Models
             {
                 { "isApprovalRequiredForAdd", n => { IsApprovalRequiredForAdd = n.GetBoolValue(); } },
                 { "isApprovalRequiredForUpdate", n => { IsApprovalRequiredForUpdate = n.GetBoolValue(); } },
+                { "isRequestorJustificationRequired", n => { IsRequestorJustificationRequired = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "stages", n => { Stages = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageApprovalStage>(global::Microsoft.Graph.Models.AccessPackageApprovalStage.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -106,6 +113,7 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("isApprovalRequiredForAdd", IsApprovalRequiredForAdd);
             writer.WriteBoolValue("isApprovalRequiredForUpdate", IsApprovalRequiredForUpdate);
+            writer.WriteBoolValue("isRequestorJustificationRequired", IsRequestorJustificationRequired);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageApprovalStage>("stages", Stages);
             writer.WriteAdditionalData(AdditionalData);

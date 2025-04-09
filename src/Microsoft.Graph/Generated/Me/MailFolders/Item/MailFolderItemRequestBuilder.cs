@@ -118,8 +118,8 @@ namespace Microsoft.Graph.Me.MailFolders.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.MailFolder>(requestInfo, global::Microsoft.Graph.Models.MailFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the writable properties of a mailSearchFolder object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailsearchfolder-update?view=graph-rest-1.0" />
+        /// Update the properties of mailfolder object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailfolder-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.MailFolder"/></returns>
         /// <param name="body">The request body</param>
@@ -159,7 +159,6 @@ namespace Microsoft.Graph.Me.MailFolders.Item
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -182,7 +181,7 @@ namespace Microsoft.Graph.Me.MailFolders.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the writable properties of a mailSearchFolder object.
+        /// Update the properties of mailfolder object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

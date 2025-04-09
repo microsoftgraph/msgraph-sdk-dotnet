@@ -136,6 +136,22 @@ namespace Microsoft.Graph.Models.Security
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
+        /// <summary>The customDetails property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.Security.Dictionary? CustomDetails
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.Dictionary?>("customDetails"); }
+            set { BackingStore?.Set("customDetails", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.Security.Dictionary CustomDetails
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.Dictionary>("customDetails"); }
+            set { BackingStore?.Set("customDetails", value); }
+        }
+#endif
         /// <summary>String value describing each alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -441,6 +457,7 @@ namespace Microsoft.Graph.Models.Security
                 { "classification", n => { Classification = n.GetEnumValue<global::Microsoft.Graph.Models.Security.AlertClassification>(); } },
                 { "comments", n => { Comments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.AlertComment>(global::Microsoft.Graph.Models.Security.AlertComment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "customDetails", n => { CustomDetails = n.GetObjectValue<global::Microsoft.Graph.Models.Security.Dictionary>(global::Microsoft.Graph.Models.Security.Dictionary.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "detectionSource", n => { DetectionSource = n.GetEnumValue<global::Microsoft.Graph.Models.Security.DetectionSource>(); } },
                 { "detectorId", n => { DetectorId = n.GetStringValue(); } },
@@ -483,6 +500,7 @@ namespace Microsoft.Graph.Models.Security
             writer.WriteEnumValue<global::Microsoft.Graph.Models.Security.AlertClassification>("classification", Classification);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.AlertComment>("comments", Comments);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.Dictionary>("customDetails", CustomDetails);
             writer.WriteStringValue("description", Description);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.Security.DetectionSource>("detectionSource", DetectionSource);
             writer.WriteStringValue("detectorId", DetectorId);

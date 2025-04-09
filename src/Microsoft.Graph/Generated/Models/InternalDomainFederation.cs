@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class InternalDomainFederation : global::Microsoft.Graph.Models.SamlOrWsFedProvider, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>URL of the endpoint used by active clients when authenticating with federated domains set up for single sign-on in Microsoft Entra ID. Corresponds to the ActiveLogOnUri property of the Set-MsolDomainFederationSettings MSOnline v1 PowerShell cmdlet.</summary>
+        /// <summary>URL of the endpoint used by active clients when authenticating with federated domains set up for single sign-on in Microsoft Entra ID. Corresponds to the ActiveLogOnUri property of the Set-EntraDomainFederationSettings PowerShell cmdlet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ActiveSignInUri
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("signingCertificateUpdateStatus", value); }
         }
 #endif
-        /// <summary>URI that clients are redirected to when they sign out of Microsoft Entra services. Corresponds to the LogOffUri property of the Set-MsolDomainFederationSettings MSOnline v1 PowerShell cmdlet.</summary>
+        /// <summary>URI that clients are redirected to when they sign out of Microsoft Entra services. Corresponds to the LogOffUri property of the Set-EntraDomainFederationSettings PowerShell cmdlet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SignOutUri
