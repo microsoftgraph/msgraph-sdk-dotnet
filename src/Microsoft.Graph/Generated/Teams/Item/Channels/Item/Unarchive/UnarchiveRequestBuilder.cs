@@ -72,7 +72,6 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.Unarchive
 #endif
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

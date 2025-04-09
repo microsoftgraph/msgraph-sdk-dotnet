@@ -87,8 +87,8 @@ namespace Microsoft.Graph.Users.Item.Presence
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a user&apos;s presence information.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/presence-get?view=graph-rest-1.0" />
+        /// Set a presence status message for a user. An optional expiration date and time can be supplied.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Presence"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -151,11 +151,10 @@ namespace Microsoft.Graph.Users.Item.Presence
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// Get a user&apos;s presence information.
+        /// Set a presence status message for a user. An optional expiration date and time can be supplied.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -213,7 +212,7 @@ namespace Microsoft.Graph.Users.Item.Presence
         {
         }
         /// <summary>
-        /// Get a user&apos;s presence information.
+        /// Set a presence status message for a user. An optional expiration date and time can be supplied.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PresenceRequestBuilderGetQueryParameters 

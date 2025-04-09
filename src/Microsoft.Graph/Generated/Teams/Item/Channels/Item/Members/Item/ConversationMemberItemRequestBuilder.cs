@@ -35,8 +35,8 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.Members.Item
         {
         }
         /// <summary>
-        /// Delete a conversationMember from a channel. This operation is allowed only for channels with a membershipType value of private or shared.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-delete-members?view=graph-rest-1.0" />
+        /// Delete a conversationMember from a channel.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conversationmember-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.Members.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ConversationMember>(requestInfo, global::Microsoft.Graph.Models.ConversationMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a conversationMember from a channel. This operation is allowed only for channels with a membershipType value of private or shared.
+        /// Delete a conversationMember from a channel.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +123,6 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.Members.Item
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

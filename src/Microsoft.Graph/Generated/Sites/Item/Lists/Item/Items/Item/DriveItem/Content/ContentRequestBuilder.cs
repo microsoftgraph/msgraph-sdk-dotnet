@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.DriveItem.Content
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json");
+            requestInfo.Headers.TryAdd("Accept", "application/octet-stream");
             return requestInfo;
         }
         /// <summary>

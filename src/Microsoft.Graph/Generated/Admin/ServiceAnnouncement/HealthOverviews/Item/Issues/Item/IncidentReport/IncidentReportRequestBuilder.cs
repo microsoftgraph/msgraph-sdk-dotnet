@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.HealthOverviews.Item.Issues.
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json");
+            requestInfo.Headers.TryAdd("Accept", "application/octet-stream");
             return requestInfo;
         }
         /// <summary>

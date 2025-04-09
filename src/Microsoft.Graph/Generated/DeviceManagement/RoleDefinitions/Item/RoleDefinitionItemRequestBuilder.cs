@@ -41,8 +41,8 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions.Item
         {
         }
         /// <summary>
-        /// Deletes a roleDefinition.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-rbac-roledefinition-delete?view=graph-rest-1.0" />
+        /// Deletes a deviceAndAppManagementRoleDefinition.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroledefinition-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -64,8 +64,8 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the deviceAndAppManagementRoleDefinition object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroledefinition-get?view=graph-rest-1.0" />
+        /// Read properties and relationships of the roleDefinition object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-rbac-roledefinition-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.RoleDefinition"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -88,8 +88,8 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.RoleDefinition>(requestInfo, global::Microsoft.Graph.Models.RoleDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a deviceAndAppManagementRoleDefinition object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-rbac-deviceandappmanagementroledefinition-update?view=graph-rest-1.0" />
+        /// Update the properties of a roleDefinition object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-rbac-roledefinition-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.RoleDefinition"/></returns>
         /// <param name="body">The request body</param>
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.RoleDefinition>(requestInfo, global::Microsoft.Graph.Models.RoleDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a roleDefinition.
+        /// Deletes a deviceAndAppManagementRoleDefinition.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -129,11 +129,10 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions.Item
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the deviceAndAppManagementRoleDefinition object.
+        /// Read properties and relationships of the roleDefinition object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +151,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a deviceAndAppManagementRoleDefinition object.
+        /// Update the properties of a roleDefinition object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -191,7 +190,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions.Item
         {
         }
         /// <summary>
-        /// Read properties and relationships of the deviceAndAppManagementRoleDefinition object.
+        /// Read properties and relationships of the roleDefinition object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RoleDefinitionItemRequestBuilderGetQueryParameters 

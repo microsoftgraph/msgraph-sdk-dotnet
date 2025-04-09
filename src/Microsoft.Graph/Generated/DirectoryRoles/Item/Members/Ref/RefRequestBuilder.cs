@@ -122,7 +122,6 @@ namespace Microsoft.Graph.DirectoryRoles.Item.Members.Ref
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/directoryRoles/{directoryRole%2Did}/members/$ref?@id={%40id}", PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -162,7 +161,6 @@ namespace Microsoft.Graph.DirectoryRoles.Item.Members.Ref
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/directoryRoles/{directoryRole%2Did}/members/$ref", PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }

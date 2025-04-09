@@ -119,7 +119,6 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Categories.Ref
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/education/me/assignments/{educationAssignment%2Did}/categories/$ref?@id={%40id}", PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -159,7 +158,6 @@ namespace Microsoft.Graph.Education.Me.Assignments.Item.Categories.Ref
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/education/me/assignments/{educationAssignment%2Did}/categories/$ref", PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
