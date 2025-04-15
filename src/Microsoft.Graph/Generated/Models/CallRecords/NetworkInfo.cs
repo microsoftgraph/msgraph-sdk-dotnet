@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Models.CallRecords
             get { return BackingStore?.Get<float?>("bandwidthLowEventRatio"); }
             set { BackingStore?.Set("bandwidthLowEventRatio", value); }
         }
-        /// <summary>The wireless LAN basic service set identifier of the media endpoint used to connect to the network.</summary>
+        /// <summary>The wireless LAN basic service set identifier of the media endpoint used to connect to the network. This property isn&apos;t available if the user disables precise location sharing in their operating system or Microsoft Teams app settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BasicServiceSetIdentifier
