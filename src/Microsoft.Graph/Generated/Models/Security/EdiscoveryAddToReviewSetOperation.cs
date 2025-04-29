@@ -12,30 +12,6 @@ namespace Microsoft.Graph.Models.Security
     public partial class EdiscoveryAddToReviewSetOperation : global::Microsoft.Graph.Models.Security.CaseOperation, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The additionalDataOptions property</summary>
-        public global::Microsoft.Graph.Models.Security.AdditionalDataOptions? AdditionalDataOptions
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.AdditionalDataOptions?>("additionalDataOptions"); }
-            set { BackingStore?.Set("additionalDataOptions", value); }
-        }
-        /// <summary>The cloudAttachmentVersion property</summary>
-        public global::Microsoft.Graph.Models.Security.CloudAttachmentVersion? CloudAttachmentVersion
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.CloudAttachmentVersion?>("cloudAttachmentVersion"); }
-            set { BackingStore?.Set("cloudAttachmentVersion", value); }
-        }
-        /// <summary>The documentVersion property</summary>
-        public global::Microsoft.Graph.Models.Security.DocumentVersion? DocumentVersion
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.DocumentVersion?>("documentVersion"); }
-            set { BackingStore?.Set("documentVersion", value); }
-        }
-        /// <summary>The itemsToInclude property</summary>
-        public global::Microsoft.Graph.Models.Security.ItemsToInclude? ItemsToInclude
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.ItemsToInclude?>("itemsToInclude"); }
-            set { BackingStore?.Set("itemsToInclude", value); }
-        }
         /// <summary>eDiscovery review set to which items matching source collection query gets added.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -86,10 +62,6 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "additionalDataOptions", n => { AdditionalDataOptions = n.GetEnumValue<global::Microsoft.Graph.Models.Security.AdditionalDataOptions>(); } },
-                { "cloudAttachmentVersion", n => { CloudAttachmentVersion = n.GetEnumValue<global::Microsoft.Graph.Models.Security.CloudAttachmentVersion>(); } },
-                { "documentVersion", n => { DocumentVersion = n.GetEnumValue<global::Microsoft.Graph.Models.Security.DocumentVersion>(); } },
-                { "itemsToInclude", n => { ItemsToInclude = n.GetEnumValue<global::Microsoft.Graph.Models.Security.ItemsToInclude>(); } },
                 { "reviewSet", n => { ReviewSet = n.GetObjectValue<global::Microsoft.Graph.Models.Security.EdiscoveryReviewSet>(global::Microsoft.Graph.Models.Security.EdiscoveryReviewSet.CreateFromDiscriminatorValue); } },
                 { "search", n => { Search = n.GetObjectValue<global::Microsoft.Graph.Models.Security.EdiscoverySearch>(global::Microsoft.Graph.Models.Security.EdiscoverySearch.CreateFromDiscriminatorValue); } },
             };
@@ -102,10 +74,6 @@ namespace Microsoft.Graph.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<global::Microsoft.Graph.Models.Security.AdditionalDataOptions>("additionalDataOptions", AdditionalDataOptions);
-            writer.WriteEnumValue<global::Microsoft.Graph.Models.Security.CloudAttachmentVersion>("cloudAttachmentVersion", CloudAttachmentVersion);
-            writer.WriteEnumValue<global::Microsoft.Graph.Models.Security.DocumentVersion>("documentVersion", DocumentVersion);
-            writer.WriteEnumValue<global::Microsoft.Graph.Models.Security.ItemsToInclude>("itemsToInclude", ItemsToInclude);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.EdiscoveryReviewSet>("reviewSet", ReviewSet);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.EdiscoverySearch>("search", Search);
         }

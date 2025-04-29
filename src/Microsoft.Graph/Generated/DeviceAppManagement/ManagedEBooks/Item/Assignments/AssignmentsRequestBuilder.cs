@@ -78,8 +78,8 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.Assignments
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ManagedEBookAssignmentCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.ManagedEBookAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new iosVppEBookAssignment object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-books-iosvppebookassignment-create?view=graph-rest-1.0" />
+        /// Create a new managedEBookAssignment object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-books-managedebookassignment-create?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ManagedEBookAssignment"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.Assignments
             return requestInfo;
         }
         /// <summary>
-        /// Create a new iosVppEBookAssignment object.
+        /// Create a new managedEBookAssignment object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

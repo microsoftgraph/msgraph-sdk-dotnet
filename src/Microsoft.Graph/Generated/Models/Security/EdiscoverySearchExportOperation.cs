@@ -18,12 +18,6 @@ namespace Microsoft.Graph.Models.Security
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.AdditionalOptions?>("additionalOptions"); }
             set { BackingStore?.Set("additionalOptions", value); }
         }
-        /// <summary>The cloudAttachmentVersion property</summary>
-        public global::Microsoft.Graph.Models.Security.CloudAttachmentVersion? CloudAttachmentVersion
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.CloudAttachmentVersion?>("cloudAttachmentVersion"); }
-            set { BackingStore?.Set("cloudAttachmentVersion", value); }
-        }
         /// <summary>The description of the export by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,12 +50,6 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The documentVersion property</summary>
-        public global::Microsoft.Graph.Models.Security.DocumentVersion? DocumentVersion
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.DocumentVersion?>("documentVersion"); }
-            set { BackingStore?.Set("documentVersion", value); }
-        }
         /// <summary>Items to be included in the export. The possible values are: searchHits, partiallyIndexed, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.Security.ExportCriteria? ExportCriteria
         {
@@ -137,10 +125,8 @@ namespace Microsoft.Graph.Models.Security
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "additionalOptions", n => { AdditionalOptions = n.GetEnumValue<global::Microsoft.Graph.Models.Security.AdditionalOptions>(); } },
-                { "cloudAttachmentVersion", n => { CloudAttachmentVersion = n.GetEnumValue<global::Microsoft.Graph.Models.Security.CloudAttachmentVersion>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "documentVersion", n => { DocumentVersion = n.GetEnumValue<global::Microsoft.Graph.Models.Security.DocumentVersion>(); } },
                 { "exportCriteria", n => { ExportCriteria = n.GetEnumValue<global::Microsoft.Graph.Models.Security.ExportCriteria>(); } },
                 { "exportFileMetadata", n => { ExportFileMetadata = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.ExportFileMetadata>(global::Microsoft.Graph.Models.Security.ExportFileMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "exportFormat", n => { ExportFormat = n.GetEnumValue<global::Microsoft.Graph.Models.Security.ExportFormat>(); } },
@@ -158,10 +144,8 @@ namespace Microsoft.Graph.Models.Security
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.Security.AdditionalOptions>("additionalOptions", AdditionalOptions);
-            writer.WriteEnumValue<global::Microsoft.Graph.Models.Security.CloudAttachmentVersion>("cloudAttachmentVersion", CloudAttachmentVersion);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteEnumValue<global::Microsoft.Graph.Models.Security.DocumentVersion>("documentVersion", DocumentVersion);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.Security.ExportCriteria>("exportCriteria", ExportCriteria);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.ExportFileMetadata>("exportFileMetadata", ExportFileMetadata);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.Security.ExportFormat>("exportFormat", ExportFormat);
