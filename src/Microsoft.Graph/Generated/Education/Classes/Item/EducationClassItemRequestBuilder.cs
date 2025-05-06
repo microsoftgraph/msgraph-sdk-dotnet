@@ -4,6 +4,7 @@ using Microsoft.Graph.Education.Classes.Item.AssignmentCategories;
 using Microsoft.Graph.Education.Classes.Item.AssignmentDefaults;
 using Microsoft.Graph.Education.Classes.Item.AssignmentSettings;
 using Microsoft.Graph.Education.Classes.Item.Assignments;
+using Microsoft.Graph.Education.Classes.Item.GetRecentlyModifiedSubmissions;
 using Microsoft.Graph.Education.Classes.Item.Group;
 using Microsoft.Graph.Education.Classes.Item.Members;
 using Microsoft.Graph.Education.Classes.Item.Modules;
@@ -46,6 +47,11 @@ namespace Microsoft.Graph.Education.Classes.Item
         public global::Microsoft.Graph.Education.Classes.Item.AssignmentSettings.AssignmentSettingsRequestBuilder AssignmentSettings
         {
             get => new global::Microsoft.Graph.Education.Classes.Item.AssignmentSettings.AssignmentSettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getRecentlyModifiedSubmissions method.</summary>
+        public global::Microsoft.Graph.Education.Classes.Item.GetRecentlyModifiedSubmissions.GetRecentlyModifiedSubmissionsRequestBuilder GetRecentlyModifiedSubmissions
+        {
+            get => new global::Microsoft.Graph.Education.Classes.Item.GetRecentlyModifiedSubmissions.GetRecentlyModifiedSubmissionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the group property of the microsoft.graph.educationClass entity.</summary>
         public global::Microsoft.Graph.Education.Classes.Item.Group.GroupRequestBuilder Group

@@ -28,6 +28,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("attendanceRecords", value); }
         }
 #endif
+        /// <summary>The externalEventInformation property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.VirtualEventExternalInformation>? ExternalEventInformation
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.VirtualEventExternalInformation>?>("externalEventInformation"); }
+            set { BackingStore?.Set("externalEventInformation", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.VirtualEventExternalInformation> ExternalEventInformation
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.VirtualEventExternalInformation>>("externalEventInformation"); }
+            set { BackingStore?.Set("externalEventInformation", value); }
+        }
+#endif
         /// <summary>UTC time when the meeting ended. Read-only.</summary>
         public DateTimeOffset? MeetingEndDateTime
         {
@@ -65,6 +81,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "attendanceRecords", n => { AttendanceRecords = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AttendanceRecord>(global::Microsoft.Graph.Models.AttendanceRecord.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "externalEventInformation", n => { ExternalEventInformation = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.VirtualEventExternalInformation>(global::Microsoft.Graph.Models.VirtualEventExternalInformation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "meetingEndDateTime", n => { MeetingEndDateTime = n.GetDateTimeOffsetValue(); } },
                 { "meetingStartDateTime", n => { MeetingStartDateTime = n.GetDateTimeOffsetValue(); } },
                 { "totalParticipantCount", n => { TotalParticipantCount = n.GetIntValue(); } },
@@ -79,6 +96,7 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AttendanceRecord>("attendanceRecords", AttendanceRecords);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.VirtualEventExternalInformation>("externalEventInformation", ExternalEventInformation);
             writer.WriteDateTimeOffsetValue("meetingEndDateTime", MeetingEndDateTime);
             writer.WriteDateTimeOffsetValue("meetingStartDateTime", MeetingStartDateTime);
             writer.WriteIntValue("totalParticipantCount", TotalParticipantCount);

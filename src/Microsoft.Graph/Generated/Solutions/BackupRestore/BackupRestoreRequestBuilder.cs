@@ -4,11 +4,13 @@ using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Solutions.BackupRestore.DriveInclusionRules;
 using Microsoft.Graph.Solutions.BackupRestore.DriveProtectionUnits;
+using Microsoft.Graph.Solutions.BackupRestore.DriveProtectionUnitsBulkAdditionJobs;
 using Microsoft.Graph.Solutions.BackupRestore.Enable;
 using Microsoft.Graph.Solutions.BackupRestore.ExchangeProtectionPolicies;
 using Microsoft.Graph.Solutions.BackupRestore.ExchangeRestoreSessions;
 using Microsoft.Graph.Solutions.BackupRestore.MailboxInclusionRules;
 using Microsoft.Graph.Solutions.BackupRestore.MailboxProtectionUnits;
+using Microsoft.Graph.Solutions.BackupRestore.MailboxProtectionUnitsBulkAdditionJobs;
 using Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessProtectionPolicies;
 using Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions;
 using Microsoft.Graph.Solutions.BackupRestore.ProtectionPolicies;
@@ -20,6 +22,7 @@ using Microsoft.Graph.Solutions.BackupRestore.SharePointProtectionPolicies;
 using Microsoft.Graph.Solutions.BackupRestore.SharePointRestoreSessions;
 using Microsoft.Graph.Solutions.BackupRestore.SiteInclusionRules;
 using Microsoft.Graph.Solutions.BackupRestore.SiteProtectionUnits;
+using Microsoft.Graph.Solutions.BackupRestore.SiteProtectionUnitsBulkAdditionJobs;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -46,6 +49,11 @@ namespace Microsoft.Graph.Solutions.BackupRestore
         {
             get => new global::Microsoft.Graph.Solutions.BackupRestore.DriveProtectionUnits.DriveProtectionUnitsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the driveProtectionUnitsBulkAdditionJobs property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        public global::Microsoft.Graph.Solutions.BackupRestore.DriveProtectionUnitsBulkAdditionJobs.DriveProtectionUnitsBulkAdditionJobsRequestBuilder DriveProtectionUnitsBulkAdditionJobs
+        {
+            get => new global::Microsoft.Graph.Solutions.BackupRestore.DriveProtectionUnitsBulkAdditionJobs.DriveProtectionUnitsBulkAdditionJobsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the enable method.</summary>
         public global::Microsoft.Graph.Solutions.BackupRestore.Enable.EnableRequestBuilder Enable
         {
@@ -70,6 +78,11 @@ namespace Microsoft.Graph.Solutions.BackupRestore
         public global::Microsoft.Graph.Solutions.BackupRestore.MailboxProtectionUnits.MailboxProtectionUnitsRequestBuilder MailboxProtectionUnits
         {
             get => new global::Microsoft.Graph.Solutions.BackupRestore.MailboxProtectionUnits.MailboxProtectionUnitsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the mailboxProtectionUnitsBulkAdditionJobs property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        public global::Microsoft.Graph.Solutions.BackupRestore.MailboxProtectionUnitsBulkAdditionJobs.MailboxProtectionUnitsBulkAdditionJobsRequestBuilder MailboxProtectionUnitsBulkAdditionJobs
+        {
+            get => new global::Microsoft.Graph.Solutions.BackupRestore.MailboxProtectionUnitsBulkAdditionJobs.MailboxProtectionUnitsBulkAdditionJobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the oneDriveForBusinessProtectionPolicies property of the microsoft.graph.backupRestoreRoot entity.</summary>
         public global::Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessProtectionPolicies.OneDriveForBusinessProtectionPoliciesRequestBuilder OneDriveForBusinessProtectionPolicies
@@ -125,6 +138,11 @@ namespace Microsoft.Graph.Solutions.BackupRestore
         public global::Microsoft.Graph.Solutions.BackupRestore.SiteProtectionUnits.SiteProtectionUnitsRequestBuilder SiteProtectionUnits
         {
             get => new global::Microsoft.Graph.Solutions.BackupRestore.SiteProtectionUnits.SiteProtectionUnitsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the siteProtectionUnitsBulkAdditionJobs property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        public global::Microsoft.Graph.Solutions.BackupRestore.SiteProtectionUnitsBulkAdditionJobs.SiteProtectionUnitsBulkAdditionJobsRequestBuilder SiteProtectionUnitsBulkAdditionJobs
+        {
+            get => new global::Microsoft.Graph.Solutions.BackupRestore.SiteProtectionUnitsBulkAdditionJobs.SiteProtectionUnitsBulkAdditionJobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Solutions.BackupRestore.BackupRestoreRequestBuilder"/> and sets the default values.

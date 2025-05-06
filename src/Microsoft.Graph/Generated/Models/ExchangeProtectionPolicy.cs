@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("mailboxProtectionUnits", value); }
         }
 #endif
+        /// <summary>The mailboxProtectionUnitsBulkAdditionJobs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.MailboxProtectionUnitsBulkAdditionJob>? MailboxProtectionUnitsBulkAdditionJobs
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.MailboxProtectionUnitsBulkAdditionJob>?>("mailboxProtectionUnitsBulkAdditionJobs"); }
+            set { BackingStore?.Set("mailboxProtectionUnitsBulkAdditionJobs", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.MailboxProtectionUnitsBulkAdditionJob> MailboxProtectionUnitsBulkAdditionJobs
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.MailboxProtectionUnitsBulkAdditionJob>>("mailboxProtectionUnitsBulkAdditionJobs"); }
+            set { BackingStore?.Set("mailboxProtectionUnitsBulkAdditionJobs", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Models.ExchangeProtectionPolicy"/> and sets the default values.
         /// </summary>
@@ -71,6 +87,7 @@ namespace Microsoft.Graph.Models
             {
                 { "mailboxInclusionRules", n => { MailboxInclusionRules = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.MailboxProtectionRule>(global::Microsoft.Graph.Models.MailboxProtectionRule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "mailboxProtectionUnits", n => { MailboxProtectionUnits = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.MailboxProtectionUnit>(global::Microsoft.Graph.Models.MailboxProtectionUnit.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "mailboxProtectionUnitsBulkAdditionJobs", n => { MailboxProtectionUnitsBulkAdditionJobs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.MailboxProtectionUnitsBulkAdditionJob>(global::Microsoft.Graph.Models.MailboxProtectionUnitsBulkAdditionJob.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -83,6 +100,7 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.MailboxProtectionRule>("mailboxInclusionRules", MailboxInclusionRules);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.MailboxProtectionUnit>("mailboxProtectionUnits", MailboxProtectionUnits);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.MailboxProtectionUnitsBulkAdditionJob>("mailboxProtectionUnitsBulkAdditionJobs", MailboxProtectionUnitsBulkAdditionJobs);
         }
     }
 }

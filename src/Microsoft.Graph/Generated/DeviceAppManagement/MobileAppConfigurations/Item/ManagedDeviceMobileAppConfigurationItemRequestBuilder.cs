@@ -94,8 +94,8 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the managedDeviceMobileAppConfiguration object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfiguration-get?view=graph-rest-1.0" />
+        /// Read properties and relationships of the iosMobileAppConfiguration object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-iosmobileappconfiguration-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ManagedDeviceMobileAppConfiguration"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -162,7 +162,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the managedDeviceMobileAppConfiguration object.
+        /// Read properties and relationships of the iosMobileAppConfiguration object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item
         {
         }
         /// <summary>
-        /// Read properties and relationships of the managedDeviceMobileAppConfiguration object.
+        /// Read properties and relationships of the iosMobileAppConfiguration object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ManagedDeviceMobileAppConfigurationItemRequestBuilderGetQueryParameters 

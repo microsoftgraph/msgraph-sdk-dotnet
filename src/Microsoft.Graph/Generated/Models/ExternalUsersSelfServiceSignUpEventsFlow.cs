@@ -28,6 +28,38 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("onAttributeCollection", value); }
         }
 #endif
+        /// <summary>The configuration for what to invoke when attribution collection starts.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.OnAttributeCollectionStartHandler? OnAttributeCollectionStart
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.OnAttributeCollectionStartHandler?>("onAttributeCollectionStart"); }
+            set { BackingStore?.Set("onAttributeCollectionStart", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.OnAttributeCollectionStartHandler OnAttributeCollectionStart
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.OnAttributeCollectionStartHandler>("onAttributeCollectionStart"); }
+            set { BackingStore?.Set("onAttributeCollectionStart", value); }
+        }
+#endif
+        /// <summary>The configuration for what to invoke when attributes are submitted at the end of attribution collection.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.OnAttributeCollectionSubmitHandler? OnAttributeCollectionSubmit
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.OnAttributeCollectionSubmitHandler?>("onAttributeCollectionSubmit"); }
+            set { BackingStore?.Set("onAttributeCollectionSubmit", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.OnAttributeCollectionSubmitHandler OnAttributeCollectionSubmit
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.OnAttributeCollectionSubmitHandler>("onAttributeCollectionSubmit"); }
+            set { BackingStore?.Set("onAttributeCollectionSubmit", value); }
+        }
+#endif
         /// <summary>Required. The configuration for what to invoke when authentication methods are ready to be presented to the user. Must have at least one identity provider linked.  Supports $filter (eq). See support for filtering on user flows for syntax information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,6 +134,8 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "onAttributeCollection", n => { OnAttributeCollection = n.GetObjectValue<global::Microsoft.Graph.Models.OnAttributeCollectionHandler>(global::Microsoft.Graph.Models.OnAttributeCollectionHandler.CreateFromDiscriminatorValue); } },
+                { "onAttributeCollectionStart", n => { OnAttributeCollectionStart = n.GetObjectValue<global::Microsoft.Graph.Models.OnAttributeCollectionStartHandler>(global::Microsoft.Graph.Models.OnAttributeCollectionStartHandler.CreateFromDiscriminatorValue); } },
+                { "onAttributeCollectionSubmit", n => { OnAttributeCollectionSubmit = n.GetObjectValue<global::Microsoft.Graph.Models.OnAttributeCollectionSubmitHandler>(global::Microsoft.Graph.Models.OnAttributeCollectionSubmitHandler.CreateFromDiscriminatorValue); } },
                 { "onAuthenticationMethodLoadStart", n => { OnAuthenticationMethodLoadStart = n.GetObjectValue<global::Microsoft.Graph.Models.OnAuthenticationMethodLoadStartHandler>(global::Microsoft.Graph.Models.OnAuthenticationMethodLoadStartHandler.CreateFromDiscriminatorValue); } },
                 { "onInteractiveAuthFlowStart", n => { OnInteractiveAuthFlowStart = n.GetObjectValue<global::Microsoft.Graph.Models.OnInteractiveAuthFlowStartHandler>(global::Microsoft.Graph.Models.OnInteractiveAuthFlowStartHandler.CreateFromDiscriminatorValue); } },
                 { "onUserCreateStart", n => { OnUserCreateStart = n.GetObjectValue<global::Microsoft.Graph.Models.OnUserCreateStartHandler>(global::Microsoft.Graph.Models.OnUserCreateStartHandler.CreateFromDiscriminatorValue); } },
@@ -116,6 +150,8 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.OnAttributeCollectionHandler>("onAttributeCollection", OnAttributeCollection);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.OnAttributeCollectionStartHandler>("onAttributeCollectionStart", OnAttributeCollectionStart);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.OnAttributeCollectionSubmitHandler>("onAttributeCollectionSubmit", OnAttributeCollectionSubmit);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.OnAuthenticationMethodLoadStartHandler>("onAuthenticationMethodLoadStart", OnAuthenticationMethodLoadStart);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.OnInteractiveAuthFlowStartHandler>("onInteractiveAuthFlowStart", OnInteractiveAuthFlowStart);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.OnUserCreateStartHandler>("onUserCreateStart", OnUserCreateStart);

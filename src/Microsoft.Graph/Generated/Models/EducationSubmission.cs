@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Models
     public partial class EducationSubmission : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The unique identifier for the assignment with which this submission is associated. A submission is always associated with one and only one assignment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AssignmentId
+        {
+            get { return BackingStore?.Get<string?>("assignmentId"); }
+            set { BackingStore?.Set("assignmentId", value); }
+        }
+#nullable restore
+#else
+        public string AssignmentId
+        {
+            get { return BackingStore?.Get<string>("assignmentId"); }
+            set { BackingStore?.Set("assignmentId", value); }
+        }
+#endif
         /// <summary>The user that marked the submission as excused.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -33,6 +49,28 @@ namespace Microsoft.Graph.Models
         {
             get { return BackingStore?.Get<DateTimeOffset?>("excusedDateTime"); }
             set { BackingStore?.Set("excusedDateTime", value); }
+        }
+        /// <summary>The identities of those who modified the submission.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.IdentitySet? LastModifiedBy
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.IdentitySet?>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.IdentitySet LastModifiedBy
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.IdentitySet>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#endif
+        /// <summary>The date and time the submission was modified.</summary>
+        public DateTimeOffset? LastModifiedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The outcomes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -242,8 +280,11 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "assignmentId", n => { AssignmentId = n.GetStringValue(); } },
                 { "excusedBy", n => { ExcusedBy = n.GetObjectValue<global::Microsoft.Graph.Models.IdentitySet>(global::Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "excusedDateTime", n => { ExcusedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<global::Microsoft.Graph.Models.IdentitySet>(global::Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "outcomes", n => { Outcomes = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.EducationOutcome>(global::Microsoft.Graph.Models.EducationOutcome.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "reassignedBy", n => { ReassignedBy = n.GetObjectValue<global::Microsoft.Graph.Models.IdentitySet>(global::Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "reassignedDateTime", n => { ReassignedDateTime = n.GetDateTimeOffsetValue(); } },

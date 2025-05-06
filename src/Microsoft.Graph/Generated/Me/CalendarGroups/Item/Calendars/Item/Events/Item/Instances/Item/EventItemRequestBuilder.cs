@@ -6,6 +6,7 @@ using Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.Events.Item.Instance
 using Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.Events.Item.Instances.Item.Cancel;
 using Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.Events.Item.Instances.Item.Decline;
 using Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.Events.Item.Instances.Item.DismissReminder;
+using Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.Events.Item.Instances.Item.ExceptionOccurrences;
 using Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.Events.Item.Instances.Item.Extensions;
 using Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.Events.Item.Instances.Item.Forward;
 using Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.Events.Item.Instances.Item.PermanentDelete;
@@ -58,6 +59,11 @@ namespace Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.Events.Item.Inst
         public global::Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.Events.Item.Instances.Item.DismissReminder.DismissReminderRequestBuilder DismissReminder
         {
             get => new global::Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.Events.Item.Instances.Item.DismissReminder.DismissReminderRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the exceptionOccurrences property of the microsoft.graph.event entity.</summary>
+        public global::Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.Events.Item.Instances.Item.ExceptionOccurrences.ExceptionOccurrencesRequestBuilder ExceptionOccurrences
+        {
+            get => new global::Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.Events.Item.Instances.Item.ExceptionOccurrences.ExceptionOccurrencesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the extensions property of the microsoft.graph.event entity.</summary>
         public global::Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.Events.Item.Instances.Item.Extensions.ExtensionsRequestBuilder Extensions

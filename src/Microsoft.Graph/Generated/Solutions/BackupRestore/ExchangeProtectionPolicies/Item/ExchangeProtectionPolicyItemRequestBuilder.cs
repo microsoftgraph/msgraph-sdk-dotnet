@@ -4,6 +4,7 @@ using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxInclusionRules;
 using Microsoft.Graph.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxProtectionUnits;
+using Microsoft.Graph.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxProtectionUnitsBulkAdditionJobs;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -29,6 +30,11 @@ namespace Microsoft.Graph.Solutions.BackupRestore.ExchangeProtectionPolicies.Ite
         public global::Microsoft.Graph.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxProtectionUnits.MailboxProtectionUnitsRequestBuilder MailboxProtectionUnits
         {
             get => new global::Microsoft.Graph.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxProtectionUnits.MailboxProtectionUnitsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the mailboxProtectionUnitsBulkAdditionJobs property of the microsoft.graph.exchangeProtectionPolicy entity.</summary>
+        public global::Microsoft.Graph.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxProtectionUnitsBulkAdditionJobs.MailboxProtectionUnitsBulkAdditionJobsRequestBuilder MailboxProtectionUnitsBulkAdditionJobs
+        {
+            get => new global::Microsoft.Graph.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxProtectionUnitsBulkAdditionJobs.MailboxProtectionUnitsBulkAdditionJobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.ExchangeProtectionPolicyItemRequestBuilder"/> and sets the default values.

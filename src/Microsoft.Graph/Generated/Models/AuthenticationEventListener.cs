@@ -56,6 +56,8 @@ namespace Microsoft.Graph.Models
             return mappingValue switch
             {
                 "#microsoft.graph.onAttributeCollectionListener" => new global::Microsoft.Graph.Models.OnAttributeCollectionListener(),
+                "#microsoft.graph.onAttributeCollectionStartListener" => new global::Microsoft.Graph.Models.OnAttributeCollectionStartListener(),
+                "#microsoft.graph.onAttributeCollectionSubmitListener" => new global::Microsoft.Graph.Models.OnAttributeCollectionSubmitListener(),
                 "#microsoft.graph.onAuthenticationMethodLoadStartListener" => new global::Microsoft.Graph.Models.OnAuthenticationMethodLoadStartListener(),
                 "#microsoft.graph.onInteractiveAuthFlowStartListener" => new global::Microsoft.Graph.Models.OnInteractiveAuthFlowStartListener(),
                 "#microsoft.graph.onTokenIssuanceStartListener" => new global::Microsoft.Graph.Models.OnTokenIssuanceStartListener(),
