@@ -28,6 +28,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("driveRestoreArtifacts", value); }
         }
 #endif
+        /// <summary>The driveRestoreArtifactsBulkAdditionRequests property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.DriveRestoreArtifactsBulkAdditionRequest>? DriveRestoreArtifactsBulkAdditionRequests
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.DriveRestoreArtifactsBulkAdditionRequest>?>("driveRestoreArtifactsBulkAdditionRequests"); }
+            set { BackingStore?.Set("driveRestoreArtifactsBulkAdditionRequests", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.DriveRestoreArtifactsBulkAdditionRequest> DriveRestoreArtifactsBulkAdditionRequests
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.DriveRestoreArtifactsBulkAdditionRequest>>("driveRestoreArtifactsBulkAdditionRequests"); }
+            set { BackingStore?.Set("driveRestoreArtifactsBulkAdditionRequests", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Models.OneDriveForBusinessRestoreSession"/> and sets the default values.
         /// </summary>
@@ -54,6 +70,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "driveRestoreArtifacts", n => { DriveRestoreArtifacts = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DriveRestoreArtifact>(global::Microsoft.Graph.Models.DriveRestoreArtifact.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "driveRestoreArtifactsBulkAdditionRequests", n => { DriveRestoreArtifactsBulkAdditionRequests = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DriveRestoreArtifactsBulkAdditionRequest>(global::Microsoft.Graph.Models.DriveRestoreArtifactsBulkAdditionRequest.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -65,6 +82,7 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DriveRestoreArtifact>("driveRestoreArtifacts", DriveRestoreArtifacts);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DriveRestoreArtifactsBulkAdditionRequest>("driveRestoreArtifactsBulkAdditionRequests", DriveRestoreArtifactsBulkAdditionRequests);
         }
     }
 }

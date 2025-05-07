@@ -28,24 +28,6 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Mi
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The cloudAttachmentVersion property</summary>
-        public global::Microsoft.Graph.Models.Security.CloudAttachmentVersion? CloudAttachmentVersion
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.CloudAttachmentVersion?>("cloudAttachmentVersion"); }
-            set { BackingStore?.Set("cloudAttachmentVersion", value); }
-        }
-        /// <summary>The documentVersion property</summary>
-        public global::Microsoft.Graph.Models.Security.DocumentVersion? DocumentVersion
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.DocumentVersion?>("documentVersion"); }
-            set { BackingStore?.Set("documentVersion", value); }
-        }
-        /// <summary>The itemsToInclude property</summary>
-        public global::Microsoft.Graph.Models.Security.ItemsToInclude? ItemsToInclude
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.ItemsToInclude?>("itemsToInclude"); }
-            set { BackingStore?.Set("itemsToInclude", value); }
-        }
         /// <summary>The search property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -89,9 +71,6 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Mi
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "additionalDataOptions", n => { AdditionalDataOptions = n.GetEnumValue<global::Microsoft.Graph.Models.Security.AdditionalDataOptions>(); } },
-                { "cloudAttachmentVersion", n => { CloudAttachmentVersion = n.GetEnumValue<global::Microsoft.Graph.Models.Security.CloudAttachmentVersion>(); } },
-                { "documentVersion", n => { DocumentVersion = n.GetEnumValue<global::Microsoft.Graph.Models.Security.DocumentVersion>(); } },
-                { "itemsToInclude", n => { ItemsToInclude = n.GetEnumValue<global::Microsoft.Graph.Models.Security.ItemsToInclude>(); } },
                 { "search", n => { Search = n.GetObjectValue<global::Microsoft.Graph.Models.Security.EdiscoverySearch>(global::Microsoft.Graph.Models.Security.EdiscoverySearch.CreateFromDiscriminatorValue); } },
             };
         }
@@ -103,9 +82,6 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Mi
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Microsoft.Graph.Models.Security.AdditionalDataOptions>("additionalDataOptions", AdditionalDataOptions);
-            writer.WriteEnumValue<global::Microsoft.Graph.Models.Security.CloudAttachmentVersion>("cloudAttachmentVersion", CloudAttachmentVersion);
-            writer.WriteEnumValue<global::Microsoft.Graph.Models.Security.DocumentVersion>("documentVersion", DocumentVersion);
-            writer.WriteEnumValue<global::Microsoft.Graph.Models.Security.ItemsToInclude>("itemsToInclude", ItemsToInclude);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.EdiscoverySearch>("search", Search);
             writer.WriteAdditionalData(AdditionalData);
         }

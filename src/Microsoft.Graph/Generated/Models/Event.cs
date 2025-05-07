@@ -98,6 +98,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("calendar", value); }
         }
 #endif
+        /// <summary>The cancelledOccurrences property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? CancelledOccurrences
+        {
+            get { return BackingStore?.Get<List<string>?>("cancelledOccurrences"); }
+            set { BackingStore?.Set("cancelledOccurrences", value); }
+        }
+#nullable restore
+#else
+        public List<string> CancelledOccurrences
+        {
+            get { return BackingStore?.Get<List<string>>("cancelledOccurrences"); }
+            set { BackingStore?.Set("cancelledOccurrences", value); }
+        }
+#endif
         /// <summary>The date, time, and time zone that the event ends. By default, the end time is in UTC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -112,6 +128,22 @@ namespace Microsoft.Graph.Models
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.DateTimeTimeZone>("end"); }
             set { BackingStore?.Set("end", value); }
+        }
+#endif
+        /// <summary>The exceptionOccurrences property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.Event>? ExceptionOccurrences
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Event>?>("exceptionOccurrences"); }
+            set { BackingStore?.Set("exceptionOccurrences", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.Event> ExceptionOccurrences
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Event>>("exceptionOccurrences"); }
+            set { BackingStore?.Set("exceptionOccurrences", value); }
         }
 #endif
         /// <summary>The collection of open extensions defined for the event. Nullable.</summary>
@@ -545,7 +577,9 @@ namespace Microsoft.Graph.Models
                 { "body", n => { Body = n.GetObjectValue<global::Microsoft.Graph.Models.ItemBody>(global::Microsoft.Graph.Models.ItemBody.CreateFromDiscriminatorValue); } },
                 { "bodyPreview", n => { BodyPreview = n.GetStringValue(); } },
                 { "calendar", n => { Calendar = n.GetObjectValue<global::Microsoft.Graph.Models.Calendar>(global::Microsoft.Graph.Models.Calendar.CreateFromDiscriminatorValue); } },
+                { "cancelledOccurrences", n => { CancelledOccurrences = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "end", n => { End = n.GetObjectValue<global::Microsoft.Graph.Models.DateTimeTimeZone>(global::Microsoft.Graph.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "exceptionOccurrences", n => { ExceptionOccurrences = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Event>(global::Microsoft.Graph.Models.Event.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Extension>(global::Microsoft.Graph.Models.Extension.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "hasAttachments", n => { HasAttachments = n.GetBoolValue(); } },
                 { "hideAttendees", n => { HideAttendees = n.GetBoolValue(); } },
@@ -597,7 +631,9 @@ namespace Microsoft.Graph.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ItemBody>("body", Body);
             writer.WriteStringValue("bodyPreview", BodyPreview);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Calendar>("calendar", Calendar);
+            writer.WriteCollectionOfPrimitiveValues<string>("cancelledOccurrences", CancelledOccurrences);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.DateTimeTimeZone>("end", End);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Event>("exceptionOccurrences", ExceptionOccurrences);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Extension>("extensions", Extensions);
             writer.WriteBoolValue("hasAttachments", HasAttachments);
             writer.WriteBoolValue("hideAttendees", HideAttendees);

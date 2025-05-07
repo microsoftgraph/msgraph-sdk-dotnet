@@ -6,6 +6,7 @@ using Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Ca
 using Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Cancel;
 using Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Decline;
 using Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Item.DismissReminder;
+using Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Item.ExceptionOccurrences;
 using Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Extensions;
 using Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Forward;
 using Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Instances;
@@ -59,6 +60,11 @@ namespace Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Ite
         public global::Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Item.DismissReminder.DismissReminderRequestBuilder DismissReminder
         {
             get => new global::Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Item.DismissReminder.DismissReminderRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the exceptionOccurrences property of the microsoft.graph.event entity.</summary>
+        public global::Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Item.ExceptionOccurrences.ExceptionOccurrencesRequestBuilder ExceptionOccurrences
+        {
+            get => new global::Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Item.ExceptionOccurrences.ExceptionOccurrencesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the extensions property of the microsoft.graph.event entity.</summary>
         public global::Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Item.Extensions.ExtensionsRequestBuilder Extensions

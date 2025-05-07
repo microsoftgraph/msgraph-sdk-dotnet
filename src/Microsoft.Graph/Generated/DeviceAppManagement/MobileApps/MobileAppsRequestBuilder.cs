@@ -174,8 +174,8 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.MobileAppCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.MobileAppCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new windowsUniversalAppX object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-windowsuniversalappx-create?view=graph-rest-1.0" />
+        /// Create a new macOSOfficeSuiteApp object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-macosofficesuiteapp-create?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.MobileApp"/></returns>
         /// <param name="body">The request body</param>
@@ -219,7 +219,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps
             return requestInfo;
         }
         /// <summary>
-        /// Create a new windowsUniversalAppX object.
+        /// Create a new macOSOfficeSuiteApp object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

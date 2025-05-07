@@ -30,6 +30,8 @@ namespace Microsoft.Graph.Models
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.onAttributeCollectionStartCustomExtension" => new global::Microsoft.Graph.Models.OnAttributeCollectionStartCustomExtension(),
+                "#microsoft.graph.onAttributeCollectionSubmitCustomExtension" => new global::Microsoft.Graph.Models.OnAttributeCollectionSubmitCustomExtension(),
                 "#microsoft.graph.onTokenIssuanceStartCustomExtension" => new global::Microsoft.Graph.Models.OnTokenIssuanceStartCustomExtension(),
                 _ => new global::Microsoft.Graph.Models.CustomAuthenticationExtension(),
             };

@@ -29,25 +29,5 @@ namespace Microsoft.Graph.Models.Security
         #pragma warning disable CS1591
         UnknownFutureValue = 16,
         #pragma warning restore CS1591
-        [EnumMember(Value = "splitSource")]
-        #pragma warning disable CS1591
-        SplitSource = 32,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "includeFolderAndPath")]
-        #pragma warning disable CS1591
-        IncludeFolderAndPath = 64,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "friendlyName")]
-        #pragma warning disable CS1591
-        FriendlyName = 128,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "condensePaths")]
-        #pragma warning disable CS1591
-        CondensePaths = 256,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "optimizedPartitionSize")]
-        #pragma warning disable CS1591
-        OptimizedPartitionSize = 512,
-        #pragma warning restore CS1591
     }
 }

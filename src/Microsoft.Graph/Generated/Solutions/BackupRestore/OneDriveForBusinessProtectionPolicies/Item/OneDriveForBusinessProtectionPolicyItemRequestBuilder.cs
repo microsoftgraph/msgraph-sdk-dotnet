@@ -4,6 +4,7 @@ using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessProtectionPolicies.Item.DriveInclusionRules;
 using Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessProtectionPolicies.Item.DriveProtectionUnits;
+using Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessProtectionPolicies.Item.DriveProtectionUnitsBulkAdditionJobs;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -29,6 +30,11 @@ namespace Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessProtectionP
         public global::Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessProtectionPolicies.Item.DriveProtectionUnits.DriveProtectionUnitsRequestBuilder DriveProtectionUnits
         {
             get => new global::Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessProtectionPolicies.Item.DriveProtectionUnits.DriveProtectionUnitsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the driveProtectionUnitsBulkAdditionJobs property of the microsoft.graph.oneDriveForBusinessProtectionPolicy entity.</summary>
+        public global::Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessProtectionPolicies.Item.DriveProtectionUnitsBulkAdditionJobs.DriveProtectionUnitsBulkAdditionJobsRequestBuilder DriveProtectionUnitsBulkAdditionJobs
+        {
+            get => new global::Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessProtectionPolicies.Item.DriveProtectionUnitsBulkAdditionJobs.DriveProtectionUnitsBulkAdditionJobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessProtectionPolicies.Item.OneDriveForBusinessProtectionPolicyItemRequestBuilder"/> and sets the default values.

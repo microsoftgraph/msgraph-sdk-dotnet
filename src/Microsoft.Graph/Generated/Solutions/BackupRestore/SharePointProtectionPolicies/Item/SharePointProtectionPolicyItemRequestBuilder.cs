@@ -4,6 +4,7 @@ using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteInclusionRules;
 using Microsoft.Graph.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteProtectionUnits;
+using Microsoft.Graph.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteProtectionUnitsBulkAdditionJobs;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -29,6 +30,11 @@ namespace Microsoft.Graph.Solutions.BackupRestore.SharePointProtectionPolicies.I
         public global::Microsoft.Graph.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteProtectionUnits.SiteProtectionUnitsRequestBuilder SiteProtectionUnits
         {
             get => new global::Microsoft.Graph.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteProtectionUnits.SiteProtectionUnitsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the siteProtectionUnitsBulkAdditionJobs property of the microsoft.graph.sharePointProtectionPolicy entity.</summary>
+        public global::Microsoft.Graph.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteProtectionUnitsBulkAdditionJobs.SiteProtectionUnitsBulkAdditionJobsRequestBuilder SiteProtectionUnitsBulkAdditionJobs
+        {
+            get => new global::Microsoft.Graph.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteProtectionUnitsBulkAdditionJobs.SiteProtectionUnitsBulkAdditionJobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SharePointProtectionPolicyItemRequestBuilder"/> and sets the default values.

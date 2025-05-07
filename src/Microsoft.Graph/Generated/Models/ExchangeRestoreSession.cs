@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("mailboxRestoreArtifacts", value); }
         }
 #endif
+        /// <summary>The mailboxRestoreArtifactsBulkAdditionRequests property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.MailboxRestoreArtifactsBulkAdditionRequest>? MailboxRestoreArtifactsBulkAdditionRequests
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.MailboxRestoreArtifactsBulkAdditionRequest>?>("mailboxRestoreArtifactsBulkAdditionRequests"); }
+            set { BackingStore?.Set("mailboxRestoreArtifactsBulkAdditionRequests", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.MailboxRestoreArtifactsBulkAdditionRequest> MailboxRestoreArtifactsBulkAdditionRequests
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.MailboxRestoreArtifactsBulkAdditionRequest>>("mailboxRestoreArtifactsBulkAdditionRequests"); }
+            set { BackingStore?.Set("mailboxRestoreArtifactsBulkAdditionRequests", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Models.ExchangeRestoreSession"/> and sets the default values.
         /// </summary>
@@ -71,6 +87,7 @@ namespace Microsoft.Graph.Models
             {
                 { "granularMailboxRestoreArtifacts", n => { GranularMailboxRestoreArtifacts = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.GranularMailboxRestoreArtifact>(global::Microsoft.Graph.Models.GranularMailboxRestoreArtifact.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "mailboxRestoreArtifacts", n => { MailboxRestoreArtifacts = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.MailboxRestoreArtifact>(global::Microsoft.Graph.Models.MailboxRestoreArtifact.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "mailboxRestoreArtifactsBulkAdditionRequests", n => { MailboxRestoreArtifactsBulkAdditionRequests = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.MailboxRestoreArtifactsBulkAdditionRequest>(global::Microsoft.Graph.Models.MailboxRestoreArtifactsBulkAdditionRequest.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -83,6 +100,7 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.GranularMailboxRestoreArtifact>("granularMailboxRestoreArtifacts", GranularMailboxRestoreArtifacts);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.MailboxRestoreArtifact>("mailboxRestoreArtifacts", MailboxRestoreArtifacts);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.MailboxRestoreArtifactsBulkAdditionRequest>("mailboxRestoreArtifactsBulkAdditionRequests", MailboxRestoreArtifactsBulkAdditionRequests);
         }
     }
 }

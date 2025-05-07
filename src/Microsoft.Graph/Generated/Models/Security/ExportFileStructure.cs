@@ -24,9 +24,5 @@ namespace Microsoft.Graph.Models.Security
         #pragma warning disable CS1591
         UnknownFutureValue,
         #pragma warning restore CS1591
-        [EnumMember(Value = "msg")]
-        #pragma warning disable CS1591
-        Msg,
-        #pragma warning restore CS1591
     }
 }

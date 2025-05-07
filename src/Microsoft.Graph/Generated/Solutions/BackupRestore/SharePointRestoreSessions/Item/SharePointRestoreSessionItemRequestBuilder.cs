@@ -3,6 +3,7 @@
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts;
+using Microsoft.Graph.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifactsBulkAdditionRequests;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -23,6 +24,11 @@ namespace Microsoft.Graph.Solutions.BackupRestore.SharePointRestoreSessions.Item
         public global::Microsoft.Graph.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts.SiteRestoreArtifactsRequestBuilder SiteRestoreArtifacts
         {
             get => new global::Microsoft.Graph.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifacts.SiteRestoreArtifactsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the siteRestoreArtifactsBulkAdditionRequests property of the microsoft.graph.sharePointRestoreSession entity.</summary>
+        public global::Microsoft.Graph.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifactsBulkAdditionRequests.SiteRestoreArtifactsBulkAdditionRequestsRequestBuilder SiteRestoreArtifactsBulkAdditionRequests
+        {
+            get => new global::Microsoft.Graph.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifactsBulkAdditionRequests.SiteRestoreArtifactsBulkAdditionRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Solutions.BackupRestore.SharePointRestoreSessions.Item.SharePointRestoreSessionItemRequestBuilder"/> and sets the default values.

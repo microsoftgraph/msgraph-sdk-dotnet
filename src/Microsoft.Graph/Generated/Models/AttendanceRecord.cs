@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("emailAddress", value); }
         }
 #endif
+        /// <summary>The externalRegistrationInformation property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.VirtualEventExternalRegistrationInformation? ExternalRegistrationInformation
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.VirtualEventExternalRegistrationInformation?>("externalRegistrationInformation"); }
+            set { BackingStore?.Set("externalRegistrationInformation", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.VirtualEventExternalRegistrationInformation ExternalRegistrationInformation
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.VirtualEventExternalRegistrationInformation>("externalRegistrationInformation"); }
+            set { BackingStore?.Set("externalRegistrationInformation", value); }
+        }
+#endif
         /// <summary>Identity of the user associated with this attendance record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,6 +74,22 @@ namespace Microsoft.Graph.Models
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Identity>("identity"); }
             set { BackingStore?.Set("identity", value); }
+        }
+#endif
+        /// <summary>The registrationId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RegistrationId
+        {
+            get { return BackingStore?.Get<string?>("registrationId"); }
+            set { BackingStore?.Set("registrationId", value); }
+        }
+#nullable restore
+#else
+        public string RegistrationId
+        {
+            get { return BackingStore?.Get<string>("registrationId"); }
+            set { BackingStore?.Set("registrationId", value); }
         }
 #endif
         /// <summary>Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.</summary>
@@ -102,7 +134,9 @@ namespace Microsoft.Graph.Models
             {
                 { "attendanceIntervals", n => { AttendanceIntervals = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AttendanceInterval>(global::Microsoft.Graph.Models.AttendanceInterval.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "emailAddress", n => { EmailAddress = n.GetStringValue(); } },
+                { "externalRegistrationInformation", n => { ExternalRegistrationInformation = n.GetObjectValue<global::Microsoft.Graph.Models.VirtualEventExternalRegistrationInformation>(global::Microsoft.Graph.Models.VirtualEventExternalRegistrationInformation.CreateFromDiscriminatorValue); } },
                 { "identity", n => { Identity = n.GetObjectValue<global::Microsoft.Graph.Models.Identity>(global::Microsoft.Graph.Models.Identity.CreateFromDiscriminatorValue); } },
+                { "registrationId", n => { RegistrationId = n.GetStringValue(); } },
                 { "role", n => { Role = n.GetStringValue(); } },
                 { "totalAttendanceInSeconds", n => { TotalAttendanceInSeconds = n.GetIntValue(); } },
             };
@@ -117,7 +151,9 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AttendanceInterval>("attendanceIntervals", AttendanceIntervals);
             writer.WriteStringValue("emailAddress", EmailAddress);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.VirtualEventExternalRegistrationInformation>("externalRegistrationInformation", ExternalRegistrationInformation);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Identity>("identity", Identity);
+            writer.WriteStringValue("registrationId", RegistrationId);
             writer.WriteStringValue("role", Role);
             writer.WriteIntValue("totalAttendanceInSeconds", TotalAttendanceInSeconds);
         }

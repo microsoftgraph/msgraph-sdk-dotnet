@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("driveProtectionUnits", value); }
         }
 #endif
+        /// <summary>The driveProtectionUnitsBulkAdditionJobs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.DriveProtectionUnitsBulkAdditionJob>? DriveProtectionUnitsBulkAdditionJobs
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.DriveProtectionUnitsBulkAdditionJob>?>("driveProtectionUnitsBulkAdditionJobs"); }
+            set { BackingStore?.Set("driveProtectionUnitsBulkAdditionJobs", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.DriveProtectionUnitsBulkAdditionJob> DriveProtectionUnitsBulkAdditionJobs
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.DriveProtectionUnitsBulkAdditionJob>>("driveProtectionUnitsBulkAdditionJobs"); }
+            set { BackingStore?.Set("driveProtectionUnitsBulkAdditionJobs", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Models.OneDriveForBusinessProtectionPolicy"/> and sets the default values.
         /// </summary>
@@ -71,6 +87,7 @@ namespace Microsoft.Graph.Models
             {
                 { "driveInclusionRules", n => { DriveInclusionRules = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DriveProtectionRule>(global::Microsoft.Graph.Models.DriveProtectionRule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "driveProtectionUnits", n => { DriveProtectionUnits = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DriveProtectionUnit>(global::Microsoft.Graph.Models.DriveProtectionUnit.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "driveProtectionUnitsBulkAdditionJobs", n => { DriveProtectionUnitsBulkAdditionJobs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DriveProtectionUnitsBulkAdditionJob>(global::Microsoft.Graph.Models.DriveProtectionUnitsBulkAdditionJob.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -83,6 +100,7 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DriveProtectionRule>("driveInclusionRules", DriveInclusionRules);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DriveProtectionUnit>("driveProtectionUnits", DriveProtectionUnits);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DriveProtectionUnitsBulkAdditionJob>("driveProtectionUnitsBulkAdditionJobs", DriveProtectionUnitsBulkAdditionJobs);
         }
     }
 }

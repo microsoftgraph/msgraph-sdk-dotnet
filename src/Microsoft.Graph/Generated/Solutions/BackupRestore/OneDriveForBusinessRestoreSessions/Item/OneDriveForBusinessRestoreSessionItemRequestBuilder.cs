@@ -3,6 +3,7 @@
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.DriveRestoreArtifacts;
+using Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.DriveRestoreArtifactsBulkAdditionRequests;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -23,6 +24,11 @@ namespace Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessRestoreSess
         public global::Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.DriveRestoreArtifacts.DriveRestoreArtifactsRequestBuilder DriveRestoreArtifacts
         {
             get => new global::Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.DriveRestoreArtifacts.DriveRestoreArtifactsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the driveRestoreArtifactsBulkAdditionRequests property of the microsoft.graph.oneDriveForBusinessRestoreSession entity.</summary>
+        public global::Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.DriveRestoreArtifactsBulkAdditionRequests.DriveRestoreArtifactsBulkAdditionRequestsRequestBuilder DriveRestoreArtifactsBulkAdditionRequests
+        {
+            get => new global::Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.DriveRestoreArtifactsBulkAdditionRequests.DriveRestoreArtifactsBulkAdditionRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.OneDriveForBusinessRestoreSessionItemRequestBuilder"/> and sets the default values.
