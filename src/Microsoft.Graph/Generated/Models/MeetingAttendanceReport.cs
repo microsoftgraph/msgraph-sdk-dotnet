@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("attendanceRecords", value); }
         }
 #endif
-        /// <summary>The externalEventInformation property</summary>
+        /// <summary>The external information of a virtual event. Returned only for event organizers or coorganizers. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.VirtualEventExternalInformation>? ExternalEventInformation

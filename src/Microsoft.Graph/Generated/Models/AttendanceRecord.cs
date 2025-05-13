@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("emailAddress", value); }
         }
 #endif
-        /// <summary>The externalRegistrationInformation property</summary>
+        /// <summary>The external information for a virtualEventRegistration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.VirtualEventExternalRegistrationInformation? ExternalRegistrationInformation
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("externalRegistrationInformation", value); }
         }
 #endif
-        /// <summary>Identity of the user associated with this attendance record.</summary>
+        /// <summary>The identity of the user associated with this attendance record. The specific type is one of the following derived types of identity, depending on the user type: communicationsUserIdentity, azureCommunicationServicesUserIdentity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.Identity? Identity
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("identity", value); }
         }
 #endif
-        /// <summary>The registrationId property</summary>
+        /// <summary>Unique identifier of a virtualEventRegistration that is available to all participants registered for the virtualEventWebinar.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RegistrationId

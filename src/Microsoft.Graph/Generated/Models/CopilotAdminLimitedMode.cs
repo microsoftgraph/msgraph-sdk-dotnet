@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class CopilotAdminLimitedMode : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The groupId property</summary>
+        /// <summary>The ID of a Microsoft Entra group, for which the value of isEnabledForGroup is applied. The default value is null. If isEnabledForGroup is set to true, the groupId value must be provided for the Copilot limited mode in Teams meetings to be enabled for the members of the group. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GroupId
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("groupId", value); }
         }
 #endif
-        /// <summary>The isEnabledForGroup property</summary>
+        /// <summary>Enables the user to be in limited mode for Copilot in Teams meetings. When copilotAdminLimitedMode=true, users in this mode can ask any questions, but Copilot doesn&apos;t respond to certain questions related to inferring emotions, behavior, or judgments. When copilotAdminLimitedMode=false, it responds to all types of questions grounded to the meeting conversation. The default value is false.</summary>
         public bool? IsEnabledForGroup
         {
             get { return BackingStore?.Get<bool?>("isEnabledForGroup"); }
