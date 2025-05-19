@@ -31,7 +31,7 @@ using Microsoft.Graph.Drives.Item.Items.Item.Thumbnails;
 using Microsoft.Graph.Drives.Item.Items.Item.Unfollow;
 using Microsoft.Graph.Drives.Item.Items.Item.ValidatePermission;
 using Microsoft.Graph.Drives.Item.Items.Item.Workbook;
-using Microsoft.Graph.Drives.Item.List.Items.Item.Versions;
+using Microsoft.Graph.Drives.Item.Items.Item.Versions;
 using Microsoft.Kiota.Abstractions;
 
 namespace Microsoft.Graph;
