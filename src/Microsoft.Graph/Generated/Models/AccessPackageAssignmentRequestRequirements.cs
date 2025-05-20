@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("isApprovalRequiredForUpdate"); }
             set { BackingStore?.Set("isApprovalRequiredForUpdate", value); }
         }
-        /// <summary>The isRequestorJustificationRequired property</summary>
+        /// <summary>Indicates whether requestors must justify requesting access to an access package.</summary>
         public bool? IsRequestorJustificationRequired
         {
             get { return BackingStore?.Get<bool?>("isRequestorJustificationRequired"); }

@@ -76,8 +76,8 @@ namespace Microsoft.Graph.IdentityGovernance.TermsOfUse.Agreements.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve all files related to an agreement. This includes the default file and all localized files.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/agreement-list-files?view=graph-rest-1.0" />
+        /// Retrieve the properties and relationships of an agreement object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/agreement-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Agreement"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.IdentityGovernance.TermsOfUse.Agreements.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve all files related to an agreement. This includes the default file and all localized files.
+        /// Retrieve the properties and relationships of an agreement object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -202,7 +202,7 @@ namespace Microsoft.Graph.IdentityGovernance.TermsOfUse.Agreements.Item
         {
         }
         /// <summary>
-        /// Retrieve all files related to an agreement. This includes the default file and all localized files.
+        /// Retrieve the properties and relationships of an agreement object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AgreementItemRequestBuilderGetQueryParameters 

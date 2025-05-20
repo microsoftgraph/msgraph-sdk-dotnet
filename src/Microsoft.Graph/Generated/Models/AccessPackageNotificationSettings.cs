@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The isAssignmentNotificationDisabled property</summary>
+        /// <summary>Indicates if notification emails for an access package are disabled within an access package assignment policy.</summary>
         public bool? IsAssignmentNotificationDisabled
         {
             get { return BackingStore?.Get<bool?>("isAssignmentNotificationDisabled"); }

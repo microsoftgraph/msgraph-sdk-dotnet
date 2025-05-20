@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Me.Calendars.Item.CalendarView.Item.Instances.Item.Exc
         {
         }
         /// <summary>
-        /// Get exceptionOccurrences from me
+        /// Contains the id property values of the event instances that are exceptions in a recurring series.Exceptions can differ from other occurrences in a recurring series, such as the subject, start or end times, or attendees. Exceptions don&apos;t include canceled occurrences.Returned only on $select and $expand in a GET operation that specifies the ID (seriesMasterId property value) of a series master event.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Event"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Me.Calendars.Item.CalendarView.Item.Instances.Item.Exc
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Event>(requestInfo, global::Microsoft.Graph.Models.Event.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get exceptionOccurrences from me
+        /// Contains the id property values of the event instances that are exceptions in a recurring series.Exceptions can differ from other occurrences in a recurring series, such as the subject, start or end times, or attendees. Exceptions don&apos;t include canceled occurrences.Returned only on $select and $expand in a GET operation that specifies the ID (seriesMasterId property value) of a series master event.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Me.Calendars.Item.CalendarView.Item.Instances.Item.Exc
             return new global::Microsoft.Graph.Me.Calendars.Item.CalendarView.Item.Instances.Item.ExceptionOccurrences.Item.EventItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get exceptionOccurrences from me
+        /// Contains the id property values of the event instances that are exceptions in a recurring series.Exceptions can differ from other occurrences in a recurring series, such as the subject, start or end times, or attendees. Exceptions don&apos;t include canceled occurrences.Returned only on $select and $expand in a GET operation that specifies the ID (seriesMasterId property value) of a series master event.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EventItemRequestBuilderGetQueryParameters 
