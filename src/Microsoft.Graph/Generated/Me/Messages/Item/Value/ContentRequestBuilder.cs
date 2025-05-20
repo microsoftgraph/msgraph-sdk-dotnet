@@ -34,8 +34,8 @@ namespace Microsoft.Graph.Me.Messages.Item.Value
         {
         }
         /// <summary>
-        /// Delete eventMessage.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/eventmessage-delete?view=graph-rest-1.0" />
+        /// Delete a message in the specified user&apos;s mailbox, or delete a relationship of the message.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/message-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,8 +81,8 @@ namespace Microsoft.Graph.Me.Messages.Item.Value
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an eventMessage object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/eventmessage-update?view=graph-rest-1.0" />
+        /// Update the properties of a message object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/message-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">Binary request body</param>
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Me.Messages.Item.Value
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete eventMessage.
+        /// Delete a message in the specified user&apos;s mailbox, or delete a relationship of the message.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Me.Messages.Item.Value
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an eventMessage object.
+        /// Update the properties of a message object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Binary request body</param>

@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("azureTenantId", value); }
         }
 #endif
-        /// <summary>The collection of compliance information associated with secure score control</summary>
+        /// <summary>The collection of compliance information associated with secure score control. Not implemented. Currently returns null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.ComplianceInformation>? ComplianceInformation

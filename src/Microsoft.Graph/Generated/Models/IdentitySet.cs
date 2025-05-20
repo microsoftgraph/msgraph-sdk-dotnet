@@ -104,6 +104,7 @@ namespace Microsoft.Graph.Models
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.aiInteractionMentionedIdentitySet" => new global::Microsoft.Graph.Models.AiInteractionMentionedIdentitySet(),
                 "#microsoft.graph.chatMessageFromIdentitySet" => new global::Microsoft.Graph.Models.ChatMessageFromIdentitySet(),
                 "#microsoft.graph.chatMessageMentionedIdentitySet" => new global::Microsoft.Graph.Models.ChatMessageMentionedIdentitySet(),
                 "#microsoft.graph.chatMessageReactionIdentitySet" => new global::Microsoft.Graph.Models.ChatMessageReactionIdentitySet(),

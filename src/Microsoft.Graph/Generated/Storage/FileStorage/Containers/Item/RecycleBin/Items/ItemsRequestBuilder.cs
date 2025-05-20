@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.RecycleBin.Items
         {
         }
         /// <summary>
-        /// List of the recycleBinItems deleted by a user.
+        /// Get a collection of recycleBinItem resources in the recycleBin of the specified SharePoint Embedded fileStorageContainer.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/recyclebin-list-items?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.RecycleBinItemCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.RecycleBin.Items
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.RecycleBinItem>(requestInfo, global::Microsoft.Graph.Models.RecycleBinItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List of the recycleBinItems deleted by a user.
+        /// Get a collection of recycleBinItem resources in the recycleBin of the specified SharePoint Embedded fileStorageContainer.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +153,7 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.RecycleBin.Items
             return new global::Microsoft.Graph.Storage.FileStorage.Containers.Item.RecycleBin.Items.ItemsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List of the recycleBinItems deleted by a user.
+        /// Get a collection of recycleBinItem resources in the recycleBin of the specified SharePoint Embedded fileStorageContainer.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ItemsRequestBuilderGetQueryParameters 

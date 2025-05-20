@@ -7,6 +7,7 @@ using Microsoft.Graph.DirectoryNamespace.DeletedItems;
 using Microsoft.Graph.DirectoryNamespace.DeviceLocalCredentials;
 using Microsoft.Graph.DirectoryNamespace.FederationConfigurations;
 using Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization;
+using Microsoft.Graph.DirectoryNamespace.PublicKeyInfrastructure;
 using Microsoft.Graph.DirectoryNamespace.Subscriptions;
 using Microsoft.Graph.DirectoryNamespace.SubscriptionsWithCommerceSubscriptionId;
 using Microsoft.Graph.Models.ODataErrors;
@@ -61,6 +62,11 @@ namespace Microsoft.Graph.DirectoryNamespace
         public global::Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization.OnPremisesSynchronizationRequestBuilder OnPremisesSynchronization
         {
             get => new global::Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization.OnPremisesSynchronizationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the publicKeyInfrastructure property of the microsoft.graph.directory entity.</summary>
+        public global::Microsoft.Graph.DirectoryNamespace.PublicKeyInfrastructure.PublicKeyInfrastructureRequestBuilder PublicKeyInfrastructure
+        {
+            get => new global::Microsoft.Graph.DirectoryNamespace.PublicKeyInfrastructure.PublicKeyInfrastructureRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the subscriptions property of the microsoft.graph.directory entity.</summary>
         public global::Microsoft.Graph.DirectoryNamespace.Subscriptions.SubscriptionsRequestBuilder Subscriptions

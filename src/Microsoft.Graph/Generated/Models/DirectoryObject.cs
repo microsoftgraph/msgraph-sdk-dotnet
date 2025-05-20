@@ -35,6 +35,8 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.appManagementPolicy" => new global::Microsoft.Graph.Models.AppManagementPolicy(),
                 "#microsoft.graph.appRoleAssignment" => new global::Microsoft.Graph.Models.AppRoleAssignment(),
                 "#microsoft.graph.authorizationPolicy" => new global::Microsoft.Graph.Models.AuthorizationPolicy(),
+                "#microsoft.graph.certificateAuthorityDetail" => new global::Microsoft.Graph.Models.CertificateAuthorityDetail(),
+                "#microsoft.graph.certificateBasedAuthPki" => new global::Microsoft.Graph.Models.CertificateBasedAuthPki(),
                 "#microsoft.graph.claimsMappingPolicy" => new global::Microsoft.Graph.Models.ClaimsMappingPolicy(),
                 "#microsoft.graph.contract" => new global::Microsoft.Graph.Models.Contract(),
                 "#microsoft.graph.crossTenantAccessPolicy" => new global::Microsoft.Graph.Models.CrossTenantAccessPolicy(),

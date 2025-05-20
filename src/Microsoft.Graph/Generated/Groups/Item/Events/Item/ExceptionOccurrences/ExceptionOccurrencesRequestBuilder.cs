@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Groups.Item.Events.Item.ExceptionOccurrences
         {
         }
         /// <summary>
-        /// Get exceptionOccurrences from groups
+        /// Contains the id property values of the event instances that are exceptions in a recurring series.Exceptions can differ from other occurrences in a recurring series, such as the subject, start or end times, or attendees. Exceptions don&apos;t include canceled occurrences.Returned only on $select and $expand in a GET operation that specifies the ID (seriesMasterId property value) of a series master event.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.EventCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Groups.Item.Events.Item.ExceptionOccurrences
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.EventCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.EventCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get exceptionOccurrences from groups
+        /// Contains the id property values of the event instances that are exceptions in a recurring series.Exceptions can differ from other occurrences in a recurring series, such as the subject, start or end times, or attendees. Exceptions don&apos;t include canceled occurrences.Returned only on $select and $expand in a GET operation that specifies the ID (seriesMasterId property value) of a series master event.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Groups.Item.Events.Item.ExceptionOccurrences
             return new global::Microsoft.Graph.Groups.Item.Events.Item.ExceptionOccurrences.ExceptionOccurrencesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get exceptionOccurrences from groups
+        /// Contains the id property values of the event instances that are exceptions in a recurring series.Exceptions can differ from other occurrences in a recurring series, such as the subject, start or end times, or attendees. Exceptions don&apos;t include canceled occurrences.Returned only on $select and $expand in a GET operation that specifies the ID (seriesMasterId property value) of a series master event.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ExceptionOccurrencesRequestBuilderGetQueryParameters 

@@ -124,6 +124,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("onPremisesSynchronization", value); }
         }
 #endif
+        /// <summary>The publicKeyInfrastructure property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.PublicKeyInfrastructureRoot? PublicKeyInfrastructure
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.PublicKeyInfrastructureRoot?>("publicKeyInfrastructure"); }
+            set { BackingStore?.Set("publicKeyInfrastructure", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.PublicKeyInfrastructureRoot PublicKeyInfrastructure
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.PublicKeyInfrastructureRoot>("publicKeyInfrastructure"); }
+            set { BackingStore?.Set("publicKeyInfrastructure", value); }
+        }
+#endif
         /// <summary>List of commercial subscriptions that an organization acquired.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -165,6 +181,7 @@ namespace Microsoft.Graph.Models
                 { "deviceLocalCredentials", n => { DeviceLocalCredentials = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DeviceLocalCredentialInfo>(global::Microsoft.Graph.Models.DeviceLocalCredentialInfo.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "federationConfigurations", n => { FederationConfigurations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.IdentityProviderBase>(global::Microsoft.Graph.Models.IdentityProviderBase.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "onPremisesSynchronization", n => { OnPremisesSynchronization = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.OnPremisesDirectorySynchronization>(global::Microsoft.Graph.Models.OnPremisesDirectorySynchronization.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "publicKeyInfrastructure", n => { PublicKeyInfrastructure = n.GetObjectValue<global::Microsoft.Graph.Models.PublicKeyInfrastructureRoot>(global::Microsoft.Graph.Models.PublicKeyInfrastructureRoot.CreateFromDiscriminatorValue); } },
                 { "subscriptions", n => { Subscriptions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.CompanySubscription>(global::Microsoft.Graph.Models.CompanySubscription.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -183,6 +200,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DeviceLocalCredentialInfo>("deviceLocalCredentials", DeviceLocalCredentials);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.IdentityProviderBase>("federationConfigurations", FederationConfigurations);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.OnPremisesDirectorySynchronization>("onPremisesSynchronization", OnPremisesSynchronization);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.PublicKeyInfrastructureRoot>("publicKeyInfrastructure", PublicKeyInfrastructure);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.CompanySubscription>("subscriptions", Subscriptions);
         }
     }
