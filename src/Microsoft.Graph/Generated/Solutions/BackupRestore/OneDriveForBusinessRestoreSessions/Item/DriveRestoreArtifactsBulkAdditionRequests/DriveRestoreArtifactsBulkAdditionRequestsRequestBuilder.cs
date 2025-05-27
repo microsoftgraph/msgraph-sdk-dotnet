@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessRestoreSess
         {
         }
         /// <summary>
-        /// Get driveRestoreArtifactsBulkAdditionRequests from solutions
+        /// Get a list of the driveRestoreArtifactsBulkAdditionRequest objects associated with a oneDriveForBusinessRestoreSession. The drives property is deliberately omitted from the response body in order to limit the response size.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/onedriveforbusinessrestoresession-list-driverestoreartifactsbulkadditionrequests?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DriveRestoreArtifactsBulkAdditionRequestCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessRestoreSess
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DriveRestoreArtifactsBulkAdditionRequestCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.DriveRestoreArtifactsBulkAdditionRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to driveRestoreArtifactsBulkAdditionRequests for solutions
+        /// Create a driveRestoreArtifactsBulkAdditionRequest object associated with a oneDriveForBusinessRestoreSession. The following steps describe how to create and manage a oneDriveForBusinessRestoreSession with bulk artifact additions.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/onedriveforbusinessrestoresession-post-driverestoreartifactsbulkadditionrequests?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DriveRestoreArtifactsBulkAdditionRequest"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessRestoreSess
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DriveRestoreArtifactsBulkAdditionRequest>(requestInfo, global::Microsoft.Graph.Models.DriveRestoreArtifactsBulkAdditionRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get driveRestoreArtifactsBulkAdditionRequests from solutions
+        /// Get a list of the driveRestoreArtifactsBulkAdditionRequest objects associated with a oneDriveForBusinessRestoreSession. The drives property is deliberately omitted from the response body in order to limit the response size.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessRestoreSess
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to driveRestoreArtifactsBulkAdditionRequests for solutions
+        /// Create a driveRestoreArtifactsBulkAdditionRequest object associated with a oneDriveForBusinessRestoreSession. The following steps describe how to create and manage a oneDriveForBusinessRestoreSession with bulk artifact additions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +154,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessRestoreSess
             return new global::Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions.Item.DriveRestoreArtifactsBulkAdditionRequests.DriveRestoreArtifactsBulkAdditionRequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get driveRestoreArtifactsBulkAdditionRequests from solutions
+        /// Get a list of the driveRestoreArtifactsBulkAdditionRequest objects associated with a oneDriveForBusinessRestoreSession. The drives property is deliberately omitted from the response body in order to limit the response size.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DriveRestoreArtifactsBulkAdditionRequestsRequestBuilderGetQueryParameters 
