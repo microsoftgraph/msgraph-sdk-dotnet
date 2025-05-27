@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("mailboxRestoreArtifacts", value); }
         }
 #endif
-        /// <summary>The mailboxRestoreArtifactsBulkAdditionRequests property</summary>
+        /// <summary>A collection of user mailboxes and destination details that can be used to restore Exchange mailboxes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.MailboxRestoreArtifactsBulkAdditionRequest>? MailboxRestoreArtifactsBulkAdditionRequests

@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Solutions.BackupRestore.SharePointRestoreSessions.Item
         {
         }
         /// <summary>
-        /// Get siteRestoreArtifactsBulkAdditionRequests from solutions
+        /// Get a list of the siteRestoreArtifactsBulkAdditionRequest objects associated with a sharePointRestoreSession. The siteWebUrls property is deliberately omitted from the response body in order to limit the response size.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/sharepointrestoresession-list-siterestoreartifactsbulkadditionrequests?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.SiteRestoreArtifactsBulkAdditionRequestCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Solutions.BackupRestore.SharePointRestoreSessions.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.SiteRestoreArtifactsBulkAdditionRequestCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.SiteRestoreArtifactsBulkAdditionRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to siteRestoreArtifactsBulkAdditionRequests for solutions
+        /// Create a new siteRestoreArtifactsBulkAdditionRequest object associated with a sharePointRestoreSession. The following steps describe how to create and manage a sharePointRestoreSession with bulk artifact additions:
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/sharepointrestoresession-post-siterestoreartifactsbulkadditionrequests?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.SiteRestoreArtifactsBulkAdditionRequest"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.SharePointRestoreSessions.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.SiteRestoreArtifactsBulkAdditionRequest>(requestInfo, global::Microsoft.Graph.Models.SiteRestoreArtifactsBulkAdditionRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get siteRestoreArtifactsBulkAdditionRequests from solutions
+        /// Get a list of the siteRestoreArtifactsBulkAdditionRequest objects associated with a sharePointRestoreSession. The siteWebUrls property is deliberately omitted from the response body in order to limit the response size.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.SharePointRestoreSessions.Item
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to siteRestoreArtifactsBulkAdditionRequests for solutions
+        /// Create a new siteRestoreArtifactsBulkAdditionRequest object associated with a sharePointRestoreSession. The following steps describe how to create and manage a sharePointRestoreSession with bulk artifact additions:
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +154,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.SharePointRestoreSessions.Item
             return new global::Microsoft.Graph.Solutions.BackupRestore.SharePointRestoreSessions.Item.SiteRestoreArtifactsBulkAdditionRequests.SiteRestoreArtifactsBulkAdditionRequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get siteRestoreArtifactsBulkAdditionRequests from solutions
+        /// Get a list of the siteRestoreArtifactsBulkAdditionRequest objects associated with a sharePointRestoreSession. The siteWebUrls property is deliberately omitted from the response body in order to limit the response size.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SiteRestoreArtifactsBulkAdditionRequestsRequestBuilderGetQueryParameters 

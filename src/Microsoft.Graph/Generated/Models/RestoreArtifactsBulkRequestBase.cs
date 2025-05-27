@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class RestoreArtifactsBulkRequestBase : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The createdBy property</summary>
+        /// <summary>The identity of the person who created the bulk request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.IdentitySet? CreatedBy
@@ -28,19 +28,19 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The time when the bulk request was created.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The destinationType property</summary>
+        /// <summary>Indicates the restoration destination. The possible values are: new, inPlace, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.DestinationType? DestinationType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.DestinationType?>("destinationType"); }
             set { BackingStore?.Set("destinationType", value); }
         }
-        /// <summary>The displayName property</summary>
+        /// <summary>Name of the addition request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The error property</summary>
+        /// <summary>Error details are populated for resource resolution failures.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.PublicError? Error
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("error", value); }
         }
 #endif
-        /// <summary>The lastModifiedBy property</summary>
+        /// <summary>Identity of the person who last modified this entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.IdentitySet? LastModifiedBy
@@ -88,13 +88,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>Timestamp when this entity was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The protectionTimePeriod property</summary>
+        /// <summary>The start and end date and time of the protection period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.TimePeriod? ProtectionTimePeriod
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("protectionTimePeriod", value); }
         }
 #endif
-        /// <summary>The protectionUnitIds property</summary>
+        /// <summary>Indicates which protection units to restore. This property isn&apos;t implemented yet. Future value; don&apos;t use.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ProtectionUnitIds
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("protectionUnitIds", value); }
         }
 #endif
-        /// <summary>The restorePointPreference property</summary>
+        /// <summary>Indicates which restore point to return. The possible values are: oldest, latest, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.RestorePointPreference? RestorePointPreference
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.RestorePointPreference?>("restorePointPreference"); }
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.RestoreArtifactsBulkRequestStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>The tags property</summary>
+        /// <summary>The type of the restore point. The possible values are: none, fastRestore, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.RestorePointTags? Tags
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.RestorePointTags?>("tags"); }

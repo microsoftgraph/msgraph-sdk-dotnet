@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Solutions.BackupRestore.ExchangeRestoreSessions.Item.M
         {
         }
         /// <summary>
-        /// Delete navigation property mailboxRestoreArtifactsBulkAdditionRequests for solutions
+        /// Delete a mailboxRestoreArtifactsBulkAdditionRequest object associated with an exchangeRestoreSession.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailboxrestoreartifactsbulkadditionrequest-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -57,7 +58,8 @@ namespace Microsoft.Graph.Solutions.BackupRestore.ExchangeRestoreSessions.Item.M
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get mailboxRestoreArtifactsBulkAdditionRequests from solutions
+        /// Get a mailboxRestoreArtifactsBulkAdditionRequest object by its id, associated with an exchangeRestoreSession.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailboxrestoreartifactsbulkadditionrequest-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.MailboxRestoreArtifactsBulkAdditionRequest"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -105,7 +107,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.ExchangeRestoreSessions.Item.M
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.MailboxRestoreArtifactsBulkAdditionRequest>(requestInfo, global::Microsoft.Graph.Models.MailboxRestoreArtifactsBulkAdditionRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property mailboxRestoreArtifactsBulkAdditionRequests for solutions
+        /// Delete a mailboxRestoreArtifactsBulkAdditionRequest object associated with an exchangeRestoreSession.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +125,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.ExchangeRestoreSessions.Item.M
             return requestInfo;
         }
         /// <summary>
-        /// Get mailboxRestoreArtifactsBulkAdditionRequests from solutions
+        /// Get a mailboxRestoreArtifactsBulkAdditionRequest object by its id, associated with an exchangeRestoreSession.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -181,7 +183,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.ExchangeRestoreSessions.Item.M
         {
         }
         /// <summary>
-        /// Get mailboxRestoreArtifactsBulkAdditionRequests from solutions
+        /// Get a mailboxRestoreArtifactsBulkAdditionRequest object by its id, associated with an exchangeRestoreSession.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MailboxRestoreArtifactsBulkAdditionRequestItemRequestBuilderGetQueryParameters 
