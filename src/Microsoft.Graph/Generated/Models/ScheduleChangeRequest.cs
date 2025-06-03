@@ -12,19 +12,19 @@ namespace Microsoft.Graph.Models
     public partial class ScheduleChangeRequest : global::Microsoft.Graph.Models.ChangeTrackedEntity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The assignedTo property</summary>
+        /// <summary>Indicates who the request is assigned to. Possible values are: sender, recipient, manager, system, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.ScheduleChangeRequestActor? AssignedTo
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.ScheduleChangeRequestActor?>("assignedTo"); }
             set { BackingStore?.Set("assignedTo", value); }
         }
-        /// <summary>The managerActionDateTime property</summary>
+        /// <summary>The date and time when the manager approved or declined the scheduleChangeRequest. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? ManagerActionDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("managerActionDateTime"); }
             set { BackingStore?.Set("managerActionDateTime", value); }
         }
-        /// <summary>The managerActionMessage property</summary>
+        /// <summary>The message sent by the manager regarding the scheduleChangeRequest. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ManagerActionMessage
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("managerActionMessage", value); }
         }
 #endif
-        /// <summary>The managerUserId property</summary>
+        /// <summary>The user ID of the manager who approved or declined the scheduleChangeRequest.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ManagerUserId
@@ -56,13 +56,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("managerUserId", value); }
         }
 #endif
-        /// <summary>The senderDateTime property</summary>
+        /// <summary>The date and time when the sender sent the scheduleChangeRequest. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? SenderDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("senderDateTime"); }
             set { BackingStore?.Set("senderDateTime", value); }
         }
-        /// <summary>The senderMessage property</summary>
+        /// <summary>The message sent by the sender of the scheduleChangeRequest. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SenderMessage
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("senderMessage", value); }
         }
 #endif
-        /// <summary>The senderUserId property</summary>
+        /// <summary>The user ID of the sender of the scheduleChangeRequest.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SenderUserId
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("senderUserId", value); }
         }
 #endif
-        /// <summary>The state property</summary>
+        /// <summary>The state of the scheduleChangeRequest. Possible values are: pending, approved, declined, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.ScheduleChangeState? State
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.ScheduleChangeState?>("state"); }

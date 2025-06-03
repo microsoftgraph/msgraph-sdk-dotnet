@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class SiteRestoreArtifactsBulkAdditionRequest : global::Microsoft.Graph.Models.RestoreArtifactsBulkRequestBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The siteIds property</summary>
+        /// <summary>The list of SharePoint site IDs that are added to the corresponding SharePoint restore session in a bulk operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SiteIds
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("siteIds", value); }
         }
 #endif
-        /// <summary>The siteWebUrls property</summary>
+        /// <summary>The list of SharePoint site URLs that are added to the corresponding SharePoint restore session in a bulk operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SiteWebUrls

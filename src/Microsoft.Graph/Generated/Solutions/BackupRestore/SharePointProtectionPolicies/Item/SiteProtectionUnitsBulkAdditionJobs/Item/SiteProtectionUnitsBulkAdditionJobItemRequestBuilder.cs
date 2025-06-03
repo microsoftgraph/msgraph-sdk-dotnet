@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Solutions.BackupRestore.SharePointProtectionPolicies.I
         {
         }
         /// <summary>
-        /// Get siteProtectionUnitsBulkAdditionJobs from solutions
+        /// Get a siteProtectionUnitsBulkAdditionJob object by the ID associated with a sharePointProtectionPolicy.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/siteprotectionunitsbulkadditionjobs-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.SiteProtectionUnitsBulkAdditionJob"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +59,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.SharePointProtectionPolicies.I
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.SiteProtectionUnitsBulkAdditionJob>(requestInfo, global::Microsoft.Graph.Models.SiteProtectionUnitsBulkAdditionJob.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get siteProtectionUnitsBulkAdditionJobs from solutions
+        /// Get a siteProtectionUnitsBulkAdditionJob object by the ID associated with a sharePointProtectionPolicy.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +87,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.SharePointProtectionPolicies.I
             return new global::Microsoft.Graph.Solutions.BackupRestore.SharePointProtectionPolicies.Item.SiteProtectionUnitsBulkAdditionJobs.Item.SiteProtectionUnitsBulkAdditionJobItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get siteProtectionUnitsBulkAdditionJobs from solutions
+        /// Get a siteProtectionUnitsBulkAdditionJob object by the ID associated with a sharePointProtectionPolicy.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SiteProtectionUnitsBulkAdditionJobItemRequestBuilderGetQueryParameters 

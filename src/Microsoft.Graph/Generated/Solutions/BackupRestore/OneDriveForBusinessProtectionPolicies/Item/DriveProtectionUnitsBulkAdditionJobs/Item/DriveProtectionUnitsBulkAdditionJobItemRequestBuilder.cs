@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessProtectionP
         {
         }
         /// <summary>
-        /// Get driveProtectionUnitsBulkAdditionJobs from solutions
+        /// Get a driveProtectionUnitsBulkAdditionJob object by the ID associated with a oneDriveForBusinessProtectionPolicy.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveprotectionunitsbulkadditionjobs-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DriveProtectionUnitsBulkAdditionJob"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +59,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessProtectionP
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DriveProtectionUnitsBulkAdditionJob>(requestInfo, global::Microsoft.Graph.Models.DriveProtectionUnitsBulkAdditionJob.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get driveProtectionUnitsBulkAdditionJobs from solutions
+        /// Get a driveProtectionUnitsBulkAdditionJob object by the ID associated with a oneDriveForBusinessProtectionPolicy.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +87,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessProtectionP
             return new global::Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessProtectionPolicies.Item.DriveProtectionUnitsBulkAdditionJobs.Item.DriveProtectionUnitsBulkAdditionJobItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get driveProtectionUnitsBulkAdditionJobs from solutions
+        /// Get a driveProtectionUnitsBulkAdditionJob object by the ID associated with a oneDriveForBusinessProtectionPolicy.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DriveProtectionUnitsBulkAdditionJobItemRequestBuilderGetQueryParameters 

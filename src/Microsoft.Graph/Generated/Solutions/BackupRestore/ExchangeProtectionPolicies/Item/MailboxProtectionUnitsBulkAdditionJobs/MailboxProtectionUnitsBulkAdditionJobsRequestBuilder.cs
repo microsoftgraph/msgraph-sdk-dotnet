@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Solutions.BackupRestore.ExchangeProtectionPolicies.Ite
         {
         }
         /// <summary>
-        /// Get mailboxProtectionUnitsBulkAdditionJobs from solutions
+        /// Get a list of mailboxProtectionUnitsBulkAdditionJobs objects associated with an exchangeProtectionPolicy.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/exchangeprotectionpolicy-list-mailboxprotectionunitsbulkadditionjobs?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.MailboxProtectionUnitsBulkAdditionJobCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.ExchangeProtectionPolicies.Ite
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.MailboxProtectionUnitsBulkAdditionJobCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.MailboxProtectionUnitsBulkAdditionJobCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get mailboxProtectionUnitsBulkAdditionJobs from solutions
+        /// Get a list of mailboxProtectionUnitsBulkAdditionJobs objects associated with an exchangeProtectionPolicy.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +106,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.ExchangeProtectionPolicies.Ite
             return new global::Microsoft.Graph.Solutions.BackupRestore.ExchangeProtectionPolicies.Item.MailboxProtectionUnitsBulkAdditionJobs.MailboxProtectionUnitsBulkAdditionJobsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get mailboxProtectionUnitsBulkAdditionJobs from solutions
+        /// Get a list of mailboxProtectionUnitsBulkAdditionJobs objects associated with an exchangeProtectionPolicy.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MailboxProtectionUnitsBulkAdditionJobsRequestBuilderGetQueryParameters 

@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item.Resources
         }
         /// <summary>
         /// Create an assignment resource. Only teachers can perform this operation. You can create the following types of assignment resources: Every resource has an @odata.type property to indicate which type of resource is being created.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-post-resource?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-post-resources?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.EducationAssignmentResource"/></returns>
         /// <param name="body">The request body</param>

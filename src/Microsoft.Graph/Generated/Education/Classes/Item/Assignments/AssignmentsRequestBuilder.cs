@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments
         }
         /// <summary>
         /// Create a new assignment. Only teachers in a class can create an assignment. Assignments start in draft status, which means that students can&apos;t see the assignment until it&apos;s published.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationclass-post-assignment?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationclass-post-assignments?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.EducationAssignment"/></returns>
         /// <param name="body">The request body</param>

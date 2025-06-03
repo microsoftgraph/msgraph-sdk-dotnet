@@ -89,8 +89,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item
         {
         }
         /// <summary>
-        /// Deletes a windows10CompliancePolicy.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-windows10compliancepolicy-delete?view=graph-rest-1.0" />
+        /// Deletes a iosCompliancePolicy.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-ioscompliancepolicy-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -112,8 +112,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the androidWorkProfileCompliancePolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-androidworkprofilecompliancepolicy-get?view=graph-rest-1.0" />
+        /// Read properties and relationships of the androidCompliancePolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-androidcompliancepolicy-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DeviceCompliancePolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -136,8 +136,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DeviceCompliancePolicy>(requestInfo, global::Microsoft.Graph.Models.DeviceCompliancePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a androidWorkProfileCompliancePolicy object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-androidworkprofilecompliancepolicy-update?view=graph-rest-1.0" />
+        /// Update the properties of a androidCompliancePolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-androidcompliancepolicy-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DeviceCompliancePolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -162,7 +162,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DeviceCompliancePolicy>(requestInfo, global::Microsoft.Graph.Models.DeviceCompliancePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a windows10CompliancePolicy.
+        /// Deletes a iosCompliancePolicy.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -180,7 +180,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the androidWorkProfileCompliancePolicy object.
+        /// Read properties and relationships of the androidCompliancePolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -199,7 +199,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a androidWorkProfileCompliancePolicy object.
+        /// Update the properties of a androidCompliancePolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -238,7 +238,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item
         {
         }
         /// <summary>
-        /// Read properties and relationships of the androidWorkProfileCompliancePolicy object.
+        /// Read properties and relationships of the androidCompliancePolicy object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeviceCompliancePolicyItemRequestBuilderGetQueryParameters 

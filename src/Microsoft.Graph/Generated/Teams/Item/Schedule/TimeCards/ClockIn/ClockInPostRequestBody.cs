@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Teams.Item.Schedule.TimeCards.ClockIn
             set { BackingStore?.Set("notes", value); }
         }
 #endif
+        /// <summary>The onBehalfOfUserId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OnBehalfOfUserId
+        {
+            get { return BackingStore?.Get<string?>("onBehalfOfUserId"); }
+            set { BackingStore?.Set("onBehalfOfUserId", value); }
+        }
+#nullable restore
+#else
+        public string OnBehalfOfUserId
+        {
+            get { return BackingStore?.Get<string>("onBehalfOfUserId"); }
+            set { BackingStore?.Set("onBehalfOfUserId", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Teams.Item.Schedule.TimeCards.ClockIn.ClockInPostRequestBody"/> and sets the default values.
         /// </summary>
@@ -72,6 +88,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.TimeCards.ClockIn
             {
                 { "isAtApprovedLocation", n => { IsAtApprovedLocation = n.GetBoolValue(); } },
                 { "notes", n => { Notes = n.GetObjectValue<global::Microsoft.Graph.Models.ItemBody>(global::Microsoft.Graph.Models.ItemBody.CreateFromDiscriminatorValue); } },
+                { "onBehalfOfUserId", n => { OnBehalfOfUserId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -83,6 +100,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.TimeCards.ClockIn
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("isAtApprovedLocation", IsAtApprovedLocation);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ItemBody>("notes", Notes);
+            writer.WriteStringValue("onBehalfOfUserId", OnBehalfOfUserId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class MailboxRestoreArtifactsBulkAdditionRequest : global::Microsoft.Graph.Models.RestoreArtifactsBulkRequestBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The directoryObjectIds property</summary>
+        /// <summary>The list of directory object IDs that are added to the corresponding Exchange restore session in a bulk operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? DirectoryObjectIds
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("directoryObjectIds", value); }
         }
 #endif
-        /// <summary>The mailboxes property</summary>
+        /// <summary>The list of email addresses that are added to the corresponding Exchange restore session in a bulk operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Mailboxes

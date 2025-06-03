@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class AiInteraction : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The appClass property</summary>
+        /// <summary>The data source for Copilot data. For example, IPM.SkypeTeams.Message.Copilot.Excel or IPM.SkypeTeams.Message.Copilot.Loop.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppClass
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("appClass", value); }
         }
 #endif
-        /// <summary>The attachments property</summary>
+        /// <summary>The collection of documents attached to the interaction, such as cards and images.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.AiInteractionAttachment>? Attachments
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("attachments", value); }
         }
 #endif
-        /// <summary>The body property</summary>
+        /// <summary>The body of the message, including the text of the body and its body type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.ItemBody? Body
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("body", value); }
         }
 #endif
-        /// <summary>The contexts property</summary>
+        /// <summary>The identifer that maps to all contexts associated with an interaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.AiInteractionContext>? Contexts
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("contexts", value); }
         }
 #endif
-        /// <summary>The conversationType property</summary>
+        /// <summary>The type of the conversation. For example, appchat or bizchat.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConversationType
@@ -92,13 +92,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("conversationType", value); }
         }
 #endif
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The time when the interaction was created.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The etag property</summary>
+        /// <summary>The timestamp of when the interaction was last modified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Etag
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.AiInteractionType?>("interactionType"); }
             set { BackingStore?.Set("interactionType", value); }
         }
-        /// <summary>The links property</summary>
+        /// <summary>The collection of links that appear in the interaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.AiInteractionLink>? Links
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("links", value); }
         }
 #endif
-        /// <summary>The locale property</summary>
+        /// <summary>The locale of the sender.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Locale
@@ -168,7 +168,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("locale", value); }
         }
 #endif
-        /// <summary>The mentions property</summary>
+        /// <summary>The collection of the entities that were mentioned in the interaction, including users, bots, and so on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.AiInteractionMention>? Mentions
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("mentions", value); }
         }
 #endif
-        /// <summary>The requestId property</summary>
+        /// <summary>The identifier that groups a user prompt with its Copilot response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RequestId
@@ -200,7 +200,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("requestId", value); }
         }
 #endif
-        /// <summary>The sessionId property</summary>
+        /// <summary>The thread ID or conversation identifier that maps to all Copilot sessions for the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SessionId

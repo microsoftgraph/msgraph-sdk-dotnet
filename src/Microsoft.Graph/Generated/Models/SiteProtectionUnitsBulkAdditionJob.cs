@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class SiteProtectionUnitsBulkAdditionJob : global::Microsoft.Graph.Models.ProtectionUnitsBulkJobBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The siteIds property</summary>
+        /// <summary>The list of SharePoint site IDs to add to the SharePoint protection policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SiteIds
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("siteIds", value); }
         }
 #endif
-        /// <summary>The siteWebUrls property</summary>
+        /// <summary>The list of SharePoint site URLs to add to the SharePoint protection policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SiteWebUrls

@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Solutions.BackupRestore.SharePointRestoreSessions.Item
         {
         }
         /// <summary>
-        /// Delete navigation property siteRestoreArtifactsBulkAdditionRequests for solutions
+        /// Delete a siteRestoreArtifactsBulkAdditionRequest object associated with a sharepointRestoreSession.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/siterestoreartifactsbulkadditionrequest-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -57,7 +58,8 @@ namespace Microsoft.Graph.Solutions.BackupRestore.SharePointRestoreSessions.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get siteRestoreArtifactsBulkAdditionRequests from solutions
+        /// Get a siteRestoreArtifactsBulkAdditionRequest object by its id, associated with a sharePointRestoreSession.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/siterestoreartifactsbulkadditionrequest-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.SiteRestoreArtifactsBulkAdditionRequest"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -105,7 +107,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.SharePointRestoreSessions.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.SiteRestoreArtifactsBulkAdditionRequest>(requestInfo, global::Microsoft.Graph.Models.SiteRestoreArtifactsBulkAdditionRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property siteRestoreArtifactsBulkAdditionRequests for solutions
+        /// Delete a siteRestoreArtifactsBulkAdditionRequest object associated with a sharepointRestoreSession.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +125,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.SharePointRestoreSessions.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get siteRestoreArtifactsBulkAdditionRequests from solutions
+        /// Get a siteRestoreArtifactsBulkAdditionRequest object by its id, associated with a sharePointRestoreSession.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -181,7 +183,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.SharePointRestoreSessions.Item
         {
         }
         /// <summary>
-        /// Get siteRestoreArtifactsBulkAdditionRequests from solutions
+        /// Get a siteRestoreArtifactsBulkAdditionRequest object by its id, associated with a sharePointRestoreSession.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SiteRestoreArtifactsBulkAdditionRequestItemRequestBuilderGetQueryParameters 
