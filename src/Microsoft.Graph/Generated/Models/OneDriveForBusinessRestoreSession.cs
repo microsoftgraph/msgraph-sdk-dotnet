@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class OneDriveForBusinessRestoreSession : global::Microsoft.Graph.Models.RestoreSessionBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>A collection of restore points and destination details that can be used to restore a OneDrive for Business drive.</summary>
+        /// <summary>A collection of restore points and destination details that can be used to restore a OneDrive for work or school drive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.DriveRestoreArtifact>? DriveRestoreArtifacts
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("driveRestoreArtifacts", value); }
         }
 #endif
-        /// <summary>The driveRestoreArtifactsBulkAdditionRequests property</summary>
+        /// <summary>A collection of user mailboxes and destination details that can be used to restore a OneDrive for work or school drive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.DriveRestoreArtifactsBulkAdditionRequest>? DriveRestoreArtifactsBulkAdditionRequests

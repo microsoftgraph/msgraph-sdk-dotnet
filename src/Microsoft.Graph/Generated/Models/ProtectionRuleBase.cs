@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("error", value); }
         }
 #endif
-        /// <summary>true indicates that the protection rule is dynamic; false that it&apos;s static. Currently, only static rules are supported.</summary>
+        /// <summary>The isAutoApplyEnabled property</summary>
         public bool? IsAutoApplyEnabled
         {
             get { return BackingStore?.Get<bool?>("isAutoApplyEnabled"); }

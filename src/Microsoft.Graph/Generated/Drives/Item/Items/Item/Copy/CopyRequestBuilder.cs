@@ -35,8 +35,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Copy
         {
         }
         /// <summary>
-        /// Asynchronously creates a copy of an driveItem (including any children), under a new parent item or with a new name.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-copy?view=graph-rest-1.0" />
+        /// Invoke action copy
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DriveItem"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +60,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Copy
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DriveItem>(requestInfo, global::Microsoft.Graph.Models.DriveItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Asynchronously creates a copy of an driveItem (including any children), under a new parent item or with a new name.
+        /// Invoke action copy
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

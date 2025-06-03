@@ -12,13 +12,13 @@ namespace Microsoft.Graph.Models
     public partial class OfferShiftRequest : global::Microsoft.Graph.Models.ScheduleChangeRequest, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
+        /// <summary>The date and time when the recipient approved or declined the request.</summary>
         public DateTimeOffset? RecipientActionDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("recipientActionDateTime"); }
             set { BackingStore?.Set("recipientActionDateTime", value); }
         }
-        /// <summary>Custom message sent by recipient of the offer shift request.</summary>
+        /// <summary>The message sent by the recipient regarding the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RecipientActionMessage
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("recipientActionMessage", value); }
         }
 #endif
-        /// <summary>User ID of the recipient of the offer shift request.</summary>
+        /// <summary>The recipient&apos;s user ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RecipientUserId
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("recipientUserId", value); }
         }
 #endif
-        /// <summary>User ID of the sender of the offer shift request.</summary>
+        /// <summary>The sender&apos;s shift ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SenderShiftId

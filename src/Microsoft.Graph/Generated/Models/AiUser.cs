@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class AiUser : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The interactionHistory property</summary>
+        /// <summary>The history of interactions between AI agents and users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.AiInteractionHistory? InteractionHistory

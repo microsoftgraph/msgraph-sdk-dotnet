@@ -78,7 +78,8 @@ namespace Microsoft.Graph.Teams.Item.Schedule.TimeOffRequests
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.TimeOffRequestCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.TimeOffRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to timeOffRequests for teams
+        /// Create instance of a timeoffrequest object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/timeoffrequest-post?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.TimeOffRequest"/></returns>
         /// <param name="body">The request body</param>
@@ -122,7 +123,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.TimeOffRequests
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to timeOffRequests for teams
+        /// Create instance of a timeoffrequest object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

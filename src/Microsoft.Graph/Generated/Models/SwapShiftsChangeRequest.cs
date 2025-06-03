@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class SwapShiftsChangeRequest : global::Microsoft.Graph.Models.OfferShiftRequest, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>ShiftId for the recipient user with whom the request is to swap.</summary>
+        /// <summary>The recipient&apos;s Shift ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RecipientShiftId
