@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.Sessions.Item.At
         {
         }
         /// <summary>
-        /// List of attendance records of an attendance report. Read-only.
+        /// Get a list of attendanceRecord objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/attendancerecord-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.AttendanceRecordCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.Sessions.Item.At
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.AttendanceRecord>(requestInfo, global::Microsoft.Graph.Models.AttendanceRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List of attendance records of an attendance report. Read-only.
+        /// Get a list of attendanceRecord objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +153,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.Sessions.Item.At
             return new global::Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.Sessions.Item.AttendanceReports.Item.AttendanceRecords.AttendanceRecordsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List of attendance records of an attendance report. Read-only.
+        /// Get a list of attendanceRecord objects and their properties.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AttendanceRecordsRequestBuilderGetQueryParameters 

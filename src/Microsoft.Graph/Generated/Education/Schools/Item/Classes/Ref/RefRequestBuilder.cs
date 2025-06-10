@@ -122,6 +122,7 @@ namespace Microsoft.Graph.Education.Schools.Item.Classes.Ref
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/education/schools/{educationSchool%2Did}/classes/$ref?@id={%40id}", PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -161,6 +162,7 @@ namespace Microsoft.Graph.Education.Schools.Item.Classes.Ref
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/education/schools/{educationSchool%2Did}/classes/$ref", PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }

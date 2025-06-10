@@ -148,6 +148,10 @@ namespace Microsoft.Graph.Models.Security
         #pragma warning disable CS1591
         MicrosoftInsiderRiskManagement,
         #pragma warning restore CS1591
+        [EnumMember(Value = "microsoftThreatIntelligence")]
+        #pragma warning disable CS1591
+        MicrosoftThreatIntelligence,
+        #pragma warning restore CS1591
         [EnumMember(Value = "microsoftSentinel")]
         #pragma warning disable CS1591
         MicrosoftSentinel,

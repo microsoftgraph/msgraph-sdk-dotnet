@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("preferredTimezone", value); }
         }
 #endif
-        /// <summary>Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
+        /// <summary>Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? RegistrationDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("registrationDateTime"); }

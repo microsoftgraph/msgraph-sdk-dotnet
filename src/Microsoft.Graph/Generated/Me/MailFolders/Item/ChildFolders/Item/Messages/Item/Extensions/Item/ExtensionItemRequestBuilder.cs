@@ -120,6 +120,7 @@ namespace Microsoft.Graph.Me.MailFolders.Item.ChildFolders.Item.Messages.Item.Ex
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

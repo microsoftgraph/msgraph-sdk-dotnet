@@ -132,6 +132,7 @@ namespace Microsoft.Graph.Sites.Item.TermStores.Item.Sets.Item.Terms.Item.Childr
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

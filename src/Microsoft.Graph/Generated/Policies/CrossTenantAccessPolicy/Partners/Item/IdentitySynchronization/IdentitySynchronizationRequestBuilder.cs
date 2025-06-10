@@ -82,8 +82,8 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.Item.Identit
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.CrossTenantIdentitySyncPolicyPartner>(requestInfo, global::Microsoft.Graph.Models.CrossTenantIdentitySyncPolicyPartner.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the user synchronization policy of a partner-specific configuration.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantidentitysyncpolicypartner-update?view=graph-rest-1.0" />
+        /// Create a cross-tenant user synchronization policy for a partner-specific configuration.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationpartner-put-identitysynchronization?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.CrossTenantIdentitySyncPolicyPartner"/></returns>
         /// <param name="body">The request body</param>
@@ -123,6 +123,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.Item.Identit
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -145,7 +146,7 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.Item.Identit
             return requestInfo;
         }
         /// <summary>
-        /// Update the user synchronization policy of a partner-specific configuration.
+        /// Create a cross-tenant user synchronization policy for a partner-specific configuration.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

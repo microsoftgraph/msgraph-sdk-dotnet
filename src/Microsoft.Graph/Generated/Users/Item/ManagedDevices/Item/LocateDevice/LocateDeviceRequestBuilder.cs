@@ -72,6 +72,7 @@ namespace Microsoft.Graph.Users.Item.ManagedDevices.Item.LocateDevice
 #endif
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

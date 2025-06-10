@@ -121,6 +121,7 @@ namespace Microsoft.Graph.Organization.Item.Branding.Localizations.Item.HeaderLo
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -139,7 +140,7 @@ namespace Microsoft.Graph.Organization.Item.Branding.Localizations.Item.HeaderLo
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "image/bmp, image/jpg, image/jpeg, image/gif, image/vnd.microsoft.icon, image/png, image/tiff");
+            requestInfo.Headers.TryAdd("Accept", "image/bmp, image/jpg, image/jpeg, image/gif, image/vnd.microsoft.icon, image/png, image/tiff, application/json");
             return requestInfo;
         }
         /// <summary>
@@ -162,6 +163,7 @@ namespace Microsoft.Graph.Organization.Item.Branding.Localizations.Item.HeaderLo
             if(string.IsNullOrEmpty(contentType)) throw new ArgumentNullException(nameof(contentType));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetStreamContent(body, contentType);
             return requestInfo;
         }
