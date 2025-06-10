@@ -120,6 +120,7 @@ namespace Microsoft.Graph.Planner.Plans.Item.Tasks.Item.BucketTaskBoardFormat
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

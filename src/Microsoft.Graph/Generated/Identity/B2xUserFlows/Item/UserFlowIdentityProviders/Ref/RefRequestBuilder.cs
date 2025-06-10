@@ -119,6 +119,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserFlowIdentityProviders.R
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/userFlowIdentityProviders/$ref?@id={%40id}", PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -158,6 +159,7 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserFlowIdentityProviders.R
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/identity/b2xUserFlows/{b2xIdentityUserFlow%2Did}/userFlowIdentityProviders/$ref", PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }

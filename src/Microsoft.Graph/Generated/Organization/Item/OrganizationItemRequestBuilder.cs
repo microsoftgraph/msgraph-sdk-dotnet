@@ -111,8 +111,8 @@ namespace Microsoft.Graph.Organization.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the organization object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-organization-get?view=graph-rest-1.0" />
+        /// Get the properties and relationships of the currently authenticated organization. Since the organization resource supports extensions, you can also use the GET operation to get custom properties and extension data in an organization instance.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/organization-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Organization"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -176,10 +176,11 @@ namespace Microsoft.Graph.Organization.Item
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the organization object.
+        /// Get the properties and relationships of the currently authenticated organization. Since the organization resource supports extensions, you can also use the GET operation to get custom properties and extension data in an organization instance.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -237,7 +238,7 @@ namespace Microsoft.Graph.Organization.Item
         {
         }
         /// <summary>
-        /// Read properties and relationships of the organization object.
+        /// Get the properties and relationships of the currently authenticated organization. Since the organization resource supports extensions, you can also use the GET operation to get custom properties and extension data in an organization instance.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OrganizationItemRequestBuilderGetQueryParameters 

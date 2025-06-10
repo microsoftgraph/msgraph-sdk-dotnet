@@ -76,7 +76,7 @@ namespace Microsoft.Graph.DeviceManagement.Reports.RetrieveDeviceAppInstallation
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/octet-stream");
+            requestInfo.Headers.TryAdd("Accept", "application/octet-stream, application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }

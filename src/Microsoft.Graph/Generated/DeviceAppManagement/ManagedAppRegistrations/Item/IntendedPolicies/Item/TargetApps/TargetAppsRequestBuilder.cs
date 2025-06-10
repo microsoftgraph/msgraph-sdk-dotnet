@@ -35,7 +35,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item.Inten
         }
         /// <summary>
         /// Not yet documented
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-managedappprotection-targetapps?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-managedapppolicy-targetapps?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,6 +76,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item.Inten
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }

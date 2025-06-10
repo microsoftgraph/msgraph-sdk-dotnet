@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Users.Item.Chats.GetAllMessages
         {
         }
         /// <summary>
-        /// Get all messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats.
+        /// Get all messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chats-getallmessages?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Users.Item.Chats.GetAllMessages.GetAllMessagesGetResponse"/></returns>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Users.Item.Chats.GetAllMessages
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Users.Item.Chats.GetAllMessages.GetAllMessagesGetResponse>(requestInfo, global::Microsoft.Graph.Users.Item.Chats.GetAllMessages.GetAllMessagesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats.
+        /// Get all messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/chats-getallmessages?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Users.Item.Chats.GetAllMessages.GetAllMessagesResponse"/></returns>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Users.Item.Chats.GetAllMessages
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Users.Item.Chats.GetAllMessages.GetAllMessagesResponse>(requestInfo, global::Microsoft.Graph.Users.Item.Chats.GetAllMessages.GetAllMessagesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats.
+        /// Get all messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Users.Item.Chats.GetAllMessages
             return new global::Microsoft.Graph.Users.Item.Chats.GetAllMessages.GetAllMessagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get all messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats.
+        /// Get all messages from all chats in which a user is a participant, including one-on-one chats, group chats, and meeting chats. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GetAllMessagesRequestBuilderGetQueryParameters 

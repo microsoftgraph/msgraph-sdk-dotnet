@@ -63,7 +63,8 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Townhalls.Item.Sessions.Item.A
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The attendance reports of an online meeting. Read-only.
+        /// Get the meetingAttendanceReport for an onlineMeeting or a virtualEvent. When an online meeting ends, an attendance report is generated for that session.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/meetingattendancereport-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.MeetingAttendanceReport"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -126,10 +127,11 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Townhalls.Item.Sessions.Item.A
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// The attendance reports of an online meeting. Read-only.
+        /// Get the meetingAttendanceReport for an onlineMeeting or a virtualEvent. When an online meeting ends, an attendance report is generated for that session.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -187,7 +189,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Townhalls.Item.Sessions.Item.A
         {
         }
         /// <summary>
-        /// The attendance reports of an online meeting. Read-only.
+        /// Get the meetingAttendanceReport for an onlineMeeting or a virtualEvent. When an online meeting ends, an attendance report is generated for that session.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MeetingAttendanceReportItemRequestBuilderGetQueryParameters 

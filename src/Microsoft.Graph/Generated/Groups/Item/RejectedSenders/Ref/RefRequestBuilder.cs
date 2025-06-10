@@ -122,6 +122,7 @@ namespace Microsoft.Graph.Groups.Item.RejectedSenders.Ref
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/groups/{group%2Did}/rejectedSenders/$ref?@id={%40id}", PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -161,6 +162,7 @@ namespace Microsoft.Graph.Groups.Item.RejectedSenders.Ref
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/groups/{group%2Did}/rejectedSenders/$ref", PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }

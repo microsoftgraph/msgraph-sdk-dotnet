@@ -150,6 +150,7 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.Messages.Item.Repli
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

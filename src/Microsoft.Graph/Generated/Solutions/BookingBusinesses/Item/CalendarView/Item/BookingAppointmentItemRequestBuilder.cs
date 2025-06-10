@@ -126,6 +126,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.CalendarView.Item
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/solutions/bookingBusinesses/{bookingBusiness%2Did}/calendarView/{bookingAppointment%2Did}", PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

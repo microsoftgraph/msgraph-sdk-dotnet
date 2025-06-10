@@ -22,6 +22,18 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Copy
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The childrenOnly property</summary>
+        public bool? ChildrenOnly
+        {
+            get { return BackingStore?.Get<bool?>("childrenOnly"); }
+            set { BackingStore?.Set("childrenOnly", value); }
+        }
+        /// <summary>The includeAllVersionHistory property</summary>
+        public bool? IncludeAllVersionHistory
+        {
+            get { return BackingStore?.Get<bool?>("includeAllVersionHistory"); }
+            set { BackingStore?.Set("includeAllVersionHistory", value); }
+        }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,6 +92,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Copy
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "childrenOnly", n => { ChildrenOnly = n.GetBoolValue(); } },
+                { "includeAllVersionHistory", n => { IncludeAllVersionHistory = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parentReference", n => { ParentReference = n.GetObjectValue<global::Microsoft.Graph.Models.ItemReference>(global::Microsoft.Graph.Models.ItemReference.CreateFromDiscriminatorValue); } },
             };
@@ -91,6 +105,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Copy
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("childrenOnly", ChildrenOnly);
+            writer.WriteBoolValue("includeAllVersionHistory", IncludeAllVersionHistory);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ItemReference>("parentReference", ParentReference);
             writer.WriteAdditionalData(AdditionalData);

@@ -127,6 +127,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.RegistrationConf
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
