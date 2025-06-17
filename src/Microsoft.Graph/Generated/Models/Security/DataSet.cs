@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models.Security
     public partial class DataSet : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The createdBy property</summary>
+        /// <summary>The user who created the data set. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.IdentitySet? CreatedBy
@@ -28,13 +28,13 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The date and time when the review set was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The description property</summary>
+        /// <summary>The description of the data set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>The name of the data set. The name is unique with a maximum limit of 64 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName

@@ -4,29 +4,34 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    [Flags]
     #pragma warning disable CS1591
-    public enum ExportFileStructure
+    public enum StatisticsOptions
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "none")]
+        [EnumMember(Value = "includeRefiners")]
         #pragma warning disable CS1591
-        None,
+        IncludeRefiners = 1,
         #pragma warning restore CS1591
-        [EnumMember(Value = "directory")]
+        [EnumMember(Value = "includeQueryStats")]
         #pragma warning disable CS1591
-        Directory,
+        IncludeQueryStats = 2,
         #pragma warning restore CS1591
-        [EnumMember(Value = "pst")]
+        [EnumMember(Value = "includeUnindexedStats")]
         #pragma warning disable CS1591
-        Pst,
+        IncludeUnindexedStats = 4,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "advancedIndexing")]
+        #pragma warning disable CS1591
+        AdvancedIndexing = 8,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "locationsWithoutHits")]
+        #pragma warning disable CS1591
+        LocationsWithoutHits = 16,
         #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
         #pragma warning disable CS1591
-        UnknownFutureValue,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "msg")]
-        #pragma warning disable CS1591
-        Msg,
+        UnknownFutureValue = 32,
         #pragma warning restore CS1591
     }
 }

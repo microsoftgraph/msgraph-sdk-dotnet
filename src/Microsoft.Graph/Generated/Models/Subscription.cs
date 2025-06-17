@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("encryptionCertificateId", value); }
         }
 #endif
-        /// <summary>Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. For the maximum supported subscription length of time, see Subscription lifetime.</summary>
+        /// <summary>Required. Specifies the date and time when the webhook subscription expires. The time is in UTC, and can be an amount of time from subscription creation that varies for the resource subscribed to. Any value under 45 minutes after the time of the request is automatically set to 45 minutes after the request time. For the maximum supported subscription length of time, see Subscription lifetime.</summary>
         public DateTimeOffset? ExpirationDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }

@@ -52,6 +52,12 @@ namespace Microsoft.Graph.Models.Security
             get { return BackingStore?.Get<int?>("siteCount"); }
             set { BackingStore?.Set("siteCount", value); }
         }
+        /// <summary>The statisticsOptions property</summary>
+        public global::Microsoft.Graph.Models.Security.StatisticsOptions? StatisticsOptions
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.StatisticsOptions?>("statisticsOptions"); }
+            set { BackingStore?.Set("statisticsOptions", value); }
+        }
         /// <summary>The estimated count of unindexed items for the collection.</summary>
         public long? UnindexedItemCount
         {
@@ -87,6 +93,7 @@ namespace Microsoft.Graph.Models.Security
                 { "mailboxCount", n => { MailboxCount = n.GetIntValue(); } },
                 { "search", n => { Search = n.GetObjectValue<global::Microsoft.Graph.Models.Security.EdiscoverySearch>(global::Microsoft.Graph.Models.Security.EdiscoverySearch.CreateFromDiscriminatorValue); } },
                 { "siteCount", n => { SiteCount = n.GetIntValue(); } },
+                { "statisticsOptions", n => { StatisticsOptions = n.GetEnumValue<global::Microsoft.Graph.Models.Security.StatisticsOptions>(); } },
                 { "unindexedItemCount", n => { UnindexedItemCount = n.GetLongValue(); } },
                 { "unindexedItemsSize", n => { UnindexedItemsSize = n.GetLongValue(); } },
             };
@@ -104,6 +111,7 @@ namespace Microsoft.Graph.Models.Security
             writer.WriteIntValue("mailboxCount", MailboxCount);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.EdiscoverySearch>("search", Search);
             writer.WriteIntValue("siteCount", SiteCount);
+            writer.WriteEnumValue<global::Microsoft.Graph.Models.Security.StatisticsOptions>("statisticsOptions", StatisticsOptions);
             writer.WriteLongValue("unindexedItemCount", UnindexedItemCount);
             writer.WriteLongValue("unindexedItemsSize", UnindexedItemsSize);
         }

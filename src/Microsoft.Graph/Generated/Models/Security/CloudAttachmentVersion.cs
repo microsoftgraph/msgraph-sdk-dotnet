@@ -5,28 +5,28 @@ namespace Microsoft.Graph.Models.Security
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum ExportFileStructure
+    public enum CloudAttachmentVersion
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "none")]
+        [EnumMember(Value = "latest")]
         #pragma warning disable CS1591
-        None,
+        Latest,
         #pragma warning restore CS1591
-        [EnumMember(Value = "directory")]
+        [EnumMember(Value = "recent10")]
         #pragma warning disable CS1591
-        Directory,
+        Recent10,
         #pragma warning restore CS1591
-        [EnumMember(Value = "pst")]
+        [EnumMember(Value = "recent100")]
         #pragma warning disable CS1591
-        Pst,
+        Recent100,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "all")]
+        #pragma warning disable CS1591
+        All,
         #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
         #pragma warning disable CS1591
         UnknownFutureValue,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "msg")]
-        #pragma warning disable CS1591
-        Msg,
         #pragma warning restore CS1591
     }
 }

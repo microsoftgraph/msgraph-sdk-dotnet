@@ -2,9 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
-using Microsoft.Graph.Users.Item.Calendars.Item.Events.Item.Instances.Count;
 using Microsoft.Graph.Users.Item.Calendars.Item.Events.Item.Instances.Delta;
-using Microsoft.Graph.Users.Item.Calendars.Item.Events.Item.Instances.Item;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -21,27 +19,10 @@ namespace Microsoft.Graph.Users.Item.Calendars.Item.Events.Item.Instances
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InstancesRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Provides operations to count the resources in the collection.</summary>
-        public global::Microsoft.Graph.Users.Item.Calendars.Item.Events.Item.Instances.Count.CountRequestBuilder Count
-        {
-            get => new global::Microsoft.Graph.Users.Item.Calendars.Item.Events.Item.Instances.Count.CountRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to call the delta method.</summary>
         public global::Microsoft.Graph.Users.Item.Calendars.Item.Events.Item.Instances.Delta.DeltaRequestBuilder Delta
         {
             get => new global::Microsoft.Graph.Users.Item.Calendars.Item.Events.Item.Instances.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the instances property of the microsoft.graph.event entity.</summary>
-        /// <param name="position">The unique identifier of event</param>
-        /// <returns>A <see cref="global::Microsoft.Graph.Users.Item.Calendars.Item.Events.Item.Instances.Item.EventItemRequestBuilder"/></returns>
-        public global::Microsoft.Graph.Users.Item.Calendars.Item.Events.Item.Instances.Item.EventItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("event%2Did1", position);
-                return new global::Microsoft.Graph.Users.Item.Calendars.Item.Events.Item.Instances.Item.EventItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Users.Item.Calendars.Item.Events.Item.Instances.InstancesRequestBuilder"/> and sets the default values.
