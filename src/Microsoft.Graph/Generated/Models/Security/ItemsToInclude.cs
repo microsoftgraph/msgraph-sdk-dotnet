@@ -4,29 +4,22 @@ using System;
 namespace Microsoft.Graph.Models.Security
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    [Flags]
     #pragma warning disable CS1591
-    public enum ExportFileStructure
+    public enum ItemsToInclude
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "none")]
+        [EnumMember(Value = "searchHits")]
         #pragma warning disable CS1591
-        None,
+        SearchHits = 1,
         #pragma warning restore CS1591
-        [EnumMember(Value = "directory")]
+        [EnumMember(Value = "partiallyIndexed")]
         #pragma warning disable CS1591
-        Directory,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "pst")]
-        #pragma warning disable CS1591
-        Pst,
+        PartiallyIndexed = 2,
         #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
         #pragma warning disable CS1591
-        UnknownFutureValue,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "msg")]
-        #pragma warning disable CS1591
-        Msg,
+        UnknownFutureValue = 4,
         #pragma warning restore CS1591
     }
 }

@@ -2,9 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
-using Microsoft.Graph.Users.Item.Calendar.CalendarView.Count;
 using Microsoft.Graph.Users.Item.Calendar.CalendarView.Delta;
-using Microsoft.Graph.Users.Item.Calendar.CalendarView.Item;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -21,27 +19,10 @@ namespace Microsoft.Graph.Users.Item.Calendar.CalendarView
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CalendarViewRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Provides operations to count the resources in the collection.</summary>
-        public global::Microsoft.Graph.Users.Item.Calendar.CalendarView.Count.CountRequestBuilder Count
-        {
-            get => new global::Microsoft.Graph.Users.Item.Calendar.CalendarView.Count.CountRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to call the delta method.</summary>
         public global::Microsoft.Graph.Users.Item.Calendar.CalendarView.Delta.DeltaRequestBuilder Delta
         {
             get => new global::Microsoft.Graph.Users.Item.Calendar.CalendarView.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the calendarView property of the microsoft.graph.calendar entity.</summary>
-        /// <param name="position">The unique identifier of event</param>
-        /// <returns>A <see cref="global::Microsoft.Graph.Users.Item.Calendar.CalendarView.Item.EventItemRequestBuilder"/></returns>
-        public global::Microsoft.Graph.Users.Item.Calendar.CalendarView.Item.EventItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("event%2Did", position);
-                return new global::Microsoft.Graph.Users.Item.Calendar.CalendarView.Item.EventItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Users.Item.Calendar.CalendarView.CalendarViewRequestBuilder"/> and sets the default values.

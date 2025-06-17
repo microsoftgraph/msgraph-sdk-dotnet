@@ -6,7 +6,6 @@ using Microsoft.Graph.Me.Calendars.Item.Events.Item.Calendar;
 using Microsoft.Graph.Me.Calendars.Item.Events.Item.Cancel;
 using Microsoft.Graph.Me.Calendars.Item.Events.Item.Decline;
 using Microsoft.Graph.Me.Calendars.Item.Events.Item.DismissReminder;
-using Microsoft.Graph.Me.Calendars.Item.Events.Item.ExceptionOccurrences;
 using Microsoft.Graph.Me.Calendars.Item.Events.Item.Extensions;
 using Microsoft.Graph.Me.Calendars.Item.Events.Item.Forward;
 using Microsoft.Graph.Me.Calendars.Item.Events.Item.Instances;
@@ -60,11 +59,6 @@ namespace Microsoft.Graph.Me.Calendars.Item.Events.Item
         public global::Microsoft.Graph.Me.Calendars.Item.Events.Item.DismissReminder.DismissReminderRequestBuilder DismissReminder
         {
             get => new global::Microsoft.Graph.Me.Calendars.Item.Events.Item.DismissReminder.DismissReminderRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the exceptionOccurrences property of the microsoft.graph.event entity.</summary>
-        public global::Microsoft.Graph.Me.Calendars.Item.Events.Item.ExceptionOccurrences.ExceptionOccurrencesRequestBuilder ExceptionOccurrences
-        {
-            get => new global::Microsoft.Graph.Me.Calendars.Item.Events.Item.ExceptionOccurrences.ExceptionOccurrencesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the extensions property of the microsoft.graph.event entity.</summary>
         public global::Microsoft.Graph.Me.Calendars.Item.Events.Item.Extensions.ExtensionsRequestBuilder Extensions
