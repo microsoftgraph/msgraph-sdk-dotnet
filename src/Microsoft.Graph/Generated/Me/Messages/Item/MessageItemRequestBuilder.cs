@@ -113,8 +113,8 @@ namespace Microsoft.Graph.Me.Messages.Item
         {
         }
         /// <summary>
-        /// Delete eventMessage.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/eventmessage-delete?view=graph-rest-1.0" />
+        /// Delete a message in the specified user&apos;s mailbox, or delete a relationship of the message.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/message-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,8 +136,8 @@ namespace Microsoft.Graph.Me.Messages.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/opentypeextension-get?view=graph-rest-1.0" />
+        /// You can get a single resource instance expanded with a specific extended property, or a collection of resource instancesthat include extended properties matching a filter. Using the query parameter $expand allows you to get the specified resource instance expanded with a specific extendedproperty. Use a $filter and eq operator on the id property to specify the extended property. This is currently the only way to get the singleValueLegacyExtendedProperty object that represents an extended property. To get resource instances that have certain extended properties, use the $filter query parameter and apply an eq operatoron the id property. In addition, for numeric extended properties, apply one of the following operators on the value property:eq, ne,ge, gt, le, or lt. For string-typed extended properties, apply a contains, startswith, eq, or ne operator on value. The filter is applied to all instances of the resource in the signed-in user&apos;s mailbox. Filtering the string name (Name) in the id of an extended property is case-sensitive. Filtering the value property of an extendedproperty is case-insensitive. The following user resources are supported: As well as the following group resources: See Extended properties overview for more information about when to useopen extensions or extended properties, and how to specify extended properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/singlevaluelegacyextendedproperty-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Message"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -186,7 +186,7 @@ namespace Microsoft.Graph.Me.Messages.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Message>(requestInfo, global::Microsoft.Graph.Models.Message.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete eventMessage.
+        /// Delete a message in the specified user&apos;s mailbox, or delete a relationship of the message.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -205,7 +205,7 @@ namespace Microsoft.Graph.Me.Messages.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
+        /// You can get a single resource instance expanded with a specific extended property, or a collection of resource instancesthat include extended properties matching a filter. Using the query parameter $expand allows you to get the specified resource instance expanded with a specific extendedproperty. Use a $filter and eq operator on the id property to specify the extended property. This is currently the only way to get the singleValueLegacyExtendedProperty object that represents an extended property. To get resource instances that have certain extended properties, use the $filter query parameter and apply an eq operatoron the id property. In addition, for numeric extended properties, apply one of the following operators on the value property:eq, ne,ge, gt, le, or lt. For string-typed extended properties, apply a contains, startswith, eq, or ne operator on value. The filter is applied to all instances of the resource in the signed-in user&apos;s mailbox. Filtering the string name (Name) in the id of an extended property is case-sensitive. Filtering the value property of an extendedproperty is case-insensitive. The following user resources are supported: As well as the following group resources: See Extended properties overview for more information about when to useopen extensions or extended properties, and how to specify extended properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -263,7 +263,7 @@ namespace Microsoft.Graph.Me.Messages.Item
         {
         }
         /// <summary>
-        /// Get an open extension (openTypeExtension object) identified by name or fully qualified name. The table in the Permissions section lists the resources that support open extensions. The following table lists the three scenarios where you can get an open extension from a supported resource instance.
+        /// You can get a single resource instance expanded with a specific extended property, or a collection of resource instancesthat include extended properties matching a filter. Using the query parameter $expand allows you to get the specified resource instance expanded with a specific extendedproperty. Use a $filter and eq operator on the id property to specify the extended property. This is currently the only way to get the singleValueLegacyExtendedProperty object that represents an extended property. To get resource instances that have certain extended properties, use the $filter query parameter and apply an eq operatoron the id property. In addition, for numeric extended properties, apply one of the following operators on the value property:eq, ne,ge, gt, le, or lt. For string-typed extended properties, apply a contains, startswith, eq, or ne operator on value. The filter is applied to all instances of the resource in the signed-in user&apos;s mailbox. Filtering the string name (Name) in the id of an extended property is case-sensitive. Filtering the value property of an extendedproperty is case-insensitive. The following user resources are supported: As well as the following group resources: See Extended properties overview for more information about when to useopen extensions or extended properties, and how to specify extended properties.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MessageItemRequestBuilderGetQueryParameters 

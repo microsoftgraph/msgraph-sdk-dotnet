@@ -36,7 +36,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSc
         {
         }
         /// <summary>
-        /// In PIM for groups, retrieve the schedule instances for membership or ownership assignments for the calling principal to groups that are governed by PIM.
+        /// In PIM for Groups, retrieve the schedule instances for membership or ownership assignments for the calling principal to groups that are governed by PIM.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/privilegedaccessgroupassignmentscheduleinstance-filterbycurrentuser?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleInstances.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnGetResponse"/></returns>
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSc
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleInstances.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnGetResponse>(requestInfo, global::Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleInstances.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// In PIM for groups, retrieve the schedule instances for membership or ownership assignments for the calling principal to groups that are governed by PIM.
+        /// In PIM for Groups, retrieve the schedule instances for membership or ownership assignments for the calling principal to groups that are governed by PIM.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/privilegedaccessgroupassignmentscheduleinstance-filterbycurrentuser?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleInstances.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnResponse"/></returns>
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSc
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleInstances.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnResponse>(requestInfo, global::Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleInstances.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// In PIM for groups, retrieve the schedule instances for membership or ownership assignments for the calling principal to groups that are governed by PIM.
+        /// In PIM for Groups, retrieve the schedule instances for membership or ownership assignments for the calling principal to groups that are governed by PIM.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentSc
             return new global::Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.AssignmentScheduleInstances.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// In PIM for groups, retrieve the schedule instances for membership or ownership assignments for the calling principal to groups that are governed by PIM.
+        /// In PIM for Groups, retrieve the schedule instances for membership or ownership assignments for the calling principal to groups that are governed by PIM.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FilterByCurrentUserWithOnRequestBuilderGetQueryParameters 

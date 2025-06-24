@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("eligibilityScheduleId", value); }
         }
 #endif
-        /// <summary>References the group that is the scope of the membership or ownership eligibility through PIM for groups. Supports $expand.</summary>
+        /// <summary>References the group that is the scope of the membership or ownership eligibility through PIM for Groups. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.Group? Group
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("group", value); }
         }
 #endif
-        /// <summary>The identifier of the group representing the scope of the membership or ownership eligibility through PIM for groups. Required. Supports $filter (eq).</summary>
+        /// <summary>The identifier of the group representing the scope of the membership or ownership eligibility through PIM for Groups. Required. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GroupId
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("principal", value); }
         }
 #endif
-        /// <summary>The identifier of the principal whose membership or ownership eligibility to the group is managed through PIM for groups. Required. Supports $filter (eq).</summary>
+        /// <summary>The identifier of the principal whose membership or ownership eligibility to the group is managed through PIM for Groups. Required. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrincipalId
