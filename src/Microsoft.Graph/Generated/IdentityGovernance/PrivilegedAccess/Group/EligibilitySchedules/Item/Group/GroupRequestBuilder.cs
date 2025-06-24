@@ -41,7 +41,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
         {
         }
         /// <summary>
-        /// References the group that is the scope of the membership or ownership eligibility through PIM for groups. Supports $expand.
+        /// References the group that is the scope of the membership or ownership eligibility through PIM for Groups. Supports $expand.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Group"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Group>(requestInfo, global::Microsoft.Graph.Models.Group.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// References the group that is the scope of the membership or ownership eligibility through PIM for groups. Supports $expand.
+        /// References the group that is the scope of the membership or ownership eligibility through PIM for Groups. Supports $expand.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilityS
             return new global::Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.EligibilitySchedules.Item.Group.GroupRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// References the group that is the scope of the membership or ownership eligibility through PIM for groups. Supports $expand.
+        /// References the group that is the scope of the membership or ownership eligibility through PIM for Groups. Supports $expand.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GroupRequestBuilderGetQueryParameters 
