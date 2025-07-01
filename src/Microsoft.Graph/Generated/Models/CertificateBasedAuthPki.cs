@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class CertificateBasedAuthPki : global::Microsoft.Graph.Models.DirectoryObject, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The certificateAuthorities property</summary>
+        /// <summary>The collection of certificate authorities contained in this public key infrastructure resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.CertificateAuthorityDetail>? CertificateAuthorities
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("certificateAuthorities", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>The name of the object. Maximum length is 256 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -44,13 +44,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>The date and time when the object was created or last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The status property</summary>
+        /// <summary>The status of any asynchronous jobs runs on the object which can be upload or delete.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("status", value); }
         }
 #endif
-        /// <summary>The statusDetails property</summary>
+        /// <summary>The status details of the upload/deleted operation of PKI (Public Key Infrastructure).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StatusDetails

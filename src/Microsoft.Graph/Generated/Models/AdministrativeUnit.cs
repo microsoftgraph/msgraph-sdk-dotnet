@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("extensions", value); }
         }
 #endif
-        /// <summary>The isMemberManagementRestricted property</summary>
+        /// <summary>true if members of this administrative unit should be treated as sensitive, which requires specific permissions to manage. If not set, the default value is null and the default behavior is false. Use this property to define administrative units with roles that don&apos;t inherit from tenant-level administrators, and where the management of individual member objects is limited to administrators scoped to a restricted management administrative unit. This property is immutable and can&apos;t be changed later.  For more information on how to work with restricted management administrative units, see Restricted management administrative units in Microsoft Entra ID.</summary>
         public bool? IsMemberManagementRestricted
         {
             get { return BackingStore?.Get<bool?>("isMemberManagementRestricted"); }

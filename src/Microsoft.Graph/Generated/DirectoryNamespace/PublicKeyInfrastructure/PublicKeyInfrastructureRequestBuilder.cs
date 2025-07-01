@@ -63,7 +63,7 @@ namespace Microsoft.Graph.DirectoryNamespace.PublicKeyInfrastructure
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get publicKeyInfrastructure from directory
+        /// The collection of public key infrastructure instances for the certificate-based authentication feature for users in a Microsoft Entra tenant.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.PublicKeyInfrastructureRoot"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.DirectoryNamespace.PublicKeyInfrastructure
             return requestInfo;
         }
         /// <summary>
-        /// Get publicKeyInfrastructure from directory
+        /// The collection of public key infrastructure instances for the certificate-based authentication feature for users in a Microsoft Entra tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -188,7 +188,7 @@ namespace Microsoft.Graph.DirectoryNamespace.PublicKeyInfrastructure
         {
         }
         /// <summary>
-        /// Get publicKeyInfrastructure from directory
+        /// The collection of public key infrastructure instances for the certificate-based authentication feature for users in a Microsoft Entra tenant.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PublicKeyInfrastructureRequestBuilderGetQueryParameters 

@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.Shifts.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Shift>(requestInfo, global::Microsoft.Graph.Models.Shift.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Replace an existing shift. If the specified shift doesn&apos;t exist, this method returns 404 Not found. The duration of a shift can&apos;t be less than 1 minute or longer than 24 hours.
+        /// Replace an existing shift. If the specified shift doesn&apos;t exist, this method returns 404 Not found. The duration of a shift can&apos;t be less than one minute or longer than 24 hours.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/shift-put?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Shift"/></returns>
@@ -146,7 +146,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.Shifts.Item
             return requestInfo;
         }
         /// <summary>
-        /// Replace an existing shift. If the specified shift doesn&apos;t exist, this method returns 404 Not found. The duration of a shift can&apos;t be less than 1 minute or longer than 24 hours.
+        /// Replace an existing shift. If the specified shift doesn&apos;t exist, this method returns 404 Not found. The duration of a shift can&apos;t be less than one minute or longer than 24 hours.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

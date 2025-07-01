@@ -47,7 +47,8 @@ namespace Microsoft.Graph.DirectoryNamespace.PublicKeyInfrastructure.Certificate
         {
         }
         /// <summary>
-        /// Delete navigation property certificateBasedAuthConfigurations for directory
+        /// Delete a certificateBasedAuthPki object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/publickeyinfrastructureroot-delete-certificatebasedauthconfigurations?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -69,7 +70,8 @@ namespace Microsoft.Graph.DirectoryNamespace.PublicKeyInfrastructure.Certificate
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get certificateBasedAuthConfigurations from directory
+        /// Read the properties and relationships of a certificateBasedAuthPki object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/certificatebasedauthpki-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.CertificateBasedAuthPki"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -92,7 +94,8 @@ namespace Microsoft.Graph.DirectoryNamespace.PublicKeyInfrastructure.Certificate
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.CertificateBasedAuthPki>(requestInfo, global::Microsoft.Graph.Models.CertificateBasedAuthPki.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property certificateBasedAuthConfigurations in directory
+        /// Update the properties of a certificateBasedAuthPki object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/certificatebasedauthpki-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.CertificateBasedAuthPki"/></returns>
         /// <param name="body">The request body</param>
@@ -117,7 +120,7 @@ namespace Microsoft.Graph.DirectoryNamespace.PublicKeyInfrastructure.Certificate
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.CertificateBasedAuthPki>(requestInfo, global::Microsoft.Graph.Models.CertificateBasedAuthPki.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property certificateBasedAuthConfigurations for directory
+        /// Delete a certificateBasedAuthPki object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +139,7 @@ namespace Microsoft.Graph.DirectoryNamespace.PublicKeyInfrastructure.Certificate
             return requestInfo;
         }
         /// <summary>
-        /// Get certificateBasedAuthConfigurations from directory
+        /// Read the properties and relationships of a certificateBasedAuthPki object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,7 +158,7 @@ namespace Microsoft.Graph.DirectoryNamespace.PublicKeyInfrastructure.Certificate
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property certificateBasedAuthConfigurations in directory
+        /// Update the properties of a certificateBasedAuthPki object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -194,7 +197,7 @@ namespace Microsoft.Graph.DirectoryNamespace.PublicKeyInfrastructure.Certificate
         {
         }
         /// <summary>
-        /// Get certificateBasedAuthConfigurations from directory
+        /// Read the properties and relationships of a certificateBasedAuthPki object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CertificateBasedAuthPkiItemRequestBuilderGetQueryParameters 

@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class CertificateAuthorityDetail : global::Microsoft.Graph.Models.DirectoryObject, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The certificate property</summary>
+        /// <summary>The public key of the certificate authority.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public byte[]? Certificate
@@ -28,13 +28,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("certificate", value); }
         }
 #endif
-        /// <summary>The certificateAuthorityType property</summary>
+        /// <summary>The type of certificate authority. The possible values are: root, intermediate, unknownFutureValue. Supports $filter (eq).</summary>
         public global::Microsoft.Graph.Models.CertificateAuthorityType? CertificateAuthorityType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.CertificateAuthorityType?>("certificateAuthorityType"); }
             set { BackingStore?.Set("certificateAuthorityType", value); }
         }
-        /// <summary>The certificateRevocationListUrl property</summary>
+        /// <summary>The URL to check if the certificate is revoked.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CertificateRevocationListUrl
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("certificateRevocationListUrl", value); }
         }
 #endif
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The date and time when the certificate authority was created.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("deltaCertificateRevocationListUrl", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name of the certificate authority.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -88,19 +88,19 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The expirationDateTime property</summary>
+        /// <summary>The date and time when the certificate authority expires. Supports $filter (eq) and $orderby.</summary>
         public DateTimeOffset? ExpirationDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
-        /// <summary>The isIssuerHintEnabled property</summary>
+        /// <summary>Indicates whether the certificate picker presents the certificate authority to the user to use for authentication. Default value is false. Optional.</summary>
         public bool? IsIssuerHintEnabled
         {
             get { return BackingStore?.Get<bool?>("isIssuerHintEnabled"); }
             set { BackingStore?.Set("isIssuerHintEnabled", value); }
         }
-        /// <summary>The issuer property</summary>
+        /// <summary>The issuer of the certificate authority.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Issuer
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("issuer", value); }
         }
 #endif
-        /// <summary>The issuerSubjectKeyIdentifier property</summary>
+        /// <summary>The subject key identifier of certificate authority.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IssuerSubjectKeyIdentifier
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("issuerSubjectKeyIdentifier", value); }
         }
 #endif
-        /// <summary>The thumbprint property</summary>
+        /// <summary>The thumbprint of certificate authority certificate. Supports $filter (eq, startswith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Thumbprint
