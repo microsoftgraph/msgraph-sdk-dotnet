@@ -76,7 +76,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an administrativeUnit object.
+        /// Retrieve the properties and relationships of an administrativeUnit object. The administrativeUnit resource supports extensions, which also allows you to use the GET operation to get custom properties and extension data in an administrativeUnit instance.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/administrativeunit-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.AdministrativeUnit"/></returns>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an administrativeUnit object.
+        /// Retrieve the properties and relationships of an administrativeUnit object. The administrativeUnit resource supports extensions, which also allows you to use the GET operation to get custom properties and extension data in an administrativeUnit instance.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.DirectoryNamespace.AdministrativeUnits.Item
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of an administrativeUnit object.
+        /// Retrieve the properties and relationships of an administrativeUnit object. The administrativeUnit resource supports extensions, which also allows you to use the GET operation to get custom properties and extension data in an administrativeUnit instance.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AdministrativeUnitItemRequestBuilderGetQueryParameters 

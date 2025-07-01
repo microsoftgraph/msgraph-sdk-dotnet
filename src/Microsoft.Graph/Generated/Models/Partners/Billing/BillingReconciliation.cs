@@ -28,6 +28,22 @@ namespace Microsoft.Graph.Models.Partners.Billing
             set { BackingStore?.Set("billed", value); }
         }
 #endif
+        /// <summary>The unbilled property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.Partners.Billing.UnbilledReconciliation? Unbilled
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Partners.Billing.UnbilledReconciliation?>("unbilled"); }
+            set { BackingStore?.Set("unbilled", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.Partners.Billing.UnbilledReconciliation Unbilled
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Partners.Billing.UnbilledReconciliation>("unbilled"); }
+            set { BackingStore?.Set("unbilled", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,6 +63,7 @@ namespace Microsoft.Graph.Models.Partners.Billing
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "billed", n => { Billed = n.GetObjectValue<global::Microsoft.Graph.Models.Partners.Billing.BilledReconciliation>(global::Microsoft.Graph.Models.Partners.Billing.BilledReconciliation.CreateFromDiscriminatorValue); } },
+                { "unbilled", n => { Unbilled = n.GetObjectValue<global::Microsoft.Graph.Models.Partners.Billing.UnbilledReconciliation>(global::Microsoft.Graph.Models.Partners.Billing.UnbilledReconciliation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,6 +75,7 @@ namespace Microsoft.Graph.Models.Partners.Billing
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Partners.Billing.BilledReconciliation>("billed", Billed);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.Partners.Billing.UnbilledReconciliation>("unbilled", Unbilled);
         }
     }
 }

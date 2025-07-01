@@ -160,8 +160,8 @@ namespace Microsoft.Graph.Me.Messages.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Message>(requestInfo, global::Microsoft.Graph.Models.Message.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a message object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/message-update?view=graph-rest-1.0" />
+        /// Update the properties of an eventMessage object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/eventmessage-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Message"/></returns>
         /// <param name="body">The request body</param>
@@ -224,7 +224,7 @@ namespace Microsoft.Graph.Me.Messages.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a message object.
+        /// Update the properties of an eventMessage object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

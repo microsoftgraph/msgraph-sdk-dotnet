@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("onPremisesSynchronization", value); }
         }
 #endif
-        /// <summary>The publicKeyInfrastructure property</summary>
+        /// <summary>The collection of public key infrastructure instances for the certificate-based authentication feature for users in a Microsoft Entra tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.PublicKeyInfrastructureRoot? PublicKeyInfrastructure

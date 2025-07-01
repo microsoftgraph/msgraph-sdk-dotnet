@@ -35,7 +35,7 @@ namespace Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GraphGroup
         {
         }
         /// <summary>
-        /// Retrieve a list of recently deleted directory objects. Currently, deleted items functionality is only supported for the application, servicePrincipal, group, administrative unit, and user resources.
+        /// Retrieve a list of recently deleted directory objects. Currently, deleted items functionality is only supported for the application, servicePrincipal, group, administrative unit, and user resources. Retrieve a list of recently deleted directory objects from deleted items. The following types are supported:- administrativeUnit- application- certificateBasedAuthPki- certificateAuthorityDetail- group- servicePrincipal- user
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/directory-deleteditems-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Group"/></returns>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GraphGroup
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Group>(requestInfo, global::Microsoft.Graph.Models.Group.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of recently deleted directory objects. Currently, deleted items functionality is only supported for the application, servicePrincipal, group, administrative unit, and user resources.
+        /// Retrieve a list of recently deleted directory objects. Currently, deleted items functionality is only supported for the application, servicePrincipal, group, administrative unit, and user resources. Retrieve a list of recently deleted directory objects from deleted items. The following types are supported:- administrativeUnit- application- certificateBasedAuthPki- certificateAuthorityDetail- group- servicePrincipal- user
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GraphGroup
             return new global::Microsoft.Graph.DirectoryNamespace.DeletedItems.Item.GraphGroup.GraphGroupRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of recently deleted directory objects. Currently, deleted items functionality is only supported for the application, servicePrincipal, group, administrative unit, and user resources.
+        /// Retrieve a list of recently deleted directory objects. Currently, deleted items functionality is only supported for the application, servicePrincipal, group, administrative unit, and user resources. Retrieve a list of recently deleted directory objects from deleted items. The following types are supported:- administrativeUnit- application- certificateBasedAuthPki- certificateAuthorityDetail- group- servicePrincipal- user
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GraphGroupRequestBuilderGetQueryParameters 
