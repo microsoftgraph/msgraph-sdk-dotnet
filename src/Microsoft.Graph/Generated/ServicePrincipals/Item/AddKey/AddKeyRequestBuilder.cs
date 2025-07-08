@@ -35,7 +35,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.AddKey
         {
         }
         /// <summary>
-        /// Adds a key credential to a servicePrincipal. This method along with removeKey can be used by a servicePrincipal to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.  ServicePrincipals that don’t have any existing valid certificates (i.e.: no certificates have been added yet, or all certificates have expired), won’t be able to use this service action. Update servicePrincipal can be used to perform an update instead.
+        /// Adds a key credential to a servicePrincipal. This method along with removeKey can be used by a servicePrincipal to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.  ServicePrincipals that don&apos;t have any existing valid certificates (i.e.: no certificates have been added yet, or all certificates have expired), won&apos;t be able to use this service action. Update servicePrincipal can be used to perform an update instead.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-addkey?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.KeyCredential"/></returns>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.AddKey
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.KeyCredential>(requestInfo, global::Microsoft.Graph.Models.KeyCredential.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Adds a key credential to a servicePrincipal. This method along with removeKey can be used by a servicePrincipal to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.  ServicePrincipals that don’t have any existing valid certificates (i.e.: no certificates have been added yet, or all certificates have expired), won’t be able to use this service action. Update servicePrincipal can be used to perform an update instead.
+        /// Adds a key credential to a servicePrincipal. This method along with removeKey can be used by a servicePrincipal to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.  ServicePrincipals that don&apos;t have any existing valid certificates (i.e.: no certificates have been added yet, or all certificates have expired), won&apos;t be able to use this service action. Update servicePrincipal can be used to perform an update instead.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -19,6 +19,7 @@ using Microsoft.Graph.Users.Item.CloudClipboard;
 using Microsoft.Graph.Users.Item.ContactFolders;
 using Microsoft.Graph.Users.Item.Contacts;
 using Microsoft.Graph.Users.Item.CreatedObjects;
+using Microsoft.Graph.Users.Item.DataSecurityAndGovernance;
 using Microsoft.Graph.Users.Item.DeviceManagementTroubleshootingEvents;
 using Microsoft.Graph.Users.Item.DirectReports;
 using Microsoft.Graph.Users.Item.Drive;
@@ -178,6 +179,11 @@ namespace Microsoft.Graph.Users.Item
         public global::Microsoft.Graph.Users.Item.CreatedObjects.CreatedObjectsRequestBuilder CreatedObjects
         {
             get => new global::Microsoft.Graph.Users.Item.CreatedObjects.CreatedObjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the dataSecurityAndGovernance property of the microsoft.graph.user entity.</summary>
+        public global::Microsoft.Graph.Users.Item.DataSecurityAndGovernance.DataSecurityAndGovernanceRequestBuilder DataSecurityAndGovernance
+        {
+            get => new global::Microsoft.Graph.Users.Item.DataSecurityAndGovernance.DataSecurityAndGovernanceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceManagementTroubleshootingEvents property of the microsoft.graph.user entity.</summary>
         public global::Microsoft.Graph.Users.Item.DeviceManagementTroubleshootingEvents.DeviceManagementTroubleshootingEventsRequestBuilder DeviceManagementTroubleshootingEvents
@@ -481,8 +487,8 @@ namespace Microsoft.Graph.Users.Item
         {
         }
         /// <summary>
-        /// Delete a user object.   When deleted, user resources, including their mailbox and license assignments, are moved to a temporary container and if the user is restored within 30 days, these objects are restored to them. The user is also restored to any groups they were a member of. After 30 days and if not restored, the user object is permanently deleted and their assigned resources freed. To manage the deleted user object, see deletedItems.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-delete?view=graph-rest-1.0" />
+        /// Deletes a user.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-user-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -541,7 +547,7 @@ namespace Microsoft.Graph.Users.Item
         }
         /// <summary>
         /// Update the properties of a user object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-user-update?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.User"/></returns>
         /// <param name="body">The request body</param>
@@ -578,7 +584,7 @@ namespace Microsoft.Graph.Users.Item
             return new global::Microsoft.Graph.Users.Item.ReminderViewWithStartDateTimeWithEndDateTime.ReminderViewWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
         }
         /// <summary>
-        /// Delete a user object.   When deleted, user resources, including their mailbox and license assignments, are moved to a temporary container and if the user is restored within 30 days, these objects are restored to them. The user is also restored to any groups they were a member of. After 30 days and if not restored, the user object is permanently deleted and their assigned resources freed. To manage the deleted user object, see deletedItems.
+        /// Deletes a user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

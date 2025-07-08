@@ -431,6 +431,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("customSecurityAttributes", value); }
         }
 #endif
+        /// <summary>The data security and governance settings for the user. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.UserDataSecurityAndGovernance? DataSecurityAndGovernance
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.UserDataSecurityAndGovernance?>("dataSecurityAndGovernance"); }
+            set { BackingStore?.Set("dataSecurityAndGovernance", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.UserDataSecurityAndGovernance DataSecurityAndGovernance
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.UserDataSecurityAndGovernance>("dataSecurityAndGovernance"); }
+            set { BackingStore?.Set("dataSecurityAndGovernance", value); }
+        }
+#endif
         /// <summary>The name of the department in which the user works. Maximum length is 64 characters. Returned only on $select. Supports $filter (eq, ne, not , ge, le, in, and eq on null values).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1980,6 +1996,7 @@ namespace Microsoft.Graph.Models
                 { "createdObjects", n => { CreatedObjects = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DirectoryObject>(global::Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "creationType", n => { CreationType = n.GetStringValue(); } },
                 { "customSecurityAttributes", n => { CustomSecurityAttributes = n.GetObjectValue<global::Microsoft.Graph.Models.CustomSecurityAttributeValue>(global::Microsoft.Graph.Models.CustomSecurityAttributeValue.CreateFromDiscriminatorValue); } },
+                { "dataSecurityAndGovernance", n => { DataSecurityAndGovernance = n.GetObjectValue<global::Microsoft.Graph.Models.UserDataSecurityAndGovernance>(global::Microsoft.Graph.Models.UserDataSecurityAndGovernance.CreateFromDiscriminatorValue); } },
                 { "department", n => { Department = n.GetStringValue(); } },
                 { "deviceEnrollmentLimit", n => { DeviceEnrollmentLimit = n.GetIntValue(); } },
                 { "deviceManagementTroubleshootingEvents", n => { DeviceManagementTroubleshootingEvents = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DeviceManagementTroubleshootingEvent>(global::Microsoft.Graph.Models.DeviceManagementTroubleshootingEvent.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -2119,6 +2136,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DirectoryObject>("createdObjects", CreatedObjects);
             writer.WriteStringValue("creationType", CreationType);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.CustomSecurityAttributeValue>("customSecurityAttributes", CustomSecurityAttributes);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.UserDataSecurityAndGovernance>("dataSecurityAndGovernance", DataSecurityAndGovernance);
             writer.WriteStringValue("department", Department);
             writer.WriteIntValue("deviceEnrollmentLimit", DeviceEnrollmentLimit);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DeviceManagementTroubleshootingEvent>("deviceManagementTroubleshootingEvents", DeviceManagementTroubleshootingEvents);

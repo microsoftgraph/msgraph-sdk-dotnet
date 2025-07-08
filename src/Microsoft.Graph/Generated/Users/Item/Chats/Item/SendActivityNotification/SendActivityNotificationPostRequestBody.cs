@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.SendActivityNotification
             get { return BackingStore?.Get<long?>("chainId"); }
             set { BackingStore?.Set("chainId", value); }
         }
+        /// <summary>The iconId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IconId
+        {
+            get { return BackingStore?.Get<string?>("iconId"); }
+            set { BackingStore?.Set("iconId", value); }
+        }
+#nullable restore
+#else
+        public string IconId
+        {
+            get { return BackingStore?.Get<string>("iconId"); }
+            set { BackingStore?.Set("iconId", value); }
+        }
+#endif
         /// <summary>The previewText property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -152,6 +168,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.SendActivityNotification
             {
                 { "activityType", n => { ActivityType = n.GetStringValue(); } },
                 { "chainId", n => { ChainId = n.GetLongValue(); } },
+                { "iconId", n => { IconId = n.GetStringValue(); } },
                 { "previewText", n => { PreviewText = n.GetObjectValue<global::Microsoft.Graph.Models.ItemBody>(global::Microsoft.Graph.Models.ItemBody.CreateFromDiscriminatorValue); } },
                 { "recipient", n => { Recipient = n.GetObjectValue<global::Microsoft.Graph.Models.TeamworkNotificationRecipient>(global::Microsoft.Graph.Models.TeamworkNotificationRecipient.CreateFromDiscriminatorValue); } },
                 { "teamsAppId", n => { TeamsAppId = n.GetStringValue(); } },
@@ -168,6 +185,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.SendActivityNotification
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("activityType", ActivityType);
             writer.WriteLongValue("chainId", ChainId);
+            writer.WriteStringValue("iconId", IconId);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ItemBody>("previewText", PreviewText);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.TeamworkNotificationRecipient>("recipient", Recipient);
             writer.WriteStringValue("teamsAppId", TeamsAppId);
