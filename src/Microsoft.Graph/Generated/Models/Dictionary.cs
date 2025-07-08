@@ -56,6 +56,7 @@ namespace Microsoft.Graph.Models
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.customMetadataDictionary" => new global::Microsoft.Graph.Models.CustomMetadataDictionary(),
                 "#microsoft.graph.fileStorageContainerCustomPropertyDictionary" => new global::Microsoft.Graph.Models.FileStorageContainerCustomPropertyDictionary(),
                 "#microsoft.graph.resultTemplateDictionary" => new global::Microsoft.Graph.Models.ResultTemplateDictionary(),
                 _ => new global::Microsoft.Graph.Models.Dictionary(),

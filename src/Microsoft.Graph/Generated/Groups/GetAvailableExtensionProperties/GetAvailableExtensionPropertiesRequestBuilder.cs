@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Groups.GetAvailableExtensionProperties
         {
         }
         /// <summary>
-        /// Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:
+        /// Return all directory extension definitions that are registered in a directory, including through multitenant apps. The following entities support extension properties:
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Groups.GetAvailableExtensionProperties.GetAvailableExtensionPropertiesPostResponse"/></returns>
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Groups.GetAvailableExtensionProperties
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Groups.GetAvailableExtensionProperties.GetAvailableExtensionPropertiesPostResponse>(requestInfo, global::Microsoft.Graph.Groups.GetAvailableExtensionProperties.GetAvailableExtensionPropertiesPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:
+        /// Return all directory extension definitions that are registered in a directory, including through multitenant apps. The following entities support extension properties:
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Groups.GetAvailableExtensionProperties.GetAvailableExtensionPropertiesResponse"/></returns>
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Groups.GetAvailableExtensionProperties
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Groups.GetAvailableExtensionProperties.GetAvailableExtensionPropertiesResponse>(requestInfo, global::Microsoft.Graph.Groups.GetAvailableExtensionProperties.GetAvailableExtensionPropertiesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Return all directory extension definitions that have been registered in a directory, including through multi-tenant apps. The following entities support extension properties:
+        /// Return all directory extension definitions that are registered in a directory, including through multitenant apps. The following entities support extension properties:
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -17,6 +17,7 @@ using Microsoft.Graph.Me.CloudClipboard;
 using Microsoft.Graph.Me.ContactFolders;
 using Microsoft.Graph.Me.Contacts;
 using Microsoft.Graph.Me.CreatedObjects;
+using Microsoft.Graph.Me.DataSecurityAndGovernance;
 using Microsoft.Graph.Me.DeviceManagementTroubleshootingEvents;
 using Microsoft.Graph.Me.DirectReports;
 using Microsoft.Graph.Me.Drive;
@@ -178,6 +179,11 @@ namespace Microsoft.Graph.Me
         public global::Microsoft.Graph.Me.CreatedObjects.CreatedObjectsRequestBuilder CreatedObjects
         {
             get => new global::Microsoft.Graph.Me.CreatedObjects.CreatedObjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the dataSecurityAndGovernance property of the microsoft.graph.user entity.</summary>
+        public global::Microsoft.Graph.Me.DataSecurityAndGovernance.DataSecurityAndGovernanceRequestBuilder DataSecurityAndGovernance
+        {
+            get => new global::Microsoft.Graph.Me.DataSecurityAndGovernance.DataSecurityAndGovernanceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceManagementTroubleshootingEvents property of the microsoft.graph.user entity.</summary>
         public global::Microsoft.Graph.Me.DeviceManagementTroubleshootingEvents.DeviceManagementTroubleshootingEventsRequestBuilder DeviceManagementTroubleshootingEvents
