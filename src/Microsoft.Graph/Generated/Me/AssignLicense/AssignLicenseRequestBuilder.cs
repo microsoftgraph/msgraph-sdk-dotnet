@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Me.AssignLicense
         }
         /// <summary>
         /// Add or remove licenses for the user to enable or disable their use of Microsoft cloud offerings that the company has licenses to. For example, an organization can have a Microsoft 365 Enterprise E3 subscription with 100 licenses, and this request assigns one of those licenses to a specific user. You can also enable and disable specific plans associated with a subscription. Direct user licensing method is an alternative to group-based licensing.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-assignlicense?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.User"/></returns>
         /// <param name="body">The request body</param>

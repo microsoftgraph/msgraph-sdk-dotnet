@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Users.Item.Chats.GetAllRetainedMessages
         }
         /// <summary>
         /// Get all retained messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-getallretainedmessages?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Users.Item.Chats.GetAllRetainedMessages.GetAllRetainedMessagesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +58,6 @@ namespace Microsoft.Graph.Users.Item.Chats.GetAllRetainedMessages
         }
         /// <summary>
         /// Get all retained messages from all chats that a user is a participant in, including one-on-one chats, group chats, and meeting chats. To learn more about how to use the Microsoft Teams export APIs to export content, see Export content with the Microsoft Teams export APIs.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-getallretainedmessages?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Users.Item.Chats.GetAllRetainedMessages.GetAllRetainedMessagesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -171,10 +169,10 @@ namespace Microsoft.Graph.Users.Item.Chats.GetAllRetainedMessages
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

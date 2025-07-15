@@ -12,66 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class ItemRetentionLabel : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Specifies whether the label is applied explicitly on the item. True indicates that the label is applied explicitly; otherwise, the label is inherited from its parent. Read-only.</summary>
-        public bool? IsLabelAppliedExplicitly
-        {
-            get { return BackingStore?.Get<bool?>("isLabelAppliedExplicitly"); }
-            set { BackingStore?.Set("isLabelAppliedExplicitly", value); }
-        }
-        /// <summary>Identity of the user who applied the label. Read-only.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.IdentitySet? LabelAppliedBy
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.IdentitySet?>("labelAppliedBy"); }
-            set { BackingStore?.Set("labelAppliedBy", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.IdentitySet LabelAppliedBy
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.IdentitySet>("labelAppliedBy"); }
-            set { BackingStore?.Set("labelAppliedBy", value); }
-        }
-#endif
-        /// <summary>The date and time when the label was applied on the item. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
-        public DateTimeOffset? LabelAppliedDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("labelAppliedDateTime"); }
-            set { BackingStore?.Set("labelAppliedDateTime", value); }
-        }
-        /// <summary>The retention label on the document. Read-write.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name
-        {
-            get { return BackingStore?.Get<string?>("name"); }
-            set { BackingStore?.Set("name", value); }
-        }
-#nullable restore
-#else
-        public string Name
-        {
-            get { return BackingStore?.Get<string>("name"); }
-            set { BackingStore?.Set("name", value); }
-        }
-#endif
-        /// <summary>The retention settings enforced on the item. Read-write.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.RetentionLabelSettings? RetentionSettings
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.RetentionLabelSettings?>("retentionSettings"); }
-            set { BackingStore?.Set("retentionSettings", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.RetentionLabelSettings RetentionSettings
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.RetentionLabelSettings>("retentionSettings"); }
-            set { BackingStore?.Set("retentionSettings", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -90,11 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "isLabelAppliedExplicitly", n => { IsLabelAppliedExplicitly = n.GetBoolValue(); } },
-                { "labelAppliedBy", n => { LabelAppliedBy = n.GetObjectValue<global::Microsoft.Graph.Models.IdentitySet>(global::Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
-                { "labelAppliedDateTime", n => { LabelAppliedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "retentionSettings", n => { RetentionSettings = n.GetObjectValue<global::Microsoft.Graph.Models.RetentionLabelSettings>(global::Microsoft.Graph.Models.RetentionLabelSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -105,11 +40,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteBoolValue("isLabelAppliedExplicitly", IsLabelAppliedExplicitly);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.IdentitySet>("labelAppliedBy", LabelAppliedBy);
-            writer.WriteDateTimeOffsetValue("labelAppliedDateTime", LabelAppliedDateTime);
-            writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.RetentionLabelSettings>("retentionSettings", RetentionSettings);
         }
     }
 }

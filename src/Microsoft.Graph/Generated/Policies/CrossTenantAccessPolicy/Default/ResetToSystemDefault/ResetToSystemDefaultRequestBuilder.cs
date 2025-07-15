@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Default.ResetToSystem
         }
         /// <summary>
         /// Reset any changes made to the default configuration in a cross-tenant access policy back to the system default.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/crosstenantaccesspolicyconfigurationdefault-resettosystemdefault?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

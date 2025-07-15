@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Users.Item.ChangePassword
         }
         /// <summary>
         /// Update the signed-in user&apos;s password. Any user can update their password without belonging to any administrator role.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-changepassword?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

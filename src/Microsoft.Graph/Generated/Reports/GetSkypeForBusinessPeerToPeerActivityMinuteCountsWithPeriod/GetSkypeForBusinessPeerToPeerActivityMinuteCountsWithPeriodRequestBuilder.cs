@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetSkypeForBusinessPeerToPeerActivityMinuteCou
         }
         /// <summary>
         /// Get usage trends on the length in minutes and type of peer-to-peer sessions held in your organization. Types of sessions include audio and video.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinesspeertopeeractivityminutecounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

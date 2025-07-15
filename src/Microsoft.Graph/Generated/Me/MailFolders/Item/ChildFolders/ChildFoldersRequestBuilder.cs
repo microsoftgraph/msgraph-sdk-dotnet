@@ -84,8 +84,8 @@ namespace Microsoft.Graph.Me.MailFolders.Item.ChildFolders
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.MailFolderCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.MailFolderCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new mailSearchFolder in the specified user&apos;s mailbox.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailsearchfolder-post?view=graph-rest-1.0" />
+        /// Use this API to create a new child mailFolder. If you intend a new folder to be hidden, you must set the isHidden property to true on creation.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailfolder-post-childfolders?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.MailFolder"/></returns>
         /// <param name="body">The request body</param>
@@ -129,7 +129,7 @@ namespace Microsoft.Graph.Me.MailFolders.Item.ChildFolders
             return requestInfo;
         }
         /// <summary>
-        /// Create a new mailSearchFolder in the specified user&apos;s mailbox.
+        /// Use this API to create a new child mailFolder. If you intend a new folder to be hidden, you must set the isHidden property to true on creation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -230,10 +230,10 @@ namespace Microsoft.Graph.Me.MailFolders.Item.ChildFolders
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

@@ -12,78 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class UnifiedStorageQuota : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The deleted property</summary>
-        public long? Deleted
-        {
-            get { return BackingStore?.Get<long?>("deleted"); }
-            set { BackingStore?.Set("deleted", value); }
-        }
-        /// <summary>The manageWebUrl property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ManageWebUrl
-        {
-            get { return BackingStore?.Get<string?>("manageWebUrl"); }
-            set { BackingStore?.Set("manageWebUrl", value); }
-        }
-#nullable restore
-#else
-        public string ManageWebUrl
-        {
-            get { return BackingStore?.Get<string>("manageWebUrl"); }
-            set { BackingStore?.Set("manageWebUrl", value); }
-        }
-#endif
-        /// <summary>The remaining property</summary>
-        public long? Remaining
-        {
-            get { return BackingStore?.Get<long?>("remaining"); }
-            set { BackingStore?.Set("remaining", value); }
-        }
-        /// <summary>The services property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.ServiceStorageQuotaBreakdown>? Services
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.ServiceStorageQuotaBreakdown>?>("services"); }
-            set { BackingStore?.Set("services", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.ServiceStorageQuotaBreakdown> Services
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.ServiceStorageQuotaBreakdown>>("services"); }
-            set { BackingStore?.Set("services", value); }
-        }
-#endif
-        /// <summary>The state property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? State
-        {
-            get { return BackingStore?.Get<string?>("state"); }
-            set { BackingStore?.Set("state", value); }
-        }
-#nullable restore
-#else
-        public string State
-        {
-            get { return BackingStore?.Get<string>("state"); }
-            set { BackingStore?.Set("state", value); }
-        }
-#endif
-        /// <summary>The total property</summary>
-        public long? Total
-        {
-            get { return BackingStore?.Get<long?>("total"); }
-            set { BackingStore?.Set("total", value); }
-        }
-        /// <summary>The used property</summary>
-        public long? Used
-        {
-            get { return BackingStore?.Get<long?>("used"); }
-            set { BackingStore?.Set("used", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -102,13 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "deleted", n => { Deleted = n.GetLongValue(); } },
-                { "manageWebUrl", n => { ManageWebUrl = n.GetStringValue(); } },
-                { "remaining", n => { Remaining = n.GetLongValue(); } },
-                { "services", n => { Services = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ServiceStorageQuotaBreakdown>(global::Microsoft.Graph.Models.ServiceStorageQuotaBreakdown.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "state", n => { State = n.GetStringValue(); } },
-                { "total", n => { Total = n.GetLongValue(); } },
-                { "used", n => { Used = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -119,13 +40,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteLongValue("deleted", Deleted);
-            writer.WriteStringValue("manageWebUrl", ManageWebUrl);
-            writer.WriteLongValue("remaining", Remaining);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ServiceStorageQuotaBreakdown>("services", Services);
-            writer.WriteStringValue("state", State);
-            writer.WriteLongValue("total", Total);
-            writer.WriteLongValue("used", Used);
         }
     }
 }

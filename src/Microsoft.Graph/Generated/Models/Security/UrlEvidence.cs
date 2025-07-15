@@ -12,29 +12,6 @@ namespace Microsoft.Graph.Models.Security
     public partial class UrlEvidence : global::Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The Unique Resource Locator (URL).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Url
-        {
-            get { return BackingStore?.Get<string?>("url"); }
-            set { BackingStore?.Set("url", value); }
-        }
-#nullable restore
-#else
-        public string Url
-        {
-            get { return BackingStore?.Get<string>("url"); }
-            set { BackingStore?.Set("url", value); }
-        }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Models.Security.UrlEvidence"/> and sets the default values.
-        /// </summary>
-        public UrlEvidence() : base()
-        {
-            OdataType = "#microsoft.graph.security.urlEvidence";
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,7 +30,6 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -64,7 +40,6 @@ namespace Microsoft.Graph.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("url", Url);
         }
     }
 }

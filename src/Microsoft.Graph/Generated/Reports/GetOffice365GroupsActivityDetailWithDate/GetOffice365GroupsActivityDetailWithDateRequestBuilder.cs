@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetOffice365GroupsActivityDetailWithDate
         }
         /// <summary>
         /// Get details about Microsoft 365 groups activity by group.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getoffice365groupsactivitydetail?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetTeamsUserActivityCountsWithPeriod
         }
         /// <summary>
         /// Get the number of Microsoft Teams activities by activity type. The activities are performed by Microsoft Teams licensed users.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getteamsuseractivitycounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

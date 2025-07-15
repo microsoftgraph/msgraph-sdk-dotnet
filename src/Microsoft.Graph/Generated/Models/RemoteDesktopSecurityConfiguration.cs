@@ -12,28 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class RemoteDesktopSecurityConfiguration : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Determines if Microsoft Entra ID RDS authentication protocol for RDP is enabled.</summary>
-        public bool? IsRemoteDesktopProtocolEnabled
-        {
-            get { return BackingStore?.Get<bool?>("isRemoteDesktopProtocolEnabled"); }
-            set { BackingStore?.Set("isRemoteDesktopProtocolEnabled", value); }
-        }
-        /// <summary>The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.TargetDeviceGroup>? TargetDeviceGroups
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.TargetDeviceGroup>?>("targetDeviceGroups"); }
-            set { BackingStore?.Set("targetDeviceGroups", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.TargetDeviceGroup> TargetDeviceGroups
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.TargetDeviceGroup>>("targetDeviceGroups"); }
-            set { BackingStore?.Set("targetDeviceGroups", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -52,8 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "isRemoteDesktopProtocolEnabled", n => { IsRemoteDesktopProtocolEnabled = n.GetBoolValue(); } },
-                { "targetDeviceGroups", n => { TargetDeviceGroups = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.TargetDeviceGroup>(global::Microsoft.Graph.Models.TargetDeviceGroup.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -64,8 +40,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteBoolValue("isRemoteDesktopProtocolEnabled", IsRemoteDesktopProtocolEnabled);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.TargetDeviceGroup>("targetDeviceGroups", TargetDeviceGroups);
         }
     }
 }

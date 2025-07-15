@@ -36,7 +36,6 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.M
         }
         /// <summary>
         /// Create a new version of the workflow object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-workflow-createnewversion?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.IdentityGovernance.Workflow"/></returns>
         /// <param name="body">The request body</param>

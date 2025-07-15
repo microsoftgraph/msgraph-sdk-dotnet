@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.SendActivityNotification
         }
         /// <summary>
         /// Send an activity feed notification in the scope of a team. For more information about sending notifications and the requirements for doing so, seesending Teams activity notifications.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-sendactivitynotification?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

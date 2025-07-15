@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetOffice365ActiveUserDetailWithDate
         }
         /// <summary>
         /// Get details about Microsoft 365 active users.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getoffice365activeuserdetail?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

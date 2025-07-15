@@ -12,77 +12,6 @@ namespace Microsoft.Graph.Models.Security
     public partial class IpEvidence : global::Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The two-letter country code according to ISO 3166 format, for example: US, UK, CA, etc.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CountryLetterCode
-        {
-            get { return BackingStore?.Get<string?>("countryLetterCode"); }
-            set { BackingStore?.Set("countryLetterCode", value); }
-        }
-#nullable restore
-#else
-        public string CountryLetterCode
-        {
-            get { return BackingStore?.Get<string>("countryLetterCode"); }
-            set { BackingStore?.Set("countryLetterCode", value); }
-        }
-#endif
-        /// <summary>The value of the IP Address, can be either in V4 address or V6 address format.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? IpAddress
-        {
-            get { return BackingStore?.Get<string?>("ipAddress"); }
-            set { BackingStore?.Set("ipAddress", value); }
-        }
-#nullable restore
-#else
-        public string IpAddress
-        {
-            get { return BackingStore?.Get<string>("ipAddress"); }
-            set { BackingStore?.Set("ipAddress", value); }
-        }
-#endif
-        /// <summary>The location property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.Security.GeoLocation? Location
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.GeoLocation?>("location"); }
-            set { BackingStore?.Set("location", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.Security.GeoLocation Location
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.GeoLocation>("location"); }
-            set { BackingStore?.Set("location", value); }
-        }
-#endif
-        /// <summary>The stream property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.Security.StreamObject? Stream
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.StreamObject?>("stream"); }
-            set { BackingStore?.Set("stream", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.Security.StreamObject Stream
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.StreamObject>("stream"); }
-            set { BackingStore?.Set("stream", value); }
-        }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Models.Security.IpEvidence"/> and sets the default values.
-        /// </summary>
-        public IpEvidence() : base()
-        {
-            OdataType = "#microsoft.graph.security.ipEvidence";
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -101,10 +30,6 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "countryLetterCode", n => { CountryLetterCode = n.GetStringValue(); } },
-                { "ipAddress", n => { IpAddress = n.GetStringValue(); } },
-                { "location", n => { Location = n.GetObjectValue<global::Microsoft.Graph.Models.Security.GeoLocation>(global::Microsoft.Graph.Models.Security.GeoLocation.CreateFromDiscriminatorValue); } },
-                { "stream", n => { Stream = n.GetObjectValue<global::Microsoft.Graph.Models.Security.StreamObject>(global::Microsoft.Graph.Models.Security.StreamObject.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -115,10 +40,6 @@ namespace Microsoft.Graph.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("countryLetterCode", CountryLetterCode);
-            writer.WriteStringValue("ipAddress", IpAddress);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.GeoLocation>("location", Location);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.StreamObject>("stream", Stream);
         }
     }
 }

@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Reports.Partners.Billing.Reconciliation.Billed.Microso
         }
         /// <summary>
         /// Export the billed invoice reconciliation data.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/partners-billing-billedreconciliation-export?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Partners.Billing.Operation"/></returns>
         /// <param name="body">The request body</param>

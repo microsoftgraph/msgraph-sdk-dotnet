@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Education.Classes.Item.Modules.Item.Unpin
         }
         /// <summary>
         /// Unpin an educationModule in the classwork list. This action sets the isPinned property to false for an educationModule. Only teachers in the class can perform this operation.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationmodule-unpin?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.EducationModule"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

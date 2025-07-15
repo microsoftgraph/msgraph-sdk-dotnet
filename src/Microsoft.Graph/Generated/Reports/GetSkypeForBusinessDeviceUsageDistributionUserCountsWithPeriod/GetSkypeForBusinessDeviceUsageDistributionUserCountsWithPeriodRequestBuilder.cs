@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetSkypeForBusinessDeviceUsageDistributionUser
         }
         /// <summary>
         /// Get the number of users using unique devices in your organization. The report will show you the number of users per device including Windows, Windows phone, Android phone, iPhone, and iPad.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinessdeviceusagedistributionusercounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

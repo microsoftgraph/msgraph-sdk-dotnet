@@ -12,72 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class ChatMessageInfo : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Body of the chatMessage. This will still contain markers for @mentions and attachments even though the object doesn&apos;t return @mentions and attachments.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.ItemBody? Body
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ItemBody?>("body"); }
-            set { BackingStore?.Set("body", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.ItemBody Body
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ItemBody>("body"); }
-            set { BackingStore?.Set("body", value); }
-        }
-#endif
-        /// <summary>Date time object representing the time at which message was created.</summary>
-        public DateTimeOffset? CreatedDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
-            set { BackingStore?.Set("createdDateTime", value); }
-        }
-        /// <summary>Read-only.  If present, represents details of an event that happened in a chat, a channel, or a team, for example, members were added, and so on. For event messages, the messageType property is set to systemEventMessage.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.EventMessageDetail? EventDetail
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.EventMessageDetail?>("eventDetail"); }
-            set { BackingStore?.Set("eventDetail", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.EventMessageDetail EventDetail
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.EventMessageDetail>("eventDetail"); }
-            set { BackingStore?.Set("eventDetail", value); }
-        }
-#endif
-        /// <summary>Information about the sender of the message.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.ChatMessageFromIdentitySet? From
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ChatMessageFromIdentitySet?>("from"); }
-            set { BackingStore?.Set("from", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.ChatMessageFromIdentitySet From
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ChatMessageFromIdentitySet>("from"); }
-            set { BackingStore?.Set("from", value); }
-        }
-#endif
-        /// <summary>If set to true, the original message has been deleted.</summary>
-        public bool? IsDeleted
-        {
-            get { return BackingStore?.Get<bool?>("isDeleted"); }
-            set { BackingStore?.Set("isDeleted", value); }
-        }
-        /// <summary>The messageType property</summary>
-        public global::Microsoft.Graph.Models.ChatMessageType? MessageType
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ChatMessageType?>("messageType"); }
-            set { BackingStore?.Set("messageType", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -96,12 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "body", n => { Body = n.GetObjectValue<global::Microsoft.Graph.Models.ItemBody>(global::Microsoft.Graph.Models.ItemBody.CreateFromDiscriminatorValue); } },
-                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "eventDetail", n => { EventDetail = n.GetObjectValue<global::Microsoft.Graph.Models.EventMessageDetail>(global::Microsoft.Graph.Models.EventMessageDetail.CreateFromDiscriminatorValue); } },
-                { "from", n => { From = n.GetObjectValue<global::Microsoft.Graph.Models.ChatMessageFromIdentitySet>(global::Microsoft.Graph.Models.ChatMessageFromIdentitySet.CreateFromDiscriminatorValue); } },
-                { "isDeleted", n => { IsDeleted = n.GetBoolValue(); } },
-                { "messageType", n => { MessageType = n.GetEnumValue<global::Microsoft.Graph.Models.ChatMessageType>(); } },
             };
         }
         /// <summary>
@@ -112,12 +40,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.ItemBody>("body", Body);
-            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.EventMessageDetail>("eventDetail", EventDetail);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.ChatMessageFromIdentitySet>("from", From);
-            writer.WriteBoolValue("isDeleted", IsDeleted);
-            writer.WriteEnumValue<global::Microsoft.Graph.Models.ChatMessageType>("messageType", MessageType);
         }
     }
 }

@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Security.SubjectRightsRequests.Item.GetFinalReport
         }
         /// <summary>
         /// Get the final report for a subject rights request. The report is a text file that contains information about the files that were included by the privacy administrator.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/subjectrightsrequest-getfinalreport?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

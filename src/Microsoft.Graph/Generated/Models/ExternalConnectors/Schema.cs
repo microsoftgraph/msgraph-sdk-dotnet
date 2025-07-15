@@ -12,38 +12,6 @@ namespace Microsoft.Graph.Models.ExternalConnectors
     public partial class Schema : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Must be set to microsoft.graph.externalConnector.externalItem. Required.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BaseType
-        {
-            get { return BackingStore?.Get<string?>("baseType"); }
-            set { BackingStore?.Set("baseType", value); }
-        }
-#nullable restore
-#else
-        public string BaseType
-        {
-            get { return BackingStore?.Get<string>("baseType"); }
-            set { BackingStore?.Set("baseType", value); }
-        }
-#endif
-        /// <summary>The properties defined for the items in the connection. The minimum number of properties is one, the maximum is 128.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.ExternalConnectors.Property>? Properties
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.ExternalConnectors.Property>?>("properties"); }
-            set { BackingStore?.Set("properties", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.ExternalConnectors.Property> Properties
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.ExternalConnectors.Property>>("properties"); }
-            set { BackingStore?.Set("properties", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,8 +30,6 @@ namespace Microsoft.Graph.Models.ExternalConnectors
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "baseType", n => { BaseType = n.GetStringValue(); } },
-                { "properties", n => { Properties = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ExternalConnectors.Property>(global::Microsoft.Graph.Models.ExternalConnectors.Property.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -74,8 +40,6 @@ namespace Microsoft.Graph.Models.ExternalConnectors
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("baseType", BaseType);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ExternalConnectors.Property>("properties", Properties);
         }
     }
 }

@@ -13,86 +13,6 @@ namespace Microsoft.Graph.Models
     public partial class CustomCalloutExtension : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Configuration for securing the API call to the logic app. For example, using OAuth client credentials flow.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.CustomExtensionAuthenticationConfiguration? AuthenticationConfiguration
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.CustomExtensionAuthenticationConfiguration?>("authenticationConfiguration"); }
-            set { BackingStore?.Set("authenticationConfiguration", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.CustomExtensionAuthenticationConfiguration AuthenticationConfiguration
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.CustomExtensionAuthenticationConfiguration>("authenticationConfiguration"); }
-            set { BackingStore?.Set("authenticationConfiguration", value); }
-        }
-#endif
-        /// <summary>HTTP connection settings that define how long Microsoft Entra ID can wait for a connection to a logic app, how many times you can retry a timed-out connection and the exception scenarios when retries are allowed.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.CustomExtensionClientConfiguration? ClientConfiguration
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.CustomExtensionClientConfiguration?>("clientConfiguration"); }
-            set { BackingStore?.Set("clientConfiguration", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.CustomExtensionClientConfiguration ClientConfiguration
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.CustomExtensionClientConfiguration>("clientConfiguration"); }
-            set { BackingStore?.Set("clientConfiguration", value); }
-        }
-#endif
-        /// <summary>Description for the customCalloutExtension object.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Description
-        {
-            get { return BackingStore?.Get<string?>("description"); }
-            set { BackingStore?.Set("description", value); }
-        }
-#nullable restore
-#else
-        public string Description
-        {
-            get { return BackingStore?.Get<string>("description"); }
-            set { BackingStore?.Set("description", value); }
-        }
-#endif
-        /// <summary>Display name for the customCalloutExtension object.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DisplayName
-        {
-            get { return BackingStore?.Get<string?>("displayName"); }
-            set { BackingStore?.Set("displayName", value); }
-        }
-#nullable restore
-#else
-        public string DisplayName
-        {
-            get { return BackingStore?.Get<string>("displayName"); }
-            set { BackingStore?.Set("displayName", value); }
-        }
-#endif
-        /// <summary>The type and details for configuring the endpoint to call the logic app&apos;s workflow.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.CustomExtensionEndpointConfiguration? EndpointConfiguration
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.CustomExtensionEndpointConfiguration?>("endpointConfiguration"); }
-            set { BackingStore?.Set("endpointConfiguration", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.CustomExtensionEndpointConfiguration EndpointConfiguration
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.CustomExtensionEndpointConfiguration>("endpointConfiguration"); }
-            set { BackingStore?.Set("endpointConfiguration", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -122,11 +42,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "authenticationConfiguration", n => { AuthenticationConfiguration = n.GetObjectValue<global::Microsoft.Graph.Models.CustomExtensionAuthenticationConfiguration>(global::Microsoft.Graph.Models.CustomExtensionAuthenticationConfiguration.CreateFromDiscriminatorValue); } },
-                { "clientConfiguration", n => { ClientConfiguration = n.GetObjectValue<global::Microsoft.Graph.Models.CustomExtensionClientConfiguration>(global::Microsoft.Graph.Models.CustomExtensionClientConfiguration.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "endpointConfiguration", n => { EndpointConfiguration = n.GetObjectValue<global::Microsoft.Graph.Models.CustomExtensionEndpointConfiguration>(global::Microsoft.Graph.Models.CustomExtensionEndpointConfiguration.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -137,11 +52,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.CustomExtensionAuthenticationConfiguration>("authenticationConfiguration", AuthenticationConfiguration);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.CustomExtensionClientConfiguration>("clientConfiguration", ClientConfiguration);
-            writer.WriteStringValue("description", Description);
-            writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.CustomExtensionEndpointConfiguration>("endpointConfiguration", EndpointConfiguration);
         }
     }
 }

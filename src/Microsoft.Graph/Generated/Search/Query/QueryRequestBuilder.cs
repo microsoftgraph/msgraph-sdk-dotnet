@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Search.Query
         }
         /// <summary>
         /// Runs the query specified in the request body. Search results are provided in the response.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/search-query?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Search.Query.QueryPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +60,6 @@ namespace Microsoft.Graph.Search.Query
         }
         /// <summary>
         /// Runs the query specified in the request body. Search results are provided in the response.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/search-query?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Search.Query.QueryResponse"/></returns>
         /// <param name="body">The request body</param>

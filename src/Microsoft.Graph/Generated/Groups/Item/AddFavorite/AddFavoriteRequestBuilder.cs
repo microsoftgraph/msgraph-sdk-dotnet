@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Groups.Item.AddFavorite
         }
         /// <summary>
         /// Add the group to the list of the current user&apos;s favorite groups.  The group shows up in Outlook and Teams favorites. Supported for Microsoft 365 groups only.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-addfavorite?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

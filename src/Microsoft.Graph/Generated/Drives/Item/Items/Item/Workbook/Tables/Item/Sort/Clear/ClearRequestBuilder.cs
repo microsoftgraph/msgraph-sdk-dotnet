@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Sort.Clear
         }
         /// <summary>
         /// Clears the sorting that is currently on the table. While this doesn&apos;t modify the table&apos;s ordering, it clears the state of the header buttons.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tablesort-clear?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

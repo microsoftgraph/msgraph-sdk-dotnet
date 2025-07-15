@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Communications.Calls.Item.SubscribeToTone
         }
         /// <summary>
         /// Subscribe to DTMF (dual-tone multi-frequency signaling) which allows you to be notified when the user presses keys on a &apos;dialpad&apos;.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/call-subscribetotone?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.SubscribeToToneOperation"/></returns>
         /// <param name="body">The request body</param>

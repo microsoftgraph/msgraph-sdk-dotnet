@@ -60,16 +60,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Finishing processes to use when printing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Graph.Models.PrintFinishing?>? Finishings
+        public List<string>? Finishings
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.PrintFinishing?>?>("finishings"); }
+            get { return BackingStore?.Get<List<string>?>("finishings"); }
             set { BackingStore?.Set("finishings", value); }
         }
 #nullable restore
 #else
-        public List<global::Microsoft.Graph.Models.PrintFinishing?> Finishings
+        public List<string> Finishings
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.PrintFinishing?>>("finishings"); }
+            get { return BackingStore?.Get<List<string>>("finishings"); }
             set { BackingStore?.Set("finishings", value); }
         }
 #endif
@@ -253,7 +253,7 @@ namespace Microsoft.Graph.Models
                 { "dpi", n => { Dpi = n.GetIntValue(); } },
                 { "duplexMode", n => { DuplexMode = n.GetEnumValue<global::Microsoft.Graph.Models.PrintDuplexMode>(); } },
                 { "feedOrientation", n => { FeedOrientation = n.GetEnumValue<global::Microsoft.Graph.Models.PrinterFeedOrientation>(); } },
-                { "finishings", n => { Finishings = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Models.PrintFinishing>()?.AsList(); } },
+                { "finishings", n => { Finishings = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "fitPdfToPage", n => { FitPdfToPage = n.GetBoolValue(); } },
                 { "inputBin", n => { InputBin = n.GetStringValue(); } },
                 { "margin", n => { Margin = n.GetObjectValue<global::Microsoft.Graph.Models.PrintMargin>(global::Microsoft.Graph.Models.PrintMargin.CreateFromDiscriminatorValue); } },
@@ -282,7 +282,7 @@ namespace Microsoft.Graph.Models
             writer.WriteIntValue("dpi", Dpi);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.PrintDuplexMode>("duplexMode", DuplexMode);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.PrinterFeedOrientation>("feedOrientation", FeedOrientation);
-            writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Models.PrintFinishing>("finishings", Finishings);
+            writer.WriteCollectionOfPrimitiveValues<string>("finishings", Finishings);
             writer.WriteBoolValue("fitPdfToPage", FitPdfToPage);
             writer.WriteStringValue("inputBin", InputBin);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.PrintMargin>("margin", Margin);

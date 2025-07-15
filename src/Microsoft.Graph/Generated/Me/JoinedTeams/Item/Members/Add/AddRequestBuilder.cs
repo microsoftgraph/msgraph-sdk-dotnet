@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Members.Add
         }
         /// <summary>
         /// Add multiple members in a single request to a team. The response provides details about which memberships could and couldn&apos;t be created.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Me.JoinedTeams.Item.Members.Add.AddPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +60,6 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.Members.Add
         }
         /// <summary>
         /// Add multiple members in a single request to a team. The response provides details about which memberships could and couldn&apos;t be created.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conversationmembers-add?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Me.JoinedTeams.Item.Members.Add.AddResponse"/></returns>
         /// <param name="body">The request body</param>

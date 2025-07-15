@@ -25,16 +25,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The days of the week on which the user works.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Graph.Models.DayOfWeekObject?>? DaysOfWeek
+        public List<string>? DaysOfWeek
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.DayOfWeekObject?>?>("daysOfWeek"); }
+            get { return BackingStore?.Get<List<string>?>("daysOfWeek"); }
             set { BackingStore?.Set("daysOfWeek", value); }
         }
 #nullable restore
 #else
-        public List<global::Microsoft.Graph.Models.DayOfWeekObject?> DaysOfWeek
+        public List<string> DaysOfWeek
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.DayOfWeekObject?>>("daysOfWeek"); }
+            get { return BackingStore?.Get<List<string>>("daysOfWeek"); }
             set { BackingStore?.Set("daysOfWeek", value); }
         }
 #endif
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "daysOfWeek", n => { DaysOfWeek = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Models.DayOfWeekObject>()?.AsList(); } },
+                { "daysOfWeek", n => { DaysOfWeek = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "endTime", n => { EndTime = n.GetTimeValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "startTime", n => { StartTime = n.GetTimeValue(); } },
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Models.DayOfWeekObject>("daysOfWeek", DaysOfWeek);
+            writer.WriteCollectionOfPrimitiveValues<string>("daysOfWeek", DaysOfWeek);
             writer.WriteTimeValue("endTime", EndTime);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteTimeValue("startTime", StartTime);

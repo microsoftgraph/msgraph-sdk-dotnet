@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetM365AppPlatformUserCountsWithPeriod
         }
         /// <summary>
         /// Get a report that provides the trend of active users across all apps for each platform (Windows, Mac, web, and mobile) in your organization.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getm365appplatformusercounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

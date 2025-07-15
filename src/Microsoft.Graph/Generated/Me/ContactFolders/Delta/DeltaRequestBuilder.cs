@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Me.ContactFolders.Delta
         }
         /// <summary>
         /// Get a set of contact folders that have been added, deleted, or removed from the user&apos;s mailbox. A delta function call for contact folders in a mailbox is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the contact folders. This allows you to maintain and synchronize a local store of a user&apos;s contact folders without having to fetch all the contact folders of that mailbox from the server every time.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contactfolder-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Me.ContactFolders.Delta.DeltaGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +58,6 @@ namespace Microsoft.Graph.Me.ContactFolders.Delta
         }
         /// <summary>
         /// Get a set of contact folders that have been added, deleted, or removed from the user&apos;s mailbox. A delta function call for contact folders in a mailbox is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the contact folders. This allows you to maintain and synchronize a local store of a user&apos;s contact folders without having to fetch all the contact folders of that mailbox from the server every time.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contactfolder-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Me.ContactFolders.Delta.DeltaResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -171,10 +169,10 @@ namespace Microsoft.Graph.Me.ContactFolders.Delta
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

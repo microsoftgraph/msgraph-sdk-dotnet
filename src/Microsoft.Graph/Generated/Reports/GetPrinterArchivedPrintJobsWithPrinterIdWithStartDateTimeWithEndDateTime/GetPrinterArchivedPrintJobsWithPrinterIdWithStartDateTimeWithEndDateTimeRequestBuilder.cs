@@ -41,7 +41,6 @@ namespace Microsoft.Graph.Reports.GetPrinterArchivedPrintJobsWithPrinterIdWithSt
         }
         /// <summary>
         /// Get a list of archived print jobs that were queued for particular printer.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reports-getprinterarchivedprintjobs?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Reports.GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTime.GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -65,7 +64,6 @@ namespace Microsoft.Graph.Reports.GetPrinterArchivedPrintJobsWithPrinterIdWithSt
         }
         /// <summary>
         /// Get a list of archived print jobs that were queued for particular printer.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reports-getprinterarchivedprintjobs?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Reports.GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTime.GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -147,10 +145,10 @@ namespace Microsoft.Graph.Reports.GetPrinterArchivedPrintJobsWithPrinterIdWithSt
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

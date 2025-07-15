@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetTeamsTeamCountsWithPeriod
         }
         /// <summary>
         /// Get the number of teams of a particular type in an instance of Microsoft Teams.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getteamsteamcounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

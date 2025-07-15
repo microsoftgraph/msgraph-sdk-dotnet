@@ -65,6 +65,7 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.applicationEnforcedRestrictionsSessionControl" => new global::Microsoft.Graph.Models.ApplicationEnforcedRestrictionsSessionControl(),
                 "#microsoft.graph.cloudAppSecuritySessionControl" => new global::Microsoft.Graph.Models.CloudAppSecuritySessionControl(),
                 "#microsoft.graph.persistentBrowserSessionControl" => new global::Microsoft.Graph.Models.PersistentBrowserSessionControl(),
+                "#microsoft.graph.secureSignInSessionControl" => new global::Microsoft.Graph.Models.SecureSignInSessionControl(),
                 "#microsoft.graph.signInFrequencySessionControl" => new global::Microsoft.Graph.Models.SignInFrequencySessionControl(),
                 _ => new global::Microsoft.Graph.Models.ConditionalAccessSessionControl(),
             };

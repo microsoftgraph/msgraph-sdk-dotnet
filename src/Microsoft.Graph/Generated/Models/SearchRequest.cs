@@ -94,16 +94,16 @@ namespace Microsoft.Graph.Models
         /// <summary>One or more types of resources expected in the response. Possible values are: event, message, driveItem, externalItem, site, list, listItem, drive, chatMessage, person, acronym, bookmark.  Use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: chatMessage, person, acronym, bookmark. See known limitations for those combinations of two or more entity types that are supported in the same search request. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Graph.Models.EntityType?>? EntityTypes
+        public List<string>? EntityTypes
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.EntityType?>?>("entityTypes"); }
+            get { return BackingStore?.Get<List<string>?>("entityTypes"); }
             set { BackingStore?.Set("entityTypes", value); }
         }
 #nullable restore
 #else
-        public List<global::Microsoft.Graph.Models.EntityType?> EntityTypes
+        public List<string> EntityTypes
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.EntityType?>>("entityTypes"); }
+            get { return BackingStore?.Get<List<string>>("entityTypes"); }
             set { BackingStore?.Set("entityTypes", value); }
         }
 #endif
@@ -278,7 +278,7 @@ namespace Microsoft.Graph.Models
                 { "collapseProperties", n => { CollapseProperties = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.CollapseProperty>(global::Microsoft.Graph.Models.CollapseProperty.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "contentSources", n => { ContentSources = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "enableTopResults", n => { EnableTopResults = n.GetBoolValue(); } },
-                { "entityTypes", n => { EntityTypes = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Models.EntityType>()?.AsList(); } },
+                { "entityTypes", n => { EntityTypes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "fields", n => { Fields = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "from", n => { From = n.GetIntValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -303,7 +303,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.CollapseProperty>("collapseProperties", CollapseProperties);
             writer.WriteCollectionOfPrimitiveValues<string>("contentSources", ContentSources);
             writer.WriteBoolValue("enableTopResults", EnableTopResults);
-            writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Models.EntityType>("entityTypes", EntityTypes);
+            writer.WriteCollectionOfPrimitiveValues<string>("entityTypes", EntityTypes);
             writer.WriteCollectionOfPrimitiveValues<string>("fields", Fields);
             writer.WriteIntValue("from", From);
             writer.WriteStringValue("@odata.type", OdataType);

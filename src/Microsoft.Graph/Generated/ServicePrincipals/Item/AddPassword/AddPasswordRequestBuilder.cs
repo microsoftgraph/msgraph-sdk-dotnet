@@ -36,7 +36,6 @@ namespace Microsoft.Graph.ServicePrincipals.Item.AddPassword
         }
         /// <summary>
         /// Add a strong password or secret to a servicePrincipal object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-addpassword?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.PasswordCredential"/></returns>
         /// <param name="body">The request body</param>

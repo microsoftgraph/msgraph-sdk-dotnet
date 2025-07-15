@@ -214,7 +214,6 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.TotalRowRa
         }
         /// <summary>
         /// Gets the range object associated with totals row of the table.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/table-totalrowrange?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.WorkbookRange"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

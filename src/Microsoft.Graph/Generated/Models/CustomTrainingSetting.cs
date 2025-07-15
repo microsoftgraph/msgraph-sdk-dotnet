@@ -15,16 +15,16 @@ namespace Microsoft.Graph.Models
         /// <summary>A user collection that specifies to whom the training should be assigned. Possible values are: none, allUsers, clickedPayload, compromised, reportedPhish, readButNotClicked, didNothing, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Graph.Models.TrainingAssignedTo?>? AssignedTo
+        public List<string>? AssignedTo
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.TrainingAssignedTo?>?>("assignedTo"); }
+            get { return BackingStore?.Get<List<string>?>("assignedTo"); }
             set { BackingStore?.Set("assignedTo", value); }
         }
 #nullable restore
 #else
-        public List<global::Microsoft.Graph.Models.TrainingAssignedTo?> AssignedTo
+        public List<string> AssignedTo
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.TrainingAssignedTo?>>("assignedTo"); }
+            get { return BackingStore?.Get<List<string>>("assignedTo"); }
             set { BackingStore?.Set("assignedTo", value); }
         }
 #endif
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "assignedTo", n => { AssignedTo = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Models.TrainingAssignedTo>()?.AsList(); } },
+                { "assignedTo", n => { AssignedTo = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "durationInMinutes", n => { DurationInMinutes = n.GetIntValue(); } },
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Models.TrainingAssignedTo>("assignedTo", AssignedTo);
+            writer.WriteCollectionOfPrimitiveValues<string>("assignedTo", AssignedTo);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteIntValue("durationInMinutes", DurationInMinutes);

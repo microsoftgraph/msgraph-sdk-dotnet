@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.AllMembers.Re
         }
         /// <summary>
         /// Remove multiple members from a team in a single request. The response provides details about which memberships could and couldn&apos;t be removed.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conversationmember-remove?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.AllMembers.Remove.RemovePostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +60,6 @@ namespace Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.AllMembers.Re
         }
         /// <summary>
         /// Remove multiple members from a team in a single request. The response provides details about which memberships could and couldn&apos;t be removed.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/conversationmember-remove?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.AllMembers.Remove.RemoveResponse"/></returns>
         /// <param name="body">The request body</param>

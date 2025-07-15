@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetOneDriveActivityUserCountsWithPeriod
         }
         /// <summary>
         /// Get the trend in the number of active OneDrive users.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getonedriveactivityusercounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

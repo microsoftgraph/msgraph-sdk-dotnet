@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Devices.GetByIds
         }
         /// <summary>
         /// Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Devices.GetByIds.GetByIdsPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +60,6 @@ namespace Microsoft.Graph.Devices.GetByIds
         }
         /// <summary>
         /// Return the directory objects specified in a list of IDs. Only a subset of user properties are returned by default in v1.0. Some common uses for this function are to:
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryobject-getbyids?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Devices.GetByIds.GetByIdsResponse"/></returns>
         /// <param name="body">The request body</param>

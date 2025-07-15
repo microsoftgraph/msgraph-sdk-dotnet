@@ -12,70 +12,6 @@ namespace Microsoft.Graph.Models.TermStore
     public partial class Store : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Default language of the term store.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DefaultLanguageTag
-        {
-            get { return BackingStore?.Get<string?>("defaultLanguageTag"); }
-            set { BackingStore?.Set("defaultLanguageTag", value); }
-        }
-#nullable restore
-#else
-        public string DefaultLanguageTag
-        {
-            get { return BackingStore?.Get<string>("defaultLanguageTag"); }
-            set { BackingStore?.Set("defaultLanguageTag", value); }
-        }
-#endif
-        /// <summary>Collection of all groups available in the term store.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.TermStore.Group>? Groups
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.TermStore.Group>?>("groups"); }
-            set { BackingStore?.Set("groups", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.TermStore.Group> Groups
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.TermStore.Group>>("groups"); }
-            set { BackingStore?.Set("groups", value); }
-        }
-#endif
-        /// <summary>List of languages for the term store.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? LanguageTags
-        {
-            get { return BackingStore?.Get<List<string>?>("languageTags"); }
-            set { BackingStore?.Set("languageTags", value); }
-        }
-#nullable restore
-#else
-        public List<string> LanguageTags
-        {
-            get { return BackingStore?.Get<List<string>>("languageTags"); }
-            set { BackingStore?.Set("languageTags", value); }
-        }
-#endif
-        /// <summary>Collection of all sets available in the term store. This relationship can only be used to load a specific term set.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.TermStore.Set>? Sets
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.TermStore.Set>?>("sets"); }
-            set { BackingStore?.Set("sets", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.TermStore.Set> Sets
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.TermStore.Set>>("sets"); }
-            set { BackingStore?.Set("sets", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -94,10 +30,6 @@ namespace Microsoft.Graph.Models.TermStore
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "defaultLanguageTag", n => { DefaultLanguageTag = n.GetStringValue(); } },
-                { "groups", n => { Groups = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.TermStore.Group>(global::Microsoft.Graph.Models.TermStore.Group.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "languageTags", n => { LanguageTags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "sets", n => { Sets = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.TermStore.Set>(global::Microsoft.Graph.Models.TermStore.Set.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -108,10 +40,6 @@ namespace Microsoft.Graph.Models.TermStore
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("defaultLanguageTag", DefaultLanguageTag);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.TermStore.Group>("groups", Groups);
-            writer.WriteCollectionOfPrimitiveValues<string>("languageTags", LanguageTags);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.TermStore.Set>("sets", Sets);
         }
     }
 }

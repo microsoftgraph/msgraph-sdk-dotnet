@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Communications.Calls.Item.Unmute
         }
         /// <summary>
         /// Allow the application to unmute itself. This is a server unmute, meaning that the server will start sending audio packets for this participant to other participants again. For more information about how to handle unmute operations, see unmuteParticipantOperation.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/call-unmute?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.UnmuteParticipantOperation"/></returns>
         /// <param name="body">The request body</param>

@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Users.Item.Events.Item.Forward
         }
         /// <summary>
         /// This action allows the organizer or attendee of a meeting event to forward themeeting request to a new recipient. If the meeting event is forwarded from an attendee&apos;s Microsoft 365 mailbox to another recipient, this actionalso sends a message to notify the organizer of the forwarding, and adds the recipient to the organizer&apos;scopy of the meeting event. This convenience is not available when forwarding from an Outlook.com account.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/event-forward?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

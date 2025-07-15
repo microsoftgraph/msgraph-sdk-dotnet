@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetYammerActivityUserCountsWithPeriod
         }
         /// <summary>
         /// Get the trends on the number of unique users who posted, read, and liked Yammer messages.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getyammeractivityusercounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -12,92 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class AccessPackageResourceScope : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The description of the scope.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Description
-        {
-            get { return BackingStore?.Get<string?>("description"); }
-            set { BackingStore?.Set("description", value); }
-        }
-#nullable restore
-#else
-        public string Description
-        {
-            get { return BackingStore?.Get<string>("description"); }
-            set { BackingStore?.Set("description", value); }
-        }
-#endif
-        /// <summary>The display name of the scope.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DisplayName
-        {
-            get { return BackingStore?.Get<string?>("displayName"); }
-            set { BackingStore?.Set("displayName", value); }
-        }
-#nullable restore
-#else
-        public string DisplayName
-        {
-            get { return BackingStore?.Get<string>("displayName"); }
-            set { BackingStore?.Set("displayName", value); }
-        }
-#endif
-        /// <summary>True if the scopes are arranged in a hierarchy and this is the top or root scope of the resource.</summary>
-        public bool? IsRootScope
-        {
-            get { return BackingStore?.Get<bool?>("isRootScope"); }
-            set { BackingStore?.Set("isRootScope", value); }
-        }
-        /// <summary>The unique identifier for the scope in the resource as defined in the origin system.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OriginId
-        {
-            get { return BackingStore?.Get<string?>("originId"); }
-            set { BackingStore?.Set("originId", value); }
-        }
-#nullable restore
-#else
-        public string OriginId
-        {
-            get { return BackingStore?.Get<string>("originId"); }
-            set { BackingStore?.Set("originId", value); }
-        }
-#endif
-        /// <summary>The origin system for the scope.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OriginSystem
-        {
-            get { return BackingStore?.Get<string?>("originSystem"); }
-            set { BackingStore?.Set("originSystem", value); }
-        }
-#nullable restore
-#else
-        public string OriginSystem
-        {
-            get { return BackingStore?.Get<string>("originSystem"); }
-            set { BackingStore?.Set("originSystem", value); }
-        }
-#endif
-        /// <summary>The resource property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.AccessPackageResource? Resource
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.AccessPackageResource?>("resource"); }
-            set { BackingStore?.Set("resource", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.AccessPackageResource Resource
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.AccessPackageResource>("resource"); }
-            set { BackingStore?.Set("resource", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -116,12 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "isRootScope", n => { IsRootScope = n.GetBoolValue(); } },
-                { "originId", n => { OriginId = n.GetStringValue(); } },
-                { "originSystem", n => { OriginSystem = n.GetStringValue(); } },
-                { "resource", n => { Resource = n.GetObjectValue<global::Microsoft.Graph.Models.AccessPackageResource>(global::Microsoft.Graph.Models.AccessPackageResource.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -132,12 +40,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("description", Description);
-            writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteBoolValue("isRootScope", IsRootScope);
-            writer.WriteStringValue("originId", OriginId);
-            writer.WriteStringValue("originSystem", OriginSystem);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.AccessPackageResource>("resource", Resource);
         }
     }
 }

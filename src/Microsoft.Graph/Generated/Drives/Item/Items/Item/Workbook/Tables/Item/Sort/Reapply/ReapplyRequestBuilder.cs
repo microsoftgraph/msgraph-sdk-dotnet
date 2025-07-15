@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Sort.Reapp
         }
         /// <summary>
         /// Reapplies the current sorting parameters to the table.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tablesort-reapply?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

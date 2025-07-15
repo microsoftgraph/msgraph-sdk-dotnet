@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetYammerGroupsActivityDetailWithDate
         }
         /// <summary>
         /// Get details about Yammer groups activity by group.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getyammergroupsactivitydetail?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

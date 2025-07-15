@@ -12,38 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class UnifiedRoleEligibilitySchedule : global::Microsoft.Graph.Models.UnifiedRoleScheduleBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>How the role eligibility is inherited. It can either be Inherited, Direct, or Group. It can further imply whether the unifiedRoleEligibilitySchedule can be managed by the caller. Supports $filter (eq, ne).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? MemberType
-        {
-            get { return BackingStore?.Get<string?>("memberType"); }
-            set { BackingStore?.Set("memberType", value); }
-        }
-#nullable restore
-#else
-        public string MemberType
-        {
-            get { return BackingStore?.Get<string>("memberType"); }
-            set { BackingStore?.Set("memberType", value); }
-        }
-#endif
-        /// <summary>The period of the role eligibility.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.RequestSchedule? ScheduleInfo
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.RequestSchedule?>("scheduleInfo"); }
-            set { BackingStore?.Set("scheduleInfo", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.RequestSchedule ScheduleInfo
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.RequestSchedule>("scheduleInfo"); }
-            set { BackingStore?.Set("scheduleInfo", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,8 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "memberType", n => { MemberType = n.GetStringValue(); } },
-                { "scheduleInfo", n => { ScheduleInfo = n.GetObjectValue<global::Microsoft.Graph.Models.RequestSchedule>(global::Microsoft.Graph.Models.RequestSchedule.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -74,8 +40,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("memberType", MemberType);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.RequestSchedule>("scheduleInfo", ScheduleInfo);
         }
     }
 }

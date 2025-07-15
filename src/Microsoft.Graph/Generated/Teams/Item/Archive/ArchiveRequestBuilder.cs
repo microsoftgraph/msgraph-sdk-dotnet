@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Teams.Item.Archive
         }
         /// <summary>
         /// Archive the specified team. When a team is archived, users can no longer make most changes to the team. For example, users can no longer: send or like messages on any channel in the team; edit the team&apos;s name or description; nor edit other settings. However, membership changes to the team are still allowed. Archiving is an async operation. A team is archived once the async operation completes successfully, which might occur subsequent to a response from this API. To archive a team, the team and group must have an owner. To restore a team from its archived state, use the API to unarchive.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-archive?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

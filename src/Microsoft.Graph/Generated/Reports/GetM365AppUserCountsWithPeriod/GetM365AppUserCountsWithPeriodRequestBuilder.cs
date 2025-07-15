@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetM365AppUserCountsWithPeriod
         }
         /// <summary>
         /// Get a report that provides the trend in the number of active users for each app (Outlook, Word, Excel, PowerPoint, OneNote, and Teams) in your organization.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getm365appusercounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

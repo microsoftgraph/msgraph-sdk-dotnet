@@ -12,18 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class EntitlementManagementSettings : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>If externalUserLifecycleAction is blockSignInAndDelete, the duration, typically many days, after an external user is blocked from sign in before their account is deleted.</summary>
-        public TimeSpan? DurationUntilExternalUserDeletedAfterBlocked
-        {
-            get { return BackingStore?.Get<TimeSpan?>("durationUntilExternalUserDeletedAfterBlocked"); }
-            set { BackingStore?.Set("durationUntilExternalUserDeletedAfterBlocked", value); }
-        }
-        /// <summary>Automatic action that the service should take when an external user&apos;s last access package assignment is removed. The possible values are: none, blockSignIn, blockSignInAndDelete, unknownFutureValue.</summary>
-        public global::Microsoft.Graph.Models.AccessPackageExternalUserLifecycleAction? ExternalUserLifecycleAction
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.AccessPackageExternalUserLifecycleAction?>("externalUserLifecycleAction"); }
-            set { BackingStore?.Set("externalUserLifecycleAction", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -42,8 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "durationUntilExternalUserDeletedAfterBlocked", n => { DurationUntilExternalUserDeletedAfterBlocked = n.GetTimeSpanValue(); } },
-                { "externalUserLifecycleAction", n => { ExternalUserLifecycleAction = n.GetEnumValue<global::Microsoft.Graph.Models.AccessPackageExternalUserLifecycleAction>(); } },
             };
         }
         /// <summary>
@@ -54,8 +40,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteTimeSpanValue("durationUntilExternalUserDeletedAfterBlocked", DurationUntilExternalUserDeletedAfterBlocked);
-            writer.WriteEnumValue<global::Microsoft.Graph.Models.AccessPackageExternalUserLifecycleAction>("externalUserLifecycleAction", ExternalUserLifecycleAction);
         }
     }
 }

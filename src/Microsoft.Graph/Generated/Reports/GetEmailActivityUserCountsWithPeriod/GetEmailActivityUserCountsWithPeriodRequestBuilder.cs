@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetEmailActivityUserCountsWithPeriod
         }
         /// <summary>
         /// Enables you to understand trends on the number of unique users who are performing email activities like send, read, and receive.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getemailactivityusercounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

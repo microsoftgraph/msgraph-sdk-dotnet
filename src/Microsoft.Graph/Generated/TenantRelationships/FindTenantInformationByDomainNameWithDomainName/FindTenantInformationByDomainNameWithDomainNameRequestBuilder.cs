@@ -38,7 +38,6 @@ namespace Microsoft.Graph.TenantRelationships.FindTenantInformationByDomainNameW
         }
         /// <summary>
         /// Given a domain name, search for a tenant and read its tenantInformation. You can use this API to validate tenant information and use the tenantId to configure cross-tenant access settings between you and the tenant.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tenantrelationship-findtenantinformationbydomainname?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.TenantInformation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

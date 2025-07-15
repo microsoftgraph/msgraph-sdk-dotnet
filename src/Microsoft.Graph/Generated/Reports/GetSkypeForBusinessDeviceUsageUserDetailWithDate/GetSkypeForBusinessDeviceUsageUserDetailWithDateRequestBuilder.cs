@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetSkypeForBusinessDeviceUsageUserDetailWithDa
         }
         /// <summary>
         /// Get details about Skype for Business device usage by user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinessdeviceusageuserdetail?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

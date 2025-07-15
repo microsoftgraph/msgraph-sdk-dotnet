@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetSharePointSiteUsageStorageWithPeriod
         }
         /// <summary>
         /// Get the trend of storage allocated and consumed during the reporting period.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getsharepointsiteusagestorage?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

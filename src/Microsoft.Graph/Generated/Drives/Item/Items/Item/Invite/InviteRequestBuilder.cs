@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Invite
         }
         /// <summary>
         /// Sends a sharing invitation for a driveItem.A sharing invitation provides permissions to the recipients and optionally sends them an email with a sharing link.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-invite?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Drives.Item.Items.Item.Invite.InvitePostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +60,6 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Invite
         }
         /// <summary>
         /// Sends a sharing invitation for a driveItem.A sharing invitation provides permissions to the recipients and optionally sends them an email with a sharing link.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-invite?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Drives.Item.Items.Item.Invite.InviteResponse"/></returns>
         /// <param name="body">The request body</param>

@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetSkypeForBusinessParticipantActivityUserCoun
         }
         /// <summary>
         /// Get usage trends on the number of unique users and type of conference sessions that users from your organization participated in. Types of conference sessions include IM, audio/video, application sharing, web, and dial-in/out - third party.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinessparticipantactivityusercounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

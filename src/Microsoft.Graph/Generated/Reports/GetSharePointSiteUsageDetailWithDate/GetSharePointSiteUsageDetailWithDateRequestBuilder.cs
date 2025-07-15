@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetSharePointSiteUsageDetailWithDate
         }
         /// <summary>
         /// Get details about SharePoint site usage.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getsharepointsiteusagedetail?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

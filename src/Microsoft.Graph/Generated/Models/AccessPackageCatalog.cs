@@ -12,148 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class AccessPackageCatalog : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The access packages in this catalog. Read-only. Nullable.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.AccessPackage>? AccessPackages
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.AccessPackage>?>("accessPackages"); }
-            set { BackingStore?.Set("accessPackages", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.AccessPackage> AccessPackages
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.AccessPackage>>("accessPackages"); }
-            set { BackingStore?.Set("accessPackages", value); }
-        }
-#endif
-        /// <summary>Whether the catalog is created by a user or entitlement management. The possible values are: userManaged, serviceDefault, serviceManaged, unknownFutureValue.</summary>
-        public global::Microsoft.Graph.Models.AccessPackageCatalogType? CatalogType
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.AccessPackageCatalogType?>("catalogType"); }
-            set { BackingStore?.Set("catalogType", value); }
-        }
-        /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
-        public DateTimeOffset? CreatedDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
-            set { BackingStore?.Set("createdDateTime", value); }
-        }
-        /// <summary>The customWorkflowExtensions property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.CustomCalloutExtension>? CustomWorkflowExtensions
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.CustomCalloutExtension>?>("customWorkflowExtensions"); }
-            set { BackingStore?.Set("customWorkflowExtensions", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.CustomCalloutExtension> CustomWorkflowExtensions
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.CustomCalloutExtension>>("customWorkflowExtensions"); }
-            set { BackingStore?.Set("customWorkflowExtensions", value); }
-        }
-#endif
-        /// <summary>The description of the access package catalog.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Description
-        {
-            get { return BackingStore?.Get<string?>("description"); }
-            set { BackingStore?.Set("description", value); }
-        }
-#nullable restore
-#else
-        public string Description
-        {
-            get { return BackingStore?.Get<string>("description"); }
-            set { BackingStore?.Set("description", value); }
-        }
-#endif
-        /// <summary>The display name of the access package catalog.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DisplayName
-        {
-            get { return BackingStore?.Get<string?>("displayName"); }
-            set { BackingStore?.Set("displayName", value); }
-        }
-#nullable restore
-#else
-        public string DisplayName
-        {
-            get { return BackingStore?.Get<string>("displayName"); }
-            set { BackingStore?.Set("displayName", value); }
-        }
-#endif
-        /// <summary>Whether the access packages in this catalog can be requested by users outside of the tenant.</summary>
-        public bool? IsExternallyVisible
-        {
-            get { return BackingStore?.Get<bool?>("isExternallyVisible"); }
-            set { BackingStore?.Set("isExternallyVisible", value); }
-        }
-        /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
-        public DateTimeOffset? ModifiedDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("modifiedDateTime"); }
-            set { BackingStore?.Set("modifiedDateTime", value); }
-        }
-        /// <summary>The resourceRoles property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.AccessPackageResourceRole>? ResourceRoles
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.AccessPackageResourceRole>?>("resourceRoles"); }
-            set { BackingStore?.Set("resourceRoles", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.AccessPackageResourceRole> ResourceRoles
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.AccessPackageResourceRole>>("resourceRoles"); }
-            set { BackingStore?.Set("resourceRoles", value); }
-        }
-#endif
-        /// <summary>Access package resources in this catalog.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.AccessPackageResource>? Resources
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.AccessPackageResource>?>("resources"); }
-            set { BackingStore?.Set("resources", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.AccessPackageResource> Resources
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.AccessPackageResource>>("resources"); }
-            set { BackingStore?.Set("resources", value); }
-        }
-#endif
-        /// <summary>The resourceScopes property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.AccessPackageResourceScope>? ResourceScopes
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.AccessPackageResourceScope>?>("resourceScopes"); }
-            set { BackingStore?.Set("resourceScopes", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.AccessPackageResourceScope> ResourceScopes
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.AccessPackageResourceScope>>("resourceScopes"); }
-            set { BackingStore?.Set("resourceScopes", value); }
-        }
-#endif
-        /// <summary>Has the value published if the access packages are available for management. The possible values are: unpublished, published, unknownFutureValue.</summary>
-        public global::Microsoft.Graph.Models.AccessPackageCatalogState? State
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.AccessPackageCatalogState?>("state"); }
-            set { BackingStore?.Set("state", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -172,18 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "accessPackages", n => { AccessPackages = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackage>(global::Microsoft.Graph.Models.AccessPackage.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "catalogType", n => { CatalogType = n.GetEnumValue<global::Microsoft.Graph.Models.AccessPackageCatalogType>(); } },
-                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "customWorkflowExtensions", n => { CustomWorkflowExtensions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.CustomCalloutExtension>(global::Microsoft.Graph.Models.CustomCalloutExtension.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "isExternallyVisible", n => { IsExternallyVisible = n.GetBoolValue(); } },
-                { "modifiedDateTime", n => { ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "resourceRoles", n => { ResourceRoles = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageResourceRole>(global::Microsoft.Graph.Models.AccessPackageResourceRole.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "resourceScopes", n => { ResourceScopes = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageResourceScope>(global::Microsoft.Graph.Models.AccessPackageResourceScope.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "resources", n => { Resources = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageResource>(global::Microsoft.Graph.Models.AccessPackageResource.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "state", n => { State = n.GetEnumValue<global::Microsoft.Graph.Models.AccessPackageCatalogState>(); } },
             };
         }
         /// <summary>
@@ -194,18 +40,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackage>("accessPackages", AccessPackages);
-            writer.WriteEnumValue<global::Microsoft.Graph.Models.AccessPackageCatalogType>("catalogType", CatalogType);
-            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.CustomCalloutExtension>("customWorkflowExtensions", CustomWorkflowExtensions);
-            writer.WriteStringValue("description", Description);
-            writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteBoolValue("isExternallyVisible", IsExternallyVisible);
-            writer.WriteDateTimeOffsetValue("modifiedDateTime", ModifiedDateTime);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageResourceRole>("resourceRoles", ResourceRoles);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageResource>("resources", Resources);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageResourceScope>("resourceScopes", ResourceScopes);
-            writer.WriteEnumValue<global::Microsoft.Graph.Models.AccessPackageCatalogState>("state", State);
         }
     }
 }

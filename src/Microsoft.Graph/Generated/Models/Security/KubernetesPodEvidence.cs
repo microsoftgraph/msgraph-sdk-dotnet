@@ -12,157 +12,6 @@ namespace Microsoft.Graph.Models.Security
     public partial class KubernetesPodEvidence : global::Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The list of pod containers which are not init or ephemeral containers.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.Security.ContainerEvidence>? Containers
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Security.ContainerEvidence>?>("containers"); }
-            set { BackingStore?.Set("containers", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.Security.ContainerEvidence> Containers
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Security.ContainerEvidence>>("containers"); }
-            set { BackingStore?.Set("containers", value); }
-        }
-#endif
-        /// <summary>The pod controller.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.Security.KubernetesControllerEvidence? Controller
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.KubernetesControllerEvidence?>("controller"); }
-            set { BackingStore?.Set("controller", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.Security.KubernetesControllerEvidence Controller
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.KubernetesControllerEvidence>("controller"); }
-            set { BackingStore?.Set("controller", value); }
-        }
-#endif
-        /// <summary>The list of pod ephemeral containers.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.Security.ContainerEvidence>? EphemeralContainers
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Security.ContainerEvidence>?>("ephemeralContainers"); }
-            set { BackingStore?.Set("ephemeralContainers", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.Security.ContainerEvidence> EphemeralContainers
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Security.ContainerEvidence>>("ephemeralContainers"); }
-            set { BackingStore?.Set("ephemeralContainers", value); }
-        }
-#endif
-        /// <summary>The list of pod init containers.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.Security.ContainerEvidence>? InitContainers
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Security.ContainerEvidence>?>("initContainers"); }
-            set { BackingStore?.Set("initContainers", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.Security.ContainerEvidence> InitContainers
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Security.ContainerEvidence>>("initContainers"); }
-            set { BackingStore?.Set("initContainers", value); }
-        }
-#endif
-        /// <summary>The pod labels.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.Security.Dictionary? Labels
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.Dictionary?>("labels"); }
-            set { BackingStore?.Set("labels", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.Security.Dictionary Labels
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.Dictionary>("labels"); }
-            set { BackingStore?.Set("labels", value); }
-        }
-#endif
-        /// <summary>The pod name.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name
-        {
-            get { return BackingStore?.Get<string?>("name"); }
-            set { BackingStore?.Set("name", value); }
-        }
-#nullable restore
-#else
-        public string Name
-        {
-            get { return BackingStore?.Get<string>("name"); }
-            set { BackingStore?.Set("name", value); }
-        }
-#endif
-        /// <summary>The pod namespace.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.Security.KubernetesNamespaceEvidence? Namespace
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.KubernetesNamespaceEvidence?>("namespace"); }
-            set { BackingStore?.Set("namespace", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.Security.KubernetesNamespaceEvidence Namespace
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.KubernetesNamespaceEvidence>("namespace"); }
-            set { BackingStore?.Set("namespace", value); }
-        }
-#endif
-        /// <summary>The pod IP.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.Security.IpEvidence? PodIp
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.IpEvidence?>("podIp"); }
-            set { BackingStore?.Set("podIp", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.Security.IpEvidence PodIp
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.IpEvidence>("podIp"); }
-            set { BackingStore?.Set("podIp", value); }
-        }
-#endif
-        /// <summary>The pod service account.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.Security.KubernetesServiceAccountEvidence? ServiceAccount
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.KubernetesServiceAccountEvidence?>("serviceAccount"); }
-            set { BackingStore?.Set("serviceAccount", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.Security.KubernetesServiceAccountEvidence ServiceAccount
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.KubernetesServiceAccountEvidence>("serviceAccount"); }
-            set { BackingStore?.Set("serviceAccount", value); }
-        }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Models.Security.KubernetesPodEvidence"/> and sets the default values.
-        /// </summary>
-        public KubernetesPodEvidence() : base()
-        {
-            OdataType = "#microsoft.graph.security.kubernetesPodEvidence";
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -181,15 +30,6 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "containers", n => { Containers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.ContainerEvidence>(global::Microsoft.Graph.Models.Security.ContainerEvidence.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "controller", n => { Controller = n.GetObjectValue<global::Microsoft.Graph.Models.Security.KubernetesControllerEvidence>(global::Microsoft.Graph.Models.Security.KubernetesControllerEvidence.CreateFromDiscriminatorValue); } },
-                { "ephemeralContainers", n => { EphemeralContainers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.ContainerEvidence>(global::Microsoft.Graph.Models.Security.ContainerEvidence.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "initContainers", n => { InitContainers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.ContainerEvidence>(global::Microsoft.Graph.Models.Security.ContainerEvidence.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "labels", n => { Labels = n.GetObjectValue<global::Microsoft.Graph.Models.Security.Dictionary>(global::Microsoft.Graph.Models.Security.Dictionary.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "namespace", n => { Namespace = n.GetObjectValue<global::Microsoft.Graph.Models.Security.KubernetesNamespaceEvidence>(global::Microsoft.Graph.Models.Security.KubernetesNamespaceEvidence.CreateFromDiscriminatorValue); } },
-                { "podIp", n => { PodIp = n.GetObjectValue<global::Microsoft.Graph.Models.Security.IpEvidence>(global::Microsoft.Graph.Models.Security.IpEvidence.CreateFromDiscriminatorValue); } },
-                { "serviceAccount", n => { ServiceAccount = n.GetObjectValue<global::Microsoft.Graph.Models.Security.KubernetesServiceAccountEvidence>(global::Microsoft.Graph.Models.Security.KubernetesServiceAccountEvidence.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -200,15 +40,6 @@ namespace Microsoft.Graph.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.ContainerEvidence>("containers", Containers);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.KubernetesControllerEvidence>("controller", Controller);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.ContainerEvidence>("ephemeralContainers", EphemeralContainers);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.ContainerEvidence>("initContainers", InitContainers);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.Dictionary>("labels", Labels);
-            writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.KubernetesNamespaceEvidence>("namespace", Namespace);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.IpEvidence>("podIp", PodIp);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.KubernetesServiceAccountEvidence>("serviceAccount", ServiceAccount);
         }
     }
 }

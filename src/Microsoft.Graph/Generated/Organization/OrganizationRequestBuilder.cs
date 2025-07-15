@@ -78,8 +78,8 @@ namespace Microsoft.Graph.Organization
         {
         }
         /// <summary>
-        /// Retrieve a list of organization objects. There&apos;s only one organization object in the collection.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/organization-list?view=graph-rest-1.0" />
+        /// List properties and relationships of the organization objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-organization-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.OrganizationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -127,7 +127,7 @@ namespace Microsoft.Graph.Organization
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Organization>(requestInfo, global::Microsoft.Graph.Models.Organization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of organization objects. There&apos;s only one organization object in the collection.
+        /// List properties and relationships of the organization objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -177,7 +177,7 @@ namespace Microsoft.Graph.Organization
             return new global::Microsoft.Graph.Organization.OrganizationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of organization objects. There&apos;s only one organization object in the collection.
+        /// List properties and relationships of the organization objects.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OrganizationRequestBuilderGetQueryParameters 
@@ -237,10 +237,10 @@ namespace Microsoft.Graph.Organization
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

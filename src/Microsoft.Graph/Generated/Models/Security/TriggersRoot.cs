@@ -12,22 +12,6 @@ namespace Microsoft.Graph.Models.Security
     public partial class TriggersRoot : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The retentionEvents property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.Security.RetentionEvent>? RetentionEvents
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Security.RetentionEvent>?>("retentionEvents"); }
-            set { BackingStore?.Set("retentionEvents", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.Security.RetentionEvent> RetentionEvents
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Security.RetentionEvent>>("retentionEvents"); }
-            set { BackingStore?.Set("retentionEvents", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -46,7 +30,6 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "retentionEvents", n => { RetentionEvents = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.RetentionEvent>(global::Microsoft.Graph.Models.Security.RetentionEvent.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +40,6 @@ namespace Microsoft.Graph.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.RetentionEvent>("retentionEvents", RetentionEvents);
         }
     }
 }

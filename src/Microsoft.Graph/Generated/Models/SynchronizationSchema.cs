@@ -12,54 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class SynchronizationSchema : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Contains the collection of directories and all of their objects.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.DirectoryDefinition>? Directories
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.DirectoryDefinition>?>("directories"); }
-            set { BackingStore?.Set("directories", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.DirectoryDefinition> Directories
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.DirectoryDefinition>>("directories"); }
-            set { BackingStore?.Set("directories", value); }
-        }
-#endif
-        /// <summary>A collection of synchronization rules configured for the synchronizationJob or synchronizationTemplate.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.SynchronizationRule>? SynchronizationRules
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.SynchronizationRule>?>("synchronizationRules"); }
-            set { BackingStore?.Set("synchronizationRules", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.SynchronizationRule> SynchronizationRules
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.SynchronizationRule>>("synchronizationRules"); }
-            set { BackingStore?.Set("synchronizationRules", value); }
-        }
-#endif
-        /// <summary>The version of the schema, updated automatically with every schema change.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Version
-        {
-            get { return BackingStore?.Get<string?>("version"); }
-            set { BackingStore?.Set("version", value); }
-        }
-#nullable restore
-#else
-        public string Version
-        {
-            get { return BackingStore?.Get<string>("version"); }
-            set { BackingStore?.Set("version", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -78,9 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "directories", n => { Directories = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DirectoryDefinition>(global::Microsoft.Graph.Models.DirectoryDefinition.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "synchronizationRules", n => { SynchronizationRules = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.SynchronizationRule>(global::Microsoft.Graph.Models.SynchronizationRule.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -91,9 +40,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DirectoryDefinition>("directories", Directories);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.SynchronizationRule>("synchronizationRules", SynchronizationRules);
-            writer.WriteStringValue("version", Version);
         }
     }
 }

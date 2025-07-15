@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetSharePointSiteUsageFileCountsWithPeriod
         }
         /// <summary>
         /// Get the total number of files across all sites and the number of active files. A file (user or system) is considered active if it has been saved, synced, modified, or shared within the specified time period.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getsharepointsiteusagefilecounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

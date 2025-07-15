@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Communications.GetPresencesByUserId
         }
         /// <summary>
         /// Get the presence information for multiple users.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudcommunications-getpresencesbyuserid?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Communications.GetPresencesByUserId.GetPresencesByUserIdPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +60,6 @@ namespace Microsoft.Graph.Communications.GetPresencesByUserId
         }
         /// <summary>
         /// Get the presence information for multiple users.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudcommunications-getpresencesbyuserid?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Communications.GetPresencesByUserId.GetPresencesByUserIdResponse"/></returns>
         /// <param name="body">The request body</param>

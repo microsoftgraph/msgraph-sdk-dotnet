@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Sites.Item.Onenote.Pages.Item.CopyToSection
         }
         /// <summary>
         /// Copy a page to a specific section. For copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/page-copytosection?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.OnenoteOperation"/></returns>
         /// <param name="body">The request body</param>

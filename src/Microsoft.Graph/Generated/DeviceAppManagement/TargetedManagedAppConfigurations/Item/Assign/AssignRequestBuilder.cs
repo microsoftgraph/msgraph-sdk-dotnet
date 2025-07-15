@@ -35,7 +35,6 @@ namespace Microsoft.Graph.DeviceAppManagement.TargetedManagedAppConfigurations.I
         }
         /// <summary>
         /// Not yet documented
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-targetedmanagedappconfiguration-assign?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -84,8 +84,8 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ChatMessageCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.ChatMessageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Send a new reply to a chatMessage in a specified channel.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chatmessage-post-replies?view=graph-rest-1.0" />
+        /// Create a new reply to a chatMessage in a specified channel.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-post-messagereply?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ChatMessage"/></returns>
         /// <param name="body">The request body</param>
@@ -129,7 +129,7 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies
             return requestInfo;
         }
         /// <summary>
-        /// Send a new reply to a chatMessage in a specified channel.
+        /// Create a new reply to a chatMessage in a specified channel.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -220,10 +220,10 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.Messages.Item.Replies
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetSkypeForBusinessDeviceUsageUserCountsWithPe
         }
         /// <summary>
         /// Get the usage trends on how many users in your organization have connected using the Skype for Business app. You&apos;ll also get a breakdown by the type of device (Windows, Windows phone, Android phone, iPhone, or iPad) on which the Skype for Business client app is installed and used across your organization.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getskypeforbusinessdeviceusageusercounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

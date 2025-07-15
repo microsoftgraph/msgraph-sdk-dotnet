@@ -36,7 +36,6 @@ namespace Microsoft.Graph.DirectoryObjects.Item.Restore
         }
         /// <summary>
         /// Restore a recently deleted application, group, servicePrincipal, administrative unit, or user object from deleted items.  Restore a recently deleted directory object from deleted items. The following types are supported:- administrativeUnit- application- certificateBasedAuthPki- certificateAuthorityDetail- group- servicePrincipal
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directory-deleteditems-restore?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DirectoryObject"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

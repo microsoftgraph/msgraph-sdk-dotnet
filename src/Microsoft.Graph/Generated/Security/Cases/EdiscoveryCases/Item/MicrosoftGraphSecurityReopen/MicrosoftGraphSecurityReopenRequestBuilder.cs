@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.MicrosoftGraphSecu
         }
         /// <summary>
         /// Reopen an eDiscovery case that was closed. For details, see Reopen a closed case.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycase-reopen?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

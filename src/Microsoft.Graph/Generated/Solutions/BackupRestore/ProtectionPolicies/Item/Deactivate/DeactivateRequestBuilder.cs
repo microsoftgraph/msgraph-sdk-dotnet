@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Solutions.BackupRestore.ProtectionPolicies.Item.Deacti
         }
         /// <summary>
         /// Deactivate a protectionPolicyBase.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/protectionpolicybase-deactivate?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ProtectionPolicyBase"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

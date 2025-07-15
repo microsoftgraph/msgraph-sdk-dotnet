@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("startDateTime", value); }
         }
 #endif
+        /// <summary>The URL of the video on demand (VOD) for Microsoft Teams events that allows webinar and town hall organizers to quickly publish and share event recordings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VideoOnDemandWebUrl
+        {
+            get { return BackingStore?.Get<string?>("videoOnDemandWebUrl"); }
+            set { BackingStore?.Set("videoOnDemandWebUrl", value); }
+        }
+#nullable restore
+#else
+        public string VideoOnDemandWebUrl
+        {
+            get { return BackingStore?.Get<string>("videoOnDemandWebUrl"); }
+            set { BackingStore?.Set("videoOnDemandWebUrl", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Models.VirtualEventSession"/> and sets the default values.
         /// </summary>
@@ -71,6 +87,7 @@ namespace Microsoft.Graph.Models
             {
                 { "endDateTime", n => { EndDateTime = n.GetObjectValue<global::Microsoft.Graph.Models.DateTimeTimeZone>(global::Microsoft.Graph.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 { "startDateTime", n => { StartDateTime = n.GetObjectValue<global::Microsoft.Graph.Models.DateTimeTimeZone>(global::Microsoft.Graph.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "videoOnDemandWebUrl", n => { VideoOnDemandWebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -83,6 +100,7 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.DateTimeTimeZone>("endDateTime", EndDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.DateTimeTimeZone>("startDateTime", StartDateTime);
+            writer.WriteStringValue("videoOnDemandWebUrl", VideoOnDemandWebUrl);
         }
     }
 }

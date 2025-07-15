@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Solutions.BackupRestore.ServiceApps.Item.Deactivate
         }
         /// <summary>
         /// Deactivate a serviceApp.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceapp-deactivate?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ServiceApp"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

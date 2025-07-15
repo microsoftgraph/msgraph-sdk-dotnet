@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Communications.Calls.Item.UpdateRecordingStatus
         }
         /// <summary>
         /// Update the application&apos;s recording status associated with a call. This requires the use of the Teams policy-based recording solution.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/call-updaterecordingstatus?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.UpdateRecordingStatusOperation"/></returns>
         /// <param name="body">The request body</param>

@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Me.RevokeSignInSessions
         }
         /// <summary>
         /// Invalidates all the refresh tokens issued to applications for a user (and session cookies in a user&apos;s browser), by resetting the signInSessionsValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device. This operation prevents access to the organization&apos;s data through applications on the device by requiring the user to sign in again to all applications that they consented to previously, independent of device.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-revokesigninsessions?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Me.RevokeSignInSessions.RevokeSignInSessionsPostResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +58,6 @@ namespace Microsoft.Graph.Me.RevokeSignInSessions
         }
         /// <summary>
         /// Invalidates all the refresh tokens issued to applications for a user (and session cookies in a user&apos;s browser), by resetting the signInSessionsValidFromDateTime user property to the current date-time. Typically, this operation is performed (by the user or an administrator) if the user has a lost or stolen device. This operation prevents access to the organization&apos;s data through applications on the device by requiring the user to sign in again to all applications that they consented to previously, independent of device.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-revokesigninsessions?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Me.RevokeSignInSessions.RevokeSignInSessionsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

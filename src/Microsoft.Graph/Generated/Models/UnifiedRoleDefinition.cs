@@ -12,130 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class UnifiedRoleDefinition : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Description
-        {
-            get { return BackingStore?.Get<string?>("description"); }
-            set { BackingStore?.Set("description", value); }
-        }
-#nullable restore
-#else
-        public string Description
-        {
-            get { return BackingStore?.Get<string>("description"); }
-            set { BackingStore?.Set("description", value); }
-        }
-#endif
-        /// <summary>The display name for the unifiedRoleDefinition. Read-only when isBuiltIn is true. Required.  Supports $filter (eq, in).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DisplayName
-        {
-            get { return BackingStore?.Get<string?>("displayName"); }
-            set { BackingStore?.Set("displayName", value); }
-        }
-#nullable restore
-#else
-        public string DisplayName
-        {
-            get { return BackingStore?.Get<string>("displayName"); }
-            set { BackingStore?.Set("displayName", value); }
-        }
-#endif
-        /// <summary>Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles (isBuiltIn is true) support this attribute. Supports $expand.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.UnifiedRoleDefinition>? InheritsPermissionsFrom
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.UnifiedRoleDefinition>?>("inheritsPermissionsFrom"); }
-            set { BackingStore?.Set("inheritsPermissionsFrom", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.UnifiedRoleDefinition> InheritsPermissionsFrom
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.UnifiedRoleDefinition>>("inheritsPermissionsFrom"); }
-            set { BackingStore?.Set("inheritsPermissionsFrom", value); }
-        }
-#endif
-        /// <summary>Flag indicating whether the role definition is part of the default set included in Microsoft Entra or a custom definition. Read-only. Supports $filter (eq, in).</summary>
-        public bool? IsBuiltIn
-        {
-            get { return BackingStore?.Get<bool?>("isBuiltIn"); }
-            set { BackingStore?.Set("isBuiltIn", value); }
-        }
-        /// <summary>Flag indicating whether the role is enabled for assignment. If false the role is not available for assignment. Read-only when isBuiltIn is true.</summary>
-        public bool? IsEnabled
-        {
-            get { return BackingStore?.Get<bool?>("isEnabled"); }
-            set { BackingStore?.Set("isEnabled", value); }
-        }
-        /// <summary>List of the scopes or permissions the role definition applies to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? ResourceScopes
-        {
-            get { return BackingStore?.Get<List<string>?>("resourceScopes"); }
-            set { BackingStore?.Set("resourceScopes", value); }
-        }
-#nullable restore
-#else
-        public List<string> ResourceScopes
-        {
-            get { return BackingStore?.Get<List<string>>("resourceScopes"); }
-            set { BackingStore?.Set("resourceScopes", value); }
-        }
-#endif
-        /// <summary>List of permissions included in the role. Read-only when isBuiltIn is true. Required.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.UnifiedRolePermission>? RolePermissions
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.UnifiedRolePermission>?>("rolePermissions"); }
-            set { BackingStore?.Set("rolePermissions", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.UnifiedRolePermission> RolePermissions
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.UnifiedRolePermission>>("rolePermissions"); }
-            set { BackingStore?.Set("rolePermissions", value); }
-        }
-#endif
-        /// <summary>Custom template identifier that can be set when isBuiltIn is false but is read-only when isBuiltIn is true. This identifier is typically used if one needs an identifier to be the same across different directories.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TemplateId
-        {
-            get { return BackingStore?.Get<string?>("templateId"); }
-            set { BackingStore?.Set("templateId", value); }
-        }
-#nullable restore
-#else
-        public string TemplateId
-        {
-            get { return BackingStore?.Get<string>("templateId"); }
-            set { BackingStore?.Set("templateId", value); }
-        }
-#endif
-        /// <summary>Indicates version of the role definition. Read-only when isBuiltIn is true.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Version
-        {
-            get { return BackingStore?.Get<string?>("version"); }
-            set { BackingStore?.Set("version", value); }
-        }
-#nullable restore
-#else
-        public string Version
-        {
-            get { return BackingStore?.Get<string>("version"); }
-            set { BackingStore?.Set("version", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -154,15 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "inheritsPermissionsFrom", n => { InheritsPermissionsFrom = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.UnifiedRoleDefinition>(global::Microsoft.Graph.Models.UnifiedRoleDefinition.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "isBuiltIn", n => { IsBuiltIn = n.GetBoolValue(); } },
-                { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
-                { "resourceScopes", n => { ResourceScopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "rolePermissions", n => { RolePermissions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.UnifiedRolePermission>(global::Microsoft.Graph.Models.UnifiedRolePermission.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "templateId", n => { TemplateId = n.GetStringValue(); } },
-                { "version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -173,15 +40,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("description", Description);
-            writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.UnifiedRoleDefinition>("inheritsPermissionsFrom", InheritsPermissionsFrom);
-            writer.WriteBoolValue("isBuiltIn", IsBuiltIn);
-            writer.WriteBoolValue("isEnabled", IsEnabled);
-            writer.WriteCollectionOfPrimitiveValues<string>("resourceScopes", ResourceScopes);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.UnifiedRolePermission>("rolePermissions", RolePermissions);
-            writer.WriteStringValue("templateId", TemplateId);
-            writer.WriteStringValue("version", Version);
         }
     }
 }

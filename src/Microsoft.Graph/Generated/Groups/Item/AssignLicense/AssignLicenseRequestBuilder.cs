@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Groups.Item.AssignLicense
         }
         /// <summary>
         /// Add or remove licenses on a group. Licenses assigned to the group will be assigned to all users in the group. Group-based licensing is an alternative to direct user licensing. To learn more about group-based licensing, see What is group-based licensing in Microsoft Entra ID. To get the subscriptions available in the directory, perform a GET subscribedSkus request.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-assignlicense?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Group"/></returns>
         /// <param name="body">The request body</param>

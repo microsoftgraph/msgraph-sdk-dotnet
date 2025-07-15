@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetYammerDeviceUsageUserCountsWithPeriod
         }
         /// <summary>
         /// Get the number of daily users by device type.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getyammerdeviceusageusercounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

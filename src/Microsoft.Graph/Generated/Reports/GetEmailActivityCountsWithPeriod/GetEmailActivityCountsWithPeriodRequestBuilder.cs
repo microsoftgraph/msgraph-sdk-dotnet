@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetEmailActivityCountsWithPeriod
         }
         /// <summary>
         /// Enables you to understand the trends of email activity (like how many were sent, read, and received) in your organization.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getemailactivitycounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

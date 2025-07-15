@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Domains.Item.Promote
         }
         /// <summary>
         /// Promote a verified subdomain to the root domain. A verified domain has its isVerified property set to true.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/domain-promote?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Domains.Item.Promote.PromotePostResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +58,6 @@ namespace Microsoft.Graph.Domains.Item.Promote
         }
         /// <summary>
         /// Promote a verified subdomain to the root domain. A verified domain has its isVerified property set to true.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/domain-promote?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Domains.Item.Promote.PromoteResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

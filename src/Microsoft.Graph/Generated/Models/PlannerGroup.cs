@@ -12,22 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class PlannerGroup : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Read-only. Nullable. Returns the plannerPlans owned by the group.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.PlannerPlan>? Plans
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.PlannerPlan>?>("plans"); }
-            set { BackingStore?.Set("plans", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.PlannerPlan> Plans
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.PlannerPlan>>("plans"); }
-            set { BackingStore?.Set("plans", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -46,7 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "plans", n => { Plans = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.PlannerPlan>(global::Microsoft.Graph.Models.PlannerPlan.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +40,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.PlannerPlan>("plans", Plans);
         }
     }
 }

@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Communications.Calls.Item.Mute
         }
         /// <summary>
         /// Allows the application to mute itself. This is a server mute, meaning that the server will drop all audio packets for this participant, even if the participant continues to stream audio. For more details about how to handle mute operations, see muteParticipantOperation
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/call-mute?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.MuteParticipantOperation"/></returns>
         /// <param name="body">The request body</param>

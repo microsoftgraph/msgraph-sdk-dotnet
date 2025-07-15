@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Delta
         }
         /// <summary>
         /// Get a set of todoTask resources that have been added, deleted, or updated in a specified todoTaskList. A delta function call for todoTask resources in a todoTaskList is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the todoTask in that todoTaskList. This allows you to maintain and synchronize a local store of a user&apos;s todoTask resources without having to fetch the entire set from the server every time.  
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/todotask-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Delta.DeltaGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +58,6 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Delta
         }
         /// <summary>
         /// Get a set of todoTask resources that have been added, deleted, or updated in a specified todoTaskList. A delta function call for todoTask resources in a todoTaskList is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the todoTask in that todoTaskList. This allows you to maintain and synchronize a local store of a user&apos;s todoTask resources without having to fetch the entire set from the server every time.  
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/todotask-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Delta.DeltaResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -171,10 +169,10 @@ namespace Microsoft.Graph.Users.Item.Todo.Lists.Item.Tasks.Delta
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

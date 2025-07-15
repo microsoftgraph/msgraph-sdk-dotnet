@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Groups.Item.Team.Channels.Item.RemoveEmail
         }
         /// <summary>
         /// Remove the email address of a channel. You can remove an email address only if it was provisioned using the provisionEmail method or through the Microsoft Teams client.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-removeemail?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

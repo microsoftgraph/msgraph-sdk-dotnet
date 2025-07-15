@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetMailboxUsageStorageWithPeriod
         }
         /// <summary>
         /// Get the amount of storage used in your organization.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getmailboxusagestorage?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

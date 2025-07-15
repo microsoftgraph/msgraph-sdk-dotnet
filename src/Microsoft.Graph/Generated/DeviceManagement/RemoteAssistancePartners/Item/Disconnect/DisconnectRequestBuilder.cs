@@ -35,7 +35,6 @@ namespace Microsoft.Graph.DeviceManagement.RemoteAssistancePartners.Item.Disconn
         }
         /// <summary>
         /// A request to remove the active TeamViewer connector
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-disconnect?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

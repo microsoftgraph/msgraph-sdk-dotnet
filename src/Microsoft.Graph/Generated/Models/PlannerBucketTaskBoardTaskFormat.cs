@@ -12,22 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class PlannerBucketTaskBoardTaskFormat : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Hint used to order tasks in the bucket view of the task board. For details about the supported format, see Using order hints in Planner.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OrderHint
-        {
-            get { return BackingStore?.Get<string?>("orderHint"); }
-            set { BackingStore?.Set("orderHint", value); }
-        }
-#nullable restore
-#else
-        public string OrderHint
-        {
-            get { return BackingStore?.Get<string>("orderHint"); }
-            set { BackingStore?.Set("orderHint", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -46,7 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "orderHint", n => { OrderHint = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +40,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("orderHint", OrderHint);
         }
     }
 }

@@ -35,7 +35,6 @@ namespace Microsoft.Graph.GroupLifecyclePolicies.Item.RemoveGroup
         }
         /// <summary>
         /// Removes a group from a lifecycle policy.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/grouplifecyclepolicy-removegroup?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.GroupLifecyclePolicies.Item.RemoveGroup.RemoveGroupPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +60,6 @@ namespace Microsoft.Graph.GroupLifecyclePolicies.Item.RemoveGroup
         }
         /// <summary>
         /// Removes a group from a lifecycle policy.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/grouplifecyclepolicy-removegroup?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.GroupLifecyclePolicies.Item.RemoveGroup.RemoveGroupResponse"/></returns>
         /// <param name="body">The request body</param>

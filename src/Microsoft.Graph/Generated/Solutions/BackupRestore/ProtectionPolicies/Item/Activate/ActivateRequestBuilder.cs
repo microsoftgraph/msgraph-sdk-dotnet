@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Solutions.BackupRestore.ProtectionPolicies.Item.Activa
         }
         /// <summary>
         /// Activate a protectionPolicyBase. Currently, only one active backup policy per underlying service is supported (that is, one for OneDrive accounts, one for SharePoint sites, and one for Exchange Online users). You can add or remove artifacts (sites or user accounts) to or from each active policy.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/protectionpolicybase-activate?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ProtectionPolicyBase"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

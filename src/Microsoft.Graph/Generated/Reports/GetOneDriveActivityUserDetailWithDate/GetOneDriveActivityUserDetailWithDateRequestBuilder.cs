@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetOneDriveActivityUserDetailWithDate
         }
         /// <summary>
         /// Get details about OneDrive activity by user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getonedriveactivityuserdetail?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

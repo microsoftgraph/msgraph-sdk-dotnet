@@ -12,61 +12,6 @@ namespace Microsoft.Graph.Models.Security
     public partial class ContainerImageEvidence : global::Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The digest image entity, in case this is a tag image.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.Security.ContainerImageEvidence? DigestImage
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.ContainerImageEvidence?>("digestImage"); }
-            set { BackingStore?.Set("digestImage", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.Security.ContainerImageEvidence DigestImage
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.ContainerImageEvidence>("digestImage"); }
-            set { BackingStore?.Set("digestImage", value); }
-        }
-#endif
-        /// <summary>The unique identifier for the container image entity.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ImageId
-        {
-            get { return BackingStore?.Get<string?>("imageId"); }
-            set { BackingStore?.Set("imageId", value); }
-        }
-#nullable restore
-#else
-        public string ImageId
-        {
-            get { return BackingStore?.Get<string>("imageId"); }
-            set { BackingStore?.Set("imageId", value); }
-        }
-#endif
-        /// <summary>The container registry for this image.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.Security.ContainerRegistryEvidence? Registry
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.ContainerRegistryEvidence?>("registry"); }
-            set { BackingStore?.Set("registry", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.Security.ContainerRegistryEvidence Registry
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.ContainerRegistryEvidence>("registry"); }
-            set { BackingStore?.Set("registry", value); }
-        }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Models.Security.ContainerImageEvidence"/> and sets the default values.
-        /// </summary>
-        public ContainerImageEvidence() : base()
-        {
-            OdataType = "#microsoft.graph.security.containerImageEvidence";
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -85,9 +30,6 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "digestImage", n => { DigestImage = n.GetObjectValue<global::Microsoft.Graph.Models.Security.ContainerImageEvidence>(global::Microsoft.Graph.Models.Security.ContainerImageEvidence.CreateFromDiscriminatorValue); } },
-                { "imageId", n => { ImageId = n.GetStringValue(); } },
-                { "registry", n => { Registry = n.GetObjectValue<global::Microsoft.Graph.Models.Security.ContainerRegistryEvidence>(global::Microsoft.Graph.Models.Security.ContainerRegistryEvidence.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -98,9 +40,6 @@ namespace Microsoft.Graph.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.ContainerImageEvidence>("digestImage", DigestImage);
-            writer.WriteStringValue("imageId", ImageId);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.ContainerRegistryEvidence>("registry", Registry);
         }
     }
 }

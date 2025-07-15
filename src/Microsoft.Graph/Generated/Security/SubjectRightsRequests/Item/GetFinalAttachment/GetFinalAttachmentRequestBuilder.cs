@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Security.SubjectRightsRequests.Item.GetFinalAttachment
         }
         /// <summary>
         /// Get the final attachment for a subject rights request. The attachment is a zip file that contains all the files that were included by the privacy administrator.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/subjectrightsrequest-getfinalattachment?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

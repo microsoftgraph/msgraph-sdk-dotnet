@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unfavorite
         }
         /// <summary>
         /// Remove the favorite status of serviceUpdateMessages for the signed in user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceupdatemessage-unfavorite?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unfavorite.UnfavoritePostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +60,6 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unfavorite
         }
         /// <summary>
         /// Remove the favorite status of serviceUpdateMessages for the signed in user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceupdatemessage-unfavorite?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Unfavorite.UnfavoriteResponse"/></returns>
         /// <param name="body">The request body</param>

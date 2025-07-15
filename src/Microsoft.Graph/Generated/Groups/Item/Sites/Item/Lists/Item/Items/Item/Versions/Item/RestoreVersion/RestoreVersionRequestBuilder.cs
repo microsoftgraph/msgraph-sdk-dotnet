@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Versions.
         }
         /// <summary>
         /// Restore a previous version of a ListItem to be the current version. This will create a new version with the contents of the previous version, but preserves all existing versions of the item.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/listitemversion-restore?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

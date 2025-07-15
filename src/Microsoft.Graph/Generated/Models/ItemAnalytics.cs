@@ -12,54 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class ItemAnalytics : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The allTime property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.ItemActivityStat? AllTime
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ItemActivityStat?>("allTime"); }
-            set { BackingStore?.Set("allTime", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.ItemActivityStat AllTime
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ItemActivityStat>("allTime"); }
-            set { BackingStore?.Set("allTime", value); }
-        }
-#endif
-        /// <summary>The itemActivityStats property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.ItemActivityStat>? ItemActivityStats
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.ItemActivityStat>?>("itemActivityStats"); }
-            set { BackingStore?.Set("itemActivityStats", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.ItemActivityStat> ItemActivityStats
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.ItemActivityStat>>("itemActivityStats"); }
-            set { BackingStore?.Set("itemActivityStats", value); }
-        }
-#endif
-        /// <summary>The lastSevenDays property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.ItemActivityStat? LastSevenDays
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ItemActivityStat?>("lastSevenDays"); }
-            set { BackingStore?.Set("lastSevenDays", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.ItemActivityStat LastSevenDays
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ItemActivityStat>("lastSevenDays"); }
-            set { BackingStore?.Set("lastSevenDays", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -78,9 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "allTime", n => { AllTime = n.GetObjectValue<global::Microsoft.Graph.Models.ItemActivityStat>(global::Microsoft.Graph.Models.ItemActivityStat.CreateFromDiscriminatorValue); } },
-                { "itemActivityStats", n => { ItemActivityStats = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ItemActivityStat>(global::Microsoft.Graph.Models.ItemActivityStat.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "lastSevenDays", n => { LastSevenDays = n.GetObjectValue<global::Microsoft.Graph.Models.ItemActivityStat>(global::Microsoft.Graph.Models.ItemActivityStat.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -91,9 +40,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.ItemActivityStat>("allTime", AllTime);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ItemActivityStat>("itemActivityStats", ItemActivityStats);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.ItemActivityStat>("lastSevenDays", LastSevenDays);
         }
     }
 }

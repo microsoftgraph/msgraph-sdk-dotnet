@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Me.Calendar.CalendarView.Delta
         }
         /// <summary>
         /// Get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user&apos;s primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Me.Calendar.CalendarView.Delta.DeltaGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +58,6 @@ namespace Microsoft.Graph.Me.Calendar.CalendarView.Delta
         }
         /// <summary>
         /// Get a set of event resources that have been added, deleted, or updated in a calendarView (a range of events defined by start and end dates) of the user&apos;s primary calendar. Typically, synchronizing events in a calendarView in a local store entails a round of multiple delta function calls. The initial call is a full synchronization, and every subsequent delta call in the same round gets the incremental changes (additions, deletions, or updates). This allows you to maintain and synchronize a local store of events in the specified calendarView, without having to fetch all the events of that calendar from the server every time.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/event-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Me.Calendar.CalendarView.Delta.DeltaResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -181,7 +179,7 @@ namespace Microsoft.Graph.Me.Calendar.CalendarView.Delta
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>The start date and time of the time range in the function, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -194,7 +192,7 @@ namespace Microsoft.Graph.Me.Calendar.CalendarView.Delta
 #endif
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

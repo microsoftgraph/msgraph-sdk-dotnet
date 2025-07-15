@@ -12,40 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class RestorePoint : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Expiration date time of the restore point.</summary>
-        public DateTimeOffset? ExpirationDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
-            set { BackingStore?.Set("expirationDateTime", value); }
-        }
-        /// <summary>Date time when the restore point was created.</summary>
-        public DateTimeOffset? ProtectionDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("protectionDateTime"); }
-            set { BackingStore?.Set("protectionDateTime", value); }
-        }
-        /// <summary>The site, drive, or mailbox units that are protected under a protection policy.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.ProtectionUnitBase? ProtectionUnit
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ProtectionUnitBase?>("protectionUnit"); }
-            set { BackingStore?.Set("protectionUnit", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.ProtectionUnitBase ProtectionUnit
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ProtectionUnitBase>("protectionUnit"); }
-            set { BackingStore?.Set("protectionUnit", value); }
-        }
-#endif
-        /// <summary>The type of the restore point. The possible values are: none, fastRestore, unknownFutureValue.</summary>
-        public global::Microsoft.Graph.Models.RestorePointTags? Tags
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.RestorePointTags?>("tags"); }
-            set { BackingStore?.Set("tags", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,10 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                { "protectionDateTime", n => { ProtectionDateTime = n.GetDateTimeOffsetValue(); } },
-                { "protectionUnit", n => { ProtectionUnit = n.GetObjectValue<global::Microsoft.Graph.Models.ProtectionUnitBase>(global::Microsoft.Graph.Models.ProtectionUnitBase.CreateFromDiscriminatorValue); } },
-                { "tags", n => { Tags = n.GetEnumValue<global::Microsoft.Graph.Models.RestorePointTags>(); } },
             };
         }
         /// <summary>
@@ -78,10 +40,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
-            writer.WriteDateTimeOffsetValue("protectionDateTime", ProtectionDateTime);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.ProtectionUnitBase>("protectionUnit", ProtectionUnit);
-            writer.WriteEnumValue<global::Microsoft.Graph.Models.RestorePointTags>("tags", Tags);
         }
     }
 }

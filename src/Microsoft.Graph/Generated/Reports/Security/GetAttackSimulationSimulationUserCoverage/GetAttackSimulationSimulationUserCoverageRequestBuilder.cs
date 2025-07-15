@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Reports.Security.GetAttackSimulationSimulationUserCove
         }
         /// <summary>
         /// List training coverage for each tenant user in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/securityreportsroot-getattacksimulationsimulationusercoverage?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Reports.Security.GetAttackSimulationSimulationUserCoverage.GetAttackSimulationSimulationUserCoverageGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +58,6 @@ namespace Microsoft.Graph.Reports.Security.GetAttackSimulationSimulationUserCove
         }
         /// <summary>
         /// List training coverage for each tenant user in attack simulation and training campaigns. This function supports @odata.nextLink for pagination.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/securityreportsroot-getattacksimulationsimulationusercoverage?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Reports.Security.GetAttackSimulationSimulationUserCoverage.GetAttackSimulationSimulationUserCoverageResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -141,10 +139,10 @@ namespace Microsoft.Graph.Reports.Security.GetAttackSimulationSimulationUserCove
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

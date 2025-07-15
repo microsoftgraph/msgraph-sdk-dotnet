@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Reports.AuthenticationMethods.UsersRegisteredByMethod
         }
         /// <summary>
         /// Get the number of users registered for each authentication method.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationmethodsroot-usersregisteredbymethod?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.UserRegistrationMethodSummary"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Contracts.GetAvailableExtensionProperties
         }
         /// <summary>
         /// Return all directory extension definitions that are registered in a directory, including through multitenant apps. The following entities support extension properties:
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Contracts.GetAvailableExtensionProperties.GetAvailableExtensionPropertiesPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +60,6 @@ namespace Microsoft.Graph.Contracts.GetAvailableExtensionProperties
         }
         /// <summary>
         /// Return all directory extension definitions that are registered in a directory, including through multitenant apps. The following entities support extension properties:
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryobject-getavailableextensionproperties?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Contracts.GetAvailableExtensionProperties.GetAvailableExtensionPropertiesResponse"/></returns>
         /// <param name="body">The request body</param>

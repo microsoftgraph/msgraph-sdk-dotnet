@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Identity.B2xUserFlows.Item.UserAttributeAssignments.Se
         }
         /// <summary>
         /// Set the order of identityUserFlowAttributeAssignments being collected within a user flow.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identityuserflowattributeassignment-setorder?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

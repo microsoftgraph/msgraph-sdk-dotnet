@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Groups.Item.Threads.Item.Posts.Item.Forward
         }
         /// <summary>
         /// Forward a post to a recipient. You can specify both the parent conversation and thread in the request, or, you can specify just the parent thread without the parent conversation. 
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/post-forward?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

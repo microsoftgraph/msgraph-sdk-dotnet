@@ -35,7 +35,6 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AssignmentReq
         }
         /// <summary>
         /// Resume a user&apos;s access package request after waiting for a callback from a custom extension. In Microsoft Entra entitlement management, when an access package policy has been enabled to call out a custom extension and the request processing is waiting for the callback from the customer, the customer can initiate a resume action. It&apos;s performed on an accessPackageAssignmentRequest object whose requestStatus is in a WaitingForCallback state.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackageassignmentrequest-resume?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

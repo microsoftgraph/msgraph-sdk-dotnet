@@ -12,54 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class Synchronization : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.SynchronizationJob>? Jobs
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.SynchronizationJob>?>("jobs"); }
-            set { BackingStore?.Set("jobs", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.SynchronizationJob> Jobs
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.SynchronizationJob>>("jobs"); }
-            set { BackingStore?.Set("jobs", value); }
-        }
-#endif
-        /// <summary>Represents a collection of credentials to access provisioned cloud applications.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.SynchronizationSecretKeyStringValuePair>? Secrets
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.SynchronizationSecretKeyStringValuePair>?>("secrets"); }
-            set { BackingStore?.Set("secrets", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.SynchronizationSecretKeyStringValuePair> Secrets
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.SynchronizationSecretKeyStringValuePair>>("secrets"); }
-            set { BackingStore?.Set("secrets", value); }
-        }
-#endif
-        /// <summary>Preconfigured synchronization settings for a particular application.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.SynchronizationTemplate>? Templates
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.SynchronizationTemplate>?>("templates"); }
-            set { BackingStore?.Set("templates", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.SynchronizationTemplate> Templates
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.SynchronizationTemplate>>("templates"); }
-            set { BackingStore?.Set("templates", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -78,9 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "jobs", n => { Jobs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.SynchronizationJob>(global::Microsoft.Graph.Models.SynchronizationJob.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "secrets", n => { Secrets = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.SynchronizationSecretKeyStringValuePair>(global::Microsoft.Graph.Models.SynchronizationSecretKeyStringValuePair.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "templates", n => { Templates = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.SynchronizationTemplate>(global::Microsoft.Graph.Models.SynchronizationTemplate.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -91,9 +40,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.SynchronizationJob>("jobs", Jobs);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.SynchronizationSecretKeyStringValuePair>("secrets", Secrets);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.SynchronizationTemplate>("templates", Templates);
         }
     }
 }

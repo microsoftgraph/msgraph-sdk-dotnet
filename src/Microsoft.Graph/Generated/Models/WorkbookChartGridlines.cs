@@ -12,28 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class WorkbookChartGridlines : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Represents the formatting of chart gridlines. Read-only.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.WorkbookChartGridlinesFormat? Format
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.WorkbookChartGridlinesFormat?>("format"); }
-            set { BackingStore?.Set("format", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.WorkbookChartGridlinesFormat Format
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.WorkbookChartGridlinesFormat>("format"); }
-            set { BackingStore?.Set("format", value); }
-        }
-#endif
-        /// <summary>Indicates whether the axis gridlines are visible.</summary>
-        public bool? Visible
-        {
-            get { return BackingStore?.Get<bool?>("visible"); }
-            set { BackingStore?.Set("visible", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -52,8 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "format", n => { Format = n.GetObjectValue<global::Microsoft.Graph.Models.WorkbookChartGridlinesFormat>(global::Microsoft.Graph.Models.WorkbookChartGridlinesFormat.CreateFromDiscriminatorValue); } },
-                { "visible", n => { Visible = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -64,8 +40,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.WorkbookChartGridlinesFormat>("format", Format);
-            writer.WriteBoolValue("visible", Visible);
         }
     }
 }

@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Groups.Item.Team.Schedule.TimeCards.ClockIn
         }
         /// <summary>
         /// Clock in to start a timeCard.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/timecard-clockin?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.TimeCard"/></returns>
         /// <param name="body">The request body</param>

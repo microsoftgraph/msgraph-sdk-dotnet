@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.Publish
         }
         /// <summary>
         /// Make the scheduling page of a business available to external customers. Set the isPublished property to true, and the publicUrl property to the URL of the scheduling page.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingbusiness-publish?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

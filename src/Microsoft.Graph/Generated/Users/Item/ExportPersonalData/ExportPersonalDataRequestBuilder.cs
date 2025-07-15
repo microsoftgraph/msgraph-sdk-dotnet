@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Users.Item.ExportPersonalData
         }
         /// <summary>
         /// Submit a data policy operation request from a company administrator or an application to export an organizational user&apos;s data. This data includes the user&apos;s data stored in OneDrive and their activity reports. For more information about exporting data while complying with regulations, see Data Subject Requests and the GDPR and CCPA.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-exportpersonaldata?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

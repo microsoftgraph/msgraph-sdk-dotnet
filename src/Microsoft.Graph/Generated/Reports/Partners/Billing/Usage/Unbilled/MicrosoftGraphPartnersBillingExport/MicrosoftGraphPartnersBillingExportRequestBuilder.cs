@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Reports.Partners.Billing.Usage.Unbilled.MicrosoftGraph
         }
         /// <summary>
         /// Export unbilled Azure usage data for a specific billing period and currency.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/partners-billing-unbilledusage-export?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Partners.Billing.Operation"/></returns>
         /// <param name="body">The request body</param>

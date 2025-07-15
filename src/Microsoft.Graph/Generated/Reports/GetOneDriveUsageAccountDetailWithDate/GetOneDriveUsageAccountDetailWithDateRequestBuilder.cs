@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetOneDriveUsageAccountDetailWithDate
         }
         /// <summary>
         /// Get details about OneDrive usage by account.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getonedriveusageaccountdetail?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

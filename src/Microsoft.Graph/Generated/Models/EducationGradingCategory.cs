@@ -12,28 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class EducationGradingCategory : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The name of the grading category.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DisplayName
-        {
-            get { return BackingStore?.Get<string?>("displayName"); }
-            set { BackingStore?.Set("displayName", value); }
-        }
-#nullable restore
-#else
-        public string DisplayName
-        {
-            get { return BackingStore?.Get<string>("displayName"); }
-            set { BackingStore?.Set("displayName", value); }
-        }
-#endif
-        /// <summary>The weight of the category; an integer between 0 and 100.</summary>
-        public int? PercentageWeight
-        {
-            get { return BackingStore?.Get<int?>("percentageWeight"); }
-            set { BackingStore?.Set("percentageWeight", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -52,8 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "percentageWeight", n => { PercentageWeight = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -64,8 +40,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteIntValue("percentageWeight", PercentageWeight);
         }
     }
 }

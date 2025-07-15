@@ -40,7 +40,6 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Insights.Microso
         }
         /// <summary>
         /// Provide a summary of workflows processed, by category, in a tenant. This allows you to quickly get category information, by numerical value, bypassing other information found in the WorkflowsProcessedSummary call.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-insights-workflowsprocessedbycategory?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.IdentityGovernance.WorkflowsInsightsByCategory"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

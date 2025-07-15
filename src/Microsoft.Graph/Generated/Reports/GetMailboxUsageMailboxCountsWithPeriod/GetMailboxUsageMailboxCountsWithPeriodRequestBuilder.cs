@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetMailboxUsageMailboxCountsWithPeriod
         }
         /// <summary>
         /// Get the total number of user mailboxes in your organization and how many are active each day of the reporting period. A mailbox is considered active if the user sent or read any email.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getmailboxusagemailboxcounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

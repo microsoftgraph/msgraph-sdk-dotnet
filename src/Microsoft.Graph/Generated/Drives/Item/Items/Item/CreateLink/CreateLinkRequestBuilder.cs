@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.CreateLink
         }
         /// <summary>
         /// Create a link to share a driveItem driveItem. The createLink action creates a new sharing link if the specified link type doesn&apos;t already exist for the calling application.If a sharing link of the specified type already exists for the app, the existing sharing link is returned. DriveItem resources inherit sharing permissions from their ancestors.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-createlink?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Permission"/></returns>
         /// <param name="body">The request body</param>

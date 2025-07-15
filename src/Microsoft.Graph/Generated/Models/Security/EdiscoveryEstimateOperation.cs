@@ -12,64 +12,6 @@ namespace Microsoft.Graph.Models.Security
     public partial class EdiscoveryEstimateOperation : global::Microsoft.Graph.Models.Security.CaseOperation, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The estimated count of items for the search that matched the content query.</summary>
-        public long? IndexedItemCount
-        {
-            get { return BackingStore?.Get<long?>("indexedItemCount"); }
-            set { BackingStore?.Set("indexedItemCount", value); }
-        }
-        /// <summary>The estimated size of items for the search that matched the content query.</summary>
-        public long? IndexedItemsSize
-        {
-            get { return BackingStore?.Get<long?>("indexedItemsSize"); }
-            set { BackingStore?.Set("indexedItemsSize", value); }
-        }
-        /// <summary>The number of mailboxes that had search hits.</summary>
-        public int? MailboxCount
-        {
-            get { return BackingStore?.Get<int?>("mailboxCount"); }
-            set { BackingStore?.Set("mailboxCount", value); }
-        }
-        /// <summary>eDiscovery search.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.Security.EdiscoverySearch? Search
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.EdiscoverySearch?>("search"); }
-            set { BackingStore?.Set("search", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.Security.EdiscoverySearch Search
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.EdiscoverySearch>("search"); }
-            set { BackingStore?.Set("search", value); }
-        }
-#endif
-        /// <summary>The number of mailboxes that had search hits.</summary>
-        public int? SiteCount
-        {
-            get { return BackingStore?.Get<int?>("siteCount"); }
-            set { BackingStore?.Set("siteCount", value); }
-        }
-        /// <summary>The statisticsOptions property</summary>
-        public global::Microsoft.Graph.Models.Security.StatisticsOptions? StatisticsOptions
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.StatisticsOptions?>("statisticsOptions"); }
-            set { BackingStore?.Set("statisticsOptions", value); }
-        }
-        /// <summary>The estimated count of unindexed items for the collection.</summary>
-        public long? UnindexedItemCount
-        {
-            get { return BackingStore?.Get<long?>("unindexedItemCount"); }
-            set { BackingStore?.Set("unindexedItemCount", value); }
-        }
-        /// <summary>The estimated size of unindexed items for the collection.</summary>
-        public long? UnindexedItemsSize
-        {
-            get { return BackingStore?.Get<long?>("unindexedItemsSize"); }
-            set { BackingStore?.Set("unindexedItemsSize", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -88,14 +30,6 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "indexedItemCount", n => { IndexedItemCount = n.GetLongValue(); } },
-                { "indexedItemsSize", n => { IndexedItemsSize = n.GetLongValue(); } },
-                { "mailboxCount", n => { MailboxCount = n.GetIntValue(); } },
-                { "search", n => { Search = n.GetObjectValue<global::Microsoft.Graph.Models.Security.EdiscoverySearch>(global::Microsoft.Graph.Models.Security.EdiscoverySearch.CreateFromDiscriminatorValue); } },
-                { "siteCount", n => { SiteCount = n.GetIntValue(); } },
-                { "statisticsOptions", n => { StatisticsOptions = n.GetEnumValue<global::Microsoft.Graph.Models.Security.StatisticsOptions>(); } },
-                { "unindexedItemCount", n => { UnindexedItemCount = n.GetLongValue(); } },
-                { "unindexedItemsSize", n => { UnindexedItemsSize = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -106,14 +40,6 @@ namespace Microsoft.Graph.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteLongValue("indexedItemCount", IndexedItemCount);
-            writer.WriteLongValue("indexedItemsSize", IndexedItemsSize);
-            writer.WriteIntValue("mailboxCount", MailboxCount);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.EdiscoverySearch>("search", Search);
-            writer.WriteIntValue("siteCount", SiteCount);
-            writer.WriteEnumValue<global::Microsoft.Graph.Models.Security.StatisticsOptions>("statisticsOptions", StatisticsOptions);
-            writer.WriteLongValue("unindexedItemCount", UnindexedItemCount);
-            writer.WriteLongValue("unindexedItemsSize", UnindexedItemsSize);
         }
     }
 }

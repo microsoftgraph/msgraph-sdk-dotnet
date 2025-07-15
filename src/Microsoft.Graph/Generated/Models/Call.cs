@@ -245,16 +245,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The list of requested modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Graph.Models.Modality?>? RequestedModalities
+        public List<string>? RequestedModalities
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Modality?>?>("requestedModalities"); }
+            get { return BackingStore?.Get<List<string>?>("requestedModalities"); }
             set { BackingStore?.Set("requestedModalities", value); }
         }
 #nullable restore
 #else
-        public List<global::Microsoft.Graph.Models.Modality?> RequestedModalities
+        public List<string> RequestedModalities
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Modality?>>("requestedModalities"); }
+            get { return BackingStore?.Get<List<string>>("requestedModalities"); }
             set { BackingStore?.Set("requestedModalities", value); }
         }
 #endif
@@ -409,7 +409,7 @@ namespace Microsoft.Graph.Models
                 { "myParticipantId", n => { MyParticipantId = n.GetStringValue(); } },
                 { "operations", n => { Operations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.CommsOperation>(global::Microsoft.Graph.Models.CommsOperation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "participants", n => { Participants = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Participant>(global::Microsoft.Graph.Models.Participant.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "requestedModalities", n => { RequestedModalities = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Models.Modality>()?.AsList(); } },
+                { "requestedModalities", n => { RequestedModalities = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "resultInfo", n => { ResultInfo = n.GetObjectValue<global::Microsoft.Graph.Models.ResultInfo>(global::Microsoft.Graph.Models.ResultInfo.CreateFromDiscriminatorValue); } },
                 { "source", n => { Source = n.GetObjectValue<global::Microsoft.Graph.Models.ParticipantInfo>(global::Microsoft.Graph.Models.ParticipantInfo.CreateFromDiscriminatorValue); } },
                 { "state", n => { State = n.GetEnumValue<global::Microsoft.Graph.Models.CallState>(); } },
@@ -443,7 +443,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("myParticipantId", MyParticipantId);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.CommsOperation>("operations", Operations);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Participant>("participants", Participants);
-            writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Models.Modality>("requestedModalities", RequestedModalities);
+            writer.WriteCollectionOfPrimitiveValues<string>("requestedModalities", RequestedModalities);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ResultInfo>("resultInfo", ResultInfo);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ParticipantInfo>("source", Source);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.CallState>("state", State);

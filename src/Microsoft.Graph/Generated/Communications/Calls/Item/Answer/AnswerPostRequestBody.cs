@@ -17,16 +17,16 @@ namespace Microsoft.Graph.Communications.Calls.Item.Answer
         /// <summary>The acceptedModalities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Graph.Models.Modality?>? AcceptedModalities
+        public List<string>? AcceptedModalities
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Modality?>?>("acceptedModalities"); }
+            get { return BackingStore?.Get<List<string>?>("acceptedModalities"); }
             set { BackingStore?.Set("acceptedModalities", value); }
         }
 #nullable restore
 #else
-        public List<global::Microsoft.Graph.Models.Modality?> AcceptedModalities
+        public List<string> AcceptedModalities
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Modality?>>("acceptedModalities"); }
+            get { return BackingStore?.Get<List<string>>("acceptedModalities"); }
             set { BackingStore?.Set("acceptedModalities", value); }
         }
 #endif
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.Answer
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "acceptedModalities", n => { AcceptedModalities = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Models.Modality>()?.AsList(); } },
+                { "acceptedModalities", n => { AcceptedModalities = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "callOptions", n => { CallOptions = n.GetObjectValue<global::Microsoft.Graph.Models.IncomingCallOptions>(global::Microsoft.Graph.Models.IncomingCallOptions.CreateFromDiscriminatorValue); } },
                 { "callbackUri", n => { CallbackUri = n.GetStringValue(); } },
                 { "mediaConfig", n => { MediaConfig = n.GetObjectValue<global::Microsoft.Graph.Models.MediaConfig>(global::Microsoft.Graph.Models.MediaConfig.CreateFromDiscriminatorValue); } },
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Communications.Calls.Item.Answer
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Models.Modality>("acceptedModalities", AcceptedModalities);
+            writer.WriteCollectionOfPrimitiveValues<string>("acceptedModalities", AcceptedModalities);
             writer.WriteStringValue("callbackUri", CallbackUri);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.IncomingCallOptions>("callOptions", CallOptions);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.MediaConfig>("mediaConfig", MediaConfig);

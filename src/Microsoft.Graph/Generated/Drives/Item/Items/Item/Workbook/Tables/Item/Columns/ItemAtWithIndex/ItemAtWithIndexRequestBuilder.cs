@@ -68,7 +68,6 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.It
         }
         /// <summary>
         /// Gets a column based on its position in the collection.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tablecolumncollection-itemat?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.WorkbookTableColumn"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

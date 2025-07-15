@@ -12,133 +12,6 @@ namespace Microsoft.Graph.Models.Security
     public partial class SslCertificate : global::Microsoft.Graph.Models.Security.Artifact, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The date and time when a certificate expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? ExpirationDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
-            set { BackingStore?.Set("expirationDateTime", value); }
-        }
-        /// <summary>A hash of the certificate calculated on the data and signature.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Fingerprint
-        {
-            get { return BackingStore?.Get<string?>("fingerprint"); }
-            set { BackingStore?.Set("fingerprint", value); }
-        }
-#nullable restore
-#else
-        public string Fingerprint
-        {
-            get { return BackingStore?.Get<string>("fingerprint"); }
-            set { BackingStore?.Set("fingerprint", value); }
-        }
-#endif
-        /// <summary>The first date and time when this sslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? FirstSeenDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("firstSeenDateTime"); }
-            set { BackingStore?.Set("firstSeenDateTime", value); }
-        }
-        /// <summary>The date and time when a certificate was issued. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? IssueDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("issueDateTime"); }
-            set { BackingStore?.Set("issueDateTime", value); }
-        }
-        /// <summary>The entity that grants this certificate.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.Security.SslCertificateEntity? Issuer
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.SslCertificateEntity?>("issuer"); }
-            set { BackingStore?.Set("issuer", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.Security.SslCertificateEntity Issuer
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.SslCertificateEntity>("issuer"); }
-            set { BackingStore?.Set("issuer", value); }
-        }
-#endif
-        /// <summary>The most recent date and time when this sslCertificate was observed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? LastSeenDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("lastSeenDateTime"); }
-            set { BackingStore?.Set("lastSeenDateTime", value); }
-        }
-        /// <summary>The host resources related with this sslCertificate.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.Security.Host>? RelatedHosts
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Security.Host>?>("relatedHosts"); }
-            set { BackingStore?.Set("relatedHosts", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.Security.Host> RelatedHosts
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Security.Host>>("relatedHosts"); }
-            set { BackingStore?.Set("relatedHosts", value); }
-        }
-#endif
-        /// <summary>The serial number associated with an SSL certificate.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SerialNumber
-        {
-            get { return BackingStore?.Get<string?>("serialNumber"); }
-            set { BackingStore?.Set("serialNumber", value); }
-        }
-#nullable restore
-#else
-        public string SerialNumber
-        {
-            get { return BackingStore?.Get<string>("serialNumber"); }
-            set { BackingStore?.Set("serialNumber", value); }
-        }
-#endif
-        /// <summary>A SHA-1 hash of the certificate. Note: This is not the signature.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Sha1
-        {
-            get { return BackingStore?.Get<string?>("sha1"); }
-            set { BackingStore?.Set("sha1", value); }
-        }
-#nullable restore
-#else
-        public string Sha1
-        {
-            get { return BackingStore?.Get<string>("sha1"); }
-            set { BackingStore?.Set("sha1", value); }
-        }
-#endif
-        /// <summary>The person, site, machine, and so on, this certificate is for.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.Security.SslCertificateEntity? Subject
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.SslCertificateEntity?>("subject"); }
-            set { BackingStore?.Set("subject", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.Security.SslCertificateEntity Subject
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.SslCertificateEntity>("subject"); }
-            set { BackingStore?.Set("subject", value); }
-        }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Models.Security.SslCertificate"/> and sets the default values.
-        /// </summary>
-        public SslCertificate() : base()
-        {
-            OdataType = "#microsoft.graph.security.sslCertificate";
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -157,16 +30,6 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                { "fingerprint", n => { Fingerprint = n.GetStringValue(); } },
-                { "firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                { "issueDateTime", n => { IssueDateTime = n.GetDateTimeOffsetValue(); } },
-                { "issuer", n => { Issuer = n.GetObjectValue<global::Microsoft.Graph.Models.Security.SslCertificateEntity>(global::Microsoft.Graph.Models.Security.SslCertificateEntity.CreateFromDiscriminatorValue); } },
-                { "lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                { "relatedHosts", n => { RelatedHosts = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.Host>(global::Microsoft.Graph.Models.Security.Host.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "serialNumber", n => { SerialNumber = n.GetStringValue(); } },
-                { "sha1", n => { Sha1 = n.GetStringValue(); } },
-                { "subject", n => { Subject = n.GetObjectValue<global::Microsoft.Graph.Models.Security.SslCertificateEntity>(global::Microsoft.Graph.Models.Security.SslCertificateEntity.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -177,16 +40,6 @@ namespace Microsoft.Graph.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
-            writer.WriteStringValue("fingerprint", Fingerprint);
-            writer.WriteDateTimeOffsetValue("firstSeenDateTime", FirstSeenDateTime);
-            writer.WriteDateTimeOffsetValue("issueDateTime", IssueDateTime);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.SslCertificateEntity>("issuer", Issuer);
-            writer.WriteDateTimeOffsetValue("lastSeenDateTime", LastSeenDateTime);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.Host>("relatedHosts", RelatedHosts);
-            writer.WriteStringValue("serialNumber", SerialNumber);
-            writer.WriteStringValue("sha1", Sha1);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.SslCertificateEntity>("subject", Subject);
         }
     }
 }

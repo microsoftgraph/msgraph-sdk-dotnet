@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.TimeCards.Item.Co
         }
         /// <summary>
         /// Confirm a timeCard.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/timecard-confirm?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.TimeCard"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

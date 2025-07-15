@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Users.Item.DataSecurityAndGovernance.ProcessContent
         }
         /// <summary>
         /// Process content against data protection policies in the context of the current, or specified, user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/userdatasecurityandgovernance-processcontent?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ProcessContentResponse"/></returns>
         /// <param name="body">The request body</param>

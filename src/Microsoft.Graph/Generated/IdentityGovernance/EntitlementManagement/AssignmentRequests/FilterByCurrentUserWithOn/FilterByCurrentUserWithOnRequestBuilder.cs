@@ -37,7 +37,6 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AssignmentReq
         }
         /// <summary>
         /// In Microsoft Entra Entitlement Management, retrieve a list of accessPackageAssignmentRequest objects filtered on the signed-in user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackageassignmentrequest-filterbycurrentuser?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.AssignmentRequests.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -61,7 +60,6 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AssignmentReq
         }
         /// <summary>
         /// In Microsoft Entra Entitlement Management, retrieve a list of accessPackageAssignmentRequest objects filtered on the signed-in user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackageassignmentrequest-filterbycurrentuser?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.AssignmentRequests.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -173,10 +171,10 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AssignmentReq
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

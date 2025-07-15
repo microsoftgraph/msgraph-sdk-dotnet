@@ -12,38 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class WorkbookFunctionResult : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The error property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Error
-        {
-            get { return BackingStore?.Get<string?>("error"); }
-            set { BackingStore?.Set("error", value); }
-        }
-#nullable restore
-#else
-        public string Error
-        {
-            get { return BackingStore?.Get<string>("error"); }
-            set { BackingStore?.Set("error", value); }
-        }
-#endif
-        /// <summary>The value property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? Value
-        {
-            get { return BackingStore?.Get<UntypedNode?>("value"); }
-            set { BackingStore?.Set("value", value); }
-        }
-#nullable restore
-#else
-        public UntypedNode Value
-        {
-            get { return BackingStore?.Get<UntypedNode>("value"); }
-            set { BackingStore?.Set("value", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,8 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "error", n => { Error = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -74,8 +40,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("error", Error);
-            writer.WriteObjectValue<UntypedNode>("value", Value);
         }
     }
 }

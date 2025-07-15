@@ -37,7 +37,6 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.FilterByC
         }
         /// <summary>
         /// Returns accessReviewScheduleDefinition objects where the calling user is a reviewer on one or more accessReviewInstance objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewscheduledefinition-filterbycurrentuser?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -61,7 +60,6 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.FilterByC
         }
         /// <summary>
         /// Returns accessReviewScheduleDefinition objects where the calling user is a reviewer on one or more accessReviewInstance objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewscheduledefinition-filterbycurrentuser?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -173,10 +171,10 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.FilterByC
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

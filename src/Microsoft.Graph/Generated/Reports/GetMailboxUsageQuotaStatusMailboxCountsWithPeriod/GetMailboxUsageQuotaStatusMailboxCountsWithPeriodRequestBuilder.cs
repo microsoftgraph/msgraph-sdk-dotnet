@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetMailboxUsageQuotaStatusMailboxCountsWithPer
         }
         /// <summary>
         /// Get the count of user mailboxes in each quota category.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getmailboxusagequotastatusmailboxcounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

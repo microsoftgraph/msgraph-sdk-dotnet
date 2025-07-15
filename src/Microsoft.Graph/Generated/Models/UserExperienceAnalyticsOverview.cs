@@ -13,22 +13,6 @@ namespace Microsoft.Graph.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserExperienceAnalyticsOverview : global::Microsoft.Graph.Models.Entity, IParsable
     {
-        /// <summary>The user experience analytics insights. Read-only.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.UserExperienceAnalyticsInsight>? Insights
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.UserExperienceAnalyticsInsight>?>("insights"); }
-            set { BackingStore?.Set("insights", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.UserExperienceAnalyticsInsight> Insights
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.UserExperienceAnalyticsInsight>>("insights"); }
-            set { BackingStore?.Set("insights", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,7 +31,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "insights", n => { Insights = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.UserExperienceAnalyticsInsight>(global::Microsoft.Graph.Models.UserExperienceAnalyticsInsight.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -58,7 +41,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.UserExperienceAnalyticsInsight>("insights", Insights);
         }
     }
 }

@@ -12,44 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class VirtualEventRegistrationConfiguration : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Total capacity of the virtual event.</summary>
-        public int? Capacity
-        {
-            get { return BackingStore?.Get<int?>("capacity"); }
-            set { BackingStore?.Set("capacity", value); }
-        }
-        /// <summary>Registration questions.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.VirtualEventRegistrationQuestionBase>? Questions
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.VirtualEventRegistrationQuestionBase>?>("questions"); }
-            set { BackingStore?.Set("questions", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.VirtualEventRegistrationQuestionBase> Questions
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.VirtualEventRegistrationQuestionBase>>("questions"); }
-            set { BackingStore?.Set("questions", value); }
-        }
-#endif
-        /// <summary>Registration URL of the virtual event.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? RegistrationWebUrl
-        {
-            get { return BackingStore?.Get<string?>("registrationWebUrl"); }
-            set { BackingStore?.Set("registrationWebUrl", value); }
-        }
-#nullable restore
-#else
-        public string RegistrationWebUrl
-        {
-            get { return BackingStore?.Get<string>("registrationWebUrl"); }
-            set { BackingStore?.Set("registrationWebUrl", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -73,9 +35,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "capacity", n => { Capacity = n.GetIntValue(); } },
-                { "questions", n => { Questions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.VirtualEventRegistrationQuestionBase>(global::Microsoft.Graph.Models.VirtualEventRegistrationQuestionBase.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "registrationWebUrl", n => { RegistrationWebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -86,9 +45,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteIntValue("capacity", Capacity);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.VirtualEventRegistrationQuestionBase>("questions", Questions);
-            writer.WriteStringValue("registrationWebUrl", RegistrationWebUrl);
         }
     }
 }

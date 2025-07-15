@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Sites.Remove
         }
         /// <summary>
         /// Unfollow a user&apos;s site or multiple sites.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-unfollow?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Sites.Remove.RemovePostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +60,6 @@ namespace Microsoft.Graph.Sites.Remove
         }
         /// <summary>
         /// Unfollow a user&apos;s site or multiple sites.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/site-unfollow?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Sites.Remove.RemoveResponse"/></returns>
         /// <param name="body">The request body</param>

@@ -35,7 +35,6 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Inst
         }
         /// <summary>
         /// Apply review decisions on an accessReviewInstance if the decisions were not applied automatically because the autoApplyDecisionsEnabled property is false in the review&apos;s accessReviewScheduleSettings. The status of the accessReviewInstance must be Completed to call this method.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewinstance-applydecisions?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -44,7 +44,6 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         }
         /// <summary>
         /// Retrieve a point based on its position within the series.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chartpointscollection-itemat?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.WorkbookChartPoint"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

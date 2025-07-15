@@ -12,61 +12,6 @@ namespace Microsoft.Graph.Models.Security
     public partial class KubernetesNamespaceEvidence : global::Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The namespace cluster.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.Security.KubernetesClusterEvidence? Cluster
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.KubernetesClusterEvidence?>("cluster"); }
-            set { BackingStore?.Set("cluster", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.Security.KubernetesClusterEvidence Cluster
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.KubernetesClusterEvidence>("cluster"); }
-            set { BackingStore?.Set("cluster", value); }
-        }
-#endif
-        /// <summary>The labels for the Kubernetes pod.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.Security.Dictionary? Labels
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.Dictionary?>("labels"); }
-            set { BackingStore?.Set("labels", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.Security.Dictionary Labels
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.Dictionary>("labels"); }
-            set { BackingStore?.Set("labels", value); }
-        }
-#endif
-        /// <summary>The namespace name.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name
-        {
-            get { return BackingStore?.Get<string?>("name"); }
-            set { BackingStore?.Set("name", value); }
-        }
-#nullable restore
-#else
-        public string Name
-        {
-            get { return BackingStore?.Get<string>("name"); }
-            set { BackingStore?.Set("name", value); }
-        }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Models.Security.KubernetesNamespaceEvidence"/> and sets the default values.
-        /// </summary>
-        public KubernetesNamespaceEvidence() : base()
-        {
-            OdataType = "#microsoft.graph.security.kubernetesNamespaceEvidence";
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -85,9 +30,6 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "cluster", n => { Cluster = n.GetObjectValue<global::Microsoft.Graph.Models.Security.KubernetesClusterEvidence>(global::Microsoft.Graph.Models.Security.KubernetesClusterEvidence.CreateFromDiscriminatorValue); } },
-                { "labels", n => { Labels = n.GetObjectValue<global::Microsoft.Graph.Models.Security.Dictionary>(global::Microsoft.Graph.Models.Security.Dictionary.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -98,9 +40,6 @@ namespace Microsoft.Graph.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.KubernetesClusterEvidence>("cluster", Cluster);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.Dictionary>("labels", Labels);
-            writer.WriteStringValue("name", Name);
         }
     }
 }

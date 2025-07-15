@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables
         }
         /// <summary>
         /// Gets the range object associated with the totals row of the column.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tablecolumn-totalrowrange?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.WorkbookRange"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

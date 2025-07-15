@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.GetStaffAvailability
         }
         /// <summary>
         /// Get the availability information of staff members of a Microsoft Bookings calendar.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingbusiness-getstaffavailability?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Solutions.BookingBusinesses.Item.GetStaffAvailability.GetStaffAvailabilityPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +60,6 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses.Item.GetStaffAvailability
         }
         /// <summary>
         /// Get the availability information of staff members of a Microsoft Bookings calendar.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingbusiness-getstaffavailability?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Solutions.BookingBusinesses.Item.GetStaffAvailability.GetStaffAvailabilityResponse"/></returns>
         /// <param name="body">The request body</param>

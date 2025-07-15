@@ -35,7 +35,6 @@ namespace Microsoft.Graph.GroupLifecyclePolicies.Item.AddGroup
         }
         /// <summary>
         /// Add a group to a groupLifecyclePolicy. This action is supported only if the managedGroupTypes property of the policy is set to Selected.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/grouplifecyclepolicy-addgroup?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.GroupLifecyclePolicies.Item.AddGroup.AddGroupPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +60,6 @@ namespace Microsoft.Graph.GroupLifecyclePolicies.Item.AddGroup
         }
         /// <summary>
         /// Add a group to a groupLifecyclePolicy. This action is supported only if the managedGroupTypes property of the policy is set to Selected.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/grouplifecyclepolicy-addgroup?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.GroupLifecyclePolicies.Item.AddGroup.AddGroupResponse"/></returns>
         /// <param name="body">The request body</param>

@@ -13,50 +13,6 @@ namespace Microsoft.Graph.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OnPremisesConditionalAccessSettings : global::Microsoft.Graph.Models.Entity, IParsable
     {
-        /// <summary>Indicates if on premises conditional access is enabled for this organization</summary>
-        public bool? Enabled
-        {
-            get { return BackingStore?.Get<bool?>("enabled"); }
-            set { BackingStore?.Set("enabled", value); }
-        }
-        /// <summary>User groups that will be exempt by on premises conditional access. All users in these groups will be exempt from the conditional access policy.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<Guid?>? ExcludedGroups
-        {
-            get { return BackingStore?.Get<List<Guid?>?>("excludedGroups"); }
-            set { BackingStore?.Set("excludedGroups", value); }
-        }
-#nullable restore
-#else
-        public List<Guid?> ExcludedGroups
-        {
-            get { return BackingStore?.Get<List<Guid?>>("excludedGroups"); }
-            set { BackingStore?.Set("excludedGroups", value); }
-        }
-#endif
-        /// <summary>User groups that will be targeted by on premises conditional access. All users in these groups will be required to have mobile device managed and compliant for mail access.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<Guid?>? IncludedGroups
-        {
-            get { return BackingStore?.Get<List<Guid?>?>("includedGroups"); }
-            set { BackingStore?.Set("includedGroups", value); }
-        }
-#nullable restore
-#else
-        public List<Guid?> IncludedGroups
-        {
-            get { return BackingStore?.Get<List<Guid?>>("includedGroups"); }
-            set { BackingStore?.Set("includedGroups", value); }
-        }
-#endif
-        /// <summary>Override the default access rule when allowing a device to ensure access is granted.</summary>
-        public bool? OverrideDefaultRule
-        {
-            get { return BackingStore?.Get<bool?>("overrideDefaultRule"); }
-            set { BackingStore?.Set("overrideDefaultRule", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -75,10 +31,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "excludedGroups", n => { ExcludedGroups = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
-                { "includedGroups", n => { IncludedGroups = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
-                { "overrideDefaultRule", n => { OverrideDefaultRule = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -89,10 +41,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteCollectionOfPrimitiveValues<Guid?>("excludedGroups", ExcludedGroups);
-            writer.WriteCollectionOfPrimitiveValues<Guid?>("includedGroups", IncludedGroups);
-            writer.WriteBoolValue("overrideDefaultRule", OverrideDefaultRule);
         }
     }
 }

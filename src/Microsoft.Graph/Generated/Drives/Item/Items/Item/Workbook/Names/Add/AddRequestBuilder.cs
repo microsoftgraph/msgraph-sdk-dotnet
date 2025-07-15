@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Names.Add
         }
         /// <summary>
         /// Adds a new name to the collection of the given scope using the user&apos;s locale for the formula.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/nameditem-add?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.WorkbookNamedItem"/></returns>
         /// <param name="body">The request body</param>

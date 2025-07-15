@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Applications.Item.AddPassword
         }
         /// <summary>
         /// Adds a strong password or secret to an application. You can also add passwords while creating the application.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-addpassword?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.PasswordCredential"/></returns>
         /// <param name="body">The request body</param>

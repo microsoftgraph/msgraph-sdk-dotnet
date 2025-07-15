@@ -12,44 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class UsageRightsIncluded : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The email of owner label rights.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OwnerEmail
-        {
-            get { return BackingStore?.Get<string?>("ownerEmail"); }
-            set { BackingStore?.Set("ownerEmail", value); }
-        }
-#nullable restore
-#else
-        public string OwnerEmail
-        {
-            get { return BackingStore?.Get<string>("ownerEmail"); }
-            set { BackingStore?.Set("ownerEmail", value); }
-        }
-#endif
-        /// <summary>The email of user with label user rights.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UserEmail
-        {
-            get { return BackingStore?.Get<string?>("userEmail"); }
-            set { BackingStore?.Set("userEmail", value); }
-        }
-#nullable restore
-#else
-        public string UserEmail
-        {
-            get { return BackingStore?.Get<string>("userEmail"); }
-            set { BackingStore?.Set("userEmail", value); }
-        }
-#endif
-        /// <summary>The value property</summary>
-        public global::Microsoft.Graph.Models.UsageRights? Value
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.UsageRights?>("value"); }
-            set { BackingStore?.Set("value", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -68,9 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "ownerEmail", n => { OwnerEmail = n.GetStringValue(); } },
-                { "userEmail", n => { UserEmail = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetEnumValue<global::Microsoft.Graph.Models.UsageRights>(); } },
             };
         }
         /// <summary>
@@ -81,9 +40,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("ownerEmail", OwnerEmail);
-            writer.WriteStringValue("userEmail", UserEmail);
-            writer.WriteEnumValue<global::Microsoft.Graph.Models.UsageRights>("value", Value);
         }
     }
 }

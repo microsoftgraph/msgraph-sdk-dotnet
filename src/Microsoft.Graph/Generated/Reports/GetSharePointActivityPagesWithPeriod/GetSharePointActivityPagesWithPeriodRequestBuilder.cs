@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetSharePointActivityPagesWithPeriod
         }
         /// <summary>
         /// Get the number of unique pages visited by users.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getsharepointactivitypages?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

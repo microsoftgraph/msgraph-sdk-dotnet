@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Me.Authentication.PhoneMethods.Item.DisableSmsSignIn
         }
         /// <summary>
         /// Disable SMS sign-in for an existing mobile phone number registered to a user. The number will no longer be available for SMS sign-in, which can prevent your user from signing in.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/phoneauthenticationmethod-disablesmssignin?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

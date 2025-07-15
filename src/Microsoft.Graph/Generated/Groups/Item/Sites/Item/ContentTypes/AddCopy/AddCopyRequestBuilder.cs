@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.ContentTypes.AddCopy
         }
         /// <summary>
         /// Add a copy of a content type from a site to a list.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contenttype-addcopy?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ContentType"/></returns>
         /// <param name="body">The request body</param>

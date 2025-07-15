@@ -199,16 +199,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The riskEventTypes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Graph.Models.RiskEventType?>? RiskEventTypes
+        public List<string>? RiskEventTypes
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.RiskEventType?>?>("riskEventTypes"); }
+            get { return BackingStore?.Get<List<string>?>("riskEventTypes"); }
             set { BackingStore?.Set("riskEventTypes", value); }
         }
 #nullable restore
 #else
-        public List<global::Microsoft.Graph.Models.RiskEventType?> RiskEventTypes
+        public List<string> RiskEventTypes
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.RiskEventType?>>("riskEventTypes"); }
+            get { return BackingStore?.Get<List<string>>("riskEventTypes"); }
             set { BackingStore?.Set("riskEventTypes", value); }
         }
 #endif
@@ -342,7 +342,7 @@ namespace Microsoft.Graph.Models
                 { "resourceDisplayName", n => { ResourceDisplayName = n.GetStringValue(); } },
                 { "resourceId", n => { ResourceId = n.GetStringValue(); } },
                 { "riskDetail", n => { RiskDetail = n.GetEnumValue<global::Microsoft.Graph.Models.RiskDetail>(); } },
-                { "riskEventTypes", n => { RiskEventTypes = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Models.RiskEventType>()?.AsList(); } },
+                { "riskEventTypes", n => { RiskEventTypes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "riskEventTypes_v2", n => { RiskEventTypesV2 = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "riskLevelAggregated", n => { RiskLevelAggregated = n.GetEnumValue<global::Microsoft.Graph.Models.RiskLevel>(); } },
                 { "riskLevelDuringSignIn", n => { RiskLevelDuringSignIn = n.GetEnumValue<global::Microsoft.Graph.Models.RiskLevel>(); } },
@@ -375,7 +375,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("resourceDisplayName", ResourceDisplayName);
             writer.WriteStringValue("resourceId", ResourceId);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.RiskDetail>("riskDetail", RiskDetail);
-            writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Models.RiskEventType>("riskEventTypes", RiskEventTypes);
+            writer.WriteCollectionOfPrimitiveValues<string>("riskEventTypes", RiskEventTypes);
             writer.WriteCollectionOfPrimitiveValues<string>("riskEventTypes_v2", RiskEventTypesV2);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.RiskLevel>("riskLevelAggregated", RiskLevelAggregated);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.RiskLevel>("riskLevelDuringSignIn", RiskLevelDuringSignIn);

@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Drives.Item.List.ContentTypes.Item.IsPublished
         }
         /// <summary>
         /// Check the publishing status of a contentType in a content type hub site.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contenttype-ispublished?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Drives.Item.List.ContentTypes.Item.IsPublished.IsPublishedGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +58,6 @@ namespace Microsoft.Graph.Drives.Item.List.ContentTypes.Item.IsPublished
         }
         /// <summary>
         /// Check the publishing status of a contentType in a content type hub site.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contenttype-ispublished?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Drives.Item.List.ContentTypes.Item.IsPublished.IsPublishedResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

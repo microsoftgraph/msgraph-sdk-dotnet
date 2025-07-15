@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetOffice365GroupsActivityGroupCountsWithPerio
         }
         /// <summary>
         /// Get the daily total number of groups and how many of them were active based on email conversations, Yammer posts, and SharePoint file activities.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getoffice365groupsactivitygroupcounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

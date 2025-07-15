@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetYammerGroupsActivityCountsWithPeriod
         }
         /// <summary>
         /// Get the number of Yammer messages posted, read, and liked in groups.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getyammergroupsactivitycounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

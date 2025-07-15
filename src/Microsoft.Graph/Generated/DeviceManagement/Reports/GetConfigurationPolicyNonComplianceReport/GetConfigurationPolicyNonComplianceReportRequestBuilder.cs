@@ -35,7 +35,6 @@ namespace Microsoft.Graph.DeviceManagement.Reports.GetConfigurationPolicyNonComp
         }
         /// <summary>
         /// Not yet documented
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getconfigurationpolicynoncompliancereport?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>

@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkRead
         }
         /// <summary>
         /// Mark a list of serviceUpdateMessages as read for the signed in user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceupdatemessage-markread?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkRead.MarkReadPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +60,6 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkRead
         }
         /// <summary>
         /// Mark a list of serviceUpdateMessages as read for the signed in user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceupdatemessage-markread?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkRead.MarkReadResponse"/></returns>
         /// <param name="body">The request body</param>

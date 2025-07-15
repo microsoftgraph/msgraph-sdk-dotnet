@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkUnread
         }
         /// <summary>
         /// Mark a list of serviceUpdateMessages as unread for the signed in user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceupdatemessage-markunread?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkUnread.MarkUnreadPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +60,6 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkUnread
         }
         /// <summary>
         /// Mark a list of serviceUpdateMessages as unread for the signed in user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceupdatemessage-markunread?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.MarkUnread.MarkUnreadResponse"/></returns>
         /// <param name="body">The request body</param>

@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Users.Item.Chats.Item.InstalledApps.Item.Upgrade
         }
         /// <summary>
         /// Upgrade an app installation within a chat.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chat-teamsappinstallation-upgrade?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

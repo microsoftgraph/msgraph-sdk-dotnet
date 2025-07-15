@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetTeamsUserActivityUserCountsWithPeriod
         }
         /// <summary>
         /// Get the number of Microsoft Teams users by activity type. The activity types are number of teams chat messages, private chat messages, calls, or meetings.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getteamsuseractivityusercounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

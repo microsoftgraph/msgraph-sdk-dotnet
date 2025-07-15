@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables
         }
         /// <summary>
         /// Use this API to create a new Table.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/workbook-post-tables?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.WorkbookTable"/></returns>
         /// <param name="body">The request body</param>

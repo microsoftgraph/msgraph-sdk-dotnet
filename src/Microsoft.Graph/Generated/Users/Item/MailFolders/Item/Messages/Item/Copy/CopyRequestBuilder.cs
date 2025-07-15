@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Users.Item.MailFolders.Item.Messages.Item.Copy
         }
         /// <summary>
         /// Copy a message to a folder within the user&apos;s mailbox.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/message-copy?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Message"/></returns>
         /// <param name="body">The request body</param>

@@ -36,7 +36,6 @@ namespace Microsoft.Graph.ApplicationTemplates.Item.Instantiate
         }
         /// <summary>
         /// Add an instance of an application from the Microsoft Entra application gallery into your directory. For non-gallery apps, use an application template with one of the following IDs to configure different single sign-on (SSO) modes like SAML SSO and password-based SSO.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/applicationtemplate-instantiate?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ApplicationServicePrincipal"/></returns>
         /// <param name="body">The request body</param>

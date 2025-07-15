@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.ConvertToR
         }
         /// <summary>
         /// Converts the table into a normal range of cells. All data is preserved.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/table-converttorange?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.WorkbookRange"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -22,7 +22,7 @@ namespace Microsoft.Graph.Me.Messages.Count
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/messages/$count{?%24filter,%24search,includeHiddenMessages*}", pathParameters)
+        public CountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/messages/$count{?%24filter,%24search}", pathParameters)
         {
         }
         /// <summary>
@@ -30,23 +30,23 @@ namespace Microsoft.Graph.Me.Messages.Count
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/messages/$count{?%24filter,%24search,includeHiddenMessages*}", rawUrl)
+        public CountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/messages/$count{?%24filter,%24search}", rawUrl)
         {
         }
         /// <summary>
         /// Get the number of the resource
         /// </summary>
-        /// <returns>A <see cref="int"/></returns>
+        /// <returns>A <see cref="long"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<int?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.Messages.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<long?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.Messages.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<int?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.Messages.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<long?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.Messages.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Me.Messages.Count
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<int?>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<long?>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the number of the resource
@@ -99,16 +99,6 @@ namespace Microsoft.Graph.Me.Messages.Count
 #else
             [QueryParameter("%24filter")]
             public string Filter { get; set; }
-#endif
-            /// <summary>Include Hidden Messages</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("includeHiddenMessages")]
-            public string? IncludeHiddenMessages { get; set; }
-#nullable restore
-#else
-            [QueryParameter("includeHiddenMessages")]
-            public string IncludeHiddenMessages { get; set; }
 #endif
             /// <summary>Search items by search phrases</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

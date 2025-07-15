@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Add
         }
         /// <summary>
         /// Add a new worksheet to the workbook. The worksheet is added at the end of existing worksheets. If you want to activate the newly added worksheet, call .activate() on it.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/worksheetcollection-add?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.WorkbookWorksheet"/></returns>
         /// <param name="body">The request body</param>

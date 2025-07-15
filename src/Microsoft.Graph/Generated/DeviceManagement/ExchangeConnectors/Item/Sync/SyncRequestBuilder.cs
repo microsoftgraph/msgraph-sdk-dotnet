@@ -35,7 +35,6 @@ namespace Microsoft.Graph.DeviceManagement.ExchangeConnectors.Item.Sync
         }
         /// <summary>
         /// Not yet documented
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-devicemanagementexchangeconnector-sync?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

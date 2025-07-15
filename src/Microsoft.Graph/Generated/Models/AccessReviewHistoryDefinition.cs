@@ -37,16 +37,16 @@ namespace Microsoft.Graph.Models
         /// <summary>Determines which review decisions will be included in the fetched review history data if specified. Optional on create. All decisions are included by default if no decisions are provided on create. Possible values are: approve, deny, dontKnow, notReviewed, and notNotified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Graph.Models.AccessReviewHistoryDecisionFilter?>? Decisions
+        public List<string>? Decisions
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.AccessReviewHistoryDecisionFilter?>?>("decisions"); }
+            get { return BackingStore?.Get<List<string>?>("decisions"); }
             set { BackingStore?.Set("decisions", value); }
         }
 #nullable restore
 #else
-        public List<global::Microsoft.Graph.Models.AccessReviewHistoryDecisionFilter?> Decisions
+        public List<string> Decisions
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.AccessReviewHistoryDecisionFilter?>>("decisions"); }
+            get { return BackingStore?.Get<List<string>>("decisions"); }
             set { BackingStore?.Set("decisions", value); }
         }
 #endif
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Models
             {
                 { "createdBy", n => { CreatedBy = n.GetObjectValue<global::Microsoft.Graph.Models.UserIdentity>(global::Microsoft.Graph.Models.UserIdentity.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "decisions", n => { Decisions = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Models.AccessReviewHistoryDecisionFilter>()?.AsList(); } },
+                { "decisions", n => { Decisions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "instances", n => { Instances = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessReviewHistoryInstance>(global::Microsoft.Graph.Models.AccessReviewHistoryInstance.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "reviewHistoryPeriodEndDateTime", n => { ReviewHistoryPeriodEndDateTime = n.GetDateTimeOffsetValue(); } },
@@ -172,7 +172,7 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.UserIdentity>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Models.AccessReviewHistoryDecisionFilter>("decisions", Decisions);
+            writer.WriteCollectionOfPrimitiveValues<string>("decisions", Decisions);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessReviewHistoryInstance>("instances", Instances);
             writer.WriteDateTimeOffsetValue("reviewHistoryPeriodEndDateTime", ReviewHistoryPeriodEndDateTime);

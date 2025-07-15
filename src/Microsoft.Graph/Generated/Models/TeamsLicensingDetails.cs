@@ -12,12 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class TeamsLicensingDetails : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Indicates whether the user has a valid license to use Microsoft Teams.</summary>
-        public bool? HasTeamsLicense
-        {
-            get { return BackingStore?.Get<bool?>("hasTeamsLicense"); }
-            set { BackingStore?.Set("hasTeamsLicense", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -36,7 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "hasTeamsLicense", n => { HasTeamsLicense = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -47,7 +40,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteBoolValue("hasTeamsLicense", HasTeamsLicense);
         }
     }
 }

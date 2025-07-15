@@ -12,45 +12,6 @@ namespace Microsoft.Graph.Models.Security
     public partial class UserEvidence : global::Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The stream property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.Security.StreamObject? Stream
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.StreamObject?>("stream"); }
-            set { BackingStore?.Set("stream", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.Security.StreamObject Stream
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.StreamObject>("stream"); }
-            set { BackingStore?.Set("stream", value); }
-        }
-#endif
-        /// <summary>The user account details.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.Security.UserAccount? UserAccount
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.UserAccount?>("userAccount"); }
-            set { BackingStore?.Set("userAccount", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.Security.UserAccount UserAccount
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.UserAccount>("userAccount"); }
-            set { BackingStore?.Set("userAccount", value); }
-        }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Models.Security.UserEvidence"/> and sets the default values.
-        /// </summary>
-        public UserEvidence() : base()
-        {
-            OdataType = "#microsoft.graph.security.userEvidence";
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -69,8 +30,6 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "stream", n => { Stream = n.GetObjectValue<global::Microsoft.Graph.Models.Security.StreamObject>(global::Microsoft.Graph.Models.Security.StreamObject.CreateFromDiscriminatorValue); } },
-                { "userAccount", n => { UserAccount = n.GetObjectValue<global::Microsoft.Graph.Models.Security.UserAccount>(global::Microsoft.Graph.Models.Security.UserAccount.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -81,8 +40,6 @@ namespace Microsoft.Graph.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.StreamObject>("stream", Stream);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.UserAccount>("userAccount", UserAccount);
         }
     }
 }

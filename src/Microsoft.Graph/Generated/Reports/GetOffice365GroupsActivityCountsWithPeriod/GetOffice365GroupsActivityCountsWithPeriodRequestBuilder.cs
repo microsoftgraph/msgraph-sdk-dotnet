@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetOffice365GroupsActivityCountsWithPeriod
         }
         /// <summary>
         /// Get the number of group activities across group workloads.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getoffice365groupsactivitycounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -35,7 +35,6 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Rename
         }
         /// <summary>
         /// Rename a specific cloudPC object. Use this API to update the displayName of a Cloud PC entity.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-rename?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

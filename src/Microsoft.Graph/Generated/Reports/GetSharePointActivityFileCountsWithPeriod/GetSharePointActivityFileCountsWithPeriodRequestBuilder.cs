@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetSharePointActivityFileCountsWithPeriod
         }
         /// <summary>
         /// Get the number of unique, licensed users who interacted with files stored on SharePoint sites.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getsharepointactivityfilecounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

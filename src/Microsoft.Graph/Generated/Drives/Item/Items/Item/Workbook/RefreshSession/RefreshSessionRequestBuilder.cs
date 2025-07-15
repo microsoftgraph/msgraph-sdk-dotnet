@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.RefreshSession
         }
         /// <summary>
         /// Use this API to refresh an existing workbook session.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/workbook-refreshsession?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

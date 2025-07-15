@@ -12,50 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class WorkbookChartLegend : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Represents the formatting of a chart legend, which includes fill and font formatting. Read-only.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.WorkbookChartLegendFormat? Format
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.WorkbookChartLegendFormat?>("format"); }
-            set { BackingStore?.Set("format", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.WorkbookChartLegendFormat Format
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.WorkbookChartLegendFormat>("format"); }
-            set { BackingStore?.Set("format", value); }
-        }
-#endif
-        /// <summary>Indicates whether the chart legend should overlap with the main body of the chart.</summary>
-        public bool? Overlay
-        {
-            get { return BackingStore?.Get<bool?>("overlay"); }
-            set { BackingStore?.Set("overlay", value); }
-        }
-        /// <summary>Represents the position of the legend on the chart. The possible values are: Top, Bottom, Left, Right, Corner, Custom.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Position
-        {
-            get { return BackingStore?.Get<string?>("position"); }
-            set { BackingStore?.Set("position", value); }
-        }
-#nullable restore
-#else
-        public string Position
-        {
-            get { return BackingStore?.Get<string>("position"); }
-            set { BackingStore?.Set("position", value); }
-        }
-#endif
-        /// <summary>Indicates whether the chart legend is visible.</summary>
-        public bool? Visible
-        {
-            get { return BackingStore?.Get<bool?>("visible"); }
-            set { BackingStore?.Set("visible", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -74,10 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "format", n => { Format = n.GetObjectValue<global::Microsoft.Graph.Models.WorkbookChartLegendFormat>(global::Microsoft.Graph.Models.WorkbookChartLegendFormat.CreateFromDiscriminatorValue); } },
-                { "overlay", n => { Overlay = n.GetBoolValue(); } },
-                { "position", n => { Position = n.GetStringValue(); } },
-                { "visible", n => { Visible = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -88,10 +40,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.WorkbookChartLegendFormat>("format", Format);
-            writer.WriteBoolValue("overlay", Overlay);
-            writer.WriteStringValue("position", Position);
-            writer.WriteBoolValue("visible", Visible);
         }
     }
 }

@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Communications.Calls.Item.PlayPrompt
         }
         /// <summary>
         /// Play a prompt in the call. For more information about how to handle operations, see commsOperation
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/call-playprompt?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.PlayPromptOperation"/></returns>
         /// <param name="body">The request body</param>

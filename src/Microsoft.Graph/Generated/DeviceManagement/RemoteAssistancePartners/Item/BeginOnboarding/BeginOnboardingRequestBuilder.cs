@@ -35,7 +35,6 @@ namespace Microsoft.Graph.DeviceManagement.RemoteAssistancePartners.Item.BeginOn
         }
         /// <summary>
         /// A request to start onboarding.  Must be coupled with the appropriate TeamViewer account information
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-remoteassistance-remoteassistancepartner-beginonboarding?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

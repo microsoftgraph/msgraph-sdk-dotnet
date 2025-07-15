@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetTeamsTeamActivityDistributionCountsWithPeri
         }
         /// <summary>
         /// Get the number of team activities across Microsoft Teams over a selected period.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getteamsteamactivitydistributioncounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -12,72 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class WorkbookChartFont : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Indicates whether the fond is bold.</summary>
-        public bool? Bold
-        {
-            get { return BackingStore?.Get<bool?>("bold"); }
-            set { BackingStore?.Set("bold", value); }
-        }
-        /// <summary>The HTML color code representation of the text color. For example #FF0000 represents Red.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Color
-        {
-            get { return BackingStore?.Get<string?>("color"); }
-            set { BackingStore?.Set("color", value); }
-        }
-#nullable restore
-#else
-        public string Color
-        {
-            get { return BackingStore?.Get<string>("color"); }
-            set { BackingStore?.Set("color", value); }
-        }
-#endif
-        /// <summary>Indicates whether the fond is italic.</summary>
-        public bool? Italic
-        {
-            get { return BackingStore?.Get<bool?>("italic"); }
-            set { BackingStore?.Set("italic", value); }
-        }
-        /// <summary>The font name. For example &apos;Calibri&apos;.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name
-        {
-            get { return BackingStore?.Get<string?>("name"); }
-            set { BackingStore?.Set("name", value); }
-        }
-#nullable restore
-#else
-        public string Name
-        {
-            get { return BackingStore?.Get<string>("name"); }
-            set { BackingStore?.Set("name", value); }
-        }
-#endif
-        /// <summary>The size of the font. For example,  11.</summary>
-        public double? Size
-        {
-            get { return BackingStore?.Get<double?>("size"); }
-            set { BackingStore?.Set("size", value); }
-        }
-        /// <summary>The type of underlining applied to the font. The possible values are: None, Single.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Underline
-        {
-            get { return BackingStore?.Get<string?>("underline"); }
-            set { BackingStore?.Set("underline", value); }
-        }
-#nullable restore
-#else
-        public string Underline
-        {
-            get { return BackingStore?.Get<string>("underline"); }
-            set { BackingStore?.Set("underline", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -96,12 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "bold", n => { Bold = n.GetBoolValue(); } },
-                { "color", n => { Color = n.GetStringValue(); } },
-                { "italic", n => { Italic = n.GetBoolValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "size", n => { Size = n.GetDoubleValue(); } },
-                { "underline", n => { Underline = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -112,12 +40,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteBoolValue("bold", Bold);
-            writer.WriteStringValue("color", Color);
-            writer.WriteBoolValue("italic", Italic);
-            writer.WriteStringValue("name", Name);
-            writer.WriteDoubleValue("size", Size);
-            writer.WriteStringValue("underline", Underline);
         }
     }
 }

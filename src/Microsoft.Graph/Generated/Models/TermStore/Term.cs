@@ -12,114 +12,6 @@ namespace Microsoft.Graph.Models.TermStore
     public partial class Term : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Children of current term.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.TermStore.Term>? Children
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.TermStore.Term>?>("children"); }
-            set { BackingStore?.Set("children", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.TermStore.Term> Children
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.TermStore.Term>>("children"); }
-            set { BackingStore?.Set("children", value); }
-        }
-#endif
-        /// <summary>Date and time of term creation. Read-only.</summary>
-        public DateTimeOffset? CreatedDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
-            set { BackingStore?.Set("createdDateTime", value); }
-        }
-        /// <summary>Description about term that is dependent on the languageTag.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.TermStore.LocalizedDescription>? Descriptions
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.TermStore.LocalizedDescription>?>("descriptions"); }
-            set { BackingStore?.Set("descriptions", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.TermStore.LocalizedDescription> Descriptions
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.TermStore.LocalizedDescription>>("descriptions"); }
-            set { BackingStore?.Set("descriptions", value); }
-        }
-#endif
-        /// <summary>Label metadata for a term.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.TermStore.LocalizedLabel>? Labels
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.TermStore.LocalizedLabel>?>("labels"); }
-            set { BackingStore?.Set("labels", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.TermStore.LocalizedLabel> Labels
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.TermStore.LocalizedLabel>>("labels"); }
-            set { BackingStore?.Set("labels", value); }
-        }
-#endif
-        /// <summary>Last date and time of term modification. Read-only.</summary>
-        public DateTimeOffset? LastModifiedDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
-            set { BackingStore?.Set("lastModifiedDateTime", value); }
-        }
-        /// <summary>Collection of properties on the term.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.KeyValue>? Properties
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.KeyValue>?>("properties"); }
-            set { BackingStore?.Set("properties", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.KeyValue> Properties
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.KeyValue>>("properties"); }
-            set { BackingStore?.Set("properties", value); }
-        }
-#endif
-        /// <summary>To indicate which terms are related to the current term as either pinned or reused.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.TermStore.Relation>? Relations
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.TermStore.Relation>?>("relations"); }
-            set { BackingStore?.Set("relations", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.TermStore.Relation> Relations
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.TermStore.Relation>>("relations"); }
-            set { BackingStore?.Set("relations", value); }
-        }
-#endif
-        /// <summary>The [set] in which the term is created.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.TermStore.Set? Set
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.TermStore.Set?>("set"); }
-            set { BackingStore?.Set("set", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.TermStore.Set Set
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.TermStore.Set>("set"); }
-            set { BackingStore?.Set("set", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -138,14 +30,6 @@ namespace Microsoft.Graph.Models.TermStore
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "children", n => { Children = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.TermStore.Term>(global::Microsoft.Graph.Models.TermStore.Term.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "descriptions", n => { Descriptions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.TermStore.LocalizedDescription>(global::Microsoft.Graph.Models.TermStore.LocalizedDescription.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "labels", n => { Labels = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.TermStore.LocalizedLabel>(global::Microsoft.Graph.Models.TermStore.LocalizedLabel.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "properties", n => { Properties = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.KeyValue>(global::Microsoft.Graph.Models.KeyValue.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "relations", n => { Relations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.TermStore.Relation>(global::Microsoft.Graph.Models.TermStore.Relation.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "set", n => { Set = n.GetObjectValue<global::Microsoft.Graph.Models.TermStore.Set>(global::Microsoft.Graph.Models.TermStore.Set.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -156,14 +40,6 @@ namespace Microsoft.Graph.Models.TermStore
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.TermStore.Term>("children", Children);
-            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.TermStore.LocalizedDescription>("descriptions", Descriptions);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.TermStore.LocalizedLabel>("labels", Labels);
-            writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.KeyValue>("properties", Properties);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.TermStore.Relation>("relations", Relations);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.TermStore.Set>("set", Set);
         }
     }
 }

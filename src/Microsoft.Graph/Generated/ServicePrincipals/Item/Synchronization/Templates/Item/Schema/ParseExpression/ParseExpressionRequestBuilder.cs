@@ -36,7 +36,6 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Templates.Item.
         }
         /// <summary>
         /// Parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Microsoft Entra ID.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ParseExpressionResponse"/></returns>
         /// <param name="body">The request body</param>

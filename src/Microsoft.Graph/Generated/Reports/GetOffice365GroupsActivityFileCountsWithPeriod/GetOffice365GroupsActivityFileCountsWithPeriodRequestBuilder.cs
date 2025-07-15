@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetOffice365GroupsActivityFileCountsWithPeriod
         }
         /// <summary>
         /// Get the total number of files and how many of them were active across all group sites associated with a Microsoft 365 group.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getoffice365groupsactivityfilecounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

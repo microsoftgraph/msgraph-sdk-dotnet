@@ -12,38 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class WorkbookChartSeriesFormat : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Represents the fill format of a chart series, which includes background formatting information. Read-only.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.WorkbookChartFill? Fill
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.WorkbookChartFill?>("fill"); }
-            set { BackingStore?.Set("fill", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.WorkbookChartFill Fill
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.WorkbookChartFill>("fill"); }
-            set { BackingStore?.Set("fill", value); }
-        }
-#endif
-        /// <summary>Represents line formatting. Read-only.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.WorkbookChartLineFormat? Line
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.WorkbookChartLineFormat?>("line"); }
-            set { BackingStore?.Set("line", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.WorkbookChartLineFormat Line
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.WorkbookChartLineFormat>("line"); }
-            set { BackingStore?.Set("line", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,8 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "fill", n => { Fill = n.GetObjectValue<global::Microsoft.Graph.Models.WorkbookChartFill>(global::Microsoft.Graph.Models.WorkbookChartFill.CreateFromDiscriminatorValue); } },
-                { "line", n => { Line = n.GetObjectValue<global::Microsoft.Graph.Models.WorkbookChartLineFormat>(global::Microsoft.Graph.Models.WorkbookChartLineFormat.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -74,8 +40,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.WorkbookChartFill>("fill", Fill);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.WorkbookChartLineFormat>("line", Line);
         }
     }
 }

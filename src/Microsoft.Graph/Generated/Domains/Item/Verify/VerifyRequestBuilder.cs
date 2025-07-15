@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Domains.Item.Verify
         }
         /// <summary>
         /// Validate the ownership of a domain. This operation only applies to an unverified domain. For an unverified domain, the isVerified property is false.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/domain-verify?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Domain"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

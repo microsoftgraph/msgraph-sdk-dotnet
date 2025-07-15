@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Education.Classes.Item.Modules.Item.Publish
         }
         /// <summary>
         /// Change the state of an educationModule from its original draft status to the published status. Only teachers in the class can perform this operation. When a module is in draft status, students can&apos;t see the module. When you call this API, the module appears in the student&apos;s class work list.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationmodule-publish?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.EducationModule"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

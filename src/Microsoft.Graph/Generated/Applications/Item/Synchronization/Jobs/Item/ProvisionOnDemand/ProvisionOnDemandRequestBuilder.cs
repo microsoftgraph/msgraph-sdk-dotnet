@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item.ProvisionO
         }
         /// <summary>
         /// Select a user and provision the account on-demand. The rate limit for this API is 5 requests per 10 seconds.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-provisionondemand?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.StringKeyStringValuePair"/></returns>
         /// <param name="body">The request body</param>

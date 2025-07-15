@@ -12,22 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class Approval : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>A collection of stages in the approval decision.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.ApprovalStage>? Stages
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.ApprovalStage>?>("stages"); }
-            set { BackingStore?.Set("stages", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.ApprovalStage> Stages
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.ApprovalStage>>("stages"); }
-            set { BackingStore?.Set("stages", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -46,7 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "stages", n => { Stages = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ApprovalStage>(global::Microsoft.Graph.Models.ApprovalStage.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +40,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ApprovalStage>("stages", Stages);
         }
     }
 }

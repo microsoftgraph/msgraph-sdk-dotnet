@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Print.Shares.Item.Jobs.Item.Start
         }
         /// <summary>
         /// Submits the print job to the associated printer or printerShare. It will be printed after any existing pending jobs are completed, aborted, or canceled.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printjob-start?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.PrintJobStatus"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -12,29 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class SharePointIdentity : global::Microsoft.Graph.Models.Identity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The sign in name of the SharePoint identity.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? LoginName
-        {
-            get { return BackingStore?.Get<string?>("loginName"); }
-            set { BackingStore?.Set("loginName", value); }
-        }
-#nullable restore
-#else
-        public string LoginName
-        {
-            get { return BackingStore?.Get<string>("loginName"); }
-            set { BackingStore?.Set("loginName", value); }
-        }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Models.SharePointIdentity"/> and sets the default values.
-        /// </summary>
-        public SharePointIdentity() : base()
-        {
-            OdataType = "#microsoft.graph.sharePointIdentity";
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,7 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "loginName", n => { LoginName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -64,7 +40,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("loginName", LoginName);
         }
     }
 }

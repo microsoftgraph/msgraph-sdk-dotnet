@@ -101,7 +101,6 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         }
         /// <summary>
         /// Gets a chart based on its position in the collection.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chartcollection-itemat?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.WorkbookChart"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

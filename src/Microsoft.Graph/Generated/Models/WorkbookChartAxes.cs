@@ -12,54 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class WorkbookChartAxes : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Represents the category axis in a chart. Read-only.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.WorkbookChartAxis? CategoryAxis
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.WorkbookChartAxis?>("categoryAxis"); }
-            set { BackingStore?.Set("categoryAxis", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.WorkbookChartAxis CategoryAxis
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.WorkbookChartAxis>("categoryAxis"); }
-            set { BackingStore?.Set("categoryAxis", value); }
-        }
-#endif
-        /// <summary>Represents the series axis of a 3-dimensional chart. Read-only.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.WorkbookChartAxis? SeriesAxis
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.WorkbookChartAxis?>("seriesAxis"); }
-            set { BackingStore?.Set("seriesAxis", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.WorkbookChartAxis SeriesAxis
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.WorkbookChartAxis>("seriesAxis"); }
-            set { BackingStore?.Set("seriesAxis", value); }
-        }
-#endif
-        /// <summary>Represents the value axis in an axis. Read-only.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.WorkbookChartAxis? ValueAxis
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.WorkbookChartAxis?>("valueAxis"); }
-            set { BackingStore?.Set("valueAxis", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.WorkbookChartAxis ValueAxis
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.WorkbookChartAxis>("valueAxis"); }
-            set { BackingStore?.Set("valueAxis", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -78,9 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "categoryAxis", n => { CategoryAxis = n.GetObjectValue<global::Microsoft.Graph.Models.WorkbookChartAxis>(global::Microsoft.Graph.Models.WorkbookChartAxis.CreateFromDiscriminatorValue); } },
-                { "seriesAxis", n => { SeriesAxis = n.GetObjectValue<global::Microsoft.Graph.Models.WorkbookChartAxis>(global::Microsoft.Graph.Models.WorkbookChartAxis.CreateFromDiscriminatorValue); } },
-                { "valueAxis", n => { ValueAxis = n.GetObjectValue<global::Microsoft.Graph.Models.WorkbookChartAxis>(global::Microsoft.Graph.Models.WorkbookChartAxis.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -91,9 +40,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.WorkbookChartAxis>("categoryAxis", CategoryAxis);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.WorkbookChartAxis>("seriesAxis", SeriesAxis);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.WorkbookChartAxis>("valueAxis", ValueAxis);
         }
     }
 }

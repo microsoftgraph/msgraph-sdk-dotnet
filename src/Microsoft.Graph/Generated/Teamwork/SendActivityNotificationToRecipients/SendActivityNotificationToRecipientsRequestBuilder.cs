@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Teamwork.SendActivityNotificationToRecipients
         }
         /// <summary>
         /// Send activity feed notifications to multiple users, in bulk.  For more information, see sending Teams activity notifications.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamwork-sendactivitynotificationtorecipients?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

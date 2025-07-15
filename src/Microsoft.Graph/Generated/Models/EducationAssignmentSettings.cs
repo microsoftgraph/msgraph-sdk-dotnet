@@ -12,28 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class EducationAssignmentSettings : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>When set, enables users to weight assignments differently when computing a class average grade.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.EducationGradingCategory>? GradingCategories
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.EducationGradingCategory>?>("gradingCategories"); }
-            set { BackingStore?.Set("gradingCategories", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.EducationGradingCategory> GradingCategories
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.EducationGradingCategory>>("gradingCategories"); }
-            set { BackingStore?.Set("gradingCategories", value); }
-        }
-#endif
-        /// <summary>Indicates whether to show the turn-in celebration animation. If true, indicates to skip the animation. The default value is false.</summary>
-        public bool? SubmissionAnimationDisabled
-        {
-            get { return BackingStore?.Get<bool?>("submissionAnimationDisabled"); }
-            set { BackingStore?.Set("submissionAnimationDisabled", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -52,8 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "gradingCategories", n => { GradingCategories = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.EducationGradingCategory>(global::Microsoft.Graph.Models.EducationGradingCategory.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "submissionAnimationDisabled", n => { SubmissionAnimationDisabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -64,8 +40,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.EducationGradingCategory>("gradingCategories", GradingCategories);
-            writer.WriteBoolValue("submissionAnimationDisabled", SubmissionAnimationDisabled);
         }
     }
 }

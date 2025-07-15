@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetTeamsDeviceUsageDistributionUserCountsWithP
         }
         /// <summary>
         /// Get the number of Microsoft Teams unique users by device type over the selected time period.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getteamsdeviceusagedistributionusercounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

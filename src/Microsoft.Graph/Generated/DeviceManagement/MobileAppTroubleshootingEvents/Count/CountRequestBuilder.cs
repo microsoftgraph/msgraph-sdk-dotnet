@@ -36,17 +36,17 @@ namespace Microsoft.Graph.DeviceManagement.MobileAppTroubleshootingEvents.Count
         /// <summary>
         /// Get the number of the resource
         /// </summary>
-        /// <returns>A <see cref="int"/></returns>
+        /// <returns>A <see cref="long"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<int?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.DeviceManagement.MobileAppTroubleshootingEvents.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<long?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.DeviceManagement.MobileAppTroubleshootingEvents.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<int?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.DeviceManagement.MobileAppTroubleshootingEvents.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<long?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.DeviceManagement.MobileAppTroubleshootingEvents.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.DeviceManagement.MobileAppTroubleshootingEvents.Count
             {
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<int?>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<long?>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the number of the resource

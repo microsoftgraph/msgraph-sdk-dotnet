@@ -15,16 +15,16 @@ namespace Microsoft.Graph.Models
         /// <summary>List of allowed sharing or delegating permission levels for the calendar. Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Graph.Models.CalendarRoleType?>? AllowedRoles
+        public List<string>? AllowedRoles
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.CalendarRoleType?>?>("allowedRoles"); }
+            get { return BackingStore?.Get<List<string>?>("allowedRoles"); }
             set { BackingStore?.Set("allowedRoles", value); }
         }
 #nullable restore
 #else
-        public List<global::Microsoft.Graph.Models.CalendarRoleType?> AllowedRoles
+        public List<string> AllowedRoles
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.CalendarRoleType?>>("allowedRoles"); }
+            get { return BackingStore?.Get<List<string>>("allowedRoles"); }
             set { BackingStore?.Set("allowedRoles", value); }
         }
 #endif
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "allowedRoles", n => { AllowedRoles = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Models.CalendarRoleType>()?.AsList(); } },
+                { "allowedRoles", n => { AllowedRoles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "emailAddress", n => { EmailAddress = n.GetObjectValue<global::Microsoft.Graph.Models.EmailAddress>(global::Microsoft.Graph.Models.EmailAddress.CreateFromDiscriminatorValue); } },
                 { "isInsideOrganization", n => { IsInsideOrganization = n.GetBoolValue(); } },
                 { "isRemovable", n => { IsRemovable = n.GetBoolValue(); } },
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Models.CalendarRoleType>("allowedRoles", AllowedRoles);
+            writer.WriteCollectionOfPrimitiveValues<string>("allowedRoles", AllowedRoles);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.EmailAddress>("emailAddress", EmailAddress);
             writer.WriteBoolValue("isInsideOrganization", IsInsideOrganization);
             writer.WriteBoolValue("isRemovable", IsRemovable);

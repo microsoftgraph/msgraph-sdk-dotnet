@@ -12,66 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class PrivilegedAccessSchedule : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>When the schedule was created. Optional.</summary>
-        public DateTimeOffset? CreatedDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
-            set { BackingStore?.Set("createdDateTime", value); }
-        }
-        /// <summary>The identifier of the access assignment or eligibility request that created this schedule. Optional.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CreatedUsing
-        {
-            get { return BackingStore?.Get<string?>("createdUsing"); }
-            set { BackingStore?.Set("createdUsing", value); }
-        }
-#nullable restore
-#else
-        public string CreatedUsing
-        {
-            get { return BackingStore?.Get<string>("createdUsing"); }
-            set { BackingStore?.Set("createdUsing", value); }
-        }
-#endif
-        /// <summary>When the schedule was last modified. Optional.</summary>
-        public DateTimeOffset? ModifiedDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("modifiedDateTime"); }
-            set { BackingStore?.Set("modifiedDateTime", value); }
-        }
-        /// <summary>Represents the period of the access assignment or eligibility. The scheduleInfo can represent a single occurrence or multiple recurring instances. Required.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.RequestSchedule? ScheduleInfo
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.RequestSchedule?>("scheduleInfo"); }
-            set { BackingStore?.Set("scheduleInfo", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.RequestSchedule ScheduleInfo
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.RequestSchedule>("scheduleInfo"); }
-            set { BackingStore?.Set("scheduleInfo", value); }
-        }
-#endif
-        /// <summary>The status of the access assignment or eligibility request. The possible values are: Canceled, Denied, Failed, Granted, PendingAdminDecision, PendingApproval, PendingProvisioning, PendingScheduleCreation, Provisioned, Revoked, and ScheduleCreated. Not nullable. Optional.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status
-        {
-            get { return BackingStore?.Get<string?>("status"); }
-            set { BackingStore?.Set("status", value); }
-        }
-#nullable restore
-#else
-        public string Status
-        {
-            get { return BackingStore?.Get<string>("status"); }
-            set { BackingStore?.Set("status", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -96,11 +36,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "createdUsing", n => { CreatedUsing = n.GetStringValue(); } },
-                { "modifiedDateTime", n => { ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "scheduleInfo", n => { ScheduleInfo = n.GetObjectValue<global::Microsoft.Graph.Models.RequestSchedule>(global::Microsoft.Graph.Models.RequestSchedule.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -111,11 +46,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteStringValue("createdUsing", CreatedUsing);
-            writer.WriteDateTimeOffsetValue("modifiedDateTime", ModifiedDateTime);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.RequestSchedule>("scheduleInfo", ScheduleInfo);
-            writer.WriteStringValue("status", Status);
         }
     }
 }

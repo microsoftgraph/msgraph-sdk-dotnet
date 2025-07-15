@@ -35,7 +35,6 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Wor
         }
         /// <summary>
         /// Run a workflow object on-demand. You can run any workflow on-demand, including scheduled workflows. Workflows created from the &apos;Real-time employee termination&apos; template are run on-demand only. When you run a workflow on demand, the tasks are executed regardless of whether the user state matches the scope and trigger execution conditions.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-workflow-activate?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

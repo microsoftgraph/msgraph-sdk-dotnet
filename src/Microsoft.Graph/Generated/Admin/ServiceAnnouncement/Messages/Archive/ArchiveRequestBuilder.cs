@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Archive
         }
         /// <summary>
         /// Archive a list of serviceUpdateMessages for the signed in user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceupdatemessage-archive?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Archive.ArchivePostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +60,6 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Archive
         }
         /// <summary>
         /// Archive a list of serviceUpdateMessages for the signed in user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceupdatemessage-archive?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Archive.ArchiveResponse"/></returns>
         /// <param name="body">The request body</param>

@@ -12,18 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class ProfilePhoto : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The height of the photo. Read-only.</summary>
-        public int? Height
-        {
-            get { return BackingStore?.Get<int?>("height"); }
-            set { BackingStore?.Set("height", value); }
-        }
-        /// <summary>The width of the photo. Read-only.</summary>
-        public int? Width
-        {
-            get { return BackingStore?.Get<int?>("width"); }
-            set { BackingStore?.Set("width", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -42,8 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "height", n => { Height = n.GetIntValue(); } },
-                { "width", n => { Width = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -54,8 +40,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteIntValue("height", Height);
-            writer.WriteIntValue("width", Width);
         }
     }
 }

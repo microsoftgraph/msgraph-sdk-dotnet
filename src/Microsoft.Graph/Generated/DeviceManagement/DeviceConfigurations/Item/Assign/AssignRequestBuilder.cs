@@ -35,7 +35,6 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.Assign
         }
         /// <summary>
         /// Not yet documented
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfiguration-assign?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.Assign.AssignPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +60,6 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.Assign
         }
         /// <summary>
         /// Not yet documented
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-deviceconfiguration-assign?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.Assign.AssignResponse"/></returns>
         /// <param name="body">The request body</param>

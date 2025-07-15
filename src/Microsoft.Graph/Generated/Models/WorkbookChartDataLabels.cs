@@ -12,90 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class WorkbookChartDataLabels : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Represents the format of chart data labels, which includes fill and font formatting. Read-only.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.WorkbookChartDataLabelFormat? Format
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.WorkbookChartDataLabelFormat?>("format"); }
-            set { BackingStore?.Set("format", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.WorkbookChartDataLabelFormat Format
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.WorkbookChartDataLabelFormat>("format"); }
-            set { BackingStore?.Set("format", value); }
-        }
-#endif
-        /// <summary>DataLabelPosition value that represents the position of the data label. The possible values are: None, Center, InsideEnd, InsideBase, OutsideEnd, Left, Right, Top, Bottom, BestFit, Callout.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Position
-        {
-            get { return BackingStore?.Get<string?>("position"); }
-            set { BackingStore?.Set("position", value); }
-        }
-#nullable restore
-#else
-        public string Position
-        {
-            get { return BackingStore?.Get<string>("position"); }
-            set { BackingStore?.Set("position", value); }
-        }
-#endif
-        /// <summary>String that represents the separator used for the data labels on a chart.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Separator
-        {
-            get { return BackingStore?.Get<string?>("separator"); }
-            set { BackingStore?.Set("separator", value); }
-        }
-#nullable restore
-#else
-        public string Separator
-        {
-            get { return BackingStore?.Get<string>("separator"); }
-            set { BackingStore?.Set("separator", value); }
-        }
-#endif
-        /// <summary>Boolean value that represents whether the data label bubble size is visible.</summary>
-        public bool? ShowBubbleSize
-        {
-            get { return BackingStore?.Get<bool?>("showBubbleSize"); }
-            set { BackingStore?.Set("showBubbleSize", value); }
-        }
-        /// <summary>Boolean value that represents whether the data label category name is visible.</summary>
-        public bool? ShowCategoryName
-        {
-            get { return BackingStore?.Get<bool?>("showCategoryName"); }
-            set { BackingStore?.Set("showCategoryName", value); }
-        }
-        /// <summary>Boolean value that represents whether the data label legend key is visible.</summary>
-        public bool? ShowLegendKey
-        {
-            get { return BackingStore?.Get<bool?>("showLegendKey"); }
-            set { BackingStore?.Set("showLegendKey", value); }
-        }
-        /// <summary>Boolean value that represents whether the data label percentage is visible.</summary>
-        public bool? ShowPercentage
-        {
-            get { return BackingStore?.Get<bool?>("showPercentage"); }
-            set { BackingStore?.Set("showPercentage", value); }
-        }
-        /// <summary>Boolean value that represents whether the data label series name is visible.</summary>
-        public bool? ShowSeriesName
-        {
-            get { return BackingStore?.Get<bool?>("showSeriesName"); }
-            set { BackingStore?.Set("showSeriesName", value); }
-        }
-        /// <summary>Boolean value that represents whether the data label value is visible.</summary>
-        public bool? ShowValue
-        {
-            get { return BackingStore?.Get<bool?>("showValue"); }
-            set { BackingStore?.Set("showValue", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -114,15 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "format", n => { Format = n.GetObjectValue<global::Microsoft.Graph.Models.WorkbookChartDataLabelFormat>(global::Microsoft.Graph.Models.WorkbookChartDataLabelFormat.CreateFromDiscriminatorValue); } },
-                { "position", n => { Position = n.GetStringValue(); } },
-                { "separator", n => { Separator = n.GetStringValue(); } },
-                { "showBubbleSize", n => { ShowBubbleSize = n.GetBoolValue(); } },
-                { "showCategoryName", n => { ShowCategoryName = n.GetBoolValue(); } },
-                { "showLegendKey", n => { ShowLegendKey = n.GetBoolValue(); } },
-                { "showPercentage", n => { ShowPercentage = n.GetBoolValue(); } },
-                { "showSeriesName", n => { ShowSeriesName = n.GetBoolValue(); } },
-                { "showValue", n => { ShowValue = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -133,15 +40,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.WorkbookChartDataLabelFormat>("format", Format);
-            writer.WriteStringValue("position", Position);
-            writer.WriteStringValue("separator", Separator);
-            writer.WriteBoolValue("showBubbleSize", ShowBubbleSize);
-            writer.WriteBoolValue("showCategoryName", ShowCategoryName);
-            writer.WriteBoolValue("showLegendKey", ShowLegendKey);
-            writer.WriteBoolValue("showPercentage", ShowPercentage);
-            writer.WriteBoolValue("showSeriesName", ShowSeriesName);
-            writer.WriteBoolValue("showValue", ShowValue);
         }
     }
 }

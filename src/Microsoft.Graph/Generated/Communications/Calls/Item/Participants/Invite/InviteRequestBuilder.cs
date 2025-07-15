@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Communications.Calls.Item.Participants.Invite
         }
         /// <summary>
         /// Invite participants to the active call. For more information about how to handle operations, see commsOperation.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/participant-invite?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.InviteParticipantsOperation"/></returns>
         /// <param name="body">The request body</param>

@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item.ContentTypes.Item.AssociateWithH
         }
         /// <summary>
         /// Associate a published content type present in a content type hub with a list of hub sites.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contenttype-associatewithhubsites?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

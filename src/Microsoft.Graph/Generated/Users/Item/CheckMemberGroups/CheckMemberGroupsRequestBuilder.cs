@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Users.Item.CheckMemberGroups
         }
         /// <summary>
         /// Check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:- user- group- service principal- organizational contact- device- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Users.Item.CheckMemberGroups.CheckMemberGroupsPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +60,6 @@ namespace Microsoft.Graph.Users.Item.CheckMemberGroups
         }
         /// <summary>
         /// Check for membership in a specified list of group IDs, and return from that list the IDs of groups where a specified object is a member. The specified object can be of one of the following types:- user- group- service principal- organizational contact- device- directory object This function is transitive. You can check up to a maximum of 20 groups per request. This function supports all groups provisioned in Microsoft Entra ID. Because Microsoft 365 groups cannot contain other groups, membership in a Microsoft 365 group is always direct.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryobject-checkmembergroups?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Users.Item.CheckMemberGroups.CheckMemberGroupsResponse"/></returns>
         /// <param name="body">The request body</param>

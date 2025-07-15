@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetOffice365ActiveUserCountsWithPeriod
         }
         /// <summary>
         /// Get the count of daily active users in the reporting period by product.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getoffice365activeusercounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

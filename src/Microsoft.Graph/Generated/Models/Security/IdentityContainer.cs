@@ -12,38 +12,6 @@ namespace Microsoft.Graph.Models.Security
     public partial class IdentityContainer : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Represents potential issues identified by Microsoft Defender for Identity within a customer&apos;s Microsoft Defender for Identity configuration.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.Security.HealthIssue>? HealthIssues
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Security.HealthIssue>?>("healthIssues"); }
-            set { BackingStore?.Set("healthIssues", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.Security.HealthIssue> HealthIssues
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Security.HealthIssue>>("healthIssues"); }
-            set { BackingStore?.Set("healthIssues", value); }
-        }
-#endif
-        /// <summary>Represents a customer&apos;s Microsoft Defender for Identity sensors.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.Security.Sensor>? Sensors
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Security.Sensor>?>("sensors"); }
-            set { BackingStore?.Set("sensors", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.Security.Sensor> Sensors
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Security.Sensor>>("sensors"); }
-            set { BackingStore?.Set("sensors", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,8 +30,6 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "healthIssues", n => { HealthIssues = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.HealthIssue>(global::Microsoft.Graph.Models.Security.HealthIssue.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "sensors", n => { Sensors = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.Sensor>(global::Microsoft.Graph.Models.Security.Sensor.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -74,8 +40,6 @@ namespace Microsoft.Graph.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.HealthIssue>("healthIssues", HealthIssues);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.Sensor>("sensors", Sensors);
         }
     }
 }

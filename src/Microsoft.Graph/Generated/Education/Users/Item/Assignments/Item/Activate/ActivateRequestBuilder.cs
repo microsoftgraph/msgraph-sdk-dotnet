@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Education.Users.Item.Assignments.Item.Activate
         }
         /// <summary>
         /// Activate an inactive educationAssignment to signal that the assignment has further action items for teachers or students. This action can only be performed by a teacher on currently inactive assignments.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-activate?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.EducationAssignment"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

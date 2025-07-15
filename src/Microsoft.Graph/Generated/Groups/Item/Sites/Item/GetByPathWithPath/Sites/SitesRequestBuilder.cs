@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.Sites
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SitesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/getByPath(path='{path}')/sites{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        public SitesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/getByPath(path='{path}')/sites{?%24count,%24expand,%24filter,%24search,%24select,%24skip,%24top}", pathParameters)
         {
         }
         /// <summary>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.Sites
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SitesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/getByPath(path='{path}')/sites{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        public SitesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups/{group%2Did}/sites/{site%2Did}/getByPath(path='{path}')/sites{?%24count,%24expand,%24filter,%24search,%24select,%24skip,%24top}", rawUrl)
         {
         }
         /// <summary>
@@ -114,16 +114,6 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.Sites
             [QueryParameter("%24filter")]
             public string Filter { get; set; }
 #endif
-            /// <summary>Order items by property values</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("%24orderby")]
-            public string[]? Orderby { get; set; }
-#nullable restore
-#else
-            [QueryParameter("%24orderby")]
-            public string[] Orderby { get; set; }
-#endif
             /// <summary>Search items by search phrases</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -146,10 +136,10 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.GetByPathWithPath.Sites
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

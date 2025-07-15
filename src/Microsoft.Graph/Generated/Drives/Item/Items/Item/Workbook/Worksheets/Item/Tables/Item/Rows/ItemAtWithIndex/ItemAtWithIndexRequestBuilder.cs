@@ -44,7 +44,6 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Tables
         }
         /// <summary>
         /// Gets a row based on its position in the collection.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tablerowcollection-itemat?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.WorkbookTableRow"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

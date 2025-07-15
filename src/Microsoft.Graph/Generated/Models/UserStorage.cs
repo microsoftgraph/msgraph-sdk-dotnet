@@ -12,22 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class UserStorage : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The quota property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.UnifiedStorageQuota? Quota
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.UnifiedStorageQuota?>("quota"); }
-            set { BackingStore?.Set("quota", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.UnifiedStorageQuota Quota
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.UnifiedStorageQuota>("quota"); }
-            set { BackingStore?.Set("quota", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -46,7 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "quota", n => { Quota = n.GetObjectValue<global::Microsoft.Graph.Models.UnifiedStorageQuota>(global::Microsoft.Graph.Models.UnifiedStorageQuota.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +40,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.UnifiedStorageQuota>("quota", Quota);
         }
     }
 }

@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Me.MailFolders.Item.ChildFolders.Item.Copy
         }
         /// <summary>
         /// Copy a mailfolder and its contents to another mailfolder.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailfolder-copy?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.MailFolder"/></returns>
         /// <param name="body">The request body</param>

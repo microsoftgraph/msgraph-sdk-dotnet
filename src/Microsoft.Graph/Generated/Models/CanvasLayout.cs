@@ -12,38 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class CanvasLayout : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Collection of horizontal sections on the SharePoint page.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.HorizontalSection>? HorizontalSections
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.HorizontalSection>?>("horizontalSections"); }
-            set { BackingStore?.Set("horizontalSections", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.HorizontalSection> HorizontalSections
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.HorizontalSection>>("horizontalSections"); }
-            set { BackingStore?.Set("horizontalSections", value); }
-        }
-#endif
-        /// <summary>Vertical section on the SharePoint page.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.VerticalSection? VerticalSection
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.VerticalSection?>("verticalSection"); }
-            set { BackingStore?.Set("verticalSection", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.VerticalSection VerticalSection
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.VerticalSection>("verticalSection"); }
-            set { BackingStore?.Set("verticalSection", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,8 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "horizontalSections", n => { HorizontalSections = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.HorizontalSection>(global::Microsoft.Graph.Models.HorizontalSection.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "verticalSection", n => { VerticalSection = n.GetObjectValue<global::Microsoft.Graph.Models.VerticalSection>(global::Microsoft.Graph.Models.VerticalSection.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -74,8 +40,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.HorizontalSection>("horizontalSections", HorizontalSections);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.VerticalSection>("verticalSection", VerticalSection);
         }
     }
 }

@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.ContentTypes.Item.Co
         }
         /// <summary>
         /// Copy a file to a default content location in a content type. The file can then be added as a default file or template via a POST operation.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/contenttype-copytodefaultcontentlocation?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

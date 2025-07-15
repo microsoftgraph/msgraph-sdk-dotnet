@@ -13,42 +13,6 @@ namespace Microsoft.Graph.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EBookInstallSummary : global::Microsoft.Graph.Models.Entity, IParsable
     {
-        /// <summary>Number of Devices that have failed to install this book.</summary>
-        public int? FailedDeviceCount
-        {
-            get { return BackingStore?.Get<int?>("failedDeviceCount"); }
-            set { BackingStore?.Set("failedDeviceCount", value); }
-        }
-        /// <summary>Number of Users that have 1 or more device that failed to install this book.</summary>
-        public int? FailedUserCount
-        {
-            get { return BackingStore?.Get<int?>("failedUserCount"); }
-            set { BackingStore?.Set("failedUserCount", value); }
-        }
-        /// <summary>Number of Devices that have successfully installed this book.</summary>
-        public int? InstalledDeviceCount
-        {
-            get { return BackingStore?.Get<int?>("installedDeviceCount"); }
-            set { BackingStore?.Set("installedDeviceCount", value); }
-        }
-        /// <summary>Number of Users whose devices have all succeeded to install this book.</summary>
-        public int? InstalledUserCount
-        {
-            get { return BackingStore?.Get<int?>("installedUserCount"); }
-            set { BackingStore?.Set("installedUserCount", value); }
-        }
-        /// <summary>Number of Devices that does not have this book installed.</summary>
-        public int? NotInstalledDeviceCount
-        {
-            get { return BackingStore?.Get<int?>("notInstalledDeviceCount"); }
-            set { BackingStore?.Set("notInstalledDeviceCount", value); }
-        }
-        /// <summary>Number of Users that did not install this book.</summary>
-        public int? NotInstalledUserCount
-        {
-            get { return BackingStore?.Get<int?>("notInstalledUserCount"); }
-            set { BackingStore?.Set("notInstalledUserCount", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -67,12 +31,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "failedDeviceCount", n => { FailedDeviceCount = n.GetIntValue(); } },
-                { "failedUserCount", n => { FailedUserCount = n.GetIntValue(); } },
-                { "installedDeviceCount", n => { InstalledDeviceCount = n.GetIntValue(); } },
-                { "installedUserCount", n => { InstalledUserCount = n.GetIntValue(); } },
-                { "notInstalledDeviceCount", n => { NotInstalledDeviceCount = n.GetIntValue(); } },
-                { "notInstalledUserCount", n => { NotInstalledUserCount = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -83,12 +41,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteIntValue("failedDeviceCount", FailedDeviceCount);
-            writer.WriteIntValue("failedUserCount", FailedUserCount);
-            writer.WriteIntValue("installedDeviceCount", InstalledDeviceCount);
-            writer.WriteIntValue("installedUserCount", InstalledUserCount);
-            writer.WriteIntValue("notInstalledDeviceCount", NotInstalledDeviceCount);
-            writer.WriteIntValue("notInstalledUserCount", NotInstalledUserCount);
         }
     }
 }

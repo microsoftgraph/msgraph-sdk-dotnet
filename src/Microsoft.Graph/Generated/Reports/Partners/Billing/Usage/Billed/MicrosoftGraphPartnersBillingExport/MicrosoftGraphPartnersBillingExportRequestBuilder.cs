@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Reports.Partners.Billing.Usage.Billed.MicrosoftGraphPa
         }
         /// <summary>
         /// Export the billed Azure usage data.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/partners-billing-billedusage-export?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Partners.Billing.Operation"/></returns>
         /// <param name="body">The request body</param>

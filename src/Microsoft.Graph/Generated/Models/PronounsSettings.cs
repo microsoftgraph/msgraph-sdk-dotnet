@@ -12,12 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class PronounsSettings : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>true to enable pronouns in the organization; otherwise, false. The default value is false, and pronouns are disabled.</summary>
-        public bool? IsEnabledInOrganization
-        {
-            get { return BackingStore?.Get<bool?>("isEnabledInOrganization"); }
-            set { BackingStore?.Set("isEnabledInOrganization", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -36,7 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "isEnabledInOrganization", n => { IsEnabledInOrganization = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -47,7 +40,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteBoolValue("isEnabledInOrganization", IsEnabledInOrganization);
         }
     }
 }

@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Contacts.Delta
         }
         /// <summary>
         /// Get newly created, updated, or deleted organizational contacts without having to perform a full read of the entire collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/orgcontact-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Contacts.Delta.DeltaGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +58,6 @@ namespace Microsoft.Graph.Contacts.Delta
         }
         /// <summary>
         /// Get newly created, updated, or deleted organizational contacts without having to perform a full read of the entire collection. For more information, see Use delta query to track changes in Microsoft Graph data for details.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/orgcontact-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Contacts.Delta.DeltaResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -171,10 +169,10 @@ namespace Microsoft.Graph.Contacts.Delta
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

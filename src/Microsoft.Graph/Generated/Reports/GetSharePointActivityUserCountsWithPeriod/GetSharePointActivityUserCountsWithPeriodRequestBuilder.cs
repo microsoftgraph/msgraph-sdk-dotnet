@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetSharePointActivityUserCountsWithPeriod
         }
         /// <summary>
         /// Get the trend in the number of active users. A user is considered active if they have executed a file activity (save, sync, modify, or share) or visited a page within the specified time period.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getsharepointactivityusercounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetOneDriveActivityFileCountsWithPeriod
         }
         /// <summary>
         /// Get the number of unique, licensed users that performed file interactions against any OneDrive account.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getonedriveactivityfilecounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

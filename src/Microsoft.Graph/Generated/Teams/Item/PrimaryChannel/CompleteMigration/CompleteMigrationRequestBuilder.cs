@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Teams.Item.PrimaryChannel.CompleteMigration
         }
         /// <summary>
         /// Complete the message migration process by removing migration mode from a channel in a team. Migration mode is a special state that prevents certain operations, like sending messages and adding members, during the data migration process. After a completeMigration request is made, you can&apos;t import additional messages into the team. You can add members to the team after the request returns a successful response.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-completemigration?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

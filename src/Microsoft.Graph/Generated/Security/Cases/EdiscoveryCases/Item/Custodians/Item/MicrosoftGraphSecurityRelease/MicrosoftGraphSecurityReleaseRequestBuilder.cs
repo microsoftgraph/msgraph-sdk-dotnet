@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Item.Mi
         }
         /// <summary>
         /// Release a custodian from a case. For details, see Release a custodian from a case.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycustodian-release?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

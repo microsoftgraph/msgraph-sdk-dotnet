@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Drives.Item.Recent
         }
         /// <summary>
         /// List a set of items that have been recently used by the signed in user.This collection includes items that are in the user&apos;s drive and items they have access to from other drives.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/drive-recent?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Drives.Item.Recent.RecentGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +58,6 @@ namespace Microsoft.Graph.Drives.Item.Recent
         }
         /// <summary>
         /// List a set of items that have been recently used by the signed in user.This collection includes items that are in the user&apos;s drive and items they have access to from other drives.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/drive-recent?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Drives.Item.Recent.RecentResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -171,10 +169,10 @@ namespace Microsoft.Graph.Drives.Item.Recent
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

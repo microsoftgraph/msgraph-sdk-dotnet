@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetTeamsTeamActivityCountsWithPeriod
         }
         /// <summary>
         /// Get the number of team activities across Microsoft Teams. The activity types are related to meetings and messages.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getteamsteamactivitycounts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

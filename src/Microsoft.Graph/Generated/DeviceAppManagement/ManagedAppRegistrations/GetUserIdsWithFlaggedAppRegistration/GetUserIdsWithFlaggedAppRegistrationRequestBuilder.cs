@@ -35,7 +35,6 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.GetUserIds
         }
         /// <summary>
         /// Not yet documented
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-managedappregistration-getuseridswithflaggedappregistration?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.GetUserIdsWithFlaggedAppRegistration.GetUserIdsWithFlaggedAppRegistrationGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +58,6 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.GetUserIds
         }
         /// <summary>
         /// Not yet documented
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-managedappregistration-getuseridswithflaggedappregistration?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.GetUserIdsWithFlaggedAppRegistration.GetUserIdsWithFlaggedAppRegistrationResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -141,10 +139,10 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.GetUserIds
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

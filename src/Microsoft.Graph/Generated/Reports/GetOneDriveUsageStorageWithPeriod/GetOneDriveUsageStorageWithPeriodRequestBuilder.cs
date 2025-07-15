@@ -37,7 +37,6 @@ namespace Microsoft.Graph.Reports.GetOneDriveUsageStorageWithPeriod
         }
         /// <summary>
         /// Get the trend on the amount of storage you&apos;re using in OneDrive for Business.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-getonedriveusagestorage?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

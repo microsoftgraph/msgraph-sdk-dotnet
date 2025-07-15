@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Me.TranslateExchangeIds
         }
         /// <summary>
         /// Translate identifiers of Outlook-related resources between formats.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-translateexchangeids?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Me.TranslateExchangeIds.TranslateExchangeIdsPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +60,6 @@ namespace Microsoft.Graph.Me.TranslateExchangeIds
         }
         /// <summary>
         /// Translate identifiers of Outlook-related resources between formats.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-translateexchangeids?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Me.TranslateExchangeIds.TranslateExchangeIdsResponse"/></returns>
         /// <param name="body">The request body</param>

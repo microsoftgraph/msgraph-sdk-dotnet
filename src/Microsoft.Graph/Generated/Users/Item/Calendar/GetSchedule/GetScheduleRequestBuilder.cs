@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Users.Item.Calendar.GetSchedule
         }
         /// <summary>
         /// Get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/calendar-getschedule?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Users.Item.Calendar.GetSchedule.GetSchedulePostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +60,6 @@ namespace Microsoft.Graph.Users.Item.Calendar.GetSchedule
         }
         /// <summary>
         /// Get the free/busy availability information for a collection of users, distributions lists, or resources (rooms or equipment) for a specified time period.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/calendar-getschedule?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Users.Item.Calendar.GetSchedule.GetScheduleResponse"/></returns>
         /// <param name="body">The request body</param>

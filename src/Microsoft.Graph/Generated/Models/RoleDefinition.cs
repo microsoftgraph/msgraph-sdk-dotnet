@@ -13,76 +13,6 @@ namespace Microsoft.Graph.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RoleDefinition : global::Microsoft.Graph.Models.Entity, IParsable
     {
-        /// <summary>Description of the Role definition.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Description
-        {
-            get { return BackingStore?.Get<string?>("description"); }
-            set { BackingStore?.Set("description", value); }
-        }
-#nullable restore
-#else
-        public string Description
-        {
-            get { return BackingStore?.Get<string>("description"); }
-            set { BackingStore?.Set("description", value); }
-        }
-#endif
-        /// <summary>Display Name of the Role definition.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DisplayName
-        {
-            get { return BackingStore?.Get<string?>("displayName"); }
-            set { BackingStore?.Set("displayName", value); }
-        }
-#nullable restore
-#else
-        public string DisplayName
-        {
-            get { return BackingStore?.Get<string>("displayName"); }
-            set { BackingStore?.Set("displayName", value); }
-        }
-#endif
-        /// <summary>Type of Role. Set to True if it is built-in, or set to False if it is a custom role definition.</summary>
-        public bool? IsBuiltIn
-        {
-            get { return BackingStore?.Get<bool?>("isBuiltIn"); }
-            set { BackingStore?.Set("isBuiltIn", value); }
-        }
-        /// <summary>List of Role assignments for this role definition.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.RoleAssignment>? RoleAssignments
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.RoleAssignment>?>("roleAssignments"); }
-            set { BackingStore?.Set("roleAssignments", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.RoleAssignment> RoleAssignments
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.RoleAssignment>>("roleAssignments"); }
-            set { BackingStore?.Set("roleAssignments", value); }
-        }
-#endif
-        /// <summary>List of Role Permissions this role is allowed to perform. These must match the actionName that is defined as part of the rolePermission.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.RolePermission>? RolePermissions
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.RolePermission>?>("rolePermissions"); }
-            set { BackingStore?.Set("rolePermissions", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.RolePermission> RolePermissions
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.RolePermission>>("rolePermissions"); }
-            set { BackingStore?.Set("rolePermissions", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -106,11 +36,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "isBuiltIn", n => { IsBuiltIn = n.GetBoolValue(); } },
-                { "roleAssignments", n => { RoleAssignments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.RoleAssignment>(global::Microsoft.Graph.Models.RoleAssignment.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "rolePermissions", n => { RolePermissions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.RolePermission>(global::Microsoft.Graph.Models.RolePermission.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -121,11 +46,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("description", Description);
-            writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteBoolValue("isBuiltIn", IsBuiltIn);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.RoleAssignment>("roleAssignments", RoleAssignments);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.RolePermission>("rolePermissions", RolePermissions);
         }
     }
 }

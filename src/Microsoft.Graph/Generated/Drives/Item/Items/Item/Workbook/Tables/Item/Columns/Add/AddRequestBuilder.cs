@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Columns.Ad
         }
         /// <summary>
         /// Adds a new column to the table.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tablecolumncollection-add?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.WorkbookTableColumn"/></returns>
         /// <param name="body">The request body</param>

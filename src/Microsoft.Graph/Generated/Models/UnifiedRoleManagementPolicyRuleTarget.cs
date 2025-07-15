@@ -104,16 +104,16 @@ namespace Microsoft.Graph.Models
         /// <summary>The role management operations that are the target of the policy rule. Allowed values are: All, Activate, Deactivate, Assign, Update, Remove, Extend, Renew.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Graph.Models.UnifiedRoleManagementPolicyRuleTargetOperations?>? Operations
+        public List<string>? Operations
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.UnifiedRoleManagementPolicyRuleTargetOperations?>?>("operations"); }
+            get { return BackingStore?.Get<List<string>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #nullable restore
 #else
-        public List<global::Microsoft.Graph.Models.UnifiedRoleManagementPolicyRuleTargetOperations?> Operations
+        public List<string> Operations
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.UnifiedRoleManagementPolicyRuleTargetOperations?>>("operations"); }
+            get { return BackingStore?.Get<List<string>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #endif
@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Models
                 { "inheritableSettings", n => { InheritableSettings = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "level", n => { Level = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "operations", n => { Operations = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Models.UnifiedRoleManagementPolicyRuleTargetOperations>()?.AsList(); } },
+                { "operations", n => { Operations = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "targetObjects", n => { TargetObjects = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DirectoryObject>(global::Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -180,7 +180,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfPrimitiveValues<string>("inheritableSettings", InheritableSettings);
             writer.WriteStringValue("level", Level);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Models.UnifiedRoleManagementPolicyRuleTargetOperations>("operations", Operations);
+            writer.WriteCollectionOfPrimitiveValues<string>("operations", Operations);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DirectoryObject>("targetObjects", TargetObjects);
             writer.WriteAdditionalData(AdditionalData);
         }

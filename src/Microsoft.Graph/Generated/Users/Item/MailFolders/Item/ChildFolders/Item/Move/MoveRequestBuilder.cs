@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Users.Item.MailFolders.Item.ChildFolders.Item.Move
         }
         /// <summary>
         /// Move a mailfolder and its contents to another mailfolder.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailfolder-move?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.MailFolder"/></returns>
         /// <param name="body">The request body</param>

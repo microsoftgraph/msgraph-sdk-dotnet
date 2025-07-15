@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Domains.Item.ForceDelete
         }
         /// <summary>
         /// Delete a domain using an asynchronous long-running operation. Before performing this operation, you must update or remove any references to Exchange as the provisioning service. The following actions are performed as part of this operation: After the domain deletion completes, API operations for the deleted domain return an HTTP 404 status code. To verify deletion of a domain, you can perform a get domain operation.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/domain-forcedelete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -35,7 +35,6 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.
         }
         /// <summary>
         /// Assign a cloudPcProvisioningPolicy to user groups.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpcprovisioningpolicy-assign?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Me.Outlook.SupportedLanguages
         }
         /// <summary>
         /// Get the list of locales and languages that are supported for the user, as configured on the user&apos;s mailbox server. When setting up an Outlook client, the user selects the preferred language from this supported list. You can subsequently get the preferred language bygetting the user&apos;s mailbox settings.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlookuser-supportedlanguages?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Me.Outlook.SupportedLanguages.SupportedLanguagesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +58,6 @@ namespace Microsoft.Graph.Me.Outlook.SupportedLanguages
         }
         /// <summary>
         /// Get the list of locales and languages that are supported for the user, as configured on the user&apos;s mailbox server. When setting up an Outlook client, the user selects the preferred language from this supported list. You can subsequently get the preferred language bygetting the user&apos;s mailbox settings.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlookuser-supportedlanguages?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Me.Outlook.SupportedLanguages.SupportedLanguagesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -141,10 +139,10 @@ namespace Microsoft.Graph.Me.Outlook.SupportedLanguages
 #endif
             /// <summary>Skip the first n items</summary>
             [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
+            public long? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

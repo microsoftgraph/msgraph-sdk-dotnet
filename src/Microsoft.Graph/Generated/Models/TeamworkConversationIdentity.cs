@@ -12,19 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class TeamworkConversationIdentity : global::Microsoft.Graph.Models.Identity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Type of conversation. Possible values are: team, channel, chat, and unknownFutureValue.</summary>
-        public global::Microsoft.Graph.Models.TeamworkConversationIdentityType? ConversationIdentityType
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.TeamworkConversationIdentityType?>("conversationIdentityType"); }
-            set { BackingStore?.Set("conversationIdentityType", value); }
-        }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Models.TeamworkConversationIdentity"/> and sets the default values.
-        /// </summary>
-        public TeamworkConversationIdentity() : base()
-        {
-            OdataType = "#microsoft.graph.teamworkConversationIdentity";
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -43,7 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "conversationIdentityType", n => { ConversationIdentityType = n.GetEnumValue<global::Microsoft.Graph.Models.TeamworkConversationIdentityType>(); } },
             };
         }
         /// <summary>
@@ -54,7 +40,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<global::Microsoft.Graph.Models.TeamworkConversationIdentityType>("conversationIdentityType", ConversationIdentityType);
         }
     }
 }

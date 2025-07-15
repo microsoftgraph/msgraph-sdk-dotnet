@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.DoesUserHaveA
         }
         /// <summary>
         /// Determine whether a user has access to a shared channel.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-doesuserhaveaccess?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +58,6 @@ namespace Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.DoesUserHaveA
         }
         /// <summary>
         /// Determine whether a user has access to a shared channel.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-doesuserhaveaccess?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

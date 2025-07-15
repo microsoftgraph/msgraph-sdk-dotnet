@@ -12,34 +12,6 @@ namespace Microsoft.Graph.Models.Security
     public partial class HostReputation : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The classification property</summary>
-        public global::Microsoft.Graph.Models.Security.HostReputationClassification? Classification
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.HostReputationClassification?>("classification"); }
-            set { BackingStore?.Set("classification", value); }
-        }
-        /// <summary>A collection of rules that have been used to calculate the classification and score.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.Security.HostReputationRule>? Rules
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Security.HostReputationRule>?>("rules"); }
-            set { BackingStore?.Set("rules", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.Security.HostReputationRule> Rules
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Security.HostReputationRule>>("rules"); }
-            set { BackingStore?.Set("rules", value); }
-        }
-#endif
-        /// <summary>The calculated score (0-100) of the requested host. A higher value indicates that this host is more likely to be suspicious or malicious.</summary>
-        public int? Score
-        {
-            get { return BackingStore?.Get<int?>("score"); }
-            set { BackingStore?.Set("score", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -58,9 +30,6 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "classification", n => { Classification = n.GetEnumValue<global::Microsoft.Graph.Models.Security.HostReputationClassification>(); } },
-                { "rules", n => { Rules = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.HostReputationRule>(global::Microsoft.Graph.Models.Security.HostReputationRule.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "score", n => { Score = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -71,9 +40,6 @@ namespace Microsoft.Graph.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<global::Microsoft.Graph.Models.Security.HostReputationClassification>("classification", Classification);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.HostReputationRule>("rules", Rules);
-            writer.WriteIntValue("score", Score);
         }
     }
 }

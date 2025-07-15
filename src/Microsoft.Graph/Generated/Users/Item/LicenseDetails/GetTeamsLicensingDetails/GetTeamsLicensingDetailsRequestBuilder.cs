@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Users.Item.LicenseDetails.GetTeamsLicensingDetails
         }
         /// <summary>
         /// Get the license status of a user in Microsoft Teams.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/licensedetails-getteamslicensingdetails?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.TeamsLicensingDetails"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

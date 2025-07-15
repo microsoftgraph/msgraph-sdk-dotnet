@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Print.Printers.Item.Jobs.Item.Abort
         }
         /// <summary>
         /// Abort a print job. Only applications using application permissions can abort a print job. Aborting a print job will only succeed if there is a printTask in a processing state on the associated print job, started by a trigger that the requesting app created. For details about how to register a task trigger, see Extending Universal Print to support pull printing.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/printjob-abort?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

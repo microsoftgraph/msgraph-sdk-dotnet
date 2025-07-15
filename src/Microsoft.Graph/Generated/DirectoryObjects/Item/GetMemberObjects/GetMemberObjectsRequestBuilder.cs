@@ -35,7 +35,6 @@ namespace Microsoft.Graph.DirectoryObjects.Item.GetMemberObjects
         }
         /// <summary>
         /// Return all IDs for the groups, administrative units, and directory roles that an object of one of the following types is a member of:- user- group- service principal- organizational contact- device- directory object This function is transitive. Only users and role-enabled groups can be members of directory roles.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.DirectoryObjects.Item.GetMemberObjects.GetMemberObjectsPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +60,6 @@ namespace Microsoft.Graph.DirectoryObjects.Item.GetMemberObjects
         }
         /// <summary>
         /// Return all IDs for the groups, administrative units, and directory roles that an object of one of the following types is a member of:- user- group- service principal- organizational contact- device- directory object This function is transitive. Only users and role-enabled groups can be members of directory roles.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/directoryobject-getmemberobjects?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.DirectoryObjects.Item.GetMemberObjects.GetMemberObjectsResponse"/></returns>
         /// <param name="body">The request body</param>

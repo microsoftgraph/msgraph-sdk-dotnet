@@ -12,89 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class PrivilegedAccessGroupEligibilitySchedule : global::Microsoft.Graph.Models.PrivilegedAccessSchedule, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The identifier of the membership or ownership eligibility to the group that is governed by PIM. Required. The possible values are: owner, member. Supports $filter (eq).</summary>
-        public global::Microsoft.Graph.Models.PrivilegedAccessGroupRelationships? AccessId
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.PrivilegedAccessGroupRelationships?>("accessId"); }
-            set { BackingStore?.Set("accessId", value); }
-        }
-        /// <summary>References the group that is the scope of the membership or ownership eligibility through PIM for Groups. Supports $expand.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.Group? Group
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Group?>("group"); }
-            set { BackingStore?.Set("group", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.Group Group
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Group>("group"); }
-            set { BackingStore?.Set("group", value); }
-        }
-#endif
-        /// <summary>The identifier of the group representing the scope of the membership or ownership eligibility through PIM for Groups. Required. Supports $filter (eq).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? GroupId
-        {
-            get { return BackingStore?.Get<string?>("groupId"); }
-            set { BackingStore?.Set("groupId", value); }
-        }
-#nullable restore
-#else
-        public string GroupId
-        {
-            get { return BackingStore?.Get<string>("groupId"); }
-            set { BackingStore?.Set("groupId", value); }
-        }
-#endif
-        /// <summary>Indicates whether the assignment is derived from a group assignment. It can further imply whether the caller can manage the schedule. Required. The possible values are: direct, group, unknownFutureValue. Supports $filter (eq).</summary>
-        public global::Microsoft.Graph.Models.PrivilegedAccessGroupMemberType? MemberType
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.PrivilegedAccessGroupMemberType?>("memberType"); }
-            set { BackingStore?.Set("memberType", value); }
-        }
-        /// <summary>References the principal that&apos;s in the scope of this membership or ownership eligibility request to the group that&apos;s governed by PIM. Supports $expand.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.DirectoryObject? Principal
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.DirectoryObject?>("principal"); }
-            set { BackingStore?.Set("principal", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.DirectoryObject Principal
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.DirectoryObject>("principal"); }
-            set { BackingStore?.Set("principal", value); }
-        }
-#endif
-        /// <summary>The identifier of the principal whose membership or ownership eligibility is granted through PIM for Groups. Required. Supports $filter (eq).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PrincipalId
-        {
-            get { return BackingStore?.Get<string?>("principalId"); }
-            set { BackingStore?.Set("principalId", value); }
-        }
-#nullable restore
-#else
-        public string PrincipalId
-        {
-            get { return BackingStore?.Get<string>("principalId"); }
-            set { BackingStore?.Set("principalId", value); }
-        }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.Models.PrivilegedAccessGroupEligibilitySchedule"/> and sets the default values.
-        /// </summary>
-        public PrivilegedAccessGroupEligibilitySchedule() : base()
-        {
-            OdataType = "#microsoft.graph.privilegedAccessGroupEligibilitySchedule";
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -113,12 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "accessId", n => { AccessId = n.GetEnumValue<global::Microsoft.Graph.Models.PrivilegedAccessGroupRelationships>(); } },
-                { "group", n => { Group = n.GetObjectValue<global::Microsoft.Graph.Models.Group>(global::Microsoft.Graph.Models.Group.CreateFromDiscriminatorValue); } },
-                { "groupId", n => { GroupId = n.GetStringValue(); } },
-                { "memberType", n => { MemberType = n.GetEnumValue<global::Microsoft.Graph.Models.PrivilegedAccessGroupMemberType>(); } },
-                { "principal", n => { Principal = n.GetObjectValue<global::Microsoft.Graph.Models.DirectoryObject>(global::Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue); } },
-                { "principalId", n => { PrincipalId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -129,12 +40,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<global::Microsoft.Graph.Models.PrivilegedAccessGroupRelationships>("accessId", AccessId);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.Group>("group", Group);
-            writer.WriteStringValue("groupId", GroupId);
-            writer.WriteEnumValue<global::Microsoft.Graph.Models.PrivilegedAccessGroupMemberType>("memberType", MemberType);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.DirectoryObject>("principal", Principal);
-            writer.WriteStringValue("principalId", PrincipalId);
         }
     }
 }

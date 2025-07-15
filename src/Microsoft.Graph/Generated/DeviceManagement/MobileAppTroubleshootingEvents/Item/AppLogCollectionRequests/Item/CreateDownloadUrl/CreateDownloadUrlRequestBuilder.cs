@@ -36,7 +36,6 @@ namespace Microsoft.Graph.DeviceManagement.MobileAppTroubleshootingEvents.Item.A
         }
         /// <summary>
         /// Not yet documented
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-devices-applogcollectionrequest-createdownloadurl?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.AppLogCollectionDownloadDetails"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

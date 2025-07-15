@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Communications.Presences.Item.ClearPresence
         }
         /// <summary>
         /// Clear the application&apos;s presence session for a user. If it is the user&apos;s only presence session, the user&apos;s presence will change to Offline/Offline. For details about presences sessions, see presence: setPresence.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/presence-clearpresence?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

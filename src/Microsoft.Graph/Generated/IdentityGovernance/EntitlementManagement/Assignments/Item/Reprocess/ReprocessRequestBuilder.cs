@@ -35,7 +35,6 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Assignments.I
         }
         /// <summary>
         /// In Microsoft Entra entitlement management, callers can automatically reevaluate and enforce an accessPackageAssignment object of a user’s assignments for a specific access package. The state of the access package assignment must be Delivered for the administrator to reprocess the user&apos;s assignment. Only admins with the Access Package Assignment Manager role, or higher, in Microsoft Entra entitlement management can perform this action.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackageassignment-reprocess?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

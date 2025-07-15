@@ -12,22 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class CopilotAdminSetting : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Represents a setting that controls whether users of Microsoft 365 Copilot in Teams meetings can receive responses to sentiment-related prompts. Read-only. Nullable.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.CopilotAdminLimitedMode? LimitedMode
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.CopilotAdminLimitedMode?>("limitedMode"); }
-            set { BackingStore?.Set("limitedMode", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.CopilotAdminLimitedMode LimitedMode
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.CopilotAdminLimitedMode>("limitedMode"); }
-            set { BackingStore?.Set("limitedMode", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -46,7 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "limitedMode", n => { LimitedMode = n.GetObjectValue<global::Microsoft.Graph.Models.CopilotAdminLimitedMode>(global::Microsoft.Graph.Models.CopilotAdminLimitedMode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +40,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.CopilotAdminLimitedMode>("limitedMode", LimitedMode);
         }
     }
 }

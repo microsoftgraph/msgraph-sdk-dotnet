@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Users
         }
         /// <summary>
         /// List properties and relationships of the user objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-user-list?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-user-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.UserCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -238,7 +238,7 @@ namespace Microsoft.Graph.Users
 #endif
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
-            public int? Top { get; set; }
+            public long? Top { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

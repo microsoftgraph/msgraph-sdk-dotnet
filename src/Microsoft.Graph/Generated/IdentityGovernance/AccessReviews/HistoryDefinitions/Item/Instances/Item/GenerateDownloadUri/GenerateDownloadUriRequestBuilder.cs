@@ -36,7 +36,6 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.It
         }
         /// <summary>
         /// Generates a URI for an accessReviewHistoryInstance object the status for which is done. Each URI can be used to retrieve the instance&apos;s review history data. Each URI is valid for 24 hours and can be retrieved by fetching the downloadUri property from the accessReviewHistoryInstance object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewhistoryinstance-generatedownloaduri?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.AccessReviewHistoryInstance"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

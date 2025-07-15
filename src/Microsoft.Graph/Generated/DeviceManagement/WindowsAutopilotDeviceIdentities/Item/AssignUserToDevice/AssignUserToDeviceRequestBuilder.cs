@@ -35,7 +35,6 @@ namespace Microsoft.Graph.DeviceManagement.WindowsAutopilotDeviceIdentities.Item
         }
         /// <summary>
         /// Assigns user to Autopilot devices.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-enrollment-windowsautopilotdeviceidentity-assignusertodevice?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

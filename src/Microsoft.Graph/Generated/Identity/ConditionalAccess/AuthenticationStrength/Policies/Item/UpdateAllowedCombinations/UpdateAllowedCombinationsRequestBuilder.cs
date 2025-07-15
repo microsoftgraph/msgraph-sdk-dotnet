@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.Poli
         }
         /// <summary>
         /// Update the allowedCombinations property of an authenticationStrengthPolicy object. To update other properties of an authenticationStrengthPolicy object, use the Update authenticationStrengthPolicy method.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-updateallowedcombinations?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.UpdateAllowedCombinationsResult"/></returns>
         /// <param name="body">The request body</param>

@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Communications.Calls.Item.Participants.Item.StartHoldM
         }
         /// <summary>
         /// Put a participant on hold and play music in the background.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/participant-startholdmusic?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.StartHoldMusicOperation"/></returns>
         /// <param name="body">The request body</param>

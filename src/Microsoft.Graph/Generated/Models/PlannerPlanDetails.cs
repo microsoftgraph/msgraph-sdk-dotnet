@@ -12,38 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class PlannerPlanDetails : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>An object that specifies the descriptions of the 25 categories that can be associated with tasks in the plan.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.PlannerCategoryDescriptions? CategoryDescriptions
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.PlannerCategoryDescriptions?>("categoryDescriptions"); }
-            set { BackingStore?.Set("categoryDescriptions", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.PlannerCategoryDescriptions CategoryDescriptions
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.PlannerCategoryDescriptions>("categoryDescriptions"); }
-            set { BackingStore?.Set("categoryDescriptions", value); }
-        }
-#endif
-        /// <summary>Set of user IDs that this plan is shared with. If you&apos;re using Microsoft 365 groups, use the Groups API to manage group membership to share the group&apos;s plan. You can also add existing members of the group to this collection, although it isn&apos;t required for them to access the plan owned by the group.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.PlannerUserIds? SharedWith
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.PlannerUserIds?>("sharedWith"); }
-            set { BackingStore?.Set("sharedWith", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.PlannerUserIds SharedWith
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.PlannerUserIds>("sharedWith"); }
-            set { BackingStore?.Set("sharedWith", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,8 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "categoryDescriptions", n => { CategoryDescriptions = n.GetObjectValue<global::Microsoft.Graph.Models.PlannerCategoryDescriptions>(global::Microsoft.Graph.Models.PlannerCategoryDescriptions.CreateFromDiscriminatorValue); } },
-                { "sharedWith", n => { SharedWith = n.GetObjectValue<global::Microsoft.Graph.Models.PlannerUserIds>(global::Microsoft.Graph.Models.PlannerUserIds.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -74,8 +40,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.PlannerCategoryDescriptions>("categoryDescriptions", CategoryDescriptions);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.PlannerUserIds>("sharedWith", SharedWith);
         }
     }
 }

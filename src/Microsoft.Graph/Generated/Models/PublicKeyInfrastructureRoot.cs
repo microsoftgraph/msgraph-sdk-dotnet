@@ -12,22 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class PublicKeyInfrastructureRoot : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The collection of public key infrastructure instances for the certificate-based authentication feature for users.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.CertificateBasedAuthPki>? CertificateBasedAuthConfigurations
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.CertificateBasedAuthPki>?>("certificateBasedAuthConfigurations"); }
-            set { BackingStore?.Set("certificateBasedAuthConfigurations", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.CertificateBasedAuthPki> CertificateBasedAuthConfigurations
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.CertificateBasedAuthPki>>("certificateBasedAuthConfigurations"); }
-            set { BackingStore?.Set("certificateBasedAuthConfigurations", value); }
-        }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -46,7 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "certificateBasedAuthConfigurations", n => { CertificateBasedAuthConfigurations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.CertificateBasedAuthPki>(global::Microsoft.Graph.Models.CertificateBasedAuthPki.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +40,6 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.CertificateBasedAuthPki>("certificateBasedAuthConfigurations", CertificateBasedAuthConfigurations);
         }
     }
 }

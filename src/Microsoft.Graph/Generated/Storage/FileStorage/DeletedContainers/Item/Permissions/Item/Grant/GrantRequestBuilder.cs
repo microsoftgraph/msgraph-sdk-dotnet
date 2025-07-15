@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions
         }
         /// <summary>
         /// Grant users access to a link represented by a permission.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.Grant.GrantPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +60,6 @@ namespace Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions
         }
         /// <summary>
         /// Grant users access to a link represented by a permission.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/permission-grant?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.Grant.GrantResponse"/></returns>
         /// <param name="body">The request body</param>

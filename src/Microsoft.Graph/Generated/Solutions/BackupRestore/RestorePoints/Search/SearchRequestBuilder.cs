@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Solutions.BackupRestore.RestorePoints.Search
         }
         /// <summary>
         /// Search for the restorePoint objects associated with a protectionUnit.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/restorepoint-search?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.RestorePointSearchResponse"/></returns>
         /// <param name="body">The request body</param>
