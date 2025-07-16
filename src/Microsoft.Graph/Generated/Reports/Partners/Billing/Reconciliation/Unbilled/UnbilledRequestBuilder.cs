@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Reports.Partners.Billing.Reconciliation.Unbilled
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get unbilled from reports
+        /// Represents details for unbilled invoice reconciliation data.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Partners.Billing.UnbilledReconciliation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Reports.Partners.Billing.Reconciliation.Unbilled
             return requestInfo;
         }
         /// <summary>
-        /// Get unbilled from reports
+        /// Represents details for unbilled invoice reconciliation data.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -188,7 +188,7 @@ namespace Microsoft.Graph.Reports.Partners.Billing.Reconciliation.Unbilled
         {
         }
         /// <summary>
-        /// Get unbilled from reports
+        /// Represents details for unbilled invoice reconciliation data.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UnbilledRequestBuilderGetQueryParameters 
