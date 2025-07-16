@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Reports.Partners.Billing.Reconciliation
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents details for billed invoice reconciliation data.
+        /// Represents details for billed and unbilled invoice reconciliation data.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Partners.Billing.BillingReconciliation"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Reports.Partners.Billing.Reconciliation
             return requestInfo;
         }
         /// <summary>
-        /// Represents details for billed invoice reconciliation data.
+        /// Represents details for billed and unbilled invoice reconciliation data.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Reports.Partners.Billing.Reconciliation
         {
         }
         /// <summary>
-        /// Represents details for billed invoice reconciliation data.
+        /// Represents details for billed and unbilled invoice reconciliation data.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReconciliationRequestBuilderGetQueryParameters 

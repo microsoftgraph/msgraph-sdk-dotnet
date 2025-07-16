@@ -91,6 +91,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("persistentBrowser", value); }
         }
 #endif
+        /// <summary>The secureSignInSession property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.SecureSignInSessionControl? SecureSignInSession
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.SecureSignInSessionControl?>("secureSignInSession"); }
+            set { BackingStore?.Set("secureSignInSession", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.SecureSignInSessionControl SecureSignInSession
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.SecureSignInSessionControl>("secureSignInSession"); }
+            set { BackingStore?.Set("secureSignInSession", value); }
+        }
+#endif
         /// <summary>Session control to enforce signin frequency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -138,6 +154,7 @@ namespace Microsoft.Graph.Models
                 { "disableResilienceDefaults", n => { DisableResilienceDefaults = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "persistentBrowser", n => { PersistentBrowser = n.GetObjectValue<global::Microsoft.Graph.Models.PersistentBrowserSessionControl>(global::Microsoft.Graph.Models.PersistentBrowserSessionControl.CreateFromDiscriminatorValue); } },
+                { "secureSignInSession", n => { SecureSignInSession = n.GetObjectValue<global::Microsoft.Graph.Models.SecureSignInSessionControl>(global::Microsoft.Graph.Models.SecureSignInSessionControl.CreateFromDiscriminatorValue); } },
                 { "signInFrequency", n => { SignInFrequency = n.GetObjectValue<global::Microsoft.Graph.Models.SignInFrequencySessionControl>(global::Microsoft.Graph.Models.SignInFrequencySessionControl.CreateFromDiscriminatorValue); } },
             };
         }
@@ -153,6 +170,7 @@ namespace Microsoft.Graph.Models
             writer.WriteBoolValue("disableResilienceDefaults", DisableResilienceDefaults);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.PersistentBrowserSessionControl>("persistentBrowser", PersistentBrowser);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.SecureSignInSessionControl>("secureSignInSession", SecureSignInSession);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.SignInFrequencySessionControl>("signInFrequency", SignInFrequency);
             writer.WriteAdditionalData(AdditionalData);
         }
