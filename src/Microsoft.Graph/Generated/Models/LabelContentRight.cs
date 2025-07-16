@@ -44,6 +44,28 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("format", value); }
         }
 #endif
+        /// <summary>The label property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.SensitivityLabel? Label
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.SensitivityLabel?>("label"); }
+            set { BackingStore?.Set("label", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.SensitivityLabel Label
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.SensitivityLabel>("label"); }
+            set { BackingStore?.Set("label", value); }
+        }
+#endif
+        /// <summary>The rights property</summary>
+        public global::Microsoft.Graph.Models.UsageRights? Rights
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.UsageRights?>("rights"); }
+            set { BackingStore?.Set("rights", value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,6 +86,8 @@ namespace Microsoft.Graph.Models
             {
                 { "cid", n => { Cid = n.GetStringValue(); } },
                 { "format", n => { Format = n.GetStringValue(); } },
+                { "label", n => { Label = n.GetObjectValue<global::Microsoft.Graph.Models.SensitivityLabel>(global::Microsoft.Graph.Models.SensitivityLabel.CreateFromDiscriminatorValue); } },
+                { "rights", n => { Rights = n.GetEnumValue<global::Microsoft.Graph.Models.UsageRights>(); } },
             };
         }
         /// <summary>
@@ -76,6 +100,8 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteStringValue("cid", Cid);
             writer.WriteStringValue("format", Format);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.SensitivityLabel>("label", Label);
+            writer.WriteEnumValue<global::Microsoft.Graph.Models.UsageRights>("rights", Rights);
         }
     }
 }

@@ -3,6 +3,7 @@
 using Microsoft.Graph.Me.DataSecurityAndGovernance.Activities;
 using Microsoft.Graph.Me.DataSecurityAndGovernance.ProcessContent;
 using Microsoft.Graph.Me.DataSecurityAndGovernance.ProtectionScopes;
+using Microsoft.Graph.Me.DataSecurityAndGovernance.SensitivityLabels;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -35,6 +36,11 @@ namespace Microsoft.Graph.Me.DataSecurityAndGovernance
         public global::Microsoft.Graph.Me.DataSecurityAndGovernance.ProtectionScopes.ProtectionScopesRequestBuilder ProtectionScopes
         {
             get => new global::Microsoft.Graph.Me.DataSecurityAndGovernance.ProtectionScopes.ProtectionScopesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the sensitivityLabels property of the microsoft.graph.dataSecurityAndGovernance entity.</summary>
+        public global::Microsoft.Graph.Me.DataSecurityAndGovernance.SensitivityLabels.SensitivityLabelsRequestBuilder SensitivityLabels
+        {
+            get => new global::Microsoft.Graph.Me.DataSecurityAndGovernance.SensitivityLabels.SensitivityLabelsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Me.DataSecurityAndGovernance.DataSecurityAndGovernanceRequestBuilder"/> and sets the default values.

@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("isSelfServiceRegistrationAllowed"); }
             set { BackingStore?.Set("isSelfServiceRegistrationAllowed", value); }
         }
-        /// <summary>Controls whether key restrictions are enforced on FIDO2 security keys, either allowing or disallowing certain key types as defined by Authenticator Attestation GUID (AAGUID), an identifier that indicates the type (e.g. make and model) of the authenticator.</summary>
+        /// <summary>Controls whether key restrictions are enforced on FIDO2 security keys, either allowing or disallowing certain key types as defined by Authenticator Attestation GUID (AAGUID), an identifier that indicates the type (for example, make and model) of the authenticator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.Fido2KeyRestrictions? KeyRestrictions

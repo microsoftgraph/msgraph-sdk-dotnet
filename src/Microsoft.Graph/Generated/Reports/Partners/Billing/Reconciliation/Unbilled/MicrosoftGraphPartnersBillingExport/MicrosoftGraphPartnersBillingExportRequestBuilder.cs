@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Reports.Partners.Billing.Reconciliation.Unbilled.Micro
         {
         }
         /// <summary>
-        /// Invoke action export
+        /// Export the unbilled invoice reconciliation data for a specific billing period and a given currency.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/partners-billing-unbilledreconciliation-export?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Partners.Billing.Operation"/></returns>
         /// <param name="body">The request body</param>
@@ -60,7 +61,7 @@ namespace Microsoft.Graph.Reports.Partners.Billing.Reconciliation.Unbilled.Micro
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Partners.Billing.Operation>(requestInfo, global::Microsoft.Graph.Models.Partners.Billing.Operation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action export
+        /// Export the unbilled invoice reconciliation data for a specific billing period and a given currency.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
