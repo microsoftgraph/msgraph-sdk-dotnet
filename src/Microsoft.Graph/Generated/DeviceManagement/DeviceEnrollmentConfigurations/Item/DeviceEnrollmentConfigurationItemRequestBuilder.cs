@@ -100,8 +100,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DeviceEnrollmentConfiguration>(requestInfo, global::Microsoft.Graph.Models.DeviceEnrollmentConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a deviceEnrollmentLimitConfiguration object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentlimitconfiguration-update?view=graph-rest-1.0" />
+        /// Update the properties of a deviceEnrollmentWindowsHelloForBusinessConfiguration object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentwindowshelloforbusinessconfiguration-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DeviceEnrollmentConfiguration"/></returns>
         /// <param name="body">The request body</param>
@@ -164,7 +164,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a deviceEnrollmentLimitConfiguration object.
+        /// Update the properties of a deviceEnrollmentWindowsHelloForBusinessConfiguration object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
