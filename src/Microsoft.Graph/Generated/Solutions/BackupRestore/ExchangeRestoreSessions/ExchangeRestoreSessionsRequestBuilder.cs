@@ -77,7 +77,8 @@ namespace Microsoft.Graph.Solutions.BackupRestore.ExchangeRestoreSessions
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ExchangeRestoreSessionCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.ExchangeRestoreSessionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to exchangeRestoreSessions for solutions
+        /// Create a new exchangeRestoreSession object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/backuprestoreroot-post-exchangerestoresessions?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ExchangeRestoreSession"/></returns>
         /// <param name="body">The request body</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.ExchangeRestoreSessions
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to exchangeRestoreSessions for solutions
+        /// Create a new exchangeRestoreSession object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

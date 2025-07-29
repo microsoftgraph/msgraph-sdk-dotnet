@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Models
     public partial class FileStorageContainer : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The columns property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.ColumnDefinition>? Columns
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.ColumnDefinition>?>("columns"); }
+            set { BackingStore?.Set("columns", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.ColumnDefinition> Columns
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.ColumnDefinition>>("columns"); }
+            set { BackingStore?.Set("columns", value); }
+        }
+#endif
         /// <summary>Container type ID of the fileStorageContainer. For details about container types, see Container Types. Each container must have only one container type. Read-only.</summary>
         public Guid? ContainerTypeId
         {
@@ -182,6 +198,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "columns", n => { Columns = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ColumnDefinition>(global::Microsoft.Graph.Models.ColumnDefinition.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "containerTypeId", n => { ContainerTypeId = n.GetGuidValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "customProperties", n => { CustomProperties = n.GetObjectValue<global::Microsoft.Graph.Models.FileStorageContainerCustomPropertyDictionary>(global::Microsoft.Graph.Models.FileStorageContainerCustomPropertyDictionary.CreateFromDiscriminatorValue); } },
@@ -204,6 +221,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ColumnDefinition>("columns", Columns);
             writer.WriteGuidValue("containerTypeId", ContainerTypeId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.FileStorageContainerCustomPropertyDictionary>("customProperties", CustomProperties);

@@ -60,22 +60,6 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("attackSimulation", value); }
         }
 #endif
-        /// <summary>The auditLog property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Microsoft.Graph.Models.Security.AuditCoreRoot? AuditLog
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.AuditCoreRoot?>("auditLog"); }
-            set { BackingStore?.Set("auditLog", value); }
-        }
-#nullable restore
-#else
-        public global::Microsoft.Graph.Models.Security.AuditCoreRoot AuditLog
-        {
-            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.AuditCoreRoot>("auditLog"); }
-            set { BackingStore?.Set("auditLog", value); }
-        }
-#endif
         /// <summary>The cases property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -273,7 +257,6 @@ namespace Microsoft.Graph.Models.Security
                 { "alerts", n => { Alerts = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Alert>(global::Microsoft.Graph.Models.Alert.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "alerts_v2", n => { AlertsV2 = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.Alert>(global::Microsoft.Graph.Models.Security.Alert.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "attackSimulation", n => { AttackSimulation = n.GetObjectValue<global::Microsoft.Graph.Models.AttackSimulationRoot>(global::Microsoft.Graph.Models.AttackSimulationRoot.CreateFromDiscriminatorValue); } },
-                { "auditLog", n => { AuditLog = n.GetObjectValue<global::Microsoft.Graph.Models.Security.AuditCoreRoot>(global::Microsoft.Graph.Models.Security.AuditCoreRoot.CreateFromDiscriminatorValue); } },
                 { "cases", n => { Cases = n.GetObjectValue<global::Microsoft.Graph.Models.Security.CasesRoot>(global::Microsoft.Graph.Models.Security.CasesRoot.CreateFromDiscriminatorValue); } },
                 { "dataSecurityAndGovernance", n => { DataSecurityAndGovernance = n.GetObjectValue<global::Microsoft.Graph.Models.TenantDataSecurityAndGovernance>(global::Microsoft.Graph.Models.TenantDataSecurityAndGovernance.CreateFromDiscriminatorValue); } },
                 { "identities", n => { Identities = n.GetObjectValue<global::Microsoft.Graph.Models.Security.IdentityContainer>(global::Microsoft.Graph.Models.Security.IdentityContainer.CreateFromDiscriminatorValue); } },
@@ -298,7 +281,6 @@ namespace Microsoft.Graph.Models.Security
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Alert>("alerts", Alerts);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.Alert>("alerts_v2", AlertsV2);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.AttackSimulationRoot>("attackSimulation", AttackSimulation);
-            writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.AuditCoreRoot>("auditLog", AuditLog);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.CasesRoot>("cases", Cases);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.TenantDataSecurityAndGovernance>("dataSecurityAndGovernance", DataSecurityAndGovernance);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.IdentityContainer>("identities", Identities);

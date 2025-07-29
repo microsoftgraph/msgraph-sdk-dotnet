@@ -44,6 +44,38 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("availability", value); }
         }
 #endif
+        /// <summary>The outOfOfficeSettings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.OutOfOfficeSettings? OutOfOfficeSettings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.OutOfOfficeSettings?>("outOfOfficeSettings"); }
+            set { BackingStore?.Set("outOfOfficeSettings", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.OutOfOfficeSettings OutOfOfficeSettings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.OutOfOfficeSettings>("outOfOfficeSettings"); }
+            set { BackingStore?.Set("outOfOfficeSettings", value); }
+        }
+#endif
+        /// <summary>The sequenceNumber property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SequenceNumber
+        {
+            get { return BackingStore?.Get<string?>("sequenceNumber"); }
+            set { BackingStore?.Set("sequenceNumber", value); }
+        }
+#nullable restore
+#else
+        public string SequenceNumber
+        {
+            get { return BackingStore?.Get<string>("sequenceNumber"); }
+            set { BackingStore?.Set("sequenceNumber", value); }
+        }
+#endif
         /// <summary>The presence status message of a user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,6 +112,8 @@ namespace Microsoft.Graph.Models
             {
                 { "activity", n => { Activity = n.GetStringValue(); } },
                 { "availability", n => { Availability = n.GetStringValue(); } },
+                { "outOfOfficeSettings", n => { OutOfOfficeSettings = n.GetObjectValue<global::Microsoft.Graph.Models.OutOfOfficeSettings>(global::Microsoft.Graph.Models.OutOfOfficeSettings.CreateFromDiscriminatorValue); } },
+                { "sequenceNumber", n => { SequenceNumber = n.GetStringValue(); } },
                 { "statusMessage", n => { StatusMessage = n.GetObjectValue<global::Microsoft.Graph.Models.PresenceStatusMessage>(global::Microsoft.Graph.Models.PresenceStatusMessage.CreateFromDiscriminatorValue); } },
             };
         }
@@ -93,6 +127,7 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteStringValue("activity", Activity);
             writer.WriteStringValue("availability", Availability);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.OutOfOfficeSettings>("outOfOfficeSettings", OutOfOfficeSettings);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.PresenceStatusMessage>("statusMessage", StatusMessage);
         }
     }

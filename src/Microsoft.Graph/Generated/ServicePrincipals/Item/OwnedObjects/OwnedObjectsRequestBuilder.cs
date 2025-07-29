@@ -84,7 +84,8 @@ namespace Microsoft.Graph.ServicePrincipals.Item.OwnedObjects
         {
         }
         /// <summary>
-        /// Directory objects that this service principal owns. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+        /// Retrieve a list of objects owned by the servicePrincipal.  This could include applications or groups.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-list-ownedobjects?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -107,7 +108,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.OwnedObjects
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DirectoryObjectCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Directory objects that this service principal owns. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+        /// Retrieve a list of objects owned by the servicePrincipal.  This could include applications or groups.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -135,7 +136,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.OwnedObjects
             return new global::Microsoft.Graph.ServicePrincipals.Item.OwnedObjects.OwnedObjectsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Directory objects that this service principal owns. Read-only. Nullable. Supports $expand, $select nested in $expand, and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+        /// Retrieve a list of objects owned by the servicePrincipal.  This could include applications or groups.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OwnedObjectsRequestBuilderGetQueryParameters 

@@ -69,6 +69,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>The reports property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.ReportsRoot? Reports
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ReportsRoot?>("reports"); }
+            set { BackingStore?.Set("reports", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.ReportsRoot Reports
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ReportsRoot>("reports"); }
+            set { BackingStore?.Set("reports", value); }
+        }
+#endif
         /// <summary>The schools property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -130,6 +146,7 @@ namespace Microsoft.Graph.Models
                 { "classes", n => { Classes = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.EducationClass>(global::Microsoft.Graph.Models.EducationClass.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "me", n => { Me = n.GetObjectValue<global::Microsoft.Graph.Models.EducationUser>(global::Microsoft.Graph.Models.EducationUser.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "reports", n => { Reports = n.GetObjectValue<global::Microsoft.Graph.Models.ReportsRoot>(global::Microsoft.Graph.Models.ReportsRoot.CreateFromDiscriminatorValue); } },
                 { "schools", n => { Schools = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.EducationSchool>(global::Microsoft.Graph.Models.EducationSchool.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "users", n => { Users = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.EducationUser>(global::Microsoft.Graph.Models.EducationUser.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -144,6 +161,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.EducationClass>("classes", Classes);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.EducationUser>("me", Me);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.ReportsRoot>("reports", Reports);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.EducationSchool>("schools", Schools);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.EducationUser>("users", Users);
             writer.WriteAdditionalData(AdditionalData);

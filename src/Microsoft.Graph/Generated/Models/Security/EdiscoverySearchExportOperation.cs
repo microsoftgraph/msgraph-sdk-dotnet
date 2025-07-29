@@ -12,13 +12,13 @@ namespace Microsoft.Graph.Models.Security
     public partial class EdiscoverySearchExportOperation : global::Microsoft.Graph.Models.Security.CaseOperation, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The additional items to include in the export. The possible values are: none, teamsAndYammerConversations, cloudAttachments, allDocumentVersions, subfolderContents, listAttachments, unknownFutureValue.</summary>
+        /// <summary>The additional items to include in the export. The possible values are: none, teamsAndYammerConversations, cloudAttachments, allDocumentVersions, subfolderContents, listAttachments, unknownFutureValue, htmlTranscripts, advancedIndexing, allItemsInFolder, includeFolderAndPath, condensePaths, friendlyName, splitSource, includeReport. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: htmlTranscripts, advancedIndexing, allItemsInFolder, includeFolderAndPath, condensePaths, friendlyName, splitSource, includeReport.</summary>
         public global::Microsoft.Graph.Models.Security.AdditionalOptions? AdditionalOptions
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.AdditionalOptions?>("additionalOptions"); }
             set { BackingStore?.Set("additionalOptions", value); }
         }
-        /// <summary>The cloudAttachmentVersion property</summary>
+        /// <summary>The versions of cloud attachments to include in messages. Possible values are: latest, recent10, recent100, all, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.Security.CloudAttachmentVersion? CloudAttachmentVersion
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.CloudAttachmentVersion?>("cloudAttachmentVersion"); }
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The documentVersion property</summary>
+        /// <summary>The versions of files in SharePoint to include. Possible values are: latest, recent10, recent100, all, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.Security.DocumentVersion? DocumentVersion
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.DocumentVersion?>("documentVersion"); }
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("exportFileMetadata", value); }
         }
 #endif
-        /// <summary>Format of the emails of the export. The possible values are: pst, msg, eml, unknownFutureValue.</summary>
+        /// <summary>Format of the emails of the export. The possible values are: pst, msg, eml (deprecated), unknownFutureValue. The eml member is deprecated. It remains in v1.0 for backward compatibility. Going forward, use either pst or msg.</summary>
         public global::Microsoft.Graph.Models.Security.ExportFormat? ExportFormat
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.ExportFormat?>("exportFormat"); }

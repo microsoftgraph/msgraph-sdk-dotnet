@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Education.Classes;
 using Microsoft.Graph.Education.Me;
+using Microsoft.Graph.Education.Reports;
 using Microsoft.Graph.Education.Schools;
 using Microsoft.Graph.Education.Users;
 using Microsoft.Graph.Models.ODataErrors;
@@ -31,6 +32,11 @@ namespace Microsoft.Graph.Education
         public global::Microsoft.Graph.Education.Me.MeRequestBuilder Me
         {
             get => new global::Microsoft.Graph.Education.Me.MeRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the reports property of the microsoft.graph.educationRoot entity.</summary>
+        public global::Microsoft.Graph.Education.Reports.ReportsRequestBuilder Reports
+        {
+            get => new global::Microsoft.Graph.Education.Reports.ReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the schools property of the microsoft.graph.educationRoot entity.</summary>
         public global::Microsoft.Graph.Education.Schools.SchoolsRequestBuilder Schools

@@ -60,7 +60,8 @@ namespace Microsoft.Graph.Solutions.BackupRestore.RestorePoints
         {
         }
         /// <summary>
-        /// List of restore points in the tenant.
+        /// Get a list of the restorePoint objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/backuprestoreroot-list-restorepoints?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.RestorePointCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -108,7 +109,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.RestorePoints
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.RestorePoint>(requestInfo, global::Microsoft.Graph.Models.RestorePoint.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List of restore points in the tenant.
+        /// Get a list of the restorePoint objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -158,7 +159,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.RestorePoints
             return new global::Microsoft.Graph.Solutions.BackupRestore.RestorePoints.RestorePointsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List of restore points in the tenant.
+        /// Get a list of the restorePoint objects and their properties.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RestorePointsRequestBuilderGetQueryParameters 

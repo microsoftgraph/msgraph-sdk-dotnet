@@ -57,7 +57,8 @@ namespace Microsoft.Graph.Security.AttackSimulation.LoginPages.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents an attack simulation training login page.
+        /// Get a loginPage associated with an attack simulation campaign for a tenant. Login pages are shown to users in attack simulations that use credential harvest and link in attachment social engineering techniques.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/loginpage-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.LoginPage"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -124,7 +125,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.LoginPages.Item
             return requestInfo;
         }
         /// <summary>
-        /// Represents an attack simulation training login page.
+        /// Get a loginPage associated with an attack simulation campaign for a tenant. Login pages are shown to users in attack simulations that use credential harvest and link in attachment social engineering techniques.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -182,7 +183,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.LoginPages.Item
         {
         }
         /// <summary>
-        /// Represents an attack simulation training login page.
+        /// Get a loginPage associated with an attack simulation campaign for a tenant. Login pages are shown to users in attack simulations that use credential harvest and link in attachment social engineering techniques.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class LoginPageItemRequestBuilderGetQueryParameters 

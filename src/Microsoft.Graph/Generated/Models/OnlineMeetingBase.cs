@@ -154,6 +154,12 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("chatRestrictions", value); }
         }
 #endif
+        /// <summary>The isEndToEndEncryptionEnabled property</summary>
+        public bool? IsEndToEndEncryptionEnabled
+        {
+            get { return BackingStore?.Get<bool?>("isEndToEndEncryptionEnabled"); }
+            set { BackingStore?.Set("isEndToEndEncryptionEnabled", value); }
+        }
         /// <summary>Indicates whether to announce when callers join or leave.</summary>
         public bool? IsEntryExitAnnounced
         {
@@ -325,6 +331,7 @@ namespace Microsoft.Graph.Models
                 { "audioConferencing", n => { AudioConferencing = n.GetObjectValue<global::Microsoft.Graph.Models.AudioConferencing>(global::Microsoft.Graph.Models.AudioConferencing.CreateFromDiscriminatorValue); } },
                 { "chatInfo", n => { ChatInfo = n.GetObjectValue<global::Microsoft.Graph.Models.ChatInfo>(global::Microsoft.Graph.Models.ChatInfo.CreateFromDiscriminatorValue); } },
                 { "chatRestrictions", n => { ChatRestrictions = n.GetObjectValue<global::Microsoft.Graph.Models.ChatRestrictions>(global::Microsoft.Graph.Models.ChatRestrictions.CreateFromDiscriminatorValue); } },
+                { "isEndToEndEncryptionEnabled", n => { IsEndToEndEncryptionEnabled = n.GetBoolValue(); } },
                 { "isEntryExitAnnounced", n => { IsEntryExitAnnounced = n.GetBoolValue(); } },
                 { "joinInformation", n => { JoinInformation = n.GetObjectValue<global::Microsoft.Graph.Models.ItemBody>(global::Microsoft.Graph.Models.ItemBody.CreateFromDiscriminatorValue); } },
                 { "joinMeetingIdSettings", n => { JoinMeetingIdSettings = n.GetObjectValue<global::Microsoft.Graph.Models.JoinMeetingIdSettings>(global::Microsoft.Graph.Models.JoinMeetingIdSettings.CreateFromDiscriminatorValue); } },
@@ -362,6 +369,7 @@ namespace Microsoft.Graph.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Models.AudioConferencing>("audioConferencing", AudioConferencing);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ChatInfo>("chatInfo", ChatInfo);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ChatRestrictions>("chatRestrictions", ChatRestrictions);
+            writer.WriteBoolValue("isEndToEndEncryptionEnabled", IsEndToEndEncryptionEnabled);
             writer.WriteBoolValue("isEntryExitAnnounced", IsEntryExitAnnounced);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ItemBody>("joinInformation", JoinInformation);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.JoinMeetingIdSettings>("joinMeetingIdSettings", JoinMeetingIdSettings);

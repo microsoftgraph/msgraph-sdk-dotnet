@@ -12,25 +12,25 @@ namespace Microsoft.Graph.Models.Security
     public partial class EdiscoveryAddToReviewSetOperation : global::Microsoft.Graph.Models.Security.CaseOperation, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The additionalDataOptions property</summary>
+        /// <summary>The options to add items to the review set. Possible values are: allVersions, linkedFiles, unknownFutureValue, advancedIndexing, listAttachments, htmlTranscripts, messageConversationExpansion, locationsWithoutHits, allItemsInFolder. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: advancedIndexing, listAttachments, htmlTranscripts, messageConversationExpansion, locationsWithoutHits, allItemsInFolder.</summary>
         public global::Microsoft.Graph.Models.Security.AdditionalDataOptions? AdditionalDataOptions
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.AdditionalDataOptions?>("additionalDataOptions"); }
             set { BackingStore?.Set("additionalDataOptions", value); }
         }
-        /// <summary>The cloudAttachmentVersion property</summary>
+        /// <summary>Specifies the number of most recent versions of cloud attachments to collect. Possible values are: latest, recent10, recent100, all, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.Security.CloudAttachmentVersion? CloudAttachmentVersion
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.CloudAttachmentVersion?>("cloudAttachmentVersion"); }
             set { BackingStore?.Set("cloudAttachmentVersion", value); }
         }
-        /// <summary>The documentVersion property</summary>
+        /// <summary>Specifies the number of most recent versions of SharePoint documents to collect. Possible values are: latest, recent10, recent100, all, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.Security.DocumentVersion? DocumentVersion
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.DocumentVersion?>("documentVersion"); }
             set { BackingStore?.Set("documentVersion", value); }
         }
-        /// <summary>The itemsToInclude property</summary>
+        /// <summary>The items to include in the review set. Possible values are: searchHits, partiallyIndexed, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.Security.ItemsToInclude? ItemsToInclude
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.ItemsToInclude?>("itemsToInclude"); }
