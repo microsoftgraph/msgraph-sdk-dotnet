@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Security.Cases.EdiscoveryCases.Item.Custodians.Microso
         }
         /// <summary>
         /// Invoke action applyHold
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-ediscoverycustodian-applyhold?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

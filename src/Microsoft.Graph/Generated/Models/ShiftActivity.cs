@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The end date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.</summary>
+        /// <summary>The end date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.</summary>
         public DateTimeOffset? EndDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The start date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.</summary>
+        /// <summary>The start date and time for the shiftActivity. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Required.</summary>
         public DateTimeOffset? StartDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }

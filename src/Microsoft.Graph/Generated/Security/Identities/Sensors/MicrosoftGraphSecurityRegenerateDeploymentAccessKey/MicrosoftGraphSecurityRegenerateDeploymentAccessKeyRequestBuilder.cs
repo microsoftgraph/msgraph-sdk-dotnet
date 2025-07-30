@@ -36,7 +36,6 @@ namespace Microsoft.Graph.Security.Identities.Sensors.MicrosoftGraphSecurityRege
         }
         /// <summary>
         /// Generate a new deployment access key that can be used to install a sensor associated with the workspace.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-sensor-regeneratedeploymentaccesskey?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Security.DeploymentAccessKeyType"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

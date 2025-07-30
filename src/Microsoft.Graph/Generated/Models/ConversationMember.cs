@@ -65,6 +65,7 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.anonymousGuestConversationMember" => new global::Microsoft.Graph.Models.AnonymousGuestConversationMember(),
                 "#microsoft.graph.azureCommunicationServicesUserConversationMember" => new global::Microsoft.Graph.Models.AzureCommunicationServicesUserConversationMember(),
                 "#microsoft.graph.microsoftAccountUserConversationMember" => new global::Microsoft.Graph.Models.MicrosoftAccountUserConversationMember(),
+                "#microsoft.graph.phoneUserConversationMember" => new global::Microsoft.Graph.Models.PhoneUserConversationMember(),
                 "#microsoft.graph.skypeForBusinessUserConversationMember" => new global::Microsoft.Graph.Models.SkypeForBusinessUserConversationMember(),
                 "#microsoft.graph.skypeUserConversationMember" => new global::Microsoft.Graph.Models.SkypeUserConversationMember(),
                 _ => new global::Microsoft.Graph.Models.ConversationMember(),

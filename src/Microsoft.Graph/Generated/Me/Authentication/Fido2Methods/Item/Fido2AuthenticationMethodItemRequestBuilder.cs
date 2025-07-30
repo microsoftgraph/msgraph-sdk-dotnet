@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Me.Authentication.Fido2Methods.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a user&apos;s single FIDO2 Security Key Authentication Method object.
+        /// Retrieve a user&apos;s single FIDO2 security key authentication method object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/fido2authenticationmethod-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Fido2AuthenticationMethod"/></returns>
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Me.Authentication.Fido2Methods.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a user&apos;s single FIDO2 Security Key Authentication Method object.
+        /// Retrieve a user&apos;s single FIDO2 security key authentication method object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Me.Authentication.Fido2Methods.Item
         {
         }
         /// <summary>
-        /// Retrieve a user&apos;s single FIDO2 Security Key Authentication Method object.
+        /// Retrieve a user&apos;s single FIDO2 security key authentication method object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Fido2AuthenticationMethodItemRequestBuilderGetQueryParameters 

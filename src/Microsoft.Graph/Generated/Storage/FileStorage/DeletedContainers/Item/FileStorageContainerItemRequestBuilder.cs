@@ -3,6 +3,7 @@
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Activate;
+using Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Columns;
 using Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Drive;
 using Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Lock;
 using Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.PermanentDelete;
@@ -30,6 +31,11 @@ namespace Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item
         public global::Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Activate.ActivateRequestBuilder Activate
         {
             get => new global::Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Activate.ActivateRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the columns property of the microsoft.graph.fileStorageContainer entity.</summary>
+        public global::Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Columns.ColumnsRequestBuilder Columns
+        {
+            get => new global::Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Columns.ColumnsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the drive property of the microsoft.graph.fileStorageContainer entity.</summary>
         public global::Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Drive.DriveRequestBuilder Drive

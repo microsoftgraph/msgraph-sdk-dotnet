@@ -44,13 +44,13 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("exportFileMetadata", value); }
         }
 #endif
-        /// <summary>The options provided for the export. For more information, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement,  tags.</summary>
+        /// <summary>The options provided for the export. For more information, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, tags, unknownFutureValue, splitSource, includeFolderAndPath, friendlyName, condensePaths. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: splitSource, includeFolderAndPath, friendlyName, condensePaths.</summary>
         public global::Microsoft.Graph.Models.Security.ExportOptions? ExportOptions
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.ExportOptions?>("exportOptions"); }
             set { BackingStore?.Set("exportOptions", value); }
         }
-        /// <summary>The options that specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory, pst.</summary>
+        /// <summary>The options that specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory (deprecated), pst, unknownFutureValue, msg. Use the Prefer: include-unknown-enum-members request header to get the following value from this evolvable enum: msg. The directory member is deprecated. It remains in v1.0 for backward compatibility. Going forward, use either pst or msg.</summary>
         public global::Microsoft.Graph.Models.Security.ExportFileStructure? ExportStructure
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.ExportFileStructure?>("exportStructure"); }

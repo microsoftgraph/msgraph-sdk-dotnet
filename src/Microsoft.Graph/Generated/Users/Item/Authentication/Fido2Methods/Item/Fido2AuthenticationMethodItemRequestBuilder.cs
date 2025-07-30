@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.Fido2Methods.Item
         {
         }
         /// <summary>
-        /// Deletes a user&apos;s FIDO2 Security Key Authentication Method object.
+        /// Deletes a user&apos;s FIDO2 security key authentication method object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/fido2authenticationmethod-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.Fido2Methods.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Fido2AuthenticationMethod>(requestInfo, global::Microsoft.Graph.Models.Fido2AuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a user&apos;s FIDO2 Security Key Authentication Method object.
+        /// Deletes a user&apos;s FIDO2 security key authentication method object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

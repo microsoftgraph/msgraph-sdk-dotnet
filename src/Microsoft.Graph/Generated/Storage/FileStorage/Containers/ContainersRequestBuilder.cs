@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers
         {
         }
         /// <summary>
-        /// Retrieve a list of fileStorageContainer objects that are visible to the caller. The containerTypeId filter parameter is required.
+        /// Get a list of fileStorageContainer objects that are accessible to a caller. The containerTypeId filter parameter is required.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/filestorage-list-containers?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.FileStorageContainerCollectionResponse"/></returns>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.FileStorageContainer>(requestInfo, global::Microsoft.Graph.Models.FileStorageContainer.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of fileStorageContainer objects that are visible to the caller. The containerTypeId filter parameter is required.
+        /// Get a list of fileStorageContainer objects that are accessible to a caller. The containerTypeId filter parameter is required.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers
             return new global::Microsoft.Graph.Storage.FileStorage.Containers.ContainersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of fileStorageContainer objects that are visible to the caller. The containerTypeId filter parameter is required.
+        /// Get a list of fileStorageContainer objects that are accessible to a caller. The containerTypeId filter parameter is required.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ContainersRequestBuilderGetQueryParameters 

@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Identity.ConditionalAccess.AuthenticationContextClassReferences;
 using Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength;
+using Microsoft.Graph.Identity.ConditionalAccess.Evaluate;
 using Microsoft.Graph.Identity.ConditionalAccess.NamedLocations;
 using Microsoft.Graph.Identity.ConditionalAccess.Policies;
 using Microsoft.Graph.Identity.ConditionalAccess.Templates;
@@ -28,6 +29,11 @@ namespace Microsoft.Graph.Identity.ConditionalAccess
         public global::Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.AuthenticationStrengthRequestBuilder AuthenticationStrength
         {
             get => new global::Microsoft.Graph.Identity.ConditionalAccess.AuthenticationStrength.AuthenticationStrengthRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the evaluate method.</summary>
+        public global::Microsoft.Graph.Identity.ConditionalAccess.Evaluate.EvaluateRequestBuilder Evaluate
+        {
+            get => new global::Microsoft.Graph.Identity.ConditionalAccess.Evaluate.EvaluateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the namedLocations property of the microsoft.graph.conditionalAccessRoot entity.</summary>
         public global::Microsoft.Graph.Identity.ConditionalAccess.NamedLocations.NamedLocationsRequestBuilder NamedLocations

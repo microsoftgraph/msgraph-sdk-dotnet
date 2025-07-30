@@ -34,7 +34,8 @@ namespace Microsoft.Graph.Connections.Item.Items.Item.MicrosoftGraphExternalConn
         {
         }
         /// <summary>
-        /// Invoke action addActivities
+        /// Append additional instances of externalActivity objects on an externalItem.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-externalitem-addactivities?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Connections.Item.Items.Item.MicrosoftGraphExternalConnectorsAddActivities.AddActivitiesPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +60,8 @@ namespace Microsoft.Graph.Connections.Item.Items.Item.MicrosoftGraphExternalConn
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Connections.Item.Items.Item.MicrosoftGraphExternalConnectorsAddActivities.AddActivitiesPostResponse>(requestInfo, global::Microsoft.Graph.Connections.Item.Items.Item.MicrosoftGraphExternalConnectorsAddActivities.AddActivitiesPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action addActivities
+        /// Append additional instances of externalActivity objects on an externalItem.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-externalitem-addactivities?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Connections.Item.Items.Item.MicrosoftGraphExternalConnectorsAddActivities.AddActivitiesResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -85,7 +87,7 @@ namespace Microsoft.Graph.Connections.Item.Items.Item.MicrosoftGraphExternalConn
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Connections.Item.Items.Item.MicrosoftGraphExternalConnectorsAddActivities.AddActivitiesResponse>(requestInfo, global::Microsoft.Graph.Connections.Item.Items.Item.MicrosoftGraphExternalConnectorsAddActivities.AddActivitiesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action addActivities
+        /// Append additional instances of externalActivity objects on an externalItem.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

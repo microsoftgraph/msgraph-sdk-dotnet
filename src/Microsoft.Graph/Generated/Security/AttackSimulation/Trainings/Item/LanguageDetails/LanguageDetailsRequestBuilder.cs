@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.Trainings.Item.LanguageDetai
         {
         }
         /// <summary>
-        /// Language specific details on a training.
+        /// Get the language details about an attack simulation training for a tenant.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.TrainingLanguageDetailCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.Trainings.Item.LanguageDetai
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.TrainingLanguageDetail>(requestInfo, global::Microsoft.Graph.Models.TrainingLanguageDetail.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Language specific details on a training.
+        /// Get the language details about an attack simulation training for a tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.Trainings.Item.LanguageDetai
             return new global::Microsoft.Graph.Security.AttackSimulation.Trainings.Item.LanguageDetails.LanguageDetailsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Language specific details on a training.
+        /// Get the language details about an attack simulation training for a tenant.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class LanguageDetailsRequestBuilderGetQueryParameters 

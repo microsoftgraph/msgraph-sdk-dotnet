@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.ConditionalAccessPolicyState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
-        /// <summary>The templateId property</summary>
+        /// <summary>Specifies the unique identifier of a Conditional Access template. Inherited from entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TemplateId
@@ -134,7 +134,12 @@ namespace Microsoft.Graph.Models
         public static new global::Microsoft.Graph.Models.ConditionalAccessPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Models.ConditionalAccessPolicy();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "#microsoft.graph.whatIfAnalysisResult" => new global::Microsoft.Graph.Models.WhatIfAnalysisResult(),
+                _ => new global::Microsoft.Graph.Models.ConditionalAccessPolicy(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

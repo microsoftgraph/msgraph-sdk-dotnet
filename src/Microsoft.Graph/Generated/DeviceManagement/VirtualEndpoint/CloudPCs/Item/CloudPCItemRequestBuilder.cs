@@ -3,6 +3,7 @@
 using Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.EndGracePeriod;
 using Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Reboot;
 using Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Rename;
+using Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Resize;
 using Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Restore;
 using Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Troubleshoot;
 using Microsoft.Graph.Models.ODataErrors;
@@ -37,6 +38,11 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item
         public global::Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Rename.RenameRequestBuilder Rename
         {
             get => new global::Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Rename.RenameRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the resize method.</summary>
+        public global::Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Resize.ResizeRequestBuilder Resize
+        {
+            get => new global::Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Resize.ResizeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the restore method.</summary>
         public global::Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Restore.RestoreRequestBuilder Restore

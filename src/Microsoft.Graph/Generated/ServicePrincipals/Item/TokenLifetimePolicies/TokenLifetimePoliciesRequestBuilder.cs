@@ -4,6 +4,7 @@ using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.ServicePrincipals.Item.TokenLifetimePolicies.Count;
 using Microsoft.Graph.ServicePrincipals.Item.TokenLifetimePolicies.Item;
+using Microsoft.Graph.ServicePrincipals.Item.TokenLifetimePolicies.Ref;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -25,7 +26,12 @@ namespace Microsoft.Graph.ServicePrincipals.Item.TokenLifetimePolicies
         {
             get => new global::Microsoft.Graph.ServicePrincipals.Item.TokenLifetimePolicies.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to manage the tokenLifetimePolicies property of the microsoft.graph.servicePrincipal entity.</summary>
+        /// <summary>Provides operations to manage the collection of servicePrincipal entities.</summary>
+        public global::Microsoft.Graph.ServicePrincipals.Item.TokenLifetimePolicies.Ref.RefRequestBuilder Ref
+        {
+            get => new global::Microsoft.Graph.ServicePrincipals.Item.TokenLifetimePolicies.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Gets an item from the Microsoft.Graph.servicePrincipals.item.tokenLifetimePolicies.item collection</summary>
         /// <param name="position">The unique identifier of tokenLifetimePolicy</param>
         /// <returns>A <see cref="global::Microsoft.Graph.ServicePrincipals.Item.TokenLifetimePolicies.Item.TokenLifetimePolicyItemRequestBuilder"/></returns>
         public global::Microsoft.Graph.ServicePrincipals.Item.TokenLifetimePolicies.Item.TokenLifetimePolicyItemRequestBuilder this[string position]
