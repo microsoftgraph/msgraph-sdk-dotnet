@@ -78,6 +78,28 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
+        /// <summary>Indicates whether the restore session was created normally or by a bulk job.</summary>
+        public global::Microsoft.Graph.Models.RestoreJobType? RestoreJobType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.RestoreJobType?>("restoreJobType"); }
+            set { BackingStore?.Set("restoreJobType", value); }
+        }
+        /// <summary>The number of metadata artifacts that belong to this restore session.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.RestoreSessionArtifactCount? RestoreSessionArtifactCount
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.RestoreSessionArtifactCount?>("restoreSessionArtifactCount"); }
+            set { BackingStore?.Set("restoreSessionArtifactCount", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.RestoreSessionArtifactCount RestoreSessionArtifactCount
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.RestoreSessionArtifactCount>("restoreSessionArtifactCount"); }
+            set { BackingStore?.Set("restoreSessionArtifactCount", value); }
+        }
+#endif
         /// <summary>Status of the restore session. The value is an aggregated status of the restored artifacts. The possible values are: draft, activating, active, completedWithError, completed, unknownFutureValue, failed. Use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: failed.</summary>
         public global::Microsoft.Graph.Models.RestoreSessionStatus? Status
         {
@@ -115,6 +137,8 @@ namespace Microsoft.Graph.Models
                 { "error", n => { Error = n.GetObjectValue<global::Microsoft.Graph.Models.PublicError>(global::Microsoft.Graph.Models.PublicError.CreateFromDiscriminatorValue); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<global::Microsoft.Graph.Models.IdentitySet>(global::Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "restoreJobType", n => { RestoreJobType = n.GetEnumValue<global::Microsoft.Graph.Models.RestoreJobType>(); } },
+                { "restoreSessionArtifactCount", n => { RestoreSessionArtifactCount = n.GetObjectValue<global::Microsoft.Graph.Models.RestoreSessionArtifactCount>(global::Microsoft.Graph.Models.RestoreSessionArtifactCount.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Microsoft.Graph.Models.RestoreSessionStatus>(); } },
             };
         }
@@ -132,6 +156,8 @@ namespace Microsoft.Graph.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Models.PublicError>("error", Error);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
+            writer.WriteEnumValue<global::Microsoft.Graph.Models.RestoreJobType>("restoreJobType", RestoreJobType);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.RestoreSessionArtifactCount>("restoreSessionArtifactCount", RestoreSessionArtifactCount);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.RestoreSessionStatus>("status", Status);
         }
     }

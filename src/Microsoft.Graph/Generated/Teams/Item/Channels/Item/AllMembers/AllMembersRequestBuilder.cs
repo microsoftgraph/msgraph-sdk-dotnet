@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.AllMembers
         {
         }
         /// <summary>
-        /// Get a list of all members in a channel. It supports all types of channels. In the case of shared channels, it includes all cross-tenant and cross-team members in a channel.
+        /// Get a list of all members in a channel. This API supports all channel types, including shared channels. For shared channels, the response includes:
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-list-allmembers?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ConversationMemberCollectionResponse"/></returns>
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.AllMembers
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ConversationMember>(requestInfo, global::Microsoft.Graph.Models.ConversationMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of all members in a channel. It supports all types of channels. In the case of shared channels, it includes all cross-tenant and cross-team members in a channel.
+        /// Get a list of all members in a channel. This API supports all channel types, including shared channels. For shared channels, the response includes:
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -165,7 +165,7 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.AllMembers
             return new global::Microsoft.Graph.Teams.Item.Channels.Item.AllMembers.AllMembersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of all members in a channel. It supports all types of channels. In the case of shared channels, it includes all cross-tenant and cross-team members in a channel.
+        /// Get a list of all members in a channel. This API supports all channel types, including shared channels. For shared channels, the response includes:
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AllMembersRequestBuilderGetQueryParameters 

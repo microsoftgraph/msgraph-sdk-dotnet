@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Me.ChangePassword
         {
         }
         /// <summary>
-        /// Update the signed-in user&apos;s password. Any user can update their password without belonging to any administrator role.
+        /// Update the signed-in user&apos;s password. Any user can update their password without belonging to any administrator role.To update another user&apos;s password in either delegated or app-only scenarios, update the passwordProfile property of the user instead. See Example 3: Update the passwordProfile of a user and reset their password.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-changepassword?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Me.ChangePassword
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the signed-in user&apos;s password. Any user can update their password without belonging to any administrator role.
+        /// Update the signed-in user&apos;s password. Any user can update their password without belonging to any administrator role.To update another user&apos;s password in either delegated or app-only scenarios, update the passwordProfile property of the user instead. See Example 3: Update the passwordProfile of a user and reset their password.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
