@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class AppScope : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Provides the display name of the app-specific resource represented by the app scope. Read only.</summary>
+        /// <summary>Provides the display name of the app-specific resource represented by the app scope. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName

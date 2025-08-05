@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.AllowedLobbyAdmitterRoles?>("allowedLobbyAdmitters"); }
             set { BackingStore?.Set("allowedLobbyAdmitters", value); }
         }
-        /// <summary>Specifies who can be a presenter in a meeting.</summary>
+        /// <summary>Specifies who can be a presenter in a meeting. Possible values are: everyone, organization, roleIsPresenter, organizer, unknownFutureValue. Inherited from onlineMeetingBase.</summary>
         public global::Microsoft.Graph.Models.OnlineMeetingPresenters? AllowedPresenters
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.OnlineMeetingPresenters?>("allowedPresenters"); }

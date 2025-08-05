@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class AuthenticationEventListener : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Indicates the authenticationEventListener is associated with an authenticationEventsFlow. Read-only.</summary>
+        /// <summary>The identifier of the authenticationEventsFlow object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AuthenticationEventsFlowId

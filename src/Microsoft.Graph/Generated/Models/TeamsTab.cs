@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("teamsApp", value); }
         }
 #endif
-        /// <summary>Deep link URL of the tab instance. Read only.</summary>
+        /// <summary>Deep link URL of the tab instance. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WebUrl

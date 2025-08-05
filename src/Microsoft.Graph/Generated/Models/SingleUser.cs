@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class SingleUser : global::Microsoft.Graph.Models.SubjectSet, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The name of the user in Microsoft Entra ID. Read only.</summary>
+        /// <summary>The name of the user in Microsoft Entra ID. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description

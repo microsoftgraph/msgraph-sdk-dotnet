@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item
         {
         }
         /// <summary>
-        /// Deletes a todoTask object.
+        /// Delete a todoTask object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/todotask-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Me.Todo.Lists.Item.Tasks.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.TodoTask>(requestInfo, global::Microsoft.Graph.Models.TodoTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a todoTask object.
+        /// Delete a todoTask object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

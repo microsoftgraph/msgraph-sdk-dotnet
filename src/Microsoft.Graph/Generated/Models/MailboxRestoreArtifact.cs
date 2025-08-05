@@ -44,6 +44,12 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("restoredFolderName", value); }
         }
 #endif
+        /// <summary>The number of items that are being restored in the folder.</summary>
+        public int? RestoredItemCount
+        {
+            get { return BackingStore?.Get<int?>("restoredItemCount"); }
+            set { BackingStore?.Set("restoredItemCount", value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -69,6 +75,7 @@ namespace Microsoft.Graph.Models
             {
                 { "restoredFolderId", n => { RestoredFolderId = n.GetStringValue(); } },
                 { "restoredFolderName", n => { RestoredFolderName = n.GetStringValue(); } },
+                { "restoredItemCount", n => { RestoredItemCount = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -80,6 +87,7 @@ namespace Microsoft.Graph.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("restoredFolderId", RestoredFolderId);
+            writer.WriteIntValue("restoredItemCount", RestoredItemCount);
         }
     }
 }

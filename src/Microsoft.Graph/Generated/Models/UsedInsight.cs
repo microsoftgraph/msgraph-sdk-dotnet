@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class UsedInsight : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Information about when the item was last viewed or modified by the user. Read only.</summary>
+        /// <summary>Information about when the item was last viewed or modified by the user. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.UsageDetails? LastUsed
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("resource", value); }
         }
 #endif
-        /// <summary>Reference properties of the used document, such as the url and type of the document. Read-only</summary>
+        /// <summary>Reference properties of the used document, such as the URL and type of the document. Read-only</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.ResourceReference? ResourceReference
