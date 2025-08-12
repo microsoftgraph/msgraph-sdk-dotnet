@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Models
     public partial class CustomAuthenticationExtension : global::Microsoft.Graph.Models.CustomCalloutExtension, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The behaviour on error for the custom authentication extension.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.CustomExtensionBehaviorOnError? BehaviorOnError
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.CustomExtensionBehaviorOnError?>("behaviorOnError"); }
+            set { BackingStore?.Set("behaviorOnError", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.CustomExtensionBehaviorOnError BehaviorOnError
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.CustomExtensionBehaviorOnError>("behaviorOnError"); }
+            set { BackingStore?.Set("behaviorOnError", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Models.CustomAuthenticationExtension"/> and sets the default values.
         /// </summary>
@@ -32,6 +48,7 @@ namespace Microsoft.Graph.Models
             {
                 "#microsoft.graph.onAttributeCollectionStartCustomExtension" => new global::Microsoft.Graph.Models.OnAttributeCollectionStartCustomExtension(),
                 "#microsoft.graph.onAttributeCollectionSubmitCustomExtension" => new global::Microsoft.Graph.Models.OnAttributeCollectionSubmitCustomExtension(),
+                "#microsoft.graph.onOtpSendCustomExtension" => new global::Microsoft.Graph.Models.OnOtpSendCustomExtension(),
                 "#microsoft.graph.onTokenIssuanceStartCustomExtension" => new global::Microsoft.Graph.Models.OnTokenIssuanceStartCustomExtension(),
                 _ => new global::Microsoft.Graph.Models.CustomAuthenticationExtension(),
             };
@@ -44,6 +61,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "behaviorOnError", n => { BehaviorOnError = n.GetObjectValue<global::Microsoft.Graph.Models.CustomExtensionBehaviorOnError>(global::Microsoft.Graph.Models.CustomExtensionBehaviorOnError.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -54,6 +72,7 @@ namespace Microsoft.Graph.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.CustomExtensionBehaviorOnError>("behaviorOnError", BehaviorOnError);
         }
     }
 }

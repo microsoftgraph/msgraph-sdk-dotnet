@@ -34,7 +34,8 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Resize
         {
         }
         /// <summary>
-        /// Invoke action resize
+        /// Upgrade or downgrade an existing Cloud PC to a configuration with a new virtual CPU (vCPU) and storage size.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-resize?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +59,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Resize
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action resize
+        /// Upgrade or downgrade an existing Cloud PC to a configuration with a new virtual CPU (vCPU) and storage size.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

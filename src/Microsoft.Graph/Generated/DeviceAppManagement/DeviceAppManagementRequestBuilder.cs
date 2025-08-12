@@ -10,6 +10,7 @@ using Microsoft.Graph.DeviceAppManagement.ManagedEBooks;
 using Microsoft.Graph.DeviceAppManagement.MdmWindowsInformationProtectionPolicies;
 using Microsoft.Graph.DeviceAppManagement.MobileAppCategories;
 using Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations;
+using Microsoft.Graph.DeviceAppManagement.MobileAppRelationships;
 using Microsoft.Graph.DeviceAppManagement.MobileApps;
 using Microsoft.Graph.DeviceAppManagement.SyncMicrosoftStoreForBusinessApps;
 using Microsoft.Graph.DeviceAppManagement.TargetedManagedAppConfigurations;
@@ -83,6 +84,11 @@ namespace Microsoft.Graph.DeviceAppManagement
         {
             get => new global::Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.MobileAppConfigurationsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the mobileAppRelationships property of the microsoft.graph.deviceAppManagement entity.</summary>
+        public global::Microsoft.Graph.DeviceAppManagement.MobileAppRelationships.MobileAppRelationshipsRequestBuilder MobileAppRelationships
+        {
+            get => new global::Microsoft.Graph.DeviceAppManagement.MobileAppRelationships.MobileAppRelationshipsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the mobileApps property of the microsoft.graph.deviceAppManagement entity.</summary>
         public global::Microsoft.Graph.DeviceAppManagement.MobileApps.MobileAppsRequestBuilder MobileApps
         {
@@ -150,7 +156,7 @@ namespace Microsoft.Graph.DeviceAppManagement
         }
         /// <summary>
         /// Update the properties of a deviceAppManagement object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-deviceappmanagement-update?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-partnerintegration-deviceappmanagement-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DeviceAppManagement"/></returns>
         /// <param name="body">The request body</param>

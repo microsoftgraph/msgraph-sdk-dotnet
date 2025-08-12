@@ -9,7 +9,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>
-    /// Contains properties for file encryption information for the content version of a line of business app.
+    /// Contains properties for file encryption information for the content version of a line-of-business app.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FileEncryptionInfo : IAdditionalDataHolder, IBackedModel, IParsable

@@ -59,6 +59,7 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.onAttributeCollectionStartListener" => new global::Microsoft.Graph.Models.OnAttributeCollectionStartListener(),
                 "#microsoft.graph.onAttributeCollectionSubmitListener" => new global::Microsoft.Graph.Models.OnAttributeCollectionSubmitListener(),
                 "#microsoft.graph.onAuthenticationMethodLoadStartListener" => new global::Microsoft.Graph.Models.OnAuthenticationMethodLoadStartListener(),
+                "#microsoft.graph.onEmailOtpSendListener" => new global::Microsoft.Graph.Models.OnEmailOtpSendListener(),
                 "#microsoft.graph.onInteractiveAuthFlowStartListener" => new global::Microsoft.Graph.Models.OnInteractiveAuthFlowStartListener(),
                 "#microsoft.graph.onTokenIssuanceStartListener" => new global::Microsoft.Graph.Models.OnTokenIssuanceStartListener(),
                 "#microsoft.graph.onUserCreateStartListener" => new global::Microsoft.Graph.Models.OnUserCreateStartListener(),

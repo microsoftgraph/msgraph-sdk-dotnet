@@ -207,6 +207,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("mobileAppConfigurations", value); }
         }
 #endif
+        /// <summary>The mobile app relationship represents the dependency or supersedence relationship between two Intune mobile LOB applications.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.MobileAppRelationship>? MobileAppRelationships
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.MobileAppRelationship>?>("mobileAppRelationships"); }
+            set { BackingStore?.Set("mobileAppRelationships", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.MobileAppRelationship> MobileAppRelationships
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.MobileAppRelationship>>("mobileAppRelationships"); }
+            set { BackingStore?.Set("mobileAppRelationships", value); }
+        }
+#endif
         /// <summary>The mobile apps.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -303,6 +319,7 @@ namespace Microsoft.Graph.Models
                 { "microsoftStoreForBusinessLastSuccessfulSyncDateTime", n => { MicrosoftStoreForBusinessLastSuccessfulSyncDateTime = n.GetDateTimeOffsetValue(); } },
                 { "mobileAppCategories", n => { MobileAppCategories = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.MobileAppCategory>(global::Microsoft.Graph.Models.MobileAppCategory.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "mobileAppConfigurations", n => { MobileAppConfigurations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ManagedDeviceMobileAppConfiguration>(global::Microsoft.Graph.Models.ManagedDeviceMobileAppConfiguration.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "mobileAppRelationships", n => { MobileAppRelationships = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.MobileAppRelationship>(global::Microsoft.Graph.Models.MobileAppRelationship.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "mobileApps", n => { MobileApps = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.MobileApp>(global::Microsoft.Graph.Models.MobileApp.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "targetedManagedAppConfigurations", n => { TargetedManagedAppConfigurations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.TargetedManagedAppConfiguration>(global::Microsoft.Graph.Models.TargetedManagedAppConfiguration.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "vppTokens", n => { VppTokens = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.VppToken>(global::Microsoft.Graph.Models.VppToken.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -331,6 +348,7 @@ namespace Microsoft.Graph.Models
             writer.WriteDateTimeOffsetValue("microsoftStoreForBusinessLastSuccessfulSyncDateTime", MicrosoftStoreForBusinessLastSuccessfulSyncDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.MobileAppCategory>("mobileAppCategories", MobileAppCategories);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ManagedDeviceMobileAppConfiguration>("mobileAppConfigurations", MobileAppConfigurations);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.MobileAppRelationship>("mobileAppRelationships", MobileAppRelationships);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.MobileApp>("mobileApps", MobileApps);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.TargetedManagedAppConfiguration>("targetedManagedAppConfigurations", TargetedManagedAppConfigurations);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.VppToken>("vppTokens", VppTokens);

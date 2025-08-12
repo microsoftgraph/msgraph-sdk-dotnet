@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Models
         /// <summary>User dismissal. Allows the user to dismiss the notification</summary>
         [EnumMember(Value = "user")]
         User,
-        /// <summary>Evolvable enum member</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

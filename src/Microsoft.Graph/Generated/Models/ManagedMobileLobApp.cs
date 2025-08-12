@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>
-    /// An abstract base class containing properties for all managed mobile line of business apps.
+    /// An abstract base class containing properties for all managed mobile line-of-business apps.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ManagedMobileLobApp : global::Microsoft.Graph.Models.ManagedApp, IParsable
