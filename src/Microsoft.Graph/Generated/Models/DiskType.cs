@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Models
         /// <summary>Enum member for SSD devices.</summary>
         [EnumMember(Value = "ssd")]
         Ssd,
-        /// <summary>Evolvable enumeration sentinel value.Do not use.</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Models
         /// <summary>Turn off all notifications, including restart warnings.</summary>
         [EnumMember(Value = "disableAllNotifications")]
         DisableAllNotifications,
-        /// <summary>Evolvable enum member</summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

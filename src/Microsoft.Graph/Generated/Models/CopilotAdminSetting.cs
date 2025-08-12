@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class CopilotAdminSetting : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Represents a setting that controls whether users of Microsoft 365 Copilot in Teams meetings can receive responses to sentiment-related prompts. Read-only. Nullable.</summary>
+        /// <summary>The limitedMode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.CopilotAdminLimitedMode? LimitedMode
