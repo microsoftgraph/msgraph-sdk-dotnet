@@ -21,13 +21,13 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The isOutOfOffice property</summary>
+        /// <summary>If true, either of the following is met:The current time falls within the out-of-office window configured in Outlook or Teams.An event marked as &apos;Show as Out of Office&apos; appears on the user&apos;s calendar.Otherwise, false.</summary>
         public bool? IsOutOfOffice
         {
             get { return BackingStore?.Get<bool?>("isOutOfOffice"); }
             set { BackingStore?.Set("isOutOfOffice", value); }
         }
-        /// <summary>The message property</summary>
+        /// <summary>The out-of-office message configured by the user in the Outlook client (Automatic replies) or the Teams client (Schedule out of office).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Message

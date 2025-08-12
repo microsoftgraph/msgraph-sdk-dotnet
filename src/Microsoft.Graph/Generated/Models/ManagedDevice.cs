@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Models
 {
     /// <summary>
-    /// Devices that are managed or pre-enrolled through Intune
+    /// Devices that are managed or pre-enrolled through Intune. Limited support for $filter: Only properties whose descriptions mention support for $filter may be used, and combinations of those filtered properties must use &apos;and&apos;, not &apos;or&apos;.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ManagedDevice : global::Microsoft.Graph.Models.Entity, IParsable

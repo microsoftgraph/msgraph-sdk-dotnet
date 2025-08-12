@@ -36,6 +36,22 @@ namespace Microsoft.Graph.Models.Security
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.ItemsToInclude?>("itemsToInclude"); }
             set { BackingStore?.Set("itemsToInclude", value); }
         }
+        /// <summary>Contains the properties for report file metadata, including downloadUrl, fileName, and size.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.Security.ReportFileMetadata>? ReportFileMetadata
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Security.ReportFileMetadata>?>("reportFileMetadata"); }
+            set { BackingStore?.Set("reportFileMetadata", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.Security.ReportFileMetadata> ReportFileMetadata
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Security.ReportFileMetadata>>("reportFileMetadata"); }
+            set { BackingStore?.Set("reportFileMetadata", value); }
+        }
+#endif
         /// <summary>eDiscovery review set to which items matching source collection query gets added.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -90,6 +106,7 @@ namespace Microsoft.Graph.Models.Security
                 { "cloudAttachmentVersion", n => { CloudAttachmentVersion = n.GetEnumValue<global::Microsoft.Graph.Models.Security.CloudAttachmentVersion>(); } },
                 { "documentVersion", n => { DocumentVersion = n.GetEnumValue<global::Microsoft.Graph.Models.Security.DocumentVersion>(); } },
                 { "itemsToInclude", n => { ItemsToInclude = n.GetEnumValue<global::Microsoft.Graph.Models.Security.ItemsToInclude>(); } },
+                { "reportFileMetadata", n => { ReportFileMetadata = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.ReportFileMetadata>(global::Microsoft.Graph.Models.Security.ReportFileMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "reviewSet", n => { ReviewSet = n.GetObjectValue<global::Microsoft.Graph.Models.Security.EdiscoveryReviewSet>(global::Microsoft.Graph.Models.Security.EdiscoveryReviewSet.CreateFromDiscriminatorValue); } },
                 { "search", n => { Search = n.GetObjectValue<global::Microsoft.Graph.Models.Security.EdiscoverySearch>(global::Microsoft.Graph.Models.Security.EdiscoverySearch.CreateFromDiscriminatorValue); } },
             };
@@ -106,6 +123,7 @@ namespace Microsoft.Graph.Models.Security
             writer.WriteEnumValue<global::Microsoft.Graph.Models.Security.CloudAttachmentVersion>("cloudAttachmentVersion", CloudAttachmentVersion);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.Security.DocumentVersion>("documentVersion", DocumentVersion);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.Security.ItemsToInclude>("itemsToInclude", ItemsToInclude);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.ReportFileMetadata>("reportFileMetadata", ReportFileMetadata);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.EdiscoveryReviewSet>("reviewSet", ReviewSet);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.EdiscoverySearch>("search", Search);
         }
