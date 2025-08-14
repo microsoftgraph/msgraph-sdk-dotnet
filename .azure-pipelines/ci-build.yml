@@ -7,7 +7,7 @@ trigger:
     - main
   paths:
     include:
-      - /src/*
+      - src/*
   tags:
     include:
       - '*'
