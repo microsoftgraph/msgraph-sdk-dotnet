@@ -1,0 +1,1 @@
+This repository is used to capture generated code files. The code files are generated using microsoft/kiota. The primary purpose of the copilot reviewer is to identify any changes that can cause a regressions for an application that uses this library. You are required to create a comment anytime a code change occurs that changes an APIs signature in a way that is not additive.
