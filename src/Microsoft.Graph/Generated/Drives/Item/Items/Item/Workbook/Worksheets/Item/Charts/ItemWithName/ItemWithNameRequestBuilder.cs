@@ -129,7 +129,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         /// <param name="width">Usage: width={width}</param>
         public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.ItemWithName.ImageWithWidth.ImageWithWidthRequestBuilder ImageWithWidth(int? width)
         {
-            _ = width ?? throw new ArgumentNullException(nameof(width));
+            if(ReferenceEquals(width, null)) throw new ArgumentNullException(nameof(width));
             return new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.ItemWithName.ImageWithWidth.ImageWithWidthRequestBuilder(PathParameters, RequestAdapter, width);
         }
         /// <summary>
@@ -140,8 +140,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         /// <param name="width">Usage: width={width}</param>
         public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.ItemWithName.ImageWithWidthWithHeight.ImageWithWidthWithHeightRequestBuilder ImageWithWidthWithHeight(int? height, int? width)
         {
-            _ = height ?? throw new ArgumentNullException(nameof(height));
-            _ = width ?? throw new ArgumentNullException(nameof(width));
+            if(ReferenceEquals(height, null)) throw new ArgumentNullException(nameof(height));
+            if(ReferenceEquals(width, null)) throw new ArgumentNullException(nameof(width));
             return new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.ItemWithName.ImageWithWidthWithHeight.ImageWithWidthWithHeightRequestBuilder(PathParameters, RequestAdapter, height, width);
         }
         /// <summary>
@@ -154,8 +154,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.ItemWithName.ImageWithWidthWithHeightWithFittingMode.ImageWithWidthWithHeightWithFittingModeRequestBuilder ImageWithWidthWithHeightWithFittingMode(string fittingMode, int? height, int? width)
         {
             if(string.IsNullOrEmpty(fittingMode)) throw new ArgumentNullException(nameof(fittingMode));
-            _ = height ?? throw new ArgumentNullException(nameof(height));
-            _ = width ?? throw new ArgumentNullException(nameof(width));
+            if(ReferenceEquals(height, null)) throw new ArgumentNullException(nameof(height));
+            if(ReferenceEquals(width, null)) throw new ArgumentNullException(nameof(width));
             return new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.ItemWithName.ImageWithWidthWithHeightWithFittingMode.ImageWithWidthWithHeightWithFittingModeRequestBuilder(PathParameters, RequestAdapter, fittingMode, height, width);
         }
         /// <summary>

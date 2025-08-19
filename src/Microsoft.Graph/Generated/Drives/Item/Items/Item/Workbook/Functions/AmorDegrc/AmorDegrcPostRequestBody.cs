@@ -148,7 +148,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.AmorDegrc
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.AmorDegrc.AmorDegrcPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.AmorDegrc.AmorDegrcPostRequestBody();
         }
         /// <summary>
@@ -174,7 +174,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.AmorDegrc
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<UntypedNode>("basis", Basis);
             writer.WriteObjectValue<UntypedNode>("cost", Cost);
             writer.WriteObjectValue<UntypedNode>("datePurchased", DatePurchased);

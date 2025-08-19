@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Me.LicenseDetails.Item
         public async Task<global::Microsoft.Graph.Models.LicenseDetails> PatchAsync(global::Microsoft.Graph.Models.LicenseDetails body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -157,7 +157,7 @@ namespace Microsoft.Graph.Me.LicenseDetails.Item
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.LicenseDetails body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

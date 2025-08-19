@@ -78,8 +78,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DeviceConfigurationCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.DeviceConfigurationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new windowsPhone81GeneralConfiguration object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-windowsphone81generalconfiguration-create?view=graph-rest-1.0" />
+        /// Create a new androidGeneralDeviceConfiguration object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-androidgeneraldeviceconfiguration-create?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DeviceConfiguration"/></returns>
         /// <param name="body">The request body</param>
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations
         public async Task<global::Microsoft.Graph.Models.DeviceConfiguration> PostAsync(global::Microsoft.Graph.Models.DeviceConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations
             return requestInfo;
         }
         /// <summary>
-        /// Create a new windowsPhone81GeneralConfiguration object.
+        /// Create a new androidGeneralDeviceConfiguration object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.DeviceConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

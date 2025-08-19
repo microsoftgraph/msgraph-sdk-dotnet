@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Sites.Item.Permissions.Item.Grant
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Sites.Item.Permissions.Item.Grant.GrantPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Sites.Item.Permissions.Item.Grant.GrantPostRequestBody();
         }
         /// <summary>
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Sites.Item.Permissions.Item.Grant
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DriveRecipient>("recipients", Recipients);
             writer.WriteCollectionOfPrimitiveValues<string>("roles", Roles);
             writer.WriteAdditionalData(AdditionalData);

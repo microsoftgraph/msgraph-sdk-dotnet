@@ -68,7 +68,7 @@ namespace Microsoft.Graph.DirectoryNamespace.PublicKeyInfrastructure.Certificate
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.DirectoryNamespace.PublicKeyInfrastructure.CertificateBasedAuthConfigurations.Item.Upload.UploadPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.DirectoryNamespace.PublicKeyInfrastructure.CertificateBasedAuthConfigurations.Item.Upload.UploadPostRequestBody();
         }
         /// <summary>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.DirectoryNamespace.PublicKeyInfrastructure.Certificate
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("sha256FileHash", Sha256FileHash);
             writer.WriteStringValue("uploadUrl", UploadUrl);
             writer.WriteAdditionalData(AdditionalData);

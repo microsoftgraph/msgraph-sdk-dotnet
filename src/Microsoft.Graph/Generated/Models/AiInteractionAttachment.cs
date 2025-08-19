@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Models.AiInteractionAttachment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Models.AiInteractionAttachment();
         }
         /// <summary>
@@ -157,7 +157,7 @@ namespace Microsoft.Graph.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("attachmentId", AttachmentId);
             writer.WriteStringValue("content", Content);
             writer.WriteStringValue("contentType", ContentType);

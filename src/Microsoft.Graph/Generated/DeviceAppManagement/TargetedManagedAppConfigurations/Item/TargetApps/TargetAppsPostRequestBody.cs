@@ -59,7 +59,7 @@ namespace Microsoft.Graph.DeviceAppManagement.TargetedManagedAppConfigurations.I
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.DeviceAppManagement.TargetedManagedAppConfigurations.Item.TargetApps.TargetAppsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.DeviceAppManagement.TargetedManagedAppConfigurations.Item.TargetApps.TargetAppsPostRequestBody();
         }
         /// <summary>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.DeviceAppManagement.TargetedManagedAppConfigurations.I
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Microsoft.Graph.Models.TargetedManagedAppGroupType>("appGroupType", AppGroupType);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ManagedMobileApp>("apps", Apps);
             writer.WriteAdditionalData(AdditionalData);

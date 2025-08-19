@@ -517,8 +517,8 @@ namespace Microsoft.Graph.Users.Item
         /// <param name="top">Usage: top={top}</param>
         public global::Microsoft.Graph.Users.Item.ExportDeviceAndAppManagementDataWithSkipWithTop.ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder ExportDeviceAndAppManagementDataWithSkipWithTop(int? skip, int? top)
         {
-            _ = skip ?? throw new ArgumentNullException(nameof(skip));
-            _ = top ?? throw new ArgumentNullException(nameof(top));
+            if(ReferenceEquals(skip, null)) throw new ArgumentNullException(nameof(skip));
+            if(ReferenceEquals(top, null)) throw new ArgumentNullException(nameof(top));
             return new global::Microsoft.Graph.Users.Item.ExportDeviceAndAppManagementDataWithSkipWithTop.ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder(PathParameters, RequestAdapter, skip, top);
         }
         /// <summary>
@@ -547,7 +547,7 @@ namespace Microsoft.Graph.Users.Item
         }
         /// <summary>
         /// Update the properties of a user object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-update?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-user-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.User"/></returns>
         /// <param name="body">The request body</param>
@@ -563,7 +563,7 @@ namespace Microsoft.Graph.Users.Item
         public async Task<global::Microsoft.Graph.Models.User> PatchAsync(global::Microsoft.Graph.Models.User body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -636,7 +636,7 @@ namespace Microsoft.Graph.Users.Item
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.User body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

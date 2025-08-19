@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Microsoft.Graph.Models.PrivilegedAccessGroupEligibilityScheduleRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Models.PrivilegedAccessGroupEligibilityScheduleRequest();
         }
         /// <summary>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.PrivilegedAccessGroupRelationships>("accessId", AccessId);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Group>("group", Group);

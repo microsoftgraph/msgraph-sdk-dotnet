@@ -135,8 +135,8 @@ namespace Microsoft.Graph.Organization.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Organization>(requestInfo, global::Microsoft.Graph.Models.Organization.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of the currently authenticated organization. In this case, organization is defined as a collection of exactly one record, and so its ID must be specified in the request.  The ID is also known as the tenantId of the organization.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/organization-update?view=graph-rest-1.0" />
+        /// Update the properties of a organization object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-organization-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Organization"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Organization.Item
         public async Task<global::Microsoft.Graph.Models.Organization> PatchAsync(global::Microsoft.Graph.Models.Organization body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -199,7 +199,7 @@ namespace Microsoft.Graph.Organization.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of the currently authenticated organization. In this case, organization is defined as a collection of exactly one record, and so its ID must be specified in the request.  The ID is also known as the tenantId of the organization.
+        /// Update the properties of a organization object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -213,7 +213,7 @@ namespace Microsoft.Graph.Organization.Item
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.Organization body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

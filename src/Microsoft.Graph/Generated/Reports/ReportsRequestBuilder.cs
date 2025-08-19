@@ -264,7 +264,7 @@ namespace Microsoft.Graph.Reports
         /// <param name="date">Usage: date={date}</param>
         public global::Microsoft.Graph.Reports.GetEmailActivityUserDetailWithDate.GetEmailActivityUserDetailWithDateRequestBuilder GetEmailActivityUserDetailWithDate(Date? date)
         {
-            _ = date ?? throw new ArgumentNullException(nameof(date));
+            if(ReferenceEquals(date, null)) throw new ArgumentNullException(nameof(date));
             return new global::Microsoft.Graph.Reports.GetEmailActivityUserDetailWithDate.GetEmailActivityUserDetailWithDateRequestBuilder(PathParameters, RequestAdapter, date);
         }
         /// <summary>
@@ -304,7 +304,7 @@ namespace Microsoft.Graph.Reports
         /// <param name="date">Usage: date={date}</param>
         public global::Microsoft.Graph.Reports.GetEmailAppUsageUserDetailWithDate.GetEmailAppUsageUserDetailWithDateRequestBuilder GetEmailAppUsageUserDetailWithDate(Date? date)
         {
-            _ = date ?? throw new ArgumentNullException(nameof(date));
+            if(ReferenceEquals(date, null)) throw new ArgumentNullException(nameof(date));
             return new global::Microsoft.Graph.Reports.GetEmailAppUsageUserDetailWithDate.GetEmailAppUsageUserDetailWithDateRequestBuilder(PathParameters, RequestAdapter, date);
         }
         /// <summary>
@@ -336,9 +336,9 @@ namespace Microsoft.Graph.Reports
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
         public global::Microsoft.Graph.Reports.GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTime.GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilder GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, string groupId, DateTimeOffset? startDateTime)
         {
-            _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
+            if(ReferenceEquals(endDateTime, null)) throw new ArgumentNullException(nameof(endDateTime));
             if(string.IsNullOrEmpty(groupId)) throw new ArgumentNullException(nameof(groupId));
-            _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
+            if(ReferenceEquals(startDateTime, null)) throw new ArgumentNullException(nameof(startDateTime));
             return new global::Microsoft.Graph.Reports.GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTime.GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, groupId, startDateTime);
         }
         /// <summary>
@@ -368,7 +368,7 @@ namespace Microsoft.Graph.Reports
         /// <param name="date">Usage: date={date}</param>
         public global::Microsoft.Graph.Reports.GetM365AppUserDetailWithDate.GetM365AppUserDetailWithDateRequestBuilder GetM365AppUserDetailWithDate(Date? date)
         {
-            _ = date ?? throw new ArgumentNullException(nameof(date));
+            if(ReferenceEquals(date, null)) throw new ArgumentNullException(nameof(date));
             return new global::Microsoft.Graph.Reports.GetM365AppUserDetailWithDate.GetM365AppUserDetailWithDateRequestBuilder(PathParameters, RequestAdapter, date);
         }
         /// <summary>
@@ -438,7 +438,7 @@ namespace Microsoft.Graph.Reports
         /// <param name="date">Usage: date={date}</param>
         public global::Microsoft.Graph.Reports.GetOffice365ActiveUserDetailWithDate.GetOffice365ActiveUserDetailWithDateRequestBuilder GetOffice365ActiveUserDetailWithDate(Date? date)
         {
-            _ = date ?? throw new ArgumentNullException(nameof(date));
+            if(ReferenceEquals(date, null)) throw new ArgumentNullException(nameof(date));
             return new global::Microsoft.Graph.Reports.GetOffice365ActiveUserDetailWithDate.GetOffice365ActiveUserDetailWithDateRequestBuilder(PathParameters, RequestAdapter, date);
         }
         /// <summary>
@@ -468,7 +468,7 @@ namespace Microsoft.Graph.Reports
         /// <param name="date">Usage: date={date}</param>
         public global::Microsoft.Graph.Reports.GetOffice365GroupsActivityDetailWithDate.GetOffice365GroupsActivityDetailWithDateRequestBuilder GetOffice365GroupsActivityDetailWithDate(Date? date)
         {
-            _ = date ?? throw new ArgumentNullException(nameof(date));
+            if(ReferenceEquals(date, null)) throw new ArgumentNullException(nameof(date));
             return new global::Microsoft.Graph.Reports.GetOffice365GroupsActivityDetailWithDate.GetOffice365GroupsActivityDetailWithDateRequestBuilder(PathParameters, RequestAdapter, date);
         }
         /// <summary>
@@ -548,7 +548,7 @@ namespace Microsoft.Graph.Reports
         /// <param name="date">Usage: date={date}</param>
         public global::Microsoft.Graph.Reports.GetOneDriveActivityUserDetailWithDate.GetOneDriveActivityUserDetailWithDateRequestBuilder GetOneDriveActivityUserDetailWithDate(Date? date)
         {
-            _ = date ?? throw new ArgumentNullException(nameof(date));
+            if(ReferenceEquals(date, null)) throw new ArgumentNullException(nameof(date));
             return new global::Microsoft.Graph.Reports.GetOneDriveActivityUserDetailWithDate.GetOneDriveActivityUserDetailWithDateRequestBuilder(PathParameters, RequestAdapter, date);
         }
         /// <summary>
@@ -578,7 +578,7 @@ namespace Microsoft.Graph.Reports
         /// <param name="date">Usage: date={date}</param>
         public global::Microsoft.Graph.Reports.GetOneDriveUsageAccountDetailWithDate.GetOneDriveUsageAccountDetailWithDateRequestBuilder GetOneDriveUsageAccountDetailWithDate(Date? date)
         {
-            _ = date ?? throw new ArgumentNullException(nameof(date));
+            if(ReferenceEquals(date, null)) throw new ArgumentNullException(nameof(date));
             return new global::Microsoft.Graph.Reports.GetOneDriveUsageAccountDetailWithDate.GetOneDriveUsageAccountDetailWithDateRequestBuilder(PathParameters, RequestAdapter, date);
         }
         /// <summary>
@@ -620,9 +620,9 @@ namespace Microsoft.Graph.Reports
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
         public global::Microsoft.Graph.Reports.GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTime.GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeRequestBuilder GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, string printerId, DateTimeOffset? startDateTime)
         {
-            _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
+            if(ReferenceEquals(endDateTime, null)) throw new ArgumentNullException(nameof(endDateTime));
             if(string.IsNullOrEmpty(printerId)) throw new ArgumentNullException(nameof(printerId));
-            _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
+            if(ReferenceEquals(startDateTime, null)) throw new ArgumentNullException(nameof(startDateTime));
             return new global::Microsoft.Graph.Reports.GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTime.GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, printerId, startDateTime);
         }
         /// <summary>
@@ -672,7 +672,7 @@ namespace Microsoft.Graph.Reports
         /// <param name="date">Usage: date={date}</param>
         public global::Microsoft.Graph.Reports.GetSharePointActivityUserDetailWithDate.GetSharePointActivityUserDetailWithDateRequestBuilder GetSharePointActivityUserDetailWithDate(Date? date)
         {
-            _ = date ?? throw new ArgumentNullException(nameof(date));
+            if(ReferenceEquals(date, null)) throw new ArgumentNullException(nameof(date));
             return new global::Microsoft.Graph.Reports.GetSharePointActivityUserDetailWithDate.GetSharePointActivityUserDetailWithDateRequestBuilder(PathParameters, RequestAdapter, date);
         }
         /// <summary>
@@ -692,7 +692,7 @@ namespace Microsoft.Graph.Reports
         /// <param name="date">Usage: date={date}</param>
         public global::Microsoft.Graph.Reports.GetSharePointSiteUsageDetailWithDate.GetSharePointSiteUsageDetailWithDateRequestBuilder GetSharePointSiteUsageDetailWithDate(Date? date)
         {
-            _ = date ?? throw new ArgumentNullException(nameof(date));
+            if(ReferenceEquals(date, null)) throw new ArgumentNullException(nameof(date));
             return new global::Microsoft.Graph.Reports.GetSharePointSiteUsageDetailWithDate.GetSharePointSiteUsageDetailWithDateRequestBuilder(PathParameters, RequestAdapter, date);
         }
         /// <summary>
@@ -772,7 +772,7 @@ namespace Microsoft.Graph.Reports
         /// <param name="date">Usage: date={date}</param>
         public global::Microsoft.Graph.Reports.GetSkypeForBusinessActivityUserDetailWithDate.GetSkypeForBusinessActivityUserDetailWithDateRequestBuilder GetSkypeForBusinessActivityUserDetailWithDate(Date? date)
         {
-            _ = date ?? throw new ArgumentNullException(nameof(date));
+            if(ReferenceEquals(date, null)) throw new ArgumentNullException(nameof(date));
             return new global::Microsoft.Graph.Reports.GetSkypeForBusinessActivityUserDetailWithDate.GetSkypeForBusinessActivityUserDetailWithDateRequestBuilder(PathParameters, RequestAdapter, date);
         }
         /// <summary>
@@ -812,7 +812,7 @@ namespace Microsoft.Graph.Reports
         /// <param name="date">Usage: date={date}</param>
         public global::Microsoft.Graph.Reports.GetSkypeForBusinessDeviceUsageUserDetailWithDate.GetSkypeForBusinessDeviceUsageUserDetailWithDateRequestBuilder GetSkypeForBusinessDeviceUsageUserDetailWithDate(Date? date)
         {
-            _ = date ?? throw new ArgumentNullException(nameof(date));
+            if(ReferenceEquals(date, null)) throw new ArgumentNullException(nameof(date));
             return new global::Microsoft.Graph.Reports.GetSkypeForBusinessDeviceUsageUserDetailWithDate.GetSkypeForBusinessDeviceUsageUserDetailWithDateRequestBuilder(PathParameters, RequestAdapter, date);
         }
         /// <summary>
@@ -942,7 +942,7 @@ namespace Microsoft.Graph.Reports
         /// <param name="date">Usage: date={date}</param>
         public global::Microsoft.Graph.Reports.GetTeamsDeviceUsageUserDetailWithDate.GetTeamsDeviceUsageUserDetailWithDateRequestBuilder GetTeamsDeviceUsageUserDetailWithDate(Date? date)
         {
-            _ = date ?? throw new ArgumentNullException(nameof(date));
+            if(ReferenceEquals(date, null)) throw new ArgumentNullException(nameof(date));
             return new global::Microsoft.Graph.Reports.GetTeamsDeviceUsageUserDetailWithDate.GetTeamsDeviceUsageUserDetailWithDateRequestBuilder(PathParameters, RequestAdapter, date);
         }
         /// <summary>
@@ -972,7 +972,7 @@ namespace Microsoft.Graph.Reports
         /// <param name="date">Usage: date={date}</param>
         public global::Microsoft.Graph.Reports.GetTeamsTeamActivityDetailWithDate.GetTeamsTeamActivityDetailWithDateRequestBuilder GetTeamsTeamActivityDetailWithDate(Date? date)
         {
-            _ = date ?? throw new ArgumentNullException(nameof(date));
+            if(ReferenceEquals(date, null)) throw new ArgumentNullException(nameof(date));
             return new global::Microsoft.Graph.Reports.GetTeamsTeamActivityDetailWithDate.GetTeamsTeamActivityDetailWithDateRequestBuilder(PathParameters, RequestAdapter, date);
         }
         /// <summary>
@@ -1032,7 +1032,7 @@ namespace Microsoft.Graph.Reports
         /// <param name="date">Usage: date={date}</param>
         public global::Microsoft.Graph.Reports.GetTeamsUserActivityUserDetailWithDate.GetTeamsUserActivityUserDetailWithDateRequestBuilder GetTeamsUserActivityUserDetailWithDate(Date? date)
         {
-            _ = date ?? throw new ArgumentNullException(nameof(date));
+            if(ReferenceEquals(date, null)) throw new ArgumentNullException(nameof(date));
             return new global::Microsoft.Graph.Reports.GetTeamsUserActivityUserDetailWithDate.GetTeamsUserActivityUserDetailWithDateRequestBuilder(PathParameters, RequestAdapter, date);
         }
         /// <summary>
@@ -1054,8 +1054,8 @@ namespace Microsoft.Graph.Reports
         /// <param name="userId">Usage: userId=&apos;{userId}&apos;</param>
         public global::Microsoft.Graph.Reports.GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTime.GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilder GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, DateTimeOffset? startDateTime, string userId)
         {
-            _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
-            _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
+            if(ReferenceEquals(endDateTime, null)) throw new ArgumentNullException(nameof(endDateTime));
+            if(ReferenceEquals(startDateTime, null)) throw new ArgumentNullException(nameof(startDateTime));
             if(string.IsNullOrEmpty(userId)) throw new ArgumentNullException(nameof(userId));
             return new global::Microsoft.Graph.Reports.GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTime.GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime, userId);
         }
@@ -1086,7 +1086,7 @@ namespace Microsoft.Graph.Reports
         /// <param name="date">Usage: date={date}</param>
         public global::Microsoft.Graph.Reports.GetYammerActivityUserDetailWithDate.GetYammerActivityUserDetailWithDateRequestBuilder GetYammerActivityUserDetailWithDate(Date? date)
         {
-            _ = date ?? throw new ArgumentNullException(nameof(date));
+            if(ReferenceEquals(date, null)) throw new ArgumentNullException(nameof(date));
             return new global::Microsoft.Graph.Reports.GetYammerActivityUserDetailWithDate.GetYammerActivityUserDetailWithDateRequestBuilder(PathParameters, RequestAdapter, date);
         }
         /// <summary>
@@ -1126,7 +1126,7 @@ namespace Microsoft.Graph.Reports
         /// <param name="date">Usage: date={date}</param>
         public global::Microsoft.Graph.Reports.GetYammerDeviceUsageUserDetailWithDate.GetYammerDeviceUsageUserDetailWithDateRequestBuilder GetYammerDeviceUsageUserDetailWithDate(Date? date)
         {
-            _ = date ?? throw new ArgumentNullException(nameof(date));
+            if(ReferenceEquals(date, null)) throw new ArgumentNullException(nameof(date));
             return new global::Microsoft.Graph.Reports.GetYammerDeviceUsageUserDetailWithDate.GetYammerDeviceUsageUserDetailWithDateRequestBuilder(PathParameters, RequestAdapter, date);
         }
         /// <summary>
@@ -1156,7 +1156,7 @@ namespace Microsoft.Graph.Reports
         /// <param name="date">Usage: date={date}</param>
         public global::Microsoft.Graph.Reports.GetYammerGroupsActivityDetailWithDate.GetYammerGroupsActivityDetailWithDateRequestBuilder GetYammerGroupsActivityDetailWithDate(Date? date)
         {
-            _ = date ?? throw new ArgumentNullException(nameof(date));
+            if(ReferenceEquals(date, null)) throw new ArgumentNullException(nameof(date));
             return new global::Microsoft.Graph.Reports.GetYammerGroupsActivityDetailWithDate.GetYammerGroupsActivityDetailWithDateRequestBuilder(PathParameters, RequestAdapter, date);
         }
         /// <summary>
@@ -1190,9 +1190,9 @@ namespace Microsoft.Graph.Reports
         public global::Microsoft.Graph.Reports.ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipToken.ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilder ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipToken(string filter, int? skip, string skipToken, int? top)
         {
             if(string.IsNullOrEmpty(filter)) throw new ArgumentNullException(nameof(filter));
-            _ = skip ?? throw new ArgumentNullException(nameof(skip));
+            if(ReferenceEquals(skip, null)) throw new ArgumentNullException(nameof(skip));
             if(string.IsNullOrEmpty(skipToken)) throw new ArgumentNullException(nameof(skipToken));
-            _ = top ?? throw new ArgumentNullException(nameof(top));
+            if(ReferenceEquals(top, null)) throw new ArgumentNullException(nameof(top));
             return new global::Microsoft.Graph.Reports.ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipToken.ManagedDeviceEnrollmentFailureDetailsWithSkipWithTopWithFilterWithSkipTokenRequestBuilder(PathParameters, RequestAdapter, filter, skip, skipToken, top);
         }
         /// <summary>
@@ -1223,7 +1223,7 @@ namespace Microsoft.Graph.Reports
         public async Task<global::Microsoft.Graph.Models.ReportRoot> PatchAsync(global::Microsoft.Graph.Models.ReportRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -1265,7 +1265,7 @@ namespace Microsoft.Graph.Reports
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.ReportRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
