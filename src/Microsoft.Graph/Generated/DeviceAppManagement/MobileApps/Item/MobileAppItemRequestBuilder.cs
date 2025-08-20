@@ -149,8 +149,8 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item
         {
         }
         /// <summary>
-        /// Deletes a iosiPadOSWebClip.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-iosipadoswebclip-delete?view=graph-rest-1.0" />
+        /// Deletes a windowsAppX.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-windowsappx-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -172,8 +172,8 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the macOSOfficeSuiteApp object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-macosofficesuiteapp-get?view=graph-rest-1.0" />
+        /// Read properties and relationships of the managedAndroidStoreApp object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-managedandroidstoreapp-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.MobileApp"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -196,8 +196,8 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.MobileApp>(requestInfo, global::Microsoft.Graph.Models.MobileApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a managedIOSStoreApp object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-managediosstoreapp-update?view=graph-rest-1.0" />
+        /// Update the properties of a androidLobApp object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-androidlobapp-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.MobileApp"/></returns>
         /// <param name="body">The request body</param>
@@ -213,7 +213,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item
         public async Task<global::Microsoft.Graph.Models.MobileApp> PatchAsync(global::Microsoft.Graph.Models.MobileApp body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -222,7 +222,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.MobileApp>(requestInfo, global::Microsoft.Graph.Models.MobileApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a iosiPadOSWebClip.
+        /// Deletes a windowsAppX.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -241,7 +241,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the macOSOfficeSuiteApp object.
+        /// Read properties and relationships of the managedAndroidStoreApp object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -260,7 +260,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a managedIOSStoreApp object.
+        /// Update the properties of a androidLobApp object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -274,7 +274,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.MobileApp body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -299,7 +299,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item
         {
         }
         /// <summary>
-        /// Read properties and relationships of the macOSOfficeSuiteApp object.
+        /// Read properties and relationships of the managedAndroidStoreApp object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MobileAppItemRequestBuilderGetQueryParameters 

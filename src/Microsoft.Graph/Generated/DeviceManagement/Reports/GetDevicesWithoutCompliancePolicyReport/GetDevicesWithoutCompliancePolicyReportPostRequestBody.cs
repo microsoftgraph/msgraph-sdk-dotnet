@@ -160,7 +160,7 @@ namespace Microsoft.Graph.DeviceManagement.Reports.GetDevicesWithoutCompliancePo
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.DeviceManagement.Reports.GetDevicesWithoutCompliancePolicyReport.GetDevicesWithoutCompliancePolicyReportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.DeviceManagement.Reports.GetDevicesWithoutCompliancePolicyReport.GetDevicesWithoutCompliancePolicyReportPostRequestBody();
         }
         /// <summary>
@@ -188,7 +188,7 @@ namespace Microsoft.Graph.DeviceManagement.Reports.GetDevicesWithoutCompliancePo
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("filter", Filter);
             writer.WriteCollectionOfPrimitiveValues<string>("groupBy", GroupBy);
             writer.WriteStringValue("name", Name);

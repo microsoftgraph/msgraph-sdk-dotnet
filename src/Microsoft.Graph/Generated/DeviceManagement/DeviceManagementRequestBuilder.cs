@@ -392,7 +392,7 @@ namespace Microsoft.Graph.DeviceManagement
         }
         /// <summary>
         /// Read properties and relationships of the deviceManagement object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-devicemanagement-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-wip-devicemanagement-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DeviceManagement"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -426,7 +426,7 @@ namespace Microsoft.Graph.DeviceManagement
         }
         /// <summary>
         /// Update the properties of a deviceManagement object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-androidforwork-devicemanagement-update?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-tem-devicemanagement-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DeviceManagement"/></returns>
         /// <param name="body">The request body</param>
@@ -442,7 +442,7 @@ namespace Microsoft.Graph.DeviceManagement
         public async Task<global::Microsoft.Graph.Models.DeviceManagement> PatchAsync(global::Microsoft.Graph.Models.DeviceManagement body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -484,7 +484,7 @@ namespace Microsoft.Graph.DeviceManagement
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.DeviceManagement body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

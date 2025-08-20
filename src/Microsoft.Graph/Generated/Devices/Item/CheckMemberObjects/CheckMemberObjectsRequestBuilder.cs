@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Devices.Item.CheckMemberObjects
         public async Task<global::Microsoft.Graph.Devices.Item.CheckMemberObjects.CheckMemberObjectsPostResponse> PostAsCheckMemberObjectsPostResponseAsync(global::Microsoft.Graph.Devices.Item.CheckMemberObjects.CheckMemberObjectsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Devices.Item.CheckMemberObjects
         public async Task<global::Microsoft.Graph.Devices.Item.CheckMemberObjects.CheckMemberObjectsResponse> PostAsync(global::Microsoft.Graph.Devices.Item.CheckMemberObjects.CheckMemberObjectsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Devices.Item.CheckMemberObjects
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Devices.Item.CheckMemberObjects.CheckMemberObjectsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

@@ -128,7 +128,7 @@ namespace Microsoft.Graph.DeviceManagement.Reports.GetCachedReport
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.DeviceManagement.Reports.GetCachedReport.GetCachedReportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.DeviceManagement.Reports.GetCachedReport.GetCachedReportPostRequestBody();
         }
         /// <summary>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.DeviceManagement.Reports.GetCachedReport
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("groupBy", GroupBy);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfPrimitiveValues<string>("orderBy", OrderBy);

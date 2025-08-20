@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         /// <param name="width">Usage: width={width}</param>
         public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidth.ImageWithWidthRequestBuilder ImageWithWidth(int? width)
         {
-            _ = width ?? throw new ArgumentNullException(nameof(width));
+            if(ReferenceEquals(width, null)) throw new ArgumentNullException(nameof(width));
             return new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidth.ImageWithWidthRequestBuilder(PathParameters, RequestAdapter, width);
         }
         /// <summary>
@@ -160,8 +160,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         /// <param name="width">Usage: width={width}</param>
         public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidthWithHeight.ImageWithWidthWithHeightRequestBuilder ImageWithWidthWithHeight(int? height, int? width)
         {
-            _ = height ?? throw new ArgumentNullException(nameof(height));
-            _ = width ?? throw new ArgumentNullException(nameof(width));
+            if(ReferenceEquals(height, null)) throw new ArgumentNullException(nameof(height));
+            if(ReferenceEquals(width, null)) throw new ArgumentNullException(nameof(width));
             return new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidthWithHeight.ImageWithWidthWithHeightRequestBuilder(PathParameters, RequestAdapter, height, width);
         }
         /// <summary>
@@ -174,8 +174,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidthWithHeightWithFittingMode.ImageWithWidthWithHeightWithFittingModeRequestBuilder ImageWithWidthWithHeightWithFittingMode(string fittingMode, int? height, int? width)
         {
             if(string.IsNullOrEmpty(fittingMode)) throw new ArgumentNullException(nameof(fittingMode));
-            _ = height ?? throw new ArgumentNullException(nameof(height));
-            _ = width ?? throw new ArgumentNullException(nameof(width));
+            if(ReferenceEquals(height, null)) throw new ArgumentNullException(nameof(height));
+            if(ReferenceEquals(width, null)) throw new ArgumentNullException(nameof(width));
             return new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts.Item.ImageWithWidthWithHeightWithFittingMode.ImageWithWidthWithHeightWithFittingModeRequestBuilder(PathParameters, RequestAdapter, fittingMode, height, width);
         }
         /// <summary>
@@ -195,7 +195,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         public async Task<global::Microsoft.Graph.Models.WorkbookChart> PatchAsync(global::Microsoft.Graph.Models.WorkbookChart body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -256,7 +256,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.Charts
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.WorkbookChart body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

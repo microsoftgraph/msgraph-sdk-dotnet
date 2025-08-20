@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Users.Item.DataSecurityAndGovernance.ProtectionScopes.
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.Users.Item.DataSecurityAndGovernance.ProtectionScopes.Compute.ComputePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.Users.Item.DataSecurityAndGovernance.ProtectionScopes.Compute.ComputePostRequestBody();
         }
         /// <summary>
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Users.Item.DataSecurityAndGovernance.ProtectionScopes.
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Microsoft.Graph.Models.UserActivityTypes>("activities", Activities);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.DeviceMetadata>("deviceMetadata", DeviceMetadata);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.IntegratedApplicationMetadata>("integratedAppMetadata", IntegratedAppMetadata);

@@ -98,7 +98,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.UserStatusO
         public async Task<global::Microsoft.Graph.Models.DeviceConfigurationUserOverview> PatchAsync(global::Microsoft.Graph.Models.DeviceConfigurationUserOverview body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -159,7 +159,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.UserStatusO
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.DeviceConfigurationUserOverview body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
