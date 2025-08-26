@@ -94,8 +94,8 @@ namespace Microsoft.Graph.External.Connections.Item.Items.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ExternalConnectors.ExternalItem>(requestInfo, global::Microsoft.Graph.Models.ExternalConnectors.ExternalItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an externalItem object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-externalitem-update?view=graph-rest-1.0" />
+        /// Create a new externalItem object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-put-items?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ExternalConnectors.ExternalItem"/></returns>
         /// <param name="body">The request body</param>
@@ -158,7 +158,7 @@ namespace Microsoft.Graph.External.Connections.Item.Items.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an externalItem object.
+        /// Create a new externalItem object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

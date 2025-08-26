@@ -12,6 +12,12 @@ namespace Microsoft.Graph.Models.Security
     public partial class SecurityGroupEvidence : global::Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The activeDirectoryObjectGuid property</summary>
+        public Guid? ActiveDirectoryObjectGuid
+        {
+            get { return BackingStore?.Get<Guid?>("activeDirectoryObjectGuid"); }
+            set { BackingStore?.Set("activeDirectoryObjectGuid", value); }
+        }
         /// <summary>The name of the security group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,6 +34,38 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>The distinguishedName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DistinguishedName
+        {
+            get { return BackingStore?.Get<string?>("distinguishedName"); }
+            set { BackingStore?.Set("distinguishedName", value); }
+        }
+#nullable restore
+#else
+        public string DistinguishedName
+        {
+            get { return BackingStore?.Get<string>("distinguishedName"); }
+            set { BackingStore?.Set("distinguishedName", value); }
+        }
+#endif
+        /// <summary>The friendlyName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FriendlyName
+        {
+            get { return BackingStore?.Get<string?>("friendlyName"); }
+            set { BackingStore?.Set("friendlyName", value); }
+        }
+#nullable restore
+#else
+        public string FriendlyName
+        {
+            get { return BackingStore?.Get<string>("friendlyName"); }
+            set { BackingStore?.Set("friendlyName", value); }
+        }
+#endif
         /// <summary>Unique identifier of the security group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -42,6 +80,22 @@ namespace Microsoft.Graph.Models.Security
         {
             get { return BackingStore?.Get<string>("securityGroupId"); }
             set { BackingStore?.Set("securityGroupId", value); }
+        }
+#endif
+        /// <summary>The sid property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Sid
+        {
+            get { return BackingStore?.Get<string?>("sid"); }
+            set { BackingStore?.Set("sid", value); }
+        }
+#nullable restore
+#else
+        public string Sid
+        {
+            get { return BackingStore?.Get<string>("sid"); }
+            set { BackingStore?.Set("sid", value); }
         }
 #endif
         /// <summary>
@@ -69,8 +123,12 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "activeDirectoryObjectGuid", n => { ActiveDirectoryObjectGuid = n.GetGuidValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "distinguishedName", n => { DistinguishedName = n.GetStringValue(); } },
+                { "friendlyName", n => { FriendlyName = n.GetStringValue(); } },
                 { "securityGroupId", n => { SecurityGroupId = n.GetStringValue(); } },
+                { "sid", n => { Sid = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -81,8 +139,12 @@ namespace Microsoft.Graph.Models.Security
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteGuidValue("activeDirectoryObjectGuid", ActiveDirectoryObjectGuid);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteStringValue("distinguishedName", DistinguishedName);
+            writer.WriteStringValue("friendlyName", FriendlyName);
             writer.WriteStringValue("securityGroupId", SecurityGroupId);
+            writer.WriteStringValue("sid", Sid);
         }
     }
 }

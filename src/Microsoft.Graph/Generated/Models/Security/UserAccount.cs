@@ -29,6 +29,12 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("accountName", value); }
         }
 #endif
+        /// <summary>The activeDirectoryObjectGuid property</summary>
+        public Guid? ActiveDirectoryObjectGuid
+        {
+            get { return BackingStore?.Get<Guid?>("activeDirectoryObjectGuid"); }
+            set { BackingStore?.Set("activeDirectoryObjectGuid", value); }
+        }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData
         {
@@ -176,6 +182,7 @@ namespace Microsoft.Graph.Models.Security
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "accountName", n => { AccountName = n.GetStringValue(); } },
+                { "activeDirectoryObjectGuid", n => { ActiveDirectoryObjectGuid = n.GetGuidValue(); } },
                 { "azureAdUserId", n => { AzureAdUserId = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "domainName", n => { DomainName = n.GetStringValue(); } },
@@ -193,6 +200,7 @@ namespace Microsoft.Graph.Models.Security
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accountName", AccountName);
+            writer.WriteGuidValue("activeDirectoryObjectGuid", ActiveDirectoryObjectGuid);
             writer.WriteStringValue("azureAdUserId", AzureAdUserId);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("domainName", DomainName);
