@@ -81,8 +81,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.RetentionLabel
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ItemRetentionLabel>(requestInfo, global::Microsoft.Graph.Models.ItemRetentionLabel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lock or unlock a retention label on a driveItem that classifies content as records. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint. For more information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-lockorunlockrecord?view=graph-rest-1.0" />
+        /// Apply (set) a retention label on a driveItem (files and folders). Retention labels don&apos;t need to be published in a retention label policy to be applied using this method. When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label. For information about conflict resolution for retention labels, see Will an existing label be overridden or removed. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-setretentionlabel?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ItemRetentionLabel"/></returns>
         /// <param name="body">The request body</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.RetentionLabel
             return requestInfo;
         }
         /// <summary>
-        /// Lock or unlock a retention label on a driveItem that classifies content as records. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint. For more information about how you can lock and unlock retention labels, see Use record versioning to update records stored in SharePoint or OneDrive.
+        /// Apply (set) a retention label on a driveItem (files and folders). Retention labels don&apos;t need to be published in a retention label policy to be applied using this method. When a retention label is applied to a folder, all the items in the folder are tagged with the same retention label. For information about conflict resolution for retention labels, see Will an existing label be overridden or removed. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -105,8 +105,8 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the metadata for a list.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/list-get?view=graph-rest-1.0" />
+        /// Get a list of rich long-running operations associated with a list.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/list-list-operations?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.List"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -173,7 +173,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item
             return requestInfo;
         }
         /// <summary>
-        /// Returns the metadata for a list.
+        /// Get a list of rich long-running operations associated with a list.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -231,7 +231,7 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item
         {
         }
         /// <summary>
-        /// Returns the metadata for a list.
+        /// Get a list of rich long-running operations associated with a list.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ListItemRequestBuilderGetQueryParameters 
