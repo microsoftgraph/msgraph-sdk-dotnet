@@ -39,6 +39,12 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("isDeltaRosterEnabled"); }
             set { BackingStore?.Set("isDeltaRosterEnabled", value); }
         }
+        /// <summary>Indicates whether delta roster filtering by participant interactivity is enabled.</summary>
+        public bool? IsInteractiveRosterEnabled
+        {
+            get { return BackingStore?.Get<bool?>("isInteractiveRosterEnabled"); }
+            set { BackingStore?.Set("isInteractiveRosterEnabled", value); }
+        }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -90,6 +96,7 @@ namespace Microsoft.Graph.Models
                 { "hideBotAfterEscalation", n => { HideBotAfterEscalation = n.GetBoolValue(); } },
                 { "isContentSharingNotificationEnabled", n => { IsContentSharingNotificationEnabled = n.GetBoolValue(); } },
                 { "isDeltaRosterEnabled", n => { IsDeltaRosterEnabled = n.GetBoolValue(); } },
+                { "isInteractiveRosterEnabled", n => { IsInteractiveRosterEnabled = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -103,6 +110,7 @@ namespace Microsoft.Graph.Models
             writer.WriteBoolValue("hideBotAfterEscalation", HideBotAfterEscalation);
             writer.WriteBoolValue("isContentSharingNotificationEnabled", IsContentSharingNotificationEnabled);
             writer.WriteBoolValue("isDeltaRosterEnabled", IsDeltaRosterEnabled);
+            writer.WriteBoolValue("isInteractiveRosterEnabled", IsInteractiveRosterEnabled);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
