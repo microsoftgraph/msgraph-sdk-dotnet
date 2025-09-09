@@ -35,8 +35,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Add
         {
         }
         /// <summary>
-        /// Create a new table. The range source address determines the worksheet under which the table will be added. If the table can&apos;t be added (for example, because the address is invalid, or the table would overlap with another table), an error is generated.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/tablecollection-add?view=graph-rest-1.0" />
+        /// Use this API to create a new Table.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/workbook-post-tables?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.WorkbookTable"/></returns>
         /// <param name="body">The request body</param>
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Add
         public async Task<global::Microsoft.Graph.Models.WorkbookTable> PostAsync(global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Add.AddPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Add
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.WorkbookTable>(requestInfo, global::Microsoft.Graph.Models.WorkbookTable.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new table. The range source address determines the worksheet under which the table will be added. If the table can&apos;t be added (for example, because the address is invalid, or the table would overlap with another table), an error is generated.
+        /// Use this API to create a new Table.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Add
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Add.AddPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

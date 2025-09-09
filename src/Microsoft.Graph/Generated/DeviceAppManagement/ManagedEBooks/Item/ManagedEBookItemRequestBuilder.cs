@@ -88,8 +88,8 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the managedEBook object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-books-managedebook-get?view=graph-rest-1.0" />
+        /// Read properties and relationships of the iosVppEBook object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-books-iosvppebook-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ManagedEBook"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -129,7 +129,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item
         public async Task<global::Microsoft.Graph.Models.ManagedEBook> PatchAsync(global::Microsoft.Graph.Models.ManagedEBook body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -157,7 +157,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the managedEBook object.
+        /// Read properties and relationships of the iosVppEBook object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -190,7 +190,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.ManagedEBook body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -215,7 +215,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item
         {
         }
         /// <summary>
-        /// Read properties and relationships of the managedEBook object.
+        /// Read properties and relationships of the iosVppEBook object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ManagedEBookItemRequestBuilderGetQueryParameters 

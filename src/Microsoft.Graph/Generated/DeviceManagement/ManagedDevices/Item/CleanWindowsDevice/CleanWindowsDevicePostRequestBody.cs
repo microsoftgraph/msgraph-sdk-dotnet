@@ -42,7 +42,7 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item.CleanWindowsDevic
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Microsoft.Graph.DeviceManagement.ManagedDevices.Item.CleanWindowsDevice.CleanWindowsDevicePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Microsoft.Graph.DeviceManagement.ManagedDevices.Item.CleanWindowsDevice.CleanWindowsDevicePostRequestBody();
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item.CleanWindowsDevic
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("keepUserData", KeepUserData);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -155,8 +155,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.UsedRa
         /// <param name="row">Usage: row={row}</param>
         public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.UsedRange.CellWithRowWithColumn.CellWithRowWithColumnRequestBuilder CellWithRowWithColumn(int? column, int? row)
         {
-            _ = column ?? throw new ArgumentNullException(nameof(column));
-            _ = row ?? throw new ArgumentNullException(nameof(row));
+            if(ReferenceEquals(column, null)) throw new ArgumentNullException(nameof(column));
+            if(ReferenceEquals(row, null)) throw new ArgumentNullException(nameof(row));
             return new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.UsedRange.CellWithRowWithColumn.CellWithRowWithColumnRequestBuilder(PathParameters, RequestAdapter, column, row);
         }
         /// <summary>
@@ -166,7 +166,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.UsedRa
         /// <param name="count">Usage: count={count}</param>
         public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.UsedRange.ColumnsAfterWithCount.ColumnsAfterWithCountRequestBuilder ColumnsAfterWithCount(int? count)
         {
-            _ = count ?? throw new ArgumentNullException(nameof(count));
+            if(ReferenceEquals(count, null)) throw new ArgumentNullException(nameof(count));
             return new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.UsedRange.ColumnsAfterWithCount.ColumnsAfterWithCountRequestBuilder(PathParameters, RequestAdapter, count);
         }
         /// <summary>
@@ -176,7 +176,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.UsedRa
         /// <param name="count">Usage: count={count}</param>
         public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.UsedRange.ColumnsBeforeWithCount.ColumnsBeforeWithCountRequestBuilder ColumnsBeforeWithCount(int? count)
         {
-            _ = count ?? throw new ArgumentNullException(nameof(count));
+            if(ReferenceEquals(count, null)) throw new ArgumentNullException(nameof(count));
             return new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.UsedRange.ColumnsBeforeWithCount.ColumnsBeforeWithCountRequestBuilder(PathParameters, RequestAdapter, count);
         }
         /// <summary>
@@ -186,7 +186,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.UsedRa
         /// <param name="column">Usage: column={column}</param>
         public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.UsedRange.ColumnWithColumn.ColumnWithColumnRequestBuilder ColumnWithColumn(int? column)
         {
-            _ = column ?? throw new ArgumentNullException(nameof(column));
+            if(ReferenceEquals(column, null)) throw new ArgumentNullException(nameof(column));
             return new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.UsedRange.ColumnWithColumn.ColumnWithColumnRequestBuilder(PathParameters, RequestAdapter, column);
         }
         /// <summary>
@@ -246,8 +246,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.UsedRa
         /// <param name="rowOffset">Usage: rowOffset={rowOffset}</param>
         public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.UsedRange.OffsetRangeWithRowOffsetWithColumnOffset.OffsetRangeWithRowOffsetWithColumnOffsetRequestBuilder OffsetRangeWithRowOffsetWithColumnOffset(int? columnOffset, int? rowOffset)
         {
-            _ = columnOffset ?? throw new ArgumentNullException(nameof(columnOffset));
-            _ = rowOffset ?? throw new ArgumentNullException(nameof(rowOffset));
+            if(ReferenceEquals(columnOffset, null)) throw new ArgumentNullException(nameof(columnOffset));
+            if(ReferenceEquals(rowOffset, null)) throw new ArgumentNullException(nameof(rowOffset));
             return new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.UsedRange.OffsetRangeWithRowOffsetWithColumnOffset.OffsetRangeWithRowOffsetWithColumnOffsetRequestBuilder(PathParameters, RequestAdapter, columnOffset, rowOffset);
         }
         /// <summary>
@@ -258,8 +258,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.UsedRa
         /// <param name="deltaRows">Usage: deltaRows={deltaRows}</param>
         public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.UsedRange.ResizedRangeWithDeltaRowsWithDeltaColumns.ResizedRangeWithDeltaRowsWithDeltaColumnsRequestBuilder ResizedRangeWithDeltaRowsWithDeltaColumns(int? deltaColumns, int? deltaRows)
         {
-            _ = deltaColumns ?? throw new ArgumentNullException(nameof(deltaColumns));
-            _ = deltaRows ?? throw new ArgumentNullException(nameof(deltaRows));
+            if(ReferenceEquals(deltaColumns, null)) throw new ArgumentNullException(nameof(deltaColumns));
+            if(ReferenceEquals(deltaRows, null)) throw new ArgumentNullException(nameof(deltaRows));
             return new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.UsedRange.ResizedRangeWithDeltaRowsWithDeltaColumns.ResizedRangeWithDeltaRowsWithDeltaColumnsRequestBuilder(PathParameters, RequestAdapter, deltaColumns, deltaRows);
         }
         /// <summary>
@@ -269,7 +269,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.UsedRa
         /// <param name="count">Usage: count={count}</param>
         public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.UsedRange.RowsAboveWithCount.RowsAboveWithCountRequestBuilder RowsAboveWithCount(int? count)
         {
-            _ = count ?? throw new ArgumentNullException(nameof(count));
+            if(ReferenceEquals(count, null)) throw new ArgumentNullException(nameof(count));
             return new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.UsedRange.RowsAboveWithCount.RowsAboveWithCountRequestBuilder(PathParameters, RequestAdapter, count);
         }
         /// <summary>
@@ -279,7 +279,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.UsedRa
         /// <param name="count">Usage: count={count}</param>
         public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.UsedRange.RowsBelowWithCount.RowsBelowWithCountRequestBuilder RowsBelowWithCount(int? count)
         {
-            _ = count ?? throw new ArgumentNullException(nameof(count));
+            if(ReferenceEquals(count, null)) throw new ArgumentNullException(nameof(count));
             return new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.UsedRange.RowsBelowWithCount.RowsBelowWithCountRequestBuilder(PathParameters, RequestAdapter, count);
         }
         /// <summary>
@@ -289,7 +289,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.UsedRa
         /// <param name="row">Usage: row={row}</param>
         public global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.UsedRange.RowWithRow.RowWithRowRequestBuilder RowWithRow(int? row)
         {
-            _ = row ?? throw new ArgumentNullException(nameof(row));
+            if(ReferenceEquals(row, null)) throw new ArgumentNullException(nameof(row));
             return new global::Microsoft.Graph.Drives.Item.Items.Item.Workbook.Worksheets.Item.UsedRange.RowWithRow.RowWithRowRequestBuilder(PathParameters, RequestAdapter, row);
         }
         /// <summary>

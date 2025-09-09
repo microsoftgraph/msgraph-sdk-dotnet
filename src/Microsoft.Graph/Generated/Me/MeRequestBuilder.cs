@@ -494,8 +494,8 @@ namespace Microsoft.Graph.Me
         /// <param name="top">Usage: top={top}</param>
         public global::Microsoft.Graph.Me.ExportDeviceAndAppManagementDataWithSkipWithTop.ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder ExportDeviceAndAppManagementDataWithSkipWithTop(int? skip, int? top)
         {
-            _ = skip ?? throw new ArgumentNullException(nameof(skip));
-            _ = top ?? throw new ArgumentNullException(nameof(top));
+            if(ReferenceEquals(skip, null)) throw new ArgumentNullException(nameof(skip));
+            if(ReferenceEquals(top, null)) throw new ArgumentNullException(nameof(top));
             return new global::Microsoft.Graph.Me.ExportDeviceAndAppManagementDataWithSkipWithTop.ExportDeviceAndAppManagementDataWithSkipWithTopRequestBuilder(PathParameters, RequestAdapter, skip, top);
         }
         /// <summary>
@@ -540,7 +540,7 @@ namespace Microsoft.Graph.Me
         public async Task<global::Microsoft.Graph.Models.User> PatchAsync(global::Microsoft.Graph.Models.User body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -594,7 +594,7 @@ namespace Microsoft.Graph.Me
         public RequestInformation ToPatchRequestInformation(global::Microsoft.Graph.Models.User body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

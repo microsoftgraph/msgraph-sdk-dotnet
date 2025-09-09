@@ -85,8 +85,8 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Wor
         /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
         public global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.TaskReports.MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTime.MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilder MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, DateTimeOffset? startDateTime)
         {
-            _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
-            _ = startDateTime ?? throw new ArgumentNullException(nameof(startDateTime));
+            if(ReferenceEquals(endDateTime, null)) throw new ArgumentNullException(nameof(endDateTime));
+            if(ReferenceEquals(startDateTime, null)) throw new ArgumentNullException(nameof(startDateTime));
             return new global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.TaskReports.MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTime.MicrosoftGraphIdentityGovernanceSummaryWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter, endDateTime, startDateTime);
         }
         /// <summary>
