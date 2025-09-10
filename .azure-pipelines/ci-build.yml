@@ -246,7 +246,7 @@ extends:
             TargetFolder: '$(Build.ArtifactStagingDirectory) '
 
     - stage: deploy
-      condition: and(contains(variables['build.sourceBranch'], 'refs/heads/main'), succeeded())
+      condition: or(and(contains(variables['Build.SourceBranch'], 'refs/tags/'), succeeded()), eq(variables['Build.Reason'], 'Manual'))
       dependsOn: build
       jobs:
         - deployment: deploy_nuget
