@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The operating system (OS) of the image. For example, Windows 10 Enterprise. Read-only.</summary>
+        /// <summary>The operating system (OS) of the image. For example, Windows 11 Enterprise. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OperatingSystem

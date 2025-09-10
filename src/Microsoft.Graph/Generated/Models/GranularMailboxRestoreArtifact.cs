@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class GranularMailboxRestoreArtifact : global::Microsoft.Graph.Models.MailboxRestoreArtifact, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>.</summary>
+        /// <summary>This property will be deprecated soon. Don&apos;t use.</summary>
         public int? ArtifactCount
         {
             get { return BackingStore?.Get<int?>("artifactCount"); }

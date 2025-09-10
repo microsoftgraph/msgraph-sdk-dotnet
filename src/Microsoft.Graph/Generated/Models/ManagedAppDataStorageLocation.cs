@@ -3,20 +3,20 @@ using System.Runtime.Serialization;
 using System;
 namespace Microsoft.Graph.Models
 {
-    /// <summary>Storage locations where managed apps can potentially store their data</summary>
+    /// <summary>The storage locations where managed apps can potentially store their data.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ManagedAppDataStorageLocation
     {
-        /// <summary>OneDrive for business</summary>
+        /// <summary>Indicates allowed storage location for the managed app to save files is &apos;OneDrive for Business&apos;.</summary>
         [EnumMember(Value = "oneDriveForBusiness")]
         OneDriveForBusiness,
-        /// <summary>SharePoint</summary>
+        /// <summary>Indicates allowed storage location for the managed app to save files is &apos;Sharepoint&apos;.</summary>
         [EnumMember(Value = "sharePoint")]
         SharePoint,
-        /// <summary>Box</summary>
+        /// <summary>Indicates that the allowed storage location for a managed app to save files is to &apos;Box&apos;. Box is a non-Microsoft solution that enables cloud-based file storage capabilities.</summary>
         [EnumMember(Value = "box")]
         Box,
-        /// <summary>Local storage on the device</summary>
+        /// <summary>Indicates allowed storage location for the managed app to save files is local storage on the device.</summary>
         [EnumMember(Value = "localStorage")]
         LocalStorage,
     }
