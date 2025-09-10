@@ -12,6 +12,12 @@ namespace Microsoft.Graph.Models.Security
     public partial class EdiscoveryCaseSettings : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The caseType property</summary>
+        public global::Microsoft.Graph.Models.Security.CaseType? CaseType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.CaseType?>("caseType"); }
+            set { BackingStore?.Set("caseType", value); }
+        }
         /// <summary>The OCR (Optical Character Recognition) settings for the case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -44,6 +50,12 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("redundancyDetection", value); }
         }
 #endif
+        /// <summary>The settings of the review set for the case. Possible values are: none, disableGrouping, unknownFutureValue.</summary>
+        public global::Microsoft.Graph.Models.Security.ReviewSetSettings? ReviewSetSettings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.ReviewSetSettings?>("reviewSetSettings"); }
+            set { BackingStore?.Set("reviewSetSettings", value); }
+        }
         /// <summary>The Topic Modeling (Themes) settings for the case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -78,8 +90,10 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "caseType", n => { CaseType = n.GetEnumValue<global::Microsoft.Graph.Models.Security.CaseType>(); } },
                 { "ocr", n => { Ocr = n.GetObjectValue<global::Microsoft.Graph.Models.Security.OcrSettings>(global::Microsoft.Graph.Models.Security.OcrSettings.CreateFromDiscriminatorValue); } },
                 { "redundancyDetection", n => { RedundancyDetection = n.GetObjectValue<global::Microsoft.Graph.Models.Security.RedundancyDetectionSettings>(global::Microsoft.Graph.Models.Security.RedundancyDetectionSettings.CreateFromDiscriminatorValue); } },
+                { "reviewSetSettings", n => { ReviewSetSettings = n.GetEnumValue<global::Microsoft.Graph.Models.Security.ReviewSetSettings>(); } },
                 { "topicModeling", n => { TopicModeling = n.GetObjectValue<global::Microsoft.Graph.Models.Security.TopicModelingSettings>(global::Microsoft.Graph.Models.Security.TopicModelingSettings.CreateFromDiscriminatorValue); } },
             };
         }
@@ -91,8 +105,10 @@ namespace Microsoft.Graph.Models.Security
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteEnumValue<global::Microsoft.Graph.Models.Security.CaseType>("caseType", CaseType);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.OcrSettings>("ocr", Ocr);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.RedundancyDetectionSettings>("redundancyDetection", RedundancyDetection);
+            writer.WriteEnumValue<global::Microsoft.Graph.Models.Security.ReviewSetSettings>("reviewSetSettings", ReviewSetSettings);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.TopicModelingSettings>("topicModeling", TopicModeling);
         }
     }

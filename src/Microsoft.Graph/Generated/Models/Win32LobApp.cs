@@ -13,6 +13,12 @@ namespace Microsoft.Graph.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Win32LobApp : global::Microsoft.Graph.Models.MobileLobApp, IParsable
     {
+        /// <summary>Indicates the Windows architecture(s) this app should be installed on. The app will be treated as not applicable for devices with architectures not matching the selected value. When a non-null value is provided for the `allowedArchitectures` property, the value of the `applicableArchitectures` property is set to `none`. Possible values are: `null`, `x86`, `x64`, `arm64`.</summary>
+        public global::Microsoft.Graph.Models.WindowsArchitecture? AllowedArchitectures
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.WindowsArchitecture?>("allowedArchitectures"); }
+            set { BackingStore?.Set("allowedArchitectures", value); }
+        }
         /// <summary>Contains properties for Windows architecture.</summary>
         public global::Microsoft.Graph.Models.WindowsArchitecture? ApplicableArchitectures
         {
@@ -196,6 +202,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "allowedArchitectures", n => { AllowedArchitectures = n.GetEnumValue<global::Microsoft.Graph.Models.WindowsArchitecture>(); } },
                 { "applicableArchitectures", n => { ApplicableArchitectures = n.GetEnumValue<global::Microsoft.Graph.Models.WindowsArchitecture>(); } },
                 { "installCommandLine", n => { InstallCommandLine = n.GetStringValue(); } },
                 { "installExperience", n => { InstallExperience = n.GetObjectValue<global::Microsoft.Graph.Models.Win32LobAppInstallExperience>(global::Microsoft.Graph.Models.Win32LobAppInstallExperience.CreateFromDiscriminatorValue); } },
@@ -219,6 +226,7 @@ namespace Microsoft.Graph.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteEnumValue<global::Microsoft.Graph.Models.WindowsArchitecture>("allowedArchitectures", AllowedArchitectures);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.WindowsArchitecture>("applicableArchitectures", ApplicableArchitectures);
             writer.WriteStringValue("installCommandLine", InstallCommandLine);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Win32LobAppInstallExperience>("installExperience", InstallExperience);
