@@ -84,8 +84,8 @@ namespace Microsoft.Graph.Me.Events.Item.Attachments
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.AttachmentCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.AttachmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/event-post-attachments?view=graph-rest-1.0" />
+        /// Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/eventmessage-post-attachments?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Attachment"/></returns>
         /// <param name="body">The request body</param>
@@ -129,7 +129,7 @@ namespace Microsoft.Graph.Me.Events.Item.Attachments
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to add an attachment to an existing event. This operation limits the size of the attachment you can add to under 3 MB. If an organizer adds an attachment to a meeting event, the organizer can subsequently update the event to send the attachment and update the event for each attendee as well.
+        /// Use this API to create a new Attachment. An attachment can be one of the following types: All these types of attachment resources are derived from the attachmentresource.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
