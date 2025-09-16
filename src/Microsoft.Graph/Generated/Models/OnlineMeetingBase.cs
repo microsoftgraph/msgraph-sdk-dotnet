@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("allowBreakoutRooms"); }
             set { BackingStore?.Set("allowBreakoutRooms", value); }
         }
-        /// <summary>The allowCopyingAndSharingMeetingContent property</summary>
+        /// <summary>Indicates whether the ability to copy and share meeting content is enabled for the meeting.</summary>
         public bool? AllowCopyingAndSharingMeetingContent
         {
             get { return BackingStore?.Get<bool?>("allowCopyingAndSharingMeetingContent"); }
