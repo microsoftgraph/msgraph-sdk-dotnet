@@ -54,8 +54,8 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks
         {
         }
         /// <summary>
-        /// List properties and relationships of the managedEBook objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-books-managedebook-list?view=graph-rest-1.0" />
+        /// List properties and relationships of the iosVppEBook objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-books-iosvppebook-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ManagedEBookCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ManagedEBook>(requestInfo, global::Microsoft.Graph.Models.ManagedEBook.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the managedEBook objects.
+        /// List properties and relationships of the iosVppEBook objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks
             return new global::Microsoft.Graph.DeviceAppManagement.ManagedEBooks.ManagedEBooksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the managedEBook objects.
+        /// List properties and relationships of the iosVppEBook objects.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ManagedEBooksRequestBuilderGetQueryParameters 
