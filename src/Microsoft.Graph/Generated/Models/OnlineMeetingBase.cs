@@ -30,6 +30,12 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("allowBreakoutRooms"); }
             set { BackingStore?.Set("allowBreakoutRooms", value); }
         }
+        /// <summary>Indicates whether the ability to copy and share meeting content is enabled for the meeting.</summary>
+        public bool? AllowCopyingAndSharingMeetingContent
+        {
+            get { return BackingStore?.Get<bool?>("allowCopyingAndSharingMeetingContent"); }
+            set { BackingStore?.Set("allowCopyingAndSharingMeetingContent", value); }
+        }
         /// <summary>Specifies the users who can admit from the lobby. Possible values are: organizerAndCoOrganizersAndPresenters, organizerAndCoOrganizers, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.AllowedLobbyAdmitterRoles? AllowedLobbyAdmitters
         {
@@ -317,6 +323,7 @@ namespace Microsoft.Graph.Models
                 { "allowAttendeeToEnableCamera", n => { AllowAttendeeToEnableCamera = n.GetBoolValue(); } },
                 { "allowAttendeeToEnableMic", n => { AllowAttendeeToEnableMic = n.GetBoolValue(); } },
                 { "allowBreakoutRooms", n => { AllowBreakoutRooms = n.GetBoolValue(); } },
+                { "allowCopyingAndSharingMeetingContent", n => { AllowCopyingAndSharingMeetingContent = n.GetBoolValue(); } },
                 { "allowLiveShare", n => { AllowLiveShare = n.GetEnumValue<global::Microsoft.Graph.Models.MeetingLiveShareOptions>(); } },
                 { "allowMeetingChat", n => { AllowMeetingChat = n.GetEnumValue<global::Microsoft.Graph.Models.MeetingChatMode>(); } },
                 { "allowParticipantsToChangeName", n => { AllowParticipantsToChangeName = n.GetBoolValue(); } },
@@ -355,6 +362,7 @@ namespace Microsoft.Graph.Models
             writer.WriteBoolValue("allowAttendeeToEnableCamera", AllowAttendeeToEnableCamera);
             writer.WriteBoolValue("allowAttendeeToEnableMic", AllowAttendeeToEnableMic);
             writer.WriteBoolValue("allowBreakoutRooms", AllowBreakoutRooms);
+            writer.WriteBoolValue("allowCopyingAndSharingMeetingContent", AllowCopyingAndSharingMeetingContent);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.AllowedLobbyAdmitterRoles>("allowedLobbyAdmitters", AllowedLobbyAdmitters);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.OnlineMeetingPresenters>("allowedPresenters", AllowedPresenters);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.MeetingLiveShareOptions>("allowLiveShare", AllowLiveShare);

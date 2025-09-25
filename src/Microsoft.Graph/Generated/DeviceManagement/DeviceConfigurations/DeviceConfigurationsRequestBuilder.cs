@@ -78,8 +78,8 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DeviceConfigurationCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.DeviceConfigurationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new androidGeneralDeviceConfiguration object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-androidgeneraldeviceconfiguration-create?view=graph-rest-1.0" />
+        /// Create a new macOSCustomConfiguration object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-macoscustomconfiguration-create?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DeviceConfiguration"/></returns>
         /// <param name="body">The request body</param>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations
             return requestInfo;
         }
         /// <summary>
-        /// Create a new androidGeneralDeviceConfiguration object.
+        /// Create a new macOSCustomConfiguration object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
