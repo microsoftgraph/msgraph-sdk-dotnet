@@ -54,8 +54,8 @@ namespace Microsoft.Graph.Security.AttackSimulation.EndUserNotifications
         {
         }
         /// <summary>
-        /// Get a list of endUserNotification objects and their properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/attacksimulationroot-list-endusernotifications?view=graph-rest-1.0" />
+        /// Read the properties and relationships of an endUserNotification object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/endusernotification-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.EndUserNotificationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.EndUserNotifications
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.EndUserNotification>(requestInfo, global::Microsoft.Graph.Models.EndUserNotification.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of endUserNotification objects and their properties.
+        /// Read the properties and relationships of an endUserNotification object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.EndUserNotifications
             return new global::Microsoft.Graph.Security.AttackSimulation.EndUserNotifications.EndUserNotificationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of endUserNotification objects and their properties.
+        /// Read the properties and relationships of an endUserNotification object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EndUserNotificationsRequestBuilderGetQueryParameters 

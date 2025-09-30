@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Users.Item.Presence.SetPresence
         {
         }
         /// <summary>
-        /// Set the state of a user&apos;s presence session as an application.
+        /// Set the state of a user&apos;s presence session as an application. For more information about presence sessions, states permutations, and timeouts, see Manage presence state using the Microsoft Graph API.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/presence-setpresence?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Users.Item.Presence.SetPresence
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Set the state of a user&apos;s presence session as an application.
+        /// Set the state of a user&apos;s presence session as an application. For more information about presence sessions, states permutations, and timeouts, see Manage presence state using the Microsoft Graph API.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class ReportsRoot : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The readingAssignmentSubmissions property</summary>
+        /// <summary>Details of submitted reading assignments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.ReadingAssignmentSubmission>? ReadingAssignmentSubmissions
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("readingAssignmentSubmissions", value); }
         }
 #endif
-        /// <summary>The reflectCheckInResponses property</summary>
+        /// <summary>Details of check-in responses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.ReflectCheckInResponse>? ReflectCheckInResponses
