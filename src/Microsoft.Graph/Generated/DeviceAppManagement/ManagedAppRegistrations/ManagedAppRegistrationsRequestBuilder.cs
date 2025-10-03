@@ -60,8 +60,8 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations
         {
         }
         /// <summary>
-        /// List properties and relationships of the iosManagedAppRegistration objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-iosmanagedappregistration-list?view=graph-rest-1.0" />
+        /// List properties and relationships of the androidManagedAppRegistration objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-androidmanagedappregistration-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ManagedAppRegistrationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ManagedAppRegistration>(requestInfo, global::Microsoft.Graph.Models.ManagedAppRegistration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the iosManagedAppRegistration objects.
+        /// List properties and relationships of the androidManagedAppRegistration objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -160,7 +160,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations
             return new global::Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.ManagedAppRegistrationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the iosManagedAppRegistration objects.
+        /// List properties and relationships of the androidManagedAppRegistration objects.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ManagedAppRegistrationsRequestBuilderGetQueryParameters 
