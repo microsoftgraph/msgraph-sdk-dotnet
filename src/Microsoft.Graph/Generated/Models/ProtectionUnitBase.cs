@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class ProtectionUnitBase : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The identity of person who created the protection unit.</summary>
+        /// <summary>The identity of the person who created the protection unit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.IdentitySet? CreatedBy
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
-        /// <summary>The time of creation of the protection unit.</summary>
+        /// <summary>The time of creation of the protection unit. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
-        /// <summary>Timestamp of the last modification of this protection unit.</summary>
+        /// <summary>Timestamp of the last modification of this protection unit. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("policyId", value); }
         }
 #endif
-        /// <summary>The status of the protection unit. The possible values are: protectRequested, protected, unprotectRequested, unprotected, removeRequested, unknownFutureValue.</summary>
+        /// <summary>The status of the protection unit. The possible values are: protectRequested, protected, unprotectRequested, unprotected, removeRequested, unknownFutureValue, offboardRequested, offboarded, cancelOffboardRequested. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: offboardRequested, offboarded, cancelOffboardRequested.</summary>
         public global::Microsoft.Graph.Models.ProtectionUnitStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.ProtectionUnitStatus?>("status"); }
