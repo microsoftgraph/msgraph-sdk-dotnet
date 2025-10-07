@@ -504,22 +504,6 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.DeviceManagementSubscriptionState?>("subscriptionState"); }
             set { BackingStore?.Set("subscriptionState", value); }
         }
-        /// <summary>The telecom expense management partners.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Microsoft.Graph.Models.TelecomExpenseManagementPartner>? TelecomExpenseManagementPartners
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.TelecomExpenseManagementPartner>?>("telecomExpenseManagementPartners"); }
-            set { BackingStore?.Set("telecomExpenseManagementPartners", value); }
-        }
-#nullable restore
-#else
-        public List<global::Microsoft.Graph.Models.TelecomExpenseManagementPartner> TelecomExpenseManagementPartners
-        {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.TelecomExpenseManagementPartner>>("telecomExpenseManagementPartners"); }
-            set { BackingStore?.Set("telecomExpenseManagementPartners", value); }
-        }
-#endif
         /// <summary>The terms and conditions associated with device management of the company.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1082,7 +1066,6 @@ namespace Microsoft.Graph.Models
                 { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Models.DeviceManagementSettings>(global::Microsoft.Graph.Models.DeviceManagementSettings.CreateFromDiscriminatorValue); } },
                 { "softwareUpdateStatusSummary", n => { SoftwareUpdateStatusSummary = n.GetObjectValue<global::Microsoft.Graph.Models.SoftwareUpdateStatusSummary>(global::Microsoft.Graph.Models.SoftwareUpdateStatusSummary.CreateFromDiscriminatorValue); } },
                 { "subscriptionState", n => { SubscriptionState = n.GetEnumValue<global::Microsoft.Graph.Models.DeviceManagementSubscriptionState>(); } },
-                { "telecomExpenseManagementPartners", n => { TelecomExpenseManagementPartners = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.TelecomExpenseManagementPartner>(global::Microsoft.Graph.Models.TelecomExpenseManagementPartner.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "termsAndConditions", n => { TermsAndConditions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.TermsAndConditions>(global::Microsoft.Graph.Models.TermsAndConditions.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "troubleshootingEvents", n => { TroubleshootingEvents = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DeviceManagementTroubleshootingEvent>(global::Microsoft.Graph.Models.DeviceManagementTroubleshootingEvent.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "userExperienceAnalyticsAppHealthApplicationPerformance", n => { UserExperienceAnalyticsAppHealthApplicationPerformance = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthApplicationPerformance>(global::Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthApplicationPerformance.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -1157,7 +1140,6 @@ namespace Microsoft.Graph.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Models.DeviceManagementSettings>("settings", Settings);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.SoftwareUpdateStatusSummary>("softwareUpdateStatusSummary", SoftwareUpdateStatusSummary);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.DeviceManagementSubscriptionState>("subscriptionState", SubscriptionState);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.TelecomExpenseManagementPartner>("telecomExpenseManagementPartners", TelecomExpenseManagementPartners);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.TermsAndConditions>("termsAndConditions", TermsAndConditions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DeviceManagementTroubleshootingEvent>("troubleshootingEvents", TroubleshootingEvents);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.UserExperienceAnalyticsAppHealthApplicationPerformance>("userExperienceAnalyticsAppHealthApplicationPerformance", UserExperienceAnalyticsAppHealthApplicationPerformance);

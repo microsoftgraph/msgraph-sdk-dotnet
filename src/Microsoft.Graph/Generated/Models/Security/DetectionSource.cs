@@ -152,6 +152,14 @@ namespace Microsoft.Graph.Models.Security
         #pragma warning disable CS1591
         MicrosoftThreatIntelligence,
         #pragma warning restore CS1591
+        [EnumMember(Value = "microsoftDefenderForAIServices")]
+        #pragma warning disable CS1591
+        MicrosoftDefenderForAIServices,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "securityCopilot")]
+        #pragma warning disable CS1591
+        SecurityCopilot,
+        #pragma warning restore CS1591
         [EnumMember(Value = "microsoftSentinel")]
         #pragma warning disable CS1591
         MicrosoftSentinel,

@@ -28,7 +28,6 @@ using Microsoft.Graph.DeviceManagement.ResourceOperations;
 using Microsoft.Graph.DeviceManagement.RoleAssignments;
 using Microsoft.Graph.DeviceManagement.RoleDefinitions;
 using Microsoft.Graph.DeviceManagement.SoftwareUpdateStatusSummary;
-using Microsoft.Graph.DeviceManagement.TelecomExpenseManagementPartners;
 using Microsoft.Graph.DeviceManagement.TermsAndConditions;
 using Microsoft.Graph.DeviceManagement.TroubleshootingEvents;
 using Microsoft.Graph.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformance;
@@ -214,11 +213,6 @@ namespace Microsoft.Graph.DeviceManagement
         {
             get => new global::Microsoft.Graph.DeviceManagement.SoftwareUpdateStatusSummary.SoftwareUpdateStatusSummaryRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to manage the telecomExpenseManagementPartners property of the microsoft.graph.deviceManagement entity.</summary>
-        public global::Microsoft.Graph.DeviceManagement.TelecomExpenseManagementPartners.TelecomExpenseManagementPartnersRequestBuilder TelecomExpenseManagementPartners
-        {
-            get => new global::Microsoft.Graph.DeviceManagement.TelecomExpenseManagementPartners.TelecomExpenseManagementPartnersRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the termsAndConditions property of the microsoft.graph.deviceManagement entity.</summary>
         public global::Microsoft.Graph.DeviceManagement.TermsAndConditions.TermsAndConditionsRequestBuilder TermsAndConditions
         {
@@ -392,7 +386,7 @@ namespace Microsoft.Graph.DeviceManagement
         }
         /// <summary>
         /// Read properties and relationships of the deviceManagement object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-remoteassistance-devicemanagement-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-androidforwork-devicemanagement-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DeviceManagement"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -426,7 +420,7 @@ namespace Microsoft.Graph.DeviceManagement
         }
         /// <summary>
         /// Update the properties of a deviceManagement object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-tem-devicemanagement-update?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-androidforwork-devicemanagement-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DeviceManagement"/></returns>
         /// <param name="body">The request body</param>

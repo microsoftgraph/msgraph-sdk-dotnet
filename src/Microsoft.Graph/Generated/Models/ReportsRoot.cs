@@ -28,6 +28,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("readingAssignmentSubmissions", value); }
         }
 #endif
+        /// <summary>Details of practiced Reading Coach passages.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.ReadingCoachPassage>? ReadingCoachPassages
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.ReadingCoachPassage>?>("readingCoachPassages"); }
+            set { BackingStore?.Set("readingCoachPassages", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.ReadingCoachPassage> ReadingCoachPassages
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.ReadingCoachPassage>>("readingCoachPassages"); }
+            set { BackingStore?.Set("readingCoachPassages", value); }
+        }
+#endif
         /// <summary>Details of check-in responses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -42,6 +58,22 @@ namespace Microsoft.Graph.Models
         {
             get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.ReflectCheckInResponse>>("reflectCheckInResponses"); }
             set { BackingStore?.Set("reflectCheckInResponses", value); }
+        }
+#endif
+        /// <summary>Details of submitted speaker assignments.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.SpeakerAssignmentSubmission>? SpeakerAssignmentSubmissions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.SpeakerAssignmentSubmission>?>("speakerAssignmentSubmissions"); }
+            set { BackingStore?.Set("speakerAssignmentSubmissions", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.SpeakerAssignmentSubmission> SpeakerAssignmentSubmissions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.SpeakerAssignmentSubmission>>("speakerAssignmentSubmissions"); }
+            set { BackingStore?.Set("speakerAssignmentSubmissions", value); }
         }
 #endif
         /// <summary>
@@ -63,7 +95,9 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "readingAssignmentSubmissions", n => { ReadingAssignmentSubmissions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ReadingAssignmentSubmission>(global::Microsoft.Graph.Models.ReadingAssignmentSubmission.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "readingCoachPassages", n => { ReadingCoachPassages = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ReadingCoachPassage>(global::Microsoft.Graph.Models.ReadingCoachPassage.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "reflectCheckInResponses", n => { ReflectCheckInResponses = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ReflectCheckInResponse>(global::Microsoft.Graph.Models.ReflectCheckInResponse.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "speakerAssignmentSubmissions", n => { SpeakerAssignmentSubmissions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.SpeakerAssignmentSubmission>(global::Microsoft.Graph.Models.SpeakerAssignmentSubmission.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -75,7 +109,9 @@ namespace Microsoft.Graph.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ReadingAssignmentSubmission>("readingAssignmentSubmissions", ReadingAssignmentSubmissions);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ReadingCoachPassage>("readingCoachPassages", ReadingCoachPassages);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ReflectCheckInResponse>("reflectCheckInResponses", ReflectCheckInResponses);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.SpeakerAssignmentSubmission>("speakerAssignmentSubmissions", SpeakerAssignmentSubmissions);
         }
     }
 }

@@ -587,6 +587,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("onPremisesSecurityIdentifier", value); }
         }
 #endif
+        /// <summary>The onPremisesSyncBehavior property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.OnPremisesSyncBehavior? OnPremisesSyncBehavior
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.OnPremisesSyncBehavior?>("onPremisesSyncBehavior"); }
+            set { BackingStore?.Set("onPremisesSyncBehavior", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.OnPremisesSyncBehavior OnPremisesSyncBehavior
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.OnPremisesSyncBehavior>("onPremisesSyncBehavior"); }
+            set { BackingStore?.Set("onPremisesSyncBehavior", value); }
+        }
+#endif
         /// <summary>true if this group is synced from an on-premises directory; false if this group was originally synced from an on-premises directory but is no longer synced; null if this object has never synced from an on-premises directory (default). Returned by default. Read-only. Supports $filter (eq, ne, not, in, and eq on null values).</summary>
         public bool? OnPremisesSyncEnabled
         {
@@ -999,6 +1015,7 @@ namespace Microsoft.Graph.Models
                 { "onPremisesProvisioningErrors", n => { OnPremisesProvisioningErrors = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.OnPremisesProvisioningError>(global::Microsoft.Graph.Models.OnPremisesProvisioningError.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "onPremisesSamAccountName", n => { OnPremisesSamAccountName = n.GetStringValue(); } },
                 { "onPremisesSecurityIdentifier", n => { OnPremisesSecurityIdentifier = n.GetStringValue(); } },
+                { "onPremisesSyncBehavior", n => { OnPremisesSyncBehavior = n.GetObjectValue<global::Microsoft.Graph.Models.OnPremisesSyncBehavior>(global::Microsoft.Graph.Models.OnPremisesSyncBehavior.CreateFromDiscriminatorValue); } },
                 { "onPremisesSyncEnabled", n => { OnPremisesSyncEnabled = n.GetBoolValue(); } },
                 { "onenote", n => { Onenote = n.GetObjectValue<global::Microsoft.Graph.Models.Onenote>(global::Microsoft.Graph.Models.Onenote.CreateFromDiscriminatorValue); } },
                 { "owners", n => { Owners = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DirectoryObject>(global::Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -1078,6 +1095,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.OnPremisesProvisioningError>("onPremisesProvisioningErrors", OnPremisesProvisioningErrors);
             writer.WriteStringValue("onPremisesSamAccountName", OnPremisesSamAccountName);
             writer.WriteStringValue("onPremisesSecurityIdentifier", OnPremisesSecurityIdentifier);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.OnPremisesSyncBehavior>("onPremisesSyncBehavior", OnPremisesSyncBehavior);
             writer.WriteBoolValue("onPremisesSyncEnabled", OnPremisesSyncEnabled);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DirectoryObject>("owners", Owners);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ResourceSpecificPermissionGrant>("permissionGrants", PermissionGrants);
