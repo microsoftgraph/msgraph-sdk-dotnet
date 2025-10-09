@@ -9,7 +9,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Microsoft.Graph.DeviceManagement.TelecomExpenseManagementPartners.Count
+namespace Microsoft.Graph.Communications.OnlineMeetingConversations.Item.Messages.Item.Replies.Item.Reactions.Count
 {
     /// <summary>
     /// Provides operations to count the resources in the collection.
@@ -18,19 +18,19 @@ namespace Microsoft.Graph.DeviceManagement.TelecomExpenseManagementPartners.Coun
     public partial class CountRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.DeviceManagement.TelecomExpenseManagementPartners.Count.CountRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Communications.OnlineMeetingConversations.Item.Messages.Item.Replies.Item.Reactions.Count.CountRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/telecomExpenseManagementPartners/$count{?%24filter,%24search}", pathParameters)
+        public CountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation%2Did}/messages/{engagementConversationMessage%2Did}/replies/{engagementConversationMessage%2Did1}/reactions/$count{?%24filter,%24search}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Microsoft.Graph.DeviceManagement.TelecomExpenseManagementPartners.Count.CountRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Communications.OnlineMeetingConversations.Item.Messages.Item.Replies.Item.Reactions.Count.CountRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/telecomExpenseManagementPartners/$count{?%24filter,%24search}", rawUrl)
+        public CountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/communications/onlineMeetingConversations/{onlineMeetingEngagementConversation%2Did}/messages/{engagementConversationMessage%2Did}/replies/{engagementConversationMessage%2Did1}/reactions/$count{?%24filter,%24search}", rawUrl)
         {
         }
         /// <summary>
@@ -42,11 +42,11 @@ namespace Microsoft.Graph.DeviceManagement.TelecomExpenseManagementPartners.Coun
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<int?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.DeviceManagement.TelecomExpenseManagementPartners.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<int?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Communications.OnlineMeetingConversations.Item.Messages.Item.Replies.Item.Reactions.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<int?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.DeviceManagement.TelecomExpenseManagementPartners.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<int?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Communications.OnlineMeetingConversations.Item.Messages.Item.Replies.Item.Reactions.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -63,11 +63,11 @@ namespace Microsoft.Graph.DeviceManagement.TelecomExpenseManagementPartners.Coun
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.DeviceManagement.TelecomExpenseManagementPartners.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Communications.OnlineMeetingConversations.Item.Messages.Item.Replies.Item.Reactions.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.DeviceManagement.TelecomExpenseManagementPartners.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Communications.OnlineMeetingConversations.Item.Messages.Item.Replies.Item.Reactions.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -78,11 +78,11 @@ namespace Microsoft.Graph.DeviceManagement.TelecomExpenseManagementPartners.Coun
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.DeviceManagement.TelecomExpenseManagementPartners.Count.CountRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Communications.OnlineMeetingConversations.Item.Messages.Item.Replies.Item.Reactions.Count.CountRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Microsoft.Graph.DeviceManagement.TelecomExpenseManagementPartners.Count.CountRequestBuilder WithUrl(string rawUrl)
+        public global::Microsoft.Graph.Communications.OnlineMeetingConversations.Item.Messages.Item.Replies.Item.Reactions.Count.CountRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Microsoft.Graph.DeviceManagement.TelecomExpenseManagementPartners.Count.CountRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Microsoft.Graph.Communications.OnlineMeetingConversations.Item.Messages.Item.Replies.Item.Reactions.Count.CountRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the number of the resource
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.DeviceManagement.TelecomExpenseManagementPartners.Coun
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class CountRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.DeviceManagement.TelecomExpenseManagementPartners.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>
+        public partial class CountRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Communications.OnlineMeetingConversations.Item.Messages.Item.Replies.Item.Reactions.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>
         {
         }
     }

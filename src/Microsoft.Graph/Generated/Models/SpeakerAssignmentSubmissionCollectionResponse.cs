@@ -9,34 +9,34 @@ namespace Microsoft.Graph.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TelecomExpenseManagementPartnerCollectionResponse : global::Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
+    public partial class SpeakerAssignmentSubmissionCollectionResponse : global::Microsoft.Graph.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Graph.Models.TelecomExpenseManagementPartner>? Value
+        public List<global::Microsoft.Graph.Models.SpeakerAssignmentSubmission>? Value
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.TelecomExpenseManagementPartner>?>("value"); }
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.SpeakerAssignmentSubmission>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<global::Microsoft.Graph.Models.TelecomExpenseManagementPartner> Value
+        public List<global::Microsoft.Graph.Models.SpeakerAssignmentSubmission> Value
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.TelecomExpenseManagementPartner>>("value"); }
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.SpeakerAssignmentSubmission>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Microsoft.Graph.Models.TelecomExpenseManagementPartnerCollectionResponse"/></returns>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.SpeakerAssignmentSubmissionCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Microsoft.Graph.Models.TelecomExpenseManagementPartnerCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Microsoft.Graph.Models.SpeakerAssignmentSubmissionCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Models.TelecomExpenseManagementPartnerCollectionResponse();
+            return new global::Microsoft.Graph.Models.SpeakerAssignmentSubmissionCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.TelecomExpenseManagementPartner>(global::Microsoft.Graph.Models.TelecomExpenseManagementPartner.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.SpeakerAssignmentSubmission>(global::Microsoft.Graph.Models.SpeakerAssignmentSubmission.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.TelecomExpenseManagementPartner>("value", Value);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.SpeakerAssignmentSubmission>("value", Value);
         }
     }
 }

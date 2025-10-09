@@ -52,5 +52,9 @@ namespace Microsoft.Graph.Models.Security
         #pragma warning disable CS1591
         ExportResult,
         #pragma warning restore CS1591
+        [EnumMember(Value = "holdPolicySync")]
+        #pragma warning disable CS1591
+        HoldPolicySync,
+        #pragma warning restore CS1591
     }
 }
