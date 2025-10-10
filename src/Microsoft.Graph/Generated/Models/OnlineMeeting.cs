@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Models
 {
+    /// <summary>
+    /// Represents a Microsoft online meeting.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class OnlineMeeting : global::Microsoft.Graph.Models.OnlineMeetingBase, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>The content stream of the attendee report of a Microsoft Teams live event. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

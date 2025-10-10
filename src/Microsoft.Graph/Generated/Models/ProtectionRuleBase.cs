@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("error", value); }
         }
 #endif
-        /// <summary>The isAutoApplyEnabled property</summary>
+        /// <summary>true indicates that the protection rule is dynamic; false that it&apos;s static.</summary>
         public bool? IsAutoApplyEnabled
         {
             get { return BackingStore?.Get<bool?>("isAutoApplyEnabled"); }
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The status of the protection rule. The possible values are: draft, active, completed, completedWithErrors, unknownFutureValue. The draft member is currently unsupported.</summary>
+        /// <summary>The status of the protection rule. The possible values are: draft, active, completed, completedWithErrors, unknownFutureValue, updateRequested, deleteRequested. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: updateRequested , deleteRequested. The draft member is currently unsupported.</summary>
         public global::Microsoft.Graph.Models.ProtectionRuleStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.ProtectionRuleStatus?>("status"); }

@@ -109,6 +109,7 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.chatMessageMentionedIdentitySet" => new global::Microsoft.Graph.Models.ChatMessageMentionedIdentitySet(),
                 "#microsoft.graph.chatMessageReactionIdentitySet" => new global::Microsoft.Graph.Models.ChatMessageReactionIdentitySet(),
                 "#microsoft.graph.communicationsIdentitySet" => new global::Microsoft.Graph.Models.CommunicationsIdentitySet(),
+                "#microsoft.graph.engagementIdentitySet" => new global::Microsoft.Graph.Models.EngagementIdentitySet(),
                 "#microsoft.graph.sharePointIdentitySet" => new global::Microsoft.Graph.Models.SharePointIdentitySet(),
                 _ => new global::Microsoft.Graph.Models.IdentitySet(),
             };

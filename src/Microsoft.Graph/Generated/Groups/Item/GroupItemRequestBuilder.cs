@@ -21,6 +21,7 @@ using Microsoft.Graph.Groups.Item.GroupLifecyclePolicies;
 using Microsoft.Graph.Groups.Item.MemberOf;
 using Microsoft.Graph.Groups.Item.Members;
 using Microsoft.Graph.Groups.Item.MembersWithLicenseErrors;
+using Microsoft.Graph.Groups.Item.OnPremisesSyncBehavior;
 using Microsoft.Graph.Groups.Item.Onenote;
 using Microsoft.Graph.Groups.Item.Owners;
 using Microsoft.Graph.Groups.Item.PermissionGrants;
@@ -170,6 +171,11 @@ namespace Microsoft.Graph.Groups.Item
         public global::Microsoft.Graph.Groups.Item.Onenote.OnenoteRequestBuilder Onenote
         {
             get => new global::Microsoft.Graph.Groups.Item.Onenote.OnenoteRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the onPremisesSyncBehavior property of the microsoft.graph.group entity.</summary>
+        public global::Microsoft.Graph.Groups.Item.OnPremisesSyncBehavior.OnPremisesSyncBehaviorRequestBuilder OnPremisesSyncBehavior
+        {
+            get => new global::Microsoft.Graph.Groups.Item.OnPremisesSyncBehavior.OnPremisesSyncBehaviorRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the owners property of the microsoft.graph.group entity.</summary>
         public global::Microsoft.Graph.Groups.Item.Owners.OwnersRequestBuilder Owners

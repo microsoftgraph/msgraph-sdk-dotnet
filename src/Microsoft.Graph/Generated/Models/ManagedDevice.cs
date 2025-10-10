@@ -441,6 +441,12 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<DateTimeOffset?>("managementCertificateExpirationDate"); }
             set { BackingStore?.Set("managementCertificateExpirationDate", value); }
         }
+        /// <summary>Management state of device in Microsoft Intune.</summary>
+        public global::Microsoft.Graph.Models.ManagementState? ManagementState
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ManagementState?>("managementState"); }
+            set { BackingStore?.Set("managementState", value); }
+        }
         /// <summary>Manufacturer of the device. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -809,6 +815,7 @@ namespace Microsoft.Graph.Models
                 { "managedDeviceOwnerType", n => { ManagedDeviceOwnerType = n.GetEnumValue<global::Microsoft.Graph.Models.ManagedDeviceOwnerType>(); } },
                 { "managementAgent", n => { ManagementAgent = n.GetEnumValue<global::Microsoft.Graph.Models.ManagementAgentType>(); } },
                 { "managementCertificateExpirationDate", n => { ManagementCertificateExpirationDate = n.GetDateTimeOffsetValue(); } },
+                { "managementState", n => { ManagementState = n.GetEnumValue<global::Microsoft.Graph.Models.ManagementState>(); } },
                 { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
                 { "meid", n => { Meid = n.GetStringValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
@@ -853,6 +860,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("managedDeviceName", ManagedDeviceName);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.ManagedDeviceOwnerType>("managedDeviceOwnerType", ManagedDeviceOwnerType);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.ManagementAgentType>("managementAgent", ManagementAgent);
+            writer.WriteEnumValue<global::Microsoft.Graph.Models.ManagementState>("managementState", ManagementState);
             writer.WriteStringValue("notes", Notes);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.ManagedDevicePartnerReportedHealthState>("partnerReportedThreatState", PartnerReportedThreatState);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.User>("users", Users);

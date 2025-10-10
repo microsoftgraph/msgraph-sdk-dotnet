@@ -210,6 +210,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("onPremisesProvisioningErrors", value); }
         }
 #endif
+        /// <summary>The onPremisesSyncBehavior property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.OnPremisesSyncBehavior? OnPremisesSyncBehavior
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.OnPremisesSyncBehavior?>("onPremisesSyncBehavior"); }
+            set { BackingStore?.Set("onPremisesSyncBehavior", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.OnPremisesSyncBehavior OnPremisesSyncBehavior
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.OnPremisesSyncBehavior>("onPremisesSyncBehavior"); }
+            set { BackingStore?.Set("onPremisesSyncBehavior", value); }
+        }
+#endif
         /// <summary>true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced and now mastered in Exchange; null if this object has never been synced from an on-premises directory (default).   Supports $filter (eq, ne, not, in, and eq for null values).</summary>
         public bool? OnPremisesSyncEnabled
         {
@@ -334,6 +350,7 @@ namespace Microsoft.Graph.Models
                 { "memberOf", n => { MemberOf = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DirectoryObject>(global::Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "onPremisesLastSyncDateTime", n => { OnPremisesLastSyncDateTime = n.GetDateTimeOffsetValue(); } },
                 { "onPremisesProvisioningErrors", n => { OnPremisesProvisioningErrors = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.OnPremisesProvisioningError>(global::Microsoft.Graph.Models.OnPremisesProvisioningError.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "onPremisesSyncBehavior", n => { OnPremisesSyncBehavior = n.GetObjectValue<global::Microsoft.Graph.Models.OnPremisesSyncBehavior>(global::Microsoft.Graph.Models.OnPremisesSyncBehavior.CreateFromDiscriminatorValue); } },
                 { "onPremisesSyncEnabled", n => { OnPremisesSyncEnabled = n.GetBoolValue(); } },
                 { "phones", n => { Phones = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Phone>(global::Microsoft.Graph.Models.Phone.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "proxyAddresses", n => { ProxyAddresses = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -363,6 +380,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DirectoryObject>("memberOf", MemberOf);
             writer.WriteDateTimeOffsetValue("onPremisesLastSyncDateTime", OnPremisesLastSyncDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.OnPremisesProvisioningError>("onPremisesProvisioningErrors", OnPremisesProvisioningErrors);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.OnPremisesSyncBehavior>("onPremisesSyncBehavior", OnPremisesSyncBehavior);
             writer.WriteBoolValue("onPremisesSyncEnabled", OnPremisesSyncEnabled);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Phone>("phones", Phones);
             writer.WriteCollectionOfPrimitiveValues<string>("proxyAddresses", ProxyAddresses);

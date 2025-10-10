@@ -124,6 +124,7 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.educationLinkResource" => new global::Microsoft.Graph.Models.EducationLinkResource(),
                 "#microsoft.graph.educationMediaResource" => new global::Microsoft.Graph.Models.EducationMediaResource(),
                 "#microsoft.graph.educationPowerPointResource" => new global::Microsoft.Graph.Models.EducationPowerPointResource(),
+                "#microsoft.graph.educationSpeakerProgressResource" => new global::Microsoft.Graph.Models.EducationSpeakerProgressResource(),
                 "#microsoft.graph.educationTeamsAppResource" => new global::Microsoft.Graph.Models.EducationTeamsAppResource(),
                 "#microsoft.graph.educationWordResource" => new global::Microsoft.Graph.Models.EducationWordResource(),
                 _ => new global::Microsoft.Graph.Models.EducationResource(),
