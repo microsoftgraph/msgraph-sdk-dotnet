@@ -54,7 +54,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.E
         {
         }
         /// <summary>
-        /// The unique identifier of the Microsoft Entra identity that last modified the workflow object.
+        /// The list of users that meet the workflowExecutionConditions of a workflow.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.IdentityGovernance.UserProcessingResultCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.E
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.IdentityGovernance.UserProcessingResultCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.IdentityGovernance.UserProcessingResultCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The unique identifier of the Microsoft Entra identity that last modified the workflow object.
+        /// The list of users that meet the workflowExecutionConditions of a workflow.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.E
             return new global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.ExecutionScope.ExecutionScopeRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The unique identifier of the Microsoft Entra identity that last modified the workflow object.
+        /// The list of users that meet the workflowExecutionConditions of a workflow.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ExecutionScopeRequestBuilderGetQueryParameters 

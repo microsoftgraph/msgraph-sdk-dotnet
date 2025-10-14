@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("managedBrowserToOpenLinksRequired"); }
             set { BackingStore?.Set("managedBrowserToOpenLinksRequired", value); }
         }
-        /// <summary>Maximum number of incorrect pin retry attempts before the managed app is either blocked or wiped.</summary>
+        /// <summary>Maximum number of incorrect pin retry attempts before the managed app is either blocked or wiped. Valid values 1 to 65535</summary>
         public int? MaximumPinRetries
         {
             get { return BackingStore?.Get<int?>("maximumPinRetries"); }

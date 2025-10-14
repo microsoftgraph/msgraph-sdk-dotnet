@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Organization.Item.SetMobileDeviceManagementAuthority
         }
         /// <summary>
         /// Set mobile device management authority
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-organization-setmobiledevicemanagementauthority?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Organization.Item.SetMobileDeviceManagementAuthority.SetMobileDeviceManagementAuthorityPostResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +58,6 @@ namespace Microsoft.Graph.Organization.Item.SetMobileDeviceManagementAuthority
         }
         /// <summary>
         /// Set mobile device management authority
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-organization-setmobiledevicemanagementauthority?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Organization.Item.SetMobileDeviceManagementAuthority.SetMobileDeviceManagementAuthorityResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

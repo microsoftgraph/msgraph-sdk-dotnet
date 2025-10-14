@@ -54,8 +54,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations
         {
         }
         /// <summary>
-        /// List properties and relationships of the deviceEnrollmentConfiguration objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentconfiguration-list?view=graph-rest-1.0" />
+        /// The list of device enrollment configurations
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DeviceEnrollmentConfigurationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DeviceEnrollmentConfigurationCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.DeviceEnrollmentConfigurationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new deviceEnrollmentLimitConfiguration object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-deviceenrollmentlimitconfiguration-create?view=graph-rest-1.0" />
+        /// Create new navigation property to deviceEnrollmentConfigurations for deviceManagement
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DeviceEnrollmentConfiguration"/></returns>
         /// <param name="body">The request body</param>
@@ -104,7 +102,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DeviceEnrollmentConfiguration>(requestInfo, global::Microsoft.Graph.Models.DeviceEnrollmentConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the deviceEnrollmentConfiguration objects.
+        /// The list of device enrollment configurations
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations
             return requestInfo;
         }
         /// <summary>
-        /// Create a new deviceEnrollmentLimitConfiguration object.
+        /// Create new navigation property to deviceEnrollmentConfigurations for deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -154,7 +152,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations
             return new global::Microsoft.Graph.DeviceManagement.DeviceEnrollmentConfigurations.DeviceEnrollmentConfigurationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the deviceEnrollmentConfiguration objects.
+        /// The list of device enrollment configurations
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeviceEnrollmentConfigurationsRequestBuilderGetQueryParameters 

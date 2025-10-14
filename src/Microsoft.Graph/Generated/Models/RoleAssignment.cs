@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RoleAssignment : global::Microsoft.Graph.Models.Entity, IParsable
     {
-        /// <summary>Description of the Role Assignment.</summary>
+        /// <summary>Indicates the description of the role assignment. For example: &apos;All administrators, employees and scope tags associated with the Houston office.&apos; Max length is 1024 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description
@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The display or friendly name of the role Assignment.</summary>
+        /// <summary>Indicates the display name of the role assignment. For example: &apos;Houston administrators and users&apos;. Max length is 128 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>List of ids of role scope member security groups.  These are IDs from Azure Active Directory.</summary>
+        /// <summary>Indicates the list of resource scope security group Entra IDs. For example: {dec942f4-6777-4998-96b4-522e383b08e2}.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ResourceScopes
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("resourceScopes", value); }
         }
 #endif
-        /// <summary>Role definition this assignment is part of.</summary>
+        /// <summary>Indicates the role definition for this role assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.RoleDefinition? RoleDefinition

@@ -487,7 +487,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("tpmVersion", value); }
         }
 #endif
-        /// <summary>VSM is a container that protects high value assets from a compromised kernel</summary>
+        /// <summary>Indicates whether the device has Virtual Secure Mode (VSM) enabled. Virtual Secure Mode (VSM) is a container that protects high value assets from a compromised kernel. This property will be deprecated in beta from August 2023. Support for this property will end in August 2025 for v1.0 API. A new property virtualizationBasedSecurity is added and used instead. The value used for virtualSecureMode will be passed by virtualizationBasedSecurity during the deprecation process. Possible values are &apos;enabled&apos;, &apos;disabled&apos; and &apos;notApplicable&apos;. &apos;enabled&apos; indicates Virtual Secure Mode (VSM) is enabled. &apos;disabled&apos; indicates Virtual Secure Mode (VSM) is disabled. &apos;notApplicable&apos; indicates the device is not a Windows 11 device. Default value is &apos;notApplicable&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VirtualSecureMode

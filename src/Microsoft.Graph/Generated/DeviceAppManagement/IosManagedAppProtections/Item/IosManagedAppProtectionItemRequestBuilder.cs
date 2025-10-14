@@ -53,8 +53,7 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item
         {
         }
         /// <summary>
-        /// Deletes a iosManagedAppProtection.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-iosmanagedappprotection-delete?view=graph-rest-1.0" />
+        /// Delete navigation property iosManagedAppProtections for deviceAppManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -76,8 +75,7 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the iosManagedAppProtection object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-iosmanagedappprotection-get?view=graph-rest-1.0" />
+        /// iOS managed app policies.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.IosManagedAppProtection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -100,8 +98,7 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.IosManagedAppProtection>(requestInfo, global::Microsoft.Graph.Models.IosManagedAppProtection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a iosManagedAppProtection object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-iosmanagedappprotection-update?view=graph-rest-1.0" />
+        /// Update the navigation property iosManagedAppProtections in deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.IosManagedAppProtection"/></returns>
         /// <param name="body">The request body</param>
@@ -126,7 +123,7 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.IosManagedAppProtection>(requestInfo, global::Microsoft.Graph.Models.IosManagedAppProtection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a iosManagedAppProtection.
+        /// Delete navigation property iosManagedAppProtections for deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +142,7 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the iosManagedAppProtection object.
+        /// iOS managed app policies.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -164,7 +161,7 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a iosManagedAppProtection object.
+        /// Update the navigation property iosManagedAppProtections in deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -203,7 +200,7 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item
         {
         }
         /// <summary>
-        /// Read properties and relationships of the iosManagedAppProtection object.
+        /// iOS managed app policies.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IosManagedAppProtectionItemRequestBuilderGetQueryParameters 

@@ -35,7 +35,6 @@ namespace Microsoft.Graph.DeviceManagement.ApplePushNotificationCertificate.Down
         }
         /// <summary>
         /// Download Apple push notification certificate signing request
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-devices-applepushnotificationcertificate-downloadapplepushnotificationcertificatesigningrequest?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.DeviceManagement.ApplePushNotificationCertificate.DownloadApplePushNotificationCertificateSigningRequest.DownloadApplePushNotificationCertificateSigningRequestGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +58,6 @@ namespace Microsoft.Graph.DeviceManagement.ApplePushNotificationCertificate.Down
         }
         /// <summary>
         /// Download Apple push notification certificate signing request
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-devices-applepushnotificationcertificate-downloadapplepushnotificationcertificatesigningrequest?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.DeviceManagement.ApplePushNotificationCertificate.DownloadApplePushNotificationCertificateSigningRequest.DownloadApplePushNotificationCertificateSigningRequestResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

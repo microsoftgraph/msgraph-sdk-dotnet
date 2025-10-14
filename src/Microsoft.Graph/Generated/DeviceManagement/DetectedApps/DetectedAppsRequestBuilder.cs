@@ -54,8 +54,7 @@ namespace Microsoft.Graph.DeviceManagement.DetectedApps
         {
         }
         /// <summary>
-        /// List properties and relationships of the detectedApp objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-devices-detectedapp-list?view=graph-rest-1.0" />
+        /// The list of detected apps associated with a device.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DetectedAppCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.DeviceManagement.DetectedApps
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DetectedAppCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.DetectedAppCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new detectedApp object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-devices-detectedapp-create?view=graph-rest-1.0" />
+        /// Create new navigation property to detectedApps for deviceManagement
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DetectedApp"/></returns>
         /// <param name="body">The request body</param>
@@ -104,7 +102,7 @@ namespace Microsoft.Graph.DeviceManagement.DetectedApps
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DetectedApp>(requestInfo, global::Microsoft.Graph.Models.DetectedApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the detectedApp objects.
+        /// The list of detected apps associated with a device.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.DeviceManagement.DetectedApps
             return requestInfo;
         }
         /// <summary>
-        /// Create a new detectedApp object.
+        /// Create new navigation property to detectedApps for deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -154,7 +152,7 @@ namespace Microsoft.Graph.DeviceManagement.DetectedApps
             return new global::Microsoft.Graph.DeviceManagement.DetectedApps.DetectedAppsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the detectedApp objects.
+        /// The list of detected apps associated with a device.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DetectedAppsRequestBuilderGetQueryParameters 

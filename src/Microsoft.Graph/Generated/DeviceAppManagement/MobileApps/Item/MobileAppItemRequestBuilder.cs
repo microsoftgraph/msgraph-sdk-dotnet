@@ -149,8 +149,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item
         {
         }
         /// <summary>
-        /// Deletes a androidLobApp.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-androidlobapp-delete?view=graph-rest-1.0" />
+        /// Delete navigation property mobileApps for deviceAppManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -172,8 +171,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the androidLobApp object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-androidlobapp-get?view=graph-rest-1.0" />
+        /// The mobile apps.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.MobileApp"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -196,8 +194,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.MobileApp>(requestInfo, global::Microsoft.Graph.Models.MobileApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a androidLobApp object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-androidlobapp-update?view=graph-rest-1.0" />
+        /// Update the navigation property mobileApps in deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.MobileApp"/></returns>
         /// <param name="body">The request body</param>
@@ -222,7 +219,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.MobileApp>(requestInfo, global::Microsoft.Graph.Models.MobileApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a androidLobApp.
+        /// Delete navigation property mobileApps for deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -241,7 +238,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the androidLobApp object.
+        /// The mobile apps.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -260,7 +257,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a androidLobApp object.
+        /// Update the navigation property mobileApps in deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -299,7 +296,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item
         {
         }
         /// <summary>
-        /// Read properties and relationships of the androidLobApp object.
+        /// The mobile apps.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MobileAppItemRequestBuilderGetQueryParameters 

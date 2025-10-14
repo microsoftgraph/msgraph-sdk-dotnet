@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models.Security
     public partial class EdiscoveryHoldPolicySyncOperation : global::Microsoft.Graph.Models.Security.CaseOperation, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The reportFileMetadata property</summary>
+        /// <summary>Contains the properties for report file metadata, including downloadUrl, fileName, and size.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.Security.ReportFileMetadata>? ReportFileMetadata

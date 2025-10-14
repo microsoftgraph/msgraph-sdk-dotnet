@@ -54,8 +54,7 @@ namespace Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item.Loc
         {
         }
         /// <summary>
-        /// List properties and relationships of the localizedNotificationMessage objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-notification-localizednotificationmessage-list?view=graph-rest-1.0" />
+        /// The list of localized messages for this Notification Message Template.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.LocalizedNotificationMessageCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item.Loc
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.LocalizedNotificationMessageCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.LocalizedNotificationMessageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new localizedNotificationMessage object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-notification-localizednotificationmessage-create?view=graph-rest-1.0" />
+        /// Create new navigation property to localizedNotificationMessages for deviceManagement
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.LocalizedNotificationMessage"/></returns>
         /// <param name="body">The request body</param>
@@ -104,7 +102,7 @@ namespace Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item.Loc
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.LocalizedNotificationMessage>(requestInfo, global::Microsoft.Graph.Models.LocalizedNotificationMessage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the localizedNotificationMessage objects.
+        /// The list of localized messages for this Notification Message Template.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item.Loc
             return requestInfo;
         }
         /// <summary>
-        /// Create a new localizedNotificationMessage object.
+        /// Create new navigation property to localizedNotificationMessages for deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -154,7 +152,7 @@ namespace Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item.Loc
             return new global::Microsoft.Graph.DeviceManagement.NotificationMessageTemplates.Item.LocalizedNotificationMessages.LocalizedNotificationMessagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the localizedNotificationMessage objects.
+        /// The list of localized messages for this Notification Message Template.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class LocalizedNotificationMessagesRequestBuilderGetQueryParameters 

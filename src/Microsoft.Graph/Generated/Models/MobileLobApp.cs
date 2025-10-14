@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("committedContentVersion", value); }
         }
 #endif
-        /// <summary>The list of content versions for this app.</summary>
+        /// <summary>The list of content versions for this app. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.MobileAppContent>? ContentVersions
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("fileName", value); }
         }
 #endif
-        /// <summary>The total size, including all uploaded files.</summary>
+        /// <summary>The total size, including all uploaded files. This property is read-only.</summary>
         public long? Size
         {
             get { return BackingStore?.Get<long?>("size"); }

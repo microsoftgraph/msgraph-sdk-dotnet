@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
 #endif
-        /// <summary>The package identifier.</summary>
+        /// <summary>The package identifier. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PackageId

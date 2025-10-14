@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.AndroidRequiredPasswordType?>("passwordRequiredType"); }
             set { BackingStore?.Set("passwordRequiredType", value); }
         }
-        /// <summary>Devices must not be jailbroken or rooted.</summary>
+        /// <summary>Indicates the device should not be rooted. When TRUE, if the device is detected as rooted it will be reported non-compliant. When FALSE, the device is not reported as non-compliant regardless of device rooted state. Default is FALSE.</summary>
         public bool? SecurityBlockJailbrokenDevices
         {
             get { return BackingStore?.Get<bool?>("securityBlockJailbrokenDevices"); }
@@ -139,13 +139,13 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("securityRequireGooglePlayServices"); }
             set { BackingStore?.Set("securityRequireGooglePlayServices", value); }
         }
-        /// <summary>Require the device to pass the SafetyNet basic integrity check.</summary>
+        /// <summary>Require the device to pass the Play Integrity basic integrity check.</summary>
         public bool? SecurityRequireSafetyNetAttestationBasicIntegrity
         {
             get { return BackingStore?.Get<bool?>("securityRequireSafetyNetAttestationBasicIntegrity"); }
             set { BackingStore?.Set("securityRequireSafetyNetAttestationBasicIntegrity", value); }
         }
-        /// <summary>Require the device to pass the SafetyNet certified device check.</summary>
+        /// <summary>Require the device to pass the Play Integrity device integrity check.</summary>
         public bool? SecurityRequireSafetyNetAttestationCertifiedDevice
         {
             get { return BackingStore?.Get<bool?>("securityRequireSafetyNetAttestationCertifiedDevice"); }

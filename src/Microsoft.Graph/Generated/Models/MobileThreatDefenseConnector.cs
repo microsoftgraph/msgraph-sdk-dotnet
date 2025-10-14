@@ -13,25 +13,25 @@ namespace Microsoft.Graph.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MobileThreatDefenseConnector : global::Microsoft.Graph.Models.Entity, IParsable
     {
-        /// <summary>When TRUE, indicates the Mobile Threat Defense partner may collect metadata about installed applications from Intune for IOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about installed applications from Intune for IOS devices. Default value is FALSE.</summary>
+        /// <summary>When TRUE, indicates the Mobile Threat Defense partner may collect metadata about installed applications from Intune for iOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about installed applications from Intune for iOS devices. Default value is FALSE.</summary>
         public bool? AllowPartnerToCollectIOSApplicationMetadata
         {
             get { return BackingStore?.Get<bool?>("allowPartnerToCollectIOSApplicationMetadata"); }
             set { BackingStore?.Set("allowPartnerToCollectIOSApplicationMetadata", value); }
         }
-        /// <summary>When TRUE, indicates the Mobile Threat Defense partner may collect metadata about personally installed applications from Intune for IOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about personally installed applications from Intune for IOS devices. Default value is FALSE.</summary>
+        /// <summary>When TRUE, indicates the Mobile Threat Defense partner may collect metadata about personally installed applications from Intune for iOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about personally installed applications from Intune for iOS devices. Default value is FALSE.</summary>
         public bool? AllowPartnerToCollectIOSPersonalApplicationMetadata
         {
             get { return BackingStore?.Get<bool?>("allowPartnerToCollectIOSPersonalApplicationMetadata"); }
             set { BackingStore?.Set("allowPartnerToCollectIOSPersonalApplicationMetadata", value); }
         }
-        /// <summary>For Android, set whether Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant</summary>
+        /// <summary>When TRUE, indicates that Intune must receive data from the Mobile Threat Defense partner prior to marking an Android device compliant. When FALSE, indicates that Intune may mark an Android device compliant before receiving data from the Mobile Threat Defense partner.</summary>
         public bool? AndroidDeviceBlockedOnMissingPartnerData
         {
             get { return BackingStore?.Get<bool?>("androidDeviceBlockedOnMissingPartnerData"); }
             set { BackingStore?.Set("androidDeviceBlockedOnMissingPartnerData", value); }
         }
-        /// <summary>For Android, set whether data from the Mobile Threat Defense partner should be used during compliance evaluations</summary>
+        /// <summary>When TRUE, indicates that data from the Mobile Threat Defense partner will be used during compliance evaluations for Android devices. When FALSE, indicates that data from the Mobile Threat Defense partner will not be used during compliance evaluations for Android devices. Default value is FALSE.</summary>
         public bool? AndroidEnabled
         {
             get { return BackingStore?.Get<bool?>("androidEnabled"); }
@@ -43,19 +43,19 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("androidMobileApplicationManagementEnabled"); }
             set { BackingStore?.Set("androidMobileApplicationManagementEnabled", value); }
         }
-        /// <summary>For IOS, set whether Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant</summary>
+        /// <summary>When TRUE, indicates that Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant. When FALSE, indicates that Intune may not recieve data from Mobile Threat Defense partner prior to making device compliant. Default value is FALSE.</summary>
         public bool? IosDeviceBlockedOnMissingPartnerData
         {
             get { return BackingStore?.Get<bool?>("iosDeviceBlockedOnMissingPartnerData"); }
             set { BackingStore?.Set("iosDeviceBlockedOnMissingPartnerData", value); }
         }
-        /// <summary>For IOS, get or set whether data from the Mobile Threat Defense partner should be used during compliance evaluations</summary>
+        /// <summary>When TRUE, indicates that data from the Mobile Threat Defense partner will be used during compliance evaluations for iOS devices. When FALSE, indicates that data from the Mobile Threat Defense partner will not be used during compliance evaluations for iOS devices. Default value is FALSE.</summary>
         public bool? IosEnabled
         {
             get { return BackingStore?.Get<bool?>("iosEnabled"); }
             set { BackingStore?.Set("iosEnabled", value); }
         }
-        /// <summary>When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during Mobile Application Management (MAM) evaluations for IOS devices. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during Mobile Application Management (MAM) evaluations for IOS devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.</summary>
+        /// <summary>When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during Mobile Application Management (MAM) evaluations for iOS devices. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during Mobile Application Management (MAM) evaluations for iOS devices. Only one partner per platform may be enabled for Mobile Application Management (MAM) evaluation. Default value is FALSE.</summary>
         public bool? IosMobileApplicationManagementEnabled
         {
             get { return BackingStore?.Get<bool?>("iosMobileApplicationManagementEnabled"); }
@@ -79,25 +79,25 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.MobileThreatPartnerTenantState?>("partnerState"); }
             set { BackingStore?.Set("partnerState", value); }
         }
-        /// <summary>Get or Set days the per tenant tolerance to unresponsiveness for this partner integration</summary>
+        /// <summary>Indicates the number of days without receiving a heartbeat from a Mobile Threat Defense partner before the partner is marked as unresponsive. Intune will the ignore the data from this Mobile Threat Defense Partner for next compliance calculation.</summary>
         public int? PartnerUnresponsivenessThresholdInDays
         {
             get { return BackingStore?.Get<int?>("partnerUnresponsivenessThresholdInDays"); }
             set { BackingStore?.Set("partnerUnresponsivenessThresholdInDays", value); }
         }
-        /// <summary>Get or set whether to block devices on the enabled platforms that do not meet the minimum version requirements of the Mobile Threat Defense partner</summary>
+        /// <summary>When TRUE, indicates that Intune will mark devices noncompliant on enabled platforms that do not meet the minimum version requirements of the Mobile Threat Defense partner. When FALSE, indicates that Intune will not mark devices noncompliant on enabled platforms that do not meet the minimum version requirements of the Mobile Threat Defense partner. Default value is FALSE.</summary>
         public bool? PartnerUnsupportedOsVersionBlocked
         {
             get { return BackingStore?.Get<bool?>("partnerUnsupportedOsVersionBlocked"); }
             set { BackingStore?.Set("partnerUnsupportedOsVersionBlocked", value); }
         }
-        /// <summary>When TRUE, inidicates that Intune must receive data from the Mobile Threat Defense partner prior to marking a device compliant for Windows. When FALSE, inidicates that Intune may make a device compliant without receiving data from the Mobile Threat Defense partner for Windows. Default value is FALSE.</summary>
+        /// <summary>When TRUE, indicates that Intune must receive data from the data sync partner prior to marking a device compliant for Windows. When FALSE, indicates that Intune may mark a device compliant without receiving data from the data sync partner for Windows. Default value is FALSE.</summary>
         public bool? WindowsDeviceBlockedOnMissingPartnerData
         {
             get { return BackingStore?.Get<bool?>("windowsDeviceBlockedOnMissingPartnerData"); }
             set { BackingStore?.Set("windowsDeviceBlockedOnMissingPartnerData", value); }
         }
-        /// <summary>When TRUE, inidicates that data from the Mobile Threat Defense partner can be used during compliance evaluations for Windows. When FALSE, inidicates that data from the Mobile Threat Defense partner should not be used during compliance evaluations for Windows. Default value is FALSE.</summary>
+        /// <summary>When TRUE, indicates that data from the Mobile Threat Defense partner will be used during compliance evaluations for Windows. When FALSE, indicates that data from the Mobile Threat Defense partner will not be used during compliance evaluations for Windows. Default value is FALSE.</summary>
         public bool? WindowsEnabled
         {
             get { return BackingStore?.Get<bool?>("windowsEnabled"); }
