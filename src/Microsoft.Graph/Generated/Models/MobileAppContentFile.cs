@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MobileAppContentFile : global::Microsoft.Graph.Models.Entity, IParsable
     {
-        /// <summary>The Azure Storage URI.</summary>
+        /// <summary>Indicates the Azure Storage URI that the file is uploaded to. Created by the service upon receiving a valid mobileAppContentFile. Read-only. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AzureStorageUri
@@ -29,19 +29,19 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("azureStorageUri", value); }
         }
 #endif
-        /// <summary>The time the Azure storage Uri expires.</summary>
+        /// <summary>Indicates the date and time when the Azure storage URI expires, in ISO 8601 format. For example, midnight UTC on Jan 1, 2014 would look like this: &apos;2014-01-01T00:00:00Z&apos;. Read-only. This property is read-only.</summary>
         public DateTimeOffset? AzureStorageUriExpirationDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("azureStorageUriExpirationDateTime"); }
             set { BackingStore?.Set("azureStorageUriExpirationDateTime", value); }
         }
-        /// <summary>The time the file was created.</summary>
+        /// <summary>Indicates created date and time associated with app content file, in ISO 8601 format. For example, midnight UTC on Jan 1, 2014 would look like this: &apos;2014-01-01T00:00:00Z&apos;. Read-only. This property is read-only.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>A value indicating whether the file is committed.</summary>
+        /// <summary>A value indicating whether the file is committed. A committed app content file has been fully uploaded and validated by the Intune service. TRUE means that app content file is committed, FALSE means that app content file is not committed. Defaults to FALSE. Read-only. This property is read-only.</summary>
         public bool? IsCommitted
         {
             get { return BackingStore?.Get<bool?>("isCommitted"); }
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("isDependency"); }
             set { BackingStore?.Set("isDependency", value); }
         }
-        /// <summary>The manifest information.</summary>
+        /// <summary>Indicates the manifest information, containing file metadata.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public byte[]? Manifest
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("manifest", value); }
         }
 #endif
-        /// <summary>the file name.</summary>
+        /// <summary>Indicates the name of the file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name
@@ -85,13 +85,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("name", value); }
         }
 #endif
-        /// <summary>The size of the file prior to encryption.</summary>
+        /// <summary>Indicates the original size of the file, in bytes.</summary>
         public long? Size
         {
             get { return BackingStore?.Get<long?>("size"); }
             set { BackingStore?.Set("size", value); }
         }
-        /// <summary>The size of the file after encryption.</summary>
+        /// <summary>Indicates the size of the file after encryption, in bytes.</summary>
         public long? SizeEncrypted
         {
             get { return BackingStore?.Get<long?>("sizeEncrypted"); }

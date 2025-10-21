@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VppToken : global::Microsoft.Graph.Models.Entity, IParsable
     {
-        /// <summary>The Apple ID associated with the given Apple Volume Purchase Program Token.</summary>
+        /// <summary>The apple Id associated with the given Apple Volume Purchase Program Token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppleId
@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("automaticallyUpdateApps"); }
             set { BackingStore?.Set("automaticallyUpdateApps", value); }
         }
-        /// <summary>The country or region associated with the Apple Volume Purchase Program Token.</summary>
+        /// <summary>Whether or not apps for the VPP token will be automatically updated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CountryOrRegion

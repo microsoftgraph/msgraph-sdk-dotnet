@@ -78,8 +78,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item
         {
         }
         /// <summary>
-        /// Deletes a androidCustomConfiguration.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-androidcustomconfiguration-delete?view=graph-rest-1.0" />
+        /// Delete navigation property deviceConfigurations for deviceManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -101,8 +100,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the androidCustomConfiguration object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-androidcustomconfiguration-get?view=graph-rest-1.0" />
+        /// The device configurations.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DeviceConfiguration"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -135,8 +133,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item
             return new global::Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item.GetOmaSettingPlainTextValueWithSecretReferenceValueId.GetOmaSettingPlainTextValueWithSecretReferenceValueIdRequestBuilder(PathParameters, RequestAdapter, secretReferenceValueId);
         }
         /// <summary>
-        /// Update the properties of a androidCustomConfiguration object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-androidcustomconfiguration-update?view=graph-rest-1.0" />
+        /// Update the navigation property deviceConfigurations in deviceManagement
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DeviceConfiguration"/></returns>
         /// <param name="body">The request body</param>
@@ -161,7 +158,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DeviceConfiguration>(requestInfo, global::Microsoft.Graph.Models.DeviceConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a androidCustomConfiguration.
+        /// Delete navigation property deviceConfigurations for deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -180,7 +177,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the androidCustomConfiguration object.
+        /// The device configurations.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -199,7 +196,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a androidCustomConfiguration object.
+        /// Update the navigation property deviceConfigurations in deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -238,7 +235,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceConfigurations.Item
         {
         }
         /// <summary>
-        /// Read properties and relationships of the androidCustomConfiguration object.
+        /// The device configurations.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeviceConfigurationItemRequestBuilderGetQueryParameters 

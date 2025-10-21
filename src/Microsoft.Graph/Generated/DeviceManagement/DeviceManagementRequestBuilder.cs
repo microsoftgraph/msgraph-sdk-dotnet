@@ -385,8 +385,7 @@ namespace Microsoft.Graph.DeviceManagement
         {
         }
         /// <summary>
-        /// Read properties and relationships of the deviceManagement object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-androidforwork-devicemanagement-get?view=graph-rest-1.0" />
+        /// Get deviceManagement
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DeviceManagement"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -419,8 +418,7 @@ namespace Microsoft.Graph.DeviceManagement
             return new global::Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeRequestBuilder(PathParameters, RequestAdapter, scope);
         }
         /// <summary>
-        /// Update the properties of a deviceManagement object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-androidforwork-devicemanagement-update?view=graph-rest-1.0" />
+        /// Update deviceManagement
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DeviceManagement"/></returns>
         /// <param name="body">The request body</param>
@@ -445,7 +443,7 @@ namespace Microsoft.Graph.DeviceManagement
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DeviceManagement>(requestInfo, global::Microsoft.Graph.Models.DeviceManagement.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the deviceManagement object.
+        /// Get deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -464,7 +462,7 @@ namespace Microsoft.Graph.DeviceManagement
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a deviceManagement object.
+        /// Update deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -505,7 +503,7 @@ namespace Microsoft.Graph.DeviceManagement
             return new global::Microsoft.Graph.DeviceManagement.DeviceManagementRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read properties and relationships of the deviceManagement object.
+        /// Get deviceManagement
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeviceManagementRequestBuilderGetQueryParameters 

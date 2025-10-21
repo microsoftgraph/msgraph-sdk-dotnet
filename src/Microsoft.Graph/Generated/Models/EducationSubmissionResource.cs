@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class EducationSubmissionResource : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Pointer to the assignment from which the resource was copied, and if null, the student uploaded the resource.</summary>
+        /// <summary>Pointer to the assignment from which the resource was copied. If the value is null, the student uploaded the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssignmentResourceUrl
@@ -26,6 +26,22 @@ namespace Microsoft.Graph.Models
         {
             get { return BackingStore?.Get<string>("assignmentResourceUrl"); }
             set { BackingStore?.Set("assignmentResourceUrl", value); }
+        }
+#endif
+        /// <summary>A collection of submission resources that depend on the parent educationSubmissionResource.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.EducationSubmissionResource>? DependentResources
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.EducationSubmissionResource>?>("dependentResources"); }
+            set { BackingStore?.Set("dependentResources", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.EducationSubmissionResource> DependentResources
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.EducationSubmissionResource>>("dependentResources"); }
+            set { BackingStore?.Set("dependentResources", value); }
         }
 #endif
         /// <summary>Resource object.</summary>
@@ -63,6 +79,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "assignmentResourceUrl", n => { AssignmentResourceUrl = n.GetStringValue(); } },
+                { "dependentResources", n => { DependentResources = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.EducationSubmissionResource>(global::Microsoft.Graph.Models.EducationSubmissionResource.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "resource", n => { Resource = n.GetObjectValue<global::Microsoft.Graph.Models.EducationResource>(global::Microsoft.Graph.Models.EducationResource.CreateFromDiscriminatorValue); } },
             };
         }
@@ -75,6 +92,7 @@ namespace Microsoft.Graph.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("assignmentResourceUrl", AssignmentResourceUrl);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.EducationSubmissionResource>("dependentResources", DependentResources);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.EducationResource>("resource", Resource);
         }
     }

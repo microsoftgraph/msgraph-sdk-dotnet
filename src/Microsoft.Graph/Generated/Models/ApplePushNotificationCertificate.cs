@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("appleIdentifier", value); }
         }
 #endif
-        /// <summary>Not yet documented</summary>
+        /// <summary>The certificate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Certificate

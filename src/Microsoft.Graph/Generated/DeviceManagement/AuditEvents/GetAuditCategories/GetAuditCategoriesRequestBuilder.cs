@@ -34,8 +34,7 @@ namespace Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories
         {
         }
         /// <summary>
-        /// Not yet documented
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-auditing-auditevent-getauditcategories?view=graph-rest-1.0" />
+        /// Invoke function getAuditCategories
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories.GetAuditCategoriesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,8 +57,7 @@ namespace Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories.GetAuditCategoriesGetResponse>(requestInfo, global::Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories.GetAuditCategoriesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Not yet documented
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-auditing-auditevent-getauditcategories?view=graph-rest-1.0" />
+        /// Invoke function getAuditCategories
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories.GetAuditCategoriesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +81,7 @@ namespace Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories.GetAuditCategoriesResponse>(requestInfo, global::Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories.GetAuditCategoriesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Not yet documented
+        /// Invoke function getAuditCategories
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +109,7 @@ namespace Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories
             return new global::Microsoft.Graph.DeviceManagement.AuditEvents.GetAuditCategories.GetAuditCategoriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Not yet documented
+        /// Invoke function getAuditCategories
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GetAuditCategoriesRequestBuilderGetQueryParameters 

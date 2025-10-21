@@ -77,8 +77,7 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDevices
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ManagedDeviceCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.ManagedDeviceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new managedDevice object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-devices-manageddevice-create?view=graph-rest-1.0" />
+        /// Create new navigation property to managedDevices for deviceManagement
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ManagedDevice"/></returns>
         /// <param name="body">The request body</param>
@@ -122,7 +121,7 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDevices
             return requestInfo;
         }
         /// <summary>
-        /// Create a new managedDevice object.
+        /// Create new navigation property to managedDevices for deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

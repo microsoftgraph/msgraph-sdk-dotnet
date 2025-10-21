@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("categories", value); }
         }
 #endif
-        /// <summary>The date and time the app was created.</summary>
+        /// <summary>The date and time the app was created. This property is read-only.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("largeIcon", value); }
         }
 #endif
-        /// <summary>The date and time the app was last modified.</summary>
+        /// <summary>The date and time the app was last modified. This property is read-only.</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }

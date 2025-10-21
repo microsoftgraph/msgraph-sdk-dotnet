@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             get { return BackingStore?.Get<DateTimeOffset?>("deletedDateTime"); }
             set { BackingStore?.Set("deletedDateTime", value); }
         }
-        /// <summary>The unique identifier of the Microsoft Entra identity that last modified the workflow object.</summary>
+        /// <summary>The list of users that meet the workflowExecutionConditions of a workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.IdentityGovernance.UserProcessingResult>? ExecutionScope

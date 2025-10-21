@@ -54,8 +54,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item.Opera
         {
         }
         /// <summary>
-        /// List properties and relationships of the managedAppOperation objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-managedappoperation-list?view=graph-rest-1.0" />
+        /// Zero or more long running operations triggered on the app registration.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ManagedAppOperationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item.Opera
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ManagedAppOperationCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.ManagedAppOperationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new managedAppOperation object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-managedappoperation-create?view=graph-rest-1.0" />
+        /// Create new navigation property to operations for deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ManagedAppOperation"/></returns>
         /// <param name="body">The request body</param>
@@ -104,7 +102,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item.Opera
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ManagedAppOperation>(requestInfo, global::Microsoft.Graph.Models.ManagedAppOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the managedAppOperation objects.
+        /// Zero or more long running operations triggered on the app registration.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item.Opera
             return requestInfo;
         }
         /// <summary>
-        /// Create a new managedAppOperation object.
+        /// Create new navigation property to operations for deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -154,7 +152,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item.Opera
             return new global::Microsoft.Graph.DeviceAppManagement.ManagedAppRegistrations.Item.Operations.OperationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the managedAppOperation objects.
+        /// Zero or more long running operations triggered on the app registration.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OperationsRequestBuilderGetQueryParameters 

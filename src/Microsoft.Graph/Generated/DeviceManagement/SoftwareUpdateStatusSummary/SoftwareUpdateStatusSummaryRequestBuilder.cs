@@ -35,8 +35,7 @@ namespace Microsoft.Graph.DeviceManagement.SoftwareUpdateStatusSummary
         {
         }
         /// <summary>
-        /// Read properties and relationships of the softwareUpdateStatusSummary object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-softwareupdatestatussummary-get?view=graph-rest-1.0" />
+        /// The software update status summary.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.SoftwareUpdateStatusSummary"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +58,7 @@ namespace Microsoft.Graph.DeviceManagement.SoftwareUpdateStatusSummary
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.SoftwareUpdateStatusSummary>(requestInfo, global::Microsoft.Graph.Models.SoftwareUpdateStatusSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the softwareUpdateStatusSummary object.
+        /// The software update status summary.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,7 +86,7 @@ namespace Microsoft.Graph.DeviceManagement.SoftwareUpdateStatusSummary
             return new global::Microsoft.Graph.DeviceManagement.SoftwareUpdateStatusSummary.SoftwareUpdateStatusSummaryRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read properties and relationships of the softwareUpdateStatusSummary object.
+        /// The software update status summary.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SoftwareUpdateStatusSummaryRequestBuilderGetQueryParameters 

@@ -179,8 +179,7 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item
         {
         }
         /// <summary>
-        /// Deletes a managedDevice.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-devices-manageddevice-delete?view=graph-rest-1.0" />
+        /// Delete navigation property managedDevices for deviceManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -250,7 +249,7 @@ namespace Microsoft.Graph.DeviceManagement.ManagedDevices.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ManagedDevice>(requestInfo, global::Microsoft.Graph.Models.ManagedDevice.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a managedDevice.
+        /// Delete navigation property managedDevices for deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -54,8 +54,7 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item.Apps
         {
         }
         /// <summary>
-        /// List properties and relationships of the managedMobileApp objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-managedmobileapp-list?view=graph-rest-1.0" />
+        /// List of apps to which the policy is deployed.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ManagedMobileAppCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item.Apps
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ManagedMobileAppCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.ManagedMobileAppCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new managedMobileApp object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-managedmobileapp-create?view=graph-rest-1.0" />
+        /// Create new navigation property to apps for deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ManagedMobileApp"/></returns>
         /// <param name="body">The request body</param>
@@ -104,7 +102,7 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item.Apps
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ManagedMobileApp>(requestInfo, global::Microsoft.Graph.Models.ManagedMobileApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the managedMobileApp objects.
+        /// List of apps to which the policy is deployed.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item.Apps
             return requestInfo;
         }
         /// <summary>
-        /// Create a new managedMobileApp object.
+        /// Create new navigation property to apps for deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -154,7 +152,7 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item.Apps
             return new global::Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item.Apps.AppsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the managedMobileApp objects.
+        /// List of apps to which the policy is deployed.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AppsRequestBuilderGetQueryParameters 

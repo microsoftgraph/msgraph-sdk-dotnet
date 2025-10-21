@@ -72,6 +72,12 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
+        /// <summary>The date and time when protection unit offboard was requested. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
+        public DateTimeOffset? OffboardRequestedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("offboardRequestedDateTime"); }
+            set { BackingStore?.Set("offboardRequestedDateTime", value); }
+        }
         /// <summary>The unique identifier of the protection policy based on which protection unit was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -88,6 +94,12 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("policyId", value); }
         }
 #endif
+        /// <summary>The protectionSources property</summary>
+        public global::Microsoft.Graph.Models.ProtectionSource? ProtectionSources
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ProtectionSource?>("protectionSources"); }
+            set { BackingStore?.Set("protectionSources", value); }
+        }
         /// <summary>The status of the protection unit. The possible values are: protectRequested, protected, unprotectRequested, unprotected, removeRequested, unknownFutureValue, offboardRequested, offboarded, cancelOffboardRequested. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: offboardRequested, offboarded, cancelOffboardRequested.</summary>
         public global::Microsoft.Graph.Models.ProtectionUnitStatus? Status
         {
@@ -124,7 +136,9 @@ namespace Microsoft.Graph.Models
                 { "error", n => { Error = n.GetObjectValue<global::Microsoft.Graph.Models.PublicError>(global::Microsoft.Graph.Models.PublicError.CreateFromDiscriminatorValue); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<global::Microsoft.Graph.Models.IdentitySet>(global::Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "offboardRequestedDateTime", n => { OffboardRequestedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "policyId", n => { PolicyId = n.GetStringValue(); } },
+                { "protectionSources", n => { ProtectionSources = n.GetEnumValue<global::Microsoft.Graph.Models.ProtectionSource>(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Microsoft.Graph.Models.ProtectionUnitStatus>(); } },
             };
         }
@@ -141,7 +155,9 @@ namespace Microsoft.Graph.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Models.PublicError>("error", Error);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
+            writer.WriteDateTimeOffsetValue("offboardRequestedDateTime", OffboardRequestedDateTime);
             writer.WriteStringValue("policyId", PolicyId);
+            writer.WriteEnumValue<global::Microsoft.Graph.Models.ProtectionSource>("protectionSources", ProtectionSources);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.ProtectionUnitStatus>("status", Status);
         }
     }

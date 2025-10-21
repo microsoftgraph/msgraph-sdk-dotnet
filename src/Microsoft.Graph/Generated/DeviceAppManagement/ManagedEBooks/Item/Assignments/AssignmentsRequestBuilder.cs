@@ -54,8 +54,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.Assignments
         {
         }
         /// <summary>
-        /// List properties and relationships of the iosVppEBookAssignment objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-books-iosvppebookassignment-list?view=graph-rest-1.0" />
+        /// The list of assignments for this eBook.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ManagedEBookAssignmentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.Assignments
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ManagedEBookAssignmentCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.ManagedEBookAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new iosVppEBookAssignment object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-books-iosvppebookassignment-create?view=graph-rest-1.0" />
+        /// Create new navigation property to assignments for deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ManagedEBookAssignment"/></returns>
         /// <param name="body">The request body</param>
@@ -104,7 +102,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.Assignments
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ManagedEBookAssignment>(requestInfo, global::Microsoft.Graph.Models.ManagedEBookAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the iosVppEBookAssignment objects.
+        /// The list of assignments for this eBook.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.Assignments
             return requestInfo;
         }
         /// <summary>
-        /// Create a new iosVppEBookAssignment object.
+        /// Create new navigation property to assignments for deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -154,7 +152,7 @@ namespace Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.Assignments
             return new global::Microsoft.Graph.DeviceAppManagement.ManagedEBooks.Item.Assignments.AssignmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the iosVppEBookAssignment objects.
+        /// The list of assignments for this eBook.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AssignmentsRequestBuilderGetQueryParameters 

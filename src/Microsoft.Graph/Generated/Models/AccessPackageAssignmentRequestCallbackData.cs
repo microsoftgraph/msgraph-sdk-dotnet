@@ -81,7 +81,12 @@ namespace Microsoft.Graph.Models
         public static new global::Microsoft.Graph.Models.AccessPackageAssignmentRequestCallbackData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Models.AccessPackageAssignmentRequestCallbackData();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "#microsoft.graph.assignmentRequestApprovalStageCallbackData" => new global::Microsoft.Graph.Models.AssignmentRequestApprovalStageCallbackData(),
+                _ => new global::Microsoft.Graph.Models.AccessPackageAssignmentRequestCallbackData(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

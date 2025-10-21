@@ -37,7 +37,6 @@ namespace Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope
         }
         /// <summary>
         /// Retrieves the effective permissions of the currently authenticated user
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-rbac-devicemanagement-geteffectivepermissions?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -61,7 +60,6 @@ namespace Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope
         }
         /// <summary>
         /// Retrieves the effective permissions of the currently authenticated user
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-rbac-devicemanagement-geteffectivepermissions?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.DeviceManagement.GetEffectivePermissionsWithScope.GetEffectivePermissionsWithScopeResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
