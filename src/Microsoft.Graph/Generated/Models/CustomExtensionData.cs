@@ -58,6 +58,7 @@ namespace Microsoft.Graph.Models
             return mappingValue switch
             {
                 "#microsoft.graph.accessPackageAssignmentRequestCallbackData" => new global::Microsoft.Graph.Models.AccessPackageAssignmentRequestCallbackData(),
+                "#microsoft.graph.assignmentRequestApprovalStageCallbackData" => new global::Microsoft.Graph.Models.AssignmentRequestApprovalStageCallbackData(),
                 "#microsoft.graph.identityGovernance.customTaskExtensionCallbackData" => new global::Microsoft.Graph.Models.IdentityGovernance.CustomTaskExtensionCallbackData(),
                 "#microsoft.graph.identityGovernance.customTaskExtensionCalloutData" => new global::Microsoft.Graph.Models.IdentityGovernance.CustomTaskExtensionCalloutData(),
                 _ => new global::Microsoft.Graph.Models.CustomExtensionData(),

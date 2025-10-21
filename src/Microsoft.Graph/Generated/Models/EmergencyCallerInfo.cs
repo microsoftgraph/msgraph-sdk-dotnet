@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name of the emergency caller.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The location property</summary>
+        /// <summary>The location of the emergency caller.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.Location? Location
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The phoneNumber property</summary>
+        /// <summary>The phone number of the emergency caller.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PhoneNumber
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("phoneNumber", value); }
         }
 #endif
-        /// <summary>The tenantId property</summary>
+        /// <summary>The tenant ID of the emergency caller.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TenantId
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("tenantId", value); }
         }
 #endif
-        /// <summary>The upn property</summary>
+        /// <summary>The user principal name of the emergency caller.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Upn

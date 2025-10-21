@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class EmergencyCallEvent : global::Microsoft.Graph.Models.CallEvent, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The callerInfo property</summary>
+        /// <summary>The information of the emergency caller.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.EmergencyCallerInfo? CallerInfo
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("callerInfo", value); }
         }
 #endif
-        /// <summary>The emergencyNumberDialed property</summary>
+        /// <summary>The emergency number dialed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EmergencyNumberDialed
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("emergencyNumberDialed", value); }
         }
 #endif
-        /// <summary>The policyName property</summary>
+        /// <summary>The policy name for the emergency call event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PolicyName

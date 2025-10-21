@@ -35,8 +35,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.Devic
         {
         }
         /// <summary>
-        /// Deletes a managedDeviceMobileAppConfigurationDeviceStatus.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationdevicestatus-delete?view=graph-rest-1.0" />
+        /// Delete navigation property deviceStatuses for deviceAppManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -58,8 +57,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.Devic
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the managedDeviceMobileAppConfigurationDeviceStatus object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationdevicestatus-get?view=graph-rest-1.0" />
+        /// List of ManagedDeviceMobileAppConfigurationDeviceStatus.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ManagedDeviceMobileAppConfigurationDeviceStatus"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,8 +80,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.Devic
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ManagedDeviceMobileAppConfigurationDeviceStatus>(requestInfo, global::Microsoft.Graph.Models.ManagedDeviceMobileAppConfigurationDeviceStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a managedDeviceMobileAppConfigurationDeviceStatus object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-manageddevicemobileappconfigurationdevicestatus-update?view=graph-rest-1.0" />
+        /// Update the navigation property deviceStatuses in deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ManagedDeviceMobileAppConfigurationDeviceStatus"/></returns>
         /// <param name="body">The request body</param>
@@ -108,7 +105,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.Devic
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ManagedDeviceMobileAppConfigurationDeviceStatus>(requestInfo, global::Microsoft.Graph.Models.ManagedDeviceMobileAppConfigurationDeviceStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a managedDeviceMobileAppConfigurationDeviceStatus.
+        /// Delete navigation property deviceStatuses for deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -127,7 +124,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.Devic
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the managedDeviceMobileAppConfigurationDeviceStatus object.
+        /// List of ManagedDeviceMobileAppConfigurationDeviceStatus.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -146,7 +143,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.Devic
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a managedDeviceMobileAppConfigurationDeviceStatus object.
+        /// Update the navigation property deviceStatuses in deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -185,7 +182,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.Item.Devic
         {
         }
         /// <summary>
-        /// Read properties and relationships of the managedDeviceMobileAppConfigurationDeviceStatus object.
+        /// List of ManagedDeviceMobileAppConfigurationDeviceStatus.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ManagedDeviceMobileAppConfigurationDeviceStatusItemRequestBuilderGetQueryParameters 

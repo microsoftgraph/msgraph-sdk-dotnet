@@ -99,7 +99,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Virtual endpoint
+        /// Get virtualEndpoint from deviceManagement
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.VirtualEndpoint"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -166,7 +166,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint
             return requestInfo;
         }
         /// <summary>
-        /// Virtual endpoint
+        /// Get virtualEndpoint from deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -224,7 +224,7 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint
         {
         }
         /// <summary>
-        /// Virtual endpoint
+        /// Get virtualEndpoint from deviceManagement
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class VirtualEndpointRequestBuilderGetQueryParameters 

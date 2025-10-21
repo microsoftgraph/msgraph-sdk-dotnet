@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.WindowsDeviceType?>("applicableDeviceTypes"); }
             set { BackingStore?.Set("applicableDeviceTypes", value); }
         }
-        /// <summary>The collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app.</summary>
+        /// <summary>The collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.MobileContainedApp>? CommittedContainedApps
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("committedContainedApps", value); }
         }
 #endif
-        /// <summary>The Identity Name.</summary>
+        /// <summary>The Identity Name of the app, parsed from the appx file when it is uploaded through the Intune MEM console. For example: &apos;Contoso.DemoApp&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IdentityName
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("identityName", value); }
         }
 #endif
-        /// <summary>The Identity Publisher Hash.</summary>
+        /// <summary>The Identity Publisher Hash of the app, parsed from the appx file when it is uploaded through the Intune MEM console. For example: &apos;AB82CD0XYZ&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IdentityPublisherHash
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("identityPublisherHash", value); }
         }
 #endif
-        /// <summary>The Identity Resource Identifier.</summary>
+        /// <summary>The Identity Resource Identifier of the app, parsed from the appx file when it is uploaded through the Intune MEM console. For example: &apos;TestResourceId&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IdentityResourceIdentifier
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("identityResourceIdentifier", value); }
         }
 #endif
-        /// <summary>The identity version.</summary>
+        /// <summary>The Identity Version of the app, parsed from the appx file when it is uploaded through the Intune MEM console.  For example: &apos;1.0.0.0&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IdentityVersion
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("identityVersion", value); }
         }
 #endif
-        /// <summary>Whether or not the app is a bundle.</summary>
+        /// <summary>Whether or not the app is a bundle. If TRUE, app is a bundle; if FALSE, app is not a bundle.</summary>
         public bool? IsBundle
         {
             get { return BackingStore?.Get<bool?>("isBundle"); }

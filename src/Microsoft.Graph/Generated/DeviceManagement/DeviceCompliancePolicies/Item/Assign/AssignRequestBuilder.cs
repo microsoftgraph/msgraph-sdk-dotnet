@@ -34,8 +34,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Assign
         {
         }
         /// <summary>
-        /// Not yet documented
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicy-assign?view=graph-rest-1.0" />
+        /// Invoke action assign
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Assign.AssignPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -60,8 +59,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Assign
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Assign.AssignPostResponse>(requestInfo, global::Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Assign.AssignPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Not yet documented
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicy-assign?view=graph-rest-1.0" />
+        /// Invoke action assign
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Assign.AssignResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -87,7 +85,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Assign
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Assign.AssignResponse>(requestInfo, global::Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Assign.AssignResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Not yet documented
+        /// Invoke action assign
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

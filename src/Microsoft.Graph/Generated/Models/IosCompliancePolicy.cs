@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.RequiredPasswordType?>("passcodeRequiredType"); }
             set { BackingStore?.Set("passcodeRequiredType", value); }
         }
-        /// <summary>Devices must not be jailbroken or rooted.</summary>
+        /// <summary>Indicates the device should not be jailbroken. When TRUE, if the device is detected as jailbroken it will be reported non-compliant. When FALSE, the device is not reported as non-compliant regardless of device jailbroken state. Default is FALSE.</summary>
         public bool? SecurityBlockJailbrokenDevices
         {
             get { return BackingStore?.Get<bool?>("securityBlockJailbrokenDevices"); }

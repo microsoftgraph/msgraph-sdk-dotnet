@@ -36,7 +36,6 @@ namespace Microsoft.Graph.DeviceAppManagement.VppTokens.Item.SyncLicenses
         }
         /// <summary>
         /// Syncs licenses associated with a specific appleVolumePurchaseProgramToken
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-onboarding-vpptoken-synclicenses?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.VppToken"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

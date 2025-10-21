@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The date and time the mobileAppCategory was last modified.</summary>
+        /// <summary>The date and time the mobileAppCategory was last modified. This property is read-only.</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }

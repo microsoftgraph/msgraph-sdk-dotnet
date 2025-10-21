@@ -34,8 +34,7 @@ namespace Microsoft.Graph.DeviceManagement.Reports.GetCachedReport
         {
         }
         /// <summary>
-        /// Not yet documented
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getcachedreport?view=graph-rest-1.0" />
+        /// Invoke action getCachedReport
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
@@ -60,7 +59,7 @@ namespace Microsoft.Graph.DeviceManagement.Reports.GetCachedReport
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Not yet documented
+        /// Invoke action getCachedReport
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

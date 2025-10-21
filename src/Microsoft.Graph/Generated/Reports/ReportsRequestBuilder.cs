@@ -214,8 +214,7 @@ namespace Microsoft.Graph.Reports
         {
         }
         /// <summary>
-        /// Read properties and relationships of the reportRoot object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-reportroot-get?view=graph-rest-1.0" />
+        /// Get reports
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ReportRoot"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -1206,8 +1205,7 @@ namespace Microsoft.Graph.Reports
             return new global::Microsoft.Graph.Reports.ManagedDeviceEnrollmentTopFailuresWithPeriod.ManagedDeviceEnrollmentTopFailuresWithPeriodRequestBuilder(PathParameters, RequestAdapter, period);
         }
         /// <summary>
-        /// Update the properties of a reportRoot object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-reportroot-update?view=graph-rest-1.0" />
+        /// Update reports
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ReportRoot"/></returns>
         /// <param name="body">The request body</param>
@@ -1232,7 +1230,7 @@ namespace Microsoft.Graph.Reports
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ReportRoot>(requestInfo, global::Microsoft.Graph.Models.ReportRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the reportRoot object.
+        /// Get reports
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -1251,7 +1249,7 @@ namespace Microsoft.Graph.Reports
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a reportRoot object.
+        /// Update reports
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -1282,7 +1280,7 @@ namespace Microsoft.Graph.Reports
             return new global::Microsoft.Graph.Reports.ReportsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Read properties and relationships of the reportRoot object.
+        /// Get reports
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReportsRequestBuilderGetQueryParameters 

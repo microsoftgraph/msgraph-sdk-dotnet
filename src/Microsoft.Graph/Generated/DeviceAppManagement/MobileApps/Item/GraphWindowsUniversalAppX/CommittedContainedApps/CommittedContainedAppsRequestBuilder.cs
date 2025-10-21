@@ -54,7 +54,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphWindowsUniver
         {
         }
         /// <summary>
-        /// The collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app.
+        /// The collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app. This property is read-only.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.MobileContainedAppCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphWindowsUniver
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.MobileContainedApp>(requestInfo, global::Microsoft.Graph.Models.MobileContainedApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app.
+        /// The collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app. This property is read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphWindowsUniver
             return new global::Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphWindowsUniversalAppX.CommittedContainedApps.CommittedContainedAppsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app.
+        /// The collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app. This property is read-only.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CommittedContainedAppsRequestBuilderGetQueryParameters 

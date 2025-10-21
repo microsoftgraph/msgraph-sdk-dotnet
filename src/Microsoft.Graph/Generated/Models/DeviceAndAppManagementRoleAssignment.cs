@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceAndAppManagementRoleAssignment : global::Microsoft.Graph.Models.RoleAssignment, IParsable
     {
-        /// <summary>The list of ids of role member security groups. These are IDs from Azure Active Directory.</summary>
+        /// <summary>Indicates the list of role member security group Entra IDs. For example: {dec942f4-6777-4998-96b4-522e383b08e2}.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Members

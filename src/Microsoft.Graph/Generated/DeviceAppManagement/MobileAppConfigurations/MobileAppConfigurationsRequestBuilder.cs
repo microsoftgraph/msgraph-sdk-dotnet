@@ -54,8 +54,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations
         {
         }
         /// <summary>
-        /// List properties and relationships of the iosMobileAppConfiguration objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-iosmobileappconfiguration-list?view=graph-rest-1.0" />
+        /// The Managed Device Mobile Application Configurations.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ManagedDeviceMobileAppConfigurationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ManagedDeviceMobileAppConfigurationCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.ManagedDeviceMobileAppConfigurationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new iosMobileAppConfiguration object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-apps-iosmobileappconfiguration-create?view=graph-rest-1.0" />
+        /// Create new navigation property to mobileAppConfigurations for deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ManagedDeviceMobileAppConfiguration"/></returns>
         /// <param name="body">The request body</param>
@@ -104,7 +102,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ManagedDeviceMobileAppConfiguration>(requestInfo, global::Microsoft.Graph.Models.ManagedDeviceMobileAppConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the iosMobileAppConfiguration objects.
+        /// The Managed Device Mobile Application Configurations.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations
             return requestInfo;
         }
         /// <summary>
-        /// Create a new iosMobileAppConfiguration object.
+        /// Create new navigation property to mobileAppConfigurations for deviceAppManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -154,7 +152,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations
             return new global::Microsoft.Graph.DeviceAppManagement.MobileAppConfigurations.MobileAppConfigurationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the iosMobileAppConfiguration objects.
+        /// The Managed Device Mobile Application Configurations.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MobileAppConfigurationsRequestBuilderGetQueryParameters 

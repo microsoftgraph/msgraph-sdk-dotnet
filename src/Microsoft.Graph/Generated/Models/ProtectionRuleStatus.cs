@@ -28,5 +28,13 @@ namespace Microsoft.Graph.Models
         #pragma warning disable CS1591
         UnknownFutureValue,
         #pragma warning restore CS1591
+        [EnumMember(Value = "updateRequested")]
+        #pragma warning disable CS1591
+        UpdateRequested,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "deleteRequested")]
+        #pragma warning disable CS1591
+        DeleteRequested,
+        #pragma warning restore CS1591
     }
 }

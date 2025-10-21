@@ -34,8 +34,7 @@ namespace Microsoft.Graph.DeviceManagement.Reports.GetConfigurationSettingNonCom
         {
         }
         /// <summary>
-        /// Not yet documented
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-reporting-devicemanagementreports-getconfigurationsettingnoncompliancereport?view=graph-rest-1.0" />
+        /// Invoke action getConfigurationSettingNonComplianceReport
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
@@ -60,7 +59,7 @@ namespace Microsoft.Graph.DeviceManagement.Reports.GetConfigurationSettingNonCom
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Not yet documented
+        /// Invoke action getConfigurationSettingNonComplianceReport
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

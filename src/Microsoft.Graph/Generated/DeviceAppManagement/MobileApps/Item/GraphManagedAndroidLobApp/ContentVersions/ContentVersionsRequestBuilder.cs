@@ -54,7 +54,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphManagedAndroi
         {
         }
         /// <summary>
-        /// The list of content versions for this app.
+        /// The list of content versions for this app. This property is read-only.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.MobileAppContentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphManagedAndroi
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.MobileAppContent>(requestInfo, global::Microsoft.Graph.Models.MobileAppContent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The list of content versions for this app.
+        /// The list of content versions for this app. This property is read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphManagedAndroi
             return new global::Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphManagedAndroidLobApp.ContentVersions.ContentVersionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The list of content versions for this app.
+        /// The list of content versions for this app. This property is read-only.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ContentVersionsRequestBuilderGetQueryParameters 

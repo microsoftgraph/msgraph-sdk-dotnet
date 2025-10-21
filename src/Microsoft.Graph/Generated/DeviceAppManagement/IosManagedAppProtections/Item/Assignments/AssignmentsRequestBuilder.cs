@@ -54,8 +54,7 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item.Assi
         {
         }
         /// <summary>
-        /// List properties and relationships of the targetedManagedAppPolicyAssignment objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-targetedmanagedapppolicyassignment-list?view=graph-rest-1.0" />
+        /// Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.TargetedManagedAppPolicyAssignmentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -103,7 +102,7 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item.Assi
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.TargetedManagedAppPolicyAssignment>(requestInfo, global::Microsoft.Graph.Models.TargetedManagedAppPolicyAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the targetedManagedAppPolicyAssignment objects.
+        /// Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -153,7 +152,7 @@ namespace Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item.Assi
             return new global::Microsoft.Graph.DeviceAppManagement.IosManagedAppProtections.Item.Assignments.AssignmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the targetedManagedAppPolicyAssignment objects.
+        /// Navigation property to list of inclusion and exclusion groups to which the policy is deployed.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AssignmentsRequestBuilderGetQueryParameters 

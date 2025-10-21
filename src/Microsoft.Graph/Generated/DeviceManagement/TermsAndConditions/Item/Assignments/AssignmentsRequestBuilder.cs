@@ -54,8 +54,7 @@ namespace Microsoft.Graph.DeviceManagement.TermsAndConditions.Item.Assignments
         {
         }
         /// <summary>
-        /// List properties and relationships of the termsAndConditionsAssignment objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-companyterms-termsandconditionsassignment-list?view=graph-rest-1.0" />
+        /// The list of assignments for this T&amp;C policy.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.TermsAndConditionsAssignmentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.DeviceManagement.TermsAndConditions.Item.Assignments
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.TermsAndConditionsAssignmentCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.TermsAndConditionsAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new termsAndConditionsAssignment object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-companyterms-termsandconditionsassignment-create?view=graph-rest-1.0" />
+        /// Create new navigation property to assignments for deviceManagement
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.TermsAndConditionsAssignment"/></returns>
         /// <param name="body">The request body</param>
@@ -104,7 +102,7 @@ namespace Microsoft.Graph.DeviceManagement.TermsAndConditions.Item.Assignments
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.TermsAndConditionsAssignment>(requestInfo, global::Microsoft.Graph.Models.TermsAndConditionsAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the termsAndConditionsAssignment objects.
+        /// The list of assignments for this T&amp;C policy.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.DeviceManagement.TermsAndConditions.Item.Assignments
             return requestInfo;
         }
         /// <summary>
-        /// Create a new termsAndConditionsAssignment object.
+        /// Create new navigation property to assignments for deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -154,7 +152,7 @@ namespace Microsoft.Graph.DeviceManagement.TermsAndConditions.Item.Assignments
             return new global::Microsoft.Graph.DeviceManagement.TermsAndConditions.Item.Assignments.AssignmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the termsAndConditionsAssignment objects.
+        /// The list of assignments for this T&amp;C policy.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AssignmentsRequestBuilderGetQueryParameters 

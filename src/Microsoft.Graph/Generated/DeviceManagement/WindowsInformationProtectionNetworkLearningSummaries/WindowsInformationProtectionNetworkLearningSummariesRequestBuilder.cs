@@ -54,8 +54,7 @@ namespace Microsoft.Graph.DeviceManagement.WindowsInformationProtectionNetworkLe
         {
         }
         /// <summary>
-        /// List properties and relationships of the windowsInformationProtectionNetworkLearningSummary objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-wip-windowsinformationprotectionnetworklearningsummary-list?view=graph-rest-1.0" />
+        /// The windows information protection network learning summaries.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.WindowsInformationProtectionNetworkLearningSummaryCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.DeviceManagement.WindowsInformationProtectionNetworkLe
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.WindowsInformationProtectionNetworkLearningSummaryCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.WindowsInformationProtectionNetworkLearningSummaryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new windowsInformationProtectionNetworkLearningSummary object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-wip-windowsinformationprotectionnetworklearningsummary-create?view=graph-rest-1.0" />
+        /// Create new navigation property to windowsInformationProtectionNetworkLearningSummaries for deviceManagement
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.WindowsInformationProtectionNetworkLearningSummary"/></returns>
         /// <param name="body">The request body</param>
@@ -104,7 +102,7 @@ namespace Microsoft.Graph.DeviceManagement.WindowsInformationProtectionNetworkLe
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.WindowsInformationProtectionNetworkLearningSummary>(requestInfo, global::Microsoft.Graph.Models.WindowsInformationProtectionNetworkLearningSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the windowsInformationProtectionNetworkLearningSummary objects.
+        /// The windows information protection network learning summaries.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.DeviceManagement.WindowsInformationProtectionNetworkLe
             return requestInfo;
         }
         /// <summary>
-        /// Create a new windowsInformationProtectionNetworkLearningSummary object.
+        /// Create new navigation property to windowsInformationProtectionNetworkLearningSummaries for deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -154,7 +152,7 @@ namespace Microsoft.Graph.DeviceManagement.WindowsInformationProtectionNetworkLe
             return new global::Microsoft.Graph.DeviceManagement.WindowsInformationProtectionNetworkLearningSummaries.WindowsInformationProtectionNetworkLearningSummariesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the windowsInformationProtectionNetworkLearningSummary objects.
+        /// The windows information protection network learning summaries.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WindowsInformationProtectionNetworkLearningSummariesRequestBuilderGetQueryParameters 

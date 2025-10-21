@@ -13,13 +13,13 @@ namespace Microsoft.Graph.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ManagedAppPolicyDeploymentSummary : global::Microsoft.Graph.Models.Entity, IParsable
     {
-        /// <summary>Not yet documented</summary>
+        /// <summary>The configurationDeployedUserCount property</summary>
         public int? ConfigurationDeployedUserCount
         {
             get { return BackingStore?.Get<int?>("configurationDeployedUserCount"); }
             set { BackingStore?.Set("configurationDeployedUserCount", value); }
         }
-        /// <summary>Not yet documented</summary>
+        /// <summary>The configurationDeploymentSummaryPerApp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.ManagedAppPolicyDeploymentSummaryPerApp>? ConfigurationDeploymentSummaryPerApp
@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("configurationDeploymentSummaryPerApp", value); }
         }
 #endif
-        /// <summary>Not yet documented</summary>
+        /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Not yet documented</summary>
+        /// <summary>The lastRefreshTime property</summary>
         public DateTimeOffset? LastRefreshTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastRefreshTime"); }

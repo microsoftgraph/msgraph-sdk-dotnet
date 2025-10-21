@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Restore
         {
         }
         /// <summary>
-        /// Restore a driveItem that has been deleted and is currently in the recycle bin.
+        /// Restore a deleted driveItem that is currently in the recycle bin.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-restore?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DriveItem"/></returns>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Restore
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DriveItem>(requestInfo, global::Microsoft.Graph.Models.DriveItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Restore a driveItem that has been deleted and is currently in the recycle bin.
+        /// Restore a deleted driveItem that is currently in the recycle bin.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

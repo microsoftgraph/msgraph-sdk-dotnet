@@ -34,8 +34,7 @@ namespace Microsoft.Graph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentit
         {
         }
         /// <summary>
-        /// Not yet documented
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-enrollment-importedwindowsautopilotdeviceidentity-import?view=graph-rest-1.0" />
+        /// Invoke action import
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentities.Import.ImportPostResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -60,8 +59,7 @@ namespace Microsoft.Graph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentit
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentities.Import.ImportPostResponse>(requestInfo, global::Microsoft.Graph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentities.Import.ImportPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Not yet documented
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-enrollment-importedwindowsautopilotdeviceidentity-import?view=graph-rest-1.0" />
+        /// Invoke action import
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentities.Import.ImportResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -87,7 +85,7 @@ namespace Microsoft.Graph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentit
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentities.Import.ImportResponse>(requestInfo, global::Microsoft.Graph.DeviceManagement.ImportedWindowsAutopilotDeviceIdentities.Import.ImportResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Not yet documented
+        /// Invoke action import
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class WindowsDeviceAzureADAccount : global::Microsoft.Graph.Models.WindowsDeviceAccount, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Not yet documented</summary>
+        /// <summary>The userPrincipalName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserPrincipalName
