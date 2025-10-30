@@ -92,6 +92,10 @@ The following sample applications are also available:
 
 ## Notes
 
+### Update Schedule
+
+The Microsoft Graph .NET Client Library is scheduled to be updated during the second and fourth week of each month
+
 ### Upgrading from v1
 
 Between 1.x and 3.x there were some minor possibly breaking changes:
