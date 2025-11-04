@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Models
     public partial class EducationAssignmentSettings : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The default grading scheme for assignments created in this class.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.EducationGradingScheme? DefaultGradingScheme
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.EducationGradingScheme?>("defaultGradingScheme"); }
+            set { BackingStore?.Set("defaultGradingScheme", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.EducationGradingScheme DefaultGradingScheme
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.EducationGradingScheme>("defaultGradingScheme"); }
+            set { BackingStore?.Set("defaultGradingScheme", value); }
+        }
+#endif
         /// <summary>When set, enables users to weight assignments differently when computing a class average grade.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -26,6 +42,22 @@ namespace Microsoft.Graph.Models
         {
             get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.EducationGradingCategory>>("gradingCategories"); }
             set { BackingStore?.Set("gradingCategories", value); }
+        }
+#endif
+        /// <summary>The grading schemes that can be attached to assignments created in this class.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.EducationGradingScheme>? GradingSchemes
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.EducationGradingScheme>?>("gradingSchemes"); }
+            set { BackingStore?.Set("gradingSchemes", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.EducationGradingScheme> GradingSchemes
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.EducationGradingScheme>>("gradingSchemes"); }
+            set { BackingStore?.Set("gradingSchemes", value); }
         }
 #endif
         /// <summary>Indicates whether to show the turn-in celebration animation. If true, indicates to skip the animation. The default value is false.</summary>
@@ -52,7 +84,9 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "defaultGradingScheme", n => { DefaultGradingScheme = n.GetObjectValue<global::Microsoft.Graph.Models.EducationGradingScheme>(global::Microsoft.Graph.Models.EducationGradingScheme.CreateFromDiscriminatorValue); } },
                 { "gradingCategories", n => { GradingCategories = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.EducationGradingCategory>(global::Microsoft.Graph.Models.EducationGradingCategory.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "gradingSchemes", n => { GradingSchemes = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.EducationGradingScheme>(global::Microsoft.Graph.Models.EducationGradingScheme.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "submissionAnimationDisabled", n => { SubmissionAnimationDisabled = n.GetBoolValue(); } },
             };
         }
@@ -64,7 +98,9 @@ namespace Microsoft.Graph.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.EducationGradingScheme>("defaultGradingScheme", DefaultGradingScheme);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.EducationGradingCategory>("gradingCategories", GradingCategories);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.EducationGradingScheme>("gradingSchemes", GradingSchemes);
             writer.WriteBoolValue("submissionAnimationDisabled", SubmissionAnimationDisabled);
         }
     }

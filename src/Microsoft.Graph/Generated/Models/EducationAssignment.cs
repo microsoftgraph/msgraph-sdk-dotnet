@@ -194,6 +194,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("gradingCategory", value); }
         }
 #endif
+        /// <summary>When set, enables users to configure custom string grades based on the percentage of total points earned on this assignment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.EducationGradingScheme? GradingScheme
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.EducationGradingScheme?>("gradingScheme"); }
+            set { BackingStore?.Set("gradingScheme", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.EducationGradingScheme GradingScheme
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.EducationGradingScheme>("gradingScheme"); }
+            set { BackingStore?.Set("gradingScheme", value); }
+        }
+#endif
         /// <summary>Instructions for the assignment. The instructions and the display name tell the student what to do.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -208,6 +224,22 @@ namespace Microsoft.Graph.Models
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.EducationItemBody>("instructions"); }
             set { BackingStore?.Set("instructions", value); }
+        }
+#endif
+        /// <summary>Specifies the language in which UI notifications for the assignment are displayed. If languageTag isn&apos;t provided, the default language is en-US. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LanguageTag
+        {
+            get { return BackingStore?.Get<string?>("languageTag"); }
+            set { BackingStore?.Set("languageTag", value); }
+        }
+#nullable restore
+#else
+        public string LanguageTag
+        {
+            get { return BackingStore?.Get<string>("languageTag"); }
+            set { BackingStore?.Set("languageTag", value); }
         }
 #endif
         /// <summary>Who last modified the assignment.</summary>
@@ -385,7 +417,9 @@ namespace Microsoft.Graph.Models
                 { "feedbackResourcesFolderUrl", n => { FeedbackResourcesFolderUrl = n.GetStringValue(); } },
                 { "grading", n => { Grading = n.GetObjectValue<global::Microsoft.Graph.Models.EducationAssignmentGradeType>(global::Microsoft.Graph.Models.EducationAssignmentGradeType.CreateFromDiscriminatorValue); } },
                 { "gradingCategory", n => { GradingCategory = n.GetObjectValue<global::Microsoft.Graph.Models.EducationGradingCategory>(global::Microsoft.Graph.Models.EducationGradingCategory.CreateFromDiscriminatorValue); } },
+                { "gradingScheme", n => { GradingScheme = n.GetObjectValue<global::Microsoft.Graph.Models.EducationGradingScheme>(global::Microsoft.Graph.Models.EducationGradingScheme.CreateFromDiscriminatorValue); } },
                 { "instructions", n => { Instructions = n.GetObjectValue<global::Microsoft.Graph.Models.EducationItemBody>(global::Microsoft.Graph.Models.EducationItemBody.CreateFromDiscriminatorValue); } },
+                { "languageTag", n => { LanguageTag = n.GetStringValue(); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<global::Microsoft.Graph.Models.IdentitySet>(global::Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "moduleUrl", n => { ModuleUrl = n.GetStringValue(); } },
@@ -418,7 +452,9 @@ namespace Microsoft.Graph.Models
             writer.WriteDateTimeOffsetValue("dueDateTime", DueDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.EducationAssignmentGradeType>("grading", Grading);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.EducationGradingCategory>("gradingCategory", GradingCategory);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.EducationGradingScheme>("gradingScheme", GradingScheme);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.EducationItemBody>("instructions", Instructions);
+            writer.WriteStringValue("languageTag", LanguageTag);
             writer.WriteStringValue("moduleUrl", ModuleUrl);
             writer.WriteStringValue("notificationChannelUrl", NotificationChannelUrl);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.EducationAssignmentResource>("resources", Resources);

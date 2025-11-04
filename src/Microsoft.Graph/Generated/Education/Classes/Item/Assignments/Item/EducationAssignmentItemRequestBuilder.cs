@@ -4,6 +4,7 @@ using Microsoft.Graph.Education.Classes.Item.Assignments.Item.Activate;
 using Microsoft.Graph.Education.Classes.Item.Assignments.Item.Categories;
 using Microsoft.Graph.Education.Classes.Item.Assignments.Item.Deactivate;
 using Microsoft.Graph.Education.Classes.Item.Assignments.Item.GradingCategory;
+using Microsoft.Graph.Education.Classes.Item.Assignments.Item.GradingScheme;
 using Microsoft.Graph.Education.Classes.Item.Assignments.Item.Publish;
 using Microsoft.Graph.Education.Classes.Item.Assignments.Item.Resources;
 using Microsoft.Graph.Education.Classes.Item.Assignments.Item.Rubric;
@@ -47,6 +48,11 @@ namespace Microsoft.Graph.Education.Classes.Item.Assignments.Item
         public global::Microsoft.Graph.Education.Classes.Item.Assignments.Item.GradingCategory.GradingCategoryRequestBuilder GradingCategory
         {
             get => new global::Microsoft.Graph.Education.Classes.Item.Assignments.Item.GradingCategory.GradingCategoryRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the gradingScheme property of the microsoft.graph.educationAssignment entity.</summary>
+        public global::Microsoft.Graph.Education.Classes.Item.Assignments.Item.GradingScheme.GradingSchemeRequestBuilder GradingScheme
+        {
+            get => new global::Microsoft.Graph.Education.Classes.Item.Assignments.Item.GradingScheme.GradingSchemeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the publish method.</summary>
         public global::Microsoft.Graph.Education.Classes.Item.Assignments.Item.Publish.PublishRequestBuilder Publish

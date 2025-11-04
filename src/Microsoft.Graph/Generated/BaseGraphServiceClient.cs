@@ -325,7 +325,7 @@ namespace Microsoft.Graph
         {
             get => new global::Microsoft.Graph.PermissionGrants.PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The places property</summary>
+        /// <summary>Provides operations to manage the collection of place entities.</summary>
         public global::Microsoft.Graph.Places.PlacesRequestBuilder Places
         {
             get => new global::Microsoft.Graph.Places.PlacesRequestBuilder(PathParameters, RequestAdapter);
