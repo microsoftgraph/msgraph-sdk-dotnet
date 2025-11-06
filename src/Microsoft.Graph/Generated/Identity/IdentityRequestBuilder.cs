@@ -7,6 +7,7 @@ using Microsoft.Graph.Identity.B2xUserFlows;
 using Microsoft.Graph.Identity.ConditionalAccess;
 using Microsoft.Graph.Identity.CustomAuthenticationExtensions;
 using Microsoft.Graph.Identity.IdentityProviders;
+using Microsoft.Graph.Identity.RiskPrevention;
 using Microsoft.Graph.Identity.UserFlowAttributes;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
@@ -60,6 +61,11 @@ namespace Microsoft.Graph.Identity
         public global::Microsoft.Graph.Identity.IdentityProviders.IdentityProvidersRequestBuilder IdentityProviders
         {
             get => new global::Microsoft.Graph.Identity.IdentityProviders.IdentityProvidersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the riskPrevention property of the microsoft.graph.identityContainer entity.</summary>
+        public global::Microsoft.Graph.Identity.RiskPrevention.RiskPreventionRequestBuilder RiskPrevention
+        {
+            get => new global::Microsoft.Graph.Identity.RiskPrevention.RiskPreventionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userFlowAttributes property of the microsoft.graph.identityContainer entity.</summary>
         public global::Microsoft.Graph.Identity.UserFlowAttributes.UserFlowAttributesRequestBuilder UserFlowAttributes

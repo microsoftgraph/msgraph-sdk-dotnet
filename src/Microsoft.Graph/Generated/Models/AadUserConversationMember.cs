@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("email", value); }
         }
 #endif
-        /// <summary>TenantId which the Microsoft Entra user belongs to.</summary>
+        /// <summary>The tenant ID of the Microsoft Entra user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TenantId
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("user", value); }
         }
 #endif
-        /// <summary>The guid of the user.</summary>
+        /// <summary>The user ID of the Microsoft Entra user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId
