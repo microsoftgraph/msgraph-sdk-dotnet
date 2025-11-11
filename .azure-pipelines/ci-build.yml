@@ -61,10 +61,10 @@ extends:
             packageType: sdk
             version: 8.x
         - task: UseDotNet@2
-          displayName: 'Use .NET 6.x (for code signing tasks)'
+          displayName: 'Use .NET 10.x sdk'
           inputs:
             packageType: sdk
-            version: 6.x
+            version: 10.x
         - task: DotNetCoreCLI@2
           displayName: 'dotnet restore'
           inputs:

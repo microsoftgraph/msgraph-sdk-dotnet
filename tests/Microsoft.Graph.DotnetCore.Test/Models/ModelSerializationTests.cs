@@ -129,7 +129,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
                 "text");
 
             // Serialize=
-            var serializedString = await KiotaJsonSerializer.SerializeAsStringAsync(itemBody, CancellationToken.None);
+            var serializedString = await KiotaJsonSerializer.SerializeAsStringAsync(itemBody);
 
             //Assert
             Assert.Equal(expectedSerializedStream, serializedString);
@@ -155,7 +155,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
                 StartDate = new Date(now.Year, now.Month, now.Day),
             };
 
-            var serializedString = await KiotaJsonSerializer.SerializeAsStringAsync(recurrence, CancellationToken.None);
+            var serializedString = await KiotaJsonSerializer.SerializeAsStringAsync(recurrence);
 
             // Assert
             Assert.Equal(expectedSerializedString, serializedString);
@@ -197,7 +197,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Models
             string expectedSerializedString = "{\"assignments\":{\"USER_ID\":{\"@odata.type\":\"#microsoft.graph.plannerAssignment\",\"orderHint\":\"!\"}},\"bucketId\":\"BUCKET_ID\",\"planId\":\"PLAN_ID\",\"title\":\"My Planner Task\"}";
 
             // Assert
-            var serializedString = await KiotaJsonSerializer.SerializeAsStringAsync(planTask, CancellationToken.None);
+            var serializedString = await KiotaJsonSerializer.SerializeAsStringAsync(planTask);
             Assert.Equal(expectedSerializedString, serializedString);
         }
         

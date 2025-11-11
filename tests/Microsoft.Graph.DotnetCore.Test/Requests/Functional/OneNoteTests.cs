@@ -34,7 +34,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             // Get a handle to the first section.
             firstSectionID = sectionPage.Value[0].Id;
         }
-        
+
         internal async Task TestPageCleanUp()
         {
             await graphClient.Me.Onenote.Pages[testPage.Id].DeleteAsync();
@@ -46,8 +46,8 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
         /// </summary>
         [Fact(Skip = "No CI set up for functional tests")]
         public async Task OneNoteGetNotebooks()
-        { 
-            try 
+        {
+            try
             {
                 var notebooksPage = await graphClient.Me
                                                                                  .Onenote
@@ -380,7 +380,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 Assert.Fail($"Error code: {e.Message}");
             }
         }
-        
+
         /// <summary>
         /// OneNoteAddPageHtmlWithStreamWorkaround is a workaround test. We've since added functionality to address this in the client library.
         /// See OneNoteCreatePageWithHtml() for how this is done.
@@ -390,7 +390,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
         {
             try
             {
-                // Get the request URL for adding a page. You don't have to use the request builder to 
+                // Get the request URL for adding a page. You don't have to use the request builder to
                 // get the URL. We use it here for convenience.
                 var requestInformation = graphClient.Me.Onenote.Sections[firstSectionID].Pages.ToGetRequestInformation();
 
@@ -407,9 +407,9 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
                     // Create the request message and add the content.
                     requestInformation.SetStreamContent(stream,"text/html");
-                    
+
                 }
-                
+
                 // Deserialize into OneNotePage object.
                 // Send the request and get the response.
                 var content = await graphClient.RequestAdapter.SendPrimitiveAsync<Stream>(requestInformation);
@@ -454,13 +454,13 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 string boundary = "MultiPartBoundary32541";
                 string contentType = "multipart/form-data; boundary=" + boundary;
 
-                // Create the presentation part. 
+                // Create the presentation part.
                 StringContent presentation = new StringContent(htmlBody);
                 presentation.Headers.ContentDisposition = new ContentDispositionHeaderValue("form-data");
                 presentation.Headers.ContentDisposition.Name = "Presentation";
                 presentation.Headers.ContentType = new MediaTypeHeaderValue("text/html");
 
-                await using (Stream ms = ResourceHelper.GetResourceAsStream(ResourceHelper.Hamilton))
+                using (Stream ms = ResourceHelper.GetResourceAsStream(ResourceHelper.Hamilton))
                 {
                     // Create the image part.
                     StreamContent image = new StreamContent(ms);
@@ -476,7 +476,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                     requestInformation.HttpMethod = Method.POST;
                     requestInformation.Headers.Add("Content-Type",contentType);
                     requestInformation.SetStreamContent(await image.ReadAsStreamAsync(),"application/octet-stream");
-                    
+
                     // Deserialize into OneNotePage object.
                     testPage = await graphClient.RequestAdapter.SendAsync<OnenotePage>(requestInformation,OnenotePage.CreateFromDiscriminatorValue);
 
@@ -504,7 +504,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
         /// https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/page_update
         /// The service expects PATCH https://graph.microsoft.com/v1.0/me/onenote/pages/{id}/content with a
         /// body that includes a JSON object that describes the PATCH. We generate a dummy object that is
-        /// supposed to be set with the properties PATCH. 
+        /// supposed to be set with the properties PATCH.
         /// Issue: metadata describes a onenotePatchContent action. This scenario would probably generate correctly.
         /// This conflicts with the documentation.
         /// Issue: The documented form we cannot generate from our metadata. Docs say that we PATCH to the content structural property
@@ -544,7 +544,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 // Serialize the OnenotePatchContentCommand object and add to the request.
                 var serializer = new JsonSerializationWriter();
                 serializer.WriteCollectionOfObjectValues<OnenotePatchContentCommand>(string.Empty,commands);
-                
+
                 requestInformation.SetStreamContent(serializer.GetSerializedContent(),"application/octet-stream");
                 requestInformation.Headers.Add("Content-Type", "application/json");
 
@@ -571,7 +571,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             string testString = ". Choose positive.";
 
             // Create the request body.
-            string htmlBody = $"<!DOCTYPE html><html><head><title>OneNoteAddPageHtmlWithStream test created this{testString}</title></head>" + 
+            string htmlBody = $"<!DOCTYPE html><html><head><title>OneNoteAddPageHtmlWithStream test created this{testString}</title></head>" +
                                     "<body>Generated from the test with the partial</body></html> ";
             byte[] byteArray = Encoding.ASCII.GetBytes(htmlBody);
 
@@ -636,7 +636,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 string boundary = "MultiPartBoundary32541";
                 string contentType = "multipart/form-data; boundary=" + boundary;
 
-                // Create the presentation part. 
+                // Create the presentation part.
                 StringContent presentation = new StringContent(htmlBody);
                 presentation.Headers.ContentDisposition = new ContentDispositionHeaderValue("form-data");
                 presentation.Headers.ContentDisposition.Name = "Presentation";
@@ -645,7 +645,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 StreamContent image;
 
                 // Get an image stream.
-                await using (Stream ms = ResourceHelper.GetResourceAsStream(ResourceHelper.Hamilton))
+                using (Stream ms = ResourceHelper.GetResourceAsStream(ResourceHelper.Hamilton))
                 {
                     // Create the image part.
                     image = new StreamContent(ms);

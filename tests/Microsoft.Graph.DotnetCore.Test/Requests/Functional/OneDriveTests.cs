@@ -79,14 +79,14 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                         {
                             long size = driveItemInfo.Size.Value;
                             int numberOfChunks = Convert.ToInt32(size / DefaultChunkSize);
-                            // We are incrementing the offset cursor after writing the response stream to a file after each chunk. 
+                            // We are incrementing the offset cursor after writing the response stream to a file after each chunk.
                             // Subtracting one since the size is 1 based, and the range is 0 base. There should be a better way to do
                             // this but I haven't spent the time on that.
                             int lastChunkSize = Convert.ToInt32(size % DefaultChunkSize) - numberOfChunks - 1;
                             if (lastChunkSize > 0) { numberOfChunks++; }
 
                             // Create a file stream to contain the downloaded file.
-                            await using FileStream fileStream = System.IO.File.Create((driveItemInfo.Name));
+                            using FileStream fileStream = System.IO.File.Create((driveItemInfo.Name));
                             for (int i = 0; i < numberOfChunks; i++)
                             {
                                 // Setup the last chunk to request. This will be called at the end of this loop.
@@ -101,12 +101,12 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
                                 // We can use the the client library to send this although it does add an authentication cost.
                                 // HttpResponseMessage response = await graphClient.HttpProvider.SendAsync(req);
-                                // Since the download URL is preauthenticated, and we aren't deserializing objects, 
+                                // Since the download URL is preauthenticated, and we aren't deserializing objects,
                                 // we'd be better to make the request with HttpClient.
                                 var client = new HttpClient();
                                 HttpResponseMessage response = await client.SendAsync(req);
 
-                                await using (Stream responseStream = await response.Content.ReadAsStreamAsync())
+                                using (Stream responseStream = await response.Content.ReadAsStreamAsync())
                                 {
                                     bytesInStream = new byte[ChunkSize];
                                     int read;
@@ -253,7 +253,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 var itemToShare = await graphClient.Drives["driveId"].Items["itemId"]
                                                             .Children
                                                             .GetAsync(requestConfiguration => requestConfiguration.QueryParameters.Filter = "startswith(name,'Timesheet')");
-                
+
                 Assert.StartsWith("Timesheet", itemToShare.Value[0].Name);
 
                 var requestBody = new CreateLinkPostRequestBody { Type = "edit", Scope = "organization" };

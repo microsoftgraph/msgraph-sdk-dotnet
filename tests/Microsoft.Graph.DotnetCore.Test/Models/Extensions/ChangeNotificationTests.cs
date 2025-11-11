@@ -14,7 +14,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Extensions
         private readonly X509Certificate2 _certificate;
         public ChangeNotificationTests()
         {
-            // This is a DUMMY certificate used to validate the functionality 
+            // This is a DUMMY certificate used to validate the functionality
             var certificateString = "MIIQagIBAzCCEDAGCSqGSIb3DQEHAaCCECEEghAdMIIQGTCCBg8GCSqGSIb3DQEHBqCCBgAwggX8AgEAMIIF9QYJKoZIhvcNAQcBMBwGCiqGSIb3DQEMAQYwDgQIEAk4/VMAFtsCAggAgIIFyAXxkPPBcl1MbwgA3SSTHD3WBxi" +
                                     "qiGVC9+0ufNW70SoIyx7V9ZVP/eFXb/moZD7BEir30WCdqqZCvh3aHvoL1SlreKXFmYqLzUViqBsHl3GIox2f/Ic7CS486JCoLHMoTHPcC3Y40zr8HX+Zc0SJs1cT4KFN3UJnoKwD+lWgn7XOiyzKWC6zksqM2spnc5W6+I5eHo" +
                                     "SDEkgPa6mDYtB+0/9bPSV8XkDu9MWGUhq+bNBlenMwAF+QeWBbaTskiEHgloJPzqVop8aT/KRsKLNBrWQ64JJ5dYG/yjqg0/oA//T8/cCDqhTuc0FiS4IRzmKnTsOuVgbwJ8t3vvd6lHRfFZXTYnMmRLuZ62xvzsAIRCg6+CUmU" +
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Extensions
         [Fact]
         public void AddPublicEncryptionCertificate()
         {
-            // arrange 
+            // arrange
             var subscription = new Subscription();
 
             // act

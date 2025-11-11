@@ -2,7 +2,7 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-// README before adding tests here. 
+// README before adding tests here.
 // If you are adding tests for Excel, please do the following:
 // -- Use the template at the bottom of this file.  Make sure to create test file per test method and then delete your resource.
 // -- Add worksheets to Requests\Functional\Resources\excelTestResource to target for your test case. Do not touch existing sheets.
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
         private async Task OneDriveSearchForTestFile(string fileName = "_excelTestResource.xlsx")
         {
-            // Check that this item hasn't already been created. 
+            // Check that this item hasn't already been created.
             // https://graph.microsoft.io/en-us/docs/api-reference/v1.0/api/item_search
             var searchResults = await graphClient.Drives["driveId"].Items[""].SearchWithQ(fileName).GetAsSearchWithQGetResponseAsync();
             foreach (var r in searchResults.Value)
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             // TODO fix the metadata
             // var excelWorkbookDriveItem = await graphClient.Drives["driveId"].Root.Children.PostAsync(excelWorkbook);
             var excelWorkbookDriveItem = await graphClient.Drives["driveId"].Items[""].Children[""].GetAsync();
-            
+
             //var excelWorkbookDriveItem = await graphClient.Me.Drive.Root.Children.Request().Filter($"name eq '{fileName}'").GetAsync();
             //await OneDriveDeleteTestFile(excelWorkbookDriveItem.CurrentPage.FirstOrDefault().Id, 3000);
             Assert.NotNull(excelWorkbookDriveItem);
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
         private async Task OneDriveUploadTestFileContent(string fileId)
         {
-            await using Stream ms = ResourceHelper.GetResourceAsStream(ResourceHelper.ExcelTestResource);
+            using Stream ms = ResourceHelper.GetResourceAsStream(ResourceHelper.ExcelTestResource);
             //Upload content to the file.
             //https://graph.microsoft.io/en-us/docs/api-reference/v1.0/api/item_uploadcontent
             await graphClient.Drives["driveId"].Items[fileId].Content.PutAsync(ms);
@@ -80,11 +80,11 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
         {
             try
             {
-                // Get the item. The service tracks when the resource was last read and 
-                // gives an error if we try to delete after an update. 
+                // Get the item. The service tracks when the resource was last read and
+                // gives an error if we try to delete after an update.
                 DriveItem w = await graphClient.Drives["driveId"].Items[fileId].GetAsync();
-                
-                // Adding this since there is latency between OneDrive and the Excel WAC. Use when 
+
+                // Adding this since there is latency between OneDrive and the Excel WAC. Use when
                 // you PATCH/POST/PUT to the workbook before you DELETE in test.
                 if (delayInMilliseconds > 0)
                 {
