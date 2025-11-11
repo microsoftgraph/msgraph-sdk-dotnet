@@ -16,6 +16,7 @@ using Microsoft.Graph.Users.Item.Chats;
 using Microsoft.Graph.Users.Item.CheckMemberGroups;
 using Microsoft.Graph.Users.Item.CheckMemberObjects;
 using Microsoft.Graph.Users.Item.CloudClipboard;
+using Microsoft.Graph.Users.Item.CloudPCs;
 using Microsoft.Graph.Users.Item.ContactFolders;
 using Microsoft.Graph.Users.Item.Contacts;
 using Microsoft.Graph.Users.Item.CreatedObjects;
@@ -164,6 +165,11 @@ namespace Microsoft.Graph.Users.Item
         public global::Microsoft.Graph.Users.Item.CloudClipboard.CloudClipboardRequestBuilder CloudClipboard
         {
             get => new global::Microsoft.Graph.Users.Item.CloudClipboard.CloudClipboardRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the cloudPCs property of the microsoft.graph.user entity.</summary>
+        public global::Microsoft.Graph.Users.Item.CloudPCs.CloudPCsRequestBuilder CloudPCs
+        {
+            get => new global::Microsoft.Graph.Users.Item.CloudPCs.CloudPCsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the contactFolders property of the microsoft.graph.user entity.</summary>
         public global::Microsoft.Graph.Users.Item.ContactFolders.ContactFoldersRequestBuilder ContactFolders

@@ -297,6 +297,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("cloudClipboard", value); }
         }
 #endif
+        /// <summary>The user&apos;s Cloud PCs. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.CloudPC>? CloudPCs
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.CloudPC>?>("cloudPCs"); }
+            set { BackingStore?.Set("cloudPCs", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.CloudPC> CloudPCs
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.CloudPC>>("cloudPCs"); }
+            set { BackingStore?.Set("cloudPCs", value); }
+        }
+#endif
         /// <summary>The name of the company that the user is associated with. This property can be useful for describing the company that a guest comes from. The maximum length is 64 characters.Returned only on $select. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1987,6 +2003,7 @@ namespace Microsoft.Graph.Models
                 { "chats", n => { Chats = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Chat>(global::Microsoft.Graph.Models.Chat.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "city", n => { City = n.GetStringValue(); } },
                 { "cloudClipboard", n => { CloudClipboard = n.GetObjectValue<global::Microsoft.Graph.Models.CloudClipboardRoot>(global::Microsoft.Graph.Models.CloudClipboardRoot.CreateFromDiscriminatorValue); } },
+                { "cloudPCs", n => { CloudPCs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.CloudPC>(global::Microsoft.Graph.Models.CloudPC.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "companyName", n => { CompanyName = n.GetStringValue(); } },
                 { "consentProvidedForMinor", n => { ConsentProvidedForMinor = n.GetStringValue(); } },
                 { "contactFolders", n => { ContactFolders = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ContactFolder>(global::Microsoft.Graph.Models.ContactFolder.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -2127,6 +2144,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Chat>("chats", Chats);
             writer.WriteStringValue("city", City);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.CloudClipboardRoot>("cloudClipboard", CloudClipboard);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.CloudPC>("cloudPCs", CloudPCs);
             writer.WriteStringValue("companyName", CompanyName);
             writer.WriteStringValue("consentProvidedForMinor", ConsentProvidedForMinor);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ContactFolder>("contactFolders", ContactFolders);

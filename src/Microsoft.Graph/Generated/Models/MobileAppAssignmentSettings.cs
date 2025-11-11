@@ -57,7 +57,6 @@ namespace Microsoft.Graph.Models
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.iosDdmLobAppAssignmentSettings" => new global::Microsoft.Graph.Models.IosDdmLobAppAssignmentSettings(),
                 "#microsoft.graph.iosLobAppAssignmentSettings" => new global::Microsoft.Graph.Models.IosLobAppAssignmentSettings(),
                 "#microsoft.graph.iosStoreAppAssignmentSettings" => new global::Microsoft.Graph.Models.IosStoreAppAssignmentSettings(),
                 "#microsoft.graph.iosVppAppAssignmentSettings" => new global::Microsoft.Graph.Models.IosVppAppAssignmentSettings(),
