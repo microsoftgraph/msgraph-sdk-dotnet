@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class AkamaiWebApplicationFirewallProvider : global::Microsoft.Graph.Models.WebApplicationFirewallProvider, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The accessToken property</summary>
+        /// <summary>Akamai API access token used to authenticate to the Akamai account. Contact your Akamai Customer Success Manager for assistance with your accessToken.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccessToken
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("accessToken", value); }
         }
 #endif
-        /// <summary>The clientSecret property</summary>
+        /// <summary>Akamai API client secret used in conjunction with the client token and access token for authentication. Contact your Akamai Customer Success Manager for assistance with this information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClientSecret
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("clientSecret", value); }
         }
 #endif
-        /// <summary>The clientToken property</summary>
+        /// <summary>Akamai API client token used for authentication to the Akamai account. Contact your Akamai Customer Success Manager for assistance with this information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClientToken
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("clientToken", value); }
         }
 #endif
-        /// <summary>The hostPrefix property</summary>
+        /// <summary>Prefix used to identify the host or domain in Akamai configuration operations. This value may be required for certain API calls or configuration scenarios.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HostPrefix

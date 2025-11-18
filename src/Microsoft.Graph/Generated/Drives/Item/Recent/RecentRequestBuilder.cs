@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Drives.Item.Recent
         {
         }
         /// <summary>
-        /// List a set of items that have been recently used by the signed in user.This collection includes items that are in the user&apos;s drive and items they have access to from other drives.
+        /// List a set of items recently used by the signed-in user.This collection includes items that are in the user&apos;s drive and items they have access to from other drives.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/drive-recent?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Drives.Item.Recent.RecentGetResponse"/></returns>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Drives.Item.Recent
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Drives.Item.Recent.RecentGetResponse>(requestInfo, global::Microsoft.Graph.Drives.Item.Recent.RecentGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List a set of items that have been recently used by the signed in user.This collection includes items that are in the user&apos;s drive and items they have access to from other drives.
+        /// List a set of items recently used by the signed-in user.This collection includes items that are in the user&apos;s drive and items they have access to from other drives.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/drive-recent?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Drives.Item.Recent.RecentResponse"/></returns>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Drives.Item.Recent
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Drives.Item.Recent.RecentResponse>(requestInfo, global::Microsoft.Graph.Drives.Item.Recent.RecentResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List a set of items that have been recently used by the signed in user.This collection includes items that are in the user&apos;s drive and items they have access to from other drives.
+        /// List a set of items recently used by the signed-in user.This collection includes items that are in the user&apos;s drive and items they have access to from other drives.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Drives.Item.Recent
             return new global::Microsoft.Graph.Drives.Item.Recent.RecentRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List a set of items that have been recently used by the signed in user.This collection includes items that are in the user&apos;s drive and items they have access to from other drives.
+        /// List a set of items recently used by the signed-in user.This collection includes items that are in the user&apos;s drive and items they have access to from other drives.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RecentRequestBuilderGetQueryParameters 

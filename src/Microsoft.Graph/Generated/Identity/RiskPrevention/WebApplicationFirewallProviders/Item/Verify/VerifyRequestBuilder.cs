@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Identity.RiskPrevention.WebApplicationFirewallProvider
         {
         }
         /// <summary>
-        /// Invoke action verify
+        /// Initiate a verification operation for a webApplicationFirewallProvider object. This API triggers provider-specific verification logic and returns a webApplicationFirewallVerificationModel object describing the verification result.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/webapplicationfirewallprovider-verify?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.WebApplicationFirewallVerificationModel"/></returns>
         /// <param name="body">The request body</param>
@@ -60,7 +61,7 @@ namespace Microsoft.Graph.Identity.RiskPrevention.WebApplicationFirewallProvider
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.WebApplicationFirewallVerificationModel>(requestInfo, global::Microsoft.Graph.Models.WebApplicationFirewallVerificationModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action verify
+        /// Initiate a verification operation for a webApplicationFirewallProvider object. This API triggers provider-specific verification logic and returns a webApplicationFirewallVerificationModel object describing the verification result.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

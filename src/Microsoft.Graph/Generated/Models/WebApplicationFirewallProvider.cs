@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class WebApplicationFirewallProvider : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name of the WAF provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName

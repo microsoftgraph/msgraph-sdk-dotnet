@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The dnsConfiguration property</summary>
+        /// <summary>DNS-related details discovered during verification for the host, such as the DNS record name, record type, record value, whether the record is proxied through the provider, and whether the domain is verified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.WebApplicationFirewallDnsConfiguration? DnsConfiguration

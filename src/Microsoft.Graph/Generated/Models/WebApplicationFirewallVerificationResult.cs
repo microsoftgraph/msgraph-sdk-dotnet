@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The errors property</summary>
+        /// <summary>List of errors encountered during the verification process.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.GenericError>? Errors
@@ -59,13 +59,13 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.WebApplicationFirewallVerificationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>The verifiedOnDateTime property</summary>
+        /// <summary>UTC timestamp when the verification was performed or last updated. This indicates when the verification result was produced.</summary>
         public DateTimeOffset? VerifiedOnDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("verifiedOnDateTime"); }
             set { BackingStore?.Set("verifiedOnDateTime", value); }
         }
-        /// <summary>The warnings property</summary>
+        /// <summary>List of warnings produced during verification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.GenericError>? Warnings

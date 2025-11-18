@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Identity.RiskPrevention.WebApplicationFirewallVerifica
         {
         }
         /// <summary>
-        /// Get provider from identity
+        /// Reference to a provider resource associated with this verification model. Represents a WAF provider that can be used to verify or manage the host.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.WebApplicationFirewallProvider"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Identity.RiskPrevention.WebApplicationFirewallVerifica
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.WebApplicationFirewallProvider>(requestInfo, global::Microsoft.Graph.Models.WebApplicationFirewallProvider.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get provider from identity
+        /// Reference to a provider resource associated with this verification model. Represents a WAF provider that can be used to verify or manage the host.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Identity.RiskPrevention.WebApplicationFirewallVerifica
             return new global::Microsoft.Graph.Identity.RiskPrevention.WebApplicationFirewallVerifications.Item.Provider.ProviderRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get provider from identity
+        /// Reference to a provider resource associated with this verification model. Represents a WAF provider that can be used to verify or manage the host.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ProviderRequestBuilderGetQueryParameters 

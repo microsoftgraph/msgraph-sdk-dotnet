@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class CloudFlareVerifiedDetailsModel : global::Microsoft.Graph.Models.WebApplicationFirewallVerifiedDetails, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The enabledCustomRules property</summary>
+        /// <summary>Collection of Cloudflare custom rules that are currently enabled for the zone or host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.CloudFlareRuleModel>? EnabledCustomRules
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("enabledCustomRules", value); }
         }
 #endif
-        /// <summary>The enabledRecommendedRulesets property</summary>
+        /// <summary>Collection of Cloudflare recommended rulesets that are enabled for the zone or host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.CloudFlareRulesetModel>? EnabledRecommendedRulesets
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("enabledRecommendedRulesets", value); }
         }
 #endif
-        /// <summary>The zoneId property</summary>
+        /// <summary>Cloudflare-assigned identifier for the DNS zone associated with the verified host (for example, the Cloudflare Zone ID). This ID is used to correlate verification details with the Cloudflare account and to perform configuration operations via the provider&apos;s API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ZoneId

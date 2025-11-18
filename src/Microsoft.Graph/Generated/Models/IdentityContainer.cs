@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("identityProviders", value); }
         }
 #endif
-        /// <summary>The riskPrevention property</summary>
+        /// <summary>Represents the entry point for fraud and risk prevention configurations in Microsoft Entra External ID, including third-party provider settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.RiskPreventionContainer? RiskPrevention

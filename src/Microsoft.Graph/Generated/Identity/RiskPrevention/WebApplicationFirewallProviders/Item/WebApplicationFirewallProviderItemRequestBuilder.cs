@@ -41,7 +41,8 @@ namespace Microsoft.Graph.Identity.RiskPrevention.WebApplicationFirewallProvider
         {
         }
         /// <summary>
-        /// Delete navigation property webApplicationFirewallProviders for identity
+        /// Delete a webApplicationFirewallProvider object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/riskpreventioncontainer-delete-webapplicationfirewallproviders?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -63,7 +64,8 @@ namespace Microsoft.Graph.Identity.RiskPrevention.WebApplicationFirewallProvider
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get webApplicationFirewallProviders from identity
+        /// Read the properties and relationships of webApplicationFirewallProvider object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/webapplicationfirewallprovider-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.WebApplicationFirewallProvider"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -86,7 +88,8 @@ namespace Microsoft.Graph.Identity.RiskPrevention.WebApplicationFirewallProvider
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.WebApplicationFirewallProvider>(requestInfo, global::Microsoft.Graph.Models.WebApplicationFirewallProvider.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property webApplicationFirewallProviders in identity
+        /// Update the properties of a webApplicationFirewallProvider object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/webapplicationfirewallprovider-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.WebApplicationFirewallProvider"/></returns>
         /// <param name="body">The request body</param>
@@ -111,7 +114,7 @@ namespace Microsoft.Graph.Identity.RiskPrevention.WebApplicationFirewallProvider
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.WebApplicationFirewallProvider>(requestInfo, global::Microsoft.Graph.Models.WebApplicationFirewallProvider.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property webApplicationFirewallProviders for identity
+        /// Delete a webApplicationFirewallProvider object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +133,7 @@ namespace Microsoft.Graph.Identity.RiskPrevention.WebApplicationFirewallProvider
             return requestInfo;
         }
         /// <summary>
-        /// Get webApplicationFirewallProviders from identity
+        /// Read the properties and relationships of webApplicationFirewallProvider object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +152,7 @@ namespace Microsoft.Graph.Identity.RiskPrevention.WebApplicationFirewallProvider
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property webApplicationFirewallProviders in identity
+        /// Update the properties of a webApplicationFirewallProvider object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -188,7 +191,7 @@ namespace Microsoft.Graph.Identity.RiskPrevention.WebApplicationFirewallProvider
         {
         }
         /// <summary>
-        /// Get webApplicationFirewallProviders from identity
+        /// Read the properties and relationships of webApplicationFirewallProvider object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WebApplicationFirewallProviderItemRequestBuilderGetQueryParameters 

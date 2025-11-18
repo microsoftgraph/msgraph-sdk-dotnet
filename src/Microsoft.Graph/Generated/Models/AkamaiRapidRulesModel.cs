@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The defaultAction property</summary>
+        /// <summary>The default action Akamai applies to traffic that matches Rapid Rules. Common values include deny, none or alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DefaultAction
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("defaultAction", value); }
         }
 #endif
-        /// <summary>The isEnabled property</summary>
+        /// <summary>Indicates whether Akamai Rapid Rules are enabled for the WAF integration. If true, Rapid Rules are active and applied to incoming traffic.</summary>
         public bool? IsEnabled
         {
             get { return BackingStore?.Get<bool?>("isEnabled"); }

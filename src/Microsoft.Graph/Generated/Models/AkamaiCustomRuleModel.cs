@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Models
     public partial class AkamaiCustomRuleModel : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The action property</summary>
+        /// <summary>The action Akamai applies when the rule matches traffic. Common values include deny, none or alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Action
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The name property</summary>
+        /// <summary>Friendly name for the rule, used in UIs or logs to help administrators identify the rule (for example, &apos;Block suspicious user agents&apos;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The ruleId property</summary>
+        /// <summary>Unique identifier assigned to the rule by Akamai or the integration. Use this identifier to reference, update, or remove the rule in API requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RuleId

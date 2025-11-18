@@ -20,5 +20,9 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         #pragma warning disable CS1591
         UnknownFutureValue,
         #pragma warning restore CS1591
+        [EnumMember(Value = "activatedWithScope")]
+        #pragma warning disable CS1591
+        ActivatedWithScope,
+        #pragma warning restore CS1591
     }
 }

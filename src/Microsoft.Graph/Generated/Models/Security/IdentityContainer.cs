@@ -28,6 +28,38 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("healthIssues", value); }
         }
 #endif
+        /// <summary>The sensorCandidateActivationConfiguration property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.Security.SensorCandidateActivationConfiguration? SensorCandidateActivationConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.SensorCandidateActivationConfiguration?>("sensorCandidateActivationConfiguration"); }
+            set { BackingStore?.Set("sensorCandidateActivationConfiguration", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.Security.SensorCandidateActivationConfiguration SensorCandidateActivationConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.SensorCandidateActivationConfiguration>("sensorCandidateActivationConfiguration"); }
+            set { BackingStore?.Set("sensorCandidateActivationConfiguration", value); }
+        }
+#endif
+        /// <summary>Represents Microsoft Defender for Identity sensors that are ready to be activated.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.Security.SensorCandidate>? SensorCandidates
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Security.SensorCandidate>?>("sensorCandidates"); }
+            set { BackingStore?.Set("sensorCandidates", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.Security.SensorCandidate> SensorCandidates
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Security.SensorCandidate>>("sensorCandidates"); }
+            set { BackingStore?.Set("sensorCandidates", value); }
+        }
+#endif
         /// <summary>Represents a customer&apos;s Microsoft Defender for Identity sensors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,6 +95,8 @@ namespace Microsoft.Graph.Models.Security
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "healthIssues", n => { HealthIssues = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.HealthIssue>(global::Microsoft.Graph.Models.Security.HealthIssue.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "sensorCandidateActivationConfiguration", n => { SensorCandidateActivationConfiguration = n.GetObjectValue<global::Microsoft.Graph.Models.Security.SensorCandidateActivationConfiguration>(global::Microsoft.Graph.Models.Security.SensorCandidateActivationConfiguration.CreateFromDiscriminatorValue); } },
+                { "sensorCandidates", n => { SensorCandidates = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.SensorCandidate>(global::Microsoft.Graph.Models.Security.SensorCandidate.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sensors", n => { Sensors = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.Sensor>(global::Microsoft.Graph.Models.Security.Sensor.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -75,6 +109,8 @@ namespace Microsoft.Graph.Models.Security
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.HealthIssue>("healthIssues", HealthIssues);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.SensorCandidateActivationConfiguration>("sensorCandidateActivationConfiguration", SensorCandidateActivationConfiguration);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.SensorCandidate>("sensorCandidates", SensorCandidates);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.Sensor>("sensors", Sensors);
         }
     }
