@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The name property</summary>
+        /// <summary>Friendly name for the ruleset, used in UIs and logs to help administrators identify the ruleset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The phaseName property</summary>
+        /// <summary>Name of the phase during which the ruleset is evaluated (for example, httprequestfirewallmanaged, httprequestfirewallcustom, or provider-specific phase names). This indicates when in the request/response lifecycle the rules apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PhaseName
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("phaseName", value); }
         }
 #endif
-        /// <summary>The rulesetId property</summary>
+        /// <summary>Unique identifier assigned to the ruleset by Cloudflare or the integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RulesetId

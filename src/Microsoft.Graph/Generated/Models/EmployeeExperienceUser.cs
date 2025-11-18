@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Models
     public partial class EmployeeExperienceUser : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Represents the collection of Viva Engage roles assigned to a user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.EngagementRole>? AssignedRoles
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.EngagementRole>?>("assignedRoles"); }
+            set { BackingStore?.Set("assignedRoles", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.EngagementRole> AssignedRoles
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.EngagementRole>>("assignedRoles"); }
+            set { BackingStore?.Set("assignedRoles", value); }
+        }
+#endif
         /// <summary>The learningCourseActivities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,6 +62,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "assignedRoles", n => { AssignedRoles = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.EngagementRole>(global::Microsoft.Graph.Models.EngagementRole.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "learningCourseActivities", n => { LearningCourseActivities = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.LearningCourseActivity>(global::Microsoft.Graph.Models.LearningCourseActivity.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -57,6 +74,7 @@ namespace Microsoft.Graph.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.EngagementRole>("assignedRoles", AssignedRoles);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.LearningCourseActivity>("learningCourseActivities", LearningCourseActivities);
         }
     }

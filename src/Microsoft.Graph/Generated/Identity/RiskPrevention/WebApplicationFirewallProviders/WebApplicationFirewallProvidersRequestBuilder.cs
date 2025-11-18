@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Identity.RiskPrevention.WebApplicationFirewallProvider
         {
         }
         /// <summary>
-        /// Get webApplicationFirewallProviders from identity
+        /// Get a list of the webApplicationFirewallProvider objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/riskpreventioncontainer-list-webapplicationfirewallproviders?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.WebApplicationFirewallProviderCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Identity.RiskPrevention.WebApplicationFirewallProvider
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.WebApplicationFirewallProviderCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.WebApplicationFirewallProviderCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to webApplicationFirewallProviders for identity
+        /// Create a new webApplicationFirewallProvider object. You can create one of the following subtypes that are derived from webApplicationFirewallProvider.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/riskpreventioncontainer-post-webapplicationfirewallproviders?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.WebApplicationFirewallProvider"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Identity.RiskPrevention.WebApplicationFirewallProvider
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.WebApplicationFirewallProvider>(requestInfo, global::Microsoft.Graph.Models.WebApplicationFirewallProvider.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get webApplicationFirewallProviders from identity
+        /// Get a list of the webApplicationFirewallProvider objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Identity.RiskPrevention.WebApplicationFirewallProvider
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to webApplicationFirewallProviders for identity
+        /// Create a new webApplicationFirewallProvider object. You can create one of the following subtypes that are derived from webApplicationFirewallProvider.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +154,7 @@ namespace Microsoft.Graph.Identity.RiskPrevention.WebApplicationFirewallProvider
             return new global::Microsoft.Graph.Identity.RiskPrevention.WebApplicationFirewallProviders.WebApplicationFirewallProvidersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get webApplicationFirewallProviders from identity
+        /// Get a list of the webApplicationFirewallProvider objects and their properties.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WebApplicationFirewallProvidersRequestBuilderGetQueryParameters 

@@ -21,6 +21,22 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>Represents entry point for fraud protection provider configurations for Microsoft Entra External ID tenants.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.FraudProtectionProvider>? FraudProtectionProviders
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.FraudProtectionProvider>?>("fraudProtectionProviders"); }
+            set { BackingStore?.Set("fraudProtectionProviders", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.FraudProtectionProvider> FraudProtectionProviders
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.FraudProtectionProvider>>("fraudProtectionProviders"); }
+            set { BackingStore?.Set("fraudProtectionProviders", value); }
+        }
+#endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,7 +53,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The webApplicationFirewallProviders property</summary>
+        /// <summary>Collection of WAF provider configurations registered in the External ID tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.WebApplicationFirewallProvider>? WebApplicationFirewallProviders
@@ -53,7 +69,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("webApplicationFirewallProviders", value); }
         }
 #endif
-        /// <summary>The webApplicationFirewallVerifications property</summary>
+        /// <summary>Collection of verification operations performed for domains or hosts with WAF providers registered in the External ID tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.WebApplicationFirewallVerificationModel>? WebApplicationFirewallVerifications
@@ -95,6 +111,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "fraudProtectionProviders", n => { FraudProtectionProviders = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.FraudProtectionProvider>(global::Microsoft.Graph.Models.FraudProtectionProvider.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "webApplicationFirewallProviders", n => { WebApplicationFirewallProviders = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.WebApplicationFirewallProvider>(global::Microsoft.Graph.Models.WebApplicationFirewallProvider.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "webApplicationFirewallVerifications", n => { WebApplicationFirewallVerifications = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.WebApplicationFirewallVerificationModel>(global::Microsoft.Graph.Models.WebApplicationFirewallVerificationModel.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -107,6 +124,7 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.FraudProtectionProvider>("fraudProtectionProviders", FraudProtectionProviders);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.WebApplicationFirewallProvider>("webApplicationFirewallProviders", WebApplicationFirewallProviders);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.WebApplicationFirewallVerificationModel>("webApplicationFirewallVerifications", WebApplicationFirewallVerifications);

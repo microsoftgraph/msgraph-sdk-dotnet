@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class AkamaiVerifiedDetailsModel : global::Microsoft.Graph.Models.WebApplicationFirewallVerifiedDetails, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The activeAttackGroups property</summary>
+        /// <summary>Collection of Akamai attack groups that are currently active for the zone or host, including the action applied to each group (for example, deny, none or alert).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.AkamaiAttackGroupActionModel>? ActiveAttackGroups
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("activeAttackGroups", value); }
         }
 #endif
-        /// <summary>The activeCustomRules property</summary>
+        /// <summary>Collection of Akamai custom rules that are currently enabled for the zone or host. Each entry includes rule metadata such as the rule identifier, friendly name, and the action taken when the rule matches traffic.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.AkamaiCustomRuleModel>? ActiveCustomRules
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("activeCustomRules", value); }
         }
 #endif
-        /// <summary>The rapidRules property</summary>
+        /// <summary>Configuration for Akamai Rapid Rules, including whether Rapid Rules are enabled and the default action applied to matching traffic.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.AkamaiRapidRulesModel? RapidRules

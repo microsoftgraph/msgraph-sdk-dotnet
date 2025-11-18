@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Models
     public partial class AkamaiAttackGroupActionModel : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The action property</summary>
+        /// <summary>The action Akamai applies to the attack group when a matching threat is detected. Common values include deny, none or alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Action
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The group property</summary>
+        /// <summary>The name or identifier of the attack group. This value categorizes the type of attack the action applies to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Group

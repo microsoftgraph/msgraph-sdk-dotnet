@@ -3,6 +3,8 @@
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models.Security;
 using Microsoft.Graph.Security.Identities.HealthIssues;
+using Microsoft.Graph.Security.Identities.SensorCandidateActivationConfiguration;
+using Microsoft.Graph.Security.Identities.SensorCandidates;
 using Microsoft.Graph.Security.Identities.Sensors;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -24,6 +26,16 @@ namespace Microsoft.Graph.Security.Identities
         public global::Microsoft.Graph.Security.Identities.HealthIssues.HealthIssuesRequestBuilder HealthIssues
         {
             get => new global::Microsoft.Graph.Security.Identities.HealthIssues.HealthIssuesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the sensorCandidateActivationConfiguration property of the microsoft.graph.security.identityContainer entity.</summary>
+        public global::Microsoft.Graph.Security.Identities.SensorCandidateActivationConfiguration.SensorCandidateActivationConfigurationRequestBuilder SensorCandidateActivationConfiguration
+        {
+            get => new global::Microsoft.Graph.Security.Identities.SensorCandidateActivationConfiguration.SensorCandidateActivationConfigurationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the sensorCandidates property of the microsoft.graph.security.identityContainer entity.</summary>
+        public global::Microsoft.Graph.Security.Identities.SensorCandidates.SensorCandidatesRequestBuilder SensorCandidates
+        {
+            get => new global::Microsoft.Graph.Security.Identities.SensorCandidates.SensorCandidatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sensors property of the microsoft.graph.security.identityContainer entity.</summary>
         public global::Microsoft.Graph.Security.Identities.Sensors.SensorsRequestBuilder Sensors

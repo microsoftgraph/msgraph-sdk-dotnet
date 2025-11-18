@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class CloudFlareWebApplicationFirewallProvider : global::Microsoft.Graph.Models.WebApplicationFirewallProvider, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The apiToken property</summary>
+        /// <summary>Cloudflare API token or credential used by Microsoft services to authenticate to the Cloudflare account. Contact your Cloudflare Customer Success Manager for assistance with your apitoken.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApiToken
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("apiToken", value); }
         }
 #endif
-        /// <summary>The zoneId property</summary>
+        /// <summary>Default Cloudflare Zone ID associated with this provider configuration. This ID identifies the DNS zone in Cloudflare that is commonly used for verification and configuration operations for the provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ZoneId

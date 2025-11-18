@@ -102,6 +102,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>A collection of roles in Viva Engage.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.EngagementRole>? Roles
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.EngagementRole>?>("roles"); }
+            set { BackingStore?.Set("roles", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.EngagementRole> Roles
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.EngagementRole>>("roles"); }
+            set { BackingStore?.Set("roles", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Models.EmployeeExperience"/> and sets the default values.
         /// </summary>
@@ -133,6 +149,7 @@ namespace Microsoft.Graph.Models
                 { "learningCourseActivities", n => { LearningCourseActivities = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.LearningCourseActivity>(global::Microsoft.Graph.Models.LearningCourseActivity.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "learningProviders", n => { LearningProviders = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.LearningProvider>(global::Microsoft.Graph.Models.LearningProvider.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "roles", n => { Roles = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.EngagementRole>(global::Microsoft.Graph.Models.EngagementRole.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -147,6 +164,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.LearningCourseActivity>("learningCourseActivities", LearningCourseActivities);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.LearningProvider>("learningProviders", LearningProviders);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.EngagementRole>("roles", Roles);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

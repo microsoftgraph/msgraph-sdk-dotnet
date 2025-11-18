@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class WebApplicationFirewallVerificationModel : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The provider property</summary>
+        /// <summary>Reference to a provider resource associated with this verification model. Represents a WAF provider that can be used to verify or manage the host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.WebApplicationFirewallProvider? Provider
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.WebApplicationFirewallProviderType?>("providerType"); }
             set { BackingStore?.Set("providerType", value); }
         }
-        /// <summary>The verificationResult property</summary>
+        /// <summary>An object describing the outcome of the verification operation, including status, errors or warnings</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.WebApplicationFirewallVerificationResult? VerificationResult
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("verificationResult", value); }
         }
 #endif
-        /// <summary>The verifiedDetails property</summary>
+        /// <summary>Details of DNS configuration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.WebApplicationFirewallVerifiedDetails? VerifiedDetails
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("verifiedDetails", value); }
         }
 #endif
-        /// <summary>The verifiedHost property</summary>
+        /// <summary>The host (domain or subdomain) that was verified as part of this verification operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VerifiedHost

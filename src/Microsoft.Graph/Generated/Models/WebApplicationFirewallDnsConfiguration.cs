@@ -21,19 +21,19 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The isDomainVerified property</summary>
+        /// <summary>Indicates whether the domain owning this DNS record has been verified by the WAF provider.</summary>
         public bool? IsDomainVerified
         {
             get { return BackingStore?.Get<bool?>("isDomainVerified"); }
             set { BackingStore?.Set("isDomainVerified", value); }
         }
-        /// <summary>The isProxied property</summary>
+        /// <summary>Indicates whether traffic for this DNS record is proxied through the WAF provider&apos;s network (for example, using a CDN or reverse proxy).</summary>
         public bool? IsProxied
         {
             get { return BackingStore?.Get<bool?>("isProxied"); }
             set { BackingStore?.Set("isProxied", value); }
         }
-        /// <summary>The name property</summary>
+        /// <summary>The DNS record name (for example, www.contoso.com or contoso.com). This is the host or zone name to which the configuration applies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.WebApplicationFirewallDnsRecordType?>("recordType"); }
             set { BackingStore?.Set("recordType", value); }
         }
-        /// <summary>The value property</summary>
+        /// <summary>The value of the DNS record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value

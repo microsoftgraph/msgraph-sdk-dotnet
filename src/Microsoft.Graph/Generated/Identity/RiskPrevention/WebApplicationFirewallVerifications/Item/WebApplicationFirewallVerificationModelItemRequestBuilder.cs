@@ -41,7 +41,8 @@ namespace Microsoft.Graph.Identity.RiskPrevention.WebApplicationFirewallVerifica
         {
         }
         /// <summary>
-        /// Delete navigation property webApplicationFirewallVerifications for identity
+        /// Delete a webApplicationFirewallVerificationModel object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/riskpreventioncontainer-delete-webapplicationfirewallverifications?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -63,7 +64,8 @@ namespace Microsoft.Graph.Identity.RiskPrevention.WebApplicationFirewallVerifica
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get webApplicationFirewallVerifications from identity
+        /// Read the properties and relationships of webApplicationFirewallVerificationModel object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/webapplicationfirewallverificationmodel-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.WebApplicationFirewallVerificationModel"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -111,7 +113,7 @@ namespace Microsoft.Graph.Identity.RiskPrevention.WebApplicationFirewallVerifica
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.WebApplicationFirewallVerificationModel>(requestInfo, global::Microsoft.Graph.Models.WebApplicationFirewallVerificationModel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property webApplicationFirewallVerifications for identity
+        /// Delete a webApplicationFirewallVerificationModel object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +132,7 @@ namespace Microsoft.Graph.Identity.RiskPrevention.WebApplicationFirewallVerifica
             return requestInfo;
         }
         /// <summary>
-        /// Get webApplicationFirewallVerifications from identity
+        /// Read the properties and relationships of webApplicationFirewallVerificationModel object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -188,7 +190,7 @@ namespace Microsoft.Graph.Identity.RiskPrevention.WebApplicationFirewallVerifica
         {
         }
         /// <summary>
-        /// Get webApplicationFirewallVerifications from identity
+        /// Read the properties and relationships of webApplicationFirewallVerificationModel object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WebApplicationFirewallVerificationModelItemRequestBuilderGetQueryParameters 
