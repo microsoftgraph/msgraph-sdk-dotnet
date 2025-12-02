@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Models.ExternalConnectors
             get { return BackingStore?.Get<bool?>("isSearchable"); }
             set { BackingStore?.Set("isSearchable", value); }
         }
-        /// <summary>Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (for example, better relevance). Optional.The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, iconUrl. Use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: iconUrl.</summary>
+        /// <summary>Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (for example, better relevance). Optional.The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, iconUrl. Use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: iconUrl.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.ExternalConnectors.Label?>? Labels

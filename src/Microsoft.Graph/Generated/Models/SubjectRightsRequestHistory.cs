@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The stage when the entity was changed. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue, approval. Use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: approval.</summary>
+        /// <summary>The stage when the entity was changed. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue, approval. Use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: approval.</summary>
         public global::Microsoft.Graph.Models.SubjectRightsRequestStage? Stage
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.SubjectRightsRequestStage?>("stage"); }

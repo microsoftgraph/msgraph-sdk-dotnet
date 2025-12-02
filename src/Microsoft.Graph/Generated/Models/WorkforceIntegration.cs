@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Support to view eligibility-filtered results. Possible values are: none, swapRequest, offerShiftRequest, unknownFutureValue, timeOffReason. Use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: timeOffReason.</summary>
+        /// <summary>Support to view eligibility-filtered results. Possible values are: none, swapRequest, offerShiftRequest, unknownFutureValue, timeOffReason. Use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: timeOffReason.</summary>
         public global::Microsoft.Graph.Models.EligibilityFilteringEnabledEntities? EligibilityFilteringEnabledEntities
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.EligibilityFilteringEnabledEntities?>("eligibilityFilteringEnabledEntities"); }

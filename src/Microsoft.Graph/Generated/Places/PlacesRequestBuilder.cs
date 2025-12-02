@@ -3,8 +3,13 @@
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Places.Count;
+using Microsoft.Graph.Places.GraphBuilding;
+using Microsoft.Graph.Places.GraphDesk;
+using Microsoft.Graph.Places.GraphFloor;
 using Microsoft.Graph.Places.GraphRoom;
 using Microsoft.Graph.Places.GraphRoomList;
+using Microsoft.Graph.Places.GraphSection;
+using Microsoft.Graph.Places.GraphWorkspace;
 using Microsoft.Graph.Places.Item;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -27,6 +32,21 @@ namespace Microsoft.Graph.Places
         {
             get => new global::Microsoft.Graph.Places.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Casts the previous resource to building.</summary>
+        public global::Microsoft.Graph.Places.GraphBuilding.GraphBuildingRequestBuilder GraphBuilding
+        {
+            get => new global::Microsoft.Graph.Places.GraphBuilding.GraphBuildingRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to desk.</summary>
+        public global::Microsoft.Graph.Places.GraphDesk.GraphDeskRequestBuilder GraphDesk
+        {
+            get => new global::Microsoft.Graph.Places.GraphDesk.GraphDeskRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to floor.</summary>
+        public global::Microsoft.Graph.Places.GraphFloor.GraphFloorRequestBuilder GraphFloor
+        {
+            get => new global::Microsoft.Graph.Places.GraphFloor.GraphFloorRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Casts the previous resource to room.</summary>
         public global::Microsoft.Graph.Places.GraphRoom.GraphRoomRequestBuilder GraphRoom
         {
@@ -36,6 +56,16 @@ namespace Microsoft.Graph.Places
         public global::Microsoft.Graph.Places.GraphRoomList.GraphRoomListRequestBuilder GraphRoomList
         {
             get => new global::Microsoft.Graph.Places.GraphRoomList.GraphRoomListRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to section.</summary>
+        public global::Microsoft.Graph.Places.GraphSection.GraphSectionRequestBuilder GraphSection
+        {
+            get => new global::Microsoft.Graph.Places.GraphSection.GraphSectionRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to workspace.</summary>
+        public global::Microsoft.Graph.Places.GraphWorkspace.GraphWorkspaceRequestBuilder GraphWorkspace
+        {
+            get => new global::Microsoft.Graph.Places.GraphWorkspace.GraphWorkspaceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of place entities.</summary>
         /// <param name="position">The unique identifier of place</param>

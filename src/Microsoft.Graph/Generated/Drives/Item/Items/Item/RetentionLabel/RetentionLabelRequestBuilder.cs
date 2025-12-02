@@ -58,7 +58,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.RetentionLabel
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Information about retention label and settings enforced on the driveItem. Read-write.
+        /// Get metadata information for a retention label applied on a driveItem. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-getretentionlabel?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ItemRetentionLabel"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -126,7 +127,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.RetentionLabel
             return requestInfo;
         }
         /// <summary>
-        /// Information about retention label and settings enforced on the driveItem. Read-write.
+        /// Get metadata information for a retention label applied on a driveItem. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -184,7 +185,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.RetentionLabel
         {
         }
         /// <summary>
-        /// Information about retention label and settings enforced on the driveItem. Read-write.
+        /// Get metadata information for a retention label applied on a driveItem. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RetentionLabelRequestBuilderGetQueryParameters 

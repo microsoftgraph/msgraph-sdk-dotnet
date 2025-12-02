@@ -110,6 +110,22 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.SiteLockState?>("lockState"); }
             set { BackingStore?.Set("lockState", value); }
         }
+        /// <summary>The collection of sharePointMigrationJob objects local to the container. Read-write.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.SharePointMigrationJob>? MigrationJobs
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.SharePointMigrationJob>?>("migrationJobs"); }
+            set { BackingStore?.Set("migrationJobs", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.SharePointMigrationJob> MigrationJobs
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.SharePointMigrationJob>>("migrationJobs"); }
+            set { BackingStore?.Set("migrationJobs", value); }
+        }
+#endif
         /// <summary>The set of permissions for users in the fileStorageContainer. Permission for each user is set by the roles property. The possible values are: reader, writer, manager, and owner. Read-write.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -206,6 +222,7 @@ namespace Microsoft.Graph.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "drive", n => { Drive = n.GetObjectValue<global::Microsoft.Graph.Models.Drive>(global::Microsoft.Graph.Models.Drive.CreateFromDiscriminatorValue); } },
                 { "lockState", n => { LockState = n.GetEnumValue<global::Microsoft.Graph.Models.SiteLockState>(); } },
+                { "migrationJobs", n => { MigrationJobs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.SharePointMigrationJob>(global::Microsoft.Graph.Models.SharePointMigrationJob.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "permissions", n => { Permissions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Permission>(global::Microsoft.Graph.Models.Permission.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "recycleBin", n => { RecycleBin = n.GetObjectValue<global::Microsoft.Graph.Models.RecycleBin>(global::Microsoft.Graph.Models.RecycleBin.CreateFromDiscriminatorValue); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Models.FileStorageContainerSettings>(global::Microsoft.Graph.Models.FileStorageContainerSettings.CreateFromDiscriminatorValue); } },
@@ -229,6 +246,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Drive>("drive", Drive);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.SiteLockState>("lockState", LockState);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.SharePointMigrationJob>("migrationJobs", MigrationJobs);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Permission>("permissions", Permissions);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.RecycleBin>("recycleBin", RecycleBin);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.FileStorageContainerSettings>("settings", Settings);

@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("rooms", value); }
         }
 #endif
+        /// <summary>The workspaces property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.Workspace>? Workspaces
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Workspace>?>("workspaces"); }
+            set { BackingStore?.Set("workspaces", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.Workspace> Workspaces
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Workspace>>("workspaces"); }
+            set { BackingStore?.Set("workspaces", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Models.RoomList"/> and sets the default values.
         /// </summary>
@@ -71,6 +87,7 @@ namespace Microsoft.Graph.Models
             {
                 { "emailAddress", n => { EmailAddress = n.GetStringValue(); } },
                 { "rooms", n => { Rooms = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Room>(global::Microsoft.Graph.Models.Room.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "workspaces", n => { Workspaces = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Workspace>(global::Microsoft.Graph.Models.Workspace.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -83,6 +100,7 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteStringValue("emailAddress", EmailAddress);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Room>("rooms", Rooms);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Workspace>("workspaces", Workspaces);
         }
     }
 }

@@ -6,8 +6,10 @@ using Microsoft.Graph.Storage.FileStorage.Containers.Item.Activate;
 using Microsoft.Graph.Storage.FileStorage.Containers.Item.Columns;
 using Microsoft.Graph.Storage.FileStorage.Containers.Item.Drive;
 using Microsoft.Graph.Storage.FileStorage.Containers.Item.Lock;
+using Microsoft.Graph.Storage.FileStorage.Containers.Item.MigrationJobs;
 using Microsoft.Graph.Storage.FileStorage.Containers.Item.PermanentDelete;
 using Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions;
+using Microsoft.Graph.Storage.FileStorage.Containers.Item.ProvisionMigrationContainers;
 using Microsoft.Graph.Storage.FileStorage.Containers.Item.RecycleBin;
 using Microsoft.Graph.Storage.FileStorage.Containers.Item.Restore;
 using Microsoft.Graph.Storage.FileStorage.Containers.Item.Unlock;
@@ -47,6 +49,11 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item
         {
             get => new global::Microsoft.Graph.Storage.FileStorage.Containers.Item.Lock.LockRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the migrationJobs property of the microsoft.graph.fileStorageContainer entity.</summary>
+        public global::Microsoft.Graph.Storage.FileStorage.Containers.Item.MigrationJobs.MigrationJobsRequestBuilder MigrationJobs
+        {
+            get => new global::Microsoft.Graph.Storage.FileStorage.Containers.Item.MigrationJobs.MigrationJobsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the permanentDelete method.</summary>
         public global::Microsoft.Graph.Storage.FileStorage.Containers.Item.PermanentDelete.PermanentDeleteRequestBuilder PermanentDelete
         {
@@ -56,6 +63,11 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item
         public global::Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.PermissionsRequestBuilder Permissions
         {
             get => new global::Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.PermissionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the provisionMigrationContainers method.</summary>
+        public global::Microsoft.Graph.Storage.FileStorage.Containers.Item.ProvisionMigrationContainers.ProvisionMigrationContainersRequestBuilder ProvisionMigrationContainers
+        {
+            get => new global::Microsoft.Graph.Storage.FileStorage.Containers.Item.ProvisionMigrationContainers.ProvisionMigrationContainersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the recycleBin property of the microsoft.graph.fileStorageContainer entity.</summary>
         public global::Microsoft.Graph.Storage.FileStorage.Containers.Item.RecycleBin.RecycleBinRequestBuilder RecycleBin

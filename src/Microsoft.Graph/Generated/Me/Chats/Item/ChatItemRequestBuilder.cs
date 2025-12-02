@@ -9,6 +9,7 @@ using Microsoft.Graph.Me.Chats.Item.Members;
 using Microsoft.Graph.Me.Chats.Item.Messages;
 using Microsoft.Graph.Me.Chats.Item.PermissionGrants;
 using Microsoft.Graph.Me.Chats.Item.PinnedMessages;
+using Microsoft.Graph.Me.Chats.Item.RemoveAllAccessForUser;
 using Microsoft.Graph.Me.Chats.Item.SendActivityNotification;
 using Microsoft.Graph.Me.Chats.Item.Tabs;
 using Microsoft.Graph.Me.Chats.Item.UnhideForUser;
@@ -74,6 +75,11 @@ namespace Microsoft.Graph.Me.Chats.Item
         public global::Microsoft.Graph.Me.Chats.Item.PinnedMessages.PinnedMessagesRequestBuilder PinnedMessages
         {
             get => new global::Microsoft.Graph.Me.Chats.Item.PinnedMessages.PinnedMessagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the removeAllAccessForUser method.</summary>
+        public global::Microsoft.Graph.Me.Chats.Item.RemoveAllAccessForUser.RemoveAllAccessForUserRequestBuilder RemoveAllAccessForUser
+        {
+            get => new global::Microsoft.Graph.Me.Chats.Item.RemoveAllAccessForUser.RemoveAllAccessForUserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sendActivityNotification method.</summary>
         public global::Microsoft.Graph.Me.Chats.Item.SendActivityNotification.SendActivityNotificationRequestBuilder SendActivityNotification

@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Details of the detected risk. Possible values are: none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue. For more information about each value, see Risk types and detection.</summary>
+        /// <summary>For more information, see riskDetail.</summary>
         public global::Microsoft.Graph.Models.RiskDetail? Detail
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.RiskDetail?>("detail"); }

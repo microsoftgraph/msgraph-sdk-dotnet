@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("restoreSessionArtifactCount", value); }
         }
 #endif
-        /// <summary>Status of the restore session. The value is an aggregated status of the restored artifacts. The possible values are: draft, activating, active, completedWithError, completed, unknownFutureValue, failed. Use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: failed.</summary>
+        /// <summary>Status of the restore session. The value is an aggregated status of the restored artifacts. The possible values are: draft, activating, active, completedWithError, completed, unknownFutureValue, failed. Use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: failed.</summary>
         public global::Microsoft.Graph.Models.RestoreSessionStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.RestoreSessionStatus?>("status"); }
