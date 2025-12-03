@@ -3,8 +3,14 @@
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Places.Item.CheckIns;
+using Microsoft.Graph.Places.Item.Descendants;
+using Microsoft.Graph.Places.Item.GraphBuilding;
+using Microsoft.Graph.Places.Item.GraphDesk;
+using Microsoft.Graph.Places.Item.GraphFloor;
 using Microsoft.Graph.Places.Item.GraphRoom;
 using Microsoft.Graph.Places.Item.GraphRoomList;
+using Microsoft.Graph.Places.Item.GraphSection;
+using Microsoft.Graph.Places.Item.GraphWorkspace;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -26,6 +32,26 @@ namespace Microsoft.Graph.Places.Item
         {
             get => new global::Microsoft.Graph.Places.Item.CheckIns.CheckInsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the descendants method.</summary>
+        public global::Microsoft.Graph.Places.Item.Descendants.DescendantsRequestBuilder Descendants
+        {
+            get => new global::Microsoft.Graph.Places.Item.Descendants.DescendantsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to building.</summary>
+        public global::Microsoft.Graph.Places.Item.GraphBuilding.GraphBuildingRequestBuilder GraphBuilding
+        {
+            get => new global::Microsoft.Graph.Places.Item.GraphBuilding.GraphBuildingRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to desk.</summary>
+        public global::Microsoft.Graph.Places.Item.GraphDesk.GraphDeskRequestBuilder GraphDesk
+        {
+            get => new global::Microsoft.Graph.Places.Item.GraphDesk.GraphDeskRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to floor.</summary>
+        public global::Microsoft.Graph.Places.Item.GraphFloor.GraphFloorRequestBuilder GraphFloor
+        {
+            get => new global::Microsoft.Graph.Places.Item.GraphFloor.GraphFloorRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Casts the previous resource to room.</summary>
         public global::Microsoft.Graph.Places.Item.GraphRoom.GraphRoomRequestBuilder GraphRoom
         {
@@ -35,6 +61,16 @@ namespace Microsoft.Graph.Places.Item
         public global::Microsoft.Graph.Places.Item.GraphRoomList.GraphRoomListRequestBuilder GraphRoomList
         {
             get => new global::Microsoft.Graph.Places.Item.GraphRoomList.GraphRoomListRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to section.</summary>
+        public global::Microsoft.Graph.Places.Item.GraphSection.GraphSectionRequestBuilder GraphSection
+        {
+            get => new global::Microsoft.Graph.Places.Item.GraphSection.GraphSectionRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Casts the previous resource to workspace.</summary>
+        public global::Microsoft.Graph.Places.Item.GraphWorkspace.GraphWorkspaceRequestBuilder GraphWorkspace
+        {
+            get => new global::Microsoft.Graph.Places.Item.GraphWorkspace.GraphWorkspaceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Places.Item.PlaceItemRequestBuilder"/> and sets the default values.

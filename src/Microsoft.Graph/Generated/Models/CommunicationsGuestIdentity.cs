@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Models
     public partial class CommunicationsGuestIdentity : global::Microsoft.Graph.Models.Identity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The email of the guest user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Email
+        {
+            get { return BackingStore?.Get<string?>("email"); }
+            set { BackingStore?.Set("email", value); }
+        }
+#nullable restore
+#else
+        public string Email
+        {
+            get { return BackingStore?.Get<string>("email"); }
+            set { BackingStore?.Set("email", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Models.CommunicationsGuestIdentity"/> and sets the default values.
         /// </summary>
@@ -37,6 +53,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "email", n => { Email = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -47,6 +64,7 @@ namespace Microsoft.Graph.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteStringValue("email", Email);
         }
     }
 }

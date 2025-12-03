@@ -3,6 +3,7 @@
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models.Security;
 using Microsoft.Graph.Security.Identities.HealthIssues;
+using Microsoft.Graph.Security.Identities.IdentityAccounts;
 using Microsoft.Graph.Security.Identities.SensorCandidateActivationConfiguration;
 using Microsoft.Graph.Security.Identities.SensorCandidates;
 using Microsoft.Graph.Security.Identities.Sensors;
@@ -26,6 +27,11 @@ namespace Microsoft.Graph.Security.Identities
         public global::Microsoft.Graph.Security.Identities.HealthIssues.HealthIssuesRequestBuilder HealthIssues
         {
             get => new global::Microsoft.Graph.Security.Identities.HealthIssues.HealthIssuesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the identityAccounts property of the microsoft.graph.security.identityContainer entity.</summary>
+        public global::Microsoft.Graph.Security.Identities.IdentityAccounts.IdentityAccountsRequestBuilder IdentityAccounts
+        {
+            get => new global::Microsoft.Graph.Security.Identities.IdentityAccounts.IdentityAccountsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sensorCandidateActivationConfiguration property of the microsoft.graph.security.identityContainer entity.</summary>
         public global::Microsoft.Graph.Security.Identities.SensorCandidateActivationConfiguration.SensorCandidateActivationConfigurationRequestBuilder SensorCandidateActivationConfiguration

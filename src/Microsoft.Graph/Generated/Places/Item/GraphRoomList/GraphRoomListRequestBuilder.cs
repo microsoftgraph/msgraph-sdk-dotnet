@@ -4,6 +4,7 @@ using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Places.Item.GraphRoomList.CheckIns;
 using Microsoft.Graph.Places.Item.GraphRoomList.Rooms;
+using Microsoft.Graph.Places.Item.GraphRoomList.Workspaces;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -29,6 +30,11 @@ namespace Microsoft.Graph.Places.Item.GraphRoomList
         public global::Microsoft.Graph.Places.Item.GraphRoomList.Rooms.RoomsRequestBuilder Rooms
         {
             get => new global::Microsoft.Graph.Places.Item.GraphRoomList.Rooms.RoomsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the workspaces property of the microsoft.graph.roomList entity.</summary>
+        public global::Microsoft.Graph.Places.Item.GraphRoomList.Workspaces.WorkspacesRequestBuilder Workspaces
+        {
+            get => new global::Microsoft.Graph.Places.Item.GraphRoomList.Workspaces.WorkspacesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Places.Item.GraphRoomList.GraphRoomListRequestBuilder"/> and sets the default values.

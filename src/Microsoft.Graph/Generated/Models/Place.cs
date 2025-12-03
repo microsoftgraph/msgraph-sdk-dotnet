@@ -76,6 +76,44 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("geoCoordinates", value); }
         }
 #endif
+        /// <summary>The isWheelChairAccessible property</summary>
+        public bool? IsWheelChairAccessible
+        {
+            get { return BackingStore?.Get<bool?>("isWheelChairAccessible"); }
+            set { BackingStore?.Set("isWheelChairAccessible", value); }
+        }
+        /// <summary>The label property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Label
+        {
+            get { return BackingStore?.Get<string?>("label"); }
+            set { BackingStore?.Set("label", value); }
+        }
+#nullable restore
+#else
+        public string Label
+        {
+            get { return BackingStore?.Get<string>("label"); }
+            set { BackingStore?.Set("label", value); }
+        }
+#endif
+        /// <summary>The parentId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ParentId
+        {
+            get { return BackingStore?.Get<string?>("parentId"); }
+            set { BackingStore?.Set("parentId", value); }
+        }
+#nullable restore
+#else
+        public string ParentId
+        {
+            get { return BackingStore?.Get<string>("parentId"); }
+            set { BackingStore?.Set("parentId", value); }
+        }
+#endif
         /// <summary>The phone number of the place.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -92,6 +130,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("phone", value); }
         }
 #endif
+        /// <summary>The tags property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Tags
+        {
+            get { return BackingStore?.Get<List<string>?>("tags"); }
+            set { BackingStore?.Set("tags", value); }
+        }
+#nullable restore
+#else
+        public List<string> Tags
+        {
+            get { return BackingStore?.Get<List<string>>("tags"); }
+            set { BackingStore?.Set("tags", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -103,8 +157,13 @@ namespace Microsoft.Graph.Models
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.building" => new global::Microsoft.Graph.Models.Building(),
+                "#microsoft.graph.desk" => new global::Microsoft.Graph.Models.Desk(),
+                "#microsoft.graph.floor" => new global::Microsoft.Graph.Models.Floor(),
                 "#microsoft.graph.room" => new global::Microsoft.Graph.Models.Room(),
                 "#microsoft.graph.roomList" => new global::Microsoft.Graph.Models.RoomList(),
+                "#microsoft.graph.section" => new global::Microsoft.Graph.Models.Section(),
+                "#microsoft.graph.workspace" => new global::Microsoft.Graph.Models.Workspace(),
                 _ => new global::Microsoft.Graph.Models.Place(),
             };
         }
@@ -120,7 +179,11 @@ namespace Microsoft.Graph.Models
                 { "checkIns", n => { CheckIns = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.CheckInClaim>(global::Microsoft.Graph.Models.CheckInClaim.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "geoCoordinates", n => { GeoCoordinates = n.GetObjectValue<global::Microsoft.Graph.Models.OutlookGeoCoordinates>(global::Microsoft.Graph.Models.OutlookGeoCoordinates.CreateFromDiscriminatorValue); } },
+                { "isWheelChairAccessible", n => { IsWheelChairAccessible = n.GetBoolValue(); } },
+                { "label", n => { Label = n.GetStringValue(); } },
+                { "parentId", n => { ParentId = n.GetStringValue(); } },
                 { "phone", n => { Phone = n.GetStringValue(); } },
+                { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -135,7 +198,11 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.CheckInClaim>("checkIns", CheckIns);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.OutlookGeoCoordinates>("geoCoordinates", GeoCoordinates);
+            writer.WriteBoolValue("isWheelChairAccessible", IsWheelChairAccessible);
+            writer.WriteStringValue("label", Label);
+            writer.WriteStringValue("parentId", ParentId);
             writer.WriteStringValue("phone", Phone);
+            writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
         }
     }
 }

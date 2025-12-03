@@ -110,28 +110,6 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<int?>("floorNumber"); }
             set { BackingStore?.Set("floorNumber", value); }
         }
-        /// <summary>Specifies whether the room is wheelchair accessible.</summary>
-        public bool? IsWheelChairAccessible
-        {
-            get { return BackingStore?.Get<bool?>("isWheelChairAccessible"); }
-            set { BackingStore?.Set("isWheelChairAccessible", value); }
-        }
-        /// <summary>Specifies a descriptive label for the room, for example, a number or name.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Label
-        {
-            get { return BackingStore?.Get<string?>("label"); }
-            set { BackingStore?.Set("label", value); }
-        }
-#nullable restore
-#else
-        public string Label
-        {
-            get { return BackingStore?.Get<string>("label"); }
-            set { BackingStore?.Set("label", value); }
-        }
-#endif
         /// <summary>Specifies a nickname for the room, for example, &apos;conf room&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -146,22 +124,6 @@ namespace Microsoft.Graph.Models
         {
             get { return BackingStore?.Get<string>("nickname"); }
             set { BackingStore?.Set("nickname", value); }
-        }
-#endif
-        /// <summary>Specifies other features of the room, for example, details like the type of view or furniture type.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? Tags
-        {
-            get { return BackingStore?.Get<List<string>?>("tags"); }
-            set { BackingStore?.Set("tags", value); }
-        }
-#nullable restore
-#else
-        public List<string> Tags
-        {
-            get { return BackingStore?.Get<List<string>>("tags"); }
-            set { BackingStore?.Set("tags", value); }
         }
 #endif
         /// <summary>Specifies the name of the video device in the room.</summary>
@@ -213,10 +175,7 @@ namespace Microsoft.Graph.Models
                 { "emailAddress", n => { EmailAddress = n.GetStringValue(); } },
                 { "floorLabel", n => { FloorLabel = n.GetStringValue(); } },
                 { "floorNumber", n => { FloorNumber = n.GetIntValue(); } },
-                { "isWheelChairAccessible", n => { IsWheelChairAccessible = n.GetBoolValue(); } },
-                { "label", n => { Label = n.GetStringValue(); } },
                 { "nickname", n => { Nickname = n.GetStringValue(); } },
-                { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "videoDeviceName", n => { VideoDeviceName = n.GetStringValue(); } },
             };
         }
@@ -236,10 +195,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("emailAddress", EmailAddress);
             writer.WriteStringValue("floorLabel", FloorLabel);
             writer.WriteIntValue("floorNumber", FloorNumber);
-            writer.WriteBoolValue("isWheelChairAccessible", IsWheelChairAccessible);
-            writer.WriteStringValue("label", Label);
             writer.WriteStringValue("nickname", Nickname);
-            writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteStringValue("videoDeviceName", VideoDeviceName);
         }
     }
