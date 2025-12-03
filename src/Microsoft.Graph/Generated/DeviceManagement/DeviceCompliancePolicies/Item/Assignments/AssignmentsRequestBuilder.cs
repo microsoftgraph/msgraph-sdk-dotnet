@@ -54,8 +54,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Assignm
         {
         }
         /// <summary>
-        /// List properties and relationships of the deviceCompliancePolicyAssignment objects.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicyassignment-list?view=graph-rest-1.0" />
+        /// The collection of assignments for this compliance policy.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DeviceCompliancePolicyAssignmentCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,8 +77,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Assignm
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DeviceCompliancePolicyAssignmentCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.DeviceCompliancePolicyAssignmentCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new deviceCompliancePolicyAssignment object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicyassignment-create?view=graph-rest-1.0" />
+        /// Create new navigation property to assignments for deviceManagement
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DeviceCompliancePolicyAssignment"/></returns>
         /// <param name="body">The request body</param>
@@ -104,7 +102,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Assignm
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DeviceCompliancePolicyAssignment>(requestInfo, global::Microsoft.Graph.Models.DeviceCompliancePolicyAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List properties and relationships of the deviceCompliancePolicyAssignment objects.
+        /// The collection of assignments for this compliance policy.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +121,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Assignm
             return requestInfo;
         }
         /// <summary>
-        /// Create a new deviceCompliancePolicyAssignment object.
+        /// Create new navigation property to assignments for deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -154,7 +152,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Assignm
             return new global::Microsoft.Graph.DeviceManagement.DeviceCompliancePolicies.Item.Assignments.AssignmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List properties and relationships of the deviceCompliancePolicyAssignment objects.
+        /// The collection of assignments for this compliance policy.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AssignmentsRequestBuilderGetQueryParameters 

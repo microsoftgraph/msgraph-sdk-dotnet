@@ -32,5 +32,17 @@ namespace Microsoft.Graph.Models
         #pragma warning disable CS1591
         UnknownFutureValue,
         #pragma warning restore CS1591
+        [EnumMember(Value = "offboardRequested")]
+        #pragma warning disable CS1591
+        OffboardRequested,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "offboarded")]
+        #pragma warning disable CS1591
+        Offboarded,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cancelOffboardRequested")]
+        #pragma warning disable CS1591
+        CancelOffboardRequested,
+        #pragma warning restore CS1591
     }
 }

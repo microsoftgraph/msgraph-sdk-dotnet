@@ -28,6 +28,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("address", value); }
         }
 #endif
+        /// <summary>The checkIns property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.CheckInClaim>? CheckIns
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.CheckInClaim>?>("checkIns"); }
+            set { BackingStore?.Set("checkIns", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.CheckInClaim> CheckIns
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.CheckInClaim>>("checkIns"); }
+            set { BackingStore?.Set("checkIns", value); }
+        }
+#endif
         /// <summary>The name associated with the place.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -101,6 +117,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "address", n => { Address = n.GetObjectValue<global::Microsoft.Graph.Models.PhysicalAddress>(global::Microsoft.Graph.Models.PhysicalAddress.CreateFromDiscriminatorValue); } },
+                { "checkIns", n => { CheckIns = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.CheckInClaim>(global::Microsoft.Graph.Models.CheckInClaim.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "geoCoordinates", n => { GeoCoordinates = n.GetObjectValue<global::Microsoft.Graph.Models.OutlookGeoCoordinates>(global::Microsoft.Graph.Models.OutlookGeoCoordinates.CreateFromDiscriminatorValue); } },
                 { "phone", n => { Phone = n.GetStringValue(); } },
@@ -115,6 +132,7 @@ namespace Microsoft.Graph.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.PhysicalAddress>("address", Address);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.CheckInClaim>("checkIns", CheckIns);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.OutlookGeoCoordinates>("geoCoordinates", GeoCoordinates);
             writer.WriteStringValue("phone", Phone);

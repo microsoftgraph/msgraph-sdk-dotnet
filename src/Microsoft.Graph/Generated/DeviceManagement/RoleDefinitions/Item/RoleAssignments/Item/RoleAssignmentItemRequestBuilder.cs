@@ -41,8 +41,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions.Item.RoleAssignments.
         {
         }
         /// <summary>
-        /// Deletes a roleAssignment.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-rbac-roleassignment-delete?view=graph-rest-1.0" />
+        /// Delete navigation property roleAssignments for deviceManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -64,8 +63,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions.Item.RoleAssignments.
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the roleAssignment object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-rbac-roleassignment-get?view=graph-rest-1.0" />
+        /// List of Role assignments for this role definition.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.RoleAssignment"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -88,8 +86,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions.Item.RoleAssignments.
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.RoleAssignment>(requestInfo, global::Microsoft.Graph.Models.RoleAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a roleAssignment object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-rbac-roleassignment-update?view=graph-rest-1.0" />
+        /// Update the navigation property roleAssignments in deviceManagement
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.RoleAssignment"/></returns>
         /// <param name="body">The request body</param>
@@ -114,7 +111,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions.Item.RoleAssignments.
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.RoleAssignment>(requestInfo, global::Microsoft.Graph.Models.RoleAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a roleAssignment.
+        /// Delete navigation property roleAssignments for deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -133,7 +130,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions.Item.RoleAssignments.
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the roleAssignment object.
+        /// List of Role assignments for this role definition.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +149,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions.Item.RoleAssignments.
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a roleAssignment object.
+        /// Update the navigation property roleAssignments in deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -191,7 +188,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleDefinitions.Item.RoleAssignments.
         {
         }
         /// <summary>
-        /// Read properties and relationships of the roleAssignment object.
+        /// List of Role assignments for this role definition.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RoleAssignmentItemRequestBuilderGetQueryParameters 

@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Users.Item.GetManagedAppDiagnosticStatuses
         }
         /// <summary>
         /// Gets diagnostics validation status for a given user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-user-getmanagedappdiagnosticstatuses?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Users.Item.GetManagedAppDiagnosticStatuses.GetManagedAppDiagnosticStatusesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +58,6 @@ namespace Microsoft.Graph.Users.Item.GetManagedAppDiagnosticStatuses
         }
         /// <summary>
         /// Gets diagnostics validation status for a given user.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-mam-user-getmanagedappdiagnosticstatuses?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Users.Item.GetManagedAppDiagnosticStatuses.GetManagedAppDiagnosticStatusesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

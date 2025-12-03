@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Users.Item.GetManagedDevicesWithAppFailures
         }
         /// <summary>
         /// Retrieves the list of devices with failed apps
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-troubleshooting-user-getmanageddeviceswithappfailures?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Users.Item.GetManagedDevicesWithAppFailures.GetManagedDevicesWithAppFailuresGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +58,6 @@ namespace Microsoft.Graph.Users.Item.GetManagedDevicesWithAppFailures
         }
         /// <summary>
         /// Retrieves the list of devices with failed apps
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-troubleshooting-user-getmanageddeviceswithappfailures?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Users.Item.GetManagedDevicesWithAppFailures.GetManagedDevicesWithAppFailuresResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

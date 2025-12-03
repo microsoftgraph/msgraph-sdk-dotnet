@@ -35,8 +35,7 @@ namespace Microsoft.Graph.DeviceManagement.MobileAppTroubleshootingEvents.Item.A
         {
         }
         /// <summary>
-        /// Not yet documented
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-devices-applogcollectionrequest-createdownloadurl?view=graph-rest-1.0" />
+        /// Invoke action createDownloadUrl
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.AppLogCollectionDownloadDetails"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +58,7 @@ namespace Microsoft.Graph.DeviceManagement.MobileAppTroubleshootingEvents.Item.A
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.AppLogCollectionDownloadDetails>(requestInfo, global::Microsoft.Graph.Models.AppLogCollectionDownloadDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Not yet documented
+        /// Invoke action createDownloadUrl
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

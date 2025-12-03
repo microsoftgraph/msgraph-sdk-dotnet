@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceEnrollmentPlatformRestrictionsConfiguration : global::Microsoft.Graph.Models.DeviceEnrollmentConfiguration, IParsable
     {
-        /// <summary>Android restrictions based on platform, platform operating system version, and device ownership</summary>
+        /// <summary>Indicates restrictions for Android platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.DeviceEnrollmentPlatformRestriction? AndroidRestriction
@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("androidRestriction", value); }
         }
 #endif
-        /// <summary>Ios restrictions based on platform, platform operating system version, and device ownership</summary>
+        /// <summary>Indicates restrictions for IOS platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.DeviceEnrollmentPlatformRestriction? IosRestriction
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("iosRestriction", value); }
         }
 #endif
-        /// <summary>Mac restrictions based on platform, platform operating system version, and device ownership</summary>
+        /// <summary>Indicates restrictions for MacOS platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.DeviceEnrollmentPlatformRestriction? MacOSRestriction
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("macOSRestriction", value); }
         }
 #endif
-        /// <summary>Windows mobile restrictions based on platform, platform operating system version, and device ownership</summary>
+        /// <summary>Indicates restrictions for Windows Mobile platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.DeviceEnrollmentPlatformRestriction? WindowsMobileRestriction
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("windowsMobileRestriction", value); }
         }
 #endif
-        /// <summary>Windows restrictions based on platform, platform operating system version, and device ownership</summary>
+        /// <summary>Indicates restrictions for Windows platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.DeviceEnrollmentPlatformRestriction? WindowsRestriction

@@ -47,7 +47,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.R
         {
         }
         /// <summary>
-        /// The unique identifier of the AAD user targeted for the taskProcessingResult.Supports $filter(eq, ne) and $expand.
+        /// The unique identifier of the user targeted for the taskProcessingResult.Supports $filter(eq, ne) and $expand.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.User"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.R
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.User>(requestInfo, global::Microsoft.Graph.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The unique identifier of the AAD user targeted for the taskProcessingResult.Supports $filter(eq, ne) and $expand.
+        /// The unique identifier of the user targeted for the taskProcessingResult.Supports $filter(eq, ne) and $expand.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.R
             return new global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.Item.UserProcessingResults.Item.Subject.SubjectRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The unique identifier of the AAD user targeted for the taskProcessingResult.Supports $filter(eq, ne) and $expand.
+        /// The unique identifier of the user targeted for the taskProcessingResult.Supports $filter(eq, ne) and $expand.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SubjectRequestBuilderGetQueryParameters 

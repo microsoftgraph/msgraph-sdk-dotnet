@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Graph.Places.Item.GraphRoomList.CheckIns;
 using Microsoft.Graph.Places.Item.GraphRoomList.Rooms;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -19,6 +20,11 @@ namespace Microsoft.Graph.Places.Item.GraphRoomList
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GraphRoomListRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to manage the checkIns property of the microsoft.graph.place entity.</summary>
+        public global::Microsoft.Graph.Places.Item.GraphRoomList.CheckIns.CheckInsRequestBuilder CheckIns
+        {
+            get => new global::Microsoft.Graph.Places.Item.GraphRoomList.CheckIns.CheckInsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the rooms property of the microsoft.graph.roomList entity.</summary>
         public global::Microsoft.Graph.Places.Item.GraphRoomList.Rooms.RoomsRequestBuilder Rooms
         {

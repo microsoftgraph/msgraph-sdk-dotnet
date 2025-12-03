@@ -124,6 +124,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("identityProviders", value); }
         }
 #endif
+        /// <summary>Represents the entry point for fraud and risk prevention configurations in Microsoft Entra External ID, including third-party provider settings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.RiskPreventionContainer? RiskPrevention
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.RiskPreventionContainer?>("riskPrevention"); }
+            set { BackingStore?.Set("riskPrevention", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.RiskPreventionContainer RiskPrevention
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.RiskPreventionContainer>("riskPrevention"); }
+            set { BackingStore?.Set("riskPrevention", value); }
+        }
+#endif
         /// <summary>Represents entry point for identity userflow attributes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -165,6 +181,7 @@ namespace Microsoft.Graph.Models
                 { "conditionalAccess", n => { ConditionalAccess = n.GetObjectValue<global::Microsoft.Graph.Models.ConditionalAccessRoot>(global::Microsoft.Graph.Models.ConditionalAccessRoot.CreateFromDiscriminatorValue); } },
                 { "customAuthenticationExtensions", n => { CustomAuthenticationExtensions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.CustomAuthenticationExtension>(global::Microsoft.Graph.Models.CustomAuthenticationExtension.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "identityProviders", n => { IdentityProviders = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.IdentityProviderBase>(global::Microsoft.Graph.Models.IdentityProviderBase.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "riskPrevention", n => { RiskPrevention = n.GetObjectValue<global::Microsoft.Graph.Models.RiskPreventionContainer>(global::Microsoft.Graph.Models.RiskPreventionContainer.CreateFromDiscriminatorValue); } },
                 { "userFlowAttributes", n => { UserFlowAttributes = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.IdentityUserFlowAttribute>(global::Microsoft.Graph.Models.IdentityUserFlowAttribute.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -183,6 +200,7 @@ namespace Microsoft.Graph.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ConditionalAccessRoot>("conditionalAccess", ConditionalAccess);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.CustomAuthenticationExtension>("customAuthenticationExtensions", CustomAuthenticationExtensions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.IdentityProviderBase>("identityProviders", IdentityProviders);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.RiskPreventionContainer>("riskPrevention", RiskPrevention);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.IdentityUserFlowAttribute>("userFlowAttributes", UserFlowAttributes);
         }
     }

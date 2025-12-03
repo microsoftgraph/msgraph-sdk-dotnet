@@ -5,6 +5,7 @@ using Microsoft.Graph.EmployeeExperience.EngagementAsyncOperations;
 using Microsoft.Graph.EmployeeExperience.LearningCourseActivities;
 using Microsoft.Graph.EmployeeExperience.LearningCourseActivitiesWithExternalcourseActivityId;
 using Microsoft.Graph.EmployeeExperience.LearningProviders;
+using Microsoft.Graph.EmployeeExperience.Roles;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -42,6 +43,11 @@ namespace Microsoft.Graph.EmployeeExperience
         public global::Microsoft.Graph.EmployeeExperience.LearningProviders.LearningProvidersRequestBuilder LearningProviders
         {
             get => new global::Microsoft.Graph.EmployeeExperience.LearningProviders.LearningProvidersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the roles property of the microsoft.graph.employeeExperience entity.</summary>
+        public global::Microsoft.Graph.EmployeeExperience.Roles.RolesRequestBuilder Roles
+        {
+            get => new global::Microsoft.Graph.EmployeeExperience.Roles.RolesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.EmployeeExperience.EmployeeExperienceRequestBuilder"/> and sets the default values.

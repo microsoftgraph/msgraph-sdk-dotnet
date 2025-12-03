@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class DeviceManagementReports : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Entity representing a job to export a report</summary>
+        /// <summary>Entity representing a job to export a report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.DeviceManagementExportJob>? ExportJobs

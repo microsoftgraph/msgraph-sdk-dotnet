@@ -41,8 +41,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicySettingStateSum
         {
         }
         /// <summary>
-        /// Deletes a deviceCompliancePolicySettingStateSummary.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicysettingstatesummary-delete?view=graph-rest-1.0" />
+        /// Delete navigation property deviceCompliancePolicySettingStateSummaries for deviceManagement
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -64,8 +63,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicySettingStateSum
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read properties and relationships of the deviceCompliancePolicySettingStateSummary object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicysettingstatesummary-get?view=graph-rest-1.0" />
+        /// The summary states of compliance policy settings for this account.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DeviceCompliancePolicySettingStateSummary"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -88,8 +86,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicySettingStateSum
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DeviceCompliancePolicySettingStateSummary>(requestInfo, global::Microsoft.Graph.Models.DeviceCompliancePolicySettingStateSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a deviceCompliancePolicySettingStateSummary object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/intune-deviceconfig-devicecompliancepolicysettingstatesummary-update?view=graph-rest-1.0" />
+        /// Update the navigation property deviceCompliancePolicySettingStateSummaries in deviceManagement
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DeviceCompliancePolicySettingStateSummary"/></returns>
         /// <param name="body">The request body</param>
@@ -114,7 +111,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicySettingStateSum
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DeviceCompliancePolicySettingStateSummary>(requestInfo, global::Microsoft.Graph.Models.DeviceCompliancePolicySettingStateSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a deviceCompliancePolicySettingStateSummary.
+        /// Delete navigation property deviceCompliancePolicySettingStateSummaries for deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -133,7 +130,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicySettingStateSum
             return requestInfo;
         }
         /// <summary>
-        /// Read properties and relationships of the deviceCompliancePolicySettingStateSummary object.
+        /// The summary states of compliance policy settings for this account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +149,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicySettingStateSum
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a deviceCompliancePolicySettingStateSummary object.
+        /// Update the navigation property deviceCompliancePolicySettingStateSummaries in deviceManagement
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -191,7 +188,7 @@ namespace Microsoft.Graph.DeviceManagement.DeviceCompliancePolicySettingStateSum
         {
         }
         /// <summary>
-        /// Read properties and relationships of the deviceCompliancePolicySettingStateSummary object.
+        /// The summary states of compliance policy settings for this account.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeviceCompliancePolicySettingStateSummaryItemRequestBuilderGetQueryParameters 

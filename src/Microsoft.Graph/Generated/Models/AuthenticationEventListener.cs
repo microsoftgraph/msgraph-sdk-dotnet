@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("conditions", value); }
         }
 #endif
+        /// <summary>The display name of the listener.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DisplayName
+        {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#nullable restore
+#else
+        public string DisplayName
+        {
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -60,6 +76,7 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.onAttributeCollectionSubmitListener" => new global::Microsoft.Graph.Models.OnAttributeCollectionSubmitListener(),
                 "#microsoft.graph.onAuthenticationMethodLoadStartListener" => new global::Microsoft.Graph.Models.OnAuthenticationMethodLoadStartListener(),
                 "#microsoft.graph.onEmailOtpSendListener" => new global::Microsoft.Graph.Models.OnEmailOtpSendListener(),
+                "#microsoft.graph.onFraudProtectionLoadStartListener" => new global::Microsoft.Graph.Models.OnFraudProtectionLoadStartListener(),
                 "#microsoft.graph.onInteractiveAuthFlowStartListener" => new global::Microsoft.Graph.Models.OnInteractiveAuthFlowStartListener(),
                 "#microsoft.graph.onTokenIssuanceStartListener" => new global::Microsoft.Graph.Models.OnTokenIssuanceStartListener(),
                 "#microsoft.graph.onUserCreateStartListener" => new global::Microsoft.Graph.Models.OnUserCreateStartListener(),
@@ -76,6 +93,7 @@ namespace Microsoft.Graph.Models
             {
                 { "authenticationEventsFlowId", n => { AuthenticationEventsFlowId = n.GetStringValue(); } },
                 { "conditions", n => { Conditions = n.GetObjectValue<global::Microsoft.Graph.Models.AuthenticationConditions>(global::Microsoft.Graph.Models.AuthenticationConditions.CreateFromDiscriminatorValue); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -88,6 +106,7 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteStringValue("authenticationEventsFlowId", AuthenticationEventsFlowId);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.AuthenticationConditions>("conditions", Conditions);
+            writer.WriteStringValue("displayName", DisplayName);
         }
     }
 }

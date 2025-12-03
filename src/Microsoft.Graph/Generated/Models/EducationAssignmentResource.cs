@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Models
     public partial class EducationAssignmentResource : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>A collection of assignment resources that depend on the parent educationAssignmentResource.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.EducationAssignmentResource>? DependentResources
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.EducationAssignmentResource>?>("dependentResources"); }
+            set { BackingStore?.Set("dependentResources", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.EducationAssignmentResource> DependentResources
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.EducationAssignmentResource>>("dependentResources"); }
+            set { BackingStore?.Set("dependentResources", value); }
+        }
+#endif
         /// <summary>Indicates whether this resource should be copied to each student submission for modification and submission. Required</summary>
         public bool? DistributeForStudentWork
         {
@@ -52,6 +68,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "dependentResources", n => { DependentResources = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.EducationAssignmentResource>(global::Microsoft.Graph.Models.EducationAssignmentResource.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "distributeForStudentWork", n => { DistributeForStudentWork = n.GetBoolValue(); } },
                 { "resource", n => { Resource = n.GetObjectValue<global::Microsoft.Graph.Models.EducationResource>(global::Microsoft.Graph.Models.EducationResource.CreateFromDiscriminatorValue); } },
             };
@@ -64,6 +81,7 @@ namespace Microsoft.Graph.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.EducationAssignmentResource>("dependentResources", DependentResources);
             writer.WriteBoolValue("distributeForStudentWork", DistributeForStudentWork);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.EducationResource>("resource", Resource);
         }

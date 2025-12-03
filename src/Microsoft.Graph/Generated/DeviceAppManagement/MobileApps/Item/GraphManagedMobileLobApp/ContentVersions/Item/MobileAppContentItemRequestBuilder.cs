@@ -69,7 +69,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphManagedMobile
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The list of content versions for this app.
+        /// The list of content versions for this app. This property is read-only.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.MobileAppContent"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphManagedMobile
             return requestInfo;
         }
         /// <summary>
-        /// The list of content versions for this app.
+        /// The list of content versions for this app. This property is read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphManagedMobile
         {
         }
         /// <summary>
-        /// The list of content versions for this app.
+        /// The list of content versions for this app. This property is read-only.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MobileAppContentItemRequestBuilderGetQueryParameters 

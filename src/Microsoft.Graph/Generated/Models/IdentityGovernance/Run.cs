@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Models.IdentityGovernance
     public partial class Run : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The scope for which the workflow runs.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.IdentityGovernance.ActivationScope? ActivatedOnScope
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.IdentityGovernance.ActivationScope?>("activatedOnScope"); }
+            set { BackingStore?.Set("activatedOnScope", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.IdentityGovernance.ActivationScope ActivatedOnScope
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.IdentityGovernance.ActivationScope>("activatedOnScope"); }
+            set { BackingStore?.Set("activatedOnScope", value); }
+        }
+#endif
         /// <summary>The date time that the run completed. Value is null if the workflow hasn&apos;t completed.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
         public DateTimeOffset? CompletedDateTime
         {
@@ -42,6 +58,22 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.IdentityGovernance.LifecycleWorkflowProcessingStatus?>("processingStatus"); }
             set { BackingStore?.Set("processingStatus", value); }
         }
+        /// <summary>The related reprocessed workflow run.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.IdentityGovernance.Run>? ReprocessedRuns
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.IdentityGovernance.Run>?>("reprocessedRuns"); }
+            set { BackingStore?.Set("reprocessedRuns", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.IdentityGovernance.Run> ReprocessedRuns
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.IdentityGovernance.Run>>("reprocessedRuns"); }
+            set { BackingStore?.Set("reprocessedRuns", value); }
+        }
+#endif
         /// <summary>The date time that the run is scheduled to be executed for a workflow.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
         public DateTimeOffset? ScheduledDateTime
         {
@@ -134,11 +166,13 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "activatedOnScope", n => { ActivatedOnScope = n.GetObjectValue<global::Microsoft.Graph.Models.IdentityGovernance.ActivationScope>(global::Microsoft.Graph.Models.IdentityGovernance.ActivationScope.CreateFromDiscriminatorValue); } },
                 { "completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "failedTasksCount", n => { FailedTasksCount = n.GetIntValue(); } },
                 { "failedUsersCount", n => { FailedUsersCount = n.GetIntValue(); } },
                 { "lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "processingStatus", n => { ProcessingStatus = n.GetEnumValue<global::Microsoft.Graph.Models.IdentityGovernance.LifecycleWorkflowProcessingStatus>(); } },
+                { "reprocessedRuns", n => { ReprocessedRuns = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.IdentityGovernance.Run>(global::Microsoft.Graph.Models.IdentityGovernance.Run.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "scheduledDateTime", n => { ScheduledDateTime = n.GetDateTimeOffsetValue(); } },
                 { "startedDateTime", n => { StartedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "successfulUsersCount", n => { SuccessfulUsersCount = n.GetIntValue(); } },
@@ -158,11 +192,13 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.IdentityGovernance.ActivationScope>("activatedOnScope", ActivatedOnScope);
             writer.WriteDateTimeOffsetValue("completedDateTime", CompletedDateTime);
             writer.WriteIntValue("failedTasksCount", FailedTasksCount);
             writer.WriteIntValue("failedUsersCount", FailedUsersCount);
             writer.WriteDateTimeOffsetValue("lastUpdatedDateTime", LastUpdatedDateTime);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.IdentityGovernance.LifecycleWorkflowProcessingStatus>("processingStatus", ProcessingStatus);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.IdentityGovernance.Run>("reprocessedRuns", ReprocessedRuns);
             writer.WriteDateTimeOffsetValue("scheduledDateTime", ScheduledDateTime);
             writer.WriteDateTimeOffsetValue("startedDateTime", StartedDateTime);
             writer.WriteIntValue("successfulUsersCount", SuccessfulUsersCount);

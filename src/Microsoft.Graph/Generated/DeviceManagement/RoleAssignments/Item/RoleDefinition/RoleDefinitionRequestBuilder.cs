@@ -35,7 +35,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleAssignments.Item.RoleDefinition
         {
         }
         /// <summary>
-        /// Role definition this assignment is part of.
+        /// Indicates the role definition for this role assignment.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.RoleDefinition"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleAssignments.Item.RoleDefinition
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.RoleDefinition>(requestInfo, global::Microsoft.Graph.Models.RoleDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Role definition this assignment is part of.
+        /// Indicates the role definition for this role assignment.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.DeviceManagement.RoleAssignments.Item.RoleDefinition
             return new global::Microsoft.Graph.DeviceManagement.RoleAssignments.Item.RoleDefinition.RoleDefinitionRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Role definition this assignment is part of.
+        /// Indicates the role definition for this role assignment.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RoleDefinitionRequestBuilderGetQueryParameters 

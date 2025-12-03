@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Win32LobApp : global::Microsoft.Graph.Models.MobileLobApp, IParsable
     {
-        /// <summary>Indicates the Windows architecture(s) this app should be installed on. The app will be treated as not applicable for devices with architectures not matching the selected value. When a non-null value is provided for the `allowedArchitectures` property, the value of the `applicableArchitectures` property is set to `none`. Possible values are: `null`, `x86`, `x64`, `arm64`.</summary>
+        /// <summary>Indicates the Windows architecture(s) this app should be installed on. The app will be treated as not applicable for devices with architectures not matching the selected value. When a non-null value is provided for the allowedArchitectures property, the value of the applicableArchitectures property is set to none. Possible values are: null, x86, x64, arm64. Possible values are: none, x86, x64, arm, neutral.</summary>
         public global::Microsoft.Graph.Models.WindowsArchitecture? AllowedArchitectures
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.WindowsArchitecture?>("allowedArchitectures"); }
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.WindowsArchitecture?>("applicableArchitectures"); }
             set { BackingStore?.Set("applicableArchitectures", value); }
         }
-        /// <summary>The command line to install this app</summary>
+        /// <summary>Indicates the command line to install this app. Used to install the Win32 app. Example: msiexec /i &apos;Orca.Msi&apos; /qn.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InstallCommandLine
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("installCommandLine", value); }
         }
 #endif
-        /// <summary>The install experience for this app.</summary>
+        /// <summary>Indicates the install experience for this app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.Win32LobAppInstallExperience? InstallExperience
@@ -57,31 +57,31 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("installExperience", value); }
         }
 #endif
-        /// <summary>The value for the minimum CPU speed which is required to install this app.</summary>
+        /// <summary>Indicates the value for the minimum CPU speed which is required to install this app. Allowed range from 0 to clock speed from WMI helper.</summary>
         public int? MinimumCpuSpeedInMHz
         {
             get { return BackingStore?.Get<int?>("minimumCpuSpeedInMHz"); }
             set { BackingStore?.Set("minimumCpuSpeedInMHz", value); }
         }
-        /// <summary>The value for the minimum free disk space which is required to install this app.</summary>
+        /// <summary>Indicates the value for the minimum free disk space which is required to install this app. Allowed range from 0 to driver&apos;s maximum available free space.</summary>
         public int? MinimumFreeDiskSpaceInMB
         {
             get { return BackingStore?.Get<int?>("minimumFreeDiskSpaceInMB"); }
             set { BackingStore?.Set("minimumFreeDiskSpaceInMB", value); }
         }
-        /// <summary>The value for the minimum physical memory which is required to install this app.</summary>
+        /// <summary>Indicates the value for the minimum physical memory which is required to install this app. Allowed range from 0 to total physical memory from WMI helper.</summary>
         public int? MinimumMemoryInMB
         {
             get { return BackingStore?.Get<int?>("minimumMemoryInMB"); }
             set { BackingStore?.Set("minimumMemoryInMB", value); }
         }
-        /// <summary>The value for the minimum number of processors which is required to install this app.</summary>
+        /// <summary>Indicates the value for the minimum number of processors which is required to install this app. Minimum value is 0.</summary>
         public int? MinimumNumberOfProcessors
         {
             get { return BackingStore?.Get<int?>("minimumNumberOfProcessors"); }
             set { BackingStore?.Set("minimumNumberOfProcessors", value); }
         }
-        /// <summary>The value for the minimum supported windows release.</summary>
+        /// <summary>Indicates the value for the minimum supported windows release. Example: Windows11_23H2.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MinimumSupportedWindowsRelease
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("minimumSupportedWindowsRelease", value); }
         }
 #endif
-        /// <summary>The MSI details if this Win32 app is an MSI app.</summary>
+        /// <summary>Indicates the MSI details if this Win32 app is an MSI app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.Win32LobAppMsiInformation? MsiInformation
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("msiInformation", value); }
         }
 #endif
-        /// <summary>The return codes for post installation behavior.</summary>
+        /// <summary>Indicates the return codes for post installation behavior.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.Win32LobAppReturnCode>? ReturnCodes
@@ -129,7 +129,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("returnCodes", value); }
         }
 #endif
-        /// <summary>The detection and requirement rules for this app.</summary>
+        /// <summary>Indicates the detection and requirement rules for this app. Possible values are: Win32LobAppFileSystemRule, Win32LobAppPowerShellScriptRule, Win32LobAppProductCodeRule, Win32LobAppRegistryRule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.Win32LobAppRule>? Rules
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("rules", value); }
         }
 #endif
-        /// <summary>The relative path of the setup file in the encrypted Win32LobApp package.</summary>
+        /// <summary>Indicates the relative path of the setup file in the encrypted Win32LobApp package. Example: Intel-SA-00075 Detection and Mitigation Tool.msi.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SetupFilePath
@@ -161,7 +161,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("setupFilePath", value); }
         }
 #endif
-        /// <summary>The command line to uninstall this app</summary>
+        /// <summary>Indicates the command line to uninstall this app. Used to uninstall the app. Example: msiexec /x &apos;{85F4CBCB-9BBC-4B50-A7D8-E1106771498D}&apos; /qn.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UninstallCommandLine

@@ -402,7 +402,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("remoteAssistancePartners", value); }
         }
 #endif
-        /// <summary>Reports singleton</summary>
+        /// <summary>The reports property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.DeviceManagementReports? Reports
@@ -920,7 +920,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("userExperienceAnalyticsWorkFromAnywhereModelPerformance", value); }
         }
 #endif
-        /// <summary>Virtual endpoint</summary>
+        /// <summary>The virtualEndpoint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.VirtualEndpoint? VirtualEndpoint

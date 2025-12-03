@@ -4,6 +4,7 @@ using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflo
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.ExecutionScope;
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.LastModifiedBy;
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.MicrosoftGraphIdentityGovernanceActivate;
+using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.MicrosoftGraphIdentityGovernanceActivateWithScope;
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.MicrosoftGraphIdentityGovernanceCreateNewVersion;
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.MicrosoftGraphIdentityGovernanceRestore;
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.Runs;
@@ -48,6 +49,11 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Wor
         public global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.MicrosoftGraphIdentityGovernanceActivate.MicrosoftGraphIdentityGovernanceActivateRequestBuilder MicrosoftGraphIdentityGovernanceActivate
         {
             get => new global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.MicrosoftGraphIdentityGovernanceActivate.MicrosoftGraphIdentityGovernanceActivateRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the activateWithScope method.</summary>
+        public global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.MicrosoftGraphIdentityGovernanceActivateWithScope.MicrosoftGraphIdentityGovernanceActivateWithScopeRequestBuilder MicrosoftGraphIdentityGovernanceActivateWithScope
+        {
+            get => new global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.MicrosoftGraphIdentityGovernanceActivateWithScope.MicrosoftGraphIdentityGovernanceActivateWithScopeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the createNewVersion method.</summary>
         public global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.MicrosoftGraphIdentityGovernanceCreateNewVersion.MicrosoftGraphIdentityGovernanceCreateNewVersionRequestBuilder MicrosoftGraphIdentityGovernanceCreateNewVersion

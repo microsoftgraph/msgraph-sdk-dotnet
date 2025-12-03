@@ -4,6 +4,7 @@ using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Creat
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.ExecutionScope;
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.LastModifiedBy;
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceActivate;
+using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceActivateWithScope;
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceCreateNewVersion;
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceRestore;
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs;
@@ -48,6 +49,11 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item
         public global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceActivate.MicrosoftGraphIdentityGovernanceActivateRequestBuilder MicrosoftGraphIdentityGovernanceActivate
         {
             get => new global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceActivate.MicrosoftGraphIdentityGovernanceActivateRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the activateWithScope method.</summary>
+        public global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceActivateWithScope.MicrosoftGraphIdentityGovernanceActivateWithScopeRequestBuilder MicrosoftGraphIdentityGovernanceActivateWithScope
+        {
+            get => new global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceActivateWithScope.MicrosoftGraphIdentityGovernanceActivateWithScopeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the createNewVersion method.</summary>
         public global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceCreateNewVersion.MicrosoftGraphIdentityGovernanceCreateNewVersionRequestBuilder MicrosoftGraphIdentityGovernanceCreateNewVersion

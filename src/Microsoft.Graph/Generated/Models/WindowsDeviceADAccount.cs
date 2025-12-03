@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class WindowsDeviceADAccount : global::Microsoft.Graph.Models.WindowsDeviceAccount, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Not yet documented</summary>
+        /// <summary>The domainName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DomainName
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("domainName", value); }
         }
 #endif
-        /// <summary>Not yet documented</summary>
+        /// <summary>The userName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserName

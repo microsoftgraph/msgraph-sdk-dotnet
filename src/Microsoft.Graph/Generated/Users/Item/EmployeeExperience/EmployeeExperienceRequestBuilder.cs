@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Graph.Users.Item.EmployeeExperience.AssignedRoles;
 using Microsoft.Graph.Users.Item.EmployeeExperience.LearningCourseActivities;
 using Microsoft.Graph.Users.Item.EmployeeExperience.LearningCourseActivitiesWithExternalcourseActivityId;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -20,6 +21,11 @@ namespace Microsoft.Graph.Users.Item.EmployeeExperience
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EmployeeExperienceRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to manage the assignedRoles property of the microsoft.graph.employeeExperienceUser entity.</summary>
+        public global::Microsoft.Graph.Users.Item.EmployeeExperience.AssignedRoles.AssignedRolesRequestBuilder AssignedRoles
+        {
+            get => new global::Microsoft.Graph.Users.Item.EmployeeExperience.AssignedRoles.AssignedRolesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the learningCourseActivities property of the microsoft.graph.employeeExperienceUser entity.</summary>
         public global::Microsoft.Graph.Users.Item.EmployeeExperience.LearningCourseActivities.LearningCourseActivitiesRequestBuilder LearningCourseActivities
         {

@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WindowsInformationProtectionPolicy : global::Microsoft.Graph.Models.WindowsInformationProtection, IParsable
     {
-        /// <summary>Offline interval before app data is wiped (days)</summary>
+        /// <summary>Offline interval before app data is wiped (days) . Valid values 0 to 999</summary>
         public int? DaysWithoutContactBeforeUnenroll
         {
             get { return BackingStore?.Get<int?>("daysWithoutContactBeforeUnenroll"); }
@@ -35,25 +35,25 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("mdmEnrollmentUrl", value); }
         }
 #endif
-        /// <summary>Specifies the maximum amount of time (in minutes) allowed after the device is idle that will cause the device to become PIN or password locked.   Range is an integer X where 0 &lt;= X &lt;= 999.</summary>
+        /// <summary>Specifies the maximum amount of time (in minutes) allowed after the device is idle that will cause the device to become PIN or password locked.   Range is an integer X where 0 &lt;= X &lt;= 999. Valid values 0 to 999</summary>
         public int? MinutesOfInactivityBeforeDeviceLock
         {
             get { return BackingStore?.Get<int?>("minutesOfInactivityBeforeDeviceLock"); }
             set { BackingStore?.Set("minutesOfInactivityBeforeDeviceLock", value); }
         }
-        /// <summary>Integer value that specifies the number of past PINs that can be associated to a user account that can&apos;t be reused. The largest number you can configure for this policy setting is 50. The lowest number you can configure for this policy setting is 0. If this policy is set to 0, then storage of previous PINs is not required. This node was added in Windows 10, version 1511. Default is 0.</summary>
+        /// <summary>Integer value that specifies the number of past PINs that can be associated to a user account that can&apos;t be reused. The largest number you can configure for this policy setting is 50. The lowest number you can configure for this policy setting is 0. If this policy is set to 0, then storage of previous PINs is not required. This node was added in Windows 10, version 1511. Default is 0. Valid values 0 to 50</summary>
         public int? NumberOfPastPinsRemembered
         {
             get { return BackingStore?.Get<int?>("numberOfPastPinsRemembered"); }
             set { BackingStore?.Set("numberOfPastPinsRemembered", value); }
         }
-        /// <summary>The number of authentication failures allowed before the device will be wiped. A value of 0 disables device wipe functionality. Range is an integer X where 4 &lt;= X &lt;= 16 for desktop and 0 &lt;= X &lt;= 999 for mobile devices.</summary>
+        /// <summary>The number of authentication failures allowed before the device will be wiped. A value of 0 disables device wipe functionality. Range is an integer X where 4 &lt;= X &lt;= 16 for desktop and 0 &lt;= X &lt;= 999 for mobile devices. Valid values 0 to 999</summary>
         public int? PasswordMaximumAttemptCount
         {
             get { return BackingStore?.Get<int?>("passwordMaximumAttemptCount"); }
             set { BackingStore?.Set("passwordMaximumAttemptCount", value); }
         }
-        /// <summary>Integer value specifies the period of time (in days) that a PIN can be used before the system requires the user to change it. The largest number you can configure for this policy setting is 730. The lowest number you can configure for this policy setting is 0. If this policy is set to 0, then the user&apos;s PIN will never expire. This node was added in Windows 10, version 1511. Default is 0.</summary>
+        /// <summary>Integer value specifies the period of time (in days) that a PIN can be used before the system requires the user to change it. The largest number you can configure for this policy setting is 730. The lowest number you can configure for this policy setting is 0. If this policy is set to 0, then the user&apos;s PIN will never expire. This node was added in Windows 10, version 1511. Default is 0. Valid values 0 to 730</summary>
         public int? PinExpirationDays
         {
             get { return BackingStore?.Get<int?>("pinExpirationDays"); }
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.WindowsInformationProtectionPinCharacterRequirements?>("pinLowercaseLetters"); }
             set { BackingStore?.Set("pinLowercaseLetters", value); }
         }
-        /// <summary>Integer value that sets the minimum number of characters required for the PIN. Default value is 4. The lowest number you can configure for this policy setting is 4. The largest number you can configure must be less than the number configured in the Maximum PIN length policy setting or the number 127, whichever is the lowest.</summary>
+        /// <summary>Integer value that sets the minimum number of characters required for the PIN. Default value is 4. The lowest number you can configure for this policy setting is 4. The largest number you can configure must be less than the number configured in the Maximum PIN length policy setting or the number 127, whichever is the lowest. Valid values 0 to 127</summary>
         public int? PinMinimumLength
         {
             get { return BackingStore?.Get<int?>("pinMinimumLength"); }

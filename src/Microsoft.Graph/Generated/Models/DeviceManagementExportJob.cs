@@ -13,13 +13,13 @@ namespace Microsoft.Graph.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeviceManagementExportJob : global::Microsoft.Graph.Models.Entity, IParsable
     {
-        /// <summary>Time that the exported report expires</summary>
+        /// <summary>Time that the exported report expires.</summary>
         public DateTimeOffset? ExpirationDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
-        /// <summary>Filters applied on the report</summary>
+        /// <summary>Filters applied on the report. The maximum length allowed for this property is 2000 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Filter
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.DeviceManagementExportJobLocalizationType?>("localizationType"); }
             set { BackingStore?.Set("localizationType", value); }
         }
-        /// <summary>Name of the report</summary>
+        /// <summary>Name of the report. The maximum length allowed for this property is 2000 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReportName
@@ -63,13 +63,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("reportName", value); }
         }
 #endif
-        /// <summary>Time that the exported report was requested</summary>
+        /// <summary>Time that the exported report was requested.</summary>
         public DateTimeOffset? RequestDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("requestDateTime"); }
             set { BackingStore?.Set("requestDateTime", value); }
         }
-        /// <summary>Columns selected from the report</summary>
+        /// <summary>Columns selected from the report. The maximum number of allowed columns names is 256. The maximum length allowed for each column name in this property is 1000 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Select
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("select", value); }
         }
 #endif
-        /// <summary>A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id.</summary>
+        /// <summary>A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id. The maximum length allowed for this property is 128 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SnapshotId
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.DeviceManagementReportStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>Temporary location of the exported report</summary>
+        /// <summary>Temporary location of the exported report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url

@@ -38,73 +38,73 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>When TRUE, indicates OS X 10.10 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</summary>
+        /// <summary>Indicates the minimum OS X version support required for the managed device. When &apos;True&apos;, macOS with OS X 10.10 or later is required to install the app. If &apos;False&apos;, OS X Version 10.10 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V1010
         {
             get { return BackingStore?.Get<bool?>("v10_10"); }
             set { BackingStore?.Set("v10_10", value); }
         }
-        /// <summary>When TRUE, indicates OS X 10.11 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</summary>
+        /// <summary>Indicates the minimum OS X version support required for the managed device. When &apos;True&apos;, macOS with OS X 10.11 or later is required to install the app. If &apos;False&apos;, OS X Version 10.11 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V1011
         {
             get { return BackingStore?.Get<bool?>("v10_11"); }
             set { BackingStore?.Set("v10_11", value); }
         }
-        /// <summary>When TRUE, indicates macOS 10.12 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</summary>
+        /// <summary>Indicates the minimum OS X version support required for the managed device. When &apos;True&apos;, macOS with OS X 10.12 or later is required to install the app. If &apos;False&apos;, OS X Version 10.12 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V1012
         {
             get { return BackingStore?.Get<bool?>("v10_12"); }
             set { BackingStore?.Set("v10_12", value); }
         }
-        /// <summary>When TRUE, indicates macOS 10.13 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</summary>
+        /// <summary>Indicates the minimum OS X version support required for the managed device. When &apos;True&apos;, macOS with OS X 10.13 or later is required to install the app. If &apos;False&apos;, OS X Version 10.13 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V1013
         {
             get { return BackingStore?.Get<bool?>("v10_13"); }
             set { BackingStore?.Set("v10_13", value); }
         }
-        /// <summary>When TRUE, indicates macOS 10.14 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</summary>
+        /// <summary>Indicates the minimum OS X version support required for the managed device. When &apos;True&apos;, macOS with OS X 10.14 or later is required to install the app. If &apos;False&apos;, OS X Version 10.14 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V1014
         {
             get { return BackingStore?.Get<bool?>("v10_14"); }
             set { BackingStore?.Set("v10_14", value); }
         }
-        /// <summary>When TRUE, indicates macOS 10.15 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</summary>
+        /// <summary>Indicates the minimum OS X version support required for the managed device. When &apos;True&apos;, macOS with OS X 10.15 or later is required to install the app. If &apos;False&apos;, OS X Version 10.15 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V1015
         {
             get { return BackingStore?.Get<bool?>("v10_15"); }
             set { BackingStore?.Set("v10_15", value); }
         }
-        /// <summary>When TRUE, indicates Mac OS X 10.7 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</summary>
+        /// <summary>Indicates the minimum OS X version support required for the managed device. When &apos;True&apos;, macOS with OS X 10.7 or later is required to install the app. If &apos;False&apos;, OS X Version 10.7 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V107
         {
             get { return BackingStore?.Get<bool?>("v10_7"); }
             set { BackingStore?.Set("v10_7", value); }
         }
-        /// <summary>When TRUE, indicates OS X 10.8 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</summary>
+        /// <summary>Indicates the minimum OS X version support required for the managed device. When &apos;True&apos;, macOS with OS X 10.8 or later is required to install the app. If &apos;False&apos;, OS X Version 10.8 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V108
         {
             get { return BackingStore?.Get<bool?>("v10_8"); }
             set { BackingStore?.Set("v10_8", value); }
         }
-        /// <summary>When TRUE, indicates OS X 10.9 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</summary>
+        /// <summary>Indicates the minimum OS X version support required for the managed device. When &apos;True&apos;, macOS with OS X 10.9 or later is required to install the app. If &apos;False&apos;, OS X Version 10.9 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V109
         {
             get { return BackingStore?.Get<bool?>("v10_9"); }
             set { BackingStore?.Set("v10_9", value); }
         }
-        /// <summary>When TRUE, indicates macOS 11.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</summary>
+        /// <summary>Indicates the minimum OS X version support required for the managed device. When &apos;True&apos;, macOS with OS X 11.0 or later is required to install the app. If &apos;False&apos;, OS X Version 11.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V110
         {
             get { return BackingStore?.Get<bool?>("v11_0"); }
             set { BackingStore?.Set("v11_0", value); }
         }
-        /// <summary>When TRUE, indicates macOS 12.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</summary>
+        /// <summary>Indicates the minimum OS X version support required for the managed device. When &apos;True&apos;, macOS with OS X 12.0 or later is required to install the app. If &apos;False&apos;, OS X Version 12.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V120
         {
             get { return BackingStore?.Get<bool?>("v12_0"); }
             set { BackingStore?.Set("v12_0", value); }
         }
-        /// <summary>When TRUE, indicates macOS 13.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</summary>
+        /// <summary>Indicates the minimum OS X version support required for the managed device. When &apos;True&apos;, macOS with OS X 13.0 or later is required to install the app. If &apos;False&apos;, OS X Version 13.0 is not the minimum version. Default value is False. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V130
         {
             get { return BackingStore?.Get<bool?>("v13_0"); }
