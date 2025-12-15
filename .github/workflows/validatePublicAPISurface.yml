@@ -34,14 +34,14 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload patch file as artifact
         if: always()
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         continue-on-error: true
         with:
           name: patch
           path: '*.patch'
       - name: Upload explanations file as artifact
         if: always()
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         continue-on-error: true
         with:
           name: explanations
