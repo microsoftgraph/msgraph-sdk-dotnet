@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("trainingAssignmentMappings", value); }
         }
 #endif
-        /// <summary>The training completion duration that needs to be provided before scheduling the training. Possible values are: week, fortnite, month, unknownFutureValue.</summary>
+        /// <summary>The training completion duration that needs to be provided before scheduling the training. The possible values are: week, fortnite, month, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.TrainingCompletionDuration? TrainingCompletionDuration
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.TrainingCompletionDuration?>("trainingCompletionDuration"); }

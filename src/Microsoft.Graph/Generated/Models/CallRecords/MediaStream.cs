@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Models.CallRecords
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>Codec name used to encode audio for transmission on the network. Possible values are: unknown, invalid, cn, pcma, pcmu, amrWide, g722, g7221, g7221c, g729, multiChannelAudio, muchv2, opus, satin, satinFullband, rtAudio8, rtAudio16, silk, silkNarrow, silkWide, siren, xmsRta, unknownFutureValue.</summary>
+        /// <summary>Codec name used to encode audio for transmission on the network. The possible values are: unknown, invalid, cn, pcma, pcmu, amrWide, g722, g7221, g7221c, g729, multiChannelAudio, muchv2, opus, satin, satinFullband, rtAudio8, rtAudio16, silk, silkNarrow, silkWide, siren, xmsRta, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.CallRecords.AudioCodec? AudioCodec
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.CallRecords.AudioCodec?>("audioCodec"); }
@@ -215,7 +215,7 @@ namespace Microsoft.Graph.Models.CallRecords
             set { BackingStore?.Set("streamId", value); }
         }
 #endif
-        /// <summary>Codec name used to encode video for transmission on the network. Possible values are: unknown, invalid, av1, h263, h264, h264s, h264uc, h265, rtvc1, rtVideo, xrtvc1, unknownFutureValue.</summary>
+        /// <summary>Codec name used to encode video for transmission on the network. The possible values are: unknown, invalid, av1, h263, h264, h264s, h264uc, h265, rtvc1, rtVideo, xrtvc1, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.CallRecords.VideoCodec? VideoCodec
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.CallRecords.VideoCodec?>("videoCodec"); }

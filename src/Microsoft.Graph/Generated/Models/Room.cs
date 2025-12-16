@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("audioDeviceName", value); }
         }
 #endif
-        /// <summary>Type of room. Possible values are standard, and reserved.</summary>
+        /// <summary>Type of room. Possible values are: unknown, standard, reserved.</summary>
         public global::Microsoft.Graph.Models.BookingType? BookingType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.BookingType?>("bookingType"); }

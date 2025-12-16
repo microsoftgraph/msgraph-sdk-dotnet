@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Places.Item.CheckIns
         {
         }
         /// <summary>
-        /// Get checkIns from places
+        /// Read the properties and relationships of a checkInClaim object. This API provides the check-in status for a specific place, such as a desk, room, or workspace, associated with a particular reservation.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.CheckInClaimCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +77,8 @@ namespace Microsoft.Graph.Places.Item.CheckIns
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.CheckInClaimCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.CheckInClaimCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to checkIns for places
+        /// Create a new checkInClaim object to record the check-in status for a specific place, such as a desk or a room, associated with a specific calendar reservation. This check-in confirms that the reserved space is in use and prevents automatic release if auto-release policies are configured for that place.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/place-post-checkins?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.CheckInClaim"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Places.Item.CheckIns
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.CheckInClaim>(requestInfo, global::Microsoft.Graph.Models.CheckInClaim.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get checkIns from places
+        /// Read the properties and relationships of a checkInClaim object. This API provides the check-in status for a specific place, such as a desk, room, or workspace, associated with a particular reservation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.Places.Item.CheckIns
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to checkIns for places
+        /// Create a new checkInClaim object to record the check-in status for a specific place, such as a desk or a room, associated with a specific calendar reservation. This check-in confirms that the reserved space is in use and prevents automatic release if auto-release policies are configured for that place.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +153,7 @@ namespace Microsoft.Graph.Places.Item.CheckIns
             return new global::Microsoft.Graph.Places.Item.CheckIns.CheckInsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get checkIns from places
+        /// Read the properties and relationships of a checkInClaim object. This API provides the check-in status for a specific place, such as a desk, room, or workspace, associated with a particular reservation.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CheckInsRequestBuilderGetQueryParameters 

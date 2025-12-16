@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The post type of the service issue historical post. Possible values are: regular, quick, strategic, unknownFutureValue.</summary>
+        /// <summary>The post type of the service issue historical post. The possible values are: regular, quick, strategic, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.PostType? PostType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.PostType?>("postType"); }

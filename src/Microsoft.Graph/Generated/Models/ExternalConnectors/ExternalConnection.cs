@@ -172,7 +172,7 @@ namespace Microsoft.Graph.Models.ExternalConnectors
             set { BackingStore?.Set("searchSettings", value); }
         }
 #endif
-        /// <summary>Indicates the current state of the connection. Possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.</summary>
+        /// <summary>Indicates the current state of the connection. The possible values are: draft, ready, obsolete, limitExceeded, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.ExternalConnectors.ConnectionState? State
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.ExternalConnectors.ConnectionState?>("state"); }

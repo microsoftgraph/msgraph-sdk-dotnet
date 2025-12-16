@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Places.Item.GraphBuilding.Map.Footprints.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get footprints from places
+        /// Represents the approximate physical extent of a referenced building. It corresponds to footprint.geojson in IMDF format.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.FootprintMap"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Places.Item.GraphBuilding.Map.Footprints.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get footprints from places
+        /// Represents the approximate physical extent of a referenced building. It corresponds to footprint.geojson in IMDF format.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Places.Item.GraphBuilding.Map.Footprints.Item
         {
         }
         /// <summary>
-        /// Get footprints from places
+        /// Represents the approximate physical extent of a referenced building. It corresponds to footprint.geojson in IMDF format.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FootprintMapItemRequestBuilderGetQueryParameters 

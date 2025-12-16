@@ -85,13 +85,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Type of step. Possible values are: import, scoping, matching, processing, referenceResolution, export, unknownFutureValue.</summary>
+        /// <summary>Type of step. The possible values are: import, scoping, matching, processing, referenceResolution, export, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.ProvisioningStepType? ProvisioningStepType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.ProvisioningStepType?>("provisioningStepType"); }
             set { BackingStore?.Set("provisioningStepType", value); }
         }
-        /// <summary>Status of the step. Possible values are: success, warning,  failure, skipped, unknownFutureValue.</summary>
+        /// <summary>Status of the step. The possible values are: success, warning,  failure, skipped, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.ProvisioningResult? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.ProvisioningResult?>("status"); }

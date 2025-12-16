@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class WorkbookApplication : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Returns the calculation mode used in the workbook. Possible values are: Automatic, AutomaticExceptTables, Manual.</summary>
+        /// <summary>Returns the calculation mode used in the workbook. The possible values are: Automatic, AutomaticExceptTables, Manual.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CalculationMode

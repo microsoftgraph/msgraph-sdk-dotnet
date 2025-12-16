@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("attestationCertificates", value); }
         }
 #endif
-        /// <summary>The attestation level of this FIDO2 security key. Possible values are: attested, or notAttested.</summary>
+        /// <summary>The attestation level of this FIDO2 security key. The possible values are: attested, or notAttested.</summary>
         public global::Microsoft.Graph.Models.AttestationLevel? AttestationLevel
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.AttestationLevel?>("attestationLevel"); }

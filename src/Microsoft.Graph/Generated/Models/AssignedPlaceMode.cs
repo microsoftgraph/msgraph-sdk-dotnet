@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class AssignedPlaceMode : global::Microsoft.Graph.Models.PlaceMode, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The assignedUserEmailAddress property</summary>
+        /// <summary>The email address of the user to whom the desk is assigned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssignedUserEmailAddress
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("assignedUserEmailAddress", value); }
         }
 #endif
-        /// <summary>The assignedUserId property</summary>
+        /// <summary>The user ID of the user to whom the desk is assigned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssignedUserId

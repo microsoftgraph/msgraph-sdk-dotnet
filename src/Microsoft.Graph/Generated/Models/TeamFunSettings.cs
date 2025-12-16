@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Giphy content rating. Possible values are: moderate, strict.</summary>
+        /// <summary>Giphy content rating. The possible values are: moderate, strict.</summary>
         public global::Microsoft.Graph.Models.GiphyRatingType? GiphyContentRating
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.GiphyRatingType?>("giphyContentRating"); }

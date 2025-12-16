@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("group", value); }
         }
 #endif
-        /// <summary>Specifies which sources are included in this group. Possible values are: mailbox, site.</summary>
+        /// <summary>Specifies which sources are included in this group. The possible values are: mailbox, site.</summary>
         public global::Microsoft.Graph.Models.Security.SourceType? IncludedSources
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.SourceType?>("includedSources"); }

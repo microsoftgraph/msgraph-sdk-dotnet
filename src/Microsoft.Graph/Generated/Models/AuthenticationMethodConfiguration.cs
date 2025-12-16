@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("excludeTargets", value); }
         }
 #endif
-        /// <summary>The state of the policy. Possible values are: enabled, disabled.</summary>
+        /// <summary>The state of the policy. The possible values are: enabled, disabled.</summary>
         public global::Microsoft.Graph.Models.AuthenticationMethodState? State
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.AuthenticationMethodState?>("state"); }

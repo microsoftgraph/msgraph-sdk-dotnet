@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>When type is set to Group, this indicates the group type. Possible values are: unifiedGroups, azureAD, and unknownFutureValue</summary>
+        /// <summary>When type is set to Group, this indicates the group type. The possible values are: unifiedGroups, azureAD, and unknownFutureValue</summary>
         public global::Microsoft.Graph.Models.GroupType? GroupType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.GroupType?>("groupType"); }

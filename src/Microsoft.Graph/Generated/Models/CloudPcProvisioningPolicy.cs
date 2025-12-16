@@ -212,7 +212,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("microsoftManagedDesktop", value); }
         }
 #endif
-        /// <summary>Specifies the type of license used when provisioning Cloud PCs using this policy. By default, the license type is dedicated if the provisioningType isn&apos;t specified when you create the cloudPcProvisioningPolicy. You can&apos;t change this property after the cloudPcProvisioningPolicy was created. Possible values are: dedicated, shared, unknownFutureValue.</summary>
+        /// <summary>Specifies the type of license used when provisioning Cloud PCs using this policy. By default, the license type is dedicated if the provisioningType isn&apos;t specified when you create the cloudPcProvisioningPolicy. You can&apos;t change this property after the cloudPcProvisioningPolicy was created. The possible values are: dedicated, shared, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.CloudPcProvisioningType? ProvisioningType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.CloudPcProvisioningType?>("provisioningType"); }

@@ -53,13 +53,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The stage of the subject rights request. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue, approval. Use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: approval.</summary>
+        /// <summary>The stage of the subject rights request.</summary>
         public global::Microsoft.Graph.Models.SubjectRightsRequestStage? Stage
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.SubjectRightsRequestStage?>("stage"); }
             set { BackingStore?.Set("stage", value); }
         }
-        /// <summary>Status of the current stage. Possible values are: notStarted, current, completed, failed, unknownFutureValue.</summary>
+        /// <summary>Status of the current stage. The possible values are: notStarted, current, completed, failed, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.SubjectRightsRequestStageStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.SubjectRightsRequestStageStatus?>("status"); }

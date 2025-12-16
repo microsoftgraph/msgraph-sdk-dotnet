@@ -180,7 +180,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<DateTimeOffset?>("returnedDateTime"); }
             set { BackingStore?.Set("returnedDateTime", value); }
         }
-        /// <summary>Read-only. Possible values are: excused, reassigned, returned, submitted and working. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: excused and reassigned.</summary>
+        /// <summary>Read-only. The possible values are: excused, reassigned, returned, submitted and working. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: excused and reassigned.</summary>
         public global::Microsoft.Graph.Models.EducationSubmissionStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.EducationSubmissionStatus?>("status"); }

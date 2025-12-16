@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class VirtualEventWebinar : global::Microsoft.Graph.Models.VirtualEvent, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>To whom the webinar is visible. Possible values are: everyone, organization, and unknownFutureValue.</summary>
+        /// <summary>To whom the webinar is visible. The possible values are: everyone, organization, and unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.MeetingAudience? Audience
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.MeetingAudience?>("audience"); }

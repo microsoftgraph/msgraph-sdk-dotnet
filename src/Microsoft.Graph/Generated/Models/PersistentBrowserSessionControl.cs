@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class PersistentBrowserSessionControl : global::Microsoft.Graph.Models.ConditionalAccessSessionControl, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Possible values are: always, never.</summary>
+        /// <summary>The possible values are: always, never.</summary>
         public global::Microsoft.Graph.Models.PersistentBrowserSessionMode? Mode
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.PersistentBrowserSessionMode?>("mode"); }

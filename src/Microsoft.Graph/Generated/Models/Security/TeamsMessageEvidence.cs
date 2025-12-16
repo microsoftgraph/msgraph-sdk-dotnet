@@ -44,13 +44,13 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("channelId", value); }
         }
 #endif
-        /// <summary>The delivery action of this Teams message. Possible values are: unknown, deliveredAsSpam, delivered, blocked, replaced, unknownFutureValue.</summary>
+        /// <summary>The delivery action of this Teams message. The possible values are: unknown, deliveredAsSpam, delivered, blocked, replaced, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.Security.TeamsMessageDeliveryAction? DeliveryAction
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.TeamsMessageDeliveryAction?>("deliveryAction"); }
             set { BackingStore?.Set("deliveryAction", value); }
         }
-        /// <summary>The delivery location of this Teams message. Possible values are: unknown, teams, quarantine, failed, unknownFutureValue.</summary>
+        /// <summary>The delivery location of this Teams message. The possible values are: unknown, teams, quarantine, failed, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.Security.TeamsDeliveryLocation? DeliveryLocation
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.TeamsDeliveryLocation?>("deliveryLocation"); }

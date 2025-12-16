@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("allowEmailVerifiedUsersToJoinOrganization"); }
             set { BackingStore?.Set("allowEmailVerifiedUsersToJoinOrganization", value); }
         }
-        /// <summary>Indicates who can invite guests to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone.  everyone is the default setting for all cloud environments except US Government. For more information, see allowInvitesFrom values.</summary>
+        /// <summary>Indicates who can invite guests to the organization. The possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone.  everyone is the default setting for all cloud environments except US Government. For more information, see allowInvitesFrom values.</summary>
         public global::Microsoft.Graph.Models.AllowInvitesFrom? AllowInvitesFrom
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.AllowInvitesFrom?>("allowInvitesFrom"); }

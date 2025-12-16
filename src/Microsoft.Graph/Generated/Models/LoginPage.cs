@@ -120,13 +120,13 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The source of the content. Possible values are: unknown, global, tenant, unknownFutureValue.</summary>
+        /// <summary>The source of the content. The possible values are: unknown, global, tenant, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.SimulationContentSource? Source
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.SimulationContentSource?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
-        /// <summary>The login page status. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.</summary>
+        /// <summary>The login page status. The possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.SimulationContentStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.SimulationContentStatus?>("status"); }

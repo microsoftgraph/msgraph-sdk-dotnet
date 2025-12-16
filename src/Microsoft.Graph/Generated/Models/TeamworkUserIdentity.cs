@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class TeamworkUserIdentity : global::Microsoft.Graph.Models.Identity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Type of user. Possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, unknownFutureValue and emailUser.</summary>
+        /// <summary>Type of user. The possible values are: aadUser, onPremiseAadUser, anonymousGuest, federatedUser, personalMicrosoftAccountUser, skypeUser, phoneUser, unknownFutureValue and emailUser.</summary>
         public global::Microsoft.Graph.Models.TeamworkUserIdentityType? UserIdentityType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.TeamworkUserIdentityType?>("userIdentityType"); }

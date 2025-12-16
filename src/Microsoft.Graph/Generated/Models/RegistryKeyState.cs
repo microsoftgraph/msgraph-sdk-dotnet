@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>A Windows registry hive : HKEYCURRENTCONFIG HKEYCURRENTUSER HKEYLOCALMACHINE/SAM HKEYLOCALMACHINE/Security HKEYLOCALMACHINE/Software HKEYLOCALMACHINE/System HKEY_USERS/.Default. Possible values are: unknown, currentConfig, currentUser, localMachineSam, localMachineSecurity, localMachineSoftware, localMachineSystem, usersDefault.</summary>
+        /// <summary>A Windows registry hive : HKEYCURRENTCONFIG HKEYCURRENTUSER HKEYLOCALMACHINE/SAM HKEYLOCALMACHINE/Security HKEYLOCALMACHINE/Software HKEYLOCALMACHINE/System HKEY_USERS/.Default. The possible values are: unknown, currentConfig, currentUser, localMachineSam, localMachineSecurity, localMachineSoftware, localMachineSystem, usersDefault.</summary>
         public global::Microsoft.Graph.Models.RegistryHive? Hive
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.RegistryHive?>("hive"); }
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("oldValueName", value); }
         }
 #endif
-        /// <summary>Operation that changed the registry key name and/or value. Possible values are: unknown, create, modify, delete.</summary>
+        /// <summary>Operation that changed the registry key name and/or value. The possible values are: unknown, create, modify, delete.</summary>
         public global::Microsoft.Graph.Models.RegistryOperation? Operation
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.RegistryOperation?>("operation"); }
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("valueName", value); }
         }
 #endif
-        /// <summary>Registry key value type REGBINARY REGDWORD REGDWORDLITTLEENDIAN REGDWORDBIGENDIANREGEXPANDSZ REGLINK REGMULTISZ REGNONE REGQWORD REGQWORDLITTLEENDIAN REG_SZ Possible values are: unknown, binary, dword, dwordLittleEndian, dwordBigEndian, expandSz, link, multiSz, none, qword, qwordlittleEndian, sz.</summary>
+        /// <summary>Registry key value type REGBINARY REGDWORD REGDWORDLITTLEENDIAN REGDWORDBIGENDIANREGEXPANDSZ REGLINK REGMULTISZ REGNONE REGQWORD REGQWORDLITTLEENDIAN REG_SZ The possible values are: unknown, binary, dword, dwordLittleEndian, dwordBigEndian, expandSz, link, multiSz, none, qword, qwordlittleEndian, sz.</summary>
         public global::Microsoft.Graph.Models.RegistryValueType? ValueType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.RegistryValueType?>("valueType"); }

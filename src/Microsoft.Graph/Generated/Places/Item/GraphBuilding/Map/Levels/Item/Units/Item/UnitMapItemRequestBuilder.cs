@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Places.Item.GraphBuilding.Map.Levels.Item.Units.Item
         {
         }
         /// <summary>
-        /// Delete navigation property units for places
+        /// Delete a unitMap object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/unitmap-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -57,7 +58,7 @@ namespace Microsoft.Graph.Places.Item.GraphBuilding.Map.Levels.Item.Units.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get units from places
+        /// Collection of units (such as rooms or offices) on this level. Supports upsert.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.UnitMap"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +81,8 @@ namespace Microsoft.Graph.Places.Item.GraphBuilding.Map.Levels.Item.Units.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.UnitMap>(requestInfo, global::Microsoft.Graph.Models.UnitMap.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property units in places
+        /// Update the properties of an existing unitMap object in IMDF format on a specified floor, or create one if it doesn&apos;t exist.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/unitmap-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.UnitMap"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +107,7 @@ namespace Microsoft.Graph.Places.Item.GraphBuilding.Map.Levels.Item.Units.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.UnitMap>(requestInfo, global::Microsoft.Graph.Models.UnitMap.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property units for places
+        /// Delete a unitMap object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +126,7 @@ namespace Microsoft.Graph.Places.Item.GraphBuilding.Map.Levels.Item.Units.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get units from places
+        /// Collection of units (such as rooms or offices) on this level. Supports upsert.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +145,7 @@ namespace Microsoft.Graph.Places.Item.GraphBuilding.Map.Levels.Item.Units.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property units in places
+        /// Update the properties of an existing unitMap object in IMDF format on a specified floor, or create one if it doesn&apos;t exist.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -182,7 +184,7 @@ namespace Microsoft.Graph.Places.Item.GraphBuilding.Map.Levels.Item.Units.Item
         {
         }
         /// <summary>
-        /// Get units from places
+        /// Collection of units (such as rooms or offices) on this level. Supports upsert.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UnitMapItemRequestBuilderGetQueryParameters 

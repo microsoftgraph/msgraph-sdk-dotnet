@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class ServicePrincipalRiskDetection : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Indicates the activity type the detected risk is linked to.  The possible values are: signin, servicePrincipal. Use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: servicePrincipal.</summary>
+        /// <summary>Indicates the activity type the detected risk is linked to.</summary>
         public global::Microsoft.Graph.Models.ActivityType? Activity
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.ActivityType?>("activity"); }

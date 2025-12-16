@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("sectionsUrl", value); }
         }
 #endif
-        /// <summary>Possible values are: Owner, Contributor, Reader, None. Owner represents owner-level access to the notebook. Contributor represents read/write access to the notebook. Reader represents read-only access to the notebook. Read-only.</summary>
+        /// <summary>The possible values are: Owner, Contributor, Reader, None. Owner represents owner-level access to the notebook. Contributor represents read/write access to the notebook. Reader represents read-only access to the notebook. Read-only.</summary>
         public global::Microsoft.Graph.Models.OnenoteUserRole? UserRole
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.OnenoteUserRole?>("userRole"); }

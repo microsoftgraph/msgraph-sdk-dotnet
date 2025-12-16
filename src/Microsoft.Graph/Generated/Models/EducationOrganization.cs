@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Source where this organization was created from. Possible values are: sis, manual.</summary>
+        /// <summary>Source where this organization was created from. The possible values are: sis, manual.</summary>
         public global::Microsoft.Graph.Models.EducationExternalSource? ExternalSource
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.EducationExternalSource?>("externalSource"); }

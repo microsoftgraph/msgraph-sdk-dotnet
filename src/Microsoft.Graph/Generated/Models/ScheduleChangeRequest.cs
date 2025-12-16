@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class ScheduleChangeRequest : global::Microsoft.Graph.Models.ChangeTrackedEntity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Indicates who the request is assigned to. Possible values are: sender, recipient, manager, system, unknownFutureValue.</summary>
+        /// <summary>Indicates who the request is assigned to. The possible values are: sender, recipient, manager, system, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.ScheduleChangeRequestActor? AssignedTo
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.ScheduleChangeRequestActor?>("assignedTo"); }
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("senderUserId", value); }
         }
 #endif
-        /// <summary>The state of the scheduleChangeRequest. Possible values are: pending, approved, declined, unknownFutureValue.</summary>
+        /// <summary>The state of the scheduleChangeRequest. The possible values are: pending, approved, declined, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.ScheduleChangeState? State
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.ScheduleChangeState?>("state"); }

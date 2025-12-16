@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>For dateTime output types, the format of the value. Possible values are: dateOnly or dateTime.</summary>
+        /// <summary>For dateTime output types, the format of the value. The possible values are: dateOnly or dateTime.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Format
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The output type used to format values in this column. Possible values are: boolean, currency, dateTime, number, or text.</summary>
+        /// <summary>The output type used to format values in this column. The possible values are: boolean, currency, dateTime, number, or text.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OutputType

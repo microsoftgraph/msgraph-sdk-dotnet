@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Enforcement type. Possible values are: allow, block.</summary>
+        /// <summary>Enforcement type. The possible values are: allow, block.</summary>
         public global::Microsoft.Graph.Models.Fido2RestrictionEnforcementType? EnforcementType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Fido2RestrictionEnforcementType?>("enforcementType"); }

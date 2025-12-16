@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class SectionMap : global::Microsoft.Graph.Models.BaseMapFeature, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The placeId property</summary>
+        /// <summary>Identifier of the section to which this sectionMap belongs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PlaceId
