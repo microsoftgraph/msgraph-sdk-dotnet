@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class Place : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The street address of the place.</summary>
+        /// <summary>The physical address of the place, including the street, city, state, country or region, and postal code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.PhysicalAddress? Address
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("address", value); }
         }
 #endif
-        /// <summary>The checkIns property</summary>
+        /// <summary>A subresource of a place object that indicates the check-in status of an Outlook calendar event booked at the place.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.CheckInClaim>? CheckIns
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("checkIns", value); }
         }
 #endif
-        /// <summary>The name associated with the place.</summary>
+        /// <summary>The name that is associated with the place.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -76,13 +76,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("geoCoordinates", value); }
         }
 #endif
-        /// <summary>The isWheelChairAccessible property</summary>
+        /// <summary>Indicates whether the place is wheelchair accessible.</summary>
         public bool? IsWheelChairAccessible
         {
             get { return BackingStore?.Get<bool?>("isWheelChairAccessible"); }
             set { BackingStore?.Set("isWheelChairAccessible", value); }
         }
-        /// <summary>The label property</summary>
+        /// <summary>User-defined description of the place.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("label", value); }
         }
 #endif
-        /// <summary>The parentId property</summary>
+        /// <summary>The ID of a parent place.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ParentId
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("phone", value); }
         }
 #endif
-        /// <summary>The tags property</summary>
+        /// <summary>Custom tags that are associated with the place for categorization or filtering.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Tags

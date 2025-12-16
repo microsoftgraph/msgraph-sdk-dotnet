@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class MicrosoftTrainingAssignmentMapping : global::Microsoft.Graph.Models.TrainingSetting, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>A user collection that specifies to whom the training should be assigned. Possible values are: none, allUsers, clickedPayload, compromised, reportedPhish, readButNotClicked, didNothing, unknownFutureValue.</summary>
+        /// <summary>A user collection that specifies to whom the training should be assigned. The possible values are: none, allUsers, clickedPayload, compromised, reportedPhish, readButNotClicked, didNothing, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.TrainingAssignedTo?>? AssignedTo

@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class Initiator : global::Microsoft.Graph.Models.Identity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Type of initiator. Possible values are: user, application, system, unknownFutureValue.</summary>
+        /// <summary>Type of initiator. The possible values are: user, application, system, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.InitiatorType? InitiatorType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.InitiatorType?>("initiatorType"); }

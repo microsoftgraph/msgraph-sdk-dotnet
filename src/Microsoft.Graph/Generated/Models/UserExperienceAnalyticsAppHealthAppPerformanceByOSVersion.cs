@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<int?>("appCrashCount"); }
             set { BackingStore?.Set("appCrashCount", value); }
         }
-        /// <summary>The friendly name of the application. Possible values are: Outlook, Excel. Supports: $select, $OrderBy. Read-only.</summary>
+        /// <summary>The friendly name of the application. The possible values are: Outlook, Excel. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppDisplayName
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("appDisplayName", value); }
         }
 #endif
-        /// <summary>The name of the application. Possible values are: outlook.exe, excel.exe. Supports: $select, $OrderBy. Read-only.</summary>
+        /// <summary>The name of the application. The possible values are: outlook.exe, excel.exe. Supports: $select, $OrderBy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppName

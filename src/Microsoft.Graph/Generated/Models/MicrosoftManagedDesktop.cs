@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Indicates the provisioning policy associated with Microsoft Managed Desktop settings. Possible values are: notManaged, premiumManaged, standardManaged, starterManaged, unknownFutureValue. The default is notManaged.</summary>
+        /// <summary>Indicates the provisioning policy associated with Microsoft Managed Desktop settings. The possible values are: notManaged, premiumManaged, standardManaged, starterManaged, unknownFutureValue. The default is notManaged.</summary>
         public global::Microsoft.Graph.Models.MicrosoftManagedDesktopType? ManagedType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.MicrosoftManagedDesktopType?>("managedType"); }

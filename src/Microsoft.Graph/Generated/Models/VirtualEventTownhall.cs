@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class VirtualEventTownhall : global::Microsoft.Graph.Models.VirtualEvent, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The audience to whom the town hall is visible. Possible values are: everyone, organization, and unknownFutureValue.</summary>
+        /// <summary>The audience to whom the town hall is visible. The possible values are: everyone, organization, and unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.MeetingAudience? Audience
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.MeetingAudience?>("audience"); }

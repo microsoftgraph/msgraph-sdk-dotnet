@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("permission", value); }
         }
 #endif
-        /// <summary>The type of permission. Possible values are: Application, Delegated. Read-only.</summary>
+        /// <summary>The type of permission. The possible values are: Application, Delegated. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PermissionType

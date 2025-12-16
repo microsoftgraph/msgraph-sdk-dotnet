@@ -89,7 +89,8 @@ namespace Microsoft.Graph.Places.Item
         {
         }
         /// <summary>
-        /// Delete entity from places
+        /// Delete a place object. You can also use this method to delete the following child object types: building, floor, section, or desk.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/place-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +112,7 @@ namespace Microsoft.Graph.Places.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of place object, which can be a room or roomList. You can identify the room or roomList by specifying the id or emailAddress property.
+        /// Update the properties of place object that can be a building, floor, section, desk, room, workspace, or roomList. You can identify the place by specifying the id property.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/place-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Place"/></returns>
@@ -137,7 +138,7 @@ namespace Microsoft.Graph.Places.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Place>(requestInfo, global::Microsoft.Graph.Models.Place.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete entity from places
+        /// Delete a place object. You can also use this method to delete the following child object types: building, floor, section, or desk.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -156,7 +157,7 @@ namespace Microsoft.Graph.Places.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of place object, which can be a room or roomList. You can identify the room or roomList by specifying the id or emailAddress property.
+        /// Update the properties of place object that can be a building, floor, section, desk, room, workspace, or roomList. You can identify the place by specifying the id property.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

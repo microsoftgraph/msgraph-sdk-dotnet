@@ -199,7 +199,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("leftMargins", value); }
         }
 #endif
-        /// <summary>The media (i.e., paper) colors supported by the printer.</summary>
+        /// <summary>The media (for example, paper) colors supported by the printer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? MediaColors
@@ -215,7 +215,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("mediaColors", value); }
         }
 #endif
-        /// <summary>The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes. Valid values are in the following table.</summary>
+        /// <summary>The media sizes supported by the printer. Supports standard size names for ISO and ANSI media sizes. For the list of supported values, see mediaSizes values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? MediaSizes

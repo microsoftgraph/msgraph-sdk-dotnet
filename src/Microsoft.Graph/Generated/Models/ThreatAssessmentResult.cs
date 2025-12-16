@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("message", value); }
         }
 #endif
-        /// <summary>The threat assessment result type. Possible values are: checkPolicy, rescan.</summary>
+        /// <summary>The threat assessment result type. The possible values are: checkPolicy, rescan.</summary>
         public global::Microsoft.Graph.Models.ThreatAssessmentResultType? ResultType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.ThreatAssessmentResultType?>("resultType"); }

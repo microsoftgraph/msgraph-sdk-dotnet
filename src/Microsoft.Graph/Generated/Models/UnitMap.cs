@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class UnitMap : global::Microsoft.Graph.Models.BaseMapFeature, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The placeId property</summary>
+        /// <summary>Identifier of the place (such as a room) to which this unitMap belongs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PlaceId

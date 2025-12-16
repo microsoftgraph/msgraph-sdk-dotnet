@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<TimeSpan?>("callRecordingDuration"); }
             set { BackingStore?.Set("callRecordingDuration", value); }
         }
-        /// <summary>Status of the call recording. Possible values are: success, failure, initial, chunkFinished, unknownFutureValue.</summary>
+        /// <summary>Status of the call recording. The possible values are: success, failure, initial, chunkFinished, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.CallRecordingStatus? CallRecordingStatus
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.CallRecordingStatus?>("callRecordingStatus"); }

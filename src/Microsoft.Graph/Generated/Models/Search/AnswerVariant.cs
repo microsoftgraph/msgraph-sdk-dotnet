@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Models.Search
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The device or operating system that can view this answer variation. Possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.</summary>
+        /// <summary>The device or operating system that can view this answer variation. The possible values are: android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, unknown, androidASOP, androidMobileApplicationManagement, iOSMobileApplicationManagement, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.DevicePlatformType? Platform
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.DevicePlatformType?>("platform"); }

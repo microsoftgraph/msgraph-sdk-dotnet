@@ -28,13 +28,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("phoneNumber", value); }
         }
 #endif
-        /// <summary>The type of this phone. Possible values are: mobile, alternateMobile, or office.</summary>
+        /// <summary>The type of this phone. The possible values are: mobile, alternateMobile, or office.</summary>
         public global::Microsoft.Graph.Models.AuthenticationPhoneType? PhoneType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.AuthenticationPhoneType?>("phoneType"); }
             set { BackingStore?.Set("phoneType", value); }
         }
-        /// <summary>Whether a phone is ready to be used for SMS sign-in or not. Possible values are: notSupported, notAllowedByPolicy, notEnabled, phoneNumberNotUnique, ready, or notConfigured, unknownFutureValue.</summary>
+        /// <summary>Whether a phone is ready to be used for SMS sign-in or not. The possible values are: notSupported, notAllowedByPolicy, notEnabled, phoneNumberNotUnique, ready, or notConfigured, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.AuthenticationMethodSignInState? SmsSignInState
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.AuthenticationMethodSignInState?>("smsSignInState"); }

@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The emailAddress property</summary>
+        /// <summary>The primary SMTP address associated with the mailbox.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EmailAddress
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("emailAddress", value); }
         }
 #endif
-        /// <summary>The externalDirectoryObjectId property</summary>
+        /// <summary>The unique identifier of the mailbox in the external directory (such as Microsoft Entra).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalDirectoryObjectId

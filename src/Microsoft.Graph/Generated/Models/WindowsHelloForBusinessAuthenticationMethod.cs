@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Key strength of this Windows Hello for Business key. Possible values are: normal, weak, unknown.</summary>
+        /// <summary>Key strength of this Windows Hello for Business key. The possible values are: normal, weak, unknown.</summary>
         public global::Microsoft.Graph.Models.AuthenticationMethodKeyStrength? KeyStrength
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.AuthenticationMethodKeyStrength?>("keyStrength"); }

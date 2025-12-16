@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Enable or disable the feature. Possible values are: default, enabled, disabled, unknownFutureValue. The default value is used when the configuration hasn&apos;t been explicitly set and uses the default behavior of Microsoft Entra ID for the setting. The default value is disabled.</summary>
+        /// <summary>Enable or disable the feature. The possible values are: default, enabled, disabled, unknownFutureValue. The default value is used when the configuration hasn&apos;t been explicitly set and uses the default behavior of Microsoft Entra ID for the setting. The default value is disabled.</summary>
         public global::Microsoft.Graph.Models.AdvancedConfigState? State
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.AdvancedConfigState?>("state"); }

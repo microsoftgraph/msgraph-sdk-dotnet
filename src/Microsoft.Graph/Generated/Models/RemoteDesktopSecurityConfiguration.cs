@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("isRemoteDesktopProtocolEnabled"); }
             set { BackingStore?.Set("isRemoteDesktopProtocolEnabled", value); }
         }
-        /// <summary>The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol.</summary>
+        /// <summary>The collection of target device groups that are associated with the RDS security configuration that will be enabled for SSO when a client connects to the target device over RDP using the new Microsoft Entra ID RDS authentication protocol. &lt;br/&lt;Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.TargetDeviceGroup>? TargetDeviceGroups

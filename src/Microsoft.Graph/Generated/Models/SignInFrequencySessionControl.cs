@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.SignInFrequencyInterval?>("frequencyInterval"); }
             set { BackingStore?.Set("frequencyInterval", value); }
         }
-        /// <summary>Possible values are: days, hours.</summary>
+        /// <summary>The possible values are: days, hours.</summary>
         public global::Microsoft.Graph.Models.SigninFrequencyType? Type
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.SigninFrequencyType?>("type"); }

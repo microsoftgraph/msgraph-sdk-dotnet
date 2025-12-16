@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("idleSessionSignOut", value); }
         }
 #endif
-        /// <summary>Specifies the image tagging option for the tenant. Possible values are: disabled, basic, enhanced.</summary>
+        /// <summary>Specifies the image tagging option for the tenant. The possible values are: disabled, basic, enhanced.</summary>
         public global::Microsoft.Graph.Models.ImageTaggingChoice? ImageTaggingOption
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.ImageTaggingChoice?>("imageTaggingOption"); }
@@ -216,13 +216,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("sharingBlockedDomainList", value); }
         }
 #endif
-        /// <summary>Sharing capability for the tenant. Possible values are: disabled, externalUserSharingOnly, externalUserAndGuestSharing, existingExternalUserSharingOnly.</summary>
+        /// <summary>Sharing capability for the tenant. The possible values are: disabled, externalUserSharingOnly, externalUserAndGuestSharing, existingExternalUserSharingOnly.</summary>
         public global::Microsoft.Graph.Models.SharingCapabilities? SharingCapability
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.SharingCapabilities?>("sharingCapability"); }
             set { BackingStore?.Set("sharingCapability", value); }
         }
-        /// <summary>Specifies the external sharing mode for domains. Possible values are: none, allowList, blockList.</summary>
+        /// <summary>Specifies the external sharing mode for domains. The possible values are: none, allowList, blockList.</summary>
         public global::Microsoft.Graph.Models.SharingDomainRestrictionMode? SharingDomainRestrictionMode
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.SharingDomainRestrictionMode?>("sharingDomainRestrictionMode"); }

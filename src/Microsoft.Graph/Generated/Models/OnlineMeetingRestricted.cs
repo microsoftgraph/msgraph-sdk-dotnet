@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Specifies the reason shared content from this participant is disabled. Possible values are: watermarkProtection, unknownFutureValue.</summary>
+        /// <summary>Specifies the reason shared content from this participant is disabled. The possible values are: watermarkProtection, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.OnlineMeetingContentSharingDisabledReason? ContentSharingDisabled
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.OnlineMeetingContentSharingDisabledReason?>("contentSharingDisabled"); }
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Specifies the reason video from this participant is disabled. Possible values are: watermarkProtection, unknownFutureValue.</summary>
+        /// <summary>Specifies the reason video from this participant is disabled. The possible values are: watermarkProtection, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.OnlineMeetingVideoDisabledReason? VideoDisabled
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.OnlineMeetingVideoDisabledReason?>("videoDisabled"); }

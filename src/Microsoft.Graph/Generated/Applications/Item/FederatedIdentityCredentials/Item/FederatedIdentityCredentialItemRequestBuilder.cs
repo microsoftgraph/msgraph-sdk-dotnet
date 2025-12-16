@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Applications.Item.FederatedIdentityCredentials.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a federatedIdentityCredential object.
+        /// Read the properties and relationships of a federatedIdentityCredential object assigned to an application.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/federatedidentitycredential-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.FederatedIdentityCredential"/></returns>
@@ -127,7 +127,7 @@ namespace Microsoft.Graph.Applications.Item.FederatedIdentityCredentials.Item
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a federatedIdentityCredential object.
+        /// Read the properties and relationships of a federatedIdentityCredential object assigned to an application.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -185,7 +185,7 @@ namespace Microsoft.Graph.Applications.Item.FederatedIdentityCredentials.Item
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a federatedIdentityCredential object.
+        /// Read the properties and relationships of a federatedIdentityCredential object assigned to an application.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FederatedIdentityCredentialItemRequestBuilderGetQueryParameters 

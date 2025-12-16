@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Possible values are: EscrowBehavior, DisableMonitoringForChanges, OriginalJoiningProperty, Disposition, IsCustomerDefined, ExcludeFromReporting, Unsynchronized.</summary>
+        /// <summary>The possible values are: EscrowBehavior, DisableMonitoringForChanges, OriginalJoiningProperty, Disposition, IsCustomerDefined, ExcludeFromReporting, Unsynchronized.</summary>
         public global::Microsoft.Graph.Models.ObjectMappingMetadata? Key
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.ObjectMappingMetadata?>("key"); }

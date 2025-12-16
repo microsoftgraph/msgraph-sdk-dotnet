@@ -76,7 +76,8 @@ namespace Microsoft.Graph.Me.Calendars.Item
         {
         }
         /// <summary>
-        /// Delete navigation property calendars for me
+        /// Delete a calendar other than the default calendar.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/calendar-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -146,7 +147,7 @@ namespace Microsoft.Graph.Me.Calendars.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Calendar>(requestInfo, global::Microsoft.Graph.Models.Calendar.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property calendars for me
+        /// Delete a calendar other than the default calendar.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

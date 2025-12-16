@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("fileHash", value); }
         }
 #endif
-        /// <summary>The integrity level of the process. Possible values are: unknown, untrusted, low, medium, high, system.</summary>
+        /// <summary>The integrity level of the process. The possible values are: unknown, untrusted, low, medium, high, system.</summary>
         public global::Microsoft.Graph.Models.ProcessIntegrityLevel? IntegrityLevel
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.ProcessIntegrityLevel?>("integrityLevel"); }
