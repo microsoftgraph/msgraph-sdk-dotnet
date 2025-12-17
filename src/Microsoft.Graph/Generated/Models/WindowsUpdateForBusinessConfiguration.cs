@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("featureUpdatesWillBeRolledBack"); }
             set { BackingStore?.Set("featureUpdatesWillBeRolledBack", value); }
         }
-        /// <summary>The Installation Schedule. Possible values are: ActiveHoursStart, ActiveHoursEnd, ScheduledInstallDay, ScheduledInstallTime. Returned by default. Query parameters are not supported.</summary>
+        /// <summary>The Installation Schedule. The possible values are: ActiveHoursStart, ActiveHoursEnd, ScheduledInstallDay, ScheduledInstallTime. Returned by default. Query parameters are not supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.WindowsUpdateInstallScheduleType? InstallationSchedule
@@ -222,7 +222,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.WindowsUpdateNotificationDisplayOption?>("updateNotificationLevel"); }
             set { BackingStore?.Set("updateNotificationLevel", value); }
         }
-        /// <summary>Schedule the update installation on the weeks of the month. Possible values are: UserDefined, FirstWeek, SecondWeek, ThirdWeek, FourthWeek, EveryWeek. Returned by default. Query parameters are not supported. Possible values are: userDefined, firstWeek, secondWeek, thirdWeek, fourthWeek, everyWeek, unknownFutureValue.</summary>
+        /// <summary>Schedule the update installation on the weeks of the month. The possible values are: UserDefined, FirstWeek, SecondWeek, ThirdWeek, FourthWeek, EveryWeek. Returned by default. Query parameters are not supported. The possible values are: userDefined, firstWeek, secondWeek, thirdWeek, fourthWeek, everyWeek, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.WindowsUpdateForBusinessUpdateWeeks? UpdateWeeks
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.WindowsUpdateForBusinessUpdateWeeks?>("updateWeeks"); }

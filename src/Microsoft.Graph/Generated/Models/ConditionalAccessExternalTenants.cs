@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The membership kind. Possible values are: all, enumerated, unknownFutureValue. The enumerated member references an conditionalAccessEnumeratedExternalTenants object.</summary>
+        /// <summary>The membership kind. The possible values are: all, enumerated, unknownFutureValue. The enumerated member references an conditionalAccessEnumeratedExternalTenants object.</summary>
         public global::Microsoft.Graph.Models.ConditionalAccessExternalTenantsMembershipKind? MembershipKind
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.ConditionalAccessExternalTenantsMembershipKind?>("membershipKind"); }

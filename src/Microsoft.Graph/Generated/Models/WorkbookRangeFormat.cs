@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("font", value); }
         }
 #endif
-        /// <summary>The horizontal alignment for the specified object. Possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.</summary>
+        /// <summary>The horizontal alignment for the specified object. The possible values are: General, Left, Center, Right, Fill, Justify, CenterAcrossSelection, Distributed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HorizontalAlignment
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<double?>("rowHeight"); }
             set { BackingStore?.Set("rowHeight", value); }
         }
-        /// <summary>The vertical alignment for the specified object. Possible values are: Top, Center, Bottom, Justify, Distributed.</summary>
+        /// <summary>The vertical alignment for the specified object. The possible values are: Top, Center, Bottom, Justify, Distributed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VerticalAlignment

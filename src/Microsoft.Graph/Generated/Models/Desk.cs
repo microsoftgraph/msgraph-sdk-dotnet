@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class Desk : global::Microsoft.Graph.Models.Place, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The displayDeviceName property</summary>
+        /// <summary>The name of the display device (for example, monitor or projector) that is available at the desk.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayDeviceName
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayDeviceName", value); }
         }
 #endif
-        /// <summary>The mailboxDetails property</summary>
+        /// <summary>The mailbox object id and email address that are associated with the desk.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.MailboxDetails? MailboxDetails
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("mailboxDetails", value); }
         }
 #endif
-        /// <summary>The mode property</summary>
+        /// <summary>The mode of the desk. The supported modes are:assignedPlaceMode - Desks that are assigned to a user.reservablePlaceMode - Desks that can be booked in advance using desk reservation tools.dropInPlaceMode - First come, first served desks. When you plug into a peripheral on one of these desks, the desk is booked for you, assuming the peripheral is associated with the desk in the Microsoft Teams Rooms Pro management portal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.PlaceMode? Mode

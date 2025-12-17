@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("clientApplications", value); }
         }
 #endif
-        /// <summary>Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.  The easUnsupported enumeration member will be deprecated in favor of exchangeActiveSync, which includes EAS supported and unsupported platforms.</summary>
+        /// <summary>Client application types included in the policy. The possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.  The easUnsupported enumeration member will be deprecated in favor of exchangeActiveSync, which includes EAS supported and unsupported platforms.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.ConditionalAccessClientApp?>? ClientAppTypes
@@ -155,7 +155,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("platforms", value); }
         }
 #endif
-        /// <summary>Service principal risk levels included in the policy. Possible values are: low, medium, high, none, unknownFutureValue.</summary>
+        /// <summary>Service principal risk levels included in the policy. The possible values are: low, medium, high, none, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.RiskLevel?>? ServicePrincipalRiskLevels
@@ -171,7 +171,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("servicePrincipalRiskLevels", value); }
         }
 #endif
-        /// <summary>Sign-in risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.</summary>
+        /// <summary>Sign-in risk levels included in the policy. The possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.RiskLevel?>? SignInRiskLevels
@@ -187,7 +187,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("signInRiskLevels", value); }
         }
 #endif
-        /// <summary>User risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.</summary>
+        /// <summary>User risk levels included in the policy. The possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.RiskLevel?>? UserRiskLevels

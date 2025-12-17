@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("proposedNewTime", value); }
         }
 #endif
-        /// <summary>Specifies the type of response to a meeting request. Possible values are: tentativelyAccepted, accepted, declined. For the eventMessageResponse type, none, organizer, and notResponded are not supported. Read-only. Not filterable.</summary>
+        /// <summary>Specifies the type of response to a meeting request. The possible values are: tentativelyAccepted, accepted, declined. For the eventMessageResponse type, none, organizer, and notResponded are not supported. Read-only. Not filterable.</summary>
         public global::Microsoft.Graph.Models.ResponseType? ResponseType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.ResponseType?>("responseType"); }

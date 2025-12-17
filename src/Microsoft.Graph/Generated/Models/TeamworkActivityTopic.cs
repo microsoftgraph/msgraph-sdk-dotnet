@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Type of source. Possible values are: entityUrl, text. For supported Microsoft Graph URLs, use entityUrl. For custom text, use text.</summary>
+        /// <summary>Type of source. The possible values are: entityUrl, text. For supported Microsoft Graph URLs, use entityUrl. For custom text, use text.</summary>
         public global::Microsoft.Graph.Models.TeamworkActivityTopicSource? Source
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.TeamworkActivityTopicSource?>("source"); }

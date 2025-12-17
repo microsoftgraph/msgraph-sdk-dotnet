@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("dataSubject", value); }
         }
 #endif
-        /// <summary>The type of the data subject. Possible values are: customer, currentEmployee, formerEmployee, prospectiveEmployee, student, teacher, faculty, other, unknownFutureValue.</summary>
+        /// <summary>The type of the data subject. The possible values are: customer, currentEmployee, formerEmployee, prospectiveEmployee, student, teacher, faculty, other, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.DataSubjectType? DataSubjectType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.DataSubjectType?>("dataSubjectType"); }
@@ -332,7 +332,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("stages", value); }
         }
 #endif
-        /// <summary>The status of the request. Possible values are: active, closed, unknownFutureValue.</summary>
+        /// <summary>The status of the request. The possible values are: active, closed, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.SubjectRightsRequestStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.SubjectRightsRequestStatus?>("status"); }
@@ -354,7 +354,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("team", value); }
         }
 #endif
-        /// <summary>The type of the request. Possible values are: export, delete, access, tagForAction, unknownFutureValue.</summary>
+        /// <summary>The type of the request. The possible values are: export, delete, access, tagForAction, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.SubjectRightsRequestType? Type
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.SubjectRightsRequestType?>("type"); }

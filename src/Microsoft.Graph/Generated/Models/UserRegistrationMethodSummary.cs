@@ -59,13 +59,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("userRegistrationMethodCounts", value); }
         }
 #endif
-        /// <summary>The role type of the user. Possible values are: all, privilegedAdmin, admin, user, unknownFutureValue.</summary>
+        /// <summary>The role type of the user. The possible values are: all, privilegedAdmin, admin, user, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.IncludedUserRoles? UserRoles
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.IncludedUserRoles?>("userRoles"); }
             set { BackingStore?.Set("userRoles", value); }
         }
-        /// <summary>User type. Possible values are: all, member, guest, unknownFutureValue.</summary>
+        /// <summary>User type. The possible values are: all, member, guest, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.IncludedUserTypes? UserTypes
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.IncludedUserTypes?>("userTypes"); }

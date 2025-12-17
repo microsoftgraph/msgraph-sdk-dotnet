@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("learningProviderId", value); }
         }
 #endif
-        /// <summary>The status of the course activity. Possible values are: notStarted, inProgress, completed. Required.</summary>
+        /// <summary>The status of the course activity. The possible values are: notStarted, inProgress, completed. Required.</summary>
         public global::Microsoft.Graph.Models.CourseStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.CourseStatus?>("status"); }

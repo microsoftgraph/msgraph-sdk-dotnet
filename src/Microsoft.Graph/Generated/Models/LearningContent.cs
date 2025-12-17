@@ -160,7 +160,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The difficulty level of the learning content. Possible values are: Beginner, Intermediate, Advanced, unknownFutureValue. Optional.</summary>
+        /// <summary>The difficulty level of the learning content. The possible values are: Beginner, Intermediate, Advanced, unknownFutureValue. Optional.</summary>
         public global::Microsoft.Graph.Models.Level? Level
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Level?>("level"); }

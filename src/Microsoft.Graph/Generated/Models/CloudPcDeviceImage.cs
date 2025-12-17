@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The error code of the status of the image that indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, sourceImageInvalid, sourceImageNotGeneralized, unknownFutureValue, vmAlreadyAzureAdJoined, paidSourceImageNotSupport, sourceImageNotSupportCustomizeVMName, sourceImageSizeExceedsLimitation. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: vmAlreadyAzureAdJoined, paidSourceImageNotSupport, sourceImageNotSupportCustomizeVMName, sourceImageSizeExceedsLimitation. Read-only.</summary>
+        /// <summary>The error code of the status of the image that indicates why the upload failed, if applicable. The possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, sourceImageInvalid, sourceImageNotGeneralized, unknownFutureValue, vmAlreadyAzureAdJoined, paidSourceImageNotSupport, sourceImageNotSupportCustomizeVMName, sourceImageSizeExceedsLimitation. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: vmAlreadyAzureAdJoined, paidSourceImageNotSupport, sourceImageNotSupportCustomizeVMName, sourceImageSizeExceedsLimitation. Read-only.</summary>
         public global::Microsoft.Graph.Models.CloudPcDeviceImageErrorCode? ErrorCode
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.CloudPcDeviceImageErrorCode?>("errorCode"); }
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("osBuildNumber", value); }
         }
 #endif
-        /// <summary>The OS status of this image. Possible values are: supported, supportedWithWarning, unknown, unknownFutureValue. The default value is unknown. Read-only.</summary>
+        /// <summary>The OS status of this image. The possible values are: supported, supportedWithWarning, unknown, unknownFutureValue. The default value is unknown. Read-only.</summary>
         public global::Microsoft.Graph.Models.CloudPcDeviceImageOsStatus? OsStatus
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.CloudPcDeviceImageOsStatus?>("osStatus"); }
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("sourceImageResourceId", value); }
         }
 #endif
-        /// <summary>The status of the image on the Cloud PC. Possible values are: pending, ready, failed, unknownFutureValue. Read-only.</summary>
+        /// <summary>The status of the image on the Cloud PC. The possible values are: pending, ready, failed, unknownFutureValue. Read-only.</summary>
         public global::Microsoft.Graph.Models.CloudPcDeviceImageStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.CloudPcDeviceImageStatus?>("status"); }

@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("registrationId", value); }
         }
 #endif
-        /// <summary>Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.</summary>
+        /// <summary>Role of the attendee. The possible values are: None, Attendee, Presenter, and Organizer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Role

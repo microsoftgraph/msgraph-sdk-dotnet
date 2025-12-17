@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class MailAssessmentRequest : global::Microsoft.Graph.Models.ThreatAssessmentRequest, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The reason for mail routed to its destination. Possible values are: none, mailFlowRule, safeSender, blockedSender, advancedSpamFiltering, domainAllowList, domainBlockList, notInAddressBook, firstTimeSender, autoPurgeToInbox, autoPurgeToJunk, autoPurgeToDeleted, outbound, notJunk, junk.</summary>
+        /// <summary>The reason for mail routed to its destination. The possible values are: none, mailFlowRule, safeSender, blockedSender, advancedSpamFiltering, domainAllowList, domainBlockList, notInAddressBook, firstTimeSender, autoPurgeToInbox, autoPurgeToJunk, autoPurgeToDeleted, outbound, notJunk, junk.</summary>
         public global::Microsoft.Graph.Models.MailDestinationRoutingReason? DestinationRoutingReason
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.MailDestinationRoutingReason?>("destinationRoutingReason"); }

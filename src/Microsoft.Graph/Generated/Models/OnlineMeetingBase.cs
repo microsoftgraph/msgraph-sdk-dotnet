@@ -36,19 +36,19 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("allowCopyingAndSharingMeetingContent"); }
             set { BackingStore?.Set("allowCopyingAndSharingMeetingContent", value); }
         }
-        /// <summary>Specifies the users who can admit from the lobby. Possible values are: organizerAndCoOrganizersAndPresenters, organizerAndCoOrganizers, unknownFutureValue.</summary>
+        /// <summary>Specifies the users who can admit from the lobby. The possible values are: organizerAndCoOrganizersAndPresenters, organizerAndCoOrganizers, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.AllowedLobbyAdmitterRoles? AllowedLobbyAdmitters
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.AllowedLobbyAdmitterRoles?>("allowedLobbyAdmitters"); }
             set { BackingStore?.Set("allowedLobbyAdmitters", value); }
         }
-        /// <summary>Specifies who can be a presenter in a meeting. Possible values are: everyone, organization, roleIsPresenter, organizer, unknownFutureValue. Inherited from onlineMeetingBase.</summary>
+        /// <summary>Specifies who can be a presenter in a meeting. The possible values are: everyone, organization, roleIsPresenter, organizer, unknownFutureValue. Inherited from onlineMeetingBase.</summary>
         public global::Microsoft.Graph.Models.OnlineMeetingPresenters? AllowedPresenters
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.OnlineMeetingPresenters?>("allowedPresenters"); }
             set { BackingStore?.Set("allowedPresenters", value); }
         }
-        /// <summary>Indicates whether live share is enabled for the meeting. Possible values are: enabled, disabled, unknownFutureValue.</summary>
+        /// <summary>Indicates whether live share is enabled for the meeting. The possible values are: enabled, disabled, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.MeetingLiveShareOptions? AllowLiveShare
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.MeetingLiveShareOptions?>("allowLiveShare"); }
@@ -242,7 +242,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("recordAutomatically"); }
             set { BackingStore?.Set("recordAutomatically", value); }
         }
-        /// <summary>Specifies whether meeting chat history is shared with participants.  Possible values are: all, none, unknownFutureValue.</summary>
+        /// <summary>Specifies whether meeting chat history is shared with participants.  The possible values are: all, none, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.MeetingChatHistoryDefaultMode? ShareMeetingChatHistoryDefault
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.MeetingChatHistoryDefaultMode?>("shareMeetingChatHistoryDefault"); }

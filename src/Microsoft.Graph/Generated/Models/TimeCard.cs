@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("clockOutEvent", value); }
         }
 #endif
-        /// <summary>Indicates whether this timeCard entry is confirmed. Possible values are: none, user, manager, unknownFutureValue.</summary>
+        /// <summary>Indicates whether this timeCard entry is confirmed. The possible values are: none, user, manager, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.ConfirmedBy? ConfirmedBy
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.ConfirmedBy?>("confirmedBy"); }

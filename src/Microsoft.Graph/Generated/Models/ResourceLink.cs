@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.ResourceLinkType?>("linkType"); }
             set { BackingStore?.Set("linkType", value); }
         }
-        /// <summary>The name property</summary>
+        /// <summary>The link text that is visible in the Places app. The maximum length is 200 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The value property</summary>
+        /// <summary>The URL of the resource link. The maximum length is 200 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value

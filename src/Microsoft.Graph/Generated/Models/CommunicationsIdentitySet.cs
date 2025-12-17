@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("encrypted", value); }
         }
 #endif
-        /// <summary>Type of endpoint that the participant uses. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone, unknownFutureValue.</summary>
+        /// <summary>Type of endpoint that the participant uses. The possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.EndpointType? EndpointType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.EndpointType?>("endpointType"); }

@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("name", value); }
         }
 #endif
-        /// <summary>The platform the cluster runs on. Possible values are: unknown, aks, eks, gke, arc, unknownFutureValue.</summary>
+        /// <summary>The platform the cluster runs on. The possible values are: unknown, aks, eks, gke, arc, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.Security.KubernetesPlatform? Platform
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.KubernetesPlatform?>("platform"); }

@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Places.Item.GraphBuilding.Map.Levels.Item.Fixtures
         {
         }
         /// <summary>
-        /// Get fixtures from places
+        /// Get a list of the fixtureMap objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/levelmap-list-fixtures?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.FixtureMapCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Places.Item.GraphBuilding.Map.Levels.Item.Fixtures
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.FixtureMap>(requestInfo, global::Microsoft.Graph.Models.FixtureMap.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get fixtures from places
+        /// Get a list of the fixtureMap objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +153,7 @@ namespace Microsoft.Graph.Places.Item.GraphBuilding.Map.Levels.Item.Fixtures
             return new global::Microsoft.Graph.Places.Item.GraphBuilding.Map.Levels.Item.Fixtures.FixturesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get fixtures from places
+        /// Get a list of the fixtureMap objects and their properties.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FixturesRequestBuilderGetQueryParameters 

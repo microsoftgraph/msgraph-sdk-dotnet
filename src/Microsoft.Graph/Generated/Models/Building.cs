@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class Building : global::Microsoft.Graph.Models.Place, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The map property</summary>
+        /// <summary>Map file associated with a building in Places. This object is the IMDF-format representation of building.geojson.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.BuildingMap? Map
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("map", value); }
         }
 #endif
-        /// <summary>The resourceLinks property</summary>
+        /// <summary>A set of links to external resources that are associated with the building. Inherited from place.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.ResourceLink>? ResourceLinks

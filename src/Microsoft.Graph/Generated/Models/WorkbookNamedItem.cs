@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("scope", value); }
         }
 #endif
-        /// <summary>The type of reference is associated with the name. Possible values are: String, Integer, Double, Boolean, Range. Read-only.</summary>
+        /// <summary>The type of reference is associated with the name. The possible values are: String, Integer, Double, Boolean, Range. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type

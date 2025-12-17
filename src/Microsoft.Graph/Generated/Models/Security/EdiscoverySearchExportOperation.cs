@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Models.Security
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.AdditionalOptions?>("additionalOptions"); }
             set { BackingStore?.Set("additionalOptions", value); }
         }
-        /// <summary>The versions of cloud attachments to include in messages. Possible values are: latest, recent10, recent100, all, unknownFutureValue.</summary>
+        /// <summary>The versions of cloud attachments to include in messages. The possible values are: latest, recent10, recent100, all, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.Security.CloudAttachmentVersion? CloudAttachmentVersion
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.CloudAttachmentVersion?>("cloudAttachmentVersion"); }
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The versions of files in SharePoint to include. Possible values are: latest, recent10, recent100, all, unknownFutureValue.</summary>
+        /// <summary>The versions of files in SharePoint to include. The possible values are: latest, recent10, recent100, all, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.Security.DocumentVersion? DocumentVersion
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.DocumentVersion?>("documentVersion"); }

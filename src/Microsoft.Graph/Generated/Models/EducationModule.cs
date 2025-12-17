@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("resourcesFolderUrl", value); }
         }
 #endif
-        /// <summary>Status of the module. You can&apos;t use a PATCH operation to update this value. Possible values are: draft and published.</summary>
+        /// <summary>Status of the module. You can&apos;t use a PATCH operation to update this value. The possible values are: draft and published.</summary>
         public global::Microsoft.Graph.Models.EducationModuleStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.EducationModuleStatus?>("status"); }

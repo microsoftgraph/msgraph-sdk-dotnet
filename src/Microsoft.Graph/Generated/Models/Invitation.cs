@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("sendInvitationMessage"); }
             set { BackingStore?.Set("sendInvitationMessage", value); }
         }
-        /// <summary>The status of the invitation. Possible values are: PendingAcceptance, Completed, InProgress, and Error.</summary>
+        /// <summary>The status of the invitation. The possible values are: PendingAcceptance, Completed, InProgress, and Error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status

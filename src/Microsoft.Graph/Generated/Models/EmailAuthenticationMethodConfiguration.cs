@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class EmailAuthenticationMethodConfiguration : global::Microsoft.Graph.Models.AuthenticationMethodConfiguration, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Determines whether email OTP is usable by external users for authentication. Possible values are: default, enabled, disabled, unknownFutureValue. Tenants in the default state who didn&apos;t use public preview have email OTP enabled beginning in October 2021.</summary>
+        /// <summary>Determines whether email OTP is usable by external users for authentication. The possible values are: default, enabled, disabled, unknownFutureValue. Tenants in the default state who didn&apos;t use public preview have email OTP enabled beginning in October 2021.</summary>
         public global::Microsoft.Graph.Models.ExternalEmailOtpState? AllowExternalIdToUseEmailOtp
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.ExternalEmailOtpState?>("allowExternalIdToUseEmailOtp"); }

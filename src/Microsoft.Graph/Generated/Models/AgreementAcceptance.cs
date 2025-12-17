@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<DateTimeOffset?>("recordedDateTime"); }
             set { BackingStore?.Set("recordedDateTime", value); }
         }
-        /// <summary>The state of the agreement acceptance. Possible values are: accepted, declined. Supports $filter (eq).</summary>
+        /// <summary>The state of the agreement acceptance. The possible values are: accepted, declined. Supports $filter (eq).</summary>
         public global::Microsoft.Graph.Models.AgreementAcceptanceState? State
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.AgreementAcceptanceState?>("state"); }

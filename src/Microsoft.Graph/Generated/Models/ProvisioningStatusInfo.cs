@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Possible values are: success, warning, failure, skipped, unknownFutureValue.</summary>
+        /// <summary>The possible values are: success, warning, failure, skipped, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.ProvisioningResult? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.ProvisioningResult?>("status"); }

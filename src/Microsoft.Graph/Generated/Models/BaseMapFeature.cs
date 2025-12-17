@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class BaseMapFeature : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The properties property</summary>
+        /// <summary>Concatenated key-value pair of all properties of a GeoJSON file for this baseMapFeature.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Properties

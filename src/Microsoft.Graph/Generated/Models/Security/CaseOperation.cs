@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models.Security
     public partial class CaseOperation : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The type of action the operation represents. Possible values are: contentExport,  applyTags, convertToPdf, index, estimateStatistics, addToReviewSet, holdUpdate, unknownFutureValue, purgeData, exportReport, exportResult, holdPolicySync. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: purgeData, exportReport, exportResult, holdPolicySync.</summary>
+        /// <summary>The type of action the operation represents. The possible values are: contentExport,  applyTags, convertToPdf, index, estimateStatistics, addToReviewSet, holdUpdate, unknownFutureValue, purgeData, exportReport, exportResult, holdPolicySync. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: purgeData, exportReport, exportResult, holdPolicySync.</summary>
         public global::Microsoft.Graph.Models.Security.CaseAction? Action
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.CaseAction?>("action"); }
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("resultInfo", value); }
         }
 #endif
-        /// <summary>The status of the case operation. Possible values are: notStarted, submissionFailed, running, succeeded, partiallySucceeded, failed, unknownFutureValue.</summary>
+        /// <summary>The status of the case operation. The possible values are: notStarted, submissionFailed, running, succeeded, partiallySucceeded, failed, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.Security.CaseOperationStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.CaseOperationStatus?>("status"); }

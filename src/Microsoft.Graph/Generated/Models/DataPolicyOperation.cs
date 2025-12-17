@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<double?>("progress"); }
             set { BackingStore?.Set("progress", value); }
         }
-        /// <summary>Possible values are: notStarted, running, complete, failed, unknownFutureValue.</summary>
+        /// <summary>The possible values are: notStarted, running, complete, failed, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.DataPolicyOperationStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.DataPolicyOperationStatus?>("status"); }
