@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>Total number of artifacts restored.</summary>
+        /// <summary>Total number of mailbox items that can be restored for a granular restore session.</summary>
         public int? ArtifactHitCount
         {
             get { return BackingStore?.Get<int?>("artifactHitCount"); }

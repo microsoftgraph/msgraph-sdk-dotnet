@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.ServiceApps.Item
         {
         }
         /// <summary>
-        /// Delete a serviceApp.
+        /// Delete a serviceApp. When this API is called via Microsoft Graph PowerShell, it returns a 403 Forbidden response code.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/backuprestoreroot-delete-serviceapps?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.ServiceApps.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ServiceApp>(requestInfo, global::Microsoft.Graph.Models.ServiceApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a serviceApp.
+        /// Delete a serviceApp. When this API is called via Microsoft Graph PowerShell, it returns a 403 Forbidden response code.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

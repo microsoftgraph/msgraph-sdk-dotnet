@@ -2,8 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Graph.Users.Item.Presence.ClearAutomaticLocation;
+using Microsoft.Graph.Users.Item.Presence.ClearLocation;
 using Microsoft.Graph.Users.Item.Presence.ClearPresence;
 using Microsoft.Graph.Users.Item.Presence.ClearUserPreferredPresence;
+using Microsoft.Graph.Users.Item.Presence.SetAutomaticLocation;
+using Microsoft.Graph.Users.Item.Presence.SetManualLocation;
 using Microsoft.Graph.Users.Item.Presence.SetPresence;
 using Microsoft.Graph.Users.Item.Presence.SetStatusMessage;
 using Microsoft.Graph.Users.Item.Presence.SetUserPreferredPresence;
@@ -23,6 +27,16 @@ namespace Microsoft.Graph.Users.Item.Presence
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PresenceRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to call the clearAutomaticLocation method.</summary>
+        public global::Microsoft.Graph.Users.Item.Presence.ClearAutomaticLocation.ClearAutomaticLocationRequestBuilder ClearAutomaticLocation
+        {
+            get => new global::Microsoft.Graph.Users.Item.Presence.ClearAutomaticLocation.ClearAutomaticLocationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the clearLocation method.</summary>
+        public global::Microsoft.Graph.Users.Item.Presence.ClearLocation.ClearLocationRequestBuilder ClearLocation
+        {
+            get => new global::Microsoft.Graph.Users.Item.Presence.ClearLocation.ClearLocationRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the clearPresence method.</summary>
         public global::Microsoft.Graph.Users.Item.Presence.ClearPresence.ClearPresenceRequestBuilder ClearPresence
         {
@@ -32,6 +46,16 @@ namespace Microsoft.Graph.Users.Item.Presence
         public global::Microsoft.Graph.Users.Item.Presence.ClearUserPreferredPresence.ClearUserPreferredPresenceRequestBuilder ClearUserPreferredPresence
         {
             get => new global::Microsoft.Graph.Users.Item.Presence.ClearUserPreferredPresence.ClearUserPreferredPresenceRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the setAutomaticLocation method.</summary>
+        public global::Microsoft.Graph.Users.Item.Presence.SetAutomaticLocation.SetAutomaticLocationRequestBuilder SetAutomaticLocation
+        {
+            get => new global::Microsoft.Graph.Users.Item.Presence.SetAutomaticLocation.SetAutomaticLocationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the setManualLocation method.</summary>
+        public global::Microsoft.Graph.Users.Item.Presence.SetManualLocation.SetManualLocationRequestBuilder SetManualLocation
+        {
+            get => new global::Microsoft.Graph.Users.Item.Presence.SetManualLocation.SetManualLocationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the setPresence method.</summary>
         public global::Microsoft.Graph.Users.Item.Presence.SetPresence.SetPresenceRequestBuilder SetPresence

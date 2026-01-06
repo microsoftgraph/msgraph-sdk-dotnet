@@ -59,6 +59,7 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.assignedPlaceMode" => new global::Microsoft.Graph.Models.AssignedPlaceMode(),
                 "#microsoft.graph.dropInPlaceMode" => new global::Microsoft.Graph.Models.DropInPlaceMode(),
                 "#microsoft.graph.reservablePlaceMode" => new global::Microsoft.Graph.Models.ReservablePlaceMode(),
+                "#microsoft.graph.unavailablePlaceMode" => new global::Microsoft.Graph.Models.UnavailablePlaceMode(),
                 _ => new global::Microsoft.Graph.Models.PlaceMode(),
             };
         }

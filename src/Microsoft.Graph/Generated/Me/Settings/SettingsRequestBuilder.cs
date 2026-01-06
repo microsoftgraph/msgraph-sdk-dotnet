@@ -4,6 +4,7 @@ using Microsoft.Graph.Me.Settings.ItemInsights;
 using Microsoft.Graph.Me.Settings.ShiftPreferences;
 using Microsoft.Graph.Me.Settings.Storage;
 using Microsoft.Graph.Me.Settings.Windows;
+using Microsoft.Graph.Me.Settings.WorkHoursAndLocations;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -41,6 +42,11 @@ namespace Microsoft.Graph.Me.Settings
         public global::Microsoft.Graph.Me.Settings.Windows.WindowsRequestBuilder Windows
         {
             get => new global::Microsoft.Graph.Me.Settings.Windows.WindowsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the workHoursAndLocations property of the microsoft.graph.userSettings entity.</summary>
+        public global::Microsoft.Graph.Me.Settings.WorkHoursAndLocations.WorkHoursAndLocationsRequestBuilder WorkHoursAndLocations
+        {
+            get => new global::Microsoft.Graph.Me.Settings.WorkHoursAndLocations.WorkHoursAndLocationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Me.Settings.SettingsRequestBuilder"/> and sets the default values.

@@ -66,6 +66,12 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>The hasProtection property</summary>
+        public bool? HasProtection
+        {
+            get { return BackingStore?.Get<bool?>("hasProtection"); }
+            set { BackingStore?.Set("hasProtection", value); }
+        }
         /// <summary>The isDefault property</summary>
         public bool? IsDefault
         {
@@ -192,6 +198,7 @@ namespace Microsoft.Graph.Models
                 { "autoTooltip", n => { AutoTooltip = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "hasProtection", n => { HasProtection = n.GetBoolValue(); } },
                 { "isDefault", n => { IsDefault = n.GetBoolValue(); } },
                 { "isEndpointProtectionEnabled", n => { IsEndpointProtectionEnabled = n.GetBoolValue(); } },
                 { "isScopedToUser", n => { IsScopedToUser = n.GetBoolValue(); } },
@@ -215,6 +222,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("autoTooltip", AutoTooltip);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteBoolValue("hasProtection", HasProtection);
             writer.WriteBoolValue("isDefault", IsDefault);
             writer.WriteBoolValue("isEndpointProtectionEnabled", IsEndpointProtectionEnabled);
             writer.WriteBoolValue("isScopedToUser", IsScopedToUser);

@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("storage", value); }
         }
 #endif
-        /// <summary>The windows property</summary>
+        /// <summary>The Windows settings of the user stored in the cloud.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.WindowsSetting>? Windows
@@ -86,6 +86,22 @@ namespace Microsoft.Graph.Models
         {
             get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.WindowsSetting>>("windows"); }
             set { BackingStore?.Set("windows", value); }
+        }
+#endif
+        /// <summary>The user&apos;s settings for work hours and location preferences for scheduling and availability management.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.WorkHoursAndLocationsSetting? WorkHoursAndLocations
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.WorkHoursAndLocationsSetting?>("workHoursAndLocations"); }
+            set { BackingStore?.Set("workHoursAndLocations", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.WorkHoursAndLocationsSetting WorkHoursAndLocations
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.WorkHoursAndLocationsSetting>("workHoursAndLocations"); }
+            set { BackingStore?.Set("workHoursAndLocations", value); }
         }
 #endif
         /// <summary>
@@ -112,6 +128,7 @@ namespace Microsoft.Graph.Models
                 { "shiftPreferences", n => { ShiftPreferences = n.GetObjectValue<global::Microsoft.Graph.Models.ShiftPreferences>(global::Microsoft.Graph.Models.ShiftPreferences.CreateFromDiscriminatorValue); } },
                 { "storage", n => { Storage = n.GetObjectValue<global::Microsoft.Graph.Models.UserStorage>(global::Microsoft.Graph.Models.UserStorage.CreateFromDiscriminatorValue); } },
                 { "windows", n => { Windows = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.WindowsSetting>(global::Microsoft.Graph.Models.WindowsSetting.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "workHoursAndLocations", n => { WorkHoursAndLocations = n.GetObjectValue<global::Microsoft.Graph.Models.WorkHoursAndLocationsSetting>(global::Microsoft.Graph.Models.WorkHoursAndLocationsSetting.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -128,6 +145,7 @@ namespace Microsoft.Graph.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ShiftPreferences>("shiftPreferences", ShiftPreferences);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.UserStorage>("storage", Storage);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.WindowsSetting>("windows", Windows);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.WorkHoursAndLocationsSetting>("workHoursAndLocations", WorkHoursAndLocations);
         }
     }
 }

@@ -6,6 +6,7 @@ using Microsoft.Graph.Admin.People;
 using Microsoft.Graph.Admin.ReportSettings;
 using Microsoft.Graph.Admin.ServiceAnnouncement;
 using Microsoft.Graph.Admin.Sharepoint;
+using Microsoft.Graph.Admin.Teams;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -53,6 +54,11 @@ namespace Microsoft.Graph.Admin
         public global::Microsoft.Graph.Admin.Sharepoint.SharepointRequestBuilder Sharepoint
         {
             get => new global::Microsoft.Graph.Admin.Sharepoint.SharepointRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the teams property of the microsoft.graph.admin entity.</summary>
+        public global::Microsoft.Graph.Admin.Teams.TeamsRequestBuilder Teams
+        {
+            get => new global::Microsoft.Graph.Admin.Teams.TeamsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Admin.AdminRequestBuilder"/> and sets the default values.

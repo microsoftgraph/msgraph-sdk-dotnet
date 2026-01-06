@@ -67,6 +67,7 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.requestorManager" => new global::Microsoft.Graph.Models.RequestorManager(),
                 "#microsoft.graph.singleServicePrincipal" => new global::Microsoft.Graph.Models.SingleServicePrincipal(),
                 "#microsoft.graph.singleUser" => new global::Microsoft.Graph.Models.SingleUser(),
+                "#microsoft.graph.targetAgentIdentitySponsorsOrOwners" => new global::Microsoft.Graph.Models.TargetAgentIdentitySponsorsOrOwners(),
                 "#microsoft.graph.targetApplicationOwners" => new global::Microsoft.Graph.Models.TargetApplicationOwners(),
                 "#microsoft.graph.targetManager" => new global::Microsoft.Graph.Models.TargetManager(),
                 "#microsoft.graph.targetUserSponsors" => new global::Microsoft.Graph.Models.TargetUserSponsors(),
