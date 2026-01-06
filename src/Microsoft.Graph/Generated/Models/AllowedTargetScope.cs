@@ -44,6 +44,10 @@ namespace Microsoft.Graph.Models
         #pragma warning disable CS1591
         AllExternalUsers,
         #pragma warning restore CS1591
+        [EnumMember(Value = "allDirectoryAgentIdentities")]
+        #pragma warning disable CS1591
+        AllDirectoryAgentIdentities,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
         #pragma warning disable CS1591
         UnknownFutureValue,

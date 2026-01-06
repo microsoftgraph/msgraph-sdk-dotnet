@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("azureAdDeviceId", value); }
         }
 #endif
-        /// <summary>State of the Defender AntiMalware engine. The possible values are: notReporting, disabled, notUpdated, updated, unknown, notSupported, unknownFutureValue.</summary>
+        /// <summary>State of the Defender anti-malware engine. The possible values are: notReporting, disabled, notUpdated, updated, unknown, notSupported, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.Security.DefenderAvStatus? DefenderAvStatus
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.DefenderAvStatus?>("defenderAvStatus"); }
@@ -240,6 +240,22 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("rbacGroupName", value); }
         }
 #endif
+        /// <summary>Information on resource access attempts made by the user account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.Security.ResourceAccessEvent>? ResourceAccessEvents
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Security.ResourceAccessEvent>?>("resourceAccessEvents"); }
+            set { BackingStore?.Set("resourceAccessEvents", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.Security.ResourceAccessEvent> ResourceAccessEvents
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Security.ResourceAccessEvent>>("resourceAccessEvents"); }
+            set { BackingStore?.Set("resourceAccessEvents", value); }
+        }
+#endif
         /// <summary>Risk score as evaluated by Microsoft Defender for Endpoint. The possible values are: none, informational, low, medium, high, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.Security.DeviceRiskScore? RiskScore
         {
@@ -321,6 +337,7 @@ namespace Microsoft.Graph.Models.Security
                 { "osPlatform", n => { OsPlatform = n.GetStringValue(); } },
                 { "rbacGroupId", n => { RbacGroupId = n.GetIntValue(); } },
                 { "rbacGroupName", n => { RbacGroupName = n.GetStringValue(); } },
+                { "resourceAccessEvents", n => { ResourceAccessEvents = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.ResourceAccessEvent>(global::Microsoft.Graph.Models.Security.ResourceAccessEvent.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "riskScore", n => { RiskScore = n.GetEnumValue<global::Microsoft.Graph.Models.Security.DeviceRiskScore>(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
                 { "vmMetadata", n => { VmMetadata = n.GetObjectValue<global::Microsoft.Graph.Models.Security.VmMetadata>(global::Microsoft.Graph.Models.Security.VmMetadata.CreateFromDiscriminatorValue); } },
@@ -352,6 +369,7 @@ namespace Microsoft.Graph.Models.Security
             writer.WriteStringValue("osPlatform", OsPlatform);
             writer.WriteIntValue("rbacGroupId", RbacGroupId);
             writer.WriteStringValue("rbacGroupName", RbacGroupName);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.ResourceAccessEvent>("resourceAccessEvents", ResourceAccessEvents);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.Security.DeviceRiskScore>("riskScore", RiskScore);
             writer.WriteStringValue("version", Version);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.VmMetadata>("vmMetadata", VmMetadata);

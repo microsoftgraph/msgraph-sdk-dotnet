@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Models.Security
     public partial class EdiscoveryCase : global::Microsoft.Graph.Models.Security.Case, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Represents members of an eDiscovery case.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.Security.EdiscoveryCaseMember>? CaseMembers
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Security.EdiscoveryCaseMember>?>("caseMembers"); }
+            set { BackingStore?.Set("caseMembers", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.Security.EdiscoveryCaseMember> CaseMembers
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Security.EdiscoveryCaseMember>>("caseMembers"); }
+            set { BackingStore?.Set("caseMembers", value); }
+        }
+#endif
         /// <summary>The user who closed the case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -187,6 +203,7 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "caseMembers", n => { CaseMembers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.EdiscoveryCaseMember>(global::Microsoft.Graph.Models.Security.EdiscoveryCaseMember.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "closedBy", n => { ClosedBy = n.GetObjectValue<global::Microsoft.Graph.Models.IdentitySet>(global::Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "closedDateTime", n => { ClosedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "custodians", n => { Custodians = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.EdiscoveryCustodian>(global::Microsoft.Graph.Models.Security.EdiscoveryCustodian.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -207,6 +224,7 @@ namespace Microsoft.Graph.Models.Security
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.EdiscoveryCaseMember>("caseMembers", CaseMembers);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.IdentitySet>("closedBy", ClosedBy);
             writer.WriteDateTimeOffsetValue("closedDateTime", ClosedDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.EdiscoveryCustodian>("custodians", Custodians);

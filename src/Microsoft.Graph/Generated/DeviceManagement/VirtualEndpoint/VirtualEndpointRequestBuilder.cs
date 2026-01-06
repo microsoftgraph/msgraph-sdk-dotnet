@@ -6,6 +6,7 @@ using Microsoft.Graph.DeviceManagement.VirtualEndpoint.DeviceImages;
 using Microsoft.Graph.DeviceManagement.VirtualEndpoint.GalleryImages;
 using Microsoft.Graph.DeviceManagement.VirtualEndpoint.OnPremisesConnections;
 using Microsoft.Graph.DeviceManagement.VirtualEndpoint.ProvisioningPolicies;
+using Microsoft.Graph.DeviceManagement.VirtualEndpoint.Report;
 using Microsoft.Graph.DeviceManagement.VirtualEndpoint.UserSettings;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
@@ -54,6 +55,11 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint
         public global::Microsoft.Graph.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.ProvisioningPoliciesRequestBuilder ProvisioningPolicies
         {
             get => new global::Microsoft.Graph.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.ProvisioningPoliciesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the report property of the microsoft.graph.virtualEndpoint entity.</summary>
+        public global::Microsoft.Graph.DeviceManagement.VirtualEndpoint.Report.ReportRequestBuilder Report
+        {
+            get => new global::Microsoft.Graph.DeviceManagement.VirtualEndpoint.Report.ReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userSettings property of the microsoft.graph.virtualEndpoint entity.</summary>
         public global::Microsoft.Graph.DeviceManagement.VirtualEndpoint.UserSettings.UserSettingsRequestBuilder UserSettings

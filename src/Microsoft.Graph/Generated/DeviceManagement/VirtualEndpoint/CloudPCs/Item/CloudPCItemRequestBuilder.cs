@@ -3,8 +3,10 @@
 using Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.EndGracePeriod;
 using Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Reboot;
 using Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Rename;
+using Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Reprovision;
 using Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Resize;
 using Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Restore;
+using Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetrieveCloudPcLaunchDetail;
 using Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Troubleshoot;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
@@ -39,6 +41,11 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item
         {
             get => new global::Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Rename.RenameRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the reprovision method.</summary>
+        public global::Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Reprovision.ReprovisionRequestBuilder Reprovision
+        {
+            get => new global::Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Reprovision.ReprovisionRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the resize method.</summary>
         public global::Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Resize.ResizeRequestBuilder Resize
         {
@@ -48,6 +55,11 @@ namespace Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item
         public global::Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Restore.RestoreRequestBuilder Restore
         {
             get => new global::Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveCloudPcLaunchDetail method.</summary>
+        public global::Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetrieveCloudPcLaunchDetail.RetrieveCloudPcLaunchDetailRequestBuilder RetrieveCloudPcLaunchDetail
+        {
+            get => new global::Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetrieveCloudPcLaunchDetail.RetrieveCloudPcLaunchDetailRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the troubleshoot method.</summary>
         public global::Microsoft.Graph.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Troubleshoot.TroubleshootRequestBuilder Troubleshoot

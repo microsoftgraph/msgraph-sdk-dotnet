@@ -7,6 +7,7 @@ using Microsoft.Graph.Models.Partners.Billing;
 using Microsoft.Graph.Models.Partners;
 using Microsoft.Graph.Models.Search;
 using Microsoft.Graph.Models.Security;
+using Microsoft.Graph.Models.TeamsAdministration;
 using Microsoft.Graph.Models.TermStore;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -110,6 +111,7 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.activityBasedTimeoutPolicy" => new global::Microsoft.Graph.Models.ActivityBasedTimeoutPolicy(),
                 "#microsoft.graph.activityHistoryItem" => new global::Microsoft.Graph.Models.ActivityHistoryItem(),
                 "#microsoft.graph.addLargeGalleryViewOperation" => new global::Microsoft.Graph.Models.AddLargeGalleryViewOperation(),
+                "#microsoft.graph.adhocCall" => new global::Microsoft.Graph.Models.AdhocCall(),
                 "#microsoft.graph.adminConsentRequestPolicy" => new global::Microsoft.Graph.Models.AdminConsentRequestPolicy(),
                 "#microsoft.graph.administrativeUnit" => new global::Microsoft.Graph.Models.AdministrativeUnit(),
                 "#microsoft.graph.adminMicrosoft365Apps" => new global::Microsoft.Graph.Models.AdminMicrosoft365Apps(),
@@ -122,6 +124,7 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.agreementFileVersion" => new global::Microsoft.Graph.Models.AgreementFileVersion(),
                 "#microsoft.graph.aiInteraction" => new global::Microsoft.Graph.Models.AiInteraction(),
                 "#microsoft.graph.aiInteractionHistory" => new global::Microsoft.Graph.Models.AiInteractionHistory(),
+                "#microsoft.graph.aiOnlineMeeting" => new global::Microsoft.Graph.Models.AiOnlineMeeting(),
                 "#microsoft.graph.aiUser" => new global::Microsoft.Graph.Models.AiUser(),
                 "#microsoft.graph.akamaiWebApplicationFirewallProvider" => new global::Microsoft.Graph.Models.AkamaiWebApplicationFirewallProvider(),
                 "#microsoft.graph.alert" => new global::Microsoft.Graph.Models.Alert(),
@@ -210,6 +213,7 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.calendarPermission" => new global::Microsoft.Graph.Models.CalendarPermission(),
                 "#microsoft.graph.calendarSharingMessage" => new global::Microsoft.Graph.Models.CalendarSharingMessage(),
                 "#microsoft.graph.call" => new global::Microsoft.Graph.Models.Call(),
+                "#microsoft.graph.callAiInsight" => new global::Microsoft.Graph.Models.CallAiInsight(),
                 "#microsoft.graph.callEvent" => new global::Microsoft.Graph.Models.CallEvent(),
                 "#microsoft.graph.callRecording" => new global::Microsoft.Graph.Models.CallRecording(),
                 "#microsoft.graph.callRecords.callRecord" => new global::Microsoft.Graph.Models.CallRecords.CallRecord(),
@@ -242,6 +246,7 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.cloudPcOnPremisesConnection" => new global::Microsoft.Graph.Models.CloudPcOnPremisesConnection(),
                 "#microsoft.graph.cloudPcProvisioningPolicy" => new global::Microsoft.Graph.Models.CloudPcProvisioningPolicy(),
                 "#microsoft.graph.cloudPcProvisioningPolicyAssignment" => new global::Microsoft.Graph.Models.CloudPcProvisioningPolicyAssignment(),
+                "#microsoft.graph.cloudPcReport" => new global::Microsoft.Graph.Models.CloudPcReport(),
                 "#microsoft.graph.cloudPcUserSetting" => new global::Microsoft.Graph.Models.CloudPcUserSetting(),
                 "#microsoft.graph.cloudPcUserSettingAssignment" => new global::Microsoft.Graph.Models.CloudPcUserSettingAssignment(),
                 "#microsoft.graph.columnDefinition" => new global::Microsoft.Graph.Models.ColumnDefinition(),
@@ -428,6 +433,8 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.fileAttachment" => new global::Microsoft.Graph.Models.FileAttachment(),
                 "#microsoft.graph.fileStorage" => new global::Microsoft.Graph.Models.FileStorage(),
                 "#microsoft.graph.fileStorageContainer" => new global::Microsoft.Graph.Models.FileStorageContainer(),
+                "#microsoft.graph.fileStorageContainerType" => new global::Microsoft.Graph.Models.FileStorageContainerType(),
+                "#microsoft.graph.fileStorageContainerTypeRegistration" => new global::Microsoft.Graph.Models.FileStorageContainerTypeRegistration(),
                 "#microsoft.graph.filterOperatorSchema" => new global::Microsoft.Graph.Models.FilterOperatorSchema(),
                 "#microsoft.graph.fixtureMap" => new global::Microsoft.Graph.Models.FixtureMap(),
                 "#microsoft.graph.floor" => new global::Microsoft.Graph.Models.Floor(),
@@ -778,6 +785,7 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.security.dispositionReviewStage" => new global::Microsoft.Graph.Models.Security.DispositionReviewStage(),
                 "#microsoft.graph.security.ediscoveryAddToReviewSetOperation" => new global::Microsoft.Graph.Models.Security.EdiscoveryAddToReviewSetOperation(),
                 "#microsoft.graph.security.ediscoveryCase" => new global::Microsoft.Graph.Models.Security.EdiscoveryCase(),
+                "#microsoft.graph.security.ediscoveryCaseMember" => new global::Microsoft.Graph.Models.Security.EdiscoveryCaseMember(),
                 "#microsoft.graph.security.ediscoveryCaseSettings" => new global::Microsoft.Graph.Models.Security.EdiscoveryCaseSettings(),
                 "#microsoft.graph.security.ediscoveryCustodian" => new global::Microsoft.Graph.Models.Security.EdiscoveryCustodian(),
                 "#microsoft.graph.security.ediscoveryEstimateOperation" => new global::Microsoft.Graph.Models.Security.EdiscoveryEstimateOperation(),
@@ -917,6 +925,8 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.taskFileAttachment" => new global::Microsoft.Graph.Models.TaskFileAttachment(),
                 "#microsoft.graph.team" => new global::Microsoft.Graph.Models.Team(),
                 "#microsoft.graph.teamInfo" => new global::Microsoft.Graph.Models.TeamInfo(),
+                "#microsoft.graph.teamsAdministration.teamsAdminRoot" => new global::Microsoft.Graph.Models.TeamsAdministration.TeamsAdminRoot(),
+                "#microsoft.graph.teamsAdministration.teamsUserConfiguration" => new global::Microsoft.Graph.Models.TeamsAdministration.TeamsUserConfiguration(),
                 "#microsoft.graph.teamsApp" => new global::Microsoft.Graph.Models.TeamsApp(),
                 "#microsoft.graph.teamsAppDefinition" => new global::Microsoft.Graph.Models.TeamsAppDefinition(),
                 "#microsoft.graph.teamsAppInstallation" => new global::Microsoft.Graph.Models.TeamsAppInstallation(),
@@ -1131,7 +1141,10 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.workbookWorksheet" => new global::Microsoft.Graph.Models.WorkbookWorksheet(),
                 "#microsoft.graph.workbookWorksheetProtection" => new global::Microsoft.Graph.Models.WorkbookWorksheetProtection(),
                 "#microsoft.graph.workforceIntegration" => new global::Microsoft.Graph.Models.WorkforceIntegration(),
+                "#microsoft.graph.workHoursAndLocationsSetting" => new global::Microsoft.Graph.Models.WorkHoursAndLocationsSetting(),
                 "#microsoft.graph.workingTimeSchedule" => new global::Microsoft.Graph.Models.WorkingTimeSchedule(),
+                "#microsoft.graph.workPlanOccurrence" => new global::Microsoft.Graph.Models.WorkPlanOccurrence(),
+                "#microsoft.graph.workPlanRecurrence" => new global::Microsoft.Graph.Models.WorkPlanRecurrence(),
                 "#microsoft.graph.workspace" => new global::Microsoft.Graph.Models.Workspace(),
                 "#microsoft.graph.x509CertificateAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Models.X509CertificateAuthenticationMethodConfiguration(),
                 "#microsoft.graph.x509CertificateCombinationConfiguration" => new global::Microsoft.Graph.Models.X509CertificateCombinationConfiguration(),

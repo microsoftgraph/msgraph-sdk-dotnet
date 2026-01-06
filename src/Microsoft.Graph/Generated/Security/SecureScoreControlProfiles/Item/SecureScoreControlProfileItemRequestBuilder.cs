@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Security.SecureScoreControlProfiles.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.SecureScoreControlProfile>(requestInfo, global::Microsoft.Graph.Models.SecureScoreControlProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an editable secureScoreControlProfile object within any integrated solution to change various properties, such as assignedTo or tenantNote.
+        /// Update an editable secureScoreControlProfile object within any integrated solution to change various properties, such as tenantNote.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/securescorecontrolprofile-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.SecureScoreControlProfile"/></returns>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Security.SecureScoreControlProfiles.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update an editable secureScoreControlProfile object within any integrated solution to change various properties, such as assignedTo or tenantNote.
+        /// Update an editable secureScoreControlProfile object within any integrated solution to change various properties, such as tenantNote.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

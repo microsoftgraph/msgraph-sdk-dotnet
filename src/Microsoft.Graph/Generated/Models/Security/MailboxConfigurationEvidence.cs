@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models.Security
     public partial class MailboxConfigurationEvidence : global::Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The configurationId property</summary>
+        /// <summary>The unique identifier of the mailbox configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConfigurationId
@@ -28,13 +28,13 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("configurationId", value); }
         }
 #endif
-        /// <summary>The configurationType property</summary>
+        /// <summary>The type of mailbox configuration. The possible values are: mailForwardingRule, owaSettings, ewsSettings, mailDelegation, userInboxRule, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.Security.MailboxConfigurationType? ConfigurationType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.MailboxConfigurationType?>("configurationType"); }
             set { BackingStore?.Set("configurationType", value); }
         }
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name of the mailbox.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -50,13 +50,13 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The externalDirectoryObjectId property</summary>
+        /// <summary>The external directory object identifier of the mailbox.</summary>
         public Guid? ExternalDirectoryObjectId
         {
             get { return BackingStore?.Get<Guid?>("externalDirectoryObjectId"); }
             set { BackingStore?.Set("externalDirectoryObjectId", value); }
         }
-        /// <summary>The mailboxPrimaryAddress property</summary>
+        /// <summary>The primary email address of the mailbox.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MailboxPrimaryAddress
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("mailboxPrimaryAddress", value); }
         }
 #endif
-        /// <summary>The upn property</summary>
+        /// <summary>The user principal name (UPN) of the mailbox.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Upn

@@ -3,6 +3,7 @@
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Users.Item.Activities;
+using Microsoft.Graph.Users.Item.AdhocCalls;
 using Microsoft.Graph.Users.Item.AgreementAcceptances;
 using Microsoft.Graph.Users.Item.AppRoleAssignments;
 using Microsoft.Graph.Users.Item.AssignLicense;
@@ -51,6 +52,7 @@ using Microsoft.Graph.Users.Item.Manager;
 using Microsoft.Graph.Users.Item.MemberOf;
 using Microsoft.Graph.Users.Item.Messages;
 using Microsoft.Graph.Users.Item.Oauth2PermissionGrants;
+using Microsoft.Graph.Users.Item.OnPremisesSyncBehavior;
 using Microsoft.Graph.Users.Item.Onenote;
 using Microsoft.Graph.Users.Item.OnlineMeetings;
 using Microsoft.Graph.Users.Item.Outlook;
@@ -100,6 +102,11 @@ namespace Microsoft.Graph.Users.Item
         public global::Microsoft.Graph.Users.Item.Activities.ActivitiesRequestBuilder Activities
         {
             get => new global::Microsoft.Graph.Users.Item.Activities.ActivitiesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the adhocCalls property of the microsoft.graph.user entity.</summary>
+        public global::Microsoft.Graph.Users.Item.AdhocCalls.AdhocCallsRequestBuilder AdhocCalls
+        {
+            get => new global::Microsoft.Graph.Users.Item.AdhocCalls.AdhocCallsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the agreementAcceptances property of the microsoft.graph.user entity.</summary>
         public global::Microsoft.Graph.Users.Item.AgreementAcceptances.AgreementAcceptancesRequestBuilder AgreementAcceptances
@@ -345,6 +352,11 @@ namespace Microsoft.Graph.Users.Item
         public global::Microsoft.Graph.Users.Item.OnlineMeetings.OnlineMeetingsRequestBuilder OnlineMeetings
         {
             get => new global::Microsoft.Graph.Users.Item.OnlineMeetings.OnlineMeetingsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the onPremisesSyncBehavior property of the microsoft.graph.user entity.</summary>
+        public global::Microsoft.Graph.Users.Item.OnPremisesSyncBehavior.OnPremisesSyncBehaviorRequestBuilder OnPremisesSyncBehavior
+        {
+            get => new global::Microsoft.Graph.Users.Item.OnPremisesSyncBehavior.OnPremisesSyncBehaviorRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the outlook property of the microsoft.graph.user entity.</summary>
         public global::Microsoft.Graph.Users.Item.Outlook.OutlookRequestBuilder Outlook

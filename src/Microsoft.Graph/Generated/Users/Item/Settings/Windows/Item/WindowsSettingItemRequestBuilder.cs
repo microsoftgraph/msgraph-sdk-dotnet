@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Users.Item.Settings.Windows.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get windows from users
+        /// The Windows settings of the user stored in the cloud.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.WindowsSetting"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Users.Item.Settings.Windows.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get windows from users
+        /// The Windows settings of the user stored in the cloud.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -188,7 +188,7 @@ namespace Microsoft.Graph.Users.Item.Settings.Windows.Item
         {
         }
         /// <summary>
-        /// Get windows from users
+        /// The Windows settings of the user stored in the cloud.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WindowsSettingItemRequestBuilderGetQueryParameters 

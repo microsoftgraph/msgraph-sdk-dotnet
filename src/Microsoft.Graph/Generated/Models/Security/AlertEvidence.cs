@@ -138,6 +138,7 @@ namespace Microsoft.Graph.Models.Security
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.security.activeDirectoryDomainEvidence" => new global::Microsoft.Graph.Models.Security.ActiveDirectoryDomainEvidence(),
                 "#microsoft.graph.security.aiAgentEvidence" => new global::Microsoft.Graph.Models.Security.AiAgentEvidence(),
                 "#microsoft.graph.security.amazonResourceEvidence" => new global::Microsoft.Graph.Models.Security.AmazonResourceEvidence(),
                 "#microsoft.graph.security.analyzedMessageEvidence" => new global::Microsoft.Graph.Models.Security.AnalyzedMessageEvidence(),

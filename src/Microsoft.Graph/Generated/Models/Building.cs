@@ -44,6 +44,12 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("resourceLinks", value); }
         }
 #endif
+        /// <summary>The wifiState property</summary>
+        public global::Microsoft.Graph.Models.PlaceFeatureEnablement? WifiState
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.PlaceFeatureEnablement?>("wifiState"); }
+            set { BackingStore?.Set("wifiState", value); }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Models.Building"/> and sets the default values.
         /// </summary>
@@ -71,6 +77,7 @@ namespace Microsoft.Graph.Models
             {
                 { "map", n => { Map = n.GetObjectValue<global::Microsoft.Graph.Models.BuildingMap>(global::Microsoft.Graph.Models.BuildingMap.CreateFromDiscriminatorValue); } },
                 { "resourceLinks", n => { ResourceLinks = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ResourceLink>(global::Microsoft.Graph.Models.ResourceLink.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "wifiState", n => { WifiState = n.GetEnumValue<global::Microsoft.Graph.Models.PlaceFeatureEnablement>(); } },
             };
         }
         /// <summary>
@@ -83,6 +90,7 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.BuildingMap>("map", Map);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ResourceLink>("resourceLinks", ResourceLinks);
+            writer.WriteEnumValue<global::Microsoft.Graph.Models.PlaceFeatureEnablement>("wifiState", WifiState);
         }
     }
 }
