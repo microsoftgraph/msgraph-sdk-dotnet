@@ -164,6 +164,12 @@ namespace Microsoft.Graph.Models.Security
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdateDateTime"); }
             set { BackingStore?.Set("lastUpdateDateTime", value); }
         }
+        /// <summary>The priorityScore property</summary>
+        public int? PriorityScore
+        {
+            get { return BackingStore?.Get<int?>("priorityScore"); }
+            set { BackingStore?.Set("priorityScore", value); }
+        }
         /// <summary>Only populated in case an incident is grouped with another incident, as part of the logic that processes incidents. In such a case, the status property is redirected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -286,6 +292,7 @@ namespace Microsoft.Graph.Models.Security
                 { "incidentWebUrl", n => { IncidentWebUrl = n.GetStringValue(); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetStringValue(); } },
                 { "lastUpdateDateTime", n => { LastUpdateDateTime = n.GetDateTimeOffsetValue(); } },
+                { "priorityScore", n => { PriorityScore = n.GetIntValue(); } },
                 { "redirectIncidentId", n => { RedirectIncidentId = n.GetStringValue(); } },
                 { "resolvingComment", n => { ResolvingComment = n.GetStringValue(); } },
                 { "severity", n => { Severity = n.GetEnumValue<global::Microsoft.Graph.Models.Security.AlertSeverity>(); } },
@@ -315,6 +322,7 @@ namespace Microsoft.Graph.Models.Security
             writer.WriteStringValue("incidentWebUrl", IncidentWebUrl);
             writer.WriteStringValue("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastUpdateDateTime", LastUpdateDateTime);
+            writer.WriteIntValue("priorityScore", PriorityScore);
             writer.WriteStringValue("redirectIncidentId", RedirectIncidentId);
             writer.WriteStringValue("resolvingComment", ResolvingComment);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.Security.AlertSeverity>("severity", Severity);

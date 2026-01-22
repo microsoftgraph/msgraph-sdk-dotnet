@@ -90,6 +90,12 @@ namespace Microsoft.Graph.Models.Security
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.SensorType?>("sensorType"); }
             set { BackingStore?.Set("sensorType", value); }
         }
+        /// <summary>The serviceStatus property</summary>
+        public global::Microsoft.Graph.Models.Security.ServiceStatus? ServiceStatus
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.ServiceStatus?>("serviceStatus"); }
+            set { BackingStore?.Set("serviceStatus", value); }
+        }
         /// <summary>The settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -148,6 +154,7 @@ namespace Microsoft.Graph.Models.Security
                 { "healthStatus", n => { HealthStatus = n.GetEnumValue<global::Microsoft.Graph.Models.Security.SensorHealthStatus>(); } },
                 { "openHealthIssuesCount", n => { OpenHealthIssuesCount = n.GetLongValue(); } },
                 { "sensorType", n => { SensorType = n.GetEnumValue<global::Microsoft.Graph.Models.Security.SensorType>(); } },
+                { "serviceStatus", n => { ServiceStatus = n.GetEnumValue<global::Microsoft.Graph.Models.Security.ServiceStatus>(); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Models.Security.SensorSettings>(global::Microsoft.Graph.Models.Security.SensorSettings.CreateFromDiscriminatorValue); } },
                 { "version", n => { Version = n.GetStringValue(); } },
             };
@@ -168,6 +175,7 @@ namespace Microsoft.Graph.Models.Security
             writer.WriteEnumValue<global::Microsoft.Graph.Models.Security.SensorHealthStatus>("healthStatus", HealthStatus);
             writer.WriteLongValue("openHealthIssuesCount", OpenHealthIssuesCount);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.Security.SensorType>("sensorType", SensorType);
+            writer.WriteEnumValue<global::Microsoft.Graph.Models.Security.ServiceStatus>("serviceStatus", ServiceStatus);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.SensorSettings>("settings", Settings);
             writer.WriteStringValue("version", Version);
         }
