@@ -12,12 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class PlatformCredentialAuthenticationMethod : global::Microsoft.Graph.Models.AuthenticationMethod, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The date and time that this Platform Credential Key was registered.</summary>
-        public DateTimeOffset? CreatedDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
-            set { BackingStore?.Set("createdDateTime", value); }
-        }
         /// <summary>The registered device on which this Platform Credential resides. Supports $expand. When you get a user&apos;s Platform Credential registration information, this property is returned only on a single GET and when you specify ?$expand. For example, GET /users/admin@contoso.com/authentication/platformCredentialAuthenticationMethod/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,7 +81,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "device", n => { Device = n.GetObjectValue<global::Microsoft.Graph.Models.Device>(global::Microsoft.Graph.Models.Device.CreateFromDiscriminatorValue); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "keyStrength", n => { KeyStrength = n.GetEnumValue<global::Microsoft.Graph.Models.AuthenticationMethodKeyStrength>(); } },
@@ -102,7 +95,6 @@ namespace Microsoft.Graph.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Device>("device", Device);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.AuthenticationMethodKeyStrength>("keyStrength", KeyStrength);

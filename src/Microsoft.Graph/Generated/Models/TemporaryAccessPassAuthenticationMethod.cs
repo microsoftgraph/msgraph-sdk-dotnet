@@ -12,12 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class TemporaryAccessPassAuthenticationMethod : global::Microsoft.Graph.Models.AuthenticationMethod, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The date and time when the Temporary Access Pass was created.</summary>
-        public DateTimeOffset? CreatedDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
-            set { BackingStore?.Set("createdDateTime", value); }
-        }
         /// <summary>The state of the authentication method that indicates whether it&apos;s currently usable by the user.</summary>
         public bool? IsUsable
         {
@@ -99,7 +93,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "isUsable", n => { IsUsable = n.GetBoolValue(); } },
                 { "isUsableOnce", n => { IsUsableOnce = n.GetBoolValue(); } },
                 { "lifetimeInMinutes", n => { LifetimeInMinutes = n.GetIntValue(); } },
@@ -116,7 +109,6 @@ namespace Microsoft.Graph.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteBoolValue("isUsable", IsUsable);
             writer.WriteBoolValue("isUsableOnce", IsUsableOnce);
             writer.WriteIntValue("lifetimeInMinutes", LifetimeInMinutes);
