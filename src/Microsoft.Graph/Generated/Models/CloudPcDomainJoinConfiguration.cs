@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("onPremisesConnectionId", value); }
         }
 #endif
-        /// <summary>The logical geographic group this region belongs to. Multiple regions can belong to one region group. A customer can select a regionGroup when they provision a Cloud PC, and the Cloud PC is put in one of the regions in the group based on resource status. For example, the Europe region group contains the Northern Europe and Western Europe regions. The possible values are: default, australia, canada, usCentral, usEast, usWest, france, germany, europeUnion, unitedKingdom, japan, asia, india, southAmerica, euap, usGovernment, usGovernmentDOD, unknownFutureValue, norway, switzerland, southKorea. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: norway, switzerland, southKorea. Read-only.</summary>
+        /// <summary>The logical geographic group this region belongs to. Multiple regions can belong to one region group. A customer can select a regionGroup when they provision a Cloud PC, and the Cloud PC is put in one of the regions in the group based on resource status. For example, the Europe region group contains the Northern Europe and Western Europe regions. Read-only.</summary>
         public global::Microsoft.Graph.Models.CloudPcRegionGroup? RegionGroup
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.CloudPcRegionGroup?>("regionGroup"); }

@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
-        /// <summary>The type of error that occurred during this health check. The possible values are: endpointConnectivityCheckCloudPcUrlNotAllowListed, endpointConnectivityCheckWVDUrlNotAllowListed, etc. (The all possible values can refer to cloudPcOnPremisesConnectionHealthCheckErrorType) Read-Only.</summary>
+        /// <summary>The type of error that occurred during this health check. Read-only.</summary>
         public global::Microsoft.Graph.Models.CloudPcOnPremisesConnectionHealthCheckErrorType? ErrorType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.CloudPcOnPremisesConnectionHealthCheckErrorType?>("errorType"); }
