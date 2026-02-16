@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The identifier property</summary>
+        /// <summary>The unique identifier of the AI entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Identifier
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("identifier", value); }
         }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The display name of the AI entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The version property</summary>
+        /// <summary>The version of the AI entity used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Version

@@ -46,6 +46,7 @@ namespace Microsoft.Graph.Models
             return mappingValue switch
             {
                 "#microsoft.graph.emailAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Models.EmailAuthenticationMethodConfiguration(),
+                "#microsoft.graph.externalAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Models.ExternalAuthenticationMethodConfiguration(),
                 "#microsoft.graph.fido2AuthenticationMethodConfiguration" => new global::Microsoft.Graph.Models.Fido2AuthenticationMethodConfiguration(),
                 "#microsoft.graph.microsoftAuthenticatorAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Models.MicrosoftAuthenticatorAuthenticationMethodConfiguration(),
                 "#microsoft.graph.smsAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Models.SmsAuthenticationMethodConfiguration(),
