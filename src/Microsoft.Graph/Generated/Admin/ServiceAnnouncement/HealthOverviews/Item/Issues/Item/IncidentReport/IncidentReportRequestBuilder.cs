@@ -35,6 +35,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.HealthOverviews.Item.Issues.
         }
         /// <summary>
         /// Provide the Post-Incident Review (PIR) document of a specified service issue for tenant.  An issue only with status of PostIncidentReviewPublished indicates that the PIR document exists for the issue. The operation returns an error if the specified issue doesn&apos;t exist for the tenant or if PIR document does not exist for the issue.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/servicehealthissue-incidentreport?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

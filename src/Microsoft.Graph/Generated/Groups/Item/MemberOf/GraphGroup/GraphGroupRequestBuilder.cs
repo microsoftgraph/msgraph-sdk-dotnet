@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Groups.Item.MemberOf.GraphGroup
         {
         }
         /// <summary>
-        /// Get groups that the group is a direct member of. This operation is not transitive. Unlike getting a user&apos;s Microsoft 365 groups, this returns all types of groups, not just Microsoft 365 groups.
+        /// Get security groups, administrative units, and admin roles that the security group is a direct member of, or administrative units and admin roles that the Microsoft 365 group is a direct member of. This operation is not transitive.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-list-memberof?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.GroupCollectionResponse"/></returns>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Groups.Item.MemberOf.GraphGroup
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.GroupCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.GroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get groups that the group is a direct member of. This operation is not transitive. Unlike getting a user&apos;s Microsoft 365 groups, this returns all types of groups, not just Microsoft 365 groups.
+        /// Get security groups, administrative units, and admin roles that the security group is a direct member of, or administrative units and admin roles that the Microsoft 365 group is a direct member of. This operation is not transitive.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Groups.Item.MemberOf.GraphGroup
             return new global::Microsoft.Graph.Groups.Item.MemberOf.GraphGroup.GraphGroupRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get groups that the group is a direct member of. This operation is not transitive. Unlike getting a user&apos;s Microsoft 365 groups, this returns all types of groups, not just Microsoft 365 groups.
+        /// Get security groups, administrative units, and admin roles that the security group is a direct member of, or administrative units and admin roles that the Microsoft 365 group is a direct member of. This operation is not transitive.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GraphGroupRequestBuilderGetQueryParameters 

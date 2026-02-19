@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The identifier property</summary>
+        /// <summary>Unique identifier of the resource accessed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Identifier
@@ -43,13 +43,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("identifier", value); }
         }
 #endif
-        /// <summary>The isCrossPromptInjectionDetected property</summary>
+        /// <summary>Indicates whether cross-prompt injection was detected during the access attempt.</summary>
         public bool? IsCrossPromptInjectionDetected
         {
             get { return BackingStore?.Get<bool?>("isCrossPromptInjectionDetected"); }
             set { BackingStore?.Set("isCrossPromptInjectionDetected", value); }
         }
-        /// <summary>The labelId property</summary>
+        /// <summary>Identifier for the sensitivity label applied to the resource, if any.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LabelId
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("labelId", value); }
         }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>Name of the resource accessed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.ResourceAccessStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>The storageId property</summary>
+        /// <summary>Identifier for the resource in its native storage format. For SharePoint resources, this is the unique identifier of the list item.  For other resources, this is the name of the location, such as Box, Dropbox, Exchange, or Google Drive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StorageId
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("storageId", value); }
         }
 #endif
-        /// <summary>The url property</summary>
+        /// <summary>URL of the resource accessed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url
