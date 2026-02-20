@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Policies.AuthenticationMethodsPolicy.AuthenticationMet
         {
         }
         /// <summary>
-        /// Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
+        /// Read the properties and relationships of an externalAuthenticationMethodConfiguration object.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.AuthenticationMethodConfigurationCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Policies.AuthenticationMethodsPolicy.AuthenticationMet
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.AuthenticationMethodConfiguration>(requestInfo, global::Microsoft.Graph.Models.AuthenticationMethodConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
+        /// Read the properties and relationships of an externalAuthenticationMethodConfiguration object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Policies.AuthenticationMethodsPolicy.AuthenticationMet
             return new global::Microsoft.Graph.Policies.AuthenticationMethodsPolicy.AuthenticationMethodConfigurations.AuthenticationMethodConfigurationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.
+        /// Read the properties and relationships of an externalAuthenticationMethodConfiguration object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AuthenticationMethodConfigurationsRequestBuilderGetQueryParameters 

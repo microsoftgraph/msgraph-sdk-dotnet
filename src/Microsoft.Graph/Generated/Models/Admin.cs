@@ -38,6 +38,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("edge", value); }
         }
 #endif
+        /// <summary>A container for the Exchange admin functionality. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.ExchangeAdmin? Exchange
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ExchangeAdmin?>("exchange"); }
+            set { BackingStore?.Set("exchange", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.ExchangeAdmin Exchange
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ExchangeAdmin>("exchange"); }
+            set { BackingStore?.Set("exchange", value); }
+        }
+#endif
         /// <summary>A container for the Microsoft 365 apps admin functionality.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -134,7 +150,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("sharepoint", value); }
         }
 #endif
-        /// <summary>Represents a collection of user configurations.</summary>
+        /// <summary>A container for Teams administration functionalities, such as user configurations and policy assignments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.TeamsAdministration.TeamsAdminRoot? Teams
@@ -177,6 +193,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "edge", n => { Edge = n.GetObjectValue<global::Microsoft.Graph.Models.Edge>(global::Microsoft.Graph.Models.Edge.CreateFromDiscriminatorValue); } },
+                { "exchange", n => { Exchange = n.GetObjectValue<global::Microsoft.Graph.Models.ExchangeAdmin>(global::Microsoft.Graph.Models.ExchangeAdmin.CreateFromDiscriminatorValue); } },
                 { "microsoft365Apps", n => { Microsoft365Apps = n.GetObjectValue<global::Microsoft.Graph.Models.AdminMicrosoft365Apps>(global::Microsoft.Graph.Models.AdminMicrosoft365Apps.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "people", n => { People = n.GetObjectValue<global::Microsoft.Graph.Models.PeopleAdminSettings>(global::Microsoft.Graph.Models.PeopleAdminSettings.CreateFromDiscriminatorValue); } },
@@ -194,6 +211,7 @@ namespace Microsoft.Graph.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Edge>("edge", Edge);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.ExchangeAdmin>("exchange", Exchange);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.AdminMicrosoft365Apps>("microsoft365Apps", Microsoft365Apps);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.PeopleAdminSettings>("people", People);

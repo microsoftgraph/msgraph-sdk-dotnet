@@ -12,7 +12,23 @@ namespace Microsoft.Graph.Models.TeamsAdministration
     public partial class TeamsAdminRoot : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Represents the configuration information of users who have accounts hosted on Microsoft Teams.</summary>
+        /// <summary>Represents a navigation property to the Teams policy assignment object.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.TeamsAdministration.TeamsPolicyAssignment? Policy
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.TeamsAdministration.TeamsPolicyAssignment?>("policy"); }
+            set { BackingStore?.Set("policy", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.TeamsAdministration.TeamsPolicyAssignment Policy
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.TeamsAdministration.TeamsPolicyAssignment>("policy"); }
+            set { BackingStore?.Set("policy", value); }
+        }
+#endif
+        /// <summary>Represents the configuration information of users who have accounts hosted on Microsoft Teams</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.TeamsAdministration.TeamsUserConfiguration>? UserConfigurations
@@ -46,6 +62,7 @@ namespace Microsoft.Graph.Models.TeamsAdministration
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "policy", n => { Policy = n.GetObjectValue<global::Microsoft.Graph.Models.TeamsAdministration.TeamsPolicyAssignment>(global::Microsoft.Graph.Models.TeamsAdministration.TeamsPolicyAssignment.CreateFromDiscriminatorValue); } },
                 { "userConfigurations", n => { UserConfigurations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.TeamsAdministration.TeamsUserConfiguration>(global::Microsoft.Graph.Models.TeamsAdministration.TeamsUserConfiguration.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -57,6 +74,7 @@ namespace Microsoft.Graph.Models.TeamsAdministration
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.TeamsAdministration.TeamsPolicyAssignment>("policy", Policy);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.TeamsAdministration.TeamsUserConfiguration>("userConfigurations", UserConfigurations);
         }
     }
