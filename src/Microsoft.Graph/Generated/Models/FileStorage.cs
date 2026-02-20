@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class FileStorage : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The containers property</summary>
+        /// <summary>The collection of active fileStorageContainer resources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.FileStorageContainer>? Containers
@@ -28,7 +28,39 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("containers", value); }
         }
 #endif
-        /// <summary>The deletedContainers property</summary>
+        /// <summary>The collection of fileStorageContainerTypeRegistration resources.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.FileStorageContainerTypeRegistration>? ContainerTypeRegistrations
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.FileStorageContainerTypeRegistration>?>("containerTypeRegistrations"); }
+            set { BackingStore?.Set("containerTypeRegistrations", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.FileStorageContainerTypeRegistration> ContainerTypeRegistrations
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.FileStorageContainerTypeRegistration>>("containerTypeRegistrations"); }
+            set { BackingStore?.Set("containerTypeRegistrations", value); }
+        }
+#endif
+        /// <summary>The collection of fileStorageContainerType resources.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.FileStorageContainerType>? ContainerTypes
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.FileStorageContainerType>?>("containerTypes"); }
+            set { BackingStore?.Set("containerTypes", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.FileStorageContainerType> ContainerTypes
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.FileStorageContainerType>>("containerTypes"); }
+            set { BackingStore?.Set("containerTypes", value); }
+        }
+#endif
+        /// <summary>The collection of deleted fileStorageContainer resources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.FileStorageContainer>? DeletedContainers
@@ -62,6 +94,8 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "containerTypeRegistrations", n => { ContainerTypeRegistrations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.FileStorageContainerTypeRegistration>(global::Microsoft.Graph.Models.FileStorageContainerTypeRegistration.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "containerTypes", n => { ContainerTypes = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.FileStorageContainerType>(global::Microsoft.Graph.Models.FileStorageContainerType.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "containers", n => { Containers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.FileStorageContainer>(global::Microsoft.Graph.Models.FileStorageContainer.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "deletedContainers", n => { DeletedContainers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.FileStorageContainer>(global::Microsoft.Graph.Models.FileStorageContainer.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -75,6 +109,8 @@ namespace Microsoft.Graph.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.FileStorageContainer>("containers", Containers);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.FileStorageContainerTypeRegistration>("containerTypeRegistrations", ContainerTypeRegistrations);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.FileStorageContainerType>("containerTypes", ContainerTypes);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.FileStorageContainer>("deletedContainers", DeletedContainers);
         }
     }

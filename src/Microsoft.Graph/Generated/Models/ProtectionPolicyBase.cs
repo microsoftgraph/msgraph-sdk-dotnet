@@ -50,6 +50,12 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>The isEnabled property</summary>
+        public bool? IsEnabled
+        {
+            get { return BackingStore?.Get<bool?>("isEnabled"); }
+            set { BackingStore?.Set("isEnabled", value); }
+        }
         /// <summary>The identity of the person who last modified the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -72,6 +78,22 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
+        /// <summary>The protectionPolicyArtifactCount property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.ProtectionPolicyArtifactCount? ProtectionPolicyArtifactCount
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ProtectionPolicyArtifactCount?>("protectionPolicyArtifactCount"); }
+            set { BackingStore?.Set("protectionPolicyArtifactCount", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.ProtectionPolicyArtifactCount ProtectionPolicyArtifactCount
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ProtectionPolicyArtifactCount>("protectionPolicyArtifactCount"); }
+            set { BackingStore?.Set("protectionPolicyArtifactCount", value); }
+        }
+#endif
         /// <summary>Contains the retention setting details for the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -122,8 +144,10 @@ namespace Microsoft.Graph.Models
                 { "createdBy", n => { CreatedBy = n.GetObjectValue<global::Microsoft.Graph.Models.IdentitySet>(global::Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<global::Microsoft.Graph.Models.IdentitySet>(global::Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "protectionPolicyArtifactCount", n => { ProtectionPolicyArtifactCount = n.GetObjectValue<global::Microsoft.Graph.Models.ProtectionPolicyArtifactCount>(global::Microsoft.Graph.Models.ProtectionPolicyArtifactCount.CreateFromDiscriminatorValue); } },
                 { "retentionSettings", n => { RetentionSettings = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.RetentionSetting>(global::Microsoft.Graph.Models.RetentionSetting.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Microsoft.Graph.Models.ProtectionPolicyStatus>(); } },
             };
@@ -139,8 +163,10 @@ namespace Microsoft.Graph.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Models.IdentitySet>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteBoolValue("isEnabled", IsEnabled);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.ProtectionPolicyArtifactCount>("protectionPolicyArtifactCount", ProtectionPolicyArtifactCount);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.RetentionSetting>("retentionSettings", RetentionSettings);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.ProtectionPolicyStatus>("status", Status);
         }

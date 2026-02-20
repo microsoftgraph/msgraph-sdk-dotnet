@@ -28,6 +28,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("interactionHistory", value); }
         }
 #endif
+        /// <summary>The onlineMeetings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.AiOnlineMeeting>? OnlineMeetings
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.AiOnlineMeeting>?>("onlineMeetings"); }
+            set { BackingStore?.Set("onlineMeetings", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.AiOnlineMeeting> OnlineMeetings
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.AiOnlineMeeting>>("onlineMeetings"); }
+            set { BackingStore?.Set("onlineMeetings", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,6 +63,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "interactionHistory", n => { InteractionHistory = n.GetObjectValue<global::Microsoft.Graph.Models.AiInteractionHistory>(global::Microsoft.Graph.Models.AiInteractionHistory.CreateFromDiscriminatorValue); } },
+                { "onlineMeetings", n => { OnlineMeetings = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AiOnlineMeeting>(global::Microsoft.Graph.Models.AiOnlineMeeting.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -58,6 +75,7 @@ namespace Microsoft.Graph.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.AiInteractionHistory>("interactionHistory", InteractionHistory);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AiOnlineMeeting>("onlineMeetings", OnlineMeetings);
         }
     }
 }

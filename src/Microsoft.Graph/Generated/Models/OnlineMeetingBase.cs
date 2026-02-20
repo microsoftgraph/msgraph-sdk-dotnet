@@ -160,6 +160,12 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("chatRestrictions", value); }
         }
 #endif
+        /// <summary>Indicates the date and time when the meeting resource expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
+        public DateTimeOffset? ExpiryDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("expiryDateTime"); }
+            set { BackingStore?.Set("expiryDateTime", value); }
+        }
         /// <summary>Indicates whether end-to-end encryption (E2EE) is enabled for the online meeting.</summary>
         public bool? IsEndToEndEncryptionEnabled
         {
@@ -236,12 +242,60 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("lobbyBypassSettings", value); }
         }
 #endif
+        /// <summary>Provides the URL to the Teams meeting options page for the specified meeting. This link allows only the organizer to configure meeting settings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MeetingOptionsWebUrl
+        {
+            get { return BackingStore?.Get<string?>("meetingOptionsWebUrl"); }
+            set { BackingStore?.Set("meetingOptionsWebUrl", value); }
+        }
+#nullable restore
+#else
+        public string MeetingOptionsWebUrl
+        {
+            get { return BackingStore?.Get<string>("meetingOptionsWebUrl"); }
+            set { BackingStore?.Set("meetingOptionsWebUrl", value); }
+        }
+#endif
+        /// <summary>Specifies the spoken language used during the meeting for recording and transcription purposes.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MeetingSpokenLanguageTag
+        {
+            get { return BackingStore?.Get<string?>("meetingSpokenLanguageTag"); }
+            set { BackingStore?.Set("meetingSpokenLanguageTag", value); }
+        }
+#nullable restore
+#else
+        public string MeetingSpokenLanguageTag
+        {
+            get { return BackingStore?.Get<string>("meetingSpokenLanguageTag"); }
+            set { BackingStore?.Set("meetingSpokenLanguageTag", value); }
+        }
+#endif
         /// <summary>Indicates whether to record the meeting automatically.</summary>
         public bool? RecordAutomatically
         {
             get { return BackingStore?.Get<bool?>("recordAutomatically"); }
             set { BackingStore?.Set("recordAutomatically", value); }
         }
+        /// <summary>Specifies the sensitivity label applied to the Teams meeting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.OnlineMeetingSensitivityLabelAssignment? SensitivityLabelAssignment
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.OnlineMeetingSensitivityLabelAssignment?>("sensitivityLabelAssignment"); }
+            set { BackingStore?.Set("sensitivityLabelAssignment", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.OnlineMeetingSensitivityLabelAssignment SensitivityLabelAssignment
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.OnlineMeetingSensitivityLabelAssignment>("sensitivityLabelAssignment"); }
+            set { BackingStore?.Set("sensitivityLabelAssignment", value); }
+        }
+#endif
         /// <summary>Specifies whether meeting chat history is shared with participants.  The possible values are: all, none, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.MeetingChatHistoryDefaultMode? ShareMeetingChatHistoryDefault
         {
@@ -338,13 +392,17 @@ namespace Microsoft.Graph.Models
                 { "audioConferencing", n => { AudioConferencing = n.GetObjectValue<global::Microsoft.Graph.Models.AudioConferencing>(global::Microsoft.Graph.Models.AudioConferencing.CreateFromDiscriminatorValue); } },
                 { "chatInfo", n => { ChatInfo = n.GetObjectValue<global::Microsoft.Graph.Models.ChatInfo>(global::Microsoft.Graph.Models.ChatInfo.CreateFromDiscriminatorValue); } },
                 { "chatRestrictions", n => { ChatRestrictions = n.GetObjectValue<global::Microsoft.Graph.Models.ChatRestrictions>(global::Microsoft.Graph.Models.ChatRestrictions.CreateFromDiscriminatorValue); } },
+                { "expiryDateTime", n => { ExpiryDateTime = n.GetDateTimeOffsetValue(); } },
                 { "isEndToEndEncryptionEnabled", n => { IsEndToEndEncryptionEnabled = n.GetBoolValue(); } },
                 { "isEntryExitAnnounced", n => { IsEntryExitAnnounced = n.GetBoolValue(); } },
                 { "joinInformation", n => { JoinInformation = n.GetObjectValue<global::Microsoft.Graph.Models.ItemBody>(global::Microsoft.Graph.Models.ItemBody.CreateFromDiscriminatorValue); } },
                 { "joinMeetingIdSettings", n => { JoinMeetingIdSettings = n.GetObjectValue<global::Microsoft.Graph.Models.JoinMeetingIdSettings>(global::Microsoft.Graph.Models.JoinMeetingIdSettings.CreateFromDiscriminatorValue); } },
                 { "joinWebUrl", n => { JoinWebUrl = n.GetStringValue(); } },
                 { "lobbyBypassSettings", n => { LobbyBypassSettings = n.GetObjectValue<global::Microsoft.Graph.Models.LobbyBypassSettings>(global::Microsoft.Graph.Models.LobbyBypassSettings.CreateFromDiscriminatorValue); } },
+                { "meetingOptionsWebUrl", n => { MeetingOptionsWebUrl = n.GetStringValue(); } },
+                { "meetingSpokenLanguageTag", n => { MeetingSpokenLanguageTag = n.GetStringValue(); } },
                 { "recordAutomatically", n => { RecordAutomatically = n.GetBoolValue(); } },
+                { "sensitivityLabelAssignment", n => { SensitivityLabelAssignment = n.GetObjectValue<global::Microsoft.Graph.Models.OnlineMeetingSensitivityLabelAssignment>(global::Microsoft.Graph.Models.OnlineMeetingSensitivityLabelAssignment.CreateFromDiscriminatorValue); } },
                 { "shareMeetingChatHistoryDefault", n => { ShareMeetingChatHistoryDefault = n.GetEnumValue<global::Microsoft.Graph.Models.MeetingChatHistoryDefaultMode>(); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
                 { "videoTeleconferenceId", n => { VideoTeleconferenceId = n.GetStringValue(); } },
@@ -377,13 +435,17 @@ namespace Microsoft.Graph.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Models.AudioConferencing>("audioConferencing", AudioConferencing);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ChatInfo>("chatInfo", ChatInfo);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ChatRestrictions>("chatRestrictions", ChatRestrictions);
+            writer.WriteDateTimeOffsetValue("expiryDateTime", ExpiryDateTime);
             writer.WriteBoolValue("isEndToEndEncryptionEnabled", IsEndToEndEncryptionEnabled);
             writer.WriteBoolValue("isEntryExitAnnounced", IsEntryExitAnnounced);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ItemBody>("joinInformation", JoinInformation);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.JoinMeetingIdSettings>("joinMeetingIdSettings", JoinMeetingIdSettings);
             writer.WriteStringValue("joinWebUrl", JoinWebUrl);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.LobbyBypassSettings>("lobbyBypassSettings", LobbyBypassSettings);
+            writer.WriteStringValue("meetingOptionsWebUrl", MeetingOptionsWebUrl);
+            writer.WriteStringValue("meetingSpokenLanguageTag", MeetingSpokenLanguageTag);
             writer.WriteBoolValue("recordAutomatically", RecordAutomatically);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.OnlineMeetingSensitivityLabelAssignment>("sensitivityLabelAssignment", SensitivityLabelAssignment);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.MeetingChatHistoryDefaultMode>("shareMeetingChatHistoryDefault", ShareMeetingChatHistoryDefault);
             writer.WriteStringValue("subject", Subject);
             writer.WriteStringValue("videoTeleconferenceId", VideoTeleconferenceId);

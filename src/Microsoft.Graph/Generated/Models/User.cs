@@ -51,6 +51,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("activities", value); }
         }
 #endif
+        /// <summary>Ad hoc calls associated with the user. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.AdhocCall>? AdhocCalls
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.AdhocCall>?>("adhocCalls"); }
+            set { BackingStore?.Set("adhocCalls", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.AdhocCall> AdhocCalls
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.AdhocCall>>("adhocCalls"); }
+            set { BackingStore?.Set("adhocCalls", value); }
+        }
+#endif
         /// <summary>Sets the age group of the user. Allowed values: null, Minor, NotAdult, and Adult. For more information, see legal age group property definitions. Returned only on $select. Supports $filter (eq, ne, not, and in).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1285,6 +1301,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("onPremisesSecurityIdentifier", value); }
         }
 #endif
+        /// <summary>The onPremisesSyncBehavior property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.OnPremisesSyncBehavior? OnPremisesSyncBehavior
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.OnPremisesSyncBehavior?>("onPremisesSyncBehavior"); }
+            set { BackingStore?.Set("onPremisesSyncBehavior", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.OnPremisesSyncBehavior OnPremisesSyncBehavior
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.OnPremisesSyncBehavior>("onPremisesSyncBehavior"); }
+            set { BackingStore?.Set("onPremisesSyncBehavior", value); }
+        }
+#endif
         /// <summary>true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn&apos;t being synced and can be managed in Microsoft Entra ID. Read-only. Returned only on $select. Supports $filter (eq, ne, not, in, and eq on null values).</summary>
         public bool? OnPremisesSyncEnabled
         {
@@ -1987,6 +2019,7 @@ namespace Microsoft.Graph.Models
                 { "aboutMe", n => { AboutMe = n.GetStringValue(); } },
                 { "accountEnabled", n => { AccountEnabled = n.GetBoolValue(); } },
                 { "activities", n => { Activities = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.UserActivity>(global::Microsoft.Graph.Models.UserActivity.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "adhocCalls", n => { AdhocCalls = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AdhocCall>(global::Microsoft.Graph.Models.AdhocCall.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "ageGroup", n => { AgeGroup = n.GetStringValue(); } },
                 { "agreementAcceptances", n => { AgreementAcceptances = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AgreementAcceptance>(global::Microsoft.Graph.Models.AgreementAcceptance.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "appRoleAssignments", n => { AppRoleAssignments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AppRoleAssignment>(global::Microsoft.Graph.Models.AppRoleAssignment.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -2069,6 +2102,7 @@ namespace Microsoft.Graph.Models
                 { "onPremisesProvisioningErrors", n => { OnPremisesProvisioningErrors = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.OnPremisesProvisioningError>(global::Microsoft.Graph.Models.OnPremisesProvisioningError.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "onPremisesSamAccountName", n => { OnPremisesSamAccountName = n.GetStringValue(); } },
                 { "onPremisesSecurityIdentifier", n => { OnPremisesSecurityIdentifier = n.GetStringValue(); } },
+                { "onPremisesSyncBehavior", n => { OnPremisesSyncBehavior = n.GetObjectValue<global::Microsoft.Graph.Models.OnPremisesSyncBehavior>(global::Microsoft.Graph.Models.OnPremisesSyncBehavior.CreateFromDiscriminatorValue); } },
                 { "onPremisesSyncEnabled", n => { OnPremisesSyncEnabled = n.GetBoolValue(); } },
                 { "onPremisesUserPrincipalName", n => { OnPremisesUserPrincipalName = n.GetStringValue(); } },
                 { "onenote", n => { Onenote = n.GetObjectValue<global::Microsoft.Graph.Models.Onenote>(global::Microsoft.Graph.Models.Onenote.CreateFromDiscriminatorValue); } },
@@ -2128,6 +2162,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("aboutMe", AboutMe);
             writer.WriteBoolValue("accountEnabled", AccountEnabled);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.UserActivity>("activities", Activities);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AdhocCall>("adhocCalls", AdhocCalls);
             writer.WriteStringValue("ageGroup", AgeGroup);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AgreementAcceptance>("agreementAcceptances", AgreementAcceptances);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AppRoleAssignment>("appRoleAssignments", AppRoleAssignments);
@@ -2212,6 +2247,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.OnPremisesProvisioningError>("onPremisesProvisioningErrors", OnPremisesProvisioningErrors);
             writer.WriteStringValue("onPremisesSamAccountName", OnPremisesSamAccountName);
             writer.WriteStringValue("onPremisesSecurityIdentifier", OnPremisesSecurityIdentifier);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.OnPremisesSyncBehavior>("onPremisesSyncBehavior", OnPremisesSyncBehavior);
             writer.WriteBoolValue("onPremisesSyncEnabled", OnPremisesSyncEnabled);
             writer.WriteStringValue("onPremisesUserPrincipalName", OnPremisesUserPrincipalName);
             writer.WriteCollectionOfPrimitiveValues<string>("otherMails", OtherMails);

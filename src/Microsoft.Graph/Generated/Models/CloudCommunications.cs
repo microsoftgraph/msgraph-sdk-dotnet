@@ -21,6 +21,22 @@ namespace Microsoft.Graph.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
+        /// <summary>The adhocCalls property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.AdhocCall>? AdhocCalls
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.AdhocCall>?>("adhocCalls"); }
+            set { BackingStore?.Set("adhocCalls", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.AdhocCall> AdhocCalls
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.AdhocCall>>("adhocCalls"); }
+            set { BackingStore?.Set("adhocCalls", value); }
+        }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The callRecords property</summary>
@@ -145,6 +161,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "adhocCalls", n => { AdhocCalls = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AdhocCall>(global::Microsoft.Graph.Models.AdhocCall.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "callRecords", n => { CallRecords = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.CallRecords.CallRecord>(global::Microsoft.Graph.Models.CallRecords.CallRecord.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "calls", n => { Calls = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Call>(global::Microsoft.Graph.Models.Call.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -160,6 +177,7 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AdhocCall>("adhocCalls", AdhocCalls);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.CallRecords.CallRecord>("callRecords", CallRecords);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Call>("calls", Calls);
             writer.WriteStringValue("@odata.type", OdataType);

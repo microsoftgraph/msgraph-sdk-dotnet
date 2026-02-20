@@ -41,6 +41,7 @@ namespace Microsoft.Graph.Drives.Item.SharedWithMe
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("This API is deprecated and will stop returning data after November, 2027. as of 2025-11/Removal on 2025-11-13 and will be removed 2027-11-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Drives.Item.SharedWithMe.SharedWithMeGetResponse?> GetAsSharedWithMeGetResponseAsync(Action<RequestConfiguration<global::Microsoft.Graph.Drives.Item.SharedWithMe.SharedWithMeRequestBuilder.SharedWithMeRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -87,6 +88,7 @@ namespace Microsoft.Graph.Drives.Item.SharedWithMe
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("This API is deprecated and will stop returning data after November, 2027. as of 2025-11/Removal on 2025-11-13 and will be removed 2027-11-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Drives.Item.SharedWithMe.SharedWithMeRequestBuilder.SharedWithMeRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -106,6 +108,7 @@ namespace Microsoft.Graph.Drives.Item.SharedWithMe
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Drives.Item.SharedWithMe.SharedWithMeRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("This API is deprecated and will stop returning data after November, 2027. as of 2025-11/Removal on 2025-11-13 and will be removed 2027-11-01")]
         public global::Microsoft.Graph.Drives.Item.SharedWithMe.SharedWithMeRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Drives.Item.SharedWithMe.SharedWithMeRequestBuilder(rawUrl, RequestAdapter);

@@ -89,9 +89,13 @@ namespace Microsoft.Graph.Models
         #pragma warning disable CS1591
         Exception = 524288,
         #pragma warning restore CS1591
+        [EnumMember(Value = "labelNotFoundException")]
+        #pragma warning disable CS1591
+        LabelNotFoundException = 1048576,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
         #pragma warning disable CS1591
-        UnknownFutureValue = 1048576,
+        UnknownFutureValue = 2097152,
         #pragma warning restore CS1591
     }
 }

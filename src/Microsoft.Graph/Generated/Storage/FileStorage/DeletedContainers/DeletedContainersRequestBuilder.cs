@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Storage.FileStorage.DeletedContainers
         {
         }
         /// <summary>
-        /// Get deletedContainers from storage
+        /// The collection of deleted fileStorageContainer resources.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.FileStorageContainerCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Storage.FileStorage.DeletedContainers
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.FileStorageContainer>(requestInfo, global::Microsoft.Graph.Models.FileStorageContainer.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get deletedContainers from storage
+        /// The collection of deleted fileStorageContainer resources.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Storage.FileStorage.DeletedContainers
             return new global::Microsoft.Graph.Storage.FileStorage.DeletedContainers.DeletedContainersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get deletedContainers from storage
+        /// The collection of deleted fileStorageContainer resources.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeletedContainersRequestBuilderGetQueryParameters 
