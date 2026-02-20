@@ -28,6 +28,22 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("computerDnsName", value); }
         }
 #endif
+        /// <summary>The domain name of the sensor.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DomainName
+        {
+            get { return BackingStore?.Get<string?>("domainName"); }
+            set { BackingStore?.Set("domainName", value); }
+        }
+#nullable restore
+#else
+        public string DomainName
+        {
+            get { return BackingStore?.Get<string>("domainName"); }
+            set { BackingStore?.Set("domainName", value); }
+        }
+#endif
         /// <summary>The date and time when the sensor was last seen.</summary>
         public DateTimeOffset? LastSeenDateTime
         {
@@ -69,6 +85,7 @@ namespace Microsoft.Graph.Models.Security
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "computerDnsName", n => { ComputerDnsName = n.GetStringValue(); } },
+                { "domainName", n => { DomainName = n.GetStringValue(); } },
                 { "lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
                 { "senseClientVersion", n => { SenseClientVersion = n.GetStringValue(); } },
             };
@@ -82,6 +99,7 @@ namespace Microsoft.Graph.Models.Security
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("computerDnsName", ComputerDnsName);
+            writer.WriteStringValue("domainName", DomainName);
             writer.WriteDateTimeOffsetValue("lastSeenDateTime", LastSeenDateTime);
             writer.WriteStringValue("senseClientVersion", SenseClientVersion);
         }

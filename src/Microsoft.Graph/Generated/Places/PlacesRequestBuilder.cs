@@ -96,7 +96,8 @@ namespace Microsoft.Graph.Places
         {
         }
         /// <summary>
-        /// Add new entity to places
+        /// Create a new place object. You can also use this method to create the following child object types: building, floor, section, room, workspace, or desk.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/place-post?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Place"/></returns>
         /// <param name="body">The request body</param>
@@ -121,7 +122,7 @@ namespace Microsoft.Graph.Places
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Place>(requestInfo, global::Microsoft.Graph.Models.Place.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add new entity to places
+        /// Create a new place object. You can also use this method to create the following child object types: building, floor, section, room, workspace, or desk.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

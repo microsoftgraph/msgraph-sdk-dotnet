@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Places.Item.GraphBuilding.Map.Footprints
         {
         }
         /// <summary>
-        /// Get footprints from places
+        /// Get a list of footprintMap objects for building footprints and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/buildingmap-list-footprints?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.FootprintMapCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Places.Item.GraphBuilding.Map.Footprints
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.FootprintMap>(requestInfo, global::Microsoft.Graph.Models.FootprintMap.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get footprints from places
+        /// Get a list of footprintMap objects for building footprints and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +153,7 @@ namespace Microsoft.Graph.Places.Item.GraphBuilding.Map.Footprints
             return new global::Microsoft.Graph.Places.Item.GraphBuilding.Map.Footprints.FootprintsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get footprints from places
+        /// Get a list of footprintMap objects for building footprints and their properties.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FootprintsRequestBuilderGetQueryParameters 

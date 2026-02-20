@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Notification preference. Possible values are: unknown, microsoft, custom, unknownFutureValue.</summary>
+        /// <summary>Notification preference. The possible values are: unknown, microsoft, custom, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.EndUserNotificationPreference? NotificationPreference
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.EndUserNotificationPreference?>("notificationPreference"); }
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("positiveReinforcement", value); }
         }
 #endif
-        /// <summary>End user notification type. Possible values are: unknown, noTraining, trainingSelected, noNotification, unknownFutureValue.</summary>
+        /// <summary>End user notification type. The possible values are: unknown, noTraining, trainingSelected, noNotification, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.EndUserNotificationSettingType? SettingType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.EndUserNotificationSettingType?>("settingType"); }

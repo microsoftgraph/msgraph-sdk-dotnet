@@ -12,13 +12,13 @@ namespace Microsoft.Graph.Models
     public partial class Workspace : global::Microsoft.Graph.Models.Place, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The capacity property</summary>
+        /// <summary>The maximum number of individual desks within a workspace.</summary>
         public int? Capacity
         {
             get { return BackingStore?.Get<int?>("capacity"); }
             set { BackingStore?.Set("capacity", value); }
         }
-        /// <summary>The displayDeviceName property</summary>
+        /// <summary>The name of the display device (for example, monitor or projector) that is available in the workspace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayDeviceName
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayDeviceName", value); }
         }
 #endif
-        /// <summary>The emailAddress property</summary>
+        /// <summary>The email address that is associated with the workspace. This email address is used for booking.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EmailAddress
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("emailAddress", value); }
         }
 #endif
-        /// <summary>The mode property</summary>
+        /// <summary>The mode for a workspace. The supported modes are:reservablePlaceMode - Workspaces that can be booked in advance using desk pool reservation tools.dropInPlaceMode - First come, first served desks. When you plug into a peripheral on one of these desks in the workspace, the desk is booked for you, assuming that the peripheral has been associated with the desk in the Microsoft Teams Rooms pro management portal.unavailablePlaceMode - Workspaces that are taken down for maintenance or marked as not reservable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.PlaceMode? Mode
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("mode", value); }
         }
 #endif
-        /// <summary>The nickname property</summary>
+        /// <summary>A short, friendly name for the workspace, often used for easier identification or display in the UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Nickname
@@ -80,6 +80,22 @@ namespace Microsoft.Graph.Models
         {
             get { return BackingStore?.Get<string>("nickname"); }
             set { BackingStore?.Set("nickname", value); }
+        }
+#endif
+        /// <summary>An alternative immutable unique identifier of the workspace. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PlaceId
+        {
+            get { return BackingStore?.Get<string?>("placeId"); }
+            set { BackingStore?.Set("placeId", value); }
+        }
+#nullable restore
+#else
+        public string PlaceId
+        {
+            get { return BackingStore?.Get<string>("placeId"); }
+            set { BackingStore?.Set("placeId", value); }
         }
 #endif
         /// <summary>
@@ -112,6 +128,7 @@ namespace Microsoft.Graph.Models
                 { "emailAddress", n => { EmailAddress = n.GetStringValue(); } },
                 { "mode", n => { Mode = n.GetObjectValue<global::Microsoft.Graph.Models.PlaceMode>(global::Microsoft.Graph.Models.PlaceMode.CreateFromDiscriminatorValue); } },
                 { "nickname", n => { Nickname = n.GetStringValue(); } },
+                { "placeId", n => { PlaceId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -127,6 +144,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("emailAddress", EmailAddress);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.PlaceMode>("mode", Mode);
             writer.WriteStringValue("nickname", Nickname);
+            writer.WriteStringValue("placeId", PlaceId);
         }
     }
 }

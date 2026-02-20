@@ -242,7 +242,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("participants", value); }
         }
 #endif
-        /// <summary>The list of requested modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data.</summary>
+        /// <summary>The list of requested modalities. The possible values are: unknown, audio, video, videoBasedScreenSharing, data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.Modality?>? RequestedModalities
@@ -290,7 +290,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("source", value); }
         }
 #endif
-        /// <summary>The call state. Possible values are: incoming, establishing, ringing, established, hold, transferring, transferAccepted, redirecting, terminating, terminated. Read-only.</summary>
+        /// <summary>The call state. The possible values are: incoming, establishing, ringing, established, hold, transferring, transferAccepted, redirecting, terminating, terminated. Read-only.</summary>
         public global::Microsoft.Graph.Models.CallState? State
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.CallState?>("state"); }

@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.ScopeOperatorMultiValuedComparisonType?>("multivaluedComparisonType"); }
             set { BackingStore?.Set("multivaluedComparisonType", value); }
         }
-        /// <summary>Attribute types supported by the operator. Possible values are: Boolean, Binary, Reference, Integer, String.</summary>
+        /// <summary>Attribute types supported by the operator. The possible values are: Boolean, Binary, Reference, Integer, String.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.AttributeType?>? SupportedAttributeTypes

@@ -44,17 +44,11 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("attestationCertificates", value); }
         }
 #endif
-        /// <summary>The attestation level of this FIDO2 security key. Possible values are: attested, or notAttested.</summary>
+        /// <summary>The attestation level of this FIDO2 security key. The possible values are: attested, or notAttested.</summary>
         public global::Microsoft.Graph.Models.AttestationLevel? AttestationLevel
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.AttestationLevel?>("attestationLevel"); }
             set { BackingStore?.Set("attestationLevel", value); }
-        }
-        /// <summary>The timestamp when this key was registered to the user.</summary>
-        public DateTimeOffset? CreatedDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
-            set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The display name of the key as given by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -116,7 +110,6 @@ namespace Microsoft.Graph.Models
                 { "aaGuid", n => { AaGuid = n.GetStringValue(); } },
                 { "attestationCertificates", n => { AttestationCertificates = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "attestationLevel", n => { AttestationLevel = n.GetEnumValue<global::Microsoft.Graph.Models.AttestationLevel>(); } },
-                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
             };
@@ -132,7 +125,6 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("aaGuid", AaGuid);
             writer.WriteCollectionOfPrimitiveValues<string>("attestationCertificates", AttestationCertificates);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.AttestationLevel>("attestationLevel", AttestationLevel);
-            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("model", Model);
         }

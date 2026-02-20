@@ -12,6 +12,12 @@ namespace Microsoft.Graph.Models
     public partial class AuthenticationMethod : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Represents the date and time when an entity was created. Read-only.</summary>
+        public DateTimeOffset? CreatedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -24,6 +30,7 @@ namespace Microsoft.Graph.Models
             return mappingValue switch
             {
                 "#microsoft.graph.emailAuthenticationMethod" => new global::Microsoft.Graph.Models.EmailAuthenticationMethod(),
+                "#microsoft.graph.externalAuthenticationMethod" => new global::Microsoft.Graph.Models.ExternalAuthenticationMethod(),
                 "#microsoft.graph.fido2AuthenticationMethod" => new global::Microsoft.Graph.Models.Fido2AuthenticationMethod(),
                 "#microsoft.graph.microsoftAuthenticatorAuthenticationMethod" => new global::Microsoft.Graph.Models.MicrosoftAuthenticatorAuthenticationMethod(),
                 "#microsoft.graph.passwordAuthenticationMethod" => new global::Microsoft.Graph.Models.PasswordAuthenticationMethod(),
@@ -43,6 +50,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -53,6 +61,7 @@ namespace Microsoft.Graph.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
         }
     }
 }

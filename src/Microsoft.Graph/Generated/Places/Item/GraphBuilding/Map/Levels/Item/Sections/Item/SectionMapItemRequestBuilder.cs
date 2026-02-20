@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Places.Item.GraphBuilding.Map.Levels.Item.Sections.Ite
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get sections from places
+        /// Collection of sections (such as zones or partitions) on this level. Supports upsert.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.SectionMap"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Places.Item.GraphBuilding.Map.Levels.Item.Sections.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Get sections from places
+        /// Collection of sections (such as zones or partitions) on this level. Supports upsert.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Places.Item.GraphBuilding.Map.Levels.Item.Sections.Ite
         {
         }
         /// <summary>
-        /// Get sections from places
+        /// Collection of sections (such as zones or partitions) on this level. Supports upsert.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SectionMapItemRequestBuilderGetQueryParameters 

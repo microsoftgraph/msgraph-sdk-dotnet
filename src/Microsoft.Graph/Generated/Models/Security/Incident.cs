@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("assignedTo", value); }
         }
 #endif
-        /// <summary>The specification for the incident. Possible values are: unknown, falsePositive, truePositive, informationalExpectedActivity, unknownFutureValue.</summary>
+        /// <summary>The specification for the incident. The possible values are: unknown, falsePositive, truePositive, informationalExpectedActivity, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.Security.AlertClassification? Classification
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.AlertClassification?>("classification"); }
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>Specifies the determination of the incident. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.</summary>
+        /// <summary>Specifies the determination of the incident. The possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.Security.AlertDetermination? Determination
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.AlertDetermination?>("determination"); }
@@ -163,6 +163,12 @@ namespace Microsoft.Graph.Models.Security
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdateDateTime"); }
             set { BackingStore?.Set("lastUpdateDateTime", value); }
+        }
+        /// <summary>A priority score for the incident from 0 to 100, with &gt; 85 being the top priority, 15 - 85 medium priority, and &lt; 15 low priority. This score is generated using machine learning and is based on multiple factors, including severity, disruption impact, threat intelligence, alert types, asset criticality, threat analytics, incident rarity, and additional priority signals. The value can also be null which indicates the feature is not open for the tenant or the value of the score is pending calculation.</summary>
+        public int? PriorityScore
+        {
+            get { return BackingStore?.Get<int?>("priorityScore"); }
+            set { BackingStore?.Set("priorityScore", value); }
         }
         /// <summary>Only populated in case an incident is grouped with another incident, as part of the logic that processes incidents. In such a case, the status property is redirected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -286,6 +292,7 @@ namespace Microsoft.Graph.Models.Security
                 { "incidentWebUrl", n => { IncidentWebUrl = n.GetStringValue(); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetStringValue(); } },
                 { "lastUpdateDateTime", n => { LastUpdateDateTime = n.GetDateTimeOffsetValue(); } },
+                { "priorityScore", n => { PriorityScore = n.GetIntValue(); } },
                 { "redirectIncidentId", n => { RedirectIncidentId = n.GetStringValue(); } },
                 { "resolvingComment", n => { ResolvingComment = n.GetStringValue(); } },
                 { "severity", n => { Severity = n.GetEnumValue<global::Microsoft.Graph.Models.Security.AlertSeverity>(); } },
@@ -315,6 +322,7 @@ namespace Microsoft.Graph.Models.Security
             writer.WriteStringValue("incidentWebUrl", IncidentWebUrl);
             writer.WriteStringValue("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastUpdateDateTime", LastUpdateDateTime);
+            writer.WriteIntValue("priorityScore", PriorityScore);
             writer.WriteStringValue("redirectIncidentId", RedirectIncidentId);
             writer.WriteStringValue("resolvingComment", ResolvingComment);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.Security.AlertSeverity>("severity", Severity);

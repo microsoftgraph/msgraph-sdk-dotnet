@@ -12,12 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class WindowsHelloForBusinessAuthenticationMethod : global::Microsoft.Graph.Models.AuthenticationMethod, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The date and time that this Windows Hello for Business key was registered.</summary>
-        public DateTimeOffset? CreatedDateTime
-        {
-            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
-            set { BackingStore?.Set("createdDateTime", value); }
-        }
         /// <summary>The registered device on which this Windows Hello for Business key resides. Supports $expand. When you get a user&apos;s Windows Hello for Business registration information, this property is returned only on a single GET and when you specify ?$expand. For example, GET /users/admin@contoso.com/authentication/windowsHelloForBusinessMethods/_jpuR-TGZtk6aQCLF3BQjA2?$expand=device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -50,7 +44,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Key strength of this Windows Hello for Business key. Possible values are: normal, weak, unknown.</summary>
+        /// <summary>Key strength of this Windows Hello for Business key. The possible values are: normal, weak, unknown.</summary>
         public global::Microsoft.Graph.Models.AuthenticationMethodKeyStrength? KeyStrength
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.AuthenticationMethodKeyStrength?>("keyStrength"); }
@@ -81,7 +75,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "device", n => { Device = n.GetObjectValue<global::Microsoft.Graph.Models.Device>(global::Microsoft.Graph.Models.Device.CreateFromDiscriminatorValue); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "keyStrength", n => { KeyStrength = n.GetEnumValue<global::Microsoft.Graph.Models.AuthenticationMethodKeyStrength>(); } },
@@ -95,7 +88,6 @@ namespace Microsoft.Graph.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Device>("device", Device);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.AuthenticationMethodKeyStrength>("keyStrength", KeyStrength);

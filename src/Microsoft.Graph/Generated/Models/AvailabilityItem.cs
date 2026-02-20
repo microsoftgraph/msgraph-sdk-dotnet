@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("startDateTime", value); }
         }
 #endif
-        /// <summary>The status of the staff member. Possible values are: available, busy, slotsAvailable, outOfOffice, unknownFutureValue.</summary>
+        /// <summary>The status of the staff member. The possible values are: available, busy, slotsAvailable, outOfOffice, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.BookingsAvailabilityStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.BookingsAvailabilityStatus?>("status"); }

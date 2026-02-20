@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("audioDeviceName", value); }
         }
 #endif
-        /// <summary>Type of room. Possible values are standard, and reserved.</summary>
+        /// <summary>Type of room. Possible values are: unknown, standard, reserved.</summary>
         public global::Microsoft.Graph.Models.BookingType? BookingType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.BookingType?>("bookingType"); }
@@ -126,6 +126,28 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("nickname", value); }
         }
 #endif
+        /// <summary>An alternative immutable unique identifier of the room. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PlaceId
+        {
+            get { return BackingStore?.Get<string?>("placeId"); }
+            set { BackingStore?.Set("placeId", value); }
+        }
+#nullable restore
+#else
+        public string PlaceId
+        {
+            get { return BackingStore?.Get<string>("placeId"); }
+            set { BackingStore?.Set("placeId", value); }
+        }
+#endif
+        /// <summary>The teamsEnabledState property</summary>
+        public global::Microsoft.Graph.Models.PlaceFeatureEnablement? TeamsEnabledState
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.PlaceFeatureEnablement?>("teamsEnabledState"); }
+            set { BackingStore?.Set("teamsEnabledState", value); }
+        }
         /// <summary>Specifies the name of the video device in the room.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -176,6 +198,8 @@ namespace Microsoft.Graph.Models
                 { "floorLabel", n => { FloorLabel = n.GetStringValue(); } },
                 { "floorNumber", n => { FloorNumber = n.GetIntValue(); } },
                 { "nickname", n => { Nickname = n.GetStringValue(); } },
+                { "placeId", n => { PlaceId = n.GetStringValue(); } },
+                { "teamsEnabledState", n => { TeamsEnabledState = n.GetEnumValue<global::Microsoft.Graph.Models.PlaceFeatureEnablement>(); } },
                 { "videoDeviceName", n => { VideoDeviceName = n.GetStringValue(); } },
             };
         }
@@ -196,6 +220,8 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("floorLabel", FloorLabel);
             writer.WriteIntValue("floorNumber", FloorNumber);
             writer.WriteStringValue("nickname", Nickname);
+            writer.WriteStringValue("placeId", PlaceId);
+            writer.WriteEnumValue<global::Microsoft.Graph.Models.PlaceFeatureEnablement>("teamsEnabledState", TeamsEnabledState);
             writer.WriteStringValue("videoDeviceName", VideoDeviceName);
         }
     }

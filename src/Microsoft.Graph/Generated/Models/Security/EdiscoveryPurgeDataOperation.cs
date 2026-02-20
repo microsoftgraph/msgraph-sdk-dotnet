@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Models.Security
     public partial class EdiscoveryPurgeDataOperation : global::Microsoft.Graph.Models.Security.CaseOperation, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The purge job report file metadata. It contains the properties for report file metadata, including downloadUrl, fileName, and size.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.Security.ReportFileMetadata>? ReportFileMetadata
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Security.ReportFileMetadata>?>("reportFileMetadata"); }
+            set { BackingStore?.Set("reportFileMetadata", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.Security.ReportFileMetadata> ReportFileMetadata
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Security.ReportFileMetadata>>("reportFileMetadata"); }
+            set { BackingStore?.Set("reportFileMetadata", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -30,6 +46,7 @@ namespace Microsoft.Graph.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "reportFileMetadata", n => { ReportFileMetadata = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.ReportFileMetadata>(global::Microsoft.Graph.Models.Security.ReportFileMetadata.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -40,6 +57,7 @@ namespace Microsoft.Graph.Models.Security
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.ReportFileMetadata>("reportFileMetadata", ReportFileMetadata);
         }
     }
 }

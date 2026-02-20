@@ -759,6 +759,38 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<DateTimeOffset?>("renewedDateTime"); }
             set { BackingStore?.Set("renewedDateTime", value); }
         }
+        /// <summary>Specifies the group behaviors that can be set for a Microsoft 365 group during creation. This property can be set only as part of creation (POST). For the list of possible values, see Microsoft 365 group behaviors and provisioning options.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ResourceBehaviorOptions
+        {
+            get { return BackingStore?.Get<List<string>?>("resourceBehaviorOptions"); }
+            set { BackingStore?.Set("resourceBehaviorOptions", value); }
+        }
+#nullable restore
+#else
+        public List<string> ResourceBehaviorOptions
+        {
+            get { return BackingStore?.Get<List<string>>("resourceBehaviorOptions"); }
+            set { BackingStore?.Set("resourceBehaviorOptions", value); }
+        }
+#endif
+        /// <summary>Specifies the group resources that are associated with the Microsoft 365 group. The possible value is Team. For more information, see Microsoft 365 group behaviors and provisioning options. Returned by default. Supports $filter (eq, not, startsWith).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ResourceProvisioningOptions
+        {
+            get { return BackingStore?.Get<List<string>?>("resourceProvisioningOptions"); }
+            set { BackingStore?.Set("resourceProvisioningOptions", value); }
+        }
+#nullable restore
+#else
+        public List<string> ResourceProvisioningOptions
+        {
+            get { return BackingStore?.Get<List<string>>("resourceProvisioningOptions"); }
+            set { BackingStore?.Set("resourceProvisioningOptions", value); }
+        }
+#endif
         /// <summary>Specifies whether the group is a security group. Required. Returned by default. Supports $filter (eq, ne, not, in).</summary>
         public bool? SecurityEnabled
         {
@@ -931,7 +963,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<int?>("unseenCount"); }
             set { BackingStore?.Set("unseenCount", value); }
         }
-        /// <summary>Specifies the group join policy and group content visibility for groups. Possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can&apos;t be updated later. Other values of visibility can be updated after group creation. If visibility value isn&apos;t specified during group creation on Microsoft Graph, a security group is created as Private by default, and the Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.</summary>
+        /// <summary>Specifies the group join policy and group content visibility for groups. The possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can&apos;t be updated later. Other values of visibility can be updated after group creation. If visibility value isn&apos;t specified during group creation on Microsoft Graph, a security group is created as Private by default, and the Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Visibility
@@ -1028,6 +1060,8 @@ namespace Microsoft.Graph.Models
                 { "proxyAddresses", n => { ProxyAddresses = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "rejectedSenders", n => { RejectedSenders = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DirectoryObject>(global::Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "renewedDateTime", n => { RenewedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "resourceBehaviorOptions", n => { ResourceBehaviorOptions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "resourceProvisioningOptions", n => { ResourceProvisioningOptions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "securityEnabled", n => { SecurityEnabled = n.GetBoolValue(); } },
                 { "securityIdentifier", n => { SecurityIdentifier = n.GetStringValue(); } },
                 { "serviceProvisioningErrors", n => { ServiceProvisioningErrors = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ServiceProvisioningError>(global::Microsoft.Graph.Models.ServiceProvisioningError.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -1107,6 +1141,8 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfPrimitiveValues<string>("proxyAddresses", ProxyAddresses);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DirectoryObject>("rejectedSenders", RejectedSenders);
             writer.WriteDateTimeOffsetValue("renewedDateTime", RenewedDateTime);
+            writer.WriteCollectionOfPrimitiveValues<string>("resourceBehaviorOptions", ResourceBehaviorOptions);
+            writer.WriteCollectionOfPrimitiveValues<string>("resourceProvisioningOptions", ResourceProvisioningOptions);
             writer.WriteBoolValue("securityEnabled", SecurityEnabled);
             writer.WriteStringValue("securityIdentifier", SecurityIdentifier);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ServiceProvisioningError>("serviceProvisioningErrors", ServiceProvisioningErrors);

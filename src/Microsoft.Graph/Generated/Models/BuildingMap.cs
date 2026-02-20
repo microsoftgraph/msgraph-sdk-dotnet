@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class BuildingMap : global::Microsoft.Graph.Models.BaseMapFeature, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The footprints property</summary>
+        /// <summary>Represents the approximate physical extent of a referenced building. It corresponds to footprint.geojson in IMDF format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.FootprintMap>? Footprints
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("footprints", value); }
         }
 #endif
-        /// <summary>The levels property</summary>
+        /// <summary>Represents a physical floor structure within a building. It corresponds to level.geojson in IMDF format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.LevelMap>? Levels
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("levels", value); }
         }
 #endif
-        /// <summary>The placeId property</summary>
+        /// <summary>Identifier for the building to which this buildingMap belongs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PlaceId

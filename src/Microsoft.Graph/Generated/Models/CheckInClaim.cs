@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The calendarEventId property</summary>
+        /// <summary>The unique identifier for an Outlook calendar event associated with the checkInClaim object. For more information, see the iCalUId property in event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CalendarEventId
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.CheckInMethod?>("checkInMethod"); }
             set { BackingStore?.Set("checkInMethod", value); }
         }
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The date and time when the checkInClaim object was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }

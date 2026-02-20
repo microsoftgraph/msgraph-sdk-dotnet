@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class Floor : global::Microsoft.Graph.Models.Place, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The sortOrder property</summary>
+        /// <summary>Specifies the sort order of the floor. For example, a floor might be named &apos;Lobby&apos; with a sort order of 0 to show this floor first in ordered lists.</summary>
         public int? SortOrder
         {
             get { return BackingStore?.Get<int?>("sortOrder"); }

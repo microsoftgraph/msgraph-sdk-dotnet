@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class Building : global::Microsoft.Graph.Models.Place, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The map property</summary>
+        /// <summary>Map file associated with a building in Places. This object is the IMDF-format representation of building.geojson.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.BuildingMap? Map
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("map", value); }
         }
 #endif
-        /// <summary>The resourceLinks property</summary>
+        /// <summary>A set of links to external resources that are associated with the building. Inherited from place.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.ResourceLink>? ResourceLinks
@@ -44,6 +44,12 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("resourceLinks", value); }
         }
 #endif
+        /// <summary>The wifiState property</summary>
+        public global::Microsoft.Graph.Models.PlaceFeatureEnablement? WifiState
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.PlaceFeatureEnablement?>("wifiState"); }
+            set { BackingStore?.Set("wifiState", value); }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Models.Building"/> and sets the default values.
         /// </summary>
@@ -71,6 +77,7 @@ namespace Microsoft.Graph.Models
             {
                 { "map", n => { Map = n.GetObjectValue<global::Microsoft.Graph.Models.BuildingMap>(global::Microsoft.Graph.Models.BuildingMap.CreateFromDiscriminatorValue); } },
                 { "resourceLinks", n => { ResourceLinks = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ResourceLink>(global::Microsoft.Graph.Models.ResourceLink.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "wifiState", n => { WifiState = n.GetEnumValue<global::Microsoft.Graph.Models.PlaceFeatureEnablement>(); } },
             };
         }
         /// <summary>
@@ -83,6 +90,7 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.BuildingMap>("map", Map);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ResourceLink>("resourceLinks", ResourceLinks);
+            writer.WriteEnumValue<global::Microsoft.Graph.Models.PlaceFeatureEnablement>("wifiState", WifiState);
         }
     }
 }

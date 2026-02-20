@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Type of setting. Possible values are: microsoftCustom, microsoftManaged, noTraining, custom, unknownFutureValue.</summary>
+        /// <summary>Type of setting. The possible values are: microsoftCustom, microsoftManaged, noTraining, custom, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.TrainingSettingType? SettingType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.TrainingSettingType?>("settingType"); }

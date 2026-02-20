@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<Date?>("startDate"); }
             set { BackingStore?.Set("startDate", value); }
         }
-        /// <summary>The status of the gallery image on the Cloud PC. Possible values are: supported, supportedWithWarning, notSupported, unknownFutureValue. The default value is supported. Read-only.</summary>
+        /// <summary>The status of the gallery image on the Cloud PC. The possible values are: supported, supportedWithWarning, notSupported, unknownFutureValue. The default value is supported. Read-only.</summary>
         public global::Microsoft.Graph.Models.CloudPcGalleryImageStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.CloudPcGalleryImageStatus?>("status"); }

@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Places.Item.GraphBuilding.Map.Levels.Item.Sections
         {
         }
         /// <summary>
-        /// Get sections from places
+        /// Get a list of the sectionMap objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/levelmap-list-sections?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.SectionMapCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Places.Item.GraphBuilding.Map.Levels.Item.Sections
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.SectionMap>(requestInfo, global::Microsoft.Graph.Models.SectionMap.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get sections from places
+        /// Get a list of the sectionMap objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +153,7 @@ namespace Microsoft.Graph.Places.Item.GraphBuilding.Map.Levels.Item.Sections
             return new global::Microsoft.Graph.Places.Item.GraphBuilding.Map.Levels.Item.Sections.SectionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get sections from places
+        /// Get a list of the sectionMap objects and their properties.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SectionsRequestBuilderGetQueryParameters 

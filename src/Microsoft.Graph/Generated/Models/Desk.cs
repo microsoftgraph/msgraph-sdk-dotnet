@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class Desk : global::Microsoft.Graph.Models.Place, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The displayDeviceName property</summary>
+        /// <summary>The name of the display device (for example, monitor or projector) that is available at the desk.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayDeviceName
@@ -28,7 +28,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayDeviceName", value); }
         }
 #endif
-        /// <summary>The mailboxDetails property</summary>
+        /// <summary>The heightAdjustableState property</summary>
+        public global::Microsoft.Graph.Models.PlaceFeatureEnablement? HeightAdjustableState
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.PlaceFeatureEnablement?>("heightAdjustableState"); }
+            set { BackingStore?.Set("heightAdjustableState", value); }
+        }
+        /// <summary>The mailbox object id and email address that are associated with the desk.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.MailboxDetails? MailboxDetails
@@ -44,7 +50,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("mailboxDetails", value); }
         }
 #endif
-        /// <summary>The mode property</summary>
+        /// <summary>The mode of the desk. The supported modes are:assignedPlaceMode - Desks that are assigned to a user.reservablePlaceMode - Desks that can be booked in advance using desk reservation tools.dropInPlaceMode - First come, first served desks. When you plug into a peripheral on one of these desks, the desk is booked for you, assuming the peripheral is associated with the desk in the Microsoft Teams Rooms pro management portal.unavailablePlaceMode - Desks that are taken down for maintenance or marked as not reservable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.PlaceMode? Mode
@@ -86,6 +92,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "displayDeviceName", n => { DisplayDeviceName = n.GetStringValue(); } },
+                { "heightAdjustableState", n => { HeightAdjustableState = n.GetEnumValue<global::Microsoft.Graph.Models.PlaceFeatureEnablement>(); } },
                 { "mailboxDetails", n => { MailboxDetails = n.GetObjectValue<global::Microsoft.Graph.Models.MailboxDetails>(global::Microsoft.Graph.Models.MailboxDetails.CreateFromDiscriminatorValue); } },
                 { "mode", n => { Mode = n.GetObjectValue<global::Microsoft.Graph.Models.PlaceMode>(global::Microsoft.Graph.Models.PlaceMode.CreateFromDiscriminatorValue); } },
             };
@@ -99,6 +106,7 @@ namespace Microsoft.Graph.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("displayDeviceName", DisplayDeviceName);
+            writer.WriteEnumValue<global::Microsoft.Graph.Models.PlaceFeatureEnablement>("heightAdjustableState", HeightAdjustableState);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.MailboxDetails>("mailboxDetails", MailboxDetails);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.PlaceMode>("mode", Mode);
         }

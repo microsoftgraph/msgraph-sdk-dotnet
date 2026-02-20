@@ -432,7 +432,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("responseStatus", value); }
         }
 #endif
-        /// <summary>Possible values are: normal, personal, private, and confidential.</summary>
+        /// <summary>The possible values are: normal, personal, private, and confidential.</summary>
         public global::Microsoft.Graph.Models.Sensitivity? Sensitivity
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Sensitivity?>("sensitivity"); }
@@ -454,7 +454,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("seriesMasterId", value); }
         }
 #endif
-        /// <summary>The status to show. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown.</summary>
+        /// <summary>The status to show. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.</summary>
         public global::Microsoft.Graph.Models.FreeBusyStatus? ShowAs
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.FreeBusyStatus?>("showAs"); }
@@ -524,7 +524,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("transactionId", value); }
         }
 #endif
-        /// <summary>The event type. Possible values are: singleInstance, occurrence, exception, seriesMaster. Read-only</summary>
+        /// <summary>The event type. The possible values are: singleInstance, occurrence, exception, seriesMaster. Read-only</summary>
         public global::Microsoft.Graph.Models.EventType? Type
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.EventType?>("type"); }

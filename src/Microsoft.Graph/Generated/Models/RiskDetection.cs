@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class RiskDetection : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Indicates the activity type the detected risk is linked to. Possible values are: signin, user, unknownFutureValue.</summary>
+        /// <summary>Indicates the activity type the detected risk is linked to.</summary>
         public global::Microsoft.Graph.Models.ActivityType? Activity
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.ActivityType?>("activity"); }
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<DateTimeOffset?>("detectedDateTime"); }
             set { BackingStore?.Set("detectedDateTime", value); }
         }
-        /// <summary>Timing of the detected risk (real-time/offline). Possible values are: notDefined, realtime, nearRealtime, offline, unknownFutureValue.</summary>
+        /// <summary>Timing of the detected risk (real-time/offline). The possible values are: notDefined, realtime, nearRealtime, offline, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.RiskDetectionTimingType? DetectionTimingType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.RiskDetectionTimingType?>("detectionTimingType"); }
@@ -144,13 +144,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("riskEventType", value); }
         }
 #endif
-        /// <summary>Level of the detected risk. Possible values are: low, medium, high, hidden, none, unknownFutureValue.</summary>
+        /// <summary>Level of the detected risk. The possible values are: low, medium, high, hidden, none, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.RiskLevel? RiskLevel
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.RiskLevel?>("riskLevel"); }
             set { BackingStore?.Set("riskLevel", value); }
         }
-        /// <summary>The state of a detected risky user or sign-in. Possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.</summary>
+        /// <summary>The state of a detected risky user or sign-in. The possible values are: none, confirmedSafe, remediated, dismissed, atRisk, confirmedCompromised, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.RiskState? RiskState
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.RiskState?>("riskState"); }
@@ -172,7 +172,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("source", value); }
         }
 #endif
-        /// <summary>Indicates the type of token issuer for the detected sign-in risk. Possible values are: AzureAD, ADFederationServices, UnknownFutureValue.</summary>
+        /// <summary>Indicates the type of token issuer for the detected sign-in risk. The possible values are: AzureAD, ADFederationServices, UnknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.TokenIssuerType? TokenIssuerType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.TokenIssuerType?>("tokenIssuerType"); }

@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("clientAppUsed", value); }
         }
 #endif
-        /// <summary>Reports status of an activated conditional access policy. Possible values are: success, failure, notApplied, and unknownFutureValue.  Supports $filter (eq).</summary>
+        /// <summary>Reports status of an activated conditional access policy. The possible values are: success, failure, notApplied, and unknownFutureValue.  Supports $filter (eq).</summary>
         public global::Microsoft.Graph.Models.ConditionalAccessStatus? ConditionalAccessStatus
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.ConditionalAccessStatus?>("conditionalAccessStatus"); }

@@ -188,7 +188,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("externalName", value); }
         }
 #endif
-        /// <summary>How this class was created. Possible values are: sis, manual.</summary>
+        /// <summary>How this class was created. The possible values are: sis, manual.</summary>
         public global::Microsoft.Graph.Models.EducationExternalSource? ExternalSource
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.EducationExternalSource?>("externalSource"); }

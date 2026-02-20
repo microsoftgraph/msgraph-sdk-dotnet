@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("category", value); }
         }
 #endif
-        /// <summary>Specifies whether the alert represents a true threat. Possible values are: unknown, falsePositive, truePositive, informationalExpectedActivity, unknownFutureValue.</summary>
+        /// <summary>Specifies whether the alert represents a true threat. The possible values are: unknown, falsePositive, truePositive, informationalExpectedActivity, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.Security.AlertClassification? Classification
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.AlertClassification?>("classification"); }
@@ -168,7 +168,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>Detection technology or sensor that identified the notable component or activity. Possible values are: unknown, microsoftDefenderForEndpoint, antivirus, smartScreen, customTi, microsoftDefenderForOffice365, automatedInvestigation, microsoftThreatExperts, customDetection, microsoftDefenderForIdentity, cloudAppSecurity, microsoft365Defender, azureAdIdentityProtection, manual, microsoftDataLossPrevention, appGovernancePolicy, appGovernanceDetection, unknownFutureValue, microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement, microsoftSentinel, nrtAlerts, scheduledAlerts, microsoftDefenderThreatIntelligenceAnalytics, builtInMl, microsoftThreatIntelligence, microsoftDefenderForAIServices, securityCopilot. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: microsoftDefenderForCloud, microsoftDefenderForIoT, microsoftDefenderForServers, microsoftDefenderForStorage, microsoftDefenderForDNS, microsoftDefenderForDatabases, microsoftDefenderForContainers, microsoftDefenderForNetwork, microsoftDefenderForAppService, microsoftDefenderForKeyVault, microsoftDefenderForResourceManager, microsoftDefenderForApiManagement, microsoftSentinel, nrtAlerts, scheduledAlerts, microsoftDefenderThreatIntelligenceAnalytics, builtInMl, microsoftThreatIntelligence, microsoftDefenderForAIServices, securityCopilot.</summary>
+        /// <summary>Detection technology or sensor that identified the notable component or activity.</summary>
         public global::Microsoft.Graph.Models.Security.DetectionSource? DetectionSource
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.DetectionSource?>("detectionSource"); }
@@ -190,7 +190,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("detectorId", value); }
         }
 #endif
-        /// <summary>Specifies the result of the investigation, whether the alert represents a true attack and if so, the nature of the attack. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedAccount, phishing, maliciousUserActivity, notMalicious, notEnoughDataToValidate, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.</summary>
+        /// <summary>Specifies the result of the investigation, whether the alert represents a true attack and if so, the nature of the attack. The possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedAccount, phishing, maliciousUserActivity, notMalicious, notEnoughDataToValidate, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.Security.AlertDetermination? Determination
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.AlertDetermination?>("determination"); }
@@ -250,7 +250,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("incidentWebUrl", value); }
         }
 #endif
-        /// <summary>Information on the current status of the investigation. Possible values are: unknown, terminated, successfullyRemediated, benign, failed, partiallyRemediated, running, pendingApproval, pendingResource, queued, innerFailure, preexistingAlert, unsupportedOs, unsupportedAlertType, suppressedAlert, partiallyInvestigated, terminatedByUser, terminatedBySystem, unknownFutureValue.</summary>
+        /// <summary>Information on the current status of the investigation. The possible values are: unknown, terminated, successfullyRemediated, benign, failed, partiallyRemediated, running, pendingApproval, pendingResource, queued, innerFailure, preexistingAlert, unsupportedOs, unsupportedAlertType, suppressedAlert, partiallyInvestigated, terminatedByUser, terminatedBySystem, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.Security.InvestigationState? InvestigationState
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.InvestigationState?>("investigationState"); }

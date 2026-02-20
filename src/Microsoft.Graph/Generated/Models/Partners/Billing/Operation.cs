@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Models.Partners.Billing
             get { return BackingStore?.Get<DateTimeOffset?>("lastActionDateTime"); }
             set { BackingStore?.Set("lastActionDateTime", value); }
         }
-        /// <summary>The status of the operation. Possible values are: notStarted, running, completed, failed, unknownFutureValue.</summary>
+        /// <summary>The status of the operation. The possible values are: notStarted, running, completed, failed, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.LongRunningOperationStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.LongRunningOperationStatus?>("status"); }

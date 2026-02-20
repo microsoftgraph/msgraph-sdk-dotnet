@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class Contract : global::Microsoft.Graph.Models.DirectoryObject, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Type of contract. Possible values are:  SyndicationPartner, BreadthPartner, ResellerPartner. See more in the table below.</summary>
+        /// <summary>Type of contract. The possible values are:  SyndicationPartner, BreadthPartner, ResellerPartner. See more in the table below.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContractType

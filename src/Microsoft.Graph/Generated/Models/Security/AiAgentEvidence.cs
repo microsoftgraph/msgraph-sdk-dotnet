@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("agentName", value); }
         }
 #endif
-        /// <summary>Type of the platform the agent runs on. Possible values are: unknown, azureAIFoundry, copilotStudio, copilot, unknownFutureValue.</summary>
+        /// <summary>Type of the platform the agent runs on. The possible values are: unknown, azureAIFoundry, copilotStudio, copilot, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.Security.AiAgentPlatform? HostingPlatformType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.AiAgentPlatform?>("hostingPlatformType"); }

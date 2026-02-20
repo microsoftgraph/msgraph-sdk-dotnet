@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Me.Onenote.Sections.Item
         }
         /// <summary>
         /// Retrieve the properties and relationships of a onenoteSection object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/section-get?view=graph-rest-1.0" />
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/onenotesection-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.OnenoteSection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Me.MailFolders.Item.Messages.Delta
         {
         }
         /// <summary>
-        /// Get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriatelyapplying state tokens in one or more of these calls, you can [query for incremental changes in the messages inthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user&apos;s messages withouthaving to fetch the entire set of messages from the server every time.
+        /// Get a set of messages added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriatelyapplying state tokens in one or more of these calls, you can [query for incremental changes in the messages inthat folder](/graph/delta-query-messages). It allows you to maintain and synchronize a local store of a user&apos;s messages withouthaving to fetch the entire set of messages from the server every time.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Me.MailFolders.Item.Messages.Delta.DeltaGetResponse"/></returns>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Me.MailFolders.Item.Messages.Delta
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Me.MailFolders.Item.Messages.Delta.DeltaGetResponse>(requestInfo, global::Microsoft.Graph.Me.MailFolders.Item.Messages.Delta.DeltaGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriatelyapplying state tokens in one or more of these calls, you can [query for incremental changes in the messages inthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user&apos;s messages withouthaving to fetch the entire set of messages from the server every time.
+        /// Get a set of messages added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriatelyapplying state tokens in one or more of these calls, you can [query for incremental changes in the messages inthat folder](/graph/delta-query-messages). It allows you to maintain and synchronize a local store of a user&apos;s messages withouthaving to fetch the entire set of messages from the server every time.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/message-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Me.MailFolders.Item.Messages.Delta.DeltaResponse"/></returns>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Me.MailFolders.Item.Messages.Delta
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Me.MailFolders.Item.Messages.Delta.DeltaResponse>(requestInfo, global::Microsoft.Graph.Me.MailFolders.Item.Messages.Delta.DeltaResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriatelyapplying state tokens in one or more of these calls, you can [query for incremental changes in the messages inthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user&apos;s messages withouthaving to fetch the entire set of messages from the server every time.
+        /// Get a set of messages added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriatelyapplying state tokens in one or more of these calls, you can [query for incremental changes in the messages inthat folder](/graph/delta-query-messages). It allows you to maintain and synchronize a local store of a user&apos;s messages withouthaving to fetch the entire set of messages from the server every time.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Me.MailFolders.Item.Messages.Delta
             return new global::Microsoft.Graph.Me.MailFolders.Item.Messages.Delta.DeltaRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a set of messages that have been added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriatelyapplying state tokens in one or more of these calls, you can [query for incremental changes in the messages inthat folder](/graph/delta-query-messages). This allows you to maintain and synchronize a local store of a user&apos;s messages withouthaving to fetch the entire set of messages from the server every time.
+        /// Get a set of messages added, deleted, or updated in a specified folder. A delta function call for messages in a folder is similar to a GET request, except that by appropriatelyapplying state tokens in one or more of these calls, you can [query for incremental changes in the messages inthat folder](/graph/delta-query-messages). It allows you to maintain and synchronize a local store of a user&apos;s messages withouthaving to fetch the entire set of messages from the server every time.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeltaRequestBuilderGetQueryParameters 

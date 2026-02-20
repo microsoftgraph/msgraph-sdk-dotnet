@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models.ExternalConnectors
     public partial class Identity : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The type of identity. Possible values are: user or group for Microsoft Entra identities and externalgroup for groups in an external system.</summary>
+        /// <summary>The type of identity. The possible values are: user or group for Microsoft Entra identities and externalgroup for groups in an external system.</summary>
         public global::Microsoft.Graph.Models.ExternalConnectors.IdentityType? Type
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.ExternalConnectors.IdentityType?>("type"); }

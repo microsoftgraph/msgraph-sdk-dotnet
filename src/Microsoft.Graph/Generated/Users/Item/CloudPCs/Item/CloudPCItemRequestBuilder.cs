@@ -5,8 +5,10 @@ using Microsoft.Graph.Models;
 using Microsoft.Graph.Users.Item.CloudPCs.Item.EndGracePeriod;
 using Microsoft.Graph.Users.Item.CloudPCs.Item.Reboot;
 using Microsoft.Graph.Users.Item.CloudPCs.Item.Rename;
+using Microsoft.Graph.Users.Item.CloudPCs.Item.Reprovision;
 using Microsoft.Graph.Users.Item.CloudPCs.Item.Resize;
 using Microsoft.Graph.Users.Item.CloudPCs.Item.Restore;
+using Microsoft.Graph.Users.Item.CloudPCs.Item.RetrieveCloudPcLaunchDetail;
 using Microsoft.Graph.Users.Item.CloudPCs.Item.Troubleshoot;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -39,6 +41,11 @@ namespace Microsoft.Graph.Users.Item.CloudPCs.Item
         {
             get => new global::Microsoft.Graph.Users.Item.CloudPCs.Item.Rename.RenameRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the reprovision method.</summary>
+        public global::Microsoft.Graph.Users.Item.CloudPCs.Item.Reprovision.ReprovisionRequestBuilder Reprovision
+        {
+            get => new global::Microsoft.Graph.Users.Item.CloudPCs.Item.Reprovision.ReprovisionRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the resize method.</summary>
         public global::Microsoft.Graph.Users.Item.CloudPCs.Item.Resize.ResizeRequestBuilder Resize
         {
@@ -48,6 +55,11 @@ namespace Microsoft.Graph.Users.Item.CloudPCs.Item
         public global::Microsoft.Graph.Users.Item.CloudPCs.Item.Restore.RestoreRequestBuilder Restore
         {
             get => new global::Microsoft.Graph.Users.Item.CloudPCs.Item.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retrieveCloudPcLaunchDetail method.</summary>
+        public global::Microsoft.Graph.Users.Item.CloudPCs.Item.RetrieveCloudPcLaunchDetail.RetrieveCloudPcLaunchDetailRequestBuilder RetrieveCloudPcLaunchDetail
+        {
+            get => new global::Microsoft.Graph.Users.Item.CloudPCs.Item.RetrieveCloudPcLaunchDetail.RetrieveCloudPcLaunchDetailRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the troubleshoot method.</summary>
         public global::Microsoft.Graph.Users.Item.CloudPCs.Item.Troubleshoot.TroubleshootRequestBuilder Troubleshoot

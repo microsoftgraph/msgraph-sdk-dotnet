@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("domainName", value); }
         }
 #endif
-        /// <summary>For email-related alerts - user account&apos;s email &apos;role&apos;. Possible values are: unknown, sender, recipient.</summary>
+        /// <summary>For email-related alerts - user account&apos;s email &apos;role&apos;. The possible values are: unknown, sender, recipient.</summary>
         public global::Microsoft.Graph.Models.EmailRole? EmailRole
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.EmailRole?>("emailRole"); }
@@ -135,7 +135,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("logonLocation", value); }
         }
 #endif
-        /// <summary>Method of user sign in. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.</summary>
+        /// <summary>Method of user sign in. The possible values are: unknown, interactive, remoteInteractive, network, batch, service.</summary>
         public global::Microsoft.Graph.Models.LogonType? LogonType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.LogonType?>("logonType"); }
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("riskScore", value); }
         }
 #endif
-        /// <summary>User account type (group membership), per Windows definition. Possible values are: unknown, standard, power, administrator.</summary>
+        /// <summary>User account type (group membership), per Windows definition. The possible values are: unknown, standard, power, administrator.</summary>
         public global::Microsoft.Graph.Models.UserAccountSecurityType? UserAccountType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.UserAccountSecurityType?>("userAccountType"); }

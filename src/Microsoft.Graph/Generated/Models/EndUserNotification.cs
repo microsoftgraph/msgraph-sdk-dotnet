@@ -104,19 +104,19 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>Type of notification. Possible values are: unknown, positiveReinforcement, noTraining, trainingAssignment, trainingReminder, unknownFutureValue.</summary>
+        /// <summary>Type of notification. The possible values are: unknown, positiveReinforcement, noTraining, trainingAssignment, trainingReminder, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.EndUserNotificationType? NotificationType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.EndUserNotificationType?>("notificationType"); }
             set { BackingStore?.Set("notificationType", value); }
         }
-        /// <summary>The source of the content. Possible values are: unknown, global, tenant, unknownFutureValue.</summary>
+        /// <summary>The source of the content. The possible values are: unknown, global, tenant, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.SimulationContentSource? Source
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.SimulationContentSource?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
-        /// <summary>The status of the notification. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.</summary>
+        /// <summary>The status of the notification. The possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.SimulationContentStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.SimulationContentStatus?>("status"); }

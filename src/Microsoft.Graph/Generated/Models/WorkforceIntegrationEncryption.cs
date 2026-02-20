@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>Possible values are: sharedSecret, unknownFutureValue.</summary>
+        /// <summary>The possible values are: sharedSecret, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.WorkforceIntegrationEncryptionProtocol? Protocol
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.WorkforceIntegrationEncryptionProtocol?>("protocol"); }

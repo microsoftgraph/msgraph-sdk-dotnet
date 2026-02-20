@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The published status of a specific version of a Teams app. Possible values are:submitted—The specific version of the Teams app was submitted and is under review.published—The request to publish the specific version of the Teams app was approved by the admin and the app is published.rejected—The admin rejected the request to publish the specific version of the Teams app.</summary>
+        /// <summary>The published status of a specific version of a Teams app. The possible values are:submitted—The specific version of the Teams app was submitted and is under review.published—The request to publish the specific version of the Teams app was approved by the admin and the app is published.rejected—The admin rejected the request to publish the specific version of the Teams app.</summary>
         public global::Microsoft.Graph.Models.TeamsAppPublishingState? PublishingState
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.TeamsAppPublishingState?>("publishingState"); }

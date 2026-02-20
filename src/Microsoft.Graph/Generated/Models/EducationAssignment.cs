@@ -344,7 +344,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("rubric", value); }
         }
 #endif
-        /// <summary>Status of the assignment.  You can&apos;t PATCH this value. Possible values are: draft, scheduled, published, assigned, unknownFutureValue, inactive. Use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: inactive.</summary>
+        /// <summary>Status of the assignment.  You can&apos;t PATCH this value. The possible values are: draft, scheduled, published, assigned, unknownFutureValue, inactive. Use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: inactive.</summary>
         public global::Microsoft.Graph.Models.EducationAssignmentStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.EducationAssignmentStatus?>("status"); }

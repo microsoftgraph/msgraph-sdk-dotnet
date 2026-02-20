@@ -92,6 +92,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("statusMessage", value); }
         }
 #endif
+        /// <summary>Represents the user’s aggregated work location state.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.UserWorkLocation? WorkLocation
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.UserWorkLocation?>("workLocation"); }
+            set { BackingStore?.Set("workLocation", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.UserWorkLocation WorkLocation
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.UserWorkLocation>("workLocation"); }
+            set { BackingStore?.Set("workLocation", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -115,6 +131,7 @@ namespace Microsoft.Graph.Models
                 { "outOfOfficeSettings", n => { OutOfOfficeSettings = n.GetObjectValue<global::Microsoft.Graph.Models.OutOfOfficeSettings>(global::Microsoft.Graph.Models.OutOfOfficeSettings.CreateFromDiscriminatorValue); } },
                 { "sequenceNumber", n => { SequenceNumber = n.GetStringValue(); } },
                 { "statusMessage", n => { StatusMessage = n.GetObjectValue<global::Microsoft.Graph.Models.PresenceStatusMessage>(global::Microsoft.Graph.Models.PresenceStatusMessage.CreateFromDiscriminatorValue); } },
+                { "workLocation", n => { WorkLocation = n.GetObjectValue<global::Microsoft.Graph.Models.UserWorkLocation>(global::Microsoft.Graph.Models.UserWorkLocation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -129,6 +146,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("availability", Availability);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.OutOfOfficeSettings>("outOfOfficeSettings", OutOfOfficeSettings);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.PresenceStatusMessage>("statusMessage", StatusMessage);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.UserWorkLocation>("workLocation", WorkLocation);
         }
     }
 }

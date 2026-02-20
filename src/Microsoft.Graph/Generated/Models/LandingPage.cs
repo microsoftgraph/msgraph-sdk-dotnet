@@ -120,13 +120,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("locale", value); }
         }
 #endif
-        /// <summary>The source of the content. Possible values are: unknown, global, tenant, unknownFutureValue.</summary>
+        /// <summary>The source of the content. The possible values are: unknown, global, tenant, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.SimulationContentSource? Source
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.SimulationContentSource?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
-        /// <summary>The status of the simulation. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.</summary>
+        /// <summary>The status of the simulation. The possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.SimulationContentStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.SimulationContentStatus?>("status"); }

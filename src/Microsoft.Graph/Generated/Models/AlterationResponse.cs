@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("queryAlteration", value); }
         }
 #endif
-        /// <summary>Defines the type of the spelling correction. Possible values are: suggestion, modification.</summary>
+        /// <summary>Defines the type of the spelling correction. The possible values are: suggestion, modification.</summary>
         public global::Microsoft.Graph.Models.SearchAlterationType? QueryAlterationType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.SearchAlterationType?>("queryAlterationType"); }

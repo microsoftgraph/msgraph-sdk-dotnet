@@ -12,13 +12,13 @@ namespace Microsoft.Graph.Models
     public partial class Payload : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The branch of a payload. Possible values are: unknown, other, americanExpress, capitalOne, dhl, docuSign, dropbox, facebook, firstAmerican, microsoft, netflix, scotiabank, sendGrid, stewartTitle, tesco, wellsFargo, syrinxCloud, adobe, teams, zoom, unknownFutureValue.</summary>
+        /// <summary>The branch of a payload. The possible values are: unknown, other, americanExpress, capitalOne, dhl, docuSign, dropbox, facebook, firstAmerican, microsoft, netflix, scotiabank, sendGrid, stewartTitle, tesco, wellsFargo, syrinxCloud, adobe, teams, zoom, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.PayloadBrand? Brand
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.PayloadBrand?>("brand"); }
             set { BackingStore?.Set("brand", value); }
         }
-        /// <summary>The complexity of a payload. Possible values are: unknown, low, medium, high, unknownFutureValue.</summary>
+        /// <summary>The complexity of a payload. The possible values are: unknown, low, medium, high, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.PayloadComplexity? Complexity
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.PayloadComplexity?>("complexity"); }
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Industry of a payload. Possible values are: unknown, other, banking, businessServices, consumerServices, education, energy, construction, consulting, financialServices, government, hospitality, insurance, legal, courierServices, IT, healthcare, manufacturing, retail, telecom, realEstate, unknownFutureValue.</summary>
+        /// <summary>Industry of a payload. The possible values are: unknown, other, banking, businessServices, consumerServices, education, energy, construction, consulting, financialServices, government, hospitality, insurance, legal, courierServices, IT, healthcare, manufacturing, retail, telecom, realEstate, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.PayloadIndustry? Industry
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.PayloadIndustry?>("industry"); }
@@ -172,7 +172,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("payloadTags", value); }
         }
 #endif
-        /// <summary>The payload delivery platform for a simulation. Possible values are: unknown, sms, email, teams, unknownFutureValue.</summary>
+        /// <summary>The payload delivery platform for a simulation. The possible values are: unknown, sms, email, teams, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.PayloadDeliveryPlatform? Platform
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.PayloadDeliveryPlatform?>("platform"); }
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<double?>("predictedCompromiseRate"); }
             set { BackingStore?.Set("predictedCompromiseRate", value); }
         }
-        /// <summary>Attack type of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, social, cloud, endpoint, unknownFutureValue.</summary>
+        /// <summary>Attack type of the attack simulation and training campaign. Supports $filter and $orderby. The possible values are: unknown, social, cloud, endpoint, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.SimulationAttackType? SimulationAttackType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.SimulationAttackType?>("simulationAttackType"); }
@@ -196,19 +196,19 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.SimulationContentSource?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
-        /// <summary>Simulation content status. Supports $filter and $orderby. Possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.</summary>
+        /// <summary>Simulation content status. Supports $filter and $orderby. The possible values are: unknown, draft, ready, archive, delete, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.SimulationContentStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.SimulationContentStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue, oAuthConsentGrant. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: oAuthConsentGrant. For more information on the types of social engineering attack techniques, see simulations.</summary>
+        /// <summary>The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. The possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue, oAuthConsentGrant. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: oAuthConsentGrant. For more information on the types of social engineering attack techniques, see simulations.</summary>
         public global::Microsoft.Graph.Models.SimulationAttackTechnique? Technique
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.SimulationAttackTechnique?>("technique"); }
             set { BackingStore?.Set("technique", value); }
         }
-        /// <summary>The theme of a payload. Possible values are: unknown, other, accountActivation, accountVerification, billing, cleanUpMail, controversial, documentReceived, expense, fax, financeReport, incomingMessages, invoice, itemReceived, loginAlert, mailReceived, password, payment, payroll, personalizedOffer, quarantine, remoteWork, reviewMessage, securityUpdate, serviceSuspended, signatureRequired, upgradeMailboxStorage, verifyMailbox, voicemail, advertisement, employeeEngagement, unknownFutureValue.</summary>
+        /// <summary>The theme of a payload. The possible values are: unknown, other, accountActivation, accountVerification, billing, cleanUpMail, controversial, documentReceived, expense, fax, financeReport, incomingMessages, invoice, itemReceived, loginAlert, mailReceived, password, payment, payroll, personalizedOffer, quarantine, remoteWork, reviewMessage, securityUpdate, serviceSuspended, signatureRequired, upgradeMailboxStorage, verifyMailbox, voicemail, advertisement, employeeEngagement, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.PayloadTheme? Theme
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.PayloadTheme?>("theme"); }

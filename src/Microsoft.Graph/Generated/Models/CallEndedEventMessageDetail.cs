@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<TimeSpan?>("callDuration"); }
             set { BackingStore?.Set("callDuration", value); }
         }
-        /// <summary>Represents the call event type. Possible values are: call, meeting, screenShare, unknownFutureValue.</summary>
+        /// <summary>Represents the call event type. The possible values are: call, meeting, screenShare, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.TeamworkCallEventType? CallEventType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.TeamworkCallEventType?>("callEventType"); }

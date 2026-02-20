@@ -22,7 +22,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Describes the item behavior during retention period. Possible values are: doNotRetain, retain, retainAsRecord, retainAsRegulatoryRecord, unknownFutureValue. Read-only.</summary>
+        /// <summary>Describes the item behavior during retention period. The possible values are: doNotRetain, retain, retainAsRecord, retainAsRegulatoryRecord, unknownFutureValue. Read-only.</summary>
         public global::Microsoft.Graph.Models.Security.BehaviorDuringRetentionPeriod? BehaviorDuringRetentionPeriod
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.BehaviorDuringRetentionPeriod?>("behaviorDuringRetentionPeriod"); }

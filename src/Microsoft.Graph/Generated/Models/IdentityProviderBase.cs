@@ -42,6 +42,7 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.appleManagedIdentityProvider" => new global::Microsoft.Graph.Models.AppleManagedIdentityProvider(),
                 "#microsoft.graph.builtInIdentityProvider" => new global::Microsoft.Graph.Models.BuiltInIdentityProvider(),
                 "#microsoft.graph.internalDomainFederation" => new global::Microsoft.Graph.Models.InternalDomainFederation(),
+                "#microsoft.graph.oidcIdentityProvider" => new global::Microsoft.Graph.Models.OidcIdentityProvider(),
                 "#microsoft.graph.samlOrWsFedExternalDomainFederation" => new global::Microsoft.Graph.Models.SamlOrWsFedExternalDomainFederation(),
                 "#microsoft.graph.samlOrWsFedProvider" => new global::Microsoft.Graph.Models.SamlOrWsFedProvider(),
                 "#microsoft.graph.socialIdentityProvider" => new global::Microsoft.Graph.Models.SocialIdentityProvider(),

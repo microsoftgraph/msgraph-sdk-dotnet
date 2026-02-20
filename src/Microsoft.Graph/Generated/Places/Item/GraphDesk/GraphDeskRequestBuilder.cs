@@ -41,7 +41,8 @@ namespace Microsoft.Graph.Places.Item.GraphDesk
         {
         }
         /// <summary>
-        /// Get the item of type microsoft.graph.place as microsoft.graph.desk
+        /// Get a collection of the specified type of place objects defined in a tenant. You can do the following for a given tenant:- List all buildings.- List all floors.- List all sections.- List all desks.- List all rooms.- List all workspaces.- List all room lists.- List rooms in a specific room list.- List workspaces in a specific room list.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/place-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Desk"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,7 +65,7 @@ namespace Microsoft.Graph.Places.Item.GraphDesk
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Desk>(requestInfo, global::Microsoft.Graph.Models.Desk.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the item of type microsoft.graph.place as microsoft.graph.desk
+        /// Get a collection of the specified type of place objects defined in a tenant. You can do the following for a given tenant:- List all buildings.- List all floors.- List all sections.- List all desks.- List all rooms.- List all workspaces.- List all room lists.- List rooms in a specific room list.- List workspaces in a specific room list.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -92,7 +93,7 @@ namespace Microsoft.Graph.Places.Item.GraphDesk
             return new global::Microsoft.Graph.Places.Item.GraphDesk.GraphDeskRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the item of type microsoft.graph.place as microsoft.graph.desk
+        /// Get a collection of the specified type of place objects defined in a tenant. You can do the following for a given tenant:- List all buildings.- List all floors.- List all sections.- List all desks.- List all rooms.- List all workspaces.- List all room lists.- List rooms in a specific room list.- List workspaces in a specific room list.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GraphDeskRequestBuilderGetQueryParameters 

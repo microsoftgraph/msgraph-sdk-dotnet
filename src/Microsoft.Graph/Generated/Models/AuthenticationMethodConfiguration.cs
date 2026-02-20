@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("excludeTargets", value); }
         }
 #endif
-        /// <summary>The state of the policy. Possible values are: enabled, disabled.</summary>
+        /// <summary>The state of the policy. The possible values are: enabled, disabled.</summary>
         public global::Microsoft.Graph.Models.AuthenticationMethodState? State
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.AuthenticationMethodState?>("state"); }
@@ -46,6 +46,7 @@ namespace Microsoft.Graph.Models
             return mappingValue switch
             {
                 "#microsoft.graph.emailAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Models.EmailAuthenticationMethodConfiguration(),
+                "#microsoft.graph.externalAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Models.ExternalAuthenticationMethodConfiguration(),
                 "#microsoft.graph.fido2AuthenticationMethodConfiguration" => new global::Microsoft.Graph.Models.Fido2AuthenticationMethodConfiguration(),
                 "#microsoft.graph.microsoftAuthenticatorAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Models.MicrosoftAuthenticatorAuthenticationMethodConfiguration(),
                 "#microsoft.graph.smsAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Models.SmsAuthenticationMethodConfiguration(),

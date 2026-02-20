@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class SimulationNotification : global::Microsoft.Graph.Models.BaseEndUserNotification, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Target user type. Possible values are: unknown, clicked, compromised, allUsers, unknownFutureValue.</summary>
+        /// <summary>Target user type. The possible values are: unknown, clicked, compromised, allUsers, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.TargettedUserType? TargettedUserType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.TargettedUserType?>("targettedUserType"); }

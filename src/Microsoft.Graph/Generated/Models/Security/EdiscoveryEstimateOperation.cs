@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Models.Security
             get { return BackingStore?.Get<int?>("siteCount"); }
             set { BackingStore?.Set("siteCount", value); }
         }
-        /// <summary>The options to generate statistics. Possible values are: includeRefiners, includeQueryStats, includeUnindexedStats, advancedIndexing, locationsWithoutHits, unknownFutureValue.</summary>
+        /// <summary>The options to generate statistics. The possible values are: includeRefiners, includeQueryStats, includeUnindexedStats, advancedIndexing, locationsWithoutHits, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.Security.StatisticsOptions? StatisticsOptions
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.StatisticsOptions?>("statisticsOptions"); }
