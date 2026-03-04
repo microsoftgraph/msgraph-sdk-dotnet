@@ -220,5 +220,20 @@ configuration:
       - removeLabel:
           label: 'Status: No recent activity'
       description:
+    - if:
+      - payloadType: Issues
+      - isAction:
+          action: Labeled
+      - hasLabel:
+          label: 'resolve:qa'
+      then:
+      - addReply:
+          reply: >-
+            Thank you for your question! For better support, please post on
+            [Microsoft Q&A](https://learn.microsoft.com/en-us/answers/tags/800/microsoft-security-ms-graph).
+            If this is still relevant, please open a new question there with updated details.
+            Closing this issue.
+      - closeIssue
+      description: Close question issues labeled resolve:qa by the triage agent
 onFailure:
 onSuccess:
