@@ -141,5 +141,37 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Extensions
             Assert.NotNull(itemRequestInformation);
             Assert.Equal(expectedRequestUri, itemRequestInformation.URI);
         }
+        [Fact]
+        public void ItemByPath_ThrowsArgumentNullException_WhenPathIsNull_Root()
+        {
+            var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
+            Assert.Throws<ArgumentNullException>(() => graphServiceClient.Drives["driveId"].Root.ItemWithPath(null));
+        }
+
+        [Theory]
+        [InlineData("")]
+        [InlineData("   ")]
+        public void ItemByPath_ThrowsArgumentException_WhenPathIsEmptyOrWhitespace_Root(string path)
+        {
+            var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
+            Assert.Throws<ArgumentException>(() => graphServiceClient.Drives["driveId"].Root.ItemWithPath(path));
+        }
+
+        [Fact]
+        public void ItemByPath_ThrowsArgumentNullException_WhenPathIsNull_DriveItem()
+        {
+            var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
+            Assert.Throws<ArgumentNullException>(() => graphServiceClient.Drives["driveId"].Items["itemId"].ItemWithPath(null));
+        }
+
+        [Theory]
+        [InlineData("")]
+        [InlineData("   ")]
+        public void ItemByPath_ThrowsArgumentException_WhenPathIsEmptyOrWhitespace_DriveItem(string path)
+        {
+            var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
+            Assert.Throws<ArgumentException>(() => graphServiceClient.Drives["driveId"].Items["itemId"].ItemWithPath(path));
+        }
+
     }
 }

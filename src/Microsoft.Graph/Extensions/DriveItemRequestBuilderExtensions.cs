@@ -44,12 +44,14 @@ public static class DriveItemRequestBuilderExtensions
     /// </summary>
     public static CustomDriveItemItemRequestBuilder ItemWithPath(this Microsoft.Graph.Drives.Item.Root.RootRequestBuilder rootRequestBuilder, string path)
     {
-        if (!string.IsNullOrEmpty(path))
+        if (path is null)
+            throw new ArgumentNullException(nameof(path));
+        if (string.IsNullOrWhiteSpace(path))
+            throw new ArgumentException("path cannot be empty or whitespace.", nameof(path));
+
+        if (!path.StartsWith("/"))
         {
-            if (!path.StartsWith("/"))
-            {
-                path = string.Format("/{0}", path);
-            }
+            path = string.Format("/{0}", path);
         }
         
         var requestInformation = rootRequestBuilder.ToGetRequestInformation();
@@ -67,12 +69,14 @@ public static class DriveItemRequestBuilderExtensions
     /// </summary>
     public static CustomDriveItemItemRequestBuilder ItemWithPath(this Microsoft.Graph.Drives.Item.Items.Item.DriveItemItemRequestBuilder rootRequestBuilder, string path)
     {
-        if (!string.IsNullOrEmpty(path))
+        if (path is null)
+            throw new ArgumentNullException(nameof(path));
+        if (string.IsNullOrWhiteSpace(path))
+            throw new ArgumentException("path cannot be empty or whitespace.", nameof(path));
+
+        if (!path.StartsWith("/"))
         {
-            if (!path.StartsWith("/"))
-            {
-                path = string.Format("/{0}", path);
-            }
+            path = string.Format("/{0}", path);
         }
         
         var requestInformation = rootRequestBuilder.ToGetRequestInformation();
