@@ -204,7 +204,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item
         {
         }
         /// <summary>
-        /// Delete a servicePrincipal object.
+        /// Delete a servicePrincipal object. This API can also delete an agentIdentityBlueprintPrincipal object by its ID.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -237,7 +237,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item
             return new global::Microsoft.Graph.ServicePrincipals.Item.FederatedIdentityCredentialsWithName.FederatedIdentityCredentialsWithNameRequestBuilder(PathParameters, RequestAdapter, name);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a servicePrincipal object.
+        /// Retrieve the properties and relationships of a servicePrincipal object. This API can be used to get agentIdentityBlueprintPrincipal objects as well by their ID.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ServicePrincipal"/></returns>
@@ -261,7 +261,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ServicePrincipal>(requestInfo, global::Microsoft.Graph.Models.ServicePrincipal.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new servicePrincipal object if it doesn&apos;t exist, or update the properties of an existing servicePrincipal object.
+        /// Create a new servicePrincipal object if it doesn&apos;t exist, or update the properties of an existing servicePrincipal object. This API can also create an agentIdentityBlueprintPrincipal object from an agentIdentityBlueprint if it doesn&apos;t exist, or update properties of an existing agentIdentityBlueprintPrincipal, when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprintPrincipal.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-upsert?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ServicePrincipal"/></returns>
@@ -287,7 +287,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ServicePrincipal>(requestInfo, global::Microsoft.Graph.Models.ServicePrincipal.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a servicePrincipal object.
+        /// Delete a servicePrincipal object. This API can also delete an agentIdentityBlueprintPrincipal object by its ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -306,7 +306,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a servicePrincipal object.
+        /// Retrieve the properties and relationships of a servicePrincipal object. This API can be used to get agentIdentityBlueprintPrincipal objects as well by their ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -325,7 +325,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item
             return requestInfo;
         }
         /// <summary>
-        /// Create a new servicePrincipal object if it doesn&apos;t exist, or update the properties of an existing servicePrincipal object.
+        /// Create a new servicePrincipal object if it doesn&apos;t exist, or update the properties of an existing servicePrincipal object. This API can also create an agentIdentityBlueprintPrincipal object from an agentIdentityBlueprint if it doesn&apos;t exist, or update properties of an existing agentIdentityBlueprintPrincipal, when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprintPrincipal.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -364,7 +364,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a servicePrincipal object.
+        /// Retrieve the properties and relationships of a servicePrincipal object. This API can be used to get agentIdentityBlueprintPrincipal objects as well by their ID.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ServicePrincipalItemRequestBuilderGetQueryParameters 

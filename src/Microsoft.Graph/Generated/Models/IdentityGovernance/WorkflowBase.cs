@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>The administrationScopeTargets property</summary>
+        /// <summary>The administrative units in the scope of the workflow. Optional. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.DirectoryObject>? AdministrationScopeTargets

@@ -5,6 +5,7 @@ using Microsoft.Graph.Models;
 using Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.Messages.Count;
 using Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.Messages.Delta;
 using Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.Messages.Item;
+using Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.Messages.ReplyWithQuote;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -30,6 +31,11 @@ namespace Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.Messages
         public global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.Messages.Delta.DeltaRequestBuilder Delta
         {
             get => new global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.Messages.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the replyWithQuote method.</summary>
+        public global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.Messages.ReplyWithQuote.ReplyWithQuoteRequestBuilder ReplyWithQuote
+        {
+            get => new global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.Messages.ReplyWithQuote.ReplyWithQuoteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the messages property of the microsoft.graph.channel entity.</summary>
         /// <param name="position">The unique identifier of chatMessage</param>

@@ -150,7 +150,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("sharepoint", value); }
         }
 #endif
-        /// <summary>A container for Teams administration functionalities, such as user configurations and policy assignments.</summary>
+        /// <summary>A container for Teams administration functionalities, such as Teams telephone number management functionalities, user Teams configurations, and policy assignments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.TeamsAdministration.TeamsAdminRoot? Teams

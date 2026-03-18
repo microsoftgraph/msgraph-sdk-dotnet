@@ -5,6 +5,7 @@ using Microsoft.Graph.Models;
 using Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Count;
 using Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Delta;
 using Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Item;
+using Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.ReplyWithQuote;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -30,6 +31,11 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages
         public global::Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Delta.DeltaRequestBuilder Delta
         {
             get => new global::Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the replyWithQuote method.</summary>
+        public global::Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.ReplyWithQuote.ReplyWithQuoteRequestBuilder ReplyWithQuote
+        {
+            get => new global::Microsoft.Graph.Users.Item.JoinedTeams.Item.PrimaryChannel.Messages.ReplyWithQuote.ReplyWithQuoteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the messages property of the microsoft.graph.channel entity.</summary>
         /// <param name="position">The unique identifier of chatMessage</param>

@@ -3,6 +3,7 @@
 using Microsoft.Graph.Groups.Item.Team.PrimaryChannel.Messages.Count;
 using Microsoft.Graph.Groups.Item.Team.PrimaryChannel.Messages.Delta;
 using Microsoft.Graph.Groups.Item.Team.PrimaryChannel.Messages.Item;
+using Microsoft.Graph.Groups.Item.Team.PrimaryChannel.Messages.ReplyWithQuote;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -30,6 +31,11 @@ namespace Microsoft.Graph.Groups.Item.Team.PrimaryChannel.Messages
         public global::Microsoft.Graph.Groups.Item.Team.PrimaryChannel.Messages.Delta.DeltaRequestBuilder Delta
         {
             get => new global::Microsoft.Graph.Groups.Item.Team.PrimaryChannel.Messages.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the replyWithQuote method.</summary>
+        public global::Microsoft.Graph.Groups.Item.Team.PrimaryChannel.Messages.ReplyWithQuote.ReplyWithQuoteRequestBuilder ReplyWithQuote
+        {
+            get => new global::Microsoft.Graph.Groups.Item.Team.PrimaryChannel.Messages.ReplyWithQuote.ReplyWithQuoteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the messages property of the microsoft.graph.channel entity.</summary>
         /// <param name="position">The unique identifier of chatMessage</param>
