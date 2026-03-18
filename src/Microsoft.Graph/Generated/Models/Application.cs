@@ -735,7 +735,12 @@ namespace Microsoft.Graph.Models
         public static new global::Microsoft.Graph.Models.Application CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Models.Application();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "#microsoft.graph.agentIdentityBlueprint" => new global::Microsoft.Graph.Models.AgentIdentityBlueprint(),
+                _ => new global::Microsoft.Graph.Models.Application(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

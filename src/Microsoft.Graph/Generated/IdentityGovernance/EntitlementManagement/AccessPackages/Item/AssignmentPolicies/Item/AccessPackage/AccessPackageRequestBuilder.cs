@@ -35,7 +35,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
         {
         }
         /// <summary>
-        /// Access package containing this policy. Read-only.  Supports $expand.
+        /// Access package containing this policy. Read-only. Supports $expand.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.AccessPackage"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.AccessPackage>(requestInfo, global::Microsoft.Graph.Models.AccessPackage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Access package containing this policy. Read-only.  Supports $expand.
+        /// Access package containing this policy. Read-only. Supports $expand.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackage
             return new global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.AccessPackages.Item.AssignmentPolicies.Item.AccessPackage.AccessPackageRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Access package containing this policy. Read-only.  Supports $expand.
+        /// Access package containing this policy. Read-only. Supports $expand.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AccessPackageRequestBuilderGetQueryParameters 

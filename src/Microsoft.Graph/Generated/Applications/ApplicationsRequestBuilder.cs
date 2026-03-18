@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Applications
         {
         }
         /// <summary>
-        /// Get the list of applications in this organization.
+        /// Get the list of applications in this organization. This API also returns agentIdentityBlueprint objects, which are identified by the @odata.type property of #microsoft.graph.agentIdentityBlueprint.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ApplicationCollectionResponse"/></returns>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Applications
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ApplicationCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.ApplicationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new application object.
+        /// Create a new application object. This API can also create an agentIdentityBlueprint object when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprint.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-post-applications?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Application"/></returns>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Applications
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Application>(requestInfo, global::Microsoft.Graph.Models.Application.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of applications in this organization.
+        /// Get the list of applications in this organization. This API also returns agentIdentityBlueprint objects, which are identified by the @odata.type property of #microsoft.graph.agentIdentityBlueprint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -147,7 +147,7 @@ namespace Microsoft.Graph.Applications
             return requestInfo;
         }
         /// <summary>
-        /// Create a new application object.
+        /// Create a new application object. This API can also create an agentIdentityBlueprint object when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +178,7 @@ namespace Microsoft.Graph.Applications
             return new global::Microsoft.Graph.Applications.ApplicationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of applications in this organization.
+        /// Get the list of applications in this organization. This API also returns agentIdentityBlueprint objects, which are identified by the @odata.type property of #microsoft.graph.agentIdentityBlueprint.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ApplicationsRequestBuilderGetQueryParameters 

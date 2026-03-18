@@ -3,6 +3,7 @@
 using Microsoft.Graph.Chats.Item.Messages.Count;
 using Microsoft.Graph.Chats.Item.Messages.Delta;
 using Microsoft.Graph.Chats.Item.Messages.Item;
+using Microsoft.Graph.Chats.Item.Messages.ReplyWithQuote;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -30,6 +31,11 @@ namespace Microsoft.Graph.Chats.Item.Messages
         public global::Microsoft.Graph.Chats.Item.Messages.Delta.DeltaRequestBuilder Delta
         {
             get => new global::Microsoft.Graph.Chats.Item.Messages.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the replyWithQuote method.</summary>
+        public global::Microsoft.Graph.Chats.Item.Messages.ReplyWithQuote.ReplyWithQuoteRequestBuilder ReplyWithQuote
+        {
+            get => new global::Microsoft.Graph.Chats.Item.Messages.ReplyWithQuote.ReplyWithQuoteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the messages property of the microsoft.graph.chat entity.</summary>
         /// <param name="position">The unique identifier of chatMessage</param>

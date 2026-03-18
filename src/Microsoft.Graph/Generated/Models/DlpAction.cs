@@ -56,5 +56,9 @@ namespace Microsoft.Graph.Models
         #pragma warning disable CS1591
         SPSharingGenerateIncidentReport,
         #pragma warning restore CS1591
+        [EnumMember(Value = "restrictWebGrounding")]
+        #pragma warning disable CS1591
+        RestrictWebGrounding,
+        #pragma warning restore CS1591
     }
 }

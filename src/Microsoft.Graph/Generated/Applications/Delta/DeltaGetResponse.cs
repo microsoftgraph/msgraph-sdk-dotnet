@@ -16,16 +16,16 @@ namespace Microsoft.Graph.Applications.Delta
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Microsoft.Graph.Models.Application>? Value
+        public List<global::Microsoft.Graph.Models.DirectoryObject>? Value
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Application>?>("value"); }
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.DirectoryObject>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<global::Microsoft.Graph.Models.Application> Value
+        public List<global::Microsoft.Graph.Models.DirectoryObject> Value
         {
-            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Application>>("value"); }
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.DirectoryObject>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Applications.Delta
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Application>(global::Microsoft.Graph.Models.Application.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DirectoryObject>(global::Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Applications.Delta
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Application>("value", Value);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DirectoryObject>("value", Value);
         }
     }
 }
