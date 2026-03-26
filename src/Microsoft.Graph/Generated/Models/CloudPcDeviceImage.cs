@@ -85,6 +85,28 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.CloudPcDeviceImageOsStatus?>("osStatus"); }
             set { BackingStore?.Set("osStatus", value); }
         }
+        /// <summary>The operating system version of this image. For example, 10.0.22000.296. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OsVersionNumber
+        {
+            get { return BackingStore?.Get<string?>("osVersionNumber"); }
+            set { BackingStore?.Set("osVersionNumber", value); }
+        }
+#nullable restore
+#else
+        public string OsVersionNumber
+        {
+            get { return BackingStore?.Get<string>("osVersionNumber"); }
+            set { BackingStore?.Set("osVersionNumber", value); }
+        }
+#endif
+        /// <summary>The size of the image in GB. For example, 64. Read-only.</summary>
+        public int? SizeInGB
+        {
+            get { return BackingStore?.Get<int?>("sizeInGB"); }
+            set { BackingStore?.Set("sizeInGB", value); }
+        }
         /// <summary>The unique identifier (ID) of the source image resource on Azure. The required ID format is: &apos;/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}&apos;. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -148,6 +170,8 @@ namespace Microsoft.Graph.Models
                 { "operatingSystem", n => { OperatingSystem = n.GetStringValue(); } },
                 { "osBuildNumber", n => { OsBuildNumber = n.GetStringValue(); } },
                 { "osStatus", n => { OsStatus = n.GetEnumValue<global::Microsoft.Graph.Models.CloudPcDeviceImageOsStatus>(); } },
+                { "osVersionNumber", n => { OsVersionNumber = n.GetStringValue(); } },
+                { "sizeInGB", n => { SizeInGB = n.GetIntValue(); } },
                 { "sourceImageResourceId", n => { SourceImageResourceId = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Microsoft.Graph.Models.CloudPcDeviceImageStatus>(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
@@ -168,6 +192,8 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("operatingSystem", OperatingSystem);
             writer.WriteStringValue("osBuildNumber", OsBuildNumber);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.CloudPcDeviceImageOsStatus>("osStatus", OsStatus);
+            writer.WriteStringValue("osVersionNumber", OsVersionNumber);
+            writer.WriteIntValue("sizeInGB", SizeInGB);
             writer.WriteStringValue("sourceImageResourceId", SourceImageResourceId);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.CloudPcDeviceImageStatus>("status", Status);
             writer.WriteStringValue("version", Version);

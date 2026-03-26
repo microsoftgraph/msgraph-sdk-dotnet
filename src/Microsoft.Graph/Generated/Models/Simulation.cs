@@ -274,7 +274,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("report", value); }
         }
 #endif
-        /// <summary>Status of the attack simulation and training campaign. Supports $filter and $orderby. The possible values are: unknown, draft, running, scheduled, succeeded, failed, cancelled, excluded, unknownFutureValue.</summary>
+        /// <summary>Status of the attack simulation and training campaign. Supports $filter and $orderby. The possible values are: unknown, draft, running, scheduled, succeeded, failed, canceled, excluded, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.SimulationStatus? Status
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.SimulationStatus?>("status"); }

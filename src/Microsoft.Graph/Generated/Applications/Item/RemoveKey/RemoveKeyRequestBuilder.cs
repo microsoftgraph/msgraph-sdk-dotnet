@@ -34,8 +34,8 @@ namespace Microsoft.Graph.Applications.Item.RemoveKey
         {
         }
         /// <summary>
-        /// Remove a key credential from an application. This method along with addKey can be used by an application to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-removekey?view=graph-rest-1.0" />
+        /// Remove a key credential from an agentIdentityBlueprint. This method along with addKey can be used to automate rolling its expiring keys.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/agentidentityblueprint-removekey?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Applications.Item.RemoveKey
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a key credential from an application. This method along with addKey can be used by an application to automate rolling its expiring keys. As part of the request validation for this method, a proof of possession of an existing key is verified before the action can be performed.
+        /// Remove a key credential from an agentIdentityBlueprint. This method along with addKey can be used to automate rolling its expiring keys.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -4,6 +4,7 @@ using Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.AllMembers;
 using Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.Archive;
 using Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.CompleteMigration;
 using Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName;
+using Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.EnabledApps;
 using Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.FilesFolder;
 using Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.Members;
 using Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.Messages;
@@ -49,6 +50,11 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel
         public global::Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName
         {
             get => new global::Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the enabledApps property of the microsoft.graph.channel entity.</summary>
+        public global::Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.EnabledApps.EnabledAppsRequestBuilder EnabledApps
+        {
+            get => new global::Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.EnabledApps.EnabledAppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the filesFolder property of the microsoft.graph.channel entity.</summary>
         public global::Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.FilesFolder.FilesFolderRequestBuilder FilesFolder

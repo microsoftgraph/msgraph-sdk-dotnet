@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Me.Insights.Shared
     public partial class SharedRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
+        [Obsolete("This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01")]
         public global::Microsoft.Graph.Me.Insights.Shared.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Me.Insights.Shared.Count.CountRequestBuilder(PathParameters, RequestAdapter);
@@ -28,6 +29,7 @@ namespace Microsoft.Graph.Me.Insights.Shared
         /// <summary>Provides operations to manage the shared property of the microsoft.graph.officeGraphInsights entity.</summary>
         /// <param name="position">The unique identifier of sharedInsight</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Me.Insights.Shared.Item.SharedInsightItemRequestBuilder"/></returns>
+        [Obsolete("This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01")]
         public global::Microsoft.Graph.Me.Insights.Shared.Item.SharedInsightItemRequestBuilder this[string position]
         {
             get
@@ -61,6 +63,7 @@ namespace Microsoft.Graph.Me.Insights.Shared
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Models.SharedInsightCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.Insights.Shared.SharedRequestBuilder.SharedRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -85,6 +88,7 @@ namespace Microsoft.Graph.Me.Insights.Shared
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Models.SharedInsight?> PostAsync(global::Microsoft.Graph.Models.SharedInsight body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -107,6 +111,7 @@ namespace Microsoft.Graph.Me.Insights.Shared
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Me.Insights.Shared.SharedRequestBuilder.SharedRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -127,6 +132,7 @@ namespace Microsoft.Graph.Me.Insights.Shared
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.SharedInsight body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -148,6 +154,7 @@ namespace Microsoft.Graph.Me.Insights.Shared
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Me.Insights.Shared.SharedRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01")]
         public global::Microsoft.Graph.Me.Insights.Shared.SharedRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Me.Insights.Shared.SharedRequestBuilder(rawUrl, RequestAdapter);

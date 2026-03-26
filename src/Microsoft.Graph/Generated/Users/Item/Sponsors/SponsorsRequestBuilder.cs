@@ -4,6 +4,7 @@ using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Users.Item.Sponsors.Count;
 using Microsoft.Graph.Users.Item.Sponsors.Item;
+using Microsoft.Graph.Users.Item.Sponsors.Ref;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -25,7 +26,12 @@ namespace Microsoft.Graph.Users.Item.Sponsors
         {
             get => new global::Microsoft.Graph.Users.Item.Sponsors.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to manage the sponsors property of the microsoft.graph.user entity.</summary>
+        /// <summary>Provides operations to manage the collection of user entities.</summary>
+        public global::Microsoft.Graph.Users.Item.Sponsors.Ref.RefRequestBuilder Ref
+        {
+            get => new global::Microsoft.Graph.Users.Item.Sponsors.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Gets an item from the Microsoft.Graph.users.item.sponsors.item collection</summary>
         /// <param name="position">The unique identifier of directoryObject</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Users.Item.Sponsors.Item.DirectoryObjectItemRequestBuilder"/></returns>
         public global::Microsoft.Graph.Users.Item.Sponsors.Item.DirectoryObjectItemRequestBuilder this[string position]
