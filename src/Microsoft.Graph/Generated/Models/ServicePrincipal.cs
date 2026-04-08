@@ -206,6 +206,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("claimsMappingPolicies", value); }
         }
 #endif
+        /// <summary>The appId of the application that created this service principal. Set internally by Microsoft Entra ID. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatedByAppId
+        {
+            get { return BackingStore?.Get<string?>("createdByAppId"); }
+            set { BackingStore?.Set("createdByAppId", value); }
+        }
+#nullable restore
+#else
+        public string CreatedByAppId
+        {
+            get { return BackingStore?.Get<string>("createdByAppId"); }
+            set { BackingStore?.Set("createdByAppId", value); }
+        }
+#endif
         /// <summary>Directory objects created by this service principal. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -819,7 +835,13 @@ namespace Microsoft.Graph.Models
         public static new global::Microsoft.Graph.Models.ServicePrincipal CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Models.ServicePrincipal();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "#microsoft.graph.agentIdentity" => new global::Microsoft.Graph.Models.AgentIdentity(),
+                "#microsoft.graph.agentIdentityBlueprintPrincipal" => new global::Microsoft.Graph.Models.AgentIdentityBlueprintPrincipal(),
+                _ => new global::Microsoft.Graph.Models.ServicePrincipal(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -843,6 +865,7 @@ namespace Microsoft.Graph.Models
                 { "appRoles", n => { AppRoles = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AppRole>(global::Microsoft.Graph.Models.AppRole.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "applicationTemplateId", n => { ApplicationTemplateId = n.GetStringValue(); } },
                 { "claimsMappingPolicies", n => { ClaimsMappingPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ClaimsMappingPolicy>(global::Microsoft.Graph.Models.ClaimsMappingPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "createdByAppId", n => { CreatedByAppId = n.GetStringValue(); } },
                 { "createdObjects", n => { CreatedObjects = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DirectoryObject>(global::Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "customSecurityAttributes", n => { CustomSecurityAttributes = n.GetObjectValue<global::Microsoft.Graph.Models.CustomSecurityAttributeValue>(global::Microsoft.Graph.Models.CustomSecurityAttributeValue.CreateFromDiscriminatorValue); } },
                 { "delegatedPermissionClassifications", n => { DelegatedPermissionClassifications = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DelegatedPermissionClassification>(global::Microsoft.Graph.Models.DelegatedPermissionClassification.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -905,6 +928,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AppRoleAssignment>("appRoleAssignments", AppRoleAssignments);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AppRole>("appRoles", AppRoles);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ClaimsMappingPolicy>("claimsMappingPolicies", ClaimsMappingPolicies);
+            writer.WriteStringValue("createdByAppId", CreatedByAppId);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DirectoryObject>("createdObjects", CreatedObjects);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.CustomSecurityAttributeValue>("customSecurityAttributes", CustomSecurityAttributes);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DelegatedPermissionClassification>("delegatedPermissionClassifications", DelegatedPermissionClassifications);

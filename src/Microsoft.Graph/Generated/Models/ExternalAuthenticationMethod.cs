@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("configurationId", value); }
         }
 #endif
-        /// <summary>Custom name given to the registered external authentication method.</summary>
+        /// <summary>Custom name given to the registered external MFA.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName

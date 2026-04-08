@@ -36,6 +36,7 @@ namespace Microsoft.Graph.Models
             return mappingValue switch
             {
                 "#microsoft.graph.microsoftAuthenticatorAuthenticationMethodTarget" => new global::Microsoft.Graph.Models.MicrosoftAuthenticatorAuthenticationMethodTarget(),
+                "#microsoft.graph.passkeyAuthenticationMethodTarget" => new global::Microsoft.Graph.Models.PasskeyAuthenticationMethodTarget(),
                 "#microsoft.graph.smsAuthenticationMethodTarget" => new global::Microsoft.Graph.Models.SmsAuthenticationMethodTarget(),
                 _ => new global::Microsoft.Graph.Models.AuthenticationMethodTarget(),
             };

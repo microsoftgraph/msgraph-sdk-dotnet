@@ -4,6 +4,7 @@ using Microsoft.Graph.Groups.Item.Team.PrimaryChannel.AllMembers;
 using Microsoft.Graph.Groups.Item.Team.PrimaryChannel.Archive;
 using Microsoft.Graph.Groups.Item.Team.PrimaryChannel.CompleteMigration;
 using Microsoft.Graph.Groups.Item.Team.PrimaryChannel.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName;
+using Microsoft.Graph.Groups.Item.Team.PrimaryChannel.EnabledApps;
 using Microsoft.Graph.Groups.Item.Team.PrimaryChannel.FilesFolder;
 using Microsoft.Graph.Groups.Item.Team.PrimaryChannel.Members;
 using Microsoft.Graph.Groups.Item.Team.PrimaryChannel.Messages;
@@ -49,6 +50,11 @@ namespace Microsoft.Graph.Groups.Item.Team.PrimaryChannel
         public global::Microsoft.Graph.Groups.Item.Team.PrimaryChannel.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName
         {
             get => new global::Microsoft.Graph.Groups.Item.Team.PrimaryChannel.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the enabledApps property of the microsoft.graph.channel entity.</summary>
+        public global::Microsoft.Graph.Groups.Item.Team.PrimaryChannel.EnabledApps.EnabledAppsRequestBuilder EnabledApps
+        {
+            get => new global::Microsoft.Graph.Groups.Item.Team.PrimaryChannel.EnabledApps.EnabledAppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the filesFolder property of the microsoft.graph.channel entity.</summary>
         public global::Microsoft.Graph.Groups.Item.Team.PrimaryChannel.FilesFolder.FilesFolderRequestBuilder FilesFolder

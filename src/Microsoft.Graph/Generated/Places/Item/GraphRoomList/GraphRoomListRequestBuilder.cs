@@ -53,7 +53,8 @@ namespace Microsoft.Graph.Places.Item.GraphRoomList
         {
         }
         /// <summary>
-        /// Get the item of type microsoft.graph.place as microsoft.graph.roomList
+        /// Read the properties of a place object specified by its ID. The place object can be one of the following types: The listed resources are derived from the place object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/place-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.RoomList"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,7 +77,7 @@ namespace Microsoft.Graph.Places.Item.GraphRoomList
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.RoomList>(requestInfo, global::Microsoft.Graph.Models.RoomList.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the item of type microsoft.graph.place as microsoft.graph.roomList
+        /// Read the properties of a place object specified by its ID. The place object can be one of the following types: The listed resources are derived from the place object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +105,7 @@ namespace Microsoft.Graph.Places.Item.GraphRoomList
             return new global::Microsoft.Graph.Places.Item.GraphRoomList.GraphRoomListRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the item of type microsoft.graph.place as microsoft.graph.roomList
+        /// Read the properties of a place object specified by its ID. The place object can be one of the following types: The listed resources are derived from the place object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GraphRoomListRequestBuilderGetQueryParameters 

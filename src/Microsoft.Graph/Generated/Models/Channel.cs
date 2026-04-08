@@ -82,6 +82,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("email", value); }
         }
 #endif
+        /// <summary>A collection of enabled apps in the channel.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.TeamsApp>? EnabledApps
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.TeamsApp>?>("enabledApps"); }
+            set { BackingStore?.Set("enabledApps", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.TeamsApp> EnabledApps
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.TeamsApp>>("enabledApps"); }
+            set { BackingStore?.Set("enabledApps", value); }
+        }
+#endif
         /// <summary>Metadata for the location where the channel&apos;s files are stored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -251,6 +267,7 @@ namespace Microsoft.Graph.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
+                { "enabledApps", n => { EnabledApps = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.TeamsApp>(global::Microsoft.Graph.Models.TeamsApp.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "filesFolder", n => { FilesFolder = n.GetObjectValue<global::Microsoft.Graph.Models.DriveItem>(global::Microsoft.Graph.Models.DriveItem.CreateFromDiscriminatorValue); } },
                 { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
                 { "isFavoriteByDefault", n => { IsFavoriteByDefault = n.GetBoolValue(); } },
@@ -277,6 +294,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("email", Email);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.TeamsApp>("enabledApps", EnabledApps);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.DriveItem>("filesFolder", FilesFolder);
             writer.WriteBoolValue("isArchived", IsArchived);
             writer.WriteBoolValue("isFavoriteByDefault", IsFavoriteByDefault);

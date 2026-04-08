@@ -78,7 +78,7 @@ namespace Microsoft.Graph.ServicePrincipals
         {
         }
         /// <summary>
-        /// Retrieve a list of servicePrincipal objects.
+        /// Retrieve a list of servicePrincipal objects. This API also returns agentIdentityBlueprintPrincipal objects, which are identified by the @odata.type property of #microsoft.graph.agentIdentityBlueprintPrincipal.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ServicePrincipalCollectionResponse"/></returns>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.ServicePrincipals
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ServicePrincipalCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.ServicePrincipalCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new servicePrincipal object.
+        /// Create a new servicePrincipal object. This API can also create an agentIdentityBlueprintPrincipal object from an agentIdentityBlueprint when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprintPrincipal.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-post-serviceprincipals?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ServicePrincipal"/></returns>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.ServicePrincipals
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ServicePrincipal>(requestInfo, global::Microsoft.Graph.Models.ServicePrincipal.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of servicePrincipal objects.
+        /// Retrieve a list of servicePrincipal objects. This API also returns agentIdentityBlueprintPrincipal objects, which are identified by the @odata.type property of #microsoft.graph.agentIdentityBlueprintPrincipal.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -147,7 +147,7 @@ namespace Microsoft.Graph.ServicePrincipals
             return requestInfo;
         }
         /// <summary>
-        /// Create a new servicePrincipal object.
+        /// Create a new servicePrincipal object. This API can also create an agentIdentityBlueprintPrincipal object from an agentIdentityBlueprint when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprintPrincipal.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -178,7 +178,7 @@ namespace Microsoft.Graph.ServicePrincipals
             return new global::Microsoft.Graph.ServicePrincipals.ServicePrincipalsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of servicePrincipal objects.
+        /// Retrieve a list of servicePrincipal objects. This API also returns agentIdentityBlueprintPrincipal objects, which are identified by the @odata.type property of #microsoft.graph.agentIdentityBlueprintPrincipal.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ServicePrincipalsRequestBuilderGetQueryParameters 

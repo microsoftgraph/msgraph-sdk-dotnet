@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("appId", value); }
         }
 #endif
-        /// <summary>Display name for the external authentication method. This name is shown to users during sign-in.</summary>
+        /// <summary>Display name for the external MFA. This name is shown to users during sign-in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName

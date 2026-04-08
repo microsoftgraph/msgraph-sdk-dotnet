@@ -3,6 +3,8 @@
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Users.Item.AdhocCalls.Count;
+using Microsoft.Graph.Users.Item.AdhocCalls.GetAllRecordingsuserIdUserIdWithStartDateTimeWithEndDateTime;
+using Microsoft.Graph.Users.Item.AdhocCalls.GetAllTranscriptsuserIdUserIdWithStartDateTimeWithEndDateTime;
 using Microsoft.Graph.Users.Item.AdhocCalls.Item;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -24,6 +26,16 @@ namespace Microsoft.Graph.Users.Item.AdhocCalls
         public global::Microsoft.Graph.Users.Item.AdhocCalls.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Users.Item.AdhocCalls.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getAllRecordings method.</summary>
+        public global::Microsoft.Graph.Users.Item.AdhocCalls.GetAllRecordingsuserIdUserIdWithStartDateTimeWithEndDateTime.GetAllRecordingsuserIdUserIdWithStartDateTimeWithEndDateTimeRequestBuilder GetAllRecordingsuserIdUserIdWithStartDateTimeWithEndDateTime
+        {
+            get => new global::Microsoft.Graph.Users.Item.AdhocCalls.GetAllRecordingsuserIdUserIdWithStartDateTimeWithEndDateTime.GetAllRecordingsuserIdUserIdWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getAllTranscripts method.</summary>
+        public global::Microsoft.Graph.Users.Item.AdhocCalls.GetAllTranscriptsuserIdUserIdWithStartDateTimeWithEndDateTime.GetAllTranscriptsuserIdUserIdWithStartDateTimeWithEndDateTimeRequestBuilder GetAllTranscriptsuserIdUserIdWithStartDateTimeWithEndDateTime
+        {
+            get => new global::Microsoft.Graph.Users.Item.AdhocCalls.GetAllTranscriptsuserIdUserIdWithStartDateTimeWithEndDateTime.GetAllTranscriptsuserIdUserIdWithStartDateTimeWithEndDateTimeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the adhocCalls property of the microsoft.graph.user entity.</summary>
         /// <param name="position">The unique identifier of adhocCall</param>

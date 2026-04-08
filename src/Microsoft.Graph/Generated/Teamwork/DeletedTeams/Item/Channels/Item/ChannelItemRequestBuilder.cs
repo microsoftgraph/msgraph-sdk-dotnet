@@ -6,6 +6,7 @@ using Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.AllMembers;
 using Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.Archive;
 using Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.CompleteMigration;
 using Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName;
+using Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.EnabledApps;
 using Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.FilesFolder;
 using Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.Members;
 using Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.Messages;
@@ -49,6 +50,11 @@ namespace Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item
         public global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName
         {
             get => new global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the enabledApps property of the microsoft.graph.channel entity.</summary>
+        public global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.EnabledApps.EnabledAppsRequestBuilder EnabledApps
+        {
+            get => new global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.EnabledApps.EnabledAppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the filesFolder property of the microsoft.graph.channel entity.</summary>
         public global::Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.FilesFolder.FilesFolderRequestBuilder FilesFolder

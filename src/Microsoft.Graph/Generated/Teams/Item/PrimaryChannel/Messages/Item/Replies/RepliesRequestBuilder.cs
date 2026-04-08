@@ -5,6 +5,7 @@ using Microsoft.Graph.Models;
 using Microsoft.Graph.Teams.Item.PrimaryChannel.Messages.Item.Replies.Count;
 using Microsoft.Graph.Teams.Item.PrimaryChannel.Messages.Item.Replies.Delta;
 using Microsoft.Graph.Teams.Item.PrimaryChannel.Messages.Item.Replies.Item;
+using Microsoft.Graph.Teams.Item.PrimaryChannel.Messages.Item.Replies.ReplyWithQuote;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -30,6 +31,11 @@ namespace Microsoft.Graph.Teams.Item.PrimaryChannel.Messages.Item.Replies
         public global::Microsoft.Graph.Teams.Item.PrimaryChannel.Messages.Item.Replies.Delta.DeltaRequestBuilder Delta
         {
             get => new global::Microsoft.Graph.Teams.Item.PrimaryChannel.Messages.Item.Replies.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the replyWithQuote method.</summary>
+        public global::Microsoft.Graph.Teams.Item.PrimaryChannel.Messages.Item.Replies.ReplyWithQuote.ReplyWithQuoteRequestBuilder ReplyWithQuote
+        {
+            get => new global::Microsoft.Graph.Teams.Item.PrimaryChannel.Messages.Item.Replies.ReplyWithQuote.ReplyWithQuoteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the replies property of the microsoft.graph.chatMessage entity.</summary>
         /// <param name="position">The unique identifier of chatMessage</param>

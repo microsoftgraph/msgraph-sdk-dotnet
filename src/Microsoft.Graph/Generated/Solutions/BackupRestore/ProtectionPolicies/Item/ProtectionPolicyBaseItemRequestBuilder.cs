@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.ProtectionPolicies.Item
         {
         }
         /// <summary>
-        /// Delete a protection policy. Read the properties and relationships of a protectionPolicyBase object.
+        /// Delete a protectionPolicyBase object. A protection policy can be deleted only after it was deactivated. When you delete a policy, all associated protection units are removed, and backup protection stops for the resources previously covered by the policy. Existing backup data is retained according to the retention policy before it&apos;s offboarded. You can restore data using previous restore points even after deletion.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/protectionpolicybase-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.ProtectionPolicies.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ProtectionPolicyBase>(requestInfo, global::Microsoft.Graph.Models.ProtectionPolicyBase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a protection policy. Read the properties and relationships of a protectionPolicyBase object.
+        /// Delete a protectionPolicyBase object. A protection policy can be deleted only after it was deactivated. When you delete a policy, all associated protection units are removed, and backup protection stops for the resources previously covered by the policy. Existing backup data is retained according to the retention policy before it&apos;s offboarded. You can restore data using previous restore points even after deletion.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

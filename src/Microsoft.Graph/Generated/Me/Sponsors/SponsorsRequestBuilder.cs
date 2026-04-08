@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Me.Sponsors.Count;
 using Microsoft.Graph.Me.Sponsors.Item;
+using Microsoft.Graph.Me.Sponsors.Ref;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -25,7 +26,12 @@ namespace Microsoft.Graph.Me.Sponsors
         {
             get => new global::Microsoft.Graph.Me.Sponsors.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Provides operations to manage the sponsors property of the microsoft.graph.user entity.</summary>
+        /// <summary>Provides operations to manage the collection of user entities.</summary>
+        public global::Microsoft.Graph.Me.Sponsors.Ref.RefRequestBuilder Ref
+        {
+            get => new global::Microsoft.Graph.Me.Sponsors.Ref.RefRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Gets an item from the Microsoft.Graph.me.sponsors.item collection</summary>
         /// <param name="position">The unique identifier of directoryObject</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Me.Sponsors.Item.DirectoryObjectItemRequestBuilder"/></returns>
         public global::Microsoft.Graph.Me.Sponsors.Item.DirectoryObjectItemRequestBuilder this[string position]

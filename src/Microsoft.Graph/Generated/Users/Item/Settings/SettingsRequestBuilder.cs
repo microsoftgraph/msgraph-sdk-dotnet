@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Graph.Users.Item.Settings.Exchange;
 using Microsoft.Graph.Users.Item.Settings.ItemInsights;
 using Microsoft.Graph.Users.Item.Settings.ShiftPreferences;
 using Microsoft.Graph.Users.Item.Settings.Storage;
@@ -23,6 +24,11 @@ namespace Microsoft.Graph.Users.Item.Settings
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SettingsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to manage the exchange property of the microsoft.graph.userSettings entity.</summary>
+        public global::Microsoft.Graph.Users.Item.Settings.Exchange.ExchangeRequestBuilder Exchange
+        {
+            get => new global::Microsoft.Graph.Users.Item.Settings.Exchange.ExchangeRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the itemInsights property of the microsoft.graph.userSettings entity.</summary>
         public global::Microsoft.Graph.Users.Item.Settings.ItemInsights.ItemInsightsRequestBuilder ItemInsights
         {

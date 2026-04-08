@@ -6,6 +6,7 @@ using Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item.AllMembers;
 using Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item.Archive;
 using Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item.CompleteMigration;
 using Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName;
+using Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item.EnabledApps;
 using Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item.FilesFolder;
 using Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item.Members;
 using Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item.Messages;
@@ -49,6 +50,11 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item
         public global::Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName
         {
             get => new global::Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the enabledApps property of the microsoft.graph.channel entity.</summary>
+        public global::Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item.EnabledApps.EnabledAppsRequestBuilder EnabledApps
+        {
+            get => new global::Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item.EnabledApps.EnabledAppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the filesFolder property of the microsoft.graph.channel entity.</summary>
         public global::Microsoft.Graph.Users.Item.JoinedTeams.Item.Channels.Item.FilesFolder.FilesFolderRequestBuilder FilesFolder
