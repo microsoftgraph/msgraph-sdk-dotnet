@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ConditionalAccessPolicy : global::Microsoft.Graph.Models.Entity, IParsable
+    public partial class ConditionalAccessPolicy : global::Microsoft.Graph.Models.PolicyDeletableItem, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The conditions property</summary>
@@ -82,6 +82,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("grantControls", value); }
         }
 #endif
+        /// <summary>Specifies the identifier of a conditionalAccessPolicy object. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id
+        {
+            get { return BackingStore?.Get<string?>("id"); }
+            set { BackingStore?.Set("id", value); }
+        }
+#nullable restore
+#else
+        public string Id
+        {
+            get { return BackingStore?.Get<string>("id"); }
+            set { BackingStore?.Set("id", value); }
+        }
+#endif
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Readonly.</summary>
         public DateTimeOffset? ModifiedDateTime
         {
@@ -127,6 +143,13 @@ namespace Microsoft.Graph.Models
         }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Models.ConditionalAccessPolicy"/> and sets the default values.
+        /// </summary>
+        public ConditionalAccessPolicy() : base()
+        {
+            OdataType = "#microsoft.graph.conditionalAccessPolicy";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ConditionalAccessPolicy"/></returns>
@@ -154,6 +177,7 @@ namespace Microsoft.Graph.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "grantControls", n => { GrantControls = n.GetObjectValue<global::Microsoft.Graph.Models.ConditionalAccessGrantControls>(global::Microsoft.Graph.Models.ConditionalAccessGrantControls.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "modifiedDateTime", n => { ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "sessionControls", n => { SessionControls = n.GetObjectValue<global::Microsoft.Graph.Models.ConditionalAccessSessionControls>(global::Microsoft.Graph.Models.ConditionalAccessSessionControls.CreateFromDiscriminatorValue); } },
                 { "state", n => { State = n.GetEnumValue<global::Microsoft.Graph.Models.ConditionalAccessPolicyState>(); } },
@@ -173,6 +197,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ConditionalAccessGrantControls>("grantControls", GrantControls);
+            writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("modifiedDateTime", ModifiedDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ConditionalAccessSessionControls>("sessionControls", SessionControls);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.ConditionalAccessPolicyState>("state", State);

@@ -140,6 +140,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("certification", value); }
         }
 #endif
+        /// <summary>The appId of the application that created this application. Set internally by Microsoft Entra ID. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatedByAppId
+        {
+            get { return BackingStore?.Get<string?>("createdByAppId"); }
+            set { BackingStore?.Set("createdByAppId", value); }
+        }
+#nullable restore
+#else
+        public string CreatedByAppId
+        {
+            get { return BackingStore?.Get<string>("createdByAppId"); }
+            set { BackingStore?.Set("createdByAppId", value); }
+        }
+#endif
         /// <summary>The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, not, ge, le, in, and eq on null values) and $orderby.</summary>
         public DateTimeOffset? CreatedDateTime
         {
@@ -735,7 +751,12 @@ namespace Microsoft.Graph.Models
         public static new global::Microsoft.Graph.Models.Application CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Models.Application();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "#microsoft.graph.agentIdentityBlueprint" => new global::Microsoft.Graph.Models.AgentIdentityBlueprint(),
+                _ => new global::Microsoft.Graph.Models.Application(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -753,6 +774,7 @@ namespace Microsoft.Graph.Models
                 { "applicationTemplateId", n => { ApplicationTemplateId = n.GetStringValue(); } },
                 { "authenticationBehaviors", n => { AuthenticationBehaviors = n.GetObjectValue<global::Microsoft.Graph.Models.AuthenticationBehaviors>(global::Microsoft.Graph.Models.AuthenticationBehaviors.CreateFromDiscriminatorValue); } },
                 { "certification", n => { Certification = n.GetObjectValue<global::Microsoft.Graph.Models.Certification>(global::Microsoft.Graph.Models.Certification.CreateFromDiscriminatorValue); } },
+                { "createdByAppId", n => { CreatedByAppId = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "createdOnBehalfOf", n => { CreatedOnBehalfOf = n.GetObjectValue<global::Microsoft.Graph.Models.DirectoryObject>(global::Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue); } },
                 { "defaultRedirectUri", n => { DefaultRedirectUri = n.GetStringValue(); } },
@@ -811,6 +833,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AppRole>("appRoles", AppRoles);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.AuthenticationBehaviors>("authenticationBehaviors", AuthenticationBehaviors);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Certification>("certification", Certification);
+            writer.WriteStringValue("createdByAppId", CreatedByAppId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.DirectoryObject>("createdOnBehalfOf", CreatedOnBehalfOf);
             writer.WriteStringValue("defaultRedirectUri", DefaultRedirectUri);

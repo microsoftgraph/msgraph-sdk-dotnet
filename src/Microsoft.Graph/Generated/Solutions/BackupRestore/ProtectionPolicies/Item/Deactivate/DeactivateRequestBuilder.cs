@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.ProtectionPolicies.Item.Deacti
         {
         }
         /// <summary>
-        /// Deactivate a protectionPolicyBase.
+        /// Deactivate a protectionPolicyBase. When a protection policy is deactivated, backup activity stops immediately, no new backups are taken, and the protected resources are no longer covered by the policy. Any backups taken before deactivation are retained according to the retention policy, after which they&apos;re offboarded. You can restore data using previous restore points even after deactivation. To reactivate a deactivated policy, use the activate API.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/protectionpolicybase-deactivate?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ProtectionPolicyBase"/></returns>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.ProtectionPolicies.Item.Deacti
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ProtectionPolicyBase>(requestInfo, global::Microsoft.Graph.Models.ProtectionPolicyBase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deactivate a protectionPolicyBase.
+        /// Deactivate a protectionPolicyBase. When a protection policy is deactivated, backup activity stops immediately, no new backups are taken, and the protected resources are no longer covered by the policy. Any backups taken before deactivation are retained according to the retention policy, after which they&apos;re offboarded. You can restore data using previous restore points even after deactivation. To reactivate a deactivated policy, use the activate API.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

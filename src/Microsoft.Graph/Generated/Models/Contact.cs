@@ -466,6 +466,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("photo", value); }
         }
 #endif
+        /// <summary>The contact&apos;s primary email address.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.EmailAddress? PrimaryEmailAddress
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.EmailAddress?>("primaryEmailAddress"); }
+            set { BackingStore?.Set("primaryEmailAddress", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.EmailAddress PrimaryEmailAddress
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.EmailAddress>("primaryEmailAddress"); }
+            set { BackingStore?.Set("primaryEmailAddress", value); }
+        }
+#endif
         /// <summary>The contact&apos;s profession.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -480,6 +496,22 @@ namespace Microsoft.Graph.Models
         {
             get { return BackingStore?.Get<string>("profession"); }
             set { BackingStore?.Set("profession", value); }
+        }
+#endif
+        /// <summary>The contact&apos;s secondary email address.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.EmailAddress? SecondaryEmailAddress
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.EmailAddress?>("secondaryEmailAddress"); }
+            set { BackingStore?.Set("secondaryEmailAddress", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.EmailAddress SecondaryEmailAddress
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.EmailAddress>("secondaryEmailAddress"); }
+            set { BackingStore?.Set("secondaryEmailAddress", value); }
         }
 #endif
         /// <summary>The collection of single-value extended properties defined for the contact. Read-only. Nullable.</summary>
@@ -528,6 +560,22 @@ namespace Microsoft.Graph.Models
         {
             get { return BackingStore?.Get<string>("surname"); }
             set { BackingStore?.Set("surname", value); }
+        }
+#endif
+        /// <summary>The contact&apos;s tertiary email address.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.EmailAddress? TertiaryEmailAddress
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.EmailAddress?>("tertiaryEmailAddress"); }
+            set { BackingStore?.Set("tertiaryEmailAddress", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.EmailAddress TertiaryEmailAddress
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.EmailAddress>("tertiaryEmailAddress"); }
+            set { BackingStore?.Set("tertiaryEmailAddress", value); }
         }
 #endif
         /// <summary>The contact&apos;s title.</summary>
@@ -648,10 +696,13 @@ namespace Microsoft.Graph.Models
                 { "parentFolderId", n => { ParentFolderId = n.GetStringValue(); } },
                 { "personalNotes", n => { PersonalNotes = n.GetStringValue(); } },
                 { "photo", n => { Photo = n.GetObjectValue<global::Microsoft.Graph.Models.ProfilePhoto>(global::Microsoft.Graph.Models.ProfilePhoto.CreateFromDiscriminatorValue); } },
+                { "primaryEmailAddress", n => { PrimaryEmailAddress = n.GetObjectValue<global::Microsoft.Graph.Models.EmailAddress>(global::Microsoft.Graph.Models.EmailAddress.CreateFromDiscriminatorValue); } },
                 { "profession", n => { Profession = n.GetStringValue(); } },
+                { "secondaryEmailAddress", n => { SecondaryEmailAddress = n.GetObjectValue<global::Microsoft.Graph.Models.EmailAddress>(global::Microsoft.Graph.Models.EmailAddress.CreateFromDiscriminatorValue); } },
                 { "singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.SingleValueLegacyExtendedProperty>(global::Microsoft.Graph.Models.SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "spouseName", n => { SpouseName = n.GetStringValue(); } },
                 { "surname", n => { Surname = n.GetStringValue(); } },
+                { "tertiaryEmailAddress", n => { TertiaryEmailAddress = n.GetObjectValue<global::Microsoft.Graph.Models.EmailAddress>(global::Microsoft.Graph.Models.EmailAddress.CreateFromDiscriminatorValue); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "yomiCompanyName", n => { YomiCompanyName = n.GetStringValue(); } },
                 { "yomiGivenName", n => { YomiGivenName = n.GetStringValue(); } },
@@ -695,10 +746,13 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("parentFolderId", ParentFolderId);
             writer.WriteStringValue("personalNotes", PersonalNotes);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ProfilePhoto>("photo", Photo);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.EmailAddress>("primaryEmailAddress", PrimaryEmailAddress);
             writer.WriteStringValue("profession", Profession);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.EmailAddress>("secondaryEmailAddress", SecondaryEmailAddress);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.SingleValueLegacyExtendedProperty>("singleValueExtendedProperties", SingleValueExtendedProperties);
             writer.WriteStringValue("spouseName", SpouseName);
             writer.WriteStringValue("surname", Surname);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.EmailAddress>("tertiaryEmailAddress", TertiaryEmailAddress);
             writer.WriteStringValue("title", Title);
             writer.WriteStringValue("yomiCompanyName", YomiCompanyName);
             writer.WriteStringValue("yomiGivenName", YomiGivenName);

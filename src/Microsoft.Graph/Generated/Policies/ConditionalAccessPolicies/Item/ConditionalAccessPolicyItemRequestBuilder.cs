@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Graph.Policies.ConditionalAccessPolicies.Item.Restore;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -18,6 +19,11 @@ namespace Microsoft.Graph.Policies.ConditionalAccessPolicies.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConditionalAccessPolicyItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to call the restore method.</summary>
+        public global::Microsoft.Graph.Policies.ConditionalAccessPolicies.Item.Restore.RestoreRequestBuilder Restore
+        {
+            get => new global::Microsoft.Graph.Policies.ConditionalAccessPolicies.Item.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Policies.ConditionalAccessPolicies.Item.ConditionalAccessPolicyItemRequestBuilder"/> and sets the default values.
         /// </summary>

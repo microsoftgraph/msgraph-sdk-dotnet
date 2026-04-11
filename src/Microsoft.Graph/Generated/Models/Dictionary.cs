@@ -58,6 +58,7 @@ namespace Microsoft.Graph.Models
             {
                 "#microsoft.graph.customMetadataDictionary" => new global::Microsoft.Graph.Models.CustomMetadataDictionary(),
                 "#microsoft.graph.fileStorageContainerCustomPropertyDictionary" => new global::Microsoft.Graph.Models.FileStorageContainerCustomPropertyDictionary(),
+                "#microsoft.graph.openComplexDictionaryType" => new global::Microsoft.Graph.Models.OpenComplexDictionaryType(),
                 "#microsoft.graph.resultTemplateDictionary" => new global::Microsoft.Graph.Models.ResultTemplateDictionary(),
                 _ => new global::Microsoft.Graph.Models.Dictionary(),
             };

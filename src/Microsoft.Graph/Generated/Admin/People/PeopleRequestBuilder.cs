@@ -2,6 +2,9 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Admin.People.ItemInsights;
 using Microsoft.Graph.Admin.People.ProfileCardProperties;
+using Microsoft.Graph.Admin.People.ProfilePropertySettings;
+using Microsoft.Graph.Admin.People.ProfileSources;
+using Microsoft.Graph.Admin.People.ProfileSourcesWithSourceId;
 using Microsoft.Graph.Admin.People.Pronouns;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
@@ -30,6 +33,16 @@ namespace Microsoft.Graph.Admin.People
         public global::Microsoft.Graph.Admin.People.ProfileCardProperties.ProfileCardPropertiesRequestBuilder ProfileCardProperties
         {
             get => new global::Microsoft.Graph.Admin.People.ProfileCardProperties.ProfileCardPropertiesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the profilePropertySettings property of the microsoft.graph.peopleAdminSettings entity.</summary>
+        public global::Microsoft.Graph.Admin.People.ProfilePropertySettings.ProfilePropertySettingsRequestBuilder ProfilePropertySettings
+        {
+            get => new global::Microsoft.Graph.Admin.People.ProfilePropertySettings.ProfilePropertySettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the profileSources property of the microsoft.graph.peopleAdminSettings entity.</summary>
+        public global::Microsoft.Graph.Admin.People.ProfileSources.ProfileSourcesRequestBuilder ProfileSources
+        {
+            get => new global::Microsoft.Graph.Admin.People.ProfileSources.ProfileSourcesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the pronouns property of the microsoft.graph.peopleAdminSettings entity.</summary>
         public global::Microsoft.Graph.Admin.People.Pronouns.PronounsRequestBuilder Pronouns
@@ -75,6 +88,16 @@ namespace Microsoft.Graph.Admin.People
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.PeopleAdminSettings>(requestInfo, global::Microsoft.Graph.Models.PeopleAdminSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Provides operations to manage the profileSources property of the microsoft.graph.peopleAdminSettings entity.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Admin.People.ProfileSourcesWithSourceId.ProfileSourcesWithSourceIdRequestBuilder"/></returns>
+        /// <param name="sourceId">Alternate key of profileSource</param>
+        public global::Microsoft.Graph.Admin.People.ProfileSourcesWithSourceId.ProfileSourcesWithSourceIdRequestBuilder ProfileSourcesWithSourceId(string sourceId)
+        {
+            if(string.IsNullOrEmpty(sourceId)) throw new ArgumentNullException(nameof(sourceId));
+            return new global::Microsoft.Graph.Admin.People.ProfileSourcesWithSourceId.ProfileSourcesWithSourceIdRequestBuilder(PathParameters, RequestAdapter, sourceId);
         }
         /// <summary>
         /// Retrieve the properties and relationships of a peopleAdminSettings object.

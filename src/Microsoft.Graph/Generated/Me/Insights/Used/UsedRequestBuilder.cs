@@ -21,6 +21,7 @@ namespace Microsoft.Graph.Me.Insights.Used
     public partial class UsedRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
+        [Obsolete("This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01")]
         public global::Microsoft.Graph.Me.Insights.Used.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Me.Insights.Used.Count.CountRequestBuilder(PathParameters, RequestAdapter);
@@ -28,6 +29,7 @@ namespace Microsoft.Graph.Me.Insights.Used
         /// <summary>Provides operations to manage the used property of the microsoft.graph.officeGraphInsights entity.</summary>
         /// <param name="position">The unique identifier of usedInsight</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Me.Insights.Used.Item.UsedInsightItemRequestBuilder"/></returns>
+        [Obsolete("This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01")]
         public global::Microsoft.Graph.Me.Insights.Used.Item.UsedInsightItemRequestBuilder this[string position]
         {
             get
@@ -61,6 +63,7 @@ namespace Microsoft.Graph.Me.Insights.Used
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Models.UsedInsightCollectionResponse?> GetAsync(Action<RequestConfiguration<global::Microsoft.Graph.Me.Insights.Used.UsedRequestBuilder.UsedRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -85,6 +88,7 @@ namespace Microsoft.Graph.Me.Insights.Used
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Microsoft.Graph.Models.UsedInsight?> PostAsync(global::Microsoft.Graph.Models.UsedInsight body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -107,6 +111,7 @@ namespace Microsoft.Graph.Me.Insights.Used
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Me.Insights.Used.UsedRequestBuilder.UsedRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -127,6 +132,7 @@ namespace Microsoft.Graph.Me.Insights.Used
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.UsedInsight body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -148,6 +154,7 @@ namespace Microsoft.Graph.Me.Insights.Used
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Me.Insights.Used.UsedRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01")]
         public global::Microsoft.Graph.Me.Insights.Used.UsedRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Microsoft.Graph.Me.Insights.Used.UsedRequestBuilder(rawUrl, RequestAdapter);

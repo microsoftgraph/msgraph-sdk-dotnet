@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class Fido2AuthenticationMethod : global::Microsoft.Graph.Models.AuthenticationMethod, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Authenticator Attestation GUID, an identifier that indicates the type (e.g. make and model) of the authenticator.</summary>
+        /// <summary>Authenticator Attestation GUID, an identifier that indicates the type (such as make and model) of the authenticator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AaGuid
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("aaGuid", value); }
         }
 #endif
-        /// <summary>The attestation certificate(s) attached to this security key.</summary>
+        /// <summary>The attestation certificate or certificates attached to this passkey.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AttestationCertificates
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("attestationCertificates", value); }
         }
 #endif
-        /// <summary>The attestation level of this FIDO2 security key. The possible values are: attested, or notAttested.</summary>
+        /// <summary>The attestation level of this passkey (FIDO2). The possible values are: attested, notAttested, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.AttestationLevel? AttestationLevel
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.AttestationLevel?>("attestationLevel"); }
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The manufacturer-assigned model of the FIDO2 security key.</summary>
+        /// <summary>The manufacturer-assigned model of the FIDO2 passkey.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Model
@@ -82,6 +82,12 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("model", value); }
         }
 #endif
+        /// <summary>The type of passkey. The possible values are: deviceBound, synced, unknownFutureValue.</summary>
+        public global::Microsoft.Graph.Models.PasskeyType? PasskeyType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.PasskeyType?>("passkeyType"); }
+            set { BackingStore?.Set("passkeyType", value); }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Models.Fido2AuthenticationMethod"/> and sets the default values.
         /// </summary>
@@ -112,6 +118,7 @@ namespace Microsoft.Graph.Models
                 { "attestationLevel", n => { AttestationLevel = n.GetEnumValue<global::Microsoft.Graph.Models.AttestationLevel>(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
+                { "passkeyType", n => { PasskeyType = n.GetEnumValue<global::Microsoft.Graph.Models.PasskeyType>(); } },
             };
         }
         /// <summary>
@@ -127,6 +134,7 @@ namespace Microsoft.Graph.Models
             writer.WriteEnumValue<global::Microsoft.Graph.Models.AttestationLevel>("attestationLevel", AttestationLevel);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("model", Model);
+            writer.WriteEnumValue<global::Microsoft.Graph.Models.PasskeyType>("passkeyType", PasskeyType);
         }
     }
 }

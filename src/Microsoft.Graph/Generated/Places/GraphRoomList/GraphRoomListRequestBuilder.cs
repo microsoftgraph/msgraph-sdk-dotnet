@@ -41,7 +41,8 @@ namespace Microsoft.Graph.Places.GraphRoomList
         {
         }
         /// <summary>
-        /// Get the items of type microsoft.graph.roomList in the microsoft.graph.place collection
+        /// Read the properties of a place object specified by its ID. The place object can be one of the following types: The listed resources are derived from the place object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/place-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.RoomListCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,7 +65,7 @@ namespace Microsoft.Graph.Places.GraphRoomList
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.RoomListCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.RoomListCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the items of type microsoft.graph.roomList in the microsoft.graph.place collection
+        /// Read the properties of a place object specified by its ID. The place object can be one of the following types: The listed resources are derived from the place object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -92,7 +93,7 @@ namespace Microsoft.Graph.Places.GraphRoomList
             return new global::Microsoft.Graph.Places.GraphRoomList.GraphRoomListRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the items of type microsoft.graph.roomList in the microsoft.graph.place collection
+        /// Read the properties of a place object specified by its ID. The place object can be one of the following types: The listed resources are derived from the place object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GraphRoomListRequestBuilderGetQueryParameters 
