@@ -57,6 +57,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("offerName", value); }
         }
 #endif
+        /// <summary>The operating system version of this gallery image. For example, 10.0.22000.296. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OsVersionNumber
+        {
+            get { return BackingStore?.Get<string?>("osVersionNumber"); }
+            set { BackingStore?.Set("osVersionNumber", value); }
+        }
+#nullable restore
+#else
+        public string OsVersionNumber
+        {
+            get { return BackingStore?.Get<string>("osVersionNumber"); }
+            set { BackingStore?.Set("osVersionNumber", value); }
+        }
+#endif
         /// <summary>The publisher name of this gallery image that is passed to Azure Resource Manager (ARM) to retrieve the image resource. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -129,6 +145,7 @@ namespace Microsoft.Graph.Models
                 { "endDate", n => { EndDate = n.GetDateValue(); } },
                 { "expirationDate", n => { ExpirationDate = n.GetDateValue(); } },
                 { "offerName", n => { OfferName = n.GetStringValue(); } },
+                { "osVersionNumber", n => { OsVersionNumber = n.GetStringValue(); } },
                 { "publisherName", n => { PublisherName = n.GetStringValue(); } },
                 { "sizeInGB", n => { SizeInGB = n.GetIntValue(); } },
                 { "skuName", n => { SkuName = n.GetStringValue(); } },
@@ -148,6 +165,7 @@ namespace Microsoft.Graph.Models
             writer.WriteDateValue("endDate", EndDate);
             writer.WriteDateValue("expirationDate", ExpirationDate);
             writer.WriteStringValue("offerName", OfferName);
+            writer.WriteStringValue("osVersionNumber", OsVersionNumber);
             writer.WriteStringValue("publisherName", PublisherName);
             writer.WriteIntValue("sizeInGB", SizeInGB);
             writer.WriteStringValue("skuName", SkuName);

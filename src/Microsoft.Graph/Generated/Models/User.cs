@@ -781,6 +781,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("identities", value); }
         }
 #endif
+        /// <summary>The identityParentId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IdentityParentId
+        {
+            get { return BackingStore?.Get<string?>("identityParentId"); }
+            set { BackingStore?.Set("identityParentId", value); }
+        }
+#nullable restore
+#else
+        public string IdentityParentId
+        {
+            get { return BackingStore?.Get<string>("identityParentId"); }
+            set { BackingStore?.Set("identityParentId", value); }
+        }
+#endif
         /// <summary>The instant message voice-over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Returned only on $select. Supports $filter (eq, not, ge, le, startsWith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -2006,7 +2022,12 @@ namespace Microsoft.Graph.Models
         public static new global::Microsoft.Graph.Models.User CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Models.User();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "#microsoft.graph.agentUser" => new global::Microsoft.Graph.Models.AgentUser(),
+                _ => new global::Microsoft.Graph.Models.User(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -2069,6 +2090,7 @@ namespace Microsoft.Graph.Models
                 { "givenName", n => { GivenName = n.GetStringValue(); } },
                 { "hireDate", n => { HireDate = n.GetDateTimeOffsetValue(); } },
                 { "identities", n => { Identities = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ObjectIdentity>(global::Microsoft.Graph.Models.ObjectIdentity.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "identityParentId", n => { IdentityParentId = n.GetStringValue(); } },
                 { "imAddresses", n => { ImAddresses = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "inferenceClassification", n => { InferenceClassification = n.GetObjectValue<global::Microsoft.Graph.Models.InferenceClassification>(global::Microsoft.Graph.Models.InferenceClassification.CreateFromDiscriminatorValue); } },
                 { "insights", n => { Insights = n.GetObjectValue<global::Microsoft.Graph.Models.ItemInsights>(global::Microsoft.Graph.Models.ItemInsights.CreateFromDiscriminatorValue); } },
@@ -2212,6 +2234,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("givenName", GivenName);
             writer.WriteDateTimeOffsetValue("hireDate", HireDate);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ObjectIdentity>("identities", Identities);
+            writer.WriteStringValue("identityParentId", IdentityParentId);
             writer.WriteCollectionOfPrimitiveValues<string>("imAddresses", ImAddresses);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.InferenceClassification>("inferenceClassification", InferenceClassification);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ItemInsights>("insights", Insights);

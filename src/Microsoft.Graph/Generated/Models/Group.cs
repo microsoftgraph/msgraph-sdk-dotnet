@@ -979,6 +979,12 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("visibility", value); }
         }
 #endif
+        /// <summary>The welcomeMessageEnabled property</summary>
+        public bool? WelcomeMessageEnabled
+        {
+            get { return BackingStore?.Get<bool?>("welcomeMessageEnabled"); }
+            set { BackingStore?.Set("welcomeMessageEnabled", value); }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Models.Group"/> and sets the default values.
         /// </summary>
@@ -1075,6 +1081,7 @@ namespace Microsoft.Graph.Models
                 { "uniqueName", n => { UniqueName = n.GetStringValue(); } },
                 { "unseenCount", n => { UnseenCount = n.GetIntValue(); } },
                 { "visibility", n => { Visibility = n.GetStringValue(); } },
+                { "welcomeMessageEnabled", n => { WelcomeMessageEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -1156,6 +1163,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("uniqueName", UniqueName);
             writer.WriteIntValue("unseenCount", UnseenCount);
             writer.WriteStringValue("visibility", Visibility);
+            writer.WriteBoolValue("welcomeMessageEnabled", WelcomeMessageEnabled);
         }
     }
 }

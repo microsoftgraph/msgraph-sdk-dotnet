@@ -7,6 +7,7 @@ using Microsoft.Graph.Security.Identities.IdentityAccounts;
 using Microsoft.Graph.Security.Identities.SensorCandidateActivationConfiguration;
 using Microsoft.Graph.Security.Identities.SensorCandidates;
 using Microsoft.Graph.Security.Identities.Sensors;
+using Microsoft.Graph.Security.Identities.Settings;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -47,6 +48,11 @@ namespace Microsoft.Graph.Security.Identities
         public global::Microsoft.Graph.Security.Identities.Sensors.SensorsRequestBuilder Sensors
         {
             get => new global::Microsoft.Graph.Security.Identities.Sensors.SensorsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the settings property of the microsoft.graph.security.identityContainer entity.</summary>
+        public global::Microsoft.Graph.Security.Identities.Settings.SettingsRequestBuilder Settings
+        {
+            get => new global::Microsoft.Graph.Security.Identities.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Security.Identities.IdentitiesRequestBuilder"/> and sets the default values.

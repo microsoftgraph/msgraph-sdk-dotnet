@@ -103,6 +103,7 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.provisioningServicePrincipal" => new global::Microsoft.Graph.Models.ProvisioningServicePrincipal(),
                 "#microsoft.graph.provisioningSystem" => new global::Microsoft.Graph.Models.ProvisioningSystem(),
                 "#microsoft.graph.servicePrincipalIdentity" => new global::Microsoft.Graph.Models.ServicePrincipalIdentity(),
+                "#microsoft.graph.sharePointGroupIdentity" => new global::Microsoft.Graph.Models.SharePointGroupIdentity(),
                 "#microsoft.graph.sharePointIdentity" => new global::Microsoft.Graph.Models.SharePointIdentity(),
                 "#microsoft.graph.teamworkApplicationIdentity" => new global::Microsoft.Graph.Models.TeamworkApplicationIdentity(),
                 "#microsoft.graph.teamworkConversationIdentity" => new global::Microsoft.Graph.Models.TeamworkConversationIdentity(),

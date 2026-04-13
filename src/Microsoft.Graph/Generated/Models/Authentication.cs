@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("emailMethods", value); }
         }
 #endif
-        /// <summary>Represents the external authentication methods registered to a user for authentication using an external identity provider.</summary>
+        /// <summary>Represents the external MFA registered to a user for authentication using an external identity provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.ExternalAuthenticationMethod>? ExternalAuthenticationMethods

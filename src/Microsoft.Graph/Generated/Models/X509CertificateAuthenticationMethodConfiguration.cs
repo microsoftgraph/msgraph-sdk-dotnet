@@ -28,6 +28,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("authenticationModeConfiguration", value); }
         }
 #endif
+        /// <summary>The certificateAuthorityScopes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.X509CertificateAuthorityScope>? CertificateAuthorityScopes
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.X509CertificateAuthorityScope>?>("certificateAuthorityScopes"); }
+            set { BackingStore?.Set("certificateAuthorityScopes", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.X509CertificateAuthorityScope> CertificateAuthorityScopes
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.X509CertificateAuthorityScope>>("certificateAuthorityScopes"); }
+            set { BackingStore?.Set("certificateAuthorityScopes", value); }
+        }
+#endif
         /// <summary>Defines fields in the X.509 certificate that map to attributes of the Microsoft Entra user object in order to bind the certificate to the user. The priority of the object determines the order in which the binding is carried out. The first binding that matches will be used and the rest ignored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,6 +92,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("includeTargets", value); }
         }
 #endif
+        /// <summary>The issuerHintsConfiguration property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.X509CertificateIssuerHintsConfiguration? IssuerHintsConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.X509CertificateIssuerHintsConfiguration?>("issuerHintsConfiguration"); }
+            set { BackingStore?.Set("issuerHintsConfiguration", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.X509CertificateIssuerHintsConfiguration IssuerHintsConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.X509CertificateIssuerHintsConfiguration>("issuerHintsConfiguration"); }
+            set { BackingStore?.Set("issuerHintsConfiguration", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Models.X509CertificateAuthenticationMethodConfiguration"/> and sets the default values.
         /// </summary>
@@ -102,9 +134,11 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "authenticationModeConfiguration", n => { AuthenticationModeConfiguration = n.GetObjectValue<global::Microsoft.Graph.Models.X509CertificateAuthenticationModeConfiguration>(global::Microsoft.Graph.Models.X509CertificateAuthenticationModeConfiguration.CreateFromDiscriminatorValue); } },
+                { "certificateAuthorityScopes", n => { CertificateAuthorityScopes = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.X509CertificateAuthorityScope>(global::Microsoft.Graph.Models.X509CertificateAuthorityScope.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "certificateUserBindings", n => { CertificateUserBindings = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.X509CertificateUserBinding>(global::Microsoft.Graph.Models.X509CertificateUserBinding.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "crlValidationConfiguration", n => { CrlValidationConfiguration = n.GetObjectValue<global::Microsoft.Graph.Models.X509CertificateCRLValidationConfiguration>(global::Microsoft.Graph.Models.X509CertificateCRLValidationConfiguration.CreateFromDiscriminatorValue); } },
                 { "includeTargets", n => { IncludeTargets = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AuthenticationMethodTarget>(global::Microsoft.Graph.Models.AuthenticationMethodTarget.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "issuerHintsConfiguration", n => { IssuerHintsConfiguration = n.GetObjectValue<global::Microsoft.Graph.Models.X509CertificateIssuerHintsConfiguration>(global::Microsoft.Graph.Models.X509CertificateIssuerHintsConfiguration.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -116,9 +150,11 @@ namespace Microsoft.Graph.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.X509CertificateAuthenticationModeConfiguration>("authenticationModeConfiguration", AuthenticationModeConfiguration);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.X509CertificateAuthorityScope>("certificateAuthorityScopes", CertificateAuthorityScopes);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.X509CertificateUserBinding>("certificateUserBindings", CertificateUserBindings);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.X509CertificateCRLValidationConfiguration>("crlValidationConfiguration", CrlValidationConfiguration);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AuthenticationMethodTarget>("includeTargets", IncludeTargets);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.X509CertificateIssuerHintsConfiguration>("issuerHintsConfiguration", IssuerHintsConfiguration);
         }
     }
 }

@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Models
     public partial class ExchangeAdmin : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The mailboxes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.Mailbox>? Mailboxes
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Mailbox>?>("mailboxes"); }
+            set { BackingStore?.Set("mailboxes", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.Mailbox> Mailboxes
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Mailbox>>("mailboxes"); }
+            set { BackingStore?.Set("mailboxes", value); }
+        }
+#endif
         /// <summary>Represents a container for administrative resources to trace messages.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,6 +62,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "mailboxes", n => { Mailboxes = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Mailbox>(global::Microsoft.Graph.Models.Mailbox.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "tracing", n => { Tracing = n.GetObjectValue<global::Microsoft.Graph.Models.MessageTracingRoot>(global::Microsoft.Graph.Models.MessageTracingRoot.CreateFromDiscriminatorValue); } },
             };
         }
@@ -57,6 +74,7 @@ namespace Microsoft.Graph.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Mailbox>("mailboxes", Mailboxes);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.MessageTracingRoot>("tracing", Tracing);
         }
     }

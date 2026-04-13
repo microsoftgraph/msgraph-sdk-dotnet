@@ -82,7 +82,8 @@ namespace Microsoft.Graph.TenantRelationships.MultiTenantOrganization.Tenants.It
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.MultiTenantOrganizationMember>(requestInfo, global::Microsoft.Graph.Models.MultiTenantOrganizationMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property tenants in tenantRelationships
+        /// Update the properties of a tenant in a multitenant organization. Only owner tenants can call this API.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/multitenantorganizationmember-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.MultiTenantOrganizationMember"/></returns>
         /// <param name="body">The request body</param>
@@ -145,7 +146,7 @@ namespace Microsoft.Graph.TenantRelationships.MultiTenantOrganization.Tenants.It
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property tenants in tenantRelationships
+        /// Update the properties of a tenant in a multitenant organization. Only owner tenants can call this API.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

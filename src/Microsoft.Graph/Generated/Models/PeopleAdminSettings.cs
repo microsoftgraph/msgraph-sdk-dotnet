@@ -44,6 +44,38 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("profileCardProperties", value); }
         }
 #endif
+        /// <summary>A collection of profile property configuration settings defined by an administrator for an organization.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.ProfilePropertySetting>? ProfilePropertySettings
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.ProfilePropertySetting>?>("profilePropertySettings"); }
+            set { BackingStore?.Set("profilePropertySettings", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.ProfilePropertySetting> ProfilePropertySettings
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.ProfilePropertySetting>>("profilePropertySettings"); }
+            set { BackingStore?.Set("profilePropertySettings", value); }
+        }
+#endif
+        /// <summary>A collection of profile source settings configured by an administrator in an organization.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.ProfileSource>? ProfileSources
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.ProfileSource>?>("profileSources"); }
+            set { BackingStore?.Set("profileSources", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.ProfileSource> ProfileSources
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.ProfileSource>>("profileSources"); }
+            set { BackingStore?.Set("profileSources", value); }
+        }
+#endif
         /// <summary>Represents administrator settings that manage the support of pronouns in an organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,6 +112,8 @@ namespace Microsoft.Graph.Models
             {
                 { "itemInsights", n => { ItemInsights = n.GetObjectValue<global::Microsoft.Graph.Models.InsightsSettings>(global::Microsoft.Graph.Models.InsightsSettings.CreateFromDiscriminatorValue); } },
                 { "profileCardProperties", n => { ProfileCardProperties = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ProfileCardProperty>(global::Microsoft.Graph.Models.ProfileCardProperty.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "profilePropertySettings", n => { ProfilePropertySettings = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ProfilePropertySetting>(global::Microsoft.Graph.Models.ProfilePropertySetting.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "profileSources", n => { ProfileSources = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ProfileSource>(global::Microsoft.Graph.Models.ProfileSource.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "pronouns", n => { Pronouns = n.GetObjectValue<global::Microsoft.Graph.Models.PronounsSettings>(global::Microsoft.Graph.Models.PronounsSettings.CreateFromDiscriminatorValue); } },
             };
         }
@@ -93,6 +127,8 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.InsightsSettings>("itemInsights", ItemInsights);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ProfileCardProperty>("profileCardProperties", ProfileCardProperties);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ProfilePropertySetting>("profilePropertySettings", ProfilePropertySettings);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ProfileSource>("profileSources", ProfileSources);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.PronounsSettings>("pronouns", Pronouns);
         }
     }
