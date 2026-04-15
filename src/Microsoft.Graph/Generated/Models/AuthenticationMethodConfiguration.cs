@@ -49,6 +49,7 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.externalAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Models.ExternalAuthenticationMethodConfiguration(),
                 "#microsoft.graph.fido2AuthenticationMethodConfiguration" => new global::Microsoft.Graph.Models.Fido2AuthenticationMethodConfiguration(),
                 "#microsoft.graph.microsoftAuthenticatorAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Models.MicrosoftAuthenticatorAuthenticationMethodConfiguration(),
+                "#microsoft.graph.qrCodePinAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Models.QrCodePinAuthenticationMethodConfiguration(),
                 "#microsoft.graph.smsAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Models.SmsAuthenticationMethodConfiguration(),
                 "#microsoft.graph.softwareOathAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Models.SoftwareOathAuthenticationMethodConfiguration(),
                 "#microsoft.graph.temporaryAccessPassAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Models.TemporaryAccessPassAuthenticationMethodConfiguration(),

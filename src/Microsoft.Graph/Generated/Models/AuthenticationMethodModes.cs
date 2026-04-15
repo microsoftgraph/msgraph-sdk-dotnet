@@ -77,5 +77,9 @@ namespace Microsoft.Graph.Models
         #pragma warning disable CS1591
         UnknownFutureValue = 65536,
         #pragma warning restore CS1591
+        [EnumMember(Value = "qrCodePin")]
+        #pragma warning disable CS1591
+        QrCodePin = 131072,
+        #pragma warning restore CS1591
     }
 }

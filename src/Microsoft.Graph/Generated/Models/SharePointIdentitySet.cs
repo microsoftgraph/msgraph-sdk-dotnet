@@ -28,6 +28,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("group", value); }
         }
 #endif
+        /// <summary>The sharePointGroup property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.SharePointGroupIdentity? SharePointGroup
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.SharePointGroupIdentity?>("sharePointGroup"); }
+            set { BackingStore?.Set("sharePointGroup", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.SharePointGroupIdentity SharePointGroup
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.SharePointGroupIdentity>("sharePointGroup"); }
+            set { BackingStore?.Set("sharePointGroup", value); }
+        }
+#endif
         /// <summary>The SharePoint group associated with this action. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -86,6 +102,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "group", n => { Group = n.GetObjectValue<global::Microsoft.Graph.Models.Identity>(global::Microsoft.Graph.Models.Identity.CreateFromDiscriminatorValue); } },
+                { "sharePointGroup", n => { SharePointGroup = n.GetObjectValue<global::Microsoft.Graph.Models.SharePointGroupIdentity>(global::Microsoft.Graph.Models.SharePointGroupIdentity.CreateFromDiscriminatorValue); } },
                 { "siteGroup", n => { SiteGroup = n.GetObjectValue<global::Microsoft.Graph.Models.SharePointIdentity>(global::Microsoft.Graph.Models.SharePointIdentity.CreateFromDiscriminatorValue); } },
                 { "siteUser", n => { SiteUser = n.GetObjectValue<global::Microsoft.Graph.Models.SharePointIdentity>(global::Microsoft.Graph.Models.SharePointIdentity.CreateFromDiscriminatorValue); } },
             };
@@ -99,6 +116,7 @@ namespace Microsoft.Graph.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Identity>("group", Group);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.SharePointGroupIdentity>("sharePointGroup", SharePointGroup);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.SharePointIdentity>("siteGroup", SiteGroup);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.SharePointIdentity>("siteUser", SiteUser);
         }

@@ -24,6 +24,22 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("contributionToContentDiscoveryDisabled"); }
             set { BackingStore?.Set("contributionToContentDiscoveryDisabled", value); }
         }
+        /// <summary>The exchange property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.ExchangeSettings? Exchange
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ExchangeSettings?>("exchange"); }
+            set { BackingStore?.Set("exchange", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.ExchangeSettings Exchange
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ExchangeSettings>("exchange"); }
+            set { BackingStore?.Set("exchange", value); }
+        }
+#endif
         /// <summary>The user&apos;s settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites. Get userInsightsSettings through this navigation property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,6 +140,7 @@ namespace Microsoft.Graph.Models
             {
                 { "contributionToContentDiscoveryAsOrganizationDisabled", n => { ContributionToContentDiscoveryAsOrganizationDisabled = n.GetBoolValue(); } },
                 { "contributionToContentDiscoveryDisabled", n => { ContributionToContentDiscoveryDisabled = n.GetBoolValue(); } },
+                { "exchange", n => { Exchange = n.GetObjectValue<global::Microsoft.Graph.Models.ExchangeSettings>(global::Microsoft.Graph.Models.ExchangeSettings.CreateFromDiscriminatorValue); } },
                 { "itemInsights", n => { ItemInsights = n.GetObjectValue<global::Microsoft.Graph.Models.UserInsightsSettings>(global::Microsoft.Graph.Models.UserInsightsSettings.CreateFromDiscriminatorValue); } },
                 { "shiftPreferences", n => { ShiftPreferences = n.GetObjectValue<global::Microsoft.Graph.Models.ShiftPreferences>(global::Microsoft.Graph.Models.ShiftPreferences.CreateFromDiscriminatorValue); } },
                 { "storage", n => { Storage = n.GetObjectValue<global::Microsoft.Graph.Models.UserStorage>(global::Microsoft.Graph.Models.UserStorage.CreateFromDiscriminatorValue); } },
@@ -141,6 +158,7 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteBoolValue("contributionToContentDiscoveryAsOrganizationDisabled", ContributionToContentDiscoveryAsOrganizationDisabled);
             writer.WriteBoolValue("contributionToContentDiscoveryDisabled", ContributionToContentDiscoveryDisabled);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.ExchangeSettings>("exchange", Exchange);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.UserInsightsSettings>("itemInsights", ItemInsights);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ShiftPreferences>("shiftPreferences", ShiftPreferences);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.UserStorage>("storage", Storage);

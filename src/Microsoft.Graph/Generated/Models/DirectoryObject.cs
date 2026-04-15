@@ -31,6 +31,10 @@ namespace Microsoft.Graph.Models
             {
                 "#microsoft.graph.activityBasedTimeoutPolicy" => new global::Microsoft.Graph.Models.ActivityBasedTimeoutPolicy(),
                 "#microsoft.graph.administrativeUnit" => new global::Microsoft.Graph.Models.AdministrativeUnit(),
+                "#microsoft.graph.agentIdentity" => new global::Microsoft.Graph.Models.AgentIdentity(),
+                "#microsoft.graph.agentIdentityBlueprint" => new global::Microsoft.Graph.Models.AgentIdentityBlueprint(),
+                "#microsoft.graph.agentIdentityBlueprintPrincipal" => new global::Microsoft.Graph.Models.AgentIdentityBlueprintPrincipal(),
+                "#microsoft.graph.agentUser" => new global::Microsoft.Graph.Models.AgentUser(),
                 "#microsoft.graph.application" => new global::Microsoft.Graph.Models.Application(),
                 "#microsoft.graph.appManagementPolicy" => new global::Microsoft.Graph.Models.AppManagementPolicy(),
                 "#microsoft.graph.appRoleAssignment" => new global::Microsoft.Graph.Models.AppRoleAssignment(),
@@ -50,6 +54,7 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.groupSettingTemplate" => new global::Microsoft.Graph.Models.GroupSettingTemplate(),
                 "#microsoft.graph.homeRealmDiscoveryPolicy" => new global::Microsoft.Graph.Models.HomeRealmDiscoveryPolicy(),
                 "#microsoft.graph.identitySecurityDefaultsEnforcementPolicy" => new global::Microsoft.Graph.Models.IdentitySecurityDefaultsEnforcementPolicy(),
+                "#microsoft.graph.mailbox" => new global::Microsoft.Graph.Models.Mailbox(),
                 "#microsoft.graph.multiTenantOrganizationMember" => new global::Microsoft.Graph.Models.MultiTenantOrganizationMember(),
                 "#microsoft.graph.organization" => new global::Microsoft.Graph.Models.Organization(),
                 "#microsoft.graph.orgContact" => new global::Microsoft.Graph.Models.OrgContact(),

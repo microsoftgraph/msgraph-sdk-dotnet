@@ -111,6 +111,7 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.onAttributeCollectionStartCustomExtension" => new global::Microsoft.Graph.Models.OnAttributeCollectionStartCustomExtension(),
                 "#microsoft.graph.onAttributeCollectionSubmitCustomExtension" => new global::Microsoft.Graph.Models.OnAttributeCollectionSubmitCustomExtension(),
                 "#microsoft.graph.onOtpSendCustomExtension" => new global::Microsoft.Graph.Models.OnOtpSendCustomExtension(),
+                "#microsoft.graph.onPasswordSubmitCustomExtension" => new global::Microsoft.Graph.Models.OnPasswordSubmitCustomExtension(),
                 "#microsoft.graph.onTokenIssuanceStartCustomExtension" => new global::Microsoft.Graph.Models.OnTokenIssuanceStartCustomExtension(),
                 _ => new global::Microsoft.Graph.Models.CustomCalloutExtension(),
             };

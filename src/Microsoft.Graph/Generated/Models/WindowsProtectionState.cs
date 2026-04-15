@@ -29,6 +29,12 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("antiMalwareVersion", value); }
         }
 #endif
+        /// <summary>When TRUE indicates the Windows Defender controlled configuration feature is enabled, when FALSE indicates the Windows Defender controlled configuration feature is not enabled. Defaults to setting on client device.</summary>
+        public bool? ControlledConfigurationEnabled
+        {
+            get { return BackingStore?.Get<bool?>("controlledConfigurationEnabled"); }
+            set { BackingStore?.Set("controlledConfigurationEnabled", value); }
+        }
         /// <summary>Device malware list</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -218,6 +224,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "antiMalwareVersion", n => { AntiMalwareVersion = n.GetStringValue(); } },
+                { "controlledConfigurationEnabled", n => { ControlledConfigurationEnabled = n.GetBoolValue(); } },
                 { "detectedMalwareState", n => { DetectedMalwareState = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.WindowsDeviceMalwareState>(global::Microsoft.Graph.Models.WindowsDeviceMalwareState.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "deviceState", n => { DeviceState = n.GetEnumValue<global::Microsoft.Graph.Models.WindowsDeviceHealthState>(); } },
                 { "engineVersion", n => { EngineVersion = n.GetStringValue(); } },
@@ -249,6 +256,7 @@ namespace Microsoft.Graph.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("antiMalwareVersion", AntiMalwareVersion);
+            writer.WriteBoolValue("controlledConfigurationEnabled", ControlledConfigurationEnabled);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.WindowsDeviceMalwareState>("detectedMalwareState", DetectedMalwareState);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.WindowsDeviceHealthState>("deviceState", DeviceState);
             writer.WriteStringValue("engineVersion", EngineVersion);

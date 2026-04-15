@@ -36,6 +36,7 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.passwordAuthenticationMethod" => new global::Microsoft.Graph.Models.PasswordAuthenticationMethod(),
                 "#microsoft.graph.phoneAuthenticationMethod" => new global::Microsoft.Graph.Models.PhoneAuthenticationMethod(),
                 "#microsoft.graph.platformCredentialAuthenticationMethod" => new global::Microsoft.Graph.Models.PlatformCredentialAuthenticationMethod(),
+                "#microsoft.graph.qrCodePinAuthenticationMethod" => new global::Microsoft.Graph.Models.QrCodePinAuthenticationMethod(),
                 "#microsoft.graph.softwareOathAuthenticationMethod" => new global::Microsoft.Graph.Models.SoftwareOathAuthenticationMethod(),
                 "#microsoft.graph.temporaryAccessPassAuthenticationMethod" => new global::Microsoft.Graph.Models.TemporaryAccessPassAuthenticationMethod(),
                 "#microsoft.graph.windowsHelloForBusinessAuthenticationMethod" => new global::Microsoft.Graph.Models.WindowsHelloForBusinessAuthenticationMethod(),

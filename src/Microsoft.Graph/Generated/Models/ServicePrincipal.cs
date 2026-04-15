@@ -206,6 +206,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("claimsMappingPolicies", value); }
         }
 #endif
+        /// <summary>The appId of the application that created this service principal. Set internally by Microsoft Entra ID. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatedByAppId
+        {
+            get { return BackingStore?.Get<string?>("createdByAppId"); }
+            set { BackingStore?.Set("createdByAppId", value); }
+        }
+#nullable restore
+#else
+        public string CreatedByAppId
+        {
+            get { return BackingStore?.Get<string>("createdByAppId"); }
+            set { BackingStore?.Set("createdByAppId", value); }
+        }
+#endif
         /// <summary>Directory objects created by this service principal. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -382,6 +398,12 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("info", value); }
         }
 #endif
+        /// <summary>The isDisabled property</summary>
+        public bool? IsDisabled
+        {
+            get { return BackingStore?.Get<bool?>("isDisabled"); }
+            set { BackingStore?.Set("isDisabled", value); }
+        }
         /// <summary>The collection of key credentials associated with the service principal. Not nullable. Supports $filter (eq, not, ge, le).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -819,7 +841,13 @@ namespace Microsoft.Graph.Models
         public static new global::Microsoft.Graph.Models.ServicePrincipal CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Models.ServicePrincipal();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "#microsoft.graph.agentIdentity" => new global::Microsoft.Graph.Models.AgentIdentity(),
+                "#microsoft.graph.agentIdentityBlueprintPrincipal" => new global::Microsoft.Graph.Models.AgentIdentityBlueprintPrincipal(),
+                _ => new global::Microsoft.Graph.Models.ServicePrincipal(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -843,6 +871,7 @@ namespace Microsoft.Graph.Models
                 { "appRoles", n => { AppRoles = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AppRole>(global::Microsoft.Graph.Models.AppRole.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "applicationTemplateId", n => { ApplicationTemplateId = n.GetStringValue(); } },
                 { "claimsMappingPolicies", n => { ClaimsMappingPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ClaimsMappingPolicy>(global::Microsoft.Graph.Models.ClaimsMappingPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "createdByAppId", n => { CreatedByAppId = n.GetStringValue(); } },
                 { "createdObjects", n => { CreatedObjects = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DirectoryObject>(global::Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "customSecurityAttributes", n => { CustomSecurityAttributes = n.GetObjectValue<global::Microsoft.Graph.Models.CustomSecurityAttributeValue>(global::Microsoft.Graph.Models.CustomSecurityAttributeValue.CreateFromDiscriminatorValue); } },
                 { "delegatedPermissionClassifications", n => { DelegatedPermissionClassifications = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DelegatedPermissionClassification>(global::Microsoft.Graph.Models.DelegatedPermissionClassification.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -854,6 +883,7 @@ namespace Microsoft.Graph.Models
                 { "homeRealmDiscoveryPolicies", n => { HomeRealmDiscoveryPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.HomeRealmDiscoveryPolicy>(global::Microsoft.Graph.Models.HomeRealmDiscoveryPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "homepage", n => { Homepage = n.GetStringValue(); } },
                 { "info", n => { Info = n.GetObjectValue<global::Microsoft.Graph.Models.InformationalUrl>(global::Microsoft.Graph.Models.InformationalUrl.CreateFromDiscriminatorValue); } },
+                { "isDisabled", n => { IsDisabled = n.GetBoolValue(); } },
                 { "keyCredentials", n => { KeyCredentials = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.KeyCredential>(global::Microsoft.Graph.Models.KeyCredential.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "loginUrl", n => { LoginUrl = n.GetStringValue(); } },
                 { "logoutUrl", n => { LogoutUrl = n.GetStringValue(); } },
@@ -905,6 +935,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AppRoleAssignment>("appRoleAssignments", AppRoleAssignments);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AppRole>("appRoles", AppRoles);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ClaimsMappingPolicy>("claimsMappingPolicies", ClaimsMappingPolicies);
+            writer.WriteStringValue("createdByAppId", CreatedByAppId);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DirectoryObject>("createdObjects", CreatedObjects);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.CustomSecurityAttributeValue>("customSecurityAttributes", CustomSecurityAttributes);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DelegatedPermissionClassification>("delegatedPermissionClassifications", DelegatedPermissionClassifications);
@@ -916,6 +947,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("homepage", Homepage);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.HomeRealmDiscoveryPolicy>("homeRealmDiscoveryPolicies", HomeRealmDiscoveryPolicies);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.InformationalUrl>("info", Info);
+            writer.WriteBoolValue("isDisabled", IsDisabled);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.KeyCredential>("keyCredentials", KeyCredentials);
             writer.WriteStringValue("loginUrl", LoginUrl);
             writer.WriteStringValue("logoutUrl", LogoutUrl);

@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Columns.Ite
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get columns from storage
+        /// The set of custom structured metadata supported by the fileStorageContainer. Read-write.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ColumnDefinition"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Columns.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Get columns from storage
+        /// The set of custom structured metadata supported by the fileStorageContainer. Read-write.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -188,7 +188,7 @@ namespace Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Columns.Ite
         {
         }
         /// <summary>
-        /// Get columns from storage
+        /// The set of custom structured metadata supported by the fileStorageContainer. Read-write.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ColumnDefinitionItemRequestBuilderGetQueryParameters 

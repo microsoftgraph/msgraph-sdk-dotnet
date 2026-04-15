@@ -4,12 +4,14 @@ using Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.AllMembers;
 using Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.Archive;
 using Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.CompleteMigration;
 using Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName;
+using Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.EnabledApps;
 using Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.FilesFolder;
 using Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.Members;
 using Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.Messages;
 using Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.ProvisionEmail;
 using Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.RemoveEmail;
 using Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.SharedWithTeams;
+using Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.StartMigration;
 using Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.Tabs;
 using Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.Unarchive;
 using Microsoft.Graph.Models.ODataErrors;
@@ -50,6 +52,11 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel
         {
             get => new global::Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the enabledApps property of the microsoft.graph.channel entity.</summary>
+        public global::Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.EnabledApps.EnabledAppsRequestBuilder EnabledApps
+        {
+            get => new global::Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.EnabledApps.EnabledAppsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the filesFolder property of the microsoft.graph.channel entity.</summary>
         public global::Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.FilesFolder.FilesFolderRequestBuilder FilesFolder
         {
@@ -79,6 +86,11 @@ namespace Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel
         public global::Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.SharedWithTeams.SharedWithTeamsRequestBuilder SharedWithTeams
         {
             get => new global::Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.SharedWithTeams.SharedWithTeamsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the startMigration method.</summary>
+        public global::Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.StartMigration.StartMigrationRequestBuilder StartMigration
+        {
+            get => new global::Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.StartMigration.StartMigrationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tabs property of the microsoft.graph.channel entity.</summary>
         public global::Microsoft.Graph.Me.JoinedTeams.Item.PrimaryChannel.Tabs.TabsRequestBuilder Tabs

@@ -37,6 +37,7 @@ namespace Microsoft.Graph.Admin.Exchange.Tracing.MessageTraces.Item.GetDetailsBy
         }
         /// <summary>
         /// Get a list of exchangeMessageTraceDetail objects filtered on the recipient.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/exchangemessagetrace-getdetailsbyrecipient?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Admin.Exchange.Tracing.MessageTraces.Item.GetDetailsByRecipientWithRecipientAddress.GetDetailsByRecipientWithRecipientAddressGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -60,6 +61,7 @@ namespace Microsoft.Graph.Admin.Exchange.Tracing.MessageTraces.Item.GetDetailsBy
         }
         /// <summary>
         /// Get a list of exchangeMessageTraceDetail objects filtered on the recipient.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/exchangemessagetrace-getdetailsbyrecipient?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Admin.Exchange.Tracing.MessageTraces.Item.GetDetailsByRecipientWithRecipientAddress.GetDetailsByRecipientWithRecipientAddressResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

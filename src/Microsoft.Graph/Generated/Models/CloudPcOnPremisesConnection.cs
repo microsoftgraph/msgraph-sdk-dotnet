@@ -98,6 +98,12 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>The healthCheckPaused property</summary>
+        public bool? HealthCheckPaused
+        {
+            get { return BackingStore?.Get<bool?>("healthCheckPaused"); }
+            set { BackingStore?.Set("healthCheckPaused", value); }
+        }
         /// <summary>The healthCheckStatus property</summary>
         public global::Microsoft.Graph.Models.CloudPcOnPremisesConnectionStatus? HealthCheckStatus
         {
@@ -125,6 +131,12 @@ namespace Microsoft.Graph.Models
         {
             get { return BackingStore?.Get<bool?>("inUse"); }
             set { BackingStore?.Set("inUse", value); }
+        }
+        /// <summary>The inUseByCloudPc property</summary>
+        public bool? InUseByCloudPc
+        {
+            get { return BackingStore?.Get<bool?>("inUseByCloudPc"); }
+            set { BackingStore?.Set("inUseByCloudPc", value); }
         }
         /// <summary>The organizational unit (OU) in which the computer account is created. If left null, the OU configured as the default (a well-known computer object container) in the tenant&apos;s Active Directory domain (OU) is used. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -156,6 +168,22 @@ namespace Microsoft.Graph.Models
         {
             get { return BackingStore?.Get<string>("resourceGroupId"); }
             set { BackingStore?.Set("resourceGroupId", value); }
+        }
+#endif
+        /// <summary>The scopeIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ScopeIds
+        {
+            get { return BackingStore?.Get<List<string>?>("scopeIds"); }
+            set { BackingStore?.Set("scopeIds", value); }
+        }
+#nullable restore
+#else
+        public List<string> ScopeIds
+        {
+            get { return BackingStore?.Get<List<string>>("scopeIds"); }
+            set { BackingStore?.Set("scopeIds", value); }
         }
 #endif
         /// <summary>The unique identifier of the target subnet used associated with the on-premises network connectivity for Cloud PCs. Required format: &apos;/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}&apos;</summary>
@@ -262,11 +290,14 @@ namespace Microsoft.Graph.Models
                 { "alternateResourceUrl", n => { AlternateResourceUrl = n.GetStringValue(); } },
                 { "connectionType", n => { ConnectionType = n.GetEnumValue<global::Microsoft.Graph.Models.CloudPcOnPremisesConnectionType>(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "healthCheckPaused", n => { HealthCheckPaused = n.GetBoolValue(); } },
                 { "healthCheckStatus", n => { HealthCheckStatus = n.GetEnumValue<global::Microsoft.Graph.Models.CloudPcOnPremisesConnectionStatus>(); } },
                 { "healthCheckStatusDetail", n => { HealthCheckStatusDetail = n.GetObjectValue<global::Microsoft.Graph.Models.CloudPcOnPremisesConnectionStatusDetail>(global::Microsoft.Graph.Models.CloudPcOnPremisesConnectionStatusDetail.CreateFromDiscriminatorValue); } },
                 { "inUse", n => { InUse = n.GetBoolValue(); } },
+                { "inUseByCloudPc", n => { InUseByCloudPc = n.GetBoolValue(); } },
                 { "organizationalUnit", n => { OrganizationalUnit = n.GetStringValue(); } },
                 { "resourceGroupId", n => { ResourceGroupId = n.GetStringValue(); } },
+                { "scopeIds", n => { ScopeIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "subnetId", n => { SubnetId = n.GetStringValue(); } },
                 { "subscriptionId", n => { SubscriptionId = n.GetStringValue(); } },
                 { "subscriptionName", n => { SubscriptionName = n.GetStringValue(); } },
@@ -288,11 +319,14 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("alternateResourceUrl", AlternateResourceUrl);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.CloudPcOnPremisesConnectionType>("connectionType", ConnectionType);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteBoolValue("healthCheckPaused", HealthCheckPaused);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.CloudPcOnPremisesConnectionStatus>("healthCheckStatus", HealthCheckStatus);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.CloudPcOnPremisesConnectionStatusDetail>("healthCheckStatusDetail", HealthCheckStatusDetail);
             writer.WriteBoolValue("inUse", InUse);
+            writer.WriteBoolValue("inUseByCloudPc", InUseByCloudPc);
             writer.WriteStringValue("organizationalUnit", OrganizationalUnit);
             writer.WriteStringValue("resourceGroupId", ResourceGroupId);
+            writer.WriteCollectionOfPrimitiveValues<string>("scopeIds", ScopeIds);
             writer.WriteStringValue("subnetId", SubnetId);
             writer.WriteStringValue("subscriptionId", SubscriptionId);
             writer.WriteStringValue("subscriptionName", SubscriptionName);

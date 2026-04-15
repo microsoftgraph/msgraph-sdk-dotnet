@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("authenticationStrength", value); }
         }
 #endif
+        /// <summary>The deletedItems property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.CaPoliciesDeletableRoot? DeletedItems
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.CaPoliciesDeletableRoot?>("deletedItems"); }
+            set { BackingStore?.Set("deletedItems", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.CaPoliciesDeletableRoot DeletedItems
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.CaPoliciesDeletableRoot>("deletedItems"); }
+            set { BackingStore?.Set("deletedItems", value); }
+        }
+#endif
         /// <summary>Read-only. Nullable. Returns a collection of the specified named locations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -112,6 +128,7 @@ namespace Microsoft.Graph.Models
             {
                 { "authenticationContextClassReferences", n => { AuthenticationContextClassReferences = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AuthenticationContextClassReference>(global::Microsoft.Graph.Models.AuthenticationContextClassReference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "authenticationStrength", n => { AuthenticationStrength = n.GetObjectValue<global::Microsoft.Graph.Models.AuthenticationStrengthRoot>(global::Microsoft.Graph.Models.AuthenticationStrengthRoot.CreateFromDiscriminatorValue); } },
+                { "deletedItems", n => { DeletedItems = n.GetObjectValue<global::Microsoft.Graph.Models.CaPoliciesDeletableRoot>(global::Microsoft.Graph.Models.CaPoliciesDeletableRoot.CreateFromDiscriminatorValue); } },
                 { "namedLocations", n => { NamedLocations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.NamedLocation>(global::Microsoft.Graph.Models.NamedLocation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "policies", n => { Policies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ConditionalAccessPolicy>(global::Microsoft.Graph.Models.ConditionalAccessPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "templates", n => { Templates = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ConditionalAccessTemplate>(global::Microsoft.Graph.Models.ConditionalAccessTemplate.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -127,6 +144,7 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AuthenticationContextClassReference>("authenticationContextClassReferences", AuthenticationContextClassReferences);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.AuthenticationStrengthRoot>("authenticationStrength", AuthenticationStrength);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.CaPoliciesDeletableRoot>("deletedItems", DeletedItems);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.NamedLocation>("namedLocations", NamedLocations);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ConditionalAccessPolicy>("policies", Policies);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ConditionalAccessTemplate>("templates", Templates);
