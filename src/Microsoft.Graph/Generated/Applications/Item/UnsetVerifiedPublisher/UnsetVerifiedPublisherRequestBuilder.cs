@@ -34,8 +34,8 @@ namespace Microsoft.Graph.Applications.Item.UnsetVerifiedPublisher
         {
         }
         /// <summary>
-        /// Unset the verifiedPublisher previously set on an application, removing all verified publisher properties. For more information, see Publisher verification.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-unsetverifiedpublisher?view=graph-rest-1.0" />
+        /// Unset the verifiedPublisher previously set on an agentIdentityBlueprint, removing all verified publisher properties. For more information, see Publisher verification.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/agentidentityblueprint-unsetverifiedpublisher?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Applications.Item.UnsetVerifiedPublisher
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Unset the verifiedPublisher previously set on an application, removing all verified publisher properties. For more information, see Publisher verification.
+        /// Unset the verifiedPublisher previously set on an agentIdentityBlueprint, removing all verified publisher properties. For more information, see Publisher verification.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

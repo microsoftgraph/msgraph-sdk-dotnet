@@ -37,6 +37,22 @@ namespace Microsoft.Graph.Models.ExternalConnectors
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>Specifies a human-readable description that explains the purpose, usage, or guidance related to the property. This property enhances semantic understanding by helping Copilot interpret queries and accurately map them to properties that results in more relevant and precise responses. Optional but we recommend that you use this property for queryable properties. The maximum supported length is 200 characters.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description
+        {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#nullable restore
+#else
+        public string Description
+        {
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#endif
         /// <summary>Specifies if the property is queryable. Queryable properties can be used in Keyword Query Language (KQL) queries. Optional.</summary>
         public bool? IsQueryable
         {
@@ -61,7 +77,7 @@ namespace Microsoft.Graph.Models.ExternalConnectors
             get { return BackingStore?.Get<bool?>("isSearchable"); }
             set { BackingStore?.Set("isSearchable", value); }
         }
-        /// <summary>Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (for example, better relevance). Optional.The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, iconUrl. Use the Prefer: include-unknown-enum-members request header to get the following members in this evolvable enum: iconUrl.</summary>
+        /// <summary>Specifies one or more well-known tags added against a property. Labels help Microsoft Search understand the semantics of the data in the connection. Adding appropriate labels would result in an enhanced search experience (for example, better relevance). Optional..The possible values are: title, url, createdBy, lastModifiedBy, authors, createdDateTime, lastModifiedDateTime, fileName, fileExtension, unknownFutureValue, containerName, containerUrl, iconUrl, assignedTo, dueDate, closedDate, closedBy, reportedBy, sprintName, severity, state, priority, secondaryId, itemParentId, parentUrl, tags, itemType, itemPath, numReactions. Use the Prefer: include-unknown-enum-members request header to retrieve additional values defined in this evolvable enum,For People Connectors you can include : personEmails, personAddresses, personAnniversaries, personName, personNote, personPhones, personCurrentPosition, personWebAccounts, personWebSite, personSkills, personProjects, personAccount, personAwards, personCertifications, personAssistants, personColleagues, personManager, personAlternateContacts, personEmergencyContacts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.ExternalConnectors.Label?>? Labels
@@ -142,6 +158,7 @@ namespace Microsoft.Graph.Models.ExternalConnectors
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "aliases", n => { Aliases = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "isQueryable", n => { IsQueryable = n.GetBoolValue(); } },
                 { "isRefinable", n => { IsRefinable = n.GetBoolValue(); } },
                 { "isRetrievable", n => { IsRetrievable = n.GetBoolValue(); } },
@@ -160,6 +177,7 @@ namespace Microsoft.Graph.Models.ExternalConnectors
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("aliases", Aliases);
+            writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("isQueryable", IsQueryable);
             writer.WriteBoolValue("isRefinable", IsRefinable);
             writer.WriteBoolValue("isRetrievable", IsRetrievable);

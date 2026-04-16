@@ -35,6 +35,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("isTrusted", value); }
         }
         /// <summary>
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Models.IpNamedLocation"/> and sets the default values.
+        /// </summary>
+        public IpNamedLocation() : base()
+        {
+            OdataType = "#microsoft.graph.ipNamedLocation";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.IpNamedLocation"/></returns>

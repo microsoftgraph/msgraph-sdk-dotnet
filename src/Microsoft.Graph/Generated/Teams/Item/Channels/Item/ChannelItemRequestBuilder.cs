@@ -6,12 +6,14 @@ using Microsoft.Graph.Teams.Item.Channels.Item.AllMembers;
 using Microsoft.Graph.Teams.Item.Channels.Item.Archive;
 using Microsoft.Graph.Teams.Item.Channels.Item.CompleteMigration;
 using Microsoft.Graph.Teams.Item.Channels.Item.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName;
+using Microsoft.Graph.Teams.Item.Channels.Item.EnabledApps;
 using Microsoft.Graph.Teams.Item.Channels.Item.FilesFolder;
 using Microsoft.Graph.Teams.Item.Channels.Item.Members;
 using Microsoft.Graph.Teams.Item.Channels.Item.Messages;
 using Microsoft.Graph.Teams.Item.Channels.Item.ProvisionEmail;
 using Microsoft.Graph.Teams.Item.Channels.Item.RemoveEmail;
 using Microsoft.Graph.Teams.Item.Channels.Item.SharedWithTeams;
+using Microsoft.Graph.Teams.Item.Channels.Item.StartMigration;
 using Microsoft.Graph.Teams.Item.Channels.Item.Tabs;
 using Microsoft.Graph.Teams.Item.Channels.Item.Unarchive;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -50,6 +52,11 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item
         {
             get => new global::Microsoft.Graph.Teams.Item.Channels.Item.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalName.DoesUserHaveAccessuserIdUserIdTenantIdTenantIdUserPrincipalNameUserPrincipalNameRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the enabledApps property of the microsoft.graph.channel entity.</summary>
+        public global::Microsoft.Graph.Teams.Item.Channels.Item.EnabledApps.EnabledAppsRequestBuilder EnabledApps
+        {
+            get => new global::Microsoft.Graph.Teams.Item.Channels.Item.EnabledApps.EnabledAppsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the filesFolder property of the microsoft.graph.channel entity.</summary>
         public global::Microsoft.Graph.Teams.Item.Channels.Item.FilesFolder.FilesFolderRequestBuilder FilesFolder
         {
@@ -79,6 +86,11 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item
         public global::Microsoft.Graph.Teams.Item.Channels.Item.SharedWithTeams.SharedWithTeamsRequestBuilder SharedWithTeams
         {
             get => new global::Microsoft.Graph.Teams.Item.Channels.Item.SharedWithTeams.SharedWithTeamsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the startMigration method.</summary>
+        public global::Microsoft.Graph.Teams.Item.Channels.Item.StartMigration.StartMigrationRequestBuilder StartMigration
+        {
+            get => new global::Microsoft.Graph.Teams.Item.Channels.Item.StartMigration.StartMigrationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tabs property of the microsoft.graph.channel entity.</summary>
         public global::Microsoft.Graph.Teams.Item.Channels.Item.Tabs.TabsRequestBuilder Tabs

@@ -25,6 +25,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("policyApplies", value); }
         }
         /// <summary>
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Models.WhatIfAnalysisResult"/> and sets the default values.
+        /// </summary>
+        public WhatIfAnalysisResult() : base()
+        {
+            OdataType = "#microsoft.graph.whatIfAnalysisResult";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.WhatIfAnalysisResult"/></returns>

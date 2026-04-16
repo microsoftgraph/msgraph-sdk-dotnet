@@ -3,6 +3,7 @@
 using Microsoft.Graph.Me.Chats.Item.Messages.Item.Replies.Count;
 using Microsoft.Graph.Me.Chats.Item.Messages.Item.Replies.Delta;
 using Microsoft.Graph.Me.Chats.Item.Messages.Item.Replies.Item;
+using Microsoft.Graph.Me.Chats.Item.Messages.Item.Replies.ReplyWithQuote;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -30,6 +31,11 @@ namespace Microsoft.Graph.Me.Chats.Item.Messages.Item.Replies
         public global::Microsoft.Graph.Me.Chats.Item.Messages.Item.Replies.Delta.DeltaRequestBuilder Delta
         {
             get => new global::Microsoft.Graph.Me.Chats.Item.Messages.Item.Replies.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the replyWithQuote method.</summary>
+        public global::Microsoft.Graph.Me.Chats.Item.Messages.Item.Replies.ReplyWithQuote.ReplyWithQuoteRequestBuilder ReplyWithQuote
+        {
+            get => new global::Microsoft.Graph.Me.Chats.Item.Messages.Item.Replies.ReplyWithQuote.ReplyWithQuoteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the replies property of the microsoft.graph.chatMessage entity.</summary>
         /// <param name="position">The unique identifier of chatMessage</param>

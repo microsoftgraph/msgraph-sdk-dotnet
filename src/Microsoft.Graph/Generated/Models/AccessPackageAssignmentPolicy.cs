@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class AccessPackageAssignmentPolicy : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Access package containing this policy. Read-only.  Supports $expand.</summary>
+        /// <summary>Access package containing this policy. Read-only. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.AccessPackage? AccessPackage
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("accessPackage", value); }
         }
 #endif
-        /// <summary>Principals that can be assigned the access package through this policy. The possible values are: notSpecified, specificDirectoryUsers, specificConnectedOrganizationUsers, specificDirectoryServicePrincipals, allMemberUsers, allDirectoryUsers, allDirectoryServicePrincipals, allConfiguredConnectedOrganizationUsers, allExternalUsers, unknownFutureValue.</summary>
+        /// <summary>Principals that can be assigned the access package through this policy. The possible values are: notSpecified, specificDirectoryUsers, specificConnectedOrganizationUsers, specificDirectoryServicePrincipals, allMemberUsers, allDirectoryUsers, allDirectoryServicePrincipals, allConfiguredConnectedOrganizationUsers, allExternalUsers, allDirectoryAgentIdentities, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.AllowedTargetScope? AllowedTargetScope
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.AllowedTargetScope?>("allowedTargetScope"); }

@@ -12,6 +12,7 @@ using Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions;
 using Microsoft.Graph.Storage.FileStorage.Containers.Item.ProvisionMigrationContainers;
 using Microsoft.Graph.Storage.FileStorage.Containers.Item.RecycleBin;
 using Microsoft.Graph.Storage.FileStorage.Containers.Item.Restore;
+using Microsoft.Graph.Storage.FileStorage.Containers.Item.SharePointGroups;
 using Microsoft.Graph.Storage.FileStorage.Containers.Item.Unlock;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -78,6 +79,11 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item
         public global::Microsoft.Graph.Storage.FileStorage.Containers.Item.Restore.RestoreRequestBuilder Restore
         {
             get => new global::Microsoft.Graph.Storage.FileStorage.Containers.Item.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the sharePointGroups property of the microsoft.graph.fileStorageContainer entity.</summary>
+        public global::Microsoft.Graph.Storage.FileStorage.Containers.Item.SharePointGroups.SharePointGroupsRequestBuilder SharePointGroups
+        {
+            get => new global::Microsoft.Graph.Storage.FileStorage.Containers.Item.SharePointGroups.SharePointGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unlock method.</summary>
         public global::Microsoft.Graph.Storage.FileStorage.Containers.Item.Unlock.UnlockRequestBuilder Unlock

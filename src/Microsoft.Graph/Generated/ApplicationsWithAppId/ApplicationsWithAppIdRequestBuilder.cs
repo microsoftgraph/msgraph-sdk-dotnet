@@ -37,7 +37,7 @@ namespace Microsoft.Graph.ApplicationsWithAppId
         {
         }
         /// <summary>
-        /// Delete an application object. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted.
+        /// Delete an application object. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This API can also delete an agentIdentityBlueprint object by its ID.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.ApplicationsWithAppId
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the properties and relationships of an application object.
+        /// Get the properties and relationships of an application object. This API can be used to get agentIdentityBlueprint objects as well by their ID.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Application"/></returns>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.ApplicationsWithAppId
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Application>(requestInfo, global::Microsoft.Graph.Models.Application.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new application object if it doesn&apos;t exist, or update the properties of an existing application object.
+        /// Create a new application object if it doesn&apos;t exist, or update the properties of an existing application object. This API can also create an agentIdentityBlueprint object if it doesn&apos;t exist, or update properties of an existing agentIdentityBlueprint, when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprint.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/application-upsert?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Application"/></returns>
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.ApplicationsWithAppId
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Application>(requestInfo, global::Microsoft.Graph.Models.Application.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an application object. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted.
+        /// Delete an application object. When deleted, apps are moved to a temporary container and can be restored within 30 days. After that time, they are permanently deleted. This API can also delete an agentIdentityBlueprint object by its ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -129,7 +129,7 @@ namespace Microsoft.Graph.ApplicationsWithAppId
             return requestInfo;
         }
         /// <summary>
-        /// Get the properties and relationships of an application object.
+        /// Get the properties and relationships of an application object. This API can be used to get agentIdentityBlueprint objects as well by their ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -148,7 +148,7 @@ namespace Microsoft.Graph.ApplicationsWithAppId
             return requestInfo;
         }
         /// <summary>
-        /// Create a new application object if it doesn&apos;t exist, or update the properties of an existing application object.
+        /// Create a new application object if it doesn&apos;t exist, or update the properties of an existing application object. This API can also create an agentIdentityBlueprint object if it doesn&apos;t exist, or update properties of an existing agentIdentityBlueprint, when the @odata.type property is set to #microsoft.graph.agentIdentityBlueprint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -187,7 +187,7 @@ namespace Microsoft.Graph.ApplicationsWithAppId
         {
         }
         /// <summary>
-        /// Get the properties and relationships of an application object.
+        /// Get the properties and relationships of an application object. This API can be used to get agentIdentityBlueprint objects as well by their ID.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ApplicationsWithAppIdRequestBuilderGetQueryParameters 
