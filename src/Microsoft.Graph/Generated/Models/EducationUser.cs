@@ -366,7 +366,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("provisionedPlans", value); }
         }
 #endif
-        /// <summary>Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by requesting the authorized endpoint. Returned only on $select. Read-only.</summary>
+        /// <summary>Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application needs to acquire a new refresh token by requesting the authorized endpoint. Requires $select to retrieve. Read-only.</summary>
         public DateTimeOffset? RefreshTokensValidFromDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("refreshTokensValidFromDateTime"); }

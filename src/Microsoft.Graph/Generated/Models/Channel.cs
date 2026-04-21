@@ -126,6 +126,12 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("isFavoriteByDefault"); }
             set { BackingStore?.Set("isFavoriteByDefault", value); }
         }
+        /// <summary>The layout type of the channel. It can be set during creation and updated later. The possible values are: post, chat, unknownFutureValue. The default value is post. Channels with the post layout use a traditional post‑reply conversation format, and channels with the chat layout provide a chat‑like threading experience similar to group chats.</summary>
+        public global::Microsoft.Graph.Models.ChannelLayoutType? LayoutType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ChannelLayoutType?>("layoutType"); }
+            set { BackingStore?.Set("layoutType", value); }
+        }
         /// <summary>A collection of membership records associated with the channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -283,6 +289,7 @@ namespace Microsoft.Graph.Models
                 { "filesFolder", n => { FilesFolder = n.GetObjectValue<global::Microsoft.Graph.Models.DriveItem>(global::Microsoft.Graph.Models.DriveItem.CreateFromDiscriminatorValue); } },
                 { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
                 { "isFavoriteByDefault", n => { IsFavoriteByDefault = n.GetBoolValue(); } },
+                { "layoutType", n => { LayoutType = n.GetEnumValue<global::Microsoft.Graph.Models.ChannelLayoutType>(); } },
                 { "members", n => { Members = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ConversationMember>(global::Microsoft.Graph.Models.ConversationMember.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "membershipType", n => { MembershipType = n.GetEnumValue<global::Microsoft.Graph.Models.ChannelMembershipType>(); } },
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ChatMessage>(global::Microsoft.Graph.Models.ChatMessage.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -312,6 +319,7 @@ namespace Microsoft.Graph.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Models.DriveItem>("filesFolder", FilesFolder);
             writer.WriteBoolValue("isArchived", IsArchived);
             writer.WriteBoolValue("isFavoriteByDefault", IsFavoriteByDefault);
+            writer.WriteEnumValue<global::Microsoft.Graph.Models.ChannelLayoutType>("layoutType", LayoutType);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ConversationMember>("members", Members);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.ChannelMembershipType>("membershipType", MembershipType);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ChatMessage>("messages", Messages);

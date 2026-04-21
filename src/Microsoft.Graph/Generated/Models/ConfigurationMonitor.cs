@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The reason for the monitor&apos;s inactivation. Returned only on $select.</summary>
+        /// <summary>The reason for the monitor&apos;s inactivation. Requires $select to retrieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InactivationReason
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<int?>("monitorRunFrequencyInHours"); }
             set { BackingStore?.Set("monitorRunFrequencyInHours", value); }
         }
-        /// <summary>Key-value pairs that contain parameter values which might be used in the baseline. Returned only on $select.</summary>
+        /// <summary>Key-value pairs that contain parameter values which might be used in the baseline. Requires $select to retrieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.OpenComplexDictionaryType? Parameters

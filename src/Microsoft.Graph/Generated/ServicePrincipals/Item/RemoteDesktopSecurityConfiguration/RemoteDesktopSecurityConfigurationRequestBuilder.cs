@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfiguration.ApprovedClientApps;
 using Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfiguration.TargetDeviceGroups;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -19,6 +20,11 @@ namespace Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfigurat
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RemoteDesktopSecurityConfigurationRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to manage the approvedClientApps property of the microsoft.graph.remoteDesktopSecurityConfiguration entity.</summary>
+        public global::Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfiguration.ApprovedClientApps.ApprovedClientAppsRequestBuilder ApprovedClientApps
+        {
+            get => new global::Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfiguration.ApprovedClientApps.ApprovedClientAppsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the targetDeviceGroups property of the microsoft.graph.remoteDesktopSecurityConfiguration entity.</summary>
         public global::Microsoft.Graph.ServicePrincipals.Item.RemoteDesktopSecurityConfiguration.TargetDeviceGroups.TargetDeviceGroupsRequestBuilder TargetDeviceGroups
         {

@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The cost center associated with the user. Returned only on $select. Supports $filter.</summary>
+        /// <summary>The cost center associated with the user. Requires $select to retrieve. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CostCenter
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("costCenter", value); }
         }
 #endif
-        /// <summary>The name of the division in which the user works. Returned only on $select. Supports $filter.</summary>
+        /// <summary>The name of the division in which the user works. Requires $select to retrieve. Supports $filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Division

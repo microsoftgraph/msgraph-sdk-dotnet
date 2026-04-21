@@ -35,7 +35,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.L
         {
         }
         /// <summary>
-        /// Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. Returned only on $select.
+        /// Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. Requires $select to retrieve.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.MailboxSettings"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.L
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.MailboxSettings>(requestInfo, global::Microsoft.Graph.Models.MailboxSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. Returned only on $select.
+        /// Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. Requires $select to retrieve.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.L
             return new global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.LastModifiedBy.MailboxSettings.MailboxSettingsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. Returned only on $select.
+        /// Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. Requires $select to retrieve.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MailboxSettingsRequestBuilderGetQueryParameters 

@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class ConversationThread : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The Cc: recipients for the thread. Returned only on $select.</summary>
+        /// <summary>The Cc: recipients for the thread. Requires $select to retrieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.Recipient>? CcRecipients
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("topic", value); }
         }
 #endif
-        /// <summary>The To: recipients for the thread. Returned only on $select.</summary>
+        /// <summary>The To: recipients for the thread. Requires $select to retrieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.Recipient>? ToRecipients

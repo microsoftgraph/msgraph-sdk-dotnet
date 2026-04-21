@@ -43,6 +43,22 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("isAdminConfigurable"); }
             set { BackingStore?.Set("isAdminConfigurable", value); }
         }
+        /// <summary>The localAdmins property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.LocalAdminSettings? LocalAdmins
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.LocalAdminSettings?>("localAdmins"); }
+            set { BackingStore?.Set("localAdmins", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.LocalAdminSettings LocalAdmins
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.LocalAdminSettings>("localAdmins"); }
+            set { BackingStore?.Set("localAdmins", value); }
+        }
+#endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,6 +103,7 @@ namespace Microsoft.Graph.Models
             {
                 { "allowedToJoin", n => { AllowedToJoin = n.GetObjectValue<global::Microsoft.Graph.Models.DeviceRegistrationMembership>(global::Microsoft.Graph.Models.DeviceRegistrationMembership.CreateFromDiscriminatorValue); } },
                 { "isAdminConfigurable", n => { IsAdminConfigurable = n.GetBoolValue(); } },
+                { "localAdmins", n => { LocalAdmins = n.GetObjectValue<global::Microsoft.Graph.Models.LocalAdminSettings>(global::Microsoft.Graph.Models.LocalAdminSettings.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -99,6 +116,7 @@ namespace Microsoft.Graph.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Microsoft.Graph.Models.DeviceRegistrationMembership>("allowedToJoin", AllowedToJoin);
             writer.WriteBoolValue("isAdminConfigurable", IsAdminConfigurable);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.LocalAdminSettings>("localAdmins", LocalAdmins);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
