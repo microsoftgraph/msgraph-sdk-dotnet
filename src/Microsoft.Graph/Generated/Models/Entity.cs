@@ -157,6 +157,7 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.appRoleAssignment" => new global::Microsoft.Graph.Models.AppRoleAssignment(),
                 "#microsoft.graph.approval" => new global::Microsoft.Graph.Models.Approval(),
                 "#microsoft.graph.approvalStage" => new global::Microsoft.Graph.Models.ApprovalStage(),
+                "#microsoft.graph.approvedClientApp" => new global::Microsoft.Graph.Models.ApprovedClientApp(),
                 "#microsoft.graph.appScope" => new global::Microsoft.Graph.Models.AppScope(),
                 "#microsoft.graph.arkoseFraudProtectionProvider" => new global::Microsoft.Graph.Models.ArkoseFraudProtectionProvider(),
                 "#microsoft.graph.associatedTeamInfo" => new global::Microsoft.Graph.Models.AssociatedTeamInfo(),

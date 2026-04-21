@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("acceptedSenders", value); }
         }
 #endif
-        /// <summary>Indicates if people external to the organization can send messages to the group. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).</summary>
+        /// <summary>Indicates if people external to the organization can send messages to the group. The default value is false. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).</summary>
         public bool? AllowExternalSenders
         {
             get { return BackingStore?.Get<bool?>("allowExternalSenders"); }
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("appRoleAssignments", value); }
         }
 #endif
-        /// <summary>The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Returned only on $select. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role.</summary>
+        /// <summary>The list of sensitivity label pairs (label ID, label name) associated with a Microsoft 365 group. Requires $select to retrieve. This property can be updated only in delegated scenarios where the caller requires both the Microsoft Graph permission and a supported administrator role.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.AssignedLabel>? AssignedLabels
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("assignedLabels", value); }
         }
 #endif
-        /// <summary>The licenses that are assigned to the group. Returned only on $select. Supports $filter (eq). Read-only.</summary>
+        /// <summary>The licenses that are assigned to the group. Requires $select to retrieve. Supports $filter (eq). Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.AssignedLicense>? AssignedLicenses
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("assignedLicenses", value); }
         }
 #endif
-        /// <summary>Indicates if new members added to the group are autosubscribed to receive email notifications. You can set this property in a PATCH request for the group; don&apos;t set it in the initial POST request that creates the group. Default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).</summary>
+        /// <summary>Indicates if new members added to the group are autosubscribed to receive email notifications. You can set this property in a PATCH request for the group; don&apos;t set it in the initial POST request that creates the group. Default value is false. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).</summary>
         public bool? AutoSubscribeNewMembers
         {
             get { return BackingStore?.Get<bool?>("autoSubscribeNewMembers"); }
@@ -315,13 +315,13 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("hasMembersWithLicenseErrors"); }
             set { BackingStore?.Set("hasMembersWithLicenseErrors", value); }
         }
-        /// <summary>True if the group isn&apos;t displayed in certain parts of the Outlook UI: the Address Book, address lists for selecting message recipients, and the Browse Groups dialog for searching groups; otherwise, false. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).</summary>
+        /// <summary>True if the group isn&apos;t displayed in certain parts of the Outlook UI: the Address Book, address lists for selecting message recipients, and the Browse Groups dialog for searching groups; otherwise, false. The default value is false. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).</summary>
         public bool? HideFromAddressLists
         {
             get { return BackingStore?.Get<bool?>("hideFromAddressLists"); }
             set { BackingStore?.Set("hideFromAddressLists", value); }
         }
-        /// <summary>True if the group isn&apos;t displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. The default value is false. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).</summary>
+        /// <summary>True if the group isn&apos;t displayed in Outlook clients, such as Outlook for Windows and Outlook on the web; otherwise, false. The default value is false. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).</summary>
         public bool? HideFromOutlookClients
         {
             get { return BackingStore?.Get<bool?>("hideFromOutlookClients"); }
@@ -339,19 +339,19 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("isAssignableToRole"); }
             set { BackingStore?.Set("isAssignableToRole", value); }
         }
-        /// <summary>Indicates whether the group is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a group member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Returned only on $select.</summary>
+        /// <summary>Indicates whether the group is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a group member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Requires $select to retrieve.</summary>
         public bool? IsManagementRestricted
         {
             get { return BackingStore?.Get<bool?>("isManagementRestricted"); }
             set { BackingStore?.Set("isManagementRestricted", value); }
         }
-        /// <summary>Indicates whether the signed-in user is subscribed to receive email conversations. The default value is true. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).</summary>
+        /// <summary>Indicates whether the signed-in user is subscribed to receive email conversations. The default value is true. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).</summary>
         public bool? IsSubscribedByMail
         {
             get { return BackingStore?.Get<bool?>("isSubscribedByMail"); }
             set { BackingStore?.Set("isSubscribedByMail", value); }
         }
-        /// <summary>Indicates the status of the group license assignment to all group members. The default value is false. Read-only. Possible values: QueuedForProcessing, ProcessingInProgress, and ProcessingComplete.Returned only on $select. Read-only.</summary>
+        /// <summary>Indicates the status of the group license assignment to all group members. The default value is false. Read-only. Possible values: QueuedForProcessing, ProcessingInProgress, and ProcessingComplete.Requires $select to retrieve. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.LicenseProcessingState? LicenseProcessingState
@@ -957,7 +957,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("uniqueName", value); }
         }
 #endif
-        /// <summary>Count of conversations that received new posts since the signed-in user last visited the group. Returned only on $select. Supported only on the Get group API (GET /groups/{ID}).</summary>
+        /// <summary>Count of conversations that received new posts since the signed-in user last visited the group. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).</summary>
         public int? UnseenCount
         {
             get { return BackingStore?.Get<int?>("unseenCount"); }

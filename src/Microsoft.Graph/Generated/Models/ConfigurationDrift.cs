@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("baselineResourceDisplayName", value); }
         }
 #endif
-        /// <summary>Properties within one or more resource instances in which drift is detected. Returned only on $select.</summary>
+        /// <summary>Properties within one or more resource instances in which drift is detected. Requires $select to retrieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.DriftedProperty>? DriftedProperties

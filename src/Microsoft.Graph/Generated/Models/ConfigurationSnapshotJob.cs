@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Details of errors related to the reasons why the snapshot can&apos;t complete. Returned only on $select.</summary>
+        /// <summary>Details of errors related to the reasons why the snapshot can&apos;t complete. Requires $select to retrieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ErrorDetails
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("errorDetails", value); }
         }
 #endif
-        /// <summary>The URL at which the snapshot file resides. Returned only on $select.</summary>
+        /// <summary>The URL at which the snapshot file resides. Requires $select to retrieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ResourceLocation
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("resourceLocation", value); }
         }
 #endif
-        /// <summary>The names of all resources included in the request body by the user who created the snapshot. Fetched by the system. Returned only on $select.</summary>
+        /// <summary>The names of all resources included in the request body by the user who created the snapshot. Fetched by the system. Requires $select to retrieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Resources

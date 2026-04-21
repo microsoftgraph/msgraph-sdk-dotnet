@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>Represents the current archive status of the site collection. Returned only on $select. The possible values are: recentlyArchived, fullyArchived, reactivating, unknownFutureValue.</summary>
+        /// <summary>Represents the current archive status of the site collection. Requires $select to retrieve. The possible values are: recentlyArchived, fullyArchived, reactivating, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.SiteArchiveStatus? ArchiveStatus
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.SiteArchiveStatus?>("archiveStatus"); }

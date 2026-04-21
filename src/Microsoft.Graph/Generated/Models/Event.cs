@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("calendar", value); }
         }
 #endif
-        /// <summary>Contains occurrenceId property values of canceled instances in a recurring series, if the event is the series master. Instances in a recurring series that are canceled are called canceled occurences.Returned only on $select in a Get operation which specifies the ID (seriesMasterId property value) of a series master event.</summary>
+        /// <summary>Contains occurrenceId property values of canceled instances in a recurring series, if the event is the series master. Instances in a recurring series that are canceled are called canceled occurences.Requires $select to retrieve. Only returned in a Get operation that specifies the ID (seriesMasterId property value) of a series master event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? CancelledOccurrences
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("end", value); }
         }
 #endif
-        /// <summary>Contains the id property values of the event instances that are exceptions in a recurring series.Exceptions can differ from other occurrences in a recurring series, such as the subject, start or end times, or attendees. Exceptions don&apos;t include canceled occurrences.Returned only on $select and $expand in a GET operation that specifies the ID (seriesMasterId property value) of a series master event.</summary>
+        /// <summary>Contains the id property values of the event instances that are exceptions in a recurring series.Exceptions can differ from other occurrences in a recurring series, such as the subject, start or end times, or attendees. Exceptions don&apos;t include canceled occurrences.Requires $select and $expand to retrieve. Only returned in a GET operation that specifies the ID (seriesMasterId property value) of a series master event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.Event>? ExceptionOccurrences

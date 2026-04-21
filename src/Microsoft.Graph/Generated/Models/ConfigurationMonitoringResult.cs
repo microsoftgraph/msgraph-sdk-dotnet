@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<int?>("driftsCount"); }
             set { BackingStore?.Set("driftsCount", value); }
         }
-        /// <summary>All the error details that prevent the monitor from running successfully. The error details are a contained entity. Returned only on $select.</summary>
+        /// <summary>All the error details that prevent the monitor from running successfully. The error details are a contained entity. Requires $select to retrieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.ErrorDetail>? ErrorDetails

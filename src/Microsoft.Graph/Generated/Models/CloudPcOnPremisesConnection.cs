@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("adDomainUsername", value); }
         }
 #endif
-        /// <summary>The interface URL of the partner service&apos;s resource that links to this Azure network connection. Returned only on $select.</summary>
+        /// <summary>The interface URL of the partner service&apos;s resource that links to this Azure network connection. Requires $select to retrieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AlternateResourceUrl
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.CloudPcOnPremisesConnectionStatus?>("healthCheckStatus"); }
             set { BackingStore?.Set("healthCheckStatus", value); }
         }
-        /// <summary>Indicates the results of health checks performed on the on-premises connection. Read-only. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetail. Read-only.</summary>
+        /// <summary>Indicates the results of health checks performed on the on-premises connection. Read-only. Requires $select to retrieve. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetail. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.CloudPcOnPremisesConnectionStatusDetail? HealthCheckStatusDetail
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("healthCheckStatusDetail", value); }
         }
 #endif
-        /// <summary>When true, the Azure network connection is in use. When false, the connection isn&apos;t in use. You can&apos;t delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetail. Read-only.</summary>
+        /// <summary>When true, the Azure network connection is in use. When false, the connection isn&apos;t in use. You can&apos;t delete a connection that’s in use. Requires $select to retrieve. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetail. Read-only.</summary>
         public bool? InUse
         {
             get { return BackingStore?.Get<bool?>("inUse"); }

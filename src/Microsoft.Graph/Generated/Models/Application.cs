@@ -388,6 +388,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("logo", value); }
         }
 #endif
+        /// <summary>A collection of application IDs for Microsoft first-party applications designated as managers. Manager applications can create service principals, agent identities, and agent users for managed agent blueprints. Limited to a maximum of 10 entries. Not nullable. Only supported on agentIdentityBlueprint objects; attempts to set this property on non-agent-blueprint applications return an error. Not returned by default; must be explicitly requested via $select.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Guid?>? ManagerApplications
+        {
+            get { return BackingStore?.Get<List<Guid?>?>("managerApplications"); }
+            set { BackingStore?.Set("managerApplications", value); }
+        }
+#nullable restore
+#else
+        public List<Guid?> ManagerApplications
+        {
+            get { return BackingStore?.Get<List<Guid?>>("managerApplications"); }
+            set { BackingStore?.Set("managerApplications", value); }
+        }
+#endif
         /// <summary>Specifies whether the Native Authentication APIs are enabled for the application. The possible values are: none and all. Default is none. For more information, see Native Authentication.</summary>
         public global::Microsoft.Graph.Models.NativeAuthenticationApisEnabled? NativeAuthenticationApisEnabled
         {
@@ -798,6 +814,7 @@ namespace Microsoft.Graph.Models
                 { "isFallbackPublicClient", n => { IsFallbackPublicClient = n.GetBoolValue(); } },
                 { "keyCredentials", n => { KeyCredentials = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.KeyCredential>(global::Microsoft.Graph.Models.KeyCredential.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "logo", n => { Logo = n.GetByteArrayValue(); } },
+                { "managerApplications", n => { ManagerApplications = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
                 { "nativeAuthenticationApisEnabled", n => { NativeAuthenticationApisEnabled = n.GetEnumValue<global::Microsoft.Graph.Models.NativeAuthenticationApisEnabled>(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "oauth2RequirePostResponse", n => { Oauth2RequirePostResponse = n.GetBoolValue(); } },
@@ -858,6 +875,7 @@ namespace Microsoft.Graph.Models
             writer.WriteBoolValue("isFallbackPublicClient", IsFallbackPublicClient);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.KeyCredential>("keyCredentials", KeyCredentials);
             writer.WriteByteArrayValue("logo", Logo);
+            writer.WriteCollectionOfPrimitiveValues<Guid?>("managerApplications", ManagerApplications);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.NativeAuthenticationApisEnabled>("nativeAuthenticationApisEnabled", NativeAuthenticationApisEnabled);
             writer.WriteStringValue("notes", Notes);
             writer.WriteBoolValue("oauth2RequirePostResponse", Oauth2RequirePostResponse);
