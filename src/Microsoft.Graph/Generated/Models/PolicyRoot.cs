@@ -252,6 +252,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("identitySecurityDefaultsEnforcementPolicy", value); }
         }
 #endif
+        /// <summary>The ownerlessGroupPolicy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.OwnerlessGroupPolicy? OwnerlessGroupPolicy
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.OwnerlessGroupPolicy?>("ownerlessGroupPolicy"); }
+            set { BackingStore?.Set("ownerlessGroupPolicy", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.OwnerlessGroupPolicy OwnerlessGroupPolicy
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.OwnerlessGroupPolicy>("ownerlessGroupPolicy"); }
+            set { BackingStore?.Set("ownerlessGroupPolicy", value); }
+        }
+#endif
         /// <summary>The policy that specifies the conditions under which consent can be granted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -365,6 +381,7 @@ namespace Microsoft.Graph.Models
                 { "featureRolloutPolicies", n => { FeatureRolloutPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.FeatureRolloutPolicy>(global::Microsoft.Graph.Models.FeatureRolloutPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "homeRealmDiscoveryPolicies", n => { HomeRealmDiscoveryPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.HomeRealmDiscoveryPolicy>(global::Microsoft.Graph.Models.HomeRealmDiscoveryPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "identitySecurityDefaultsEnforcementPolicy", n => { IdentitySecurityDefaultsEnforcementPolicy = n.GetObjectValue<global::Microsoft.Graph.Models.IdentitySecurityDefaultsEnforcementPolicy>(global::Microsoft.Graph.Models.IdentitySecurityDefaultsEnforcementPolicy.CreateFromDiscriminatorValue); } },
+                { "ownerlessGroupPolicy", n => { OwnerlessGroupPolicy = n.GetObjectValue<global::Microsoft.Graph.Models.OwnerlessGroupPolicy>(global::Microsoft.Graph.Models.OwnerlessGroupPolicy.CreateFromDiscriminatorValue); } },
                 { "permissionGrantPolicies", n => { PermissionGrantPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.PermissionGrantPolicy>(global::Microsoft.Graph.Models.PermissionGrantPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "roleManagementPolicies", n => { RoleManagementPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.UnifiedRoleManagementPolicy>(global::Microsoft.Graph.Models.UnifiedRoleManagementPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "roleManagementPolicyAssignments", n => { RoleManagementPolicyAssignments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.UnifiedRoleManagementPolicyAssignment>(global::Microsoft.Graph.Models.UnifiedRoleManagementPolicyAssignment.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -395,6 +412,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.FeatureRolloutPolicy>("featureRolloutPolicies", FeatureRolloutPolicies);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.HomeRealmDiscoveryPolicy>("homeRealmDiscoveryPolicies", HomeRealmDiscoveryPolicies);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.IdentitySecurityDefaultsEnforcementPolicy>("identitySecurityDefaultsEnforcementPolicy", IdentitySecurityDefaultsEnforcementPolicy);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.OwnerlessGroupPolicy>("ownerlessGroupPolicy", OwnerlessGroupPolicy);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.PermissionGrantPolicy>("permissionGrantPolicies", PermissionGrantPolicies);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.UnifiedRoleManagementPolicy>("roleManagementPolicies", RoleManagementPolicies);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.UnifiedRoleManagementPolicyAssignment>("roleManagementPolicyAssignments", RoleManagementPolicyAssignments);

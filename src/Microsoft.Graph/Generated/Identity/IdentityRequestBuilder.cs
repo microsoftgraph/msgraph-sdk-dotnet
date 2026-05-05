@@ -9,6 +9,7 @@ using Microsoft.Graph.Identity.CustomAuthenticationExtensions;
 using Microsoft.Graph.Identity.IdentityProviders;
 using Microsoft.Graph.Identity.RiskPrevention;
 using Microsoft.Graph.Identity.UserFlowAttributes;
+using Microsoft.Graph.Identity.VerifiedId;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -71,6 +72,11 @@ namespace Microsoft.Graph.Identity
         public global::Microsoft.Graph.Identity.UserFlowAttributes.UserFlowAttributesRequestBuilder UserFlowAttributes
         {
             get => new global::Microsoft.Graph.Identity.UserFlowAttributes.UserFlowAttributesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the verifiedId property of the microsoft.graph.identityContainer entity.</summary>
+        public global::Microsoft.Graph.Identity.VerifiedId.VerifiedIdRequestBuilder VerifiedId
+        {
+            get => new global::Microsoft.Graph.Identity.VerifiedId.VerifiedIdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Identity.IdentityRequestBuilder"/> and sets the default values.

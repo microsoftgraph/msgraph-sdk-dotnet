@@ -204,5 +204,25 @@ namespace Microsoft.Graph.Models.ExternalConnectors
         #pragma warning disable CS1591
         PersonEmergencyContacts,
         #pragma warning restore CS1591
+        [EnumMember(Value = "personEducationalActivities")]
+        #pragma warning disable CS1591
+        PersonEducationalActivities,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "personInterests")]
+        #pragma warning disable CS1591
+        PersonInterests,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "personLanguages")]
+        #pragma warning disable CS1591
+        PersonLanguages,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "personPublications")]
+        #pragma warning disable CS1591
+        PersonPublications,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "personPatents")]
+        #pragma warning disable CS1591
+        PersonPatents,
+        #pragma warning restore CS1591
     }
 }

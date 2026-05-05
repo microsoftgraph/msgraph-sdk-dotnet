@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>The allowedToJoin property</summary>
+        /// <summary>Determines if Microsoft Entra join is allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.DeviceRegistrationMembership? AllowedToJoin
@@ -37,13 +37,13 @@ namespace Microsoft.Graph.Models
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The isAdminConfigurable property</summary>
+        /// <summary>Determines if administrators can modify this policy.</summary>
         public bool? IsAdminConfigurable
         {
             get { return BackingStore?.Get<bool?>("isAdminConfigurable"); }
             set { BackingStore?.Set("isAdminConfigurable", value); }
         }
-        /// <summary>The localAdmins property</summary>
+        /// <summary>Determines who becomes a local administrator on joined devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.LocalAdminSettings? LocalAdmins

@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Models
     public partial class BackupRestoreRoot : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The browseSessions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.BrowseSessionBase>? BrowseSessions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.BrowseSessionBase>?>("browseSessions"); }
+            set { BackingStore?.Set("browseSessions", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.BrowseSessionBase> BrowseSessions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.BrowseSessionBase>>("browseSessions"); }
+            set { BackingStore?.Set("browseSessions", value); }
+        }
+#endif
         /// <summary>The list of drive inclusion rules applied to the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -138,6 +154,22 @@ namespace Microsoft.Graph.Models
         {
             get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.MailboxProtectionUnitsBulkAdditionJob>>("mailboxProtectionUnitsBulkAdditionJobs"); }
             set { BackingStore?.Set("mailboxProtectionUnitsBulkAdditionJobs", value); }
+        }
+#endif
+        /// <summary>The oneDriveForBusinessBrowseSessions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.OneDriveForBusinessBrowseSession>? OneDriveForBusinessBrowseSessions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.OneDriveForBusinessBrowseSession>?>("oneDriveForBusinessBrowseSessions"); }
+            set { BackingStore?.Set("oneDriveForBusinessBrowseSessions", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.OneDriveForBusinessBrowseSession> OneDriveForBusinessBrowseSessions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.OneDriveForBusinessBrowseSession>>("oneDriveForBusinessBrowseSessions"); }
+            set { BackingStore?.Set("oneDriveForBusinessBrowseSessions", value); }
         }
 #endif
         /// <summary>The list of OneDrive for Business protection policies in the tenant.</summary>
@@ -268,6 +300,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("serviceStatus", value); }
         }
 #endif
+        /// <summary>The sharePointBrowseSessions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.SharePointBrowseSession>? SharePointBrowseSessions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.SharePointBrowseSession>?>("sharePointBrowseSessions"); }
+            set { BackingStore?.Set("sharePointBrowseSessions", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.SharePointBrowseSession> SharePointBrowseSessions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.SharePointBrowseSession>>("sharePointBrowseSessions"); }
+            set { BackingStore?.Set("sharePointBrowseSessions", value); }
+        }
+#endif
         /// <summary>The list of SharePoint protection policies in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -366,6 +414,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "browseSessions", n => { BrowseSessions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.BrowseSessionBase>(global::Microsoft.Graph.Models.BrowseSessionBase.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "driveInclusionRules", n => { DriveInclusionRules = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DriveProtectionRule>(global::Microsoft.Graph.Models.DriveProtectionRule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "driveProtectionUnits", n => { DriveProtectionUnits = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DriveProtectionUnit>(global::Microsoft.Graph.Models.DriveProtectionUnit.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "driveProtectionUnitsBulkAdditionJobs", n => { DriveProtectionUnitsBulkAdditionJobs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DriveProtectionUnitsBulkAdditionJob>(global::Microsoft.Graph.Models.DriveProtectionUnitsBulkAdditionJob.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -374,6 +423,7 @@ namespace Microsoft.Graph.Models
                 { "mailboxInclusionRules", n => { MailboxInclusionRules = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.MailboxProtectionRule>(global::Microsoft.Graph.Models.MailboxProtectionRule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "mailboxProtectionUnits", n => { MailboxProtectionUnits = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.MailboxProtectionUnit>(global::Microsoft.Graph.Models.MailboxProtectionUnit.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "mailboxProtectionUnitsBulkAdditionJobs", n => { MailboxProtectionUnitsBulkAdditionJobs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.MailboxProtectionUnitsBulkAdditionJob>(global::Microsoft.Graph.Models.MailboxProtectionUnitsBulkAdditionJob.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "oneDriveForBusinessBrowseSessions", n => { OneDriveForBusinessBrowseSessions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.OneDriveForBusinessBrowseSession>(global::Microsoft.Graph.Models.OneDriveForBusinessBrowseSession.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "oneDriveForBusinessProtectionPolicies", n => { OneDriveForBusinessProtectionPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.OneDriveForBusinessProtectionPolicy>(global::Microsoft.Graph.Models.OneDriveForBusinessProtectionPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "oneDriveForBusinessRestoreSessions", n => { OneDriveForBusinessRestoreSessions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.OneDriveForBusinessRestoreSession>(global::Microsoft.Graph.Models.OneDriveForBusinessRestoreSession.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "protectionPolicies", n => { ProtectionPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ProtectionPolicyBase>(global::Microsoft.Graph.Models.ProtectionPolicyBase.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -382,6 +432,7 @@ namespace Microsoft.Graph.Models
                 { "restoreSessions", n => { RestoreSessions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.RestoreSessionBase>(global::Microsoft.Graph.Models.RestoreSessionBase.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "serviceApps", n => { ServiceApps = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ServiceApp>(global::Microsoft.Graph.Models.ServiceApp.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "serviceStatus", n => { ServiceStatus = n.GetObjectValue<global::Microsoft.Graph.Models.ServiceStatus>(global::Microsoft.Graph.Models.ServiceStatus.CreateFromDiscriminatorValue); } },
+                { "sharePointBrowseSessions", n => { SharePointBrowseSessions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.SharePointBrowseSession>(global::Microsoft.Graph.Models.SharePointBrowseSession.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sharePointProtectionPolicies", n => { SharePointProtectionPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.SharePointProtectionPolicy>(global::Microsoft.Graph.Models.SharePointProtectionPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sharePointRestoreSessions", n => { SharePointRestoreSessions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.SharePointRestoreSession>(global::Microsoft.Graph.Models.SharePointRestoreSession.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "siteInclusionRules", n => { SiteInclusionRules = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.SiteProtectionRule>(global::Microsoft.Graph.Models.SiteProtectionRule.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -397,6 +448,7 @@ namespace Microsoft.Graph.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.BrowseSessionBase>("browseSessions", BrowseSessions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DriveProtectionRule>("driveInclusionRules", DriveInclusionRules);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DriveProtectionUnit>("driveProtectionUnits", DriveProtectionUnits);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DriveProtectionUnitsBulkAdditionJob>("driveProtectionUnitsBulkAdditionJobs", DriveProtectionUnitsBulkAdditionJobs);
@@ -405,6 +457,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.MailboxProtectionRule>("mailboxInclusionRules", MailboxInclusionRules);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.MailboxProtectionUnit>("mailboxProtectionUnits", MailboxProtectionUnits);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.MailboxProtectionUnitsBulkAdditionJob>("mailboxProtectionUnitsBulkAdditionJobs", MailboxProtectionUnitsBulkAdditionJobs);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.OneDriveForBusinessBrowseSession>("oneDriveForBusinessBrowseSessions", OneDriveForBusinessBrowseSessions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.OneDriveForBusinessProtectionPolicy>("oneDriveForBusinessProtectionPolicies", OneDriveForBusinessProtectionPolicies);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.OneDriveForBusinessRestoreSession>("oneDriveForBusinessRestoreSessions", OneDriveForBusinessRestoreSessions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ProtectionPolicyBase>("protectionPolicies", ProtectionPolicies);
@@ -413,6 +466,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.RestoreSessionBase>("restoreSessions", RestoreSessions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ServiceApp>("serviceApps", ServiceApps);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ServiceStatus>("serviceStatus", ServiceStatus);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.SharePointBrowseSession>("sharePointBrowseSessions", SharePointBrowseSessions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.SharePointProtectionPolicy>("sharePointProtectionPolicies", SharePointProtectionPolicies);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.SharePointRestoreSession>("sharePointRestoreSessions", SharePointRestoreSessions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.SiteProtectionRule>("siteInclusionRules", SiteInclusionRules);

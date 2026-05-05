@@ -40,6 +40,22 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             set { BackingStore?.Set("failureReason", value); }
         }
 #endif
+        /// <summary>The processingInfo property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProcessingInfo
+        {
+            get { return BackingStore?.Get<string?>("processingInfo"); }
+            set { BackingStore?.Set("processingInfo", value); }
+        }
+#nullable restore
+#else
+        public string ProcessingInfo
+        {
+            get { return BackingStore?.Get<string>("processingInfo"); }
+            set { BackingStore?.Set("processingInfo", value); }
+        }
+#endif
         /// <summary>The processingStatus property</summary>
         public global::Microsoft.Graph.Models.IdentityGovernance.LifecycleWorkflowProcessingStatus? ProcessingStatus
         {
@@ -105,6 +121,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
                 { "completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "failureReason", n => { FailureReason = n.GetStringValue(); } },
+                { "processingInfo", n => { ProcessingInfo = n.GetStringValue(); } },
                 { "processingStatus", n => { ProcessingStatus = n.GetEnumValue<global::Microsoft.Graph.Models.IdentityGovernance.LifecycleWorkflowProcessingStatus>(); } },
                 { "startedDateTime", n => { StartedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "subject", n => { Subject = n.GetObjectValue<global::Microsoft.Graph.Models.User>(global::Microsoft.Graph.Models.User.CreateFromDiscriminatorValue); } },
@@ -122,6 +139,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             writer.WriteDateTimeOffsetValue("completedDateTime", CompletedDateTime);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("failureReason", FailureReason);
+            writer.WriteStringValue("processingInfo", ProcessingInfo);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.IdentityGovernance.LifecycleWorkflowProcessingStatus>("processingStatus", ProcessingStatus);
             writer.WriteDateTimeOffsetValue("startedDateTime", StartedDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.User>("subject", Subject);

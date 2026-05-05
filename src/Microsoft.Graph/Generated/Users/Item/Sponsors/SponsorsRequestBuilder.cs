@@ -60,8 +60,8 @@ namespace Microsoft.Graph.Users.Item.Sponsors
         {
         }
         /// <summary>
-        /// Get a user&apos;s sponsors. Sponsors are users and groups that are responsible for this guest&apos;s privileges in the tenant and for keeping the guest&apos;s information and access up to date.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-sponsors?view=graph-rest-1.0" />
+        /// Get an agentUser&apos;s sponsors. Sponsors are users and groups that are responsible for this agent user&apos;s privileges in the tenant and for keeping the agent user&apos;s information and access up to date.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/agentuser-list-sponsors?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Users.Item.Sponsors
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DirectoryObjectCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a user&apos;s sponsors. Sponsors are users and groups that are responsible for this guest&apos;s privileges in the tenant and for keeping the guest&apos;s information and access up to date.
+        /// Get an agentUser&apos;s sponsors. Sponsors are users and groups that are responsible for this agent user&apos;s privileges in the tenant and for keeping the agent user&apos;s information and access up to date.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Users.Item.Sponsors
             return new global::Microsoft.Graph.Users.Item.Sponsors.SponsorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a user&apos;s sponsors. Sponsors are users and groups that are responsible for this guest&apos;s privileges in the tenant and for keeping the guest&apos;s information and access up to date.
+        /// Get an agentUser&apos;s sponsors. Sponsors are users and groups that are responsible for this agent user&apos;s privileges in the tenant and for keeping the agent user&apos;s information and access up to date.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SponsorsRequestBuilderGetQueryParameters 

@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class SharePointGroupMember : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The identity property</summary>
+        /// <summary>The identity represented by the sharePointGroupMember object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.SharePointIdentitySet? Identity

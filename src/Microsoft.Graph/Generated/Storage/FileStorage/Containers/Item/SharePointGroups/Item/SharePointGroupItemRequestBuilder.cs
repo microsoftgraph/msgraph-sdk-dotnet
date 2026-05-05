@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.SharePointGroups.I
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get sharePointGroups from storage
+        /// The collection of sharePointGroup objects local to the container. Read-write.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.SharePointGroup"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.SharePointGroups.I
             return requestInfo;
         }
         /// <summary>
-        /// Get sharePointGroups from storage
+        /// The collection of sharePointGroup objects local to the container. Read-write.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -188,7 +188,7 @@ namespace Microsoft.Graph.Storage.FileStorage.Containers.Item.SharePointGroups.I
         {
         }
         /// <summary>
-        /// Get sharePointGroups from storage
+        /// The collection of sharePointGroup objects local to the container. Read-write.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SharePointGroupItemRequestBuilderGetQueryParameters 

@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The enableGlobalAdmins property</summary>
+        /// <summary>Indicates whether global administrators are local administrators on all Microsoft Entra-joined devices. This setting only applies to future registrations. Default is true.</summary>
         public bool? EnableGlobalAdmins
         {
             get { return BackingStore?.Get<bool?>("enableGlobalAdmins"); }
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The registeringUsers property</summary>
+        /// <summary>Determines the users and groups that become local administrators on Microsoft Entra joined devices that they register.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.DeviceRegistrationMembership? RegisteringUsers

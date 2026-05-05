@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Policies.DeviceRegistrationPolicy
         {
         }
         /// <summary>
-        /// Get deviceRegistrationPolicy from policies
+        /// Read the properties and relationships of a deviceRegistrationPolicy object. Represents deviceRegistrationPolicy quota restrictions, additional authentication, and authorization policies to register device identities to your organization.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/deviceregistrationpolicy-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DeviceRegistrationPolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +59,7 @@ namespace Microsoft.Graph.Policies.DeviceRegistrationPolicy
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DeviceRegistrationPolicy>(requestInfo, global::Microsoft.Graph.Models.DeviceRegistrationPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get deviceRegistrationPolicy from policies
+        /// Read the properties and relationships of a deviceRegistrationPolicy object. Represents deviceRegistrationPolicy quota restrictions, additional authentication, and authorization policies to register device identities to your organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +87,7 @@ namespace Microsoft.Graph.Policies.DeviceRegistrationPolicy
             return new global::Microsoft.Graph.Policies.DeviceRegistrationPolicy.DeviceRegistrationPolicyRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get deviceRegistrationPolicy from policies
+        /// Read the properties and relationships of a deviceRegistrationPolicy object. Represents deviceRegistrationPolicy quota restrictions, additional authentication, and authorization policies to register device identities to your organization.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeviceRegistrationPolicyRequestBuilderGetQueryParameters 

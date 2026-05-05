@@ -35,8 +35,8 @@ namespace Microsoft.Graph.Users.Item.Sponsors.Ref
         {
         }
         /// <summary>
-        /// Remove a user&apos;s sponsor.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-delete-sponsors?view=graph-rest-1.0" />
+        /// Remove an agentUser&apos;s sponsor.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/agentuser-delete-sponsors?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -58,8 +58,8 @@ namespace Microsoft.Graph.Users.Item.Sponsors.Ref
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a user&apos;s sponsors. Sponsors are users and groups that are responsible for this guest&apos;s privileges in the tenant and for keeping the guest&apos;s information and access up to date.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-sponsors?view=graph-rest-1.0" />
+        /// Get an agentUser&apos;s sponsors. Sponsors are users and groups that are responsible for this agent user&apos;s privileges in the tenant and for keeping the agent user&apos;s information and access up to date.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/agentuser-list-sponsors?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.StringCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,8 +82,8 @@ namespace Microsoft.Graph.Users.Item.Sponsors.Ref
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.StringCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Assign a user a sponsor. Sponsors are users and groups that are responsible for this guest user&apos;s privileges in the tenant and for keeping the guest user&apos;s information and access up to date.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-post-sponsors?view=graph-rest-1.0" />
+        /// Assign an agentUser a sponsor. Sponsors are users and groups that are responsible for this agent user&apos;s privileges in the tenant and for keeping the agent user&apos;s information and access up to date.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/agentuser-post-sponsors?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Users.Item.Sponsors.Ref
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a user&apos;s sponsor.
+        /// Remove an agentUser&apos;s sponsor.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Users.Item.Sponsors.Ref
             return requestInfo;
         }
         /// <summary>
-        /// Get a user&apos;s sponsors. Sponsors are users and groups that are responsible for this guest&apos;s privileges in the tenant and for keeping the guest&apos;s information and access up to date.
+        /// Get an agentUser&apos;s sponsors. Sponsors are users and groups that are responsible for this agent user&apos;s privileges in the tenant and for keeping the agent user&apos;s information and access up to date.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Users.Item.Sponsors.Ref
             return requestInfo;
         }
         /// <summary>
-        /// Assign a user a sponsor. Sponsors are users and groups that are responsible for this guest user&apos;s privileges in the tenant and for keeping the guest user&apos;s information and access up to date.
+        /// Assign an agentUser a sponsor. Sponsors are users and groups that are responsible for this agent user&apos;s privileges in the tenant and for keeping the agent user&apos;s information and access up to date.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -176,7 +176,7 @@ namespace Microsoft.Graph.Users.Item.Sponsors.Ref
             return new global::Microsoft.Graph.Users.Item.Sponsors.Ref.RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Remove a user&apos;s sponsor.
+        /// Remove an agentUser&apos;s sponsor.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RefRequestBuilderDeleteQueryParameters 
@@ -201,7 +201,7 @@ namespace Microsoft.Graph.Users.Item.Sponsors.Ref
         {
         }
         /// <summary>
-        /// Get a user&apos;s sponsors. Sponsors are users and groups that are responsible for this guest&apos;s privileges in the tenant and for keeping the guest&apos;s information and access up to date.
+        /// Get an agentUser&apos;s sponsors. Sponsors are users and groups that are responsible for this agent user&apos;s privileges in the tenant and for keeping the agent user&apos;s information and access up to date.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RefRequestBuilderGetQueryParameters 
