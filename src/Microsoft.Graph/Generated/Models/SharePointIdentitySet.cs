@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("group", value); }
         }
 #endif
-        /// <summary>The sharePointGroup property</summary>
+        /// <summary>The SharePoint group associated with this action, identified by a globally unique ID. Use this property instead of siteGroup when available. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.SharePointGroupIdentity? SharePointGroup
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("sharePointGroup", value); }
         }
 #endif
-        /// <summary>The SharePoint group associated with this action. Optional.</summary>
+        /// <summary>The SharePoint group associated with this action, identified by a principal ID that is unique only within the site. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.SharePointIdentity? SiteGroup

@@ -66,7 +66,8 @@ namespace Microsoft.Graph.Users.Item.DirectReports
         {
         }
         /// <summary>
-        /// The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
+        /// Get an agentUser&apos;s direct reports. Returns the users and contacts for whom this agent user is assigned as manager.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/agentuser-list-directreports?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -89,7 +90,7 @@ namespace Microsoft.Graph.Users.Item.DirectReports
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DirectoryObjectCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
+        /// Get an agentUser&apos;s direct reports. Returns the users and contacts for whom this agent user is assigned as manager.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -117,7 +118,7 @@ namespace Microsoft.Graph.Users.Item.DirectReports
             return new global::Microsoft.Graph.Users.Item.DirectReports.DirectReportsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.
+        /// Get an agentUser&apos;s direct reports. Returns the users and contacts for whom this agent user is assigned as manager.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DirectReportsRequestBuilderGetQueryParameters 

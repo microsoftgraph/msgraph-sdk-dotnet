@@ -35,8 +35,8 @@ namespace Microsoft.Graph.Users.Item.Manager.Ref
         {
         }
         /// <summary>
-        /// Remove a user&apos;s manager.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-delete-manager?view=graph-rest-1.0" />
+        /// Remove an agentUser&apos;s manager.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/agentuser-delete-manager?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -58,8 +58,8 @@ namespace Microsoft.Graph.Users.Item.Manager.Ref
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-manager?view=graph-rest-1.0" />
+        /// Returns the user or organizational contact assigned as the agentUser&apos;s manager.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/agentuser-list-manager?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="string"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Users.Item.Manager.Ref
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a user&apos;s manager.
+        /// Remove an agentUser&apos;s manager.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Users.Item.Manager.Ref
             return requestInfo;
         }
         /// <summary>
-        /// Returns the user or organizational contact assigned as the user&apos;s manager. Optionally, you can expand the manager&apos;s chain up to the root node.
+        /// Returns the user or organizational contact assigned as the agentUser&apos;s manager.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

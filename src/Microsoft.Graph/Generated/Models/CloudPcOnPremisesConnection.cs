@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The healthCheckPaused property</summary>
+        /// <summary>Indicates whether regular health checks on the network or domain configuration are paused or active. false if the regular health checks on the network or domain configuration are currently active. true if the checks are paused. If you perform a create or update operation on a onPremisesNetworkConnection resource, this value is set to false for four weeks. If you retry a health check on network or domain configuration, this value is set to false for two weeks. If the onPremisesNetworkConnection resource is attached in a provisioningPolicy or used by a Cloud PC in the past four weeks, healthCheckPaused is set to false. Read-only. Default is false.</summary>
         public bool? HealthCheckPaused
         {
             get { return BackingStore?.Get<bool?>("healthCheckPaused"); }
@@ -126,13 +126,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("healthCheckStatusDetail", value); }
         }
 #endif
-        /// <summary>When true, the Azure network connection is in use. When false, the connection isn&apos;t in use. You can&apos;t delete a connection that’s in use. Requires $select to retrieve. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetail. Read-only.</summary>
+        /// <summary>When true, the Azure network connection is in use. When false, the connection isn&apos;t in use. You can&apos;t delete a connection that’s in use. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetail. Read-only.</summary>
         public bool? InUse
         {
             get { return BackingStore?.Get<bool?>("inUse"); }
             set { BackingStore?.Set("inUse", value); }
         }
-        /// <summary>The inUseByCloudPc property</summary>
+        /// <summary>Indicates whether a Cloud PC is using this on-premises network connection. true if at least one Cloud PC is using it. Otherwise, false. Read-only. Default is false.</summary>
         public bool? InUseByCloudPc
         {
             get { return BackingStore?.Get<bool?>("inUseByCloudPc"); }
@@ -170,7 +170,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("resourceGroupId", value); }
         }
 #endif
-        /// <summary>The scopeIds property</summary>
+        /// <summary>The scope IDs of the corresponding permission. Currently, it&apos;s the Intune scope tag ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ScopeIds

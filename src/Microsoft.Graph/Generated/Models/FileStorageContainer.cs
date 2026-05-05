@@ -190,7 +190,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("settings", value); }
         }
 #endif
-        /// <summary>The sharePointGroups property</summary>
+        /// <summary>The collection of sharePointGroup objects local to the container. Read-write.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.SharePointGroup>? SharePointGroups

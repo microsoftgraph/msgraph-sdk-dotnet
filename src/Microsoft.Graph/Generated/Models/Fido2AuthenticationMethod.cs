@@ -88,6 +88,22 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.PasskeyType?>("passkeyType"); }
             set { BackingStore?.Set("passkeyType", value); }
         }
+        /// <summary>The publicKeyCredential property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.WebauthnPublicKeyCredential? PublicKeyCredential
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.WebauthnPublicKeyCredential?>("publicKeyCredential"); }
+            set { BackingStore?.Set("publicKeyCredential", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.WebauthnPublicKeyCredential PublicKeyCredential
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.WebauthnPublicKeyCredential>("publicKeyCredential"); }
+            set { BackingStore?.Set("publicKeyCredential", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Models.Fido2AuthenticationMethod"/> and sets the default values.
         /// </summary>
@@ -119,6 +135,7 @@ namespace Microsoft.Graph.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "passkeyType", n => { PasskeyType = n.GetEnumValue<global::Microsoft.Graph.Models.PasskeyType>(); } },
+                { "publicKeyCredential", n => { PublicKeyCredential = n.GetObjectValue<global::Microsoft.Graph.Models.WebauthnPublicKeyCredential>(global::Microsoft.Graph.Models.WebauthnPublicKeyCredential.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -135,6 +152,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("model", Model);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.PasskeyType>("passkeyType", PasskeyType);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.WebauthnPublicKeyCredential>("publicKeyCredential", PublicKeyCredential);
         }
     }
 }

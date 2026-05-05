@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Models
     public partial class SharePointRestoreSession : global::Microsoft.Graph.Models.RestoreSessionBase, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The granularSiteRestoreArtifacts property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.GranularSiteRestoreArtifact>? GranularSiteRestoreArtifacts
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.GranularSiteRestoreArtifact>?>("granularSiteRestoreArtifacts"); }
+            set { BackingStore?.Set("granularSiteRestoreArtifacts", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.GranularSiteRestoreArtifact> GranularSiteRestoreArtifacts
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.GranularSiteRestoreArtifact>>("granularSiteRestoreArtifacts"); }
+            set { BackingStore?.Set("granularSiteRestoreArtifacts", value); }
+        }
+#endif
         /// <summary>A collection of restore points and destination details that can be used to restore SharePoint sites.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -69,6 +85,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "granularSiteRestoreArtifacts", n => { GranularSiteRestoreArtifacts = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.GranularSiteRestoreArtifact>(global::Microsoft.Graph.Models.GranularSiteRestoreArtifact.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "siteRestoreArtifacts", n => { SiteRestoreArtifacts = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.SiteRestoreArtifact>(global::Microsoft.Graph.Models.SiteRestoreArtifact.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "siteRestoreArtifactsBulkAdditionRequests", n => { SiteRestoreArtifactsBulkAdditionRequests = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.SiteRestoreArtifactsBulkAdditionRequest>(global::Microsoft.Graph.Models.SiteRestoreArtifactsBulkAdditionRequest.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -81,6 +98,7 @@ namespace Microsoft.Graph.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.GranularSiteRestoreArtifact>("granularSiteRestoreArtifacts", GranularSiteRestoreArtifacts);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.SiteRestoreArtifact>("siteRestoreArtifacts", SiteRestoreArtifacts);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.SiteRestoreArtifactsBulkAdditionRequest>("siteRestoreArtifactsBulkAdditionRequests", SiteRestoreArtifactsBulkAdditionRequests);
         }

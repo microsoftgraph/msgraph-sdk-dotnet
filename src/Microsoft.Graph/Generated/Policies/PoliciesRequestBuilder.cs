@@ -17,6 +17,7 @@ using Microsoft.Graph.Policies.DeviceRegistrationPolicy;
 using Microsoft.Graph.Policies.FeatureRolloutPolicies;
 using Microsoft.Graph.Policies.HomeRealmDiscoveryPolicies;
 using Microsoft.Graph.Policies.IdentitySecurityDefaultsEnforcementPolicy;
+using Microsoft.Graph.Policies.OwnerlessGroupPolicy;
 using Microsoft.Graph.Policies.PermissionGrantPolicies;
 using Microsoft.Graph.Policies.RoleManagementPolicies;
 using Microsoft.Graph.Policies.RoleManagementPolicyAssignments;
@@ -112,6 +113,11 @@ namespace Microsoft.Graph.Policies
         public global::Microsoft.Graph.Policies.IdentitySecurityDefaultsEnforcementPolicy.IdentitySecurityDefaultsEnforcementPolicyRequestBuilder IdentitySecurityDefaultsEnforcementPolicy
         {
             get => new global::Microsoft.Graph.Policies.IdentitySecurityDefaultsEnforcementPolicy.IdentitySecurityDefaultsEnforcementPolicyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the ownerlessGroupPolicy property of the microsoft.graph.policyRoot entity.</summary>
+        public global::Microsoft.Graph.Policies.OwnerlessGroupPolicy.OwnerlessGroupPolicyRequestBuilder OwnerlessGroupPolicy
+        {
+            get => new global::Microsoft.Graph.Policies.OwnerlessGroupPolicy.OwnerlessGroupPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the permissionGrantPolicies property of the microsoft.graph.policyRoot entity.</summary>
         public global::Microsoft.Graph.Policies.PermissionGrantPolicies.PermissionGrantPoliciesRequestBuilder PermissionGrantPolicies

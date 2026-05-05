@@ -72,8 +72,8 @@ namespace Microsoft.Graph.Users.Item.TransitiveMemberOf
         {
         }
         /// <summary>
-        /// Get groups, directory roles, and administrative units that the user is a member of through either direct or transitive membership.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-transitivememberof?view=graph-rest-1.0" />
+        /// Get groups, directory roles, and administrative units that the agentUser is a member of through either direct or transitive membership.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/agentuser-list-transitivememberof?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DirectoryObjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Users.Item.TransitiveMemberOf
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DirectoryObjectCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get groups, directory roles, and administrative units that the user is a member of through either direct or transitive membership.
+        /// Get groups, directory roles, and administrative units that the agentUser is a member of through either direct or transitive membership.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Users.Item.TransitiveMemberOf
             return new global::Microsoft.Graph.Users.Item.TransitiveMemberOf.TransitiveMemberOfRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get groups, directory roles, and administrative units that the user is a member of through either direct or transitive membership.
+        /// Get groups, directory roles, and administrative units that the agentUser is a member of through either direct or transitive membership.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TransitiveMemberOfRequestBuilderGetQueryParameters 

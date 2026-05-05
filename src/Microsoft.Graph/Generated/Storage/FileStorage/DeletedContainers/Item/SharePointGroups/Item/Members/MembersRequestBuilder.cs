@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.SharePointG
         {
         }
         /// <summary>
-        /// Get members from storage
+        /// The set of members in the sharePointGroup. Read-write.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.SharePointGroupMemberCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.SharePointG
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.SharePointGroupMember>(requestInfo, global::Microsoft.Graph.Models.SharePointGroupMember.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get members from storage
+        /// The set of members in the sharePointGroup. Read-write.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.SharePointG
             return new global::Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.SharePointGroups.Item.Members.MembersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get members from storage
+        /// The set of members in the sharePointGroup. Read-write.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MembersRequestBuilderGetQueryParameters 

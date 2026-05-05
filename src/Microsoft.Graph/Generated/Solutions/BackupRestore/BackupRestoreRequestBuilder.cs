@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Graph.Solutions.BackupRestore.BrowseSessions;
 using Microsoft.Graph.Solutions.BackupRestore.DriveInclusionRules;
 using Microsoft.Graph.Solutions.BackupRestore.DriveProtectionUnits;
 using Microsoft.Graph.Solutions.BackupRestore.DriveProtectionUnitsBulkAdditionJobs;
@@ -11,6 +12,7 @@ using Microsoft.Graph.Solutions.BackupRestore.ExchangeRestoreSessions;
 using Microsoft.Graph.Solutions.BackupRestore.MailboxInclusionRules;
 using Microsoft.Graph.Solutions.BackupRestore.MailboxProtectionUnits;
 using Microsoft.Graph.Solutions.BackupRestore.MailboxProtectionUnitsBulkAdditionJobs;
+using Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessBrowseSessions;
 using Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessProtectionPolicies;
 using Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions;
 using Microsoft.Graph.Solutions.BackupRestore.ProtectionPolicies;
@@ -18,6 +20,7 @@ using Microsoft.Graph.Solutions.BackupRestore.ProtectionUnits;
 using Microsoft.Graph.Solutions.BackupRestore.RestorePoints;
 using Microsoft.Graph.Solutions.BackupRestore.RestoreSessions;
 using Microsoft.Graph.Solutions.BackupRestore.ServiceApps;
+using Microsoft.Graph.Solutions.BackupRestore.SharePointBrowseSessions;
 using Microsoft.Graph.Solutions.BackupRestore.SharePointProtectionPolicies;
 using Microsoft.Graph.Solutions.BackupRestore.SharePointRestoreSessions;
 using Microsoft.Graph.Solutions.BackupRestore.SiteInclusionRules;
@@ -39,6 +42,11 @@ namespace Microsoft.Graph.Solutions.BackupRestore
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BackupRestoreRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to manage the browseSessions property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        public global::Microsoft.Graph.Solutions.BackupRestore.BrowseSessions.BrowseSessionsRequestBuilder BrowseSessions
+        {
+            get => new global::Microsoft.Graph.Solutions.BackupRestore.BrowseSessions.BrowseSessionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the driveInclusionRules property of the microsoft.graph.backupRestoreRoot entity.</summary>
         public global::Microsoft.Graph.Solutions.BackupRestore.DriveInclusionRules.DriveInclusionRulesRequestBuilder DriveInclusionRules
         {
@@ -84,6 +92,11 @@ namespace Microsoft.Graph.Solutions.BackupRestore
         {
             get => new global::Microsoft.Graph.Solutions.BackupRestore.MailboxProtectionUnitsBulkAdditionJobs.MailboxProtectionUnitsBulkAdditionJobsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the oneDriveForBusinessBrowseSessions property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        public global::Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessBrowseSessions.OneDriveForBusinessBrowseSessionsRequestBuilder OneDriveForBusinessBrowseSessions
+        {
+            get => new global::Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessBrowseSessions.OneDriveForBusinessBrowseSessionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the oneDriveForBusinessProtectionPolicies property of the microsoft.graph.backupRestoreRoot entity.</summary>
         public global::Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessProtectionPolicies.OneDriveForBusinessProtectionPoliciesRequestBuilder OneDriveForBusinessProtectionPolicies
         {
@@ -118,6 +131,11 @@ namespace Microsoft.Graph.Solutions.BackupRestore
         public global::Microsoft.Graph.Solutions.BackupRestore.ServiceApps.ServiceAppsRequestBuilder ServiceApps
         {
             get => new global::Microsoft.Graph.Solutions.BackupRestore.ServiceApps.ServiceAppsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the sharePointBrowseSessions property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        public global::Microsoft.Graph.Solutions.BackupRestore.SharePointBrowseSessions.SharePointBrowseSessionsRequestBuilder SharePointBrowseSessions
+        {
+            get => new global::Microsoft.Graph.Solutions.BackupRestore.SharePointBrowseSessions.SharePointBrowseSessionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sharePointProtectionPolicies property of the microsoft.graph.backupRestoreRoot entity.</summary>
         public global::Microsoft.Graph.Solutions.BackupRestore.SharePointProtectionPolicies.SharePointProtectionPoliciesRequestBuilder SharePointProtectionPolicies

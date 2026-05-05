@@ -156,6 +156,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("userFlowAttributes", value); }
         }
 #endif
+        /// <summary>The verifiedId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.IdentityVerifiedIdRoot? VerifiedId
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.IdentityVerifiedIdRoot?>("verifiedId"); }
+            set { BackingStore?.Set("verifiedId", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.IdentityVerifiedIdRoot VerifiedId
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.IdentityVerifiedIdRoot>("verifiedId"); }
+            set { BackingStore?.Set("verifiedId", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -183,6 +199,7 @@ namespace Microsoft.Graph.Models
                 { "identityProviders", n => { IdentityProviders = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.IdentityProviderBase>(global::Microsoft.Graph.Models.IdentityProviderBase.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "riskPrevention", n => { RiskPrevention = n.GetObjectValue<global::Microsoft.Graph.Models.RiskPreventionContainer>(global::Microsoft.Graph.Models.RiskPreventionContainer.CreateFromDiscriminatorValue); } },
                 { "userFlowAttributes", n => { UserFlowAttributes = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.IdentityUserFlowAttribute>(global::Microsoft.Graph.Models.IdentityUserFlowAttribute.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "verifiedId", n => { VerifiedId = n.GetObjectValue<global::Microsoft.Graph.Models.IdentityVerifiedIdRoot>(global::Microsoft.Graph.Models.IdentityVerifiedIdRoot.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -202,6 +219,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.IdentityProviderBase>("identityProviders", IdentityProviders);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.RiskPreventionContainer>("riskPrevention", RiskPrevention);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.IdentityUserFlowAttribute>("userFlowAttributes", UserFlowAttributes);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.IdentityVerifiedIdRoot>("verifiedId", VerifiedId);
         }
     }
 }

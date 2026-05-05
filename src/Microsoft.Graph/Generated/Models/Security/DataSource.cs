@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The hold status of the dataSource.The possible values are: notApplied, applied, applying, removing, partial</summary>
+        /// <summary>The hold status of the dataSource. The possible values are: notApplied, applied, applying, removing, partial.</summary>
         public global::Microsoft.Graph.Models.Security.DataSourceHoldStatus? HoldStatus
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.DataSourceHoldStatus?>("holdStatus"); }

@@ -34,8 +34,8 @@ namespace Microsoft.Graph.Users.Item.Sponsors.Item.Ref
         {
         }
         /// <summary>
-        /// Remove a user&apos;s sponsor.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-delete-sponsors?view=graph-rest-1.0" />
+        /// Remove an agentUser&apos;s sponsor.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/agentuser-delete-sponsors?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Users.Item.Sponsors.Item.Ref
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a user&apos;s sponsor.
+        /// Remove an agentUser&apos;s sponsor.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -3,6 +3,7 @@
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Users.Item.Authentication.Fido2Methods.Count;
+using Microsoft.Graph.Users.Item.Authentication.Fido2Methods.CreationOptions;
 using Microsoft.Graph.Users.Item.Authentication.Fido2Methods.Item;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -24,6 +25,11 @@ namespace Microsoft.Graph.Users.Item.Authentication.Fido2Methods
         public global::Microsoft.Graph.Users.Item.Authentication.Fido2Methods.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Users.Item.Authentication.Fido2Methods.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the creationOptions method.</summary>
+        public global::Microsoft.Graph.Users.Item.Authentication.Fido2Methods.CreationOptions.CreationOptionsRequestBuilder CreationOptions
+        {
+            get => new global::Microsoft.Graph.Users.Item.Authentication.Fido2Methods.CreationOptions.CreationOptionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the fido2Methods property of the microsoft.graph.authentication entity.</summary>
         /// <param name="position">The unique identifier of fido2AuthenticationMethod</param>

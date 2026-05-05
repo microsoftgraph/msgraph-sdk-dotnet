@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class SharePointGroup : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The description property</summary>
+        /// <summary>The user-visible description of the sharePointGroup. Read-write.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The members property</summary>
+        /// <summary>The set of members in the sharePointGroup. Read-write.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.SharePointGroupMember>? Members
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("members", value); }
         }
 #endif
-        /// <summary>The principalId property</summary>
+        /// <summary>The principal ID of the SharePoint group in the tenant. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrincipalId
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("principalId", value); }
         }
 #endif
-        /// <summary>The title property</summary>
+        /// <summary>The user-visible title of the sharePointGroup. Read-write.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title
