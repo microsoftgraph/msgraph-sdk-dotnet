@@ -56,15 +56,12 @@ extends:
           displayName: 'Enable long paths in git'
         - checkout: self
         - task: UseDotNet@2
-          displayName: 'Use .NET 8.x sdk'
+          displayName: 'Use .NET 8 and 10 sdk'
           inputs:
             packageType: sdk
-            version: 8.x
-        - task: UseDotNet@2
-          displayName: 'Use .NET 6.x (for code signing tasks)'
-          inputs:
-            packageType: sdk
-            version: 6.x
+            version: |
+              8.x
+              10.x
         - task: DotNetCoreCLI@2
           displayName: 'dotnet restore'
           inputs:
