@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project does adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [6.0.1](https://github.com/microsoftgraph/msgraph-sdk-dotnet/compare/6.0.0...6.0.1) (2026-05-13)
+
+
+### Build System
+
+* update azure pipeline ([#3117](https://github.com/microsoftgraph/msgraph-sdk-dotnet/issues/3117)) ([d388a63](https://github.com/microsoftgraph/msgraph-sdk-dotnet/commit/d388a63c8eb36b2fa6a3d549feba89ae8331f92d))
+
 ## [6.0.0](https://github.com/microsoftgraph/msgraph-sdk-dotnet/compare/5.105.0...6.0.0) (2026-05-12)
 
 
