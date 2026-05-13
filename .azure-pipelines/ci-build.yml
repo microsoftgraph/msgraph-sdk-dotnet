@@ -55,13 +55,19 @@ extends:
         - pwsh: git config --system core.longpaths true
           displayName: 'Enable long paths in git'
         - checkout: self
+
         - task: UseDotNet@2
-          displayName: 'Use .NET 8 and 10 sdk'
+          displayName: 'Use .NET 8 sdk'
           inputs:
             packageType: sdk
-            version: |
-              8.x
-              10.x
+            version: 8.x
+        
+        - task: UseDotNet@2
+          displayName: 'Use .NET 10 sdk'
+          inputs:
+            packageType: sdk
+            version: 10.x
+              
         - task: DotNetCoreCLI@2
           displayName: 'dotnet restore'
           inputs:
