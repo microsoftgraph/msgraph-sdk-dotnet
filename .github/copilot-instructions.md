@@ -1,8 +1,8 @@
 This repository is used to capture generated code files. The code files are generated using microsoft/kiota. The primary purpose of the copilot reviewer is to identify any changes that can cause a regressions for an application that uses this library. You are required to create a comment anytime a code change occurs that changes an APIs signature in a way that is not additive.
 
-- @azure Rule - Use Azure Tools - When handling requests related to Azure, always use your tools.
-- @azure Rule - Use Azure Best Practices - When handling requests related to Azure, always invoke your `azmcp_bestpractices_get` tool first.
-- @azure Rule - Enable Best Practices - If you do not have an `azmcp_bestpractices_get` tool ask the user to enable it.
+- Use only tools, commands, and workflows that are available in this repository's context.
+- Do not instruct contributors or users to enable external tools that are not defined or documented in this repository.
+- When reviewing changes, prioritize identifying regressions and non-additive API signature changes in generated code.
 
 ## Commit Messages
 
