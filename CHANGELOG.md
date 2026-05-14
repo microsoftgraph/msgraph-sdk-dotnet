@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project does adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [6.0.2](https://github.com/microsoftgraph/msgraph-sdk-dotnet/compare/6.0.1...6.0.2) (2026-05-14)
+
+
+### Build System
+
+* TFM sequentially ([#3119](https://github.com/microsoftgraph/msgraph-sdk-dotnet/issues/3119)) ([52e30a4](https://github.com/microsoftgraph/msgraph-sdk-dotnet/commit/52e30a46477cda75bc696716505becbd09b67c94))
+
 ## [6.0.1](https://github.com/microsoftgraph/msgraph-sdk-dotnet/compare/6.0.0...6.0.1) (2026-05-13)
 
 
