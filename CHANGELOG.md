@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project does adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [6.0.3](https://github.com/microsoftgraph/msgraph-sdk-dotnet/compare/6.0.2...6.0.3) (2026-05-14)
+
+
+### Build System
+
+* pool with larger mem sku ([#3124](https://github.com/microsoftgraph/msgraph-sdk-dotnet/issues/3124)) ([a9881e4](https://github.com/microsoftgraph/msgraph-sdk-dotnet/commit/a9881e4719db4d562e7c63ed08768a4cd0030fe8))
+
 ## [6.0.2](https://github.com/microsoftgraph/msgraph-sdk-dotnet/compare/6.0.1...6.0.2) (2026-05-14)
 
 
