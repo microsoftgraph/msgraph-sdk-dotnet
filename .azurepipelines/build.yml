@@ -22,6 +22,17 @@ extends:
     pool:
       name: Azure-Pipelines-1ESPT-ExDShared
       os: linux
+    sdl:
+      sourceAnalysisPool:
+        name: Azure-Pipelines-1ESPT-ExDShared
+        image: windows-2022
+        os: windows
+      credscan:
+        enabled: true
+      policheck:
+        enabled: true
+      binskim:
+        enabled: true
     stages:
       - stage: Build
         jobs:
