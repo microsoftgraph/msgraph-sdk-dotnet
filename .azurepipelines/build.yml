@@ -1,0 +1,50 @@
+trigger: none
+pr: none
+
+schedules:
+  - cron: '0 0 * * 1,3'
+    displayName: Monday and Wednesday builds
+    branches:
+      include:
+        - main
+    always: true
+
+resources:
+  repositories:
+    - repository: 1ESPipelineTemplates
+      type: git
+      name: 1ESPipelineTemplates/1ESPipelineTemplates
+      ref: refs/tags/release
+
+extends:
+  template: v1/1ES.Unofficial.PipelineTemplate.yml@1ESPipelineTemplates
+  parameters:
+    pool:
+      name: Azure-Pipelines-1ESPT-ExDShared
+      os: linux
+    stages:
+      - stage: Build
+        jobs:
+          - job: Build
+            displayName: Build .NET SDK
+            steps:
+              - checkout: self
+                submodules: recursive
+
+              - task: UseDotNet@2
+                displayName: Set up .NET
+                inputs:
+                  packageType: 'sdk'
+                  version: '8.x'
+
+              - script: dotnet restore Microsoft.Graph.sln
+                displayName: Restore dependencies
+                workingDirectory: $(Build.SourcesDirectory)
+
+              - script: dotnet build Microsoft.Graph.sln --no-restore
+                displayName: Build SDK
+                workingDirectory: $(Build.SourcesDirectory)
+
+              - script: dotnet test Microsoft.Graph.sln --no-build
+                displayName: Run unit tests
+                workingDirectory: $(Build.SourcesDirectory)
