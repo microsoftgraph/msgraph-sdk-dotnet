@@ -60,6 +60,12 @@ namespace Microsoft.Graph.Models.ExternalConnectors
             set { BackingStore?.Set("connectorId", value); }
         }
 #endif
+        /// <summary>The contentCategory property</summary>
+        public global::Microsoft.Graph.Models.ExternalConnectors.ContentCategory? ContentCategory
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ExternalConnectors.ContentCategory?>("contentCategory"); }
+            set { BackingStore?.Set("contentCategory", value); }
+        }
         /// <summary>Description of the connection displayed in the Microsoft 365 admin center. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -199,6 +205,7 @@ namespace Microsoft.Graph.Models.ExternalConnectors
                 { "activitySettings", n => { ActivitySettings = n.GetObjectValue<global::Microsoft.Graph.Models.ExternalConnectors.ActivitySettings>(global::Microsoft.Graph.Models.ExternalConnectors.ActivitySettings.CreateFromDiscriminatorValue); } },
                 { "configuration", n => { Configuration = n.GetObjectValue<global::Microsoft.Graph.Models.ExternalConnectors.Configuration>(global::Microsoft.Graph.Models.ExternalConnectors.Configuration.CreateFromDiscriminatorValue); } },
                 { "connectorId", n => { ConnectorId = n.GetStringValue(); } },
+                { "contentCategory", n => { ContentCategory = n.GetEnumValue<global::Microsoft.Graph.Models.ExternalConnectors.ContentCategory>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "groups", n => { Groups = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ExternalConnectors.ExternalGroup>(global::Microsoft.Graph.Models.ExternalConnectors.ExternalGroup.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ExternalConnectors.ExternalItem>(global::Microsoft.Graph.Models.ExternalConnectors.ExternalItem.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -220,6 +227,7 @@ namespace Microsoft.Graph.Models.ExternalConnectors
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ExternalConnectors.ActivitySettings>("activitySettings", ActivitySettings);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ExternalConnectors.Configuration>("configuration", Configuration);
             writer.WriteStringValue("connectorId", ConnectorId);
+            writer.WriteEnumValue<global::Microsoft.Graph.Models.ExternalConnectors.ContentCategory>("contentCategory", ContentCategory);
             writer.WriteStringValue("description", Description);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ExternalConnectors.ExternalGroup>("groups", Groups);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ExternalConnectors.ExternalItem>("items", Items);

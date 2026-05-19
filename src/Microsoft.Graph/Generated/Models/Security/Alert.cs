@@ -92,6 +92,22 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("assignedTo", value); }
         }
 #endif
+        /// <summary>The categories property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Categories
+        {
+            get { return BackingStore?.Get<List<string>?>("categories"); }
+            set { BackingStore?.Set("categories", value); }
+        }
+#nullable restore
+#else
+        public List<string> Categories
+        {
+            get { return BackingStore?.Get<List<string>>("categories"); }
+            set { BackingStore?.Set("categories", value); }
+        }
+#endif
         /// <summary>The attack kill-chain category that the alert belongs to. Aligned with the MITRE ATT&amp;CK framework.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -459,6 +475,7 @@ namespace Microsoft.Graph.Models.Security
                 { "alertPolicyId", n => { AlertPolicyId = n.GetStringValue(); } },
                 { "alertWebUrl", n => { AlertWebUrl = n.GetStringValue(); } },
                 { "assignedTo", n => { AssignedTo = n.GetStringValue(); } },
+                { "categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "category", n => { Category = n.GetStringValue(); } },
                 { "classification", n => { Classification = n.GetEnumValue<global::Microsoft.Graph.Models.Security.AlertClassification>(); } },
                 { "comments", n => { Comments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.AlertComment>(global::Microsoft.Graph.Models.Security.AlertComment.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -503,6 +520,7 @@ namespace Microsoft.Graph.Models.Security
             writer.WriteStringValue("alertPolicyId", AlertPolicyId);
             writer.WriteStringValue("alertWebUrl", AlertWebUrl);
             writer.WriteStringValue("assignedTo", AssignedTo);
+            writer.WriteCollectionOfPrimitiveValues<string>("categories", Categories);
             writer.WriteStringValue("category", Category);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.Security.AlertClassification>("classification", Classification);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.AlertComment>("comments", Comments);

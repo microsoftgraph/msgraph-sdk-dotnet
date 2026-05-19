@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.ExternalAuthenticationMethod
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents the external authentication methods registered to a user for authentication using an external identity provider.
+        /// Represents the external MFA registered to a user for authentication using an external identity provider.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ExternalAuthenticationMethod"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.ExternalAuthenticationMethod
             return requestInfo;
         }
         /// <summary>
-        /// Represents the external authentication methods registered to a user for authentication using an external identity provider.
+        /// Represents the external MFA registered to a user for authentication using an external identity provider.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -183,7 +183,7 @@ namespace Microsoft.Graph.Users.Item.Authentication.ExternalAuthenticationMethod
         {
         }
         /// <summary>
-        /// Represents the external authentication methods registered to a user for authentication using an external identity provider.
+        /// Represents the external MFA registered to a user for authentication using an external identity provider.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ExternalAuthenticationMethodItemRequestBuilderGetQueryParameters 

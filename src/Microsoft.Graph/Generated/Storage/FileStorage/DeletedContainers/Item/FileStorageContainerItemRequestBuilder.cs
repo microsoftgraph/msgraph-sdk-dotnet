@@ -12,6 +12,7 @@ using Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions;
 using Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.ProvisionMigrationContainers;
 using Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.RecycleBin;
 using Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Restore;
+using Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.SharePointGroups;
 using Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Unlock;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -78,6 +79,11 @@ namespace Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item
         public global::Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Restore.RestoreRequestBuilder Restore
         {
             get => new global::Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the sharePointGroups property of the microsoft.graph.fileStorageContainer entity.</summary>
+        public global::Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.SharePointGroups.SharePointGroupsRequestBuilder SharePointGroups
+        {
+            get => new global::Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.SharePointGroups.SharePointGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unlock method.</summary>
         public global::Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Unlock.UnlockRequestBuilder Unlock

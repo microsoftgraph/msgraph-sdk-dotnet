@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.RetentionLabel
         {
         }
         /// <summary>
-        /// Remove a retention label from a driveItem. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+        /// Remove the retention label from a driveItem. This operation clears the retention label and all associated retention settings enforced on the item. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/driveitem-removeretentionlabel?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.RetentionLabel
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ItemRetentionLabel>(requestInfo, global::Microsoft.Graph.Models.ItemRetentionLabel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a retention label from a driveItem. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
+        /// Remove the retention label from a driveItem. This operation clears the retention label and all associated retention settings enforced on the item. For information about retention labels from an administrator&apos;s perspective, see Use retention labels to manage the lifecycle of documents stored in SharePoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

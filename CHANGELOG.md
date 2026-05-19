@@ -5,6 +5,59 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project does adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [6.0.3](https://github.com/microsoftgraph/msgraph-sdk-dotnet/compare/6.0.2...6.0.3) (2026-05-14)
+
+
+### Build System
+
+* pool with larger mem sku ([#3124](https://github.com/microsoftgraph/msgraph-sdk-dotnet/issues/3124)) ([a9881e4](https://github.com/microsoftgraph/msgraph-sdk-dotnet/commit/a9881e4719db4d562e7c63ed08768a4cd0030fe8))
+
+## [6.0.2](https://github.com/microsoftgraph/msgraph-sdk-dotnet/compare/6.0.1...6.0.2) (2026-05-14)
+
+
+### Build System
+
+* TFM sequentially ([#3119](https://github.com/microsoftgraph/msgraph-sdk-dotnet/issues/3119)) ([52e30a4](https://github.com/microsoftgraph/msgraph-sdk-dotnet/commit/52e30a46477cda75bc696716505becbd09b67c94))
+
+## [6.0.1](https://github.com/microsoftgraph/msgraph-sdk-dotnet/compare/6.0.0...6.0.1) (2026-05-13)
+
+
+### Build System
+
+* update azure pipeline ([#3117](https://github.com/microsoftgraph/msgraph-sdk-dotnet/issues/3117)) ([d388a63](https://github.com/microsoftgraph/msgraph-sdk-dotnet/commit/d388a63c8eb36b2fa6a3d549feba89ae8331f92d))
+
+## [6.0.0](https://github.com/microsoftgraph/msgraph-sdk-dotnet/compare/5.105.0...6.0.0) (2026-05-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** update microsoft-graph-core to 4.x
+* Dropped net5.0 target framework. The SDK now targets netstandard2.0, netstandard2.1, net8.0, and net10.0. Consumers targeting net5.0 must upgrade to net8.0 or later.
+
+### Features
+
+* **generation:** update request builders and models ([295bde7](https://github.com/microsoftgraph/msgraph-sdk-dotnet/commit/295bde7ec2da0173192f99390ddb3a8b5272d55d))
+* update target frameworks to net8.0 and net10.0, drop net5.0 ([#3096](https://github.com/microsoftgraph/msgraph-sdk-dotnet/issues/3096)) ([a383774](https://github.com/microsoftgraph/msgraph-sdk-dotnet/commit/a383774098485229a3ca2952cdf0c736f61785d1))
+
+
+### Miscellaneous Chores
+
+* **deps:** update microsoft-graph-core to 4.x ([f05de16](https://github.com/microsoftgraph/msgraph-sdk-dotnet/commit/f05de161059d9af2a19537cb4a46287790789353))
+
+## [5.105.0](https://github.com/microsoftgraph/msgraph-sdk-dotnet/compare/5.104.0...5.105.0) (2026-04-24)
+
+
+### Features
+
+* **generation:** update request builders and models ([143504b](https://github.com/microsoftgraph/msgraph-sdk-dotnet/commit/143504b9330935fc480184961d31568fb4a3bbd1))
+
+## [5.104.0](https://github.com/microsoftgraph/msgraph-sdk-dotnet/compare/5.103.0...5.104.0) (2026-04-16)
+
+
+### Features
+
+* **generation:** update request builders and models ([bacd780](https://github.com/microsoftgraph/msgraph-sdk-dotnet/commit/bacd7804221b1d9d03fbd66cfb304ce1fd371d5e))
+
 ## [5.103.0](https://github.com/microsoftgraph/msgraph-sdk-dotnet/compare/5.102.0...5.103.0) (2026-02-19)
 
 

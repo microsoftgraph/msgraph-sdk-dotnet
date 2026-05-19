@@ -41,6 +41,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("includeUnknownCountriesAndRegions", value); }
         }
         /// <summary>
+        /// Instantiates a new <see cref="global::Microsoft.Graph.Models.CountryNamedLocation"/> and sets the default values.
+        /// </summary>
+        public CountryNamedLocation() : base()
+        {
+            OdataType = "#microsoft.graph.countryNamedLocation";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.CountryNamedLocation"/></returns>

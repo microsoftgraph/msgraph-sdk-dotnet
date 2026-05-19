@@ -34,8 +34,7 @@ namespace Microsoft.Graph.Me.Calendars.Item.PermanentDelete
         {
         }
         /// <summary>
-        /// Permanently delete a calendar folder and the events that it contains and remove them from the mailbox. For more information about item retention, see Configure deleted item retention and recoverable items quotas.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/calendar-permanentdelete?view=graph-rest-1.0" />
+        /// Invoke action permanentDelete
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -57,7 +56,7 @@ namespace Microsoft.Graph.Me.Calendars.Item.PermanentDelete
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Permanently delete a calendar folder and the events that it contains and remove them from the mailbox. For more information about item retention, see Configure deleted item retention and recoverable items quotas.
+        /// Invoke action permanentDelete
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

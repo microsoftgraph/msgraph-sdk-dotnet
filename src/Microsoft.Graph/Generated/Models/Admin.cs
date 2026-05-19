@@ -22,6 +22,22 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>A container for Tenant Configuration Management (TCM) resources. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.ConfigurationManagement? ConfigurationManagement
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ConfigurationManagement?>("configurationManagement"); }
+            set { BackingStore?.Set("configurationManagement", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.ConfigurationManagement ConfigurationManagement
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ConfigurationManagement>("configurationManagement"); }
+            set { BackingStore?.Set("configurationManagement", value); }
+        }
+#endif
         /// <summary>A container for Microsoft Edge resources. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -150,7 +166,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("sharepoint", value); }
         }
 #endif
-        /// <summary>A container for Teams administration functionalities, such as user configurations and policy assignments.</summary>
+        /// <summary>A container for Teams administration functionalities, such as Teams telephone number management functionalities, user Teams configurations, and policy assignments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.TeamsAdministration.TeamsAdminRoot? Teams
@@ -192,6 +208,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "configurationManagement", n => { ConfigurationManagement = n.GetObjectValue<global::Microsoft.Graph.Models.ConfigurationManagement>(global::Microsoft.Graph.Models.ConfigurationManagement.CreateFromDiscriminatorValue); } },
                 { "edge", n => { Edge = n.GetObjectValue<global::Microsoft.Graph.Models.Edge>(global::Microsoft.Graph.Models.Edge.CreateFromDiscriminatorValue); } },
                 { "exchange", n => { Exchange = n.GetObjectValue<global::Microsoft.Graph.Models.ExchangeAdmin>(global::Microsoft.Graph.Models.ExchangeAdmin.CreateFromDiscriminatorValue); } },
                 { "microsoft365Apps", n => { Microsoft365Apps = n.GetObjectValue<global::Microsoft.Graph.Models.AdminMicrosoft365Apps>(global::Microsoft.Graph.Models.AdminMicrosoft365Apps.CreateFromDiscriminatorValue); } },
@@ -210,6 +227,7 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.ConfigurationManagement>("configurationManagement", ConfigurationManagement);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Edge>("edge", Edge);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ExchangeAdmin>("exchange", Exchange);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.AdminMicrosoft365Apps>("microsoft365Apps", Microsoft365Apps);

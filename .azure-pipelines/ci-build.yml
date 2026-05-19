@@ -2,9 +2,6 @@
 # Licensed under the MIT License.
 name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
 trigger:
-  branches:
-    include:
-    - main
   paths:
     include:
       - src/*
@@ -24,10 +21,7 @@ resources:
 extends:
   template: v1/1ES.Official.PipelineTemplate.yml@1ESPipelineTemplates
   parameters:
-    pool:
-      name: Azure-Pipelines-1ESPT-ExDShared
-      image: windows-latest
-      os: windows
+    pool: 1es-windows-ps-compute-m
     sdl:
       git: # Customize checkout to enable longpaths in git for the paralled sdl https://eng.ms/docs/cloud-ai-platform/devdiv/one-engineering-system-1es/1es-docs/1es-pipeline-templates/features/sdlanalysis/sourceanalysisstage
         longpaths: true
@@ -55,16 +49,19 @@ extends:
         - pwsh: git config --system core.longpaths true
           displayName: 'Enable long paths in git'
         - checkout: self
+
         - task: UseDotNet@2
-          displayName: 'Use .NET 8.x sdk'
+          displayName: 'Use .NET 8 sdk'
           inputs:
             packageType: sdk
             version: 8.x
+        
         - task: UseDotNet@2
-          displayName: 'Use .NET 6.x (for code signing tasks)'
+          displayName: 'Use .NET 10 sdk'
           inputs:
             packageType: sdk
-            version: 6.x
+            version: 10.x
+              
         - task: DotNetCoreCLI@2
           displayName: 'dotnet restore'
           inputs:
@@ -89,21 +86,42 @@ extends:
             Write-Host "Updated the .csproj files so that we can sign the built assemblies."
           workingDirectory: src
           displayName: 'Set project ready to sign'
+
+        # Build each TFM sequentially to avoid OOM kills on the build agent.
+        # Building all TFMs in parallel exhausts memory on standard runners (exit code 137).
         - task: DotNetCoreCLI@2
-          displayName: 'Build project'
+          displayName: 'dotnet build netstandard2.0'
           inputs:
             projects: '$(Build.SourcesDirectory)\src\Microsoft.Graph\Microsoft.Graph.csproj'
-            arguments: '-c $(BuildConfiguration) --no-incremental --no-restore'
+            arguments: '-c $(BuildConfiguration) --no-incremental -f netstandard2.0 --no-restore'
         - task: DotNetCoreCLI@2
-          displayName: 'Build test project'
+          displayName: 'dotnet build netstandard2.1'
+          inputs:
+            projects: '$(Build.SourcesDirectory)\src\Microsoft.Graph\Microsoft.Graph.csproj'
+            arguments: '-c $(BuildConfiguration) --no-incremental -f netstandard2.1 --no-restore'
+        - task: DotNetCoreCLI@2
+          displayName: 'dotnet build net8.0'
+          inputs:
+            projects: '$(Build.SourcesDirectory)\src\Microsoft.Graph\Microsoft.Graph.csproj'
+            arguments: '-c $(BuildConfiguration) --no-incremental -f net8.0 --no-restore'
+        - task: DotNetCoreCLI@2
+          displayName: 'dotnet build net10.0'
+          inputs:
+            projects: '$(Build.SourcesDirectory)\src\Microsoft.Graph\Microsoft.Graph.csproj'
+            arguments: '-c $(BuildConfiguration) --no-incremental -f net10.0 --no-restore'          
+
+        - task: DotNetCoreCLI@2
+          displayName: 'dotnet build test project'
           inputs:
             projects: '$(Build.SourcesDirectory)\tests\Microsoft.Graph.DotnetCore.Test\Microsoft.Graph.DotnetCore.Test.csproj'
             arguments: '-c $(BuildConfiguration) --no-incremental --no-restore'
+       
         - task: DotNetCoreCLI@2
           displayName: 'run tests'
           inputs:
             command: 'test'
             arguments: '--configuration $(BuildConfiguration) --verbosity normal --no-build'
+
         - task: PowerShell@2
           displayName: 'Validate updated version'
           condition: and(contains(variables['build.sourceBranch'], 'refs/heads/main'), succeeded())

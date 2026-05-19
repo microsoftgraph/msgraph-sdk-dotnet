@@ -82,6 +82,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("email", value); }
         }
 #endif
+        /// <summary>A collection of enabled apps in the channel.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.TeamsApp>? EnabledApps
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.TeamsApp>?>("enabledApps"); }
+            set { BackingStore?.Set("enabledApps", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.TeamsApp> EnabledApps
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.TeamsApp>>("enabledApps"); }
+            set { BackingStore?.Set("enabledApps", value); }
+        }
+#endif
         /// <summary>Metadata for the location where the channel&apos;s files are stored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -109,6 +125,12 @@ namespace Microsoft.Graph.Models
         {
             get { return BackingStore?.Get<bool?>("isFavoriteByDefault"); }
             set { BackingStore?.Set("isFavoriteByDefault", value); }
+        }
+        /// <summary>The layout type of the channel. It can be set during creation and updated later. The possible values are: post, chat, unknownFutureValue. The default value is post. Channels with the post layout use a traditional post‑reply conversation format, and channels with the chat layout provide a chat‑like threading experience similar to group chats.</summary>
+        public global::Microsoft.Graph.Models.ChannelLayoutType? LayoutType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ChannelLayoutType?>("layoutType"); }
+            set { BackingStore?.Set("layoutType", value); }
         }
         /// <summary>A collection of membership records associated with the channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -148,6 +170,18 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("messages", value); }
         }
 #endif
+        /// <summary>The migrationMode property</summary>
+        public global::Microsoft.Graph.Models.MigrationMode? MigrationMode
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.MigrationMode?>("migrationMode"); }
+            set { BackingStore?.Set("migrationMode", value); }
+        }
+        /// <summary>The originalCreatedDateTime property</summary>
+        public DateTimeOffset? OriginalCreatedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("originalCreatedDateTime"); }
+            set { BackingStore?.Set("originalCreatedDateTime", value); }
+        }
         /// <summary>A collection of teams with which a channel is shared.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -251,12 +285,16 @@ namespace Microsoft.Graph.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
+                { "enabledApps", n => { EnabledApps = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.TeamsApp>(global::Microsoft.Graph.Models.TeamsApp.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "filesFolder", n => { FilesFolder = n.GetObjectValue<global::Microsoft.Graph.Models.DriveItem>(global::Microsoft.Graph.Models.DriveItem.CreateFromDiscriminatorValue); } },
                 { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
                 { "isFavoriteByDefault", n => { IsFavoriteByDefault = n.GetBoolValue(); } },
+                { "layoutType", n => { LayoutType = n.GetEnumValue<global::Microsoft.Graph.Models.ChannelLayoutType>(); } },
                 { "members", n => { Members = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ConversationMember>(global::Microsoft.Graph.Models.ConversationMember.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "membershipType", n => { MembershipType = n.GetEnumValue<global::Microsoft.Graph.Models.ChannelMembershipType>(); } },
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ChatMessage>(global::Microsoft.Graph.Models.ChatMessage.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "migrationMode", n => { MigrationMode = n.GetEnumValue<global::Microsoft.Graph.Models.MigrationMode>(); } },
+                { "originalCreatedDateTime", n => { OriginalCreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "sharedWithTeams", n => { SharedWithTeams = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.SharedWithChannelTeamInfo>(global::Microsoft.Graph.Models.SharedWithChannelTeamInfo.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "summary", n => { Summary = n.GetObjectValue<global::Microsoft.Graph.Models.ChannelSummary>(global::Microsoft.Graph.Models.ChannelSummary.CreateFromDiscriminatorValue); } },
                 { "tabs", n => { Tabs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.TeamsTab>(global::Microsoft.Graph.Models.TeamsTab.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -277,12 +315,16 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("email", Email);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.TeamsApp>("enabledApps", EnabledApps);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.DriveItem>("filesFolder", FilesFolder);
             writer.WriteBoolValue("isArchived", IsArchived);
             writer.WriteBoolValue("isFavoriteByDefault", IsFavoriteByDefault);
+            writer.WriteEnumValue<global::Microsoft.Graph.Models.ChannelLayoutType>("layoutType", LayoutType);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ConversationMember>("members", Members);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.ChannelMembershipType>("membershipType", MembershipType);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ChatMessage>("messages", Messages);
+            writer.WriteEnumValue<global::Microsoft.Graph.Models.MigrationMode>("migrationMode", MigrationMode);
+            writer.WriteDateTimeOffsetValue("originalCreatedDateTime", OriginalCreatedDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.SharedWithChannelTeamInfo>("sharedWithTeams", SharedWithTeams);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ChannelSummary>("summary", Summary);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.TeamsTab>("tabs", Tabs);

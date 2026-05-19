@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Graph.Users.Item.Chats.Item.CompleteMigration;
 using Microsoft.Graph.Users.Item.Chats.Item.HideForUser;
 using Microsoft.Graph.Users.Item.Chats.Item.InstalledApps;
 using Microsoft.Graph.Users.Item.Chats.Item.LastMessagePreview;
@@ -13,6 +14,7 @@ using Microsoft.Graph.Users.Item.Chats.Item.PermissionGrants;
 using Microsoft.Graph.Users.Item.Chats.Item.PinnedMessages;
 using Microsoft.Graph.Users.Item.Chats.Item.RemoveAllAccessForUser;
 using Microsoft.Graph.Users.Item.Chats.Item.SendActivityNotification;
+using Microsoft.Graph.Users.Item.Chats.Item.StartMigration;
 using Microsoft.Graph.Users.Item.Chats.Item.Tabs;
 using Microsoft.Graph.Users.Item.Chats.Item.UnhideForUser;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -31,6 +33,11 @@ namespace Microsoft.Graph.Users.Item.Chats.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ChatItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to call the completeMigration method.</summary>
+        public global::Microsoft.Graph.Users.Item.Chats.Item.CompleteMigration.CompleteMigrationRequestBuilder CompleteMigration
+        {
+            get => new global::Microsoft.Graph.Users.Item.Chats.Item.CompleteMigration.CompleteMigrationRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the hideForUser method.</summary>
         public global::Microsoft.Graph.Users.Item.Chats.Item.HideForUser.HideForUserRequestBuilder HideForUser
         {
@@ -85,6 +92,11 @@ namespace Microsoft.Graph.Users.Item.Chats.Item
         public global::Microsoft.Graph.Users.Item.Chats.Item.SendActivityNotification.SendActivityNotificationRequestBuilder SendActivityNotification
         {
             get => new global::Microsoft.Graph.Users.Item.Chats.Item.SendActivityNotification.SendActivityNotificationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the startMigration method.</summary>
+        public global::Microsoft.Graph.Users.Item.Chats.Item.StartMigration.StartMigrationRequestBuilder StartMigration
+        {
+            get => new global::Microsoft.Graph.Users.Item.Chats.Item.StartMigration.StartMigrationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tabs property of the microsoft.graph.chat entity.</summary>
         public global::Microsoft.Graph.Users.Item.Chats.Item.Tabs.TabsRequestBuilder Tabs

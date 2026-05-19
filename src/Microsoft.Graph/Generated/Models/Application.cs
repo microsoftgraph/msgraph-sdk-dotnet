@@ -140,6 +140,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("certification", value); }
         }
 #endif
+        /// <summary>The appId of the application that created this application. Set internally by Microsoft Entra ID. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatedByAppId
+        {
+            get { return BackingStore?.Get<string?>("createdByAppId"); }
+            set { BackingStore?.Set("createdByAppId", value); }
+        }
+#nullable restore
+#else
+        public string CreatedByAppId
+        {
+            get { return BackingStore?.Get<string>("createdByAppId"); }
+            set { BackingStore?.Set("createdByAppId", value); }
+        }
+#endif
         /// <summary>The date and time the application was registered. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.  Supports $filter (eq, ne, not, ge, le, in, and eq on null values) and $orderby.</summary>
         public DateTimeOffset? CreatedDateTime
         {
@@ -328,6 +344,12 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("isDeviceOnlyAuthSupported"); }
             set { BackingStore?.Set("isDeviceOnlyAuthSupported", value); }
         }
+        /// <summary>The isDisabled property</summary>
+        public bool? IsDisabled
+        {
+            get { return BackingStore?.Get<bool?>("isDisabled"); }
+            set { BackingStore?.Set("isDisabled", value); }
+        }
         /// <summary>Specifies the fallback application type as public client, such as an installed application running on a mobile device. The default value is false, which means the fallback application type is confidential client such as a web app. There are certain scenarios where Microsoft Entra ID can&apos;t determine the client application type. For example, the ROPC flow where it&apos;s configured without specifying a redirect URI. In those cases, Microsoft Entra ID interprets the application type based on the value of this property.</summary>
         public bool? IsFallbackPublicClient
         {
@@ -364,6 +386,22 @@ namespace Microsoft.Graph.Models
         {
             get { return BackingStore?.Get<byte[]>("logo"); }
             set { BackingStore?.Set("logo", value); }
+        }
+#endif
+        /// <summary>A collection of application IDs for Microsoft first-party applications designated as managers. Manager applications can create service principals, agent identities, and agent users for managed agent blueprints. Limited to a maximum of 10 entries. Not nullable. Only supported on agentIdentityBlueprint objects; attempts to set this property on non-agent-blueprint applications return an error. Not returned by default; must be explicitly requested via $select.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Guid?>? ManagerApplications
+        {
+            get { return BackingStore?.Get<List<Guid?>?>("managerApplications"); }
+            set { BackingStore?.Set("managerApplications", value); }
+        }
+#nullable restore
+#else
+        public List<Guid?> ManagerApplications
+        {
+            get { return BackingStore?.Get<List<Guid?>>("managerApplications"); }
+            set { BackingStore?.Set("managerApplications", value); }
         }
 #endif
         /// <summary>Specifies whether the Native Authentication APIs are enabled for the application. The possible values are: none and all. Default is none. For more information, see Native Authentication.</summary>
@@ -735,7 +773,12 @@ namespace Microsoft.Graph.Models
         public static new global::Microsoft.Graph.Models.Application CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Models.Application();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "#microsoft.graph.agentIdentityBlueprint" => new global::Microsoft.Graph.Models.AgentIdentityBlueprint(),
+                _ => new global::Microsoft.Graph.Models.Application(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -753,6 +796,7 @@ namespace Microsoft.Graph.Models
                 { "applicationTemplateId", n => { ApplicationTemplateId = n.GetStringValue(); } },
                 { "authenticationBehaviors", n => { AuthenticationBehaviors = n.GetObjectValue<global::Microsoft.Graph.Models.AuthenticationBehaviors>(global::Microsoft.Graph.Models.AuthenticationBehaviors.CreateFromDiscriminatorValue); } },
                 { "certification", n => { Certification = n.GetObjectValue<global::Microsoft.Graph.Models.Certification>(global::Microsoft.Graph.Models.Certification.CreateFromDiscriminatorValue); } },
+                { "createdByAppId", n => { CreatedByAppId = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "createdOnBehalfOf", n => { CreatedOnBehalfOf = n.GetObjectValue<global::Microsoft.Graph.Models.DirectoryObject>(global::Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue); } },
                 { "defaultRedirectUri", n => { DefaultRedirectUri = n.GetStringValue(); } },
@@ -766,9 +810,11 @@ namespace Microsoft.Graph.Models
                 { "identifierUris", n => { IdentifierUris = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "info", n => { Info = n.GetObjectValue<global::Microsoft.Graph.Models.InformationalUrl>(global::Microsoft.Graph.Models.InformationalUrl.CreateFromDiscriminatorValue); } },
                 { "isDeviceOnlyAuthSupported", n => { IsDeviceOnlyAuthSupported = n.GetBoolValue(); } },
+                { "isDisabled", n => { IsDisabled = n.GetBoolValue(); } },
                 { "isFallbackPublicClient", n => { IsFallbackPublicClient = n.GetBoolValue(); } },
                 { "keyCredentials", n => { KeyCredentials = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.KeyCredential>(global::Microsoft.Graph.Models.KeyCredential.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "logo", n => { Logo = n.GetByteArrayValue(); } },
+                { "managerApplications", n => { ManagerApplications = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
                 { "nativeAuthenticationApisEnabled", n => { NativeAuthenticationApisEnabled = n.GetEnumValue<global::Microsoft.Graph.Models.NativeAuthenticationApisEnabled>(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "oauth2RequirePostResponse", n => { Oauth2RequirePostResponse = n.GetBoolValue(); } },
@@ -811,6 +857,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AppRole>("appRoles", AppRoles);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.AuthenticationBehaviors>("authenticationBehaviors", AuthenticationBehaviors);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Certification>("certification", Certification);
+            writer.WriteStringValue("createdByAppId", CreatedByAppId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.DirectoryObject>("createdOnBehalfOf", CreatedOnBehalfOf);
             writer.WriteStringValue("defaultRedirectUri", DefaultRedirectUri);
@@ -824,9 +871,11 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfPrimitiveValues<string>("identifierUris", IdentifierUris);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.InformationalUrl>("info", Info);
             writer.WriteBoolValue("isDeviceOnlyAuthSupported", IsDeviceOnlyAuthSupported);
+            writer.WriteBoolValue("isDisabled", IsDisabled);
             writer.WriteBoolValue("isFallbackPublicClient", IsFallbackPublicClient);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.KeyCredential>("keyCredentials", KeyCredentials);
             writer.WriteByteArrayValue("logo", Logo);
+            writer.WriteCollectionOfPrimitiveValues<Guid?>("managerApplications", ManagerApplications);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.NativeAuthenticationApisEnabled>("nativeAuthenticationApisEnabled", NativeAuthenticationApisEnabled);
             writer.WriteStringValue("notes", Notes);
             writer.WriteBoolValue("oauth2RequirePostResponse", Oauth2RequirePostResponse);

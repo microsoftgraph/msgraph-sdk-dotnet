@@ -40,5 +40,9 @@ namespace Microsoft.Graph.Models
         #pragma warning disable CS1591
         UnknownFutureValue,
         #pragma warning restore CS1591
+        [EnumMember(Value = "riskRemediation")]
+        #pragma warning disable CS1591
+        RiskRemediation,
+        #pragma warning restore CS1591
     }
 }

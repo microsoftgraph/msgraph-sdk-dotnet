@@ -56,5 +56,9 @@ namespace Microsoft.Graph.Models
         #pragma warning disable CS1591
         UnknownFutureValue,
         #pragma warning restore CS1591
+        [EnumMember(Value = "approverRemove")]
+        #pragma warning disable CS1591
+        ApproverRemove,
+        #pragma warning restore CS1591
     }
 }

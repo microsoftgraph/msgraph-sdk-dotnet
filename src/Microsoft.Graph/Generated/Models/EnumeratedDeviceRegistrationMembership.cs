@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class EnumeratedDeviceRegistrationMembership : global::Microsoft.Graph.Models.DeviceRegistrationMembership, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The groups property</summary>
+        /// <summary>List of groups that this policy applies to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Groups
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("groups", value); }
         }
 #endif
-        /// <summary>The users property</summary>
+        /// <summary>List of users that this policy applies to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Users

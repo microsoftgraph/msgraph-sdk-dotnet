@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class DeviceRegistrationPolicy : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The azureADJoin property</summary>
+        /// <summary>Specifies the authorization policy for controlling registration of new devices using Microsoft Entra join within your organization. Required. For more information, see What is a device identity?.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.AzureADJoinPolicy? AzureADJoin
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("azureADJoin", value); }
         }
 #endif
-        /// <summary>The azureADRegistration property</summary>
+        /// <summary>Specifies the authorization policy for controlling registration of new devices using Microsoft Entra registered within your organization. Required. For more information, see What is a device identity?.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.AzureADRegistrationPolicy? AzureADRegistration
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("azureADRegistration", value); }
         }
 #endif
-        /// <summary>The description property</summary>
+        /// <summary>The description of the device registration policy. Always set to Tenant-wide policy that manages intial provisioning controls using quota restrictions, additional authentication and authorization checks. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>The name of the device registration policy. Always set to Device Registration Policy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The localAdminPassword property</summary>
+        /// <summary>Specifies the setting for Local Admin Password Solution (LAPS) within your organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.LocalAdminPasswordSettings? LocalAdminPassword
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.MultiFactorAuthConfiguration?>("multiFactorAuthConfiguration"); }
             set { BackingStore?.Set("multiFactorAuthConfiguration", value); }
         }
-        /// <summary>The userDeviceQuota property</summary>
+        /// <summary>Specifies the maximum number of devices that a user can have within your organization before blocking new device registrations. The default value is set to 50. If this property isn&apos;t specified during the policy update operation, it&apos;s automatically reset to 0 to indicate that users aren&apos;t allowed to join any devices.</summary>
         public int? UserDeviceQuota
         {
             get { return BackingStore?.Get<int?>("userDeviceQuota"); }

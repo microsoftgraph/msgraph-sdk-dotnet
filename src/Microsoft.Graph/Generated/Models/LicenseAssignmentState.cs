@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>The assignedByGroup property</summary>
+        /// <summary>Indicates whether the license is directly-assigned or inherited from a group. If directly-assigned, this field is null; if inherited through a group membership, this field contains the ID of the group. Read-Only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssignedByGroup
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Models
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The disabledPlans property</summary>
+        /// <summary>The service plans that are disabled in this assignment. Read-Only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Guid?>? DisabledPlans
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("disabledPlans", value); }
         }
 #endif
-        /// <summary>The error property</summary>
+        /// <summary>License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. The possible values are CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Other. For more information on how to identify and resolve license assignment errors, see here.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Error
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("error", value); }
         }
 #endif
-        /// <summary>The lastUpdatedDateTime property</summary>
+        /// <summary>The timestamp when the state of the license assignment was last updated.</summary>
         public DateTimeOffset? LastUpdatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
@@ -91,13 +91,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The skuId property</summary>
+        /// <summary>The unique identifier for the SKU. Read-Only.</summary>
         public Guid? SkuId
         {
             get { return BackingStore?.Get<Guid?>("skuId"); }
             set { BackingStore?.Set("skuId", value); }
         }
-        /// <summary>The state property</summary>
+        /// <summary>Indicate the current state of this assignment. Read-Only. The possible values are Active, ActiveWithError, Disabled, and Error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? State

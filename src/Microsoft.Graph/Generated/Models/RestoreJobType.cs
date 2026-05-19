@@ -20,5 +20,9 @@ namespace Microsoft.Graph.Models
         #pragma warning disable CS1591
         UnknownFutureValue,
         #pragma warning restore CS1591
+        [EnumMember(Value = "granular")]
+        #pragma warning disable CS1591
+        Granular,
+        #pragma warning restore CS1591
     }
 }

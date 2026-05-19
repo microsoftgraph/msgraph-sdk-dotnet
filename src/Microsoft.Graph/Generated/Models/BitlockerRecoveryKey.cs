@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("deviceId", value); }
         }
 #endif
-        /// <summary>The BitLocker recovery key. Returned only on $select. Not nullable.</summary>
+        /// <summary>The BitLocker recovery key. Requires $select to retrieve. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Key

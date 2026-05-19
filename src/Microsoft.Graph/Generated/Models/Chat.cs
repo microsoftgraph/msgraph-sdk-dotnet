@@ -100,6 +100,12 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("messages", value); }
         }
 #endif
+        /// <summary>The migrationMode property</summary>
+        public global::Microsoft.Graph.Models.MigrationMode? MigrationMode
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.MigrationMode?>("migrationMode"); }
+            set { BackingStore?.Set("migrationMode", value); }
+        }
         /// <summary>Represents details about an online meeting. If the chat isn&apos;t associated with an online meeting, the property is empty. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -116,6 +122,12 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("onlineMeetingInfo", value); }
         }
 #endif
+        /// <summary>The originalCreatedDateTime property</summary>
+        public DateTimeOffset? OriginalCreatedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("originalCreatedDateTime"); }
+            set { BackingStore?.Set("originalCreatedDateTime", value); }
+        }
         /// <summary>A collection of permissions granted to apps for the chat.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -254,7 +266,9 @@ namespace Microsoft.Graph.Models
                 { "lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "members", n => { Members = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ConversationMember>(global::Microsoft.Graph.Models.ConversationMember.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ChatMessage>(global::Microsoft.Graph.Models.ChatMessage.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "migrationMode", n => { MigrationMode = n.GetEnumValue<global::Microsoft.Graph.Models.MigrationMode>(); } },
                 { "onlineMeetingInfo", n => { OnlineMeetingInfo = n.GetObjectValue<global::Microsoft.Graph.Models.TeamworkOnlineMeetingInfo>(global::Microsoft.Graph.Models.TeamworkOnlineMeetingInfo.CreateFromDiscriminatorValue); } },
+                { "originalCreatedDateTime", n => { OriginalCreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "permissionGrants", n => { PermissionGrants = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ResourceSpecificPermissionGrant>(global::Microsoft.Graph.Models.ResourceSpecificPermissionGrant.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "pinnedMessages", n => { PinnedMessages = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.PinnedChatMessageInfo>(global::Microsoft.Graph.Models.PinnedChatMessageInfo.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "tabs", n => { Tabs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.TeamsTab>(global::Microsoft.Graph.Models.TeamsTab.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -280,7 +294,9 @@ namespace Microsoft.Graph.Models
             writer.WriteDateTimeOffsetValue("lastUpdatedDateTime", LastUpdatedDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ConversationMember>("members", Members);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ChatMessage>("messages", Messages);
+            writer.WriteEnumValue<global::Microsoft.Graph.Models.MigrationMode>("migrationMode", MigrationMode);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.TeamworkOnlineMeetingInfo>("onlineMeetingInfo", OnlineMeetingInfo);
+            writer.WriteDateTimeOffsetValue("originalCreatedDateTime", OriginalCreatedDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ResourceSpecificPermissionGrant>("permissionGrants", PermissionGrants);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.PinnedChatMessageInfo>("pinnedMessages", PinnedMessages);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.TeamsTab>("tabs", Tabs);

@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Columns
         {
         }
         /// <summary>
-        /// Get columns from storage
+        /// The set of custom structured metadata supported by the fileStorageContainer. Read-write.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ColumnDefinitionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Columns
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ColumnDefinition>(requestInfo, global::Microsoft.Graph.Models.ColumnDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get columns from storage
+        /// The set of custom structured metadata supported by the fileStorageContainer. Read-write.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Columns
             return new global::Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Columns.ColumnsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get columns from storage
+        /// The set of custom structured metadata supported by the fileStorageContainer. Read-write.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ColumnsRequestBuilderGetQueryParameters 

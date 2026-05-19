@@ -78,8 +78,10 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.onEmailOtpSendListener" => new global::Microsoft.Graph.Models.OnEmailOtpSendListener(),
                 "#microsoft.graph.onFraudProtectionLoadStartListener" => new global::Microsoft.Graph.Models.OnFraudProtectionLoadStartListener(),
                 "#microsoft.graph.onInteractiveAuthFlowStartListener" => new global::Microsoft.Graph.Models.OnInteractiveAuthFlowStartListener(),
+                "#microsoft.graph.onPasswordSubmitListener" => new global::Microsoft.Graph.Models.OnPasswordSubmitListener(),
                 "#microsoft.graph.onTokenIssuanceStartListener" => new global::Microsoft.Graph.Models.OnTokenIssuanceStartListener(),
                 "#microsoft.graph.onUserCreateStartListener" => new global::Microsoft.Graph.Models.OnUserCreateStartListener(),
+                "#microsoft.graph.onVerifiedIdClaimValidationListener" => new global::Microsoft.Graph.Models.OnVerifiedIdClaimValidationListener(),
                 _ => new global::Microsoft.Graph.Models.AuthenticationEventListener(),
             };
         }

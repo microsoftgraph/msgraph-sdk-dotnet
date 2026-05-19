@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("adDomainUsername", value); }
         }
 #endif
-        /// <summary>The interface URL of the partner service&apos;s resource that links to this Azure network connection. Returned only on $select.</summary>
+        /// <summary>The interface URL of the partner service&apos;s resource that links to this Azure network connection. Requires $select to retrieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AlternateResourceUrl
@@ -98,13 +98,19 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>Indicates whether regular health checks on the network or domain configuration are paused or active. false if the regular health checks on the network or domain configuration are currently active. true if the checks are paused. If you perform a create or update operation on a onPremisesNetworkConnection resource, this value is set to false for four weeks. If you retry a health check on network or domain configuration, this value is set to false for two weeks. If the onPremisesNetworkConnection resource is attached in a provisioningPolicy or used by a Cloud PC in the past four weeks, healthCheckPaused is set to false. Read-only. Default is false.</summary>
+        public bool? HealthCheckPaused
+        {
+            get { return BackingStore?.Get<bool?>("healthCheckPaused"); }
+            set { BackingStore?.Set("healthCheckPaused", value); }
+        }
         /// <summary>The healthCheckStatus property</summary>
         public global::Microsoft.Graph.Models.CloudPcOnPremisesConnectionStatus? HealthCheckStatus
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.CloudPcOnPremisesConnectionStatus?>("healthCheckStatus"); }
             set { BackingStore?.Set("healthCheckStatus", value); }
         }
-        /// <summary>Indicates the results of health checks performed on the on-premises connection. Read-only. Returned only on $select. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetail. Read-only.</summary>
+        /// <summary>Indicates the results of health checks performed on the on-premises connection. Read-only. Requires $select to retrieve. For an example that shows how to get the inUse property, see Example 2: Get the selected properties of an Azure network connection, including healthCheckStatusDetail. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.CloudPcOnPremisesConnectionStatusDetail? HealthCheckStatusDetail
@@ -125,6 +131,12 @@ namespace Microsoft.Graph.Models
         {
             get { return BackingStore?.Get<bool?>("inUse"); }
             set { BackingStore?.Set("inUse", value); }
+        }
+        /// <summary>Indicates whether a Cloud PC is using this on-premises network connection. true if at least one Cloud PC is using it. Otherwise, false. Read-only. Default is false.</summary>
+        public bool? InUseByCloudPc
+        {
+            get { return BackingStore?.Get<bool?>("inUseByCloudPc"); }
+            set { BackingStore?.Set("inUseByCloudPc", value); }
         }
         /// <summary>The organizational unit (OU) in which the computer account is created. If left null, the OU configured as the default (a well-known computer object container) in the tenant&apos;s Active Directory domain (OU) is used. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -156,6 +168,22 @@ namespace Microsoft.Graph.Models
         {
             get { return BackingStore?.Get<string>("resourceGroupId"); }
             set { BackingStore?.Set("resourceGroupId", value); }
+        }
+#endif
+        /// <summary>The scope IDs of the corresponding permission. Currently, it&apos;s the Intune scope tag ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ScopeIds
+        {
+            get { return BackingStore?.Get<List<string>?>("scopeIds"); }
+            set { BackingStore?.Set("scopeIds", value); }
+        }
+#nullable restore
+#else
+        public List<string> ScopeIds
+        {
+            get { return BackingStore?.Get<List<string>>("scopeIds"); }
+            set { BackingStore?.Set("scopeIds", value); }
         }
 #endif
         /// <summary>The unique identifier of the target subnet used associated with the on-premises network connectivity for Cloud PCs. Required format: &apos;/subscriptions/{subscription-id}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkId}/subnets/{subnetName}&apos;</summary>
@@ -262,11 +290,14 @@ namespace Microsoft.Graph.Models
                 { "alternateResourceUrl", n => { AlternateResourceUrl = n.GetStringValue(); } },
                 { "connectionType", n => { ConnectionType = n.GetEnumValue<global::Microsoft.Graph.Models.CloudPcOnPremisesConnectionType>(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "healthCheckPaused", n => { HealthCheckPaused = n.GetBoolValue(); } },
                 { "healthCheckStatus", n => { HealthCheckStatus = n.GetEnumValue<global::Microsoft.Graph.Models.CloudPcOnPremisesConnectionStatus>(); } },
                 { "healthCheckStatusDetail", n => { HealthCheckStatusDetail = n.GetObjectValue<global::Microsoft.Graph.Models.CloudPcOnPremisesConnectionStatusDetail>(global::Microsoft.Graph.Models.CloudPcOnPremisesConnectionStatusDetail.CreateFromDiscriminatorValue); } },
                 { "inUse", n => { InUse = n.GetBoolValue(); } },
+                { "inUseByCloudPc", n => { InUseByCloudPc = n.GetBoolValue(); } },
                 { "organizationalUnit", n => { OrganizationalUnit = n.GetStringValue(); } },
                 { "resourceGroupId", n => { ResourceGroupId = n.GetStringValue(); } },
+                { "scopeIds", n => { ScopeIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "subnetId", n => { SubnetId = n.GetStringValue(); } },
                 { "subscriptionId", n => { SubscriptionId = n.GetStringValue(); } },
                 { "subscriptionName", n => { SubscriptionName = n.GetStringValue(); } },
@@ -288,11 +319,14 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("alternateResourceUrl", AlternateResourceUrl);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.CloudPcOnPremisesConnectionType>("connectionType", ConnectionType);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteBoolValue("healthCheckPaused", HealthCheckPaused);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.CloudPcOnPremisesConnectionStatus>("healthCheckStatus", HealthCheckStatus);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.CloudPcOnPremisesConnectionStatusDetail>("healthCheckStatusDetail", HealthCheckStatusDetail);
             writer.WriteBoolValue("inUse", InUse);
+            writer.WriteBoolValue("inUseByCloudPc", InUseByCloudPc);
             writer.WriteStringValue("organizationalUnit", OrganizationalUnit);
             writer.WriteStringValue("resourceGroupId", ResourceGroupId);
+            writer.WriteCollectionOfPrimitiveValues<string>("scopeIds", ScopeIds);
             writer.WriteStringValue("subnetId", SubnetId);
             writer.WriteStringValue("subscriptionId", SubscriptionId);
             writer.WriteStringValue("subscriptionName", SubscriptionName);

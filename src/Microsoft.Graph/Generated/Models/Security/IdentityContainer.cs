@@ -92,6 +92,22 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("sensors", value); }
         }
 #endif
+        /// <summary>Represents a container for security identities settings APIs.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.Security.SettingsContainer? Settings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.SettingsContainer?>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.Security.SettingsContainer Settings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.SettingsContainer>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -115,6 +131,7 @@ namespace Microsoft.Graph.Models.Security
                 { "sensorCandidateActivationConfiguration", n => { SensorCandidateActivationConfiguration = n.GetObjectValue<global::Microsoft.Graph.Models.Security.SensorCandidateActivationConfiguration>(global::Microsoft.Graph.Models.Security.SensorCandidateActivationConfiguration.CreateFromDiscriminatorValue); } },
                 { "sensorCandidates", n => { SensorCandidates = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.SensorCandidate>(global::Microsoft.Graph.Models.Security.SensorCandidate.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sensors", n => { Sensors = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.Sensor>(global::Microsoft.Graph.Models.Security.Sensor.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Models.Security.SettingsContainer>(global::Microsoft.Graph.Models.Security.SettingsContainer.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -130,6 +147,7 @@ namespace Microsoft.Graph.Models.Security
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.SensorCandidateActivationConfiguration>("sensorCandidateActivationConfiguration", SensorCandidateActivationConfiguration);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.SensorCandidate>("sensorCandidates", SensorCandidates);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.Sensor>("sensors", Sensors);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.SettingsContainer>("settings", Settings);
         }
     }
 }

@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("assignedSensitivityLabel", value); }
         }
 #endif
-        /// <summary>The columns property</summary>
+        /// <summary>The set of custom structured metadata supported by the fileStorageContainer. Read-write.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.ColumnDefinition>? Columns
@@ -190,6 +190,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("settings", value); }
         }
 #endif
+        /// <summary>The collection of sharePointGroup objects local to the container. Read-write.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.SharePointGroup>? SharePointGroups
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.SharePointGroup>?>("sharePointGroups"); }
+            set { BackingStore?.Set("sharePointGroups", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.SharePointGroup> SharePointGroups
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.SharePointGroup>>("sharePointGroups"); }
+            set { BackingStore?.Set("sharePointGroups", value); }
+        }
+#endif
         /// <summary>Status of the fileStorageContainer. Containers are created as inactive and require activation. Inactive containers are subjected to automatic deletion in 24 hours. The possible values are: inactive, active. Read-only.</summary>
         public global::Microsoft.Graph.Models.FileStorageContainerStatus? Status
         {
@@ -243,6 +259,7 @@ namespace Microsoft.Graph.Models
                 { "permissions", n => { Permissions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Permission>(global::Microsoft.Graph.Models.Permission.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "recycleBin", n => { RecycleBin = n.GetObjectValue<global::Microsoft.Graph.Models.RecycleBin>(global::Microsoft.Graph.Models.RecycleBin.CreateFromDiscriminatorValue); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Models.FileStorageContainerSettings>(global::Microsoft.Graph.Models.FileStorageContainerSettings.CreateFromDiscriminatorValue); } },
+                { "sharePointGroups", n => { SharePointGroups = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.SharePointGroup>(global::Microsoft.Graph.Models.SharePointGroup.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Microsoft.Graph.Models.FileStorageContainerStatus>(); } },
                 { "viewpoint", n => { Viewpoint = n.GetObjectValue<global::Microsoft.Graph.Models.FileStorageContainerViewpoint>(global::Microsoft.Graph.Models.FileStorageContainerViewpoint.CreateFromDiscriminatorValue); } },
             };
@@ -268,6 +285,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Permission>("permissions", Permissions);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.RecycleBin>("recycleBin", RecycleBin);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.FileStorageContainerSettings>("settings", Settings);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.SharePointGroup>("sharePointGroups", SharePointGroups);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.FileStorageContainerStatus>("status", Status);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.FileStorageContainerViewpoint>("viewpoint", Viewpoint);
         }

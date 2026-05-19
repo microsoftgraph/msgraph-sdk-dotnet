@@ -80,5 +80,9 @@ namespace Microsoft.Graph.Models
         #pragma warning disable CS1591
         AdminConfirmedAccountSafe,
         #pragma warning restore CS1591
+        [EnumMember(Value = "microsoftRevokedSessions")]
+        #pragma warning disable CS1591
+        MicrosoftRevokedSessions,
+        #pragma warning restore CS1591
     }
 }

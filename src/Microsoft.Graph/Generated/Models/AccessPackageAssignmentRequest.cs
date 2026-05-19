@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("answers", value); }
         }
 #endif
-        /// <summary>For a requestType of userAdd or adminAdd, this is an access package assignment requested to be created. For a requestType of userRemove, adminRemove or systemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.</summary>
+        /// <summary>For a requestType of userAdd or adminAdd, this is an access package assignment requested to be created. For a requestType of userRemove, adminRemove, approverRemove, or systemRemove, this has the id property of an existing assignment to be removed.   Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.AccessPackageAssignment? Assignment
@@ -120,13 +120,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("requestor", value); }
         }
 #endif
-        /// <summary>The type of the request. The possible values are: notSpecified, userAdd, UserExtend, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd (not supported), unknownFutureValue. Requests from the user have a requestType of userAdd, userUpdate, or userRemove. This property can&apos;t be changed once set.</summary>
+        /// <summary>The type of the request. The possible values are: notSpecified, userAdd, userUpdate, userRemove, adminAdd, adminUpdate, adminRemove, systemAdd, systemUpdate, systemRemove, onBehalfAdd (not supported), unknownFutureValue. Use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: approverRemove. Requests from the user have a requestType of userAdd, userUpdate, or userRemove. This property can&apos;t be changed once set.</summary>
         public global::Microsoft.Graph.Models.AccessPackageRequestType? RequestType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.AccessPackageRequestType?>("requestType"); }
             set { BackingStore?.Set("requestType", value); }
         }
-        /// <summary>The range of dates that access is to be assigned to the requestor. This property can&apos;t be changed once set, but a new schedule for an assignment can be included in another userUpdate or UserExtend or adminUpdate assignment request.</summary>
+        /// <summary>The range of dates that access is to be assigned to the requestor. This property can&apos;t be changed once set, but a new schedule for an assignment can be included in another userUpdate or adminUpdate assignment request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.EntitlementManagementSchedule? Schedule
