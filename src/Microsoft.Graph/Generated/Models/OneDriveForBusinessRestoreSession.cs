@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("driveRestoreArtifactsBulkAdditionRequests", value); }
         }
 #endif
-        /// <summary>The granularDriveRestoreArtifacts property</summary>
+        /// <summary>A collection of browse session ID and item key details that can be used to restore OneDrive for work or school files and folders.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.GranularDriveRestoreArtifact>? GranularDriveRestoreArtifacts

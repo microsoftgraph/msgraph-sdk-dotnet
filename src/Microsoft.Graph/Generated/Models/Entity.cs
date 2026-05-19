@@ -1085,6 +1085,8 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.userSolutionRoot" => new global::Microsoft.Graph.Models.UserSolutionRoot(),
                 "#microsoft.graph.userStorage" => new global::Microsoft.Graph.Models.UserStorage(),
                 "#microsoft.graph.userTeamwork" => new global::Microsoft.Graph.Models.UserTeamwork(),
+                "#microsoft.graph.verifiableCredentialAuthenticationMethodTarget" => new global::Microsoft.Graph.Models.VerifiableCredentialAuthenticationMethodTarget(),
+                "#microsoft.graph.verifiableCredentialsAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Models.VerifiableCredentialsAuthenticationMethodConfiguration(),
                 "#microsoft.graph.verifiedIdProfile" => new global::Microsoft.Graph.Models.VerifiedIdProfile(),
                 "#microsoft.graph.verticalSection" => new global::Microsoft.Graph.Models.VerticalSection(),
                 "#microsoft.graph.virtualEndpoint" => new global::Microsoft.Graph.Models.VirtualEndpoint(),

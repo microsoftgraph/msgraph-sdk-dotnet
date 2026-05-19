@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>Describes why the taskProcessingResult has failed.</summary>
+        /// <summary>Describes why the taskProcessingResult failed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FailureReason
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             set { BackingStore?.Set("failureReason", value); }
         }
 #endif
-        /// <summary>The processingInfo property</summary>
+        /// <summary>Additional human-readable context about the task processing outcome. This property contains information about edge cases where the task completed successfully but the expected action wasn&apos;t performed because the target was already in the desired state, such as when the user was already a member of the specified group. Returns null when no additional context is needed. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProcessingInfo
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.IdentityGovernance.LifecycleWorkflowProcessingStatus?>("processingStatus"); }
             set { BackingStore?.Set("processingStatus", value); }
         }
-        /// <summary>The date time when taskProcessingResult execution started. Value is null if task execution has not yet started.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
+        /// <summary>The date time when taskProcessingResult execution started. Value is null if task execution hasn&apos;t started yet.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
         public DateTimeOffset? StartedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("startedDateTime"); }

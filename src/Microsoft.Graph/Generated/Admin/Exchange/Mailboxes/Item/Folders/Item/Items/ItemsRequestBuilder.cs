@@ -60,7 +60,8 @@ namespace Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item.Items
         {
         }
         /// <summary>
-        /// Get items from admin
+        /// Get the mailboxItem collection within a specified mailboxFolder in a mailbox.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailboxfolder-list-items?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.MailboxItemCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +84,7 @@ namespace Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item.Items
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.MailboxItemCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.MailboxItemCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get items from admin
+        /// Get the mailboxItem collection within a specified mailboxFolder in a mailbox.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +112,7 @@ namespace Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item.Items
             return new global::Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item.Items.ItemsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get items from admin
+        /// Get the mailboxItem collection within a specified mailboxFolder in a mailbox.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ItemsRequestBuilderGetQueryParameters 

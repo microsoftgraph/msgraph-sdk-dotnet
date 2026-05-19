@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Admin.Exchange.Mailboxes.Item.CreateImportSession
         {
         }
         /// <summary>
-        /// Invoke action createImportSession
+        /// Create a session to import an Exchange mailbox item that was exported using the exportItems API.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailbox-createimportsession?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.MailboxItemImportSession"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +59,7 @@ namespace Microsoft.Graph.Admin.Exchange.Mailboxes.Item.CreateImportSession
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.MailboxItemImportSession>(requestInfo, global::Microsoft.Graph.Models.MailboxItemImportSession.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action createImportSession
+        /// Create a session to import an Exchange mailbox item that was exported using the exportItems API.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

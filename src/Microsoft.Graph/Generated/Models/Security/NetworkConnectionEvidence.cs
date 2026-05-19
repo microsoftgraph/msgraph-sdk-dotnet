@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models.Security
     public partial class NetworkConnectionEvidence : global::Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The destinationAddress property</summary>
+        /// <summary>An entity of type IP that is the destination for this connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.Security.IpEvidence? DestinationAddress
@@ -28,19 +28,19 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("destinationAddress", value); }
         }
 #endif
-        /// <summary>The destinationPort property</summary>
+        /// <summary>The destination port number. For example, 80.</summary>
         public int? DestinationPort
         {
             get { return BackingStore?.Get<int?>("destinationPort"); }
             set { BackingStore?.Set("destinationPort", value); }
         }
-        /// <summary>The protocol property</summary>
+        /// <summary>The protocol type. Possible values are tcp, udp, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.Security.ProtocolType? Protocol
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.ProtocolType?>("protocol"); }
             set { BackingStore?.Set("protocol", value); }
         }
-        /// <summary>The sourceAddress property</summary>
+        /// <summary>An entity of type IP that is the source for this connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.Security.IpEvidence? SourceAddress
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("sourceAddress", value); }
         }
 #endif
-        /// <summary>The sourcePort property</summary>
+        /// <summary>The source port number. For example, 80.</summary>
         public int? SourcePort
         {
             get { return BackingStore?.Get<int?>("sourcePort"); }

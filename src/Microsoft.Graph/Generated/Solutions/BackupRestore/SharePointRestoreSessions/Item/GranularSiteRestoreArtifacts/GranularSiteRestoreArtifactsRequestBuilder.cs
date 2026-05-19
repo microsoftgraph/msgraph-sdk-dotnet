@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Solutions.BackupRestore.SharePointRestoreSessions.Item
         {
         }
         /// <summary>
-        /// Get granularSiteRestoreArtifacts from solutions
+        /// Get a list of the granularSiteRestoreArtifact objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/sharepointrestoresession-list-granularsiterestoreartifacts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.GranularSiteRestoreArtifactCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.SharePointRestoreSessions.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.GranularSiteRestoreArtifact>(requestInfo, global::Microsoft.Graph.Models.GranularSiteRestoreArtifact.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get granularSiteRestoreArtifacts from solutions
+        /// Get a list of the granularSiteRestoreArtifact objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +153,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.SharePointRestoreSessions.Item
             return new global::Microsoft.Graph.Solutions.BackupRestore.SharePointRestoreSessions.Item.GranularSiteRestoreArtifacts.GranularSiteRestoreArtifactsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get granularSiteRestoreArtifacts from solutions
+        /// Get a list of the granularSiteRestoreArtifact objects and their properties.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GranularSiteRestoreArtifactsRequestBuilderGetQueryParameters 

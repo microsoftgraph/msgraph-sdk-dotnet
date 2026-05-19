@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Models.Security
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.FileHashAlgorithm?>("algorithm"); }
             set { BackingStore?.Set("algorithm", value); }
         }
-        /// <summary>The value property</summary>
+        /// <summary>The hash value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value

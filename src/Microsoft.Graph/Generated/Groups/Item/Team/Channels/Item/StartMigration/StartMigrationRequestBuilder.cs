@@ -34,7 +34,8 @@ namespace Microsoft.Graph.Groups.Item.Team.Channels.Item.StartMigration
         {
         }
         /// <summary>
-        /// Invoke action startMigration
+        /// Start the migration of external messages by enabling migration mode in an existing channel. Import operations were limited to newly created standard channels that were in an empty state. For more information, see Import third-party platform messages to Teams using Microsoft Graph. Users are also allowed to define a minimum timestamp for content to be migrated, allowing them to import messages from the past. The provided timestamp must be older than the current createdDateTime for a channel. The provided timestamp is used to replace the existing createdDateTime of the channel. This API supportes the following channel types.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-startmigration?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +59,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Channels.Item.StartMigration
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action startMigration
+        /// Start the migration of external messages by enabling migration mode in an existing channel. Import operations were limited to newly created standard channels that were in an empty state. For more information, see Import third-party platform messages to Teams using Microsoft Graph. Users are also allowed to define a minimum timestamp for content to be migrated, allowing them to import messages from the past. The provided timestamp must be older than the current createdDateTime for a channel. The provided timestamp is used to replace the existing createdDateTime of the channel. This API supportes the following channel types.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

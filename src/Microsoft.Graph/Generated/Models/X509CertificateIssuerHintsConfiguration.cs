@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The state property</summary>
+        /// <summary>The possible values are: disabled, enabled, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.X509CertificateIssuerHintsState? State
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.X509CertificateIssuerHintsState?>("state"); }

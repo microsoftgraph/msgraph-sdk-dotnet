@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class BrowseSessionBase : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The backupSizeInBytes property</summary>
+        /// <summary>The size of the backup in bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BackupSizeInBytes
@@ -28,13 +28,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("backupSizeInBytes", value); }
         }
 #endif
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The date and time when the browse session was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The error property</summary>
+        /// <summary>Contains the error details if the browse session creation fails.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.PublicError? Error
@@ -50,13 +50,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("error", value); }
         }
 #endif
-        /// <summary>The expirationDateTime property</summary>
+        /// <summary>The date and time after which the browse session is deleted automatically.</summary>
         public DateTimeOffset? ExpirationDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
-        /// <summary>The restorePointDateTime property</summary>
+        /// <summary>The date and time of the restore point on which the browse session is created.</summary>
         public DateTimeOffset? RestorePointDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("restorePointDateTime"); }

@@ -38,6 +38,7 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.microsoftAuthenticatorAuthenticationMethodTarget" => new global::Microsoft.Graph.Models.MicrosoftAuthenticatorAuthenticationMethodTarget(),
                 "#microsoft.graph.passkeyAuthenticationMethodTarget" => new global::Microsoft.Graph.Models.PasskeyAuthenticationMethodTarget(),
                 "#microsoft.graph.smsAuthenticationMethodTarget" => new global::Microsoft.Graph.Models.SmsAuthenticationMethodTarget(),
+                "#microsoft.graph.verifiableCredentialAuthenticationMethodTarget" => new global::Microsoft.Graph.Models.VerifiableCredentialAuthenticationMethodTarget(),
                 _ => new global::Microsoft.Graph.Models.AuthenticationMethodTarget(),
             };
         }

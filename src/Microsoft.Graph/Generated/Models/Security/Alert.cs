@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("assignedTo", value); }
         }
 #endif
-        /// <summary>The categories property</summary>
+        /// <summary>The attack kill-chain categories that the alert belongs to. Aligned with the MITRE ATT&amp;CK framework.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Categories
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("categories", value); }
         }
 #endif
-        /// <summary>The attack kill-chain category that the alert belongs to. Aligned with the MITRE ATT&amp;CK framework.</summary>
+        /// <summary>The attack kill-chain category that the alert belongs to. Aligned with the MITRE ATT&amp;CK framework. This property is in the process of being deprecated. Use the categories property instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Category

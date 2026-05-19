@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Policies.OwnerlessGroupPolicy
         {
         }
         /// <summary>
-        /// Get ownerlessGroupPolicy from policies
+        /// Read the properties of an ownerlessGroupPolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ownerlessgrouppolicy-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.OwnerlessGroupPolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +59,8 @@ namespace Microsoft.Graph.Policies.OwnerlessGroupPolicy
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.OwnerlessGroupPolicy>(requestInfo, global::Microsoft.Graph.Models.OwnerlessGroupPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property ownerlessGroupPolicy in policies
+        /// Create or update the ownerlessGroupPolicy for the tenant. If the policy doesn&apos;t exist, it creates a new one; if the policy exists, it updates the existing policy. To disable the policy, set isEnabled to false. Setting isEnabled to false clears the values of all other policy parameters.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/ownerlessgrouppolicy-upsert?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.OwnerlessGroupPolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -83,7 +85,7 @@ namespace Microsoft.Graph.Policies.OwnerlessGroupPolicy
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.OwnerlessGroupPolicy>(requestInfo, global::Microsoft.Graph.Models.OwnerlessGroupPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get ownerlessGroupPolicy from policies
+        /// Read the properties of an ownerlessGroupPolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Policies.OwnerlessGroupPolicy
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property ownerlessGroupPolicy in policies
+        /// Create or update the ownerlessGroupPolicy for the tenant. If the policy doesn&apos;t exist, it creates a new one; if the policy exists, it updates the existing policy. To disable the policy, set isEnabled to false. Setting isEnabled to false clears the values of all other policy parameters.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -133,7 +135,7 @@ namespace Microsoft.Graph.Policies.OwnerlessGroupPolicy
             return new global::Microsoft.Graph.Policies.OwnerlessGroupPolicy.OwnerlessGroupPolicyRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get ownerlessGroupPolicy from policies
+        /// Read the properties of an ownerlessGroupPolicy object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OwnerlessGroupPolicyRequestBuilderGetQueryParameters 

@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class GranularRestoreArtifactBase : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The browseSessionId property</summary>
+        /// <summary>The unique identifier of the browseSession</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BrowseSessionId
@@ -28,13 +28,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("browseSessionId", value); }
         }
 #endif
-        /// <summary>The completionDateTime property</summary>
+        /// <summary>Date time when the artifact&apos;s restoration completes.</summary>
         public DateTimeOffset? CompletionDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("completionDateTime"); }
             set { BackingStore?.Set("completionDateTime", value); }
         }
-        /// <summary>The restoredItemKey property</summary>
+        /// <summary>The unique identifier for the restored artifact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RestoredItemKey
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("restoredItemKey", value); }
         }
 #endif
-        /// <summary>The restoredItemPath property</summary>
+        /// <summary>The path of the restored artifact. It&apos;s the path of the folder where all the artifacts are restored within a granular restore session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RestoredItemPath
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("restoredItemPath", value); }
         }
 #endif
-        /// <summary>The restoredItemWebUrl property</summary>
+        /// <summary>The web url of the restored artifact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RestoredItemWebUrl
@@ -82,13 +82,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("restoredItemWebUrl", value); }
         }
 #endif
-        /// <summary>The restorePointDateTime property</summary>
+        /// <summary>The restore point date time to which the artifact is restored.</summary>
         public DateTimeOffset? RestorePointDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("restorePointDateTime"); }
             set { BackingStore?.Set("restorePointDateTime", value); }
         }
-        /// <summary>The startDateTime property</summary>
+        /// <summary>The start time of the restoration.</summary>
         public DateTimeOffset? StartDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.ArtifactRestoreStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>The webUrl property</summary>
+        /// <summary>The original web url of the artifact being restored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WebUrl

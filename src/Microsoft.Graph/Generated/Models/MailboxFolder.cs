@@ -12,13 +12,13 @@ namespace Microsoft.Graph.Models
     public partial class MailboxFolder : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The childFolderCount property</summary>
+        /// <summary>The number of immediate child folders in the current folder.</summary>
         public int? ChildFolderCount
         {
             get { return BackingStore?.Get<int?>("childFolderCount"); }
             set { BackingStore?.Set("childFolderCount", value); }
         }
-        /// <summary>The childFolders property</summary>
+        /// <summary>The collection of child folders in this folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.MailboxFolder>? ChildFolders
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("childFolders", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name of the folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The items property</summary>
+        /// <summary>The collection of items in this folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.MailboxItem>? Items
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("items", value); }
         }
 #endif
-        /// <summary>The multiValueExtendedProperties property</summary>
+        /// <summary>The collection of multi-value extended properties defined for the mailboxFolder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
 #endif
-        /// <summary>The parentFolderId property</summary>
+        /// <summary>The unique identifier for the parent folder of this folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ParentFolderId
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("parentFolderId", value); }
         }
 #endif
-        /// <summary>The singleValueExtendedProperties property</summary>
+        /// <summary>The collection of single-value extended properties defined for the mailboxFolder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties
@@ -114,13 +114,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
 #endif
-        /// <summary>The totalItemCount property</summary>
+        /// <summary>The number of items in the folder.</summary>
         public int? TotalItemCount
         {
             get { return BackingStore?.Get<int?>("totalItemCount"); }
             set { BackingStore?.Set("totalItemCount", value); }
         }
-        /// <summary>The type property</summary>
+        /// <summary>Describes the folder class type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type

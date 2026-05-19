@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models.Security
     public partial class GitHubOrganizationEvidence : global::Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The company property</summary>
+        /// <summary>The name of the company that owns the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Company
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("company", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name of the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The email property</summary>
+        /// <summary>The email address of the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Email
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("email", value); }
         }
 #endif
-        /// <summary>The login property</summary>
+        /// <summary>The login (name) of the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Login
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("login", value); }
         }
 #endif
-        /// <summary>The orgId property</summary>
+        /// <summary>The unique and immutable ID of the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrgId
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("orgId", value); }
         }
 #endif
-        /// <summary>The webUrl property</summary>
+        /// <summary>The URL of the web page for the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WebUrl
