@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class ExchangeSettings : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The primaryMailboxId property</summary>
+        /// <summary>The unique identifier for the user&apos;s primary mailbox.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrimaryMailboxId

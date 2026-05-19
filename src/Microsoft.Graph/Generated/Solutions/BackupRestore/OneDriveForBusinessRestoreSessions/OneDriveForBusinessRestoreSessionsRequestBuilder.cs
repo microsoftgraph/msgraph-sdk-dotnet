@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessRestoreSess
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.OneDriveForBusinessRestoreSessionCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.OneDriveForBusinessRestoreSessionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new oneDriveForBusinessRestoreSession object.
+        /// Create a new oneDriveForBusinessRestoreSession object. To create a granular restore session, granular drive restore artifacts must be present in the payload. A request can&apos;t include both granularDriveRestoreArtifact and driveRestoreArtifact in the same create or update request. If no payload is provided when you create the restore session, the request creates an empty standard restore session by default.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/backuprestoreroot-post-onedriveforbusinessrestoresessions?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.OneDriveForBusinessRestoreSession"/></returns>
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessRestoreSess
             return requestInfo;
         }
         /// <summary>
-        /// Create a new oneDriveForBusinessRestoreSession object.
+        /// Create a new oneDriveForBusinessRestoreSession object. To create a granular restore session, granular drive restore artifacts must be present in the payload. A request can&apos;t include both granularDriveRestoreArtifact and driveRestoreArtifact in the same create or update request. If no payload is provided when you create the restore session, the request creates an empty standard restore session by default.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

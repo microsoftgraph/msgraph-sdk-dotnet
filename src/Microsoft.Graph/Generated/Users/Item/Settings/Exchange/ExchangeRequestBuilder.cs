@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Users.Item.Settings.Exchange
         {
         }
         /// <summary>
-        /// Get exchange from users
+        /// Get a list of Exchange mailboxes that belong to a user. Currently, the mailbox types supported are the user&apos;s primary mailbox and shared mailboxes. To learn how to get a list of users in a tenant, see List users.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/usersettings-list-exchange?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ExchangeSettings"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +59,7 @@ namespace Microsoft.Graph.Users.Item.Settings.Exchange
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ExchangeSettings>(requestInfo, global::Microsoft.Graph.Models.ExchangeSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get exchange from users
+        /// Get a list of Exchange mailboxes that belong to a user. Currently, the mailbox types supported are the user&apos;s primary mailbox and shared mailboxes. To learn how to get a list of users in a tenant, see List users.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +87,7 @@ namespace Microsoft.Graph.Users.Item.Settings.Exchange
             return new global::Microsoft.Graph.Users.Item.Settings.Exchange.ExchangeRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get exchange from users
+        /// Get a list of Exchange mailboxes that belong to a user. Currently, the mailbox types supported are the user&apos;s primary mailbox and shared mailboxes. To learn how to get a list of users in a tenant, see List users.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ExchangeRequestBuilderGetQueryParameters 

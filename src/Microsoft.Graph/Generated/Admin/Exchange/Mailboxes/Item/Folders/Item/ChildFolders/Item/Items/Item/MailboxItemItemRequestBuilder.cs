@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item.ChildFolder
         {
         }
         /// <summary>
-        /// Get items from admin
+        /// The collection of items in this folder.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.MailboxItem"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item.ChildFolder
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.MailboxItem>(requestInfo, global::Microsoft.Graph.Models.MailboxItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get items from admin
+        /// The collection of items in this folder.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item.ChildFolder
             return new global::Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item.ChildFolders.Item.Items.Item.MailboxItemItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get items from admin
+        /// The collection of items in this folder.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MailboxItemItemRequestBuilderGetQueryParameters 

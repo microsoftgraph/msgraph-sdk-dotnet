@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The securityGroups property</summary>
+        /// <summary>The collection of IDs for security groups used for allowing or blocking filtering. When notifyMembers is all, all members are eligible for ownership and this collection can be empty. When notifyMembers is allowSelected, only members in these security groups are eligible. When notifyMembers is blockSelected, members in these security groups are excluded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SecurityGroups

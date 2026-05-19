@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models.Security
     public partial class DnsEvidence : global::Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The dnsServerIp property</summary>
+        /// <summary>An IP entity that represents the DNS server that resolves the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.Security.IpEvidence? DnsServerIp
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("dnsServerIp", value); }
         }
 #endif
-        /// <summary>The domainName property</summary>
+        /// <summary>The name of the DNS record associated with the alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DomainName
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("domainName", value); }
         }
 #endif
-        /// <summary>The hostIpAddress property</summary>
+        /// <summary>An IP entity that represents the DNS request client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.Security.IpEvidence? HostIpAddress
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("hostIpAddress", value); }
         }
 #endif
-        /// <summary>The ipAddresses property</summary>
+        /// <summary>IP entities that represent the resolved IP addresses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.Security.IpEvidence>? IpAddresses

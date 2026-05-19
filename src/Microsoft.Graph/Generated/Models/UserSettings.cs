@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("contributionToContentDiscoveryDisabled"); }
             set { BackingStore?.Set("contributionToContentDiscoveryDisabled", value); }
         }
-        /// <summary>The exchange property</summary>
+        /// <summary>The Exchange settings for mailbox discovery.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.ExchangeSettings? Exchange

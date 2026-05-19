@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Solutions.BackupRestore.SharePointBrowseSessions
         {
         }
         /// <summary>
-        /// Get sharePointBrowseSessions from solutions
+        /// Get a list of the sharePointBrowseSession objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/backuprestoreroot-list-sharepointbrowsesessions?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.SharePointBrowseSessionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Solutions.BackupRestore.SharePointBrowseSessions
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.SharePointBrowseSessionCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.SharePointBrowseSessionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to sharePointBrowseSessions for solutions
+        /// Create a new sharePointBrowseSession object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/backuprestoreroot-post-sharepointbrowsesessions?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.SharePointBrowseSession"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.SharePointBrowseSessions
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.SharePointBrowseSession>(requestInfo, global::Microsoft.Graph.Models.SharePointBrowseSession.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get sharePointBrowseSessions from solutions
+        /// Get a list of the sharePointBrowseSession objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.SharePointBrowseSessions
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to sharePointBrowseSessions for solutions
+        /// Create a new sharePointBrowseSession object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +154,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.SharePointBrowseSessions
             return new global::Microsoft.Graph.Solutions.BackupRestore.SharePointBrowseSessions.SharePointBrowseSessionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get sharePointBrowseSessions from solutions
+        /// Get a list of the sharePointBrowseSession objects and their properties.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SharePointBrowseSessionsRequestBuilderGetQueryParameters 

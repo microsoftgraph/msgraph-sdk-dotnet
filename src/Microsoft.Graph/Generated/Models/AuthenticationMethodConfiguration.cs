@@ -53,6 +53,7 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.smsAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Models.SmsAuthenticationMethodConfiguration(),
                 "#microsoft.graph.softwareOathAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Models.SoftwareOathAuthenticationMethodConfiguration(),
                 "#microsoft.graph.temporaryAccessPassAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Models.TemporaryAccessPassAuthenticationMethodConfiguration(),
+                "#microsoft.graph.verifiableCredentialsAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Models.VerifiableCredentialsAuthenticationMethodConfiguration(),
                 "#microsoft.graph.voiceAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Models.VoiceAuthenticationMethodConfiguration(),
                 "#microsoft.graph.x509CertificateAuthenticationMethodConfiguration" => new global::Microsoft.Graph.Models.X509CertificateAuthenticationMethodConfiguration(),
                 _ => new global::Microsoft.Graph.Models.AuthenticationMethodConfiguration(),

@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The itemKey property</summary>
+        /// <summary>Unique identifier of the returned item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ItemKey
@@ -37,13 +37,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("itemKey", value); }
         }
 #endif
-        /// <summary>The itemsCount property</summary>
+        /// <summary>The count of items present within the items; for example, the count of files in a folder.</summary>
         public int? ItemsCount
         {
             get { return BackingStore?.Get<int?>("itemsCount"); }
             set { BackingStore?.Set("itemsCount", value); }
         }
-        /// <summary>The name property</summary>
+        /// <summary>The name of the item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The sizeInBytes property</summary>
+        /// <summary>The size of the item in bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SizeInBytes
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.BrowseQueryResponseItemType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
-        /// <summary>The webUrl property</summary>
+        /// <summary>The web URL of the item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WebUrl

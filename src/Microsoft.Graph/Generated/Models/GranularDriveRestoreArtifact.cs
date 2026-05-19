@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class GranularDriveRestoreArtifact : global::Microsoft.Graph.Models.GranularRestoreArtifactBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The directoryObjectId property</summary>
+        /// <summary>Id of the drive in which artifact is present.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DirectoryObjectId

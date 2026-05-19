@@ -60,5 +60,97 @@ namespace Microsoft.Graph.Models
         #pragma warning disable CS1591
         UnknownFutureValue,
         #pragma warning restore CS1591
+        [EnumMember(Value = "darkRed")]
+        #pragma warning disable CS1591
+        DarkRed,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cranberry")]
+        #pragma warning disable CS1591
+        Cranberry,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "darkOrange")]
+        #pragma warning disable CS1591
+        DarkOrange,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "bronze")]
+        #pragma warning disable CS1591
+        Bronze,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "peach")]
+        #pragma warning disable CS1591
+        Peach,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "gold")]
+        #pragma warning disable CS1591
+        Gold,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "lime")]
+        #pragma warning disable CS1591
+        Lime,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "forest")]
+        #pragma warning disable CS1591
+        Forest,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "lightGreen")]
+        #pragma warning disable CS1591
+        LightGreen,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "jade")]
+        #pragma warning disable CS1591
+        Jade,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "lightTeal")]
+        #pragma warning disable CS1591
+        LightTeal,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "darkTeal")]
+        #pragma warning disable CS1591
+        DarkTeal,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "steel")]
+        #pragma warning disable CS1591
+        Steel,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "skyBlue")]
+        #pragma warning disable CS1591
+        SkyBlue,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "blueGray")]
+        #pragma warning disable CS1591
+        BlueGray,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "lavender")]
+        #pragma warning disable CS1591
+        Lavender,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "lilac")]
+        #pragma warning disable CS1591
+        Lilac,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "plum")]
+        #pragma warning disable CS1591
+        Plum,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "magenta")]
+        #pragma warning disable CS1591
+        Magenta,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "darkBrown")]
+        #pragma warning disable CS1591
+        DarkBrown,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "beige")]
+        #pragma warning disable CS1591
+        Beige,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "charcoal")]
+        #pragma warning disable CS1591
+        Charcoal,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "silver")]
+        #pragma warning disable CS1591
+        Silver,
+        #pragma warning restore CS1591
     }
 }

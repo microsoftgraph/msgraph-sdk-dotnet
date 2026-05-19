@@ -98,7 +98,8 @@ namespace Microsoft.Graph.Solutions.BackupRestore.SharePointRestoreSessions.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.SharePointRestoreSession>(requestInfo, global::Microsoft.Graph.Models.SharePointRestoreSession.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property sharePointRestoreSessions in solutions
+        /// Update the properties of a sharePointRestoreSession object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/sharepointrestoresession-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.SharePointRestoreSession"/></returns>
         /// <param name="body">The request body</param>
@@ -161,7 +162,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.SharePointRestoreSessions.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property sharePointRestoreSessions in solutions
+        /// Update the properties of a sharePointRestoreSession object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

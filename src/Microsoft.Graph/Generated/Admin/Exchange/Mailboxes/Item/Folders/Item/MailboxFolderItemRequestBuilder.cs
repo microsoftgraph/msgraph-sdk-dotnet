@@ -47,7 +47,8 @@ namespace Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item
         {
         }
         /// <summary>
-        /// Get folders from admin
+        /// Read the properties and relationships of a mailboxFolder object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailboxfolder-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.MailboxFolder"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +71,7 @@ namespace Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.MailboxFolder>(requestInfo, global::Microsoft.Graph.Models.MailboxFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get folders from admin
+        /// Read the properties and relationships of a mailboxFolder object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -98,7 +99,7 @@ namespace Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item
             return new global::Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item.MailboxFolderItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get folders from admin
+        /// Read the properties and relationships of a mailboxFolder object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MailboxFolderItemRequestBuilderGetQueryParameters 

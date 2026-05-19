@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models.Security
     public partial class GitHubRepoEvidence : global::Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The baseUrl property</summary>
+        /// <summary>The base URL of the web page for the repository.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BaseUrl
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("baseUrl", value); }
         }
 #endif
-        /// <summary>The login property</summary>
+        /// <summary>The login (name) of the repository.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Login
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("login", value); }
         }
 #endif
-        /// <summary>The owner property</summary>
+        /// <summary>The login of the owner of the repository.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Owner
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("owner", value); }
         }
 #endif
-        /// <summary>The ownerType property</summary>
+        /// <summary>The type of owner of the repository, for example, User or Organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OwnerType
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("ownerType", value); }
         }
 #endif
-        /// <summary>The repoId property</summary>
+        /// <summary>The unique and immutable ID of the GitHub repository.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RepoId

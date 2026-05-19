@@ -34,7 +34,8 @@ namespace Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item.Items.Delta
         {
         }
         /// <summary>
-        /// Invoke function delta
+        /// Get a set of mailboxItem objects that were added, deleted, or updated in a specified mailboxFolder. A delta function call for items in a folder is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the items in that folder. This approach allows you to maintain and synchronize a local store of a user&apos;s mailbox items without having to fetch the entire set of items from the server every time.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailboxitem-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item.Items.Delta.DeltaGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +58,8 @@ namespace Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item.Items.Delta
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item.Items.Delta.DeltaGetResponse>(requestInfo, global::Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item.Items.Delta.DeltaGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function delta
+        /// Get a set of mailboxItem objects that were added, deleted, or updated in a specified mailboxFolder. A delta function call for items in a folder is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the items in that folder. This approach allows you to maintain and synchronize a local store of a user&apos;s mailbox items without having to fetch the entire set of items from the server every time.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailboxitem-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item.Items.Delta.DeltaResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +83,7 @@ namespace Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item.Items.Delta
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item.Items.Delta.DeltaResponse>(requestInfo, global::Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item.Items.Delta.DeltaResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function delta
+        /// Get a set of mailboxItem objects that were added, deleted, or updated in a specified mailboxFolder. A delta function call for items in a folder is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the items in that folder. This approach allows you to maintain and synchronize a local store of a user&apos;s mailbox items without having to fetch the entire set of items from the server every time.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,7 +111,7 @@ namespace Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item.Items.Delta
             return new global::Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item.Items.Delta.DeltaRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function delta
+        /// Get a set of mailboxItem objects that were added, deleted, or updated in a specified mailboxFolder. A delta function call for items in a folder is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the items in that folder. This approach allows you to maintain and synchronize a local store of a user&apos;s mailbox items without having to fetch the entire set of items from the server every time.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeltaRequestBuilderGetQueryParameters 

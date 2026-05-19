@@ -34,7 +34,8 @@ namespace Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Delta
         {
         }
         /// <summary>
-        /// Invoke function delta
+        /// Get a set of mailboxFolder objects that were added, deleted, or removed from the user&apos;s mailbox. A delta function call for folders in a mailbox is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the folders. This approach allows you to maintain and synchronize a local store of a user&apos;s mail folders without having to fetch all the folders of that mailbox from the server every time.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailboxfolder-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Delta.DeltaGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +58,8 @@ namespace Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Delta
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Delta.DeltaGetResponse>(requestInfo, global::Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Delta.DeltaGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function delta
+        /// Get a set of mailboxFolder objects that were added, deleted, or removed from the user&apos;s mailbox. A delta function call for folders in a mailbox is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the folders. This approach allows you to maintain and synchronize a local store of a user&apos;s mail folders without having to fetch all the folders of that mailbox from the server every time.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailboxfolder-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Delta.DeltaResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +83,7 @@ namespace Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Delta
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Delta.DeltaResponse>(requestInfo, global::Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Delta.DeltaResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function delta
+        /// Get a set of mailboxFolder objects that were added, deleted, or removed from the user&apos;s mailbox. A delta function call for folders in a mailbox is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the folders. This approach allows you to maintain and synchronize a local store of a user&apos;s mail folders without having to fetch all the folders of that mailbox from the server every time.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,7 +111,7 @@ namespace Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Delta
             return new global::Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Delta.DeltaRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Invoke function delta
+        /// Get a set of mailboxFolder objects that were added, deleted, or removed from the user&apos;s mailbox. A delta function call for folders in a mailbox is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the folders. This approach allows you to maintain and synchronize a local store of a user&apos;s mail folders without having to fetch all the folders of that mailbox from the server every time.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeltaRequestBuilderGetQueryParameters 

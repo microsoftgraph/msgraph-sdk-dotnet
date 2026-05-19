@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class BackupRestoreRoot : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The browseSessions property</summary>
+        /// <summary>The list of browse sessions in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.BrowseSessionBase>? BrowseSessions
@@ -156,7 +156,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("mailboxProtectionUnitsBulkAdditionJobs", value); }
         }
 #endif
-        /// <summary>The oneDriveForBusinessBrowseSessions property</summary>
+        /// <summary>The list of OneDrive for Business browse sessions in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.OneDriveForBusinessBrowseSession>? OneDriveForBusinessBrowseSessions
@@ -300,7 +300,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("serviceStatus", value); }
         }
 #endif
-        /// <summary>The sharePointBrowseSessions property</summary>
+        /// <summary>The list of SharePoint browse sessions in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.SharePointBrowseSession>? SharePointBrowseSessions

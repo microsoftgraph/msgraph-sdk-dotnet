@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Solutions.BackupRestore.BrowseSessions
         {
         }
         /// <summary>
-        /// Get browseSessions from solutions
+        /// Get a list of the browseSessionBase objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/backuprestoreroot-list-browsesessions?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.BrowseSessionBaseCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.BrowseSessions
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.BrowseSessionBase>(requestInfo, global::Microsoft.Graph.Models.BrowseSessionBase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get browseSessions from solutions
+        /// Get a list of the browseSessionBase objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +153,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.BrowseSessions
             return new global::Microsoft.Graph.Solutions.BackupRestore.BrowseSessions.BrowseSessionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get browseSessions from solutions
+        /// Get a list of the browseSessionBase objects and their properties.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BrowseSessionsRequestBuilderGetQueryParameters 

@@ -170,13 +170,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("messages", value); }
         }
 #endif
-        /// <summary>The migrationMode property</summary>
+        /// <summary>Indicates whether a channel is in migration mode. This value is null for channels that never entered migration mode. The possible values are: inProgress, completed, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.MigrationMode? MigrationMode
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.MigrationMode?>("migrationMode"); }
             set { BackingStore?.Set("migrationMode", value); }
         }
-        /// <summary>The originalCreatedDateTime property</summary>
+        /// <summary>Timestamp of the original creation time for the channel. The value is null if the channel never entered migration mode.</summary>
         public DateTimeOffset? OriginalCreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("originalCreatedDateTime"); }

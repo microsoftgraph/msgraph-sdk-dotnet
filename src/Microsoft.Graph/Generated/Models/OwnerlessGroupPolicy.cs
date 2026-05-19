@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("emailInfo", value); }
         }
 #endif
-        /// <summary>The enabledGroupIds property</summary>
+        /// <summary>The collection of IDs for groups to which the policy is enabled. If empty, the policy is enabled for all groups in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? EnabledGroupIds
@@ -44,25 +44,25 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("enabledGroupIds", value); }
         }
 #endif
-        /// <summary>The isEnabled property</summary>
+        /// <summary>Indicates whether the ownerless group policy is enabled in the tenant. Setting this property to false clears the values of all other policy parameters.</summary>
         public bool? IsEnabled
         {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
-        /// <summary>The maxMembersToNotify property</summary>
+        /// <summary>The maximum number of members to notify. Value range is 0-90. Members are prioritized by recent group activity (most active first). If there aren&apos;t enough active members to fill the limit, remaining slots are filled with other eligible group members from the directory.</summary>
         public long? MaxMembersToNotify
         {
             get { return BackingStore?.Get<long?>("maxMembersToNotify"); }
             set { BackingStore?.Set("maxMembersToNotify", value); }
         }
-        /// <summary>The notificationDurationInWeeks property</summary>
+        /// <summary>The number of weeks for the notification duration. Value range is 1-7.</summary>
         public long? NotificationDurationInWeeks
         {
             get { return BackingStore?.Get<long?>("notificationDurationInWeeks"); }
             set { BackingStore?.Set("notificationDurationInWeeks", value); }
         }
-        /// <summary>The policyWebUrl property</summary>
+        /// <summary>The URL to the policy documentation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PolicyWebUrl

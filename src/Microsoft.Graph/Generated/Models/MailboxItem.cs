@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class MailboxItem : global::Microsoft.Graph.Models.OutlookItem, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The multiValueExtendedProperties property</summary>
+        /// <summary>The collection of multi-value extended properties defined for the mailboxItem.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
 #endif
-        /// <summary>The singleValueExtendedProperties property</summary>
+        /// <summary>The collection of single-value extended properties defined for the mailboxItem.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties
@@ -44,13 +44,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
 #endif
-        /// <summary>The size property</summary>
+        /// <summary>The length of the item in bytes.</summary>
         public long? Size
         {
             get { return BackingStore?.Get<long?>("size"); }
             set { BackingStore?.Set("size", value); }
         }
-        /// <summary>The type property</summary>
+        /// <summary>The message class ID of the item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type

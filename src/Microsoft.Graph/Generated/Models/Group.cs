@@ -327,6 +327,22 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("hideFromOutlookClients"); }
             set { BackingStore?.Set("hideFromOutlookClients", value); }
         }
+        /// <summary>The infoCatalogs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? InfoCatalogs
+        {
+            get { return BackingStore?.Get<List<string>?>("infoCatalogs"); }
+            set { BackingStore?.Set("infoCatalogs", value); }
+        }
+#nullable restore
+#else
+        public List<string> InfoCatalogs
+        {
+            get { return BackingStore?.Get<List<string>>("infoCatalogs"); }
+            set { BackingStore?.Set("infoCatalogs", value); }
+        }
+#endif
         /// <summary>When a group is associated with a team, this property determines whether the team is in read-only mode.To read this property, use the /group/{groupId}/team endpoint or the Get team API. To update this property, use the archiveTeam and unarchiveTeam APIs.</summary>
         public bool? IsArchived
         {
@@ -1034,6 +1050,7 @@ namespace Microsoft.Graph.Models
                 { "hasMembersWithLicenseErrors", n => { HasMembersWithLicenseErrors = n.GetBoolValue(); } },
                 { "hideFromAddressLists", n => { HideFromAddressLists = n.GetBoolValue(); } },
                 { "hideFromOutlookClients", n => { HideFromOutlookClients = n.GetBoolValue(); } },
+                { "infoCatalogs", n => { InfoCatalogs = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
                 { "isAssignableToRole", n => { IsAssignableToRole = n.GetBoolValue(); } },
                 { "isManagementRestricted", n => { IsManagementRestricted = n.GetBoolValue(); } },
@@ -1116,6 +1133,7 @@ namespace Microsoft.Graph.Models
             writer.WriteBoolValue("hasMembersWithLicenseErrors", HasMembersWithLicenseErrors);
             writer.WriteBoolValue("hideFromAddressLists", HideFromAddressLists);
             writer.WriteBoolValue("hideFromOutlookClients", HideFromOutlookClients);
+            writer.WriteCollectionOfPrimitiveValues<string>("infoCatalogs", InfoCatalogs);
             writer.WriteBoolValue("isArchived", IsArchived);
             writer.WriteBoolValue("isAssignableToRole", IsAssignableToRole);
             writer.WriteBoolValue("isManagementRestricted", IsManagementRestricted);

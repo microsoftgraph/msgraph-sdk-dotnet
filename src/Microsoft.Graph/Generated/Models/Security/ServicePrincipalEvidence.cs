@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models.Security
     public partial class ServicePrincipalEvidence : global::Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The appId property</summary>
+        /// <summary>The unique identifier for the associated application, represented by its appId property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppId
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("appId", value); }
         }
 #endif
-        /// <summary>The appOwnerTenantId property</summary>
+        /// <summary>The tenant ID where the application is registered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppOwnerTenantId
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("appOwnerTenantId", value); }
         }
 #endif
-        /// <summary>The servicePrincipalName property</summary>
+        /// <summary>The display name for the service principal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ServicePrincipalName
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("servicePrincipalName", value); }
         }
 #endif
-        /// <summary>The servicePrincipalObjectId property</summary>
+        /// <summary>The unique identifier for the service principal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ServicePrincipalObjectId
@@ -76,13 +76,13 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("servicePrincipalObjectId", value); }
         }
 #endif
-        /// <summary>The servicePrincipalType property</summary>
+        /// <summary>The service principal type. Possible values are: unknown, application, managedIdentity, legacy, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.Security.ServicePrincipalType? ServicePrincipalType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.ServicePrincipalType?>("servicePrincipalType"); }
             set { BackingStore?.Set("servicePrincipalType", value); }
         }
-        /// <summary>The tenantId property</summary>
+        /// <summary>The Microsoft Entra tenant ID of the service principal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TenantId

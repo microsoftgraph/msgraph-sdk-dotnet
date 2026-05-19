@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The includeTargets property</summary>
+        /// <summary>A collection of groups that are enabled to be in scope to use certificates issued by specific certificate authority.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.IncludeTarget>? IncludeTargets
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The publicKeyInfrastructureIdentifier property</summary>
+        /// <summary>Public Key Infrastructure container object under which the certificate authorities are stored in the Entra PKI based trust store.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PublicKeyInfrastructureIdentifier
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("publicKeyInfrastructureIdentifier", value); }
         }
 #endif
-        /// <summary>The subjectKeyIdentifier property</summary>
+        /// <summary>Subject Key Identifier that identifies the certificate authority uniquely.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubjectKeyIdentifier
