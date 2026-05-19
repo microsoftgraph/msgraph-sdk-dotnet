@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("authenticationModeConfiguration", value); }
         }
 #endif
-        /// <summary>The certificateAuthorityScopes property</summary>
+        /// <summary>Defines configuration to allow a group of users to use certificates from specific issuing certificate authorities to successfully authenticate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.X509CertificateAuthorityScope>? CertificateAuthorityScopes
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("includeTargets", value); }
         }
 #endif
-        /// <summary>The issuerHintsConfiguration property</summary>
+        /// <summary>Determines whether issuer(CA) hints are sent back to the client side to filter the certificates shown in certificate picker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.X509CertificateIssuerHintsConfiguration? IssuerHintsConfiguration

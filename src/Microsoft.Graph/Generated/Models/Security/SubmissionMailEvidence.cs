@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models.Security
     public partial class SubmissionMailEvidence : global::Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The networkMessageId property</summary>
+        /// <summary>The network message ID of the email to which the submission belongs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NetworkMessageId
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("networkMessageId", value); }
         }
 #endif
-        /// <summary>The recipient property</summary>
+        /// <summary>The recipient of the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Recipient
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("recipient", value); }
         }
 #endif
-        /// <summary>The reportType property</summary>
+        /// <summary>The submission type for the specified instance that maps to Junk, Phish, Malware, or NotJunk.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReportType
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("reportType", value); }
         }
 #endif
-        /// <summary>The sender property</summary>
+        /// <summary>The sender of the email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Sender
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("sender", value); }
         }
 #endif
-        /// <summary>The senderIp property</summary>
+        /// <summary>The sender&apos;s IP.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SenderIp
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("senderIp", value); }
         }
 #endif
-        /// <summary>The subject property</summary>
+        /// <summary>The subject of the submission mail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Subject
@@ -108,13 +108,13 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("subject", value); }
         }
 #endif
-        /// <summary>The submissionDateTime property</summary>
+        /// <summary>The reported date and time of this submission. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024 is 2024-01-01T00:00:00Z.</summary>
         public DateTimeOffset? SubmissionDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("submissionDateTime"); }
             set { BackingStore?.Set("submissionDateTime", value); }
         }
-        /// <summary>The submissionId property</summary>
+        /// <summary>The submission ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubmissionId
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("submissionId", value); }
         }
 #endif
-        /// <summary>The submitter property</summary>
+        /// <summary>The submitter&apos;s email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Submitter

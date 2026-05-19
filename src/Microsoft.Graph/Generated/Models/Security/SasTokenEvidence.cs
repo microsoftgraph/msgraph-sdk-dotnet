@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models.Security
     public partial class SasTokenEvidence : global::Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The allowedIpAddresses property</summary>
+        /// <summary>All IP addresses accessible with this SAS. The default value is Allows all IP addresses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AllowedIpAddresses
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("allowedIpAddresses", value); }
         }
 #endif
-        /// <summary>The allowedResourceTypes property</summary>
+        /// <summary>All resource types accessible with this SAS.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AllowedResourceTypes
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("allowedResourceTypes", value); }
         }
 #endif
-        /// <summary>The allowedServices property</summary>
+        /// <summary>All services accessible with this SAS.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AllowedServices
@@ -60,13 +60,13 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("allowedServices", value); }
         }
 #endif
-        /// <summary>The expiryDateTime property</summary>
+        /// <summary>The SAS expiration time. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024 is 2024-01-01T00:00:00Z.</summary>
         public DateTimeOffset? ExpiryDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("expiryDateTime"); }
             set { BackingStore?.Set("expiryDateTime", value); }
         }
-        /// <summary>The permissions property</summary>
+        /// <summary>All permissions granted to this SAS.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Permissions
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("permissions", value); }
         }
 #endif
-        /// <summary>The protocol property</summary>
+        /// <summary>The protocol that is allowed with this SAS.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Protocol
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("protocol", value); }
         }
 #endif
-        /// <summary>The signatureHash property</summary>
+        /// <summary>The SAS signature hash, which is a unique identifier for each SAS.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SignatureHash
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("signatureHash", value); }
         }
 #endif
-        /// <summary>The signedWith property</summary>
+        /// <summary>The storage key that was used to generate the SAS.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SignedWith
@@ -130,13 +130,13 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("signedWith", value); }
         }
 #endif
-        /// <summary>The startDateTime property</summary>
+        /// <summary>The SAS activation time. This property can be null. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024 is 2024-01-01T00:00:00Z.</summary>
         public DateTimeOffset? StartDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
-        /// <summary>The storageResource property</summary>
+        /// <summary>A link to the storage resource for this SAS.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.Security.AzureResourceEvidence? StorageResource

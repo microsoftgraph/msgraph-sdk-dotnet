@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models.Security
     public partial class GitHubUserEvidence : global::Microsoft.Graph.Models.Security.AlertEvidence, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The email property</summary>
+        /// <summary>The email address of the user account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Email
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("email", value); }
         }
 #endif
-        /// <summary>The login property</summary>
+        /// <summary>The user&apos;s login (GitHub handle).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Login
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("login", value); }
         }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The user&apos;s name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("name", value); }
         }
 #endif
-        /// <summary>The userId property</summary>
+        /// <summary>The unique and immutable ID of the user account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("userId", value); }
         }
 #endif
-        /// <summary>The webUrl property</summary>
+        /// <summary>The URL of the user&apos;s profile web page. For example, https://github.com/my-login.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WebUrl

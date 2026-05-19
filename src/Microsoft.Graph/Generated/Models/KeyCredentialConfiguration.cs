@@ -21,7 +21,23 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>String value that indicates the maximum lifetime for key expiration, defined as an ISO 8601 duration. For example, P4DT12H30M5S represents four days, 12 hours, 30 minutes, and five seconds. This property is required when restrictionType is set to keyLifetime.</summary>
+        /// <summary>Collection of custom security attribute exemptions. If an actor user or service principal has the custom security attribute defined in this section, they&apos;re exempted from the restriction.  This means that calls the user or service principal makes to create or update apps are exempt from this policy enforcement.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.AppManagementPolicyActorExemptions? ExcludeActors
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.AppManagementPolicyActorExemptions?>("excludeActors"); }
+            set { BackingStore?.Set("excludeActors", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.AppManagementPolicyActorExemptions ExcludeActors
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.AppManagementPolicyActorExemptions>("excludeActors"); }
+            set { BackingStore?.Set("excludeActors", value); }
+        }
+#endif
+        /// <summary>String value that indicates the maximum lifetime for key expiration, defined as an ISO 8601 duration. For example, P4DT12H30M5S represents four days, 12 hours, 30 minutes, and five seconds. This property is required when restrictionType is set to asymmetricKeyLifetime.</summary>
         public TimeSpan? MaxLifetime
         {
             get { return BackingStore?.Get<TimeSpan?>("maxLifetime"); }
@@ -87,6 +103,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "excludeActors", n => { ExcludeActors = n.GetObjectValue<global::Microsoft.Graph.Models.AppManagementPolicyActorExemptions>(global::Microsoft.Graph.Models.AppManagementPolicyActorExemptions.CreateFromDiscriminatorValue); } },
                 { "maxLifetime", n => { MaxLifetime = n.GetTimeSpanValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "restrictForAppsCreatedAfterDateTime", n => { RestrictForAppsCreatedAfterDateTime = n.GetDateTimeOffsetValue(); } },
@@ -101,6 +118,7 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.AppManagementPolicyActorExemptions>("excludeActors", ExcludeActors);
             writer.WriteTimeSpanValue("maxLifetime", MaxLifetime);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteDateTimeOffsetValue("restrictForAppsCreatedAfterDateTime", RestrictForAppsCreatedAfterDateTime);

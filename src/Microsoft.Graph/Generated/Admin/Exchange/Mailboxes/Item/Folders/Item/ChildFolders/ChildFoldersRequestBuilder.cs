@@ -60,7 +60,8 @@ namespace Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item.ChildFolder
         {
         }
         /// <summary>
-        /// Get childFolders from admin
+        /// Get the mailboxFolder collection under the specified mailboxFolder in a mailbox.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailboxfolder-list-childfolders?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.MailboxFolderCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -83,7 +84,7 @@ namespace Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item.ChildFolder
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.MailboxFolderCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.MailboxFolderCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get childFolders from admin
+        /// Get the mailboxFolder collection under the specified mailboxFolder in a mailbox.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +112,7 @@ namespace Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item.ChildFolder
             return new global::Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item.ChildFolders.ChildFoldersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get childFolders from admin
+        /// Get the mailboxFolder collection under the specified mailboxFolder in a mailbox.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ChildFoldersRequestBuilderGetQueryParameters 

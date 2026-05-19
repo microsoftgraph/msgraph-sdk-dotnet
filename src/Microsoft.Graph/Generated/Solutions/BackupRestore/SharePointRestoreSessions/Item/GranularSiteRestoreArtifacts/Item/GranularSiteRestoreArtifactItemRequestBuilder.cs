@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.SharePointRestoreSessions.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get granularSiteRestoreArtifacts from solutions
+        /// A collection of browse session ID and item key details that can be used to restore SharePoint files and folders.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.GranularSiteRestoreArtifact"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.SharePointRestoreSessions.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get granularSiteRestoreArtifacts from solutions
+        /// A collection of browse session ID and item key details that can be used to restore SharePoint files and folders.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.SharePointRestoreSessions.Item
         {
         }
         /// <summary>
-        /// Get granularSiteRestoreArtifacts from solutions
+        /// A collection of browse session ID and item key details that can be used to restore SharePoint files and folders.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GranularSiteRestoreArtifactItemRequestBuilderGetQueryParameters 

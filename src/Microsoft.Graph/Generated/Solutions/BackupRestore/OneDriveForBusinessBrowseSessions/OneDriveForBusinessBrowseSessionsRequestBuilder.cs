@@ -54,7 +54,8 @@ namespace Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessBrowseSessi
         {
         }
         /// <summary>
-        /// Get oneDriveForBusinessBrowseSessions from solutions
+        /// Get a list of the oneDriveForBusinessBrowseSession objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/backuprestoreroot-list-onedriveforbusinessbrowsesessions?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.OneDriveForBusinessBrowseSessionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessBrowseSessi
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.OneDriveForBusinessBrowseSessionCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.OneDriveForBusinessBrowseSessionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to oneDriveForBusinessBrowseSessions for solutions
+        /// Create a new oneDriveForBusinessBrowseSession object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/backuprestoreroot-post-onedriveforbusinessbrowsesessions?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.OneDriveForBusinessBrowseSession"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessBrowseSessi
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.OneDriveForBusinessBrowseSession>(requestInfo, global::Microsoft.Graph.Models.OneDriveForBusinessBrowseSession.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get oneDriveForBusinessBrowseSessions from solutions
+        /// Get a list of the oneDriveForBusinessBrowseSession objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessBrowseSessi
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to oneDriveForBusinessBrowseSessions for solutions
+        /// Create a new oneDriveForBusinessBrowseSession object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +154,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessBrowseSessi
             return new global::Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessBrowseSessions.OneDriveForBusinessBrowseSessionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get oneDriveForBusinessBrowseSessions from solutions
+        /// Get a list of the oneDriveForBusinessBrowseSession objects and their properties.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OneDriveForBusinessBrowseSessionsRequestBuilderGetQueryParameters 

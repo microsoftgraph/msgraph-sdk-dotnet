@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.SharePointRestoreSessions
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.SharePointRestoreSessionCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.SharePointRestoreSessionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new sharePointRestoreSession object.
+        /// Create a new sharePointRestoreSession object. To create a granular restore session, granular site restore artifacts must be present in the payload. A request can&apos;t include both granularSiteRestoreArtifact and siteRestoreArtifact in the same create or update request. If no payload is provided when you create the restore session, the request creates an empty standard restore session by default.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/backuprestoreroot-post-sharepointrestoresessions?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.SharePointRestoreSession"/></returns>
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.SharePointRestoreSessions
             return requestInfo;
         }
         /// <summary>
-        /// Create a new sharePointRestoreSession object.
+        /// Create a new sharePointRestoreSession object. To create a granular restore session, granular site restore artifacts must be present in the payload. A request can&apos;t include both granularSiteRestoreArtifact and siteRestoreArtifact in the same create or update request. If no payload is provided when you create the restore session, the request creates an empty standard restore session by default.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

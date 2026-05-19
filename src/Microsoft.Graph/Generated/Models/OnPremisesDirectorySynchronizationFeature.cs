@@ -19,6 +19,12 @@ namespace Microsoft.Graph.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
+        /// <summary>The allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled property</summary>
+        public bool? AllowOnPremUpdateOfOnPremisesObjectIdentifierEnabled
+        {
+            get { return BackingStore?.Get<bool?>("allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled"); }
+            set { BackingStore?.Set("allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled", value); }
+        }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Used to block cloud object takeover via source anchor hard match if enabled.</summary>
@@ -177,6 +183,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled", n => { AllowOnPremUpdateOfOnPremisesObjectIdentifierEnabled = n.GetBoolValue(); } },
                 { "blockCloudObjectTakeoverThroughHardMatchEnabled", n => { BlockCloudObjectTakeoverThroughHardMatchEnabled = n.GetBoolValue(); } },
                 { "blockSoftMatchEnabled", n => { BlockSoftMatchEnabled = n.GetBoolValue(); } },
                 { "bypassDirSyncOverridesEnabled", n => { BypassDirSyncOverridesEnabled = n.GetBoolValue(); } },
@@ -206,6 +213,7 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("allowOnPremUpdateOfOnPremisesObjectIdentifierEnabled", AllowOnPremUpdateOfOnPremisesObjectIdentifierEnabled);
             writer.WriteBoolValue("blockCloudObjectTakeoverThroughHardMatchEnabled", BlockCloudObjectTakeoverThroughHardMatchEnabled);
             writer.WriteBoolValue("blockSoftMatchEnabled", BlockSoftMatchEnabled);
             writer.WriteBoolValue("bypassDirSyncOverridesEnabled", BypassDirSyncOverridesEnabled);

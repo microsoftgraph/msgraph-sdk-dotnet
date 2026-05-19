@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class SharePointBrowseSession : global::Microsoft.Graph.Models.BrowseSessionBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The siteId property</summary>
+        /// <summary>Id of the backed-up SharePoint site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SiteId

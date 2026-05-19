@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class SharePointRestoreSession : global::Microsoft.Graph.Models.RestoreSessionBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The granularSiteRestoreArtifacts property</summary>
+        /// <summary>A collection of browse session ID and item key details that can be used to restore SharePoint files and folders.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.GranularSiteRestoreArtifact>? GranularSiteRestoreArtifacts

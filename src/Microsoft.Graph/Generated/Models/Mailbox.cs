@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class Mailbox : global::Microsoft.Graph.Models.DirectoryObject, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The folders property</summary>
+        /// <summary>The collection of folders in the mailbox.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.MailboxFolder>? Folders
