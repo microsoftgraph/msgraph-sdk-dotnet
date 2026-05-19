@@ -49,7 +49,7 @@ public static class DriveItemRequestBuilderExtensions
         if (string.IsNullOrWhiteSpace(path))
             throw new ArgumentException("path cannot be empty or whitespace.", nameof(path));
 
-        if (!path.StartsWith("/"))
+        if (!path.StartsWith("/", StringComparison.Ordinal))
         {
             path = string.Format("/{0}", path);
         }
