@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project does adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [6.1.0](https://github.com/microsoftgraph/msgraph-sdk-dotnet/compare/6.0.3...6.1.0) (2026-05-20)
+
+
+### Features
+
+* **generation:** update request builders and models ([#3128](https://github.com/microsoftgraph/msgraph-sdk-dotnet/issues/3128)) ([11bd3af](https://github.com/microsoftgraph/msgraph-sdk-dotnet/commit/11bd3afa8736af747339fb3157e057dd668cadd2))
+
+
+### Bug Fixes
+
+* ItemWithPath now throws instead of generating malformed URLs with nullish path values ([#3072](https://github.com/microsoftgraph/msgraph-sdk-dotnet/issues/3072)) ([a22256b](https://github.com/microsoftgraph/msgraph-sdk-dotnet/commit/a22256bed3cc3ccc4e16d0d6bcf493403c936afc))
+
 ## [6.0.3](https://github.com/microsoftgraph/msgraph-sdk-dotnet/compare/6.0.2...6.0.3) (2026-05-14)
 
 
