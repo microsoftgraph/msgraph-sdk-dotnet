@@ -44,14 +44,7 @@ public static class DriveItemRequestBuilderExtensions
     /// </summary>
     public static CustomDriveItemItemRequestBuilder ItemWithPath(this Microsoft.Graph.Drives.Item.Root.RootRequestBuilder rootRequestBuilder, string path)
     {
-        if (!string.IsNullOrEmpty(path))
-        {
-            if (!path.StartsWith("/"))
-            {
-                path = string.Format("/{0}", path);
-            }
-        }
-        
+        path = NormalizePathOrThrow(path);
         var requestInformation = rootRequestBuilder.ToGetRequestInformation();
         // Encode the path in accordance with the one drive spec
         // https://docs.microsoft.com/en-us/onedrive/developer/rest-api/concepts/addressing-driveitems
@@ -67,14 +60,7 @@ public static class DriveItemRequestBuilderExtensions
     /// </summary>
     public static CustomDriveItemItemRequestBuilder ItemWithPath(this Microsoft.Graph.Drives.Item.Items.Item.DriveItemItemRequestBuilder rootRequestBuilder, string path)
     {
-        if (!string.IsNullOrEmpty(path))
-        {
-            if (!path.StartsWith("/"))
-            {
-                path = string.Format("/{0}", path);
-            }
-        }
-        
+        path = NormalizePathOrThrow(path);
         var requestInformation = rootRequestBuilder.ToGetRequestInformation();
         // Encode the path in accordance with the one drive spec
         // https://docs.microsoft.com/en-us/onedrive/developer/rest-api/concepts/addressing-driveitems
@@ -82,6 +68,17 @@ public static class DriveItemRequestBuilderExtensions
         builder.Path += $":{path}:";
         var parameter = builder.Uri.OriginalString.Split(new []{':'},StringSplitOptions.RemoveEmptyEntries).Last();
         return new CustomDriveItemItemRequestBuilder(rootRequestBuilder.GetPathParameters(), rootRequestBuilder.GetRequestAdapter(),rootRequestBuilder.GetUrlTemplate().Replace("{driveItem%2Did}",$"{{driveItem%2Did}}:{parameter}:"));
+    }
+
+    private static string NormalizePathOrThrow(string path)
+    {
+        if (path is null)
+            throw new ArgumentNullException(nameof(path));
+        if (string.IsNullOrWhiteSpace(path))
+            throw new ArgumentException("path cannot be empty or whitespace.", nameof(path));
+        if (!path.StartsWith("/", StringComparison.Ordinal))
+            path = string.Format("/{0}", path);
+        return path;
     }
 
     private static IRequestAdapter GetRequestAdapter(this object obj) {
