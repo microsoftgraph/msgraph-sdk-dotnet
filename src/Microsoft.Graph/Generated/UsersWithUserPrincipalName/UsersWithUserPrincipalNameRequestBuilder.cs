@@ -24,7 +24,7 @@ namespace Microsoft.Graph.UsersWithUserPrincipalName
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="userPrincipalName">Alternate key of user</param>
-        public UsersWithUserPrincipalNameRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string userPrincipalName = "") : base(requestAdapter, "{+baseurl}/users(userPrincipalName='{userPrincipalName}'){?%24expand,%24select}", pathParameters)
+        public UsersWithUserPrincipalNameRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string userPrincipalName = "") : base(requestAdapter, "{+baseurl}/users(userPrincipalName='{userPrincipalName}')", pathParameters)
         {
             if (!string.IsNullOrWhiteSpace(userPrincipalName)) PathParameters.Add("userPrincipalName", userPrincipalName);
         }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.UsersWithUserPrincipalName
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UsersWithUserPrincipalNameRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users(userPrincipalName='{userPrincipalName}'){?%24expand,%24select}", rawUrl)
+        public UsersWithUserPrincipalNameRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users(userPrincipalName='{userPrincipalName}')", rawUrl)
         {
         }
         /// <summary>

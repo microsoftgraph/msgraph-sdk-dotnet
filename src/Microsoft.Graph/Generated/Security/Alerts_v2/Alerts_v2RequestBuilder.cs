@@ -4,6 +4,7 @@ using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models.Security;
 using Microsoft.Graph.Security.Alerts_v2.Count;
 using Microsoft.Graph.Security.Alerts_v2.Item;
+using Microsoft.Graph.Security.Alerts_v2.MicrosoftGraphSecurityMoveAlerts;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -25,6 +26,11 @@ namespace Microsoft.Graph.Security.Alerts_v2
         {
             get => new global::Microsoft.Graph.Security.Alerts_v2.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the moveAlerts method.</summary>
+        public global::Microsoft.Graph.Security.Alerts_v2.MicrosoftGraphSecurityMoveAlerts.MicrosoftGraphSecurityMoveAlertsRequestBuilder MicrosoftGraphSecurityMoveAlerts
+        {
+            get => new global::Microsoft.Graph.Security.Alerts_v2.MicrosoftGraphSecurityMoveAlerts.MicrosoftGraphSecurityMoveAlertsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the alerts_v2 property of the microsoft.graph.security entity.</summary>
         /// <param name="position">The unique identifier of alert</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Security.Alerts_v2.Item.AlertItemRequestBuilder"/></returns>
@@ -42,7 +48,7 @@ namespace Microsoft.Graph.Security.Alerts_v2
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Alerts_v2RequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/alerts_v2{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        public Alerts_v2RequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -50,7 +56,7 @@ namespace Microsoft.Graph.Security.Alerts_v2
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Alerts_v2RequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/alerts_v2{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        public Alerts_v2RequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>

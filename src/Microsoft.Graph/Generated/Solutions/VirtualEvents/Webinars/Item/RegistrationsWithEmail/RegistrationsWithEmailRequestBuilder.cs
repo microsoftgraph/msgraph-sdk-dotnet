@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.RegistrationsWit
         /// <param name="email">Alternate key of virtualEventRegistration</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RegistrationsWithEmailRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string email = "") : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/webinars/{virtualEventWebinar%2Did}/registrations(email='{email}'){?%24expand,%24select}", pathParameters)
+        public RegistrationsWithEmailRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string email = "") : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/webinars/{virtualEventWebinar%2Did}/registrations(email='{email}')", pathParameters)
         {
             if (!string.IsNullOrWhiteSpace(email)) PathParameters.Add("email", email);
         }
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.RegistrationsWit
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RegistrationsWithEmailRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/webinars/{virtualEventWebinar%2Did}/registrations(email='{email}'){?%24expand,%24select}", rawUrl)
+        public RegistrationsWithEmailRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/webinars/{virtualEventWebinar%2Did}/registrations(email='{email}')", rawUrl)
         {
         }
         /// <summary>

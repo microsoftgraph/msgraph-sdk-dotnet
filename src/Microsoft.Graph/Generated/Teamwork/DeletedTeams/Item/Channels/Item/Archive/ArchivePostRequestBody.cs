@@ -34,6 +34,7 @@ namespace Microsoft.Graph.Teamwork.DeletedTeams.Item.Channels.Item.Archive
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            ShouldSetSpoSiteReadOnlyForMembers = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

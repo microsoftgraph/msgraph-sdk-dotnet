@@ -53,7 +53,7 @@ namespace Microsoft.Graph.DirectoryObjects.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DirectoryObjectItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directoryObjects/{directoryObject%2Did}{?%24expand,%24select}", pathParameters)
+        public DirectoryObjectItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directoryObjects/{directoryObject%2Did}", pathParameters)
         {
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.DirectoryObjects.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DirectoryObjectItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directoryObjects/{directoryObject%2Did}{?%24expand,%24select}", rawUrl)
+        public DirectoryObjectItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directoryObjects/{directoryObject%2Did}", rawUrl)
         {
         }
         /// <summary>

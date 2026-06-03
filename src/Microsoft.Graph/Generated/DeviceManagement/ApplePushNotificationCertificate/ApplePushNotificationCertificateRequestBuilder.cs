@@ -29,7 +29,7 @@ namespace Microsoft.Graph.DeviceManagement.ApplePushNotificationCertificate
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ApplePushNotificationCertificateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/applePushNotificationCertificate{?%24expand,%24select}", pathParameters)
+        public ApplePushNotificationCertificateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/applePushNotificationCertificate", pathParameters)
         {
         }
         /// <summary>
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.DeviceManagement.ApplePushNotificationCertificate
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ApplePushNotificationCertificateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/applePushNotificationCertificate{?%24expand,%24select}", rawUrl)
+        public ApplePushNotificationCertificateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/deviceManagement/applePushNotificationCertificate", rawUrl)
         {
         }
         /// <summary>

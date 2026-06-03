@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Admin.Teams.TelephoneNumberManagement.Operations.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TelephoneNumberLongRunningOperationItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/teams/telephoneNumberManagement/operations/{telephoneNumberLongRunningOperation%2Did}{?%24expand,%24select}", pathParameters)
+        public TelephoneNumberLongRunningOperationItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/teams/telephoneNumberManagement/operations/{telephoneNumberLongRunningOperation%2Did}", pathParameters)
         {
         }
         /// <summary>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Admin.Teams.TelephoneNumberManagement.Operations.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TelephoneNumberLongRunningOperationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/teams/telephoneNumberManagement/operations/{telephoneNumberLongRunningOperation%2Did}{?%24expand,%24select}", rawUrl)
+        public TelephoneNumberLongRunningOperationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/teams/telephoneNumberManagement/operations/{telephoneNumberLongRunningOperation%2Did}", rawUrl)
         {
         }
         /// <summary>

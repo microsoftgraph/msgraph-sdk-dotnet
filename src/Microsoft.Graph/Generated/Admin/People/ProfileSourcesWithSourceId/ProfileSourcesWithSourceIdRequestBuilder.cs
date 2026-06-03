@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Admin.People.ProfileSourcesWithSourceId
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="sourceId">Alternate key of profileSource</param>
-        public ProfileSourcesWithSourceIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string sourceId = "") : base(requestAdapter, "{+baseurl}/admin/people/profileSources(sourceId='{sourceId}'){?%24expand,%24select}", pathParameters)
+        public ProfileSourcesWithSourceIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string sourceId = "") : base(requestAdapter, "{+baseurl}/admin/people/profileSources(sourceId='{sourceId}')", pathParameters)
         {
             if (!string.IsNullOrWhiteSpace(sourceId)) PathParameters.Add("sourceId", sourceId);
         }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Admin.People.ProfileSourcesWithSourceId
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProfileSourcesWithSourceIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/people/profileSources(sourceId='{sourceId}'){?%24expand,%24select}", rawUrl)
+        public ProfileSourcesWithSourceIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/people/profileSources(sourceId='{sourceId}')", rawUrl)
         {
         }
         /// <summary>

@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Me.Planner.Plans.Item.Details
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DetailsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/planner/plans/{plannerPlan%2Did}/details{?%24expand,%24select}", pathParameters)
+        public DetailsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/planner/plans/{plannerPlan%2Did}/details", pathParameters)
         {
         }
         /// <summary>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Me.Planner.Plans.Item.Details
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DetailsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/planner/plans/{plannerPlan%2Did}/details{?%24expand,%24select}", rawUrl)
+        public DetailsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/planner/plans/{plannerPlan%2Did}/details", rawUrl)
         {
         }
         /// <summary>

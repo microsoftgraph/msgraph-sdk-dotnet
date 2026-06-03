@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Users.Item.Solutions.WorkingTimeSchedule
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WorkingTimeScheduleRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/solutions/workingTimeSchedule{?%24expand,%24select}", pathParameters)
+        public WorkingTimeScheduleRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/solutions/workingTimeSchedule", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Users.Item.Solutions.WorkingTimeSchedule
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WorkingTimeScheduleRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/solutions/workingTimeSchedule{?%24expand,%24select}", rawUrl)
+        public WorkingTimeScheduleRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/solutions/workingTimeSchedule", rawUrl)
         {
         }
         /// <summary>

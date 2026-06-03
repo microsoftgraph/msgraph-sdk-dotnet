@@ -3,6 +3,9 @@
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Users.Item.Teamwork.AssociatedTeams;
+using Microsoft.Graph.Users.Item.Teamwork.DeleteTargetedMessage;
+using Microsoft.Graph.Users.Item.Teamwork.GetAllRetainedTargetedMessages;
+using Microsoft.Graph.Users.Item.Teamwork.GetAllTargetedMessages;
 using Microsoft.Graph.Users.Item.Teamwork.InstalledApps;
 using Microsoft.Graph.Users.Item.Teamwork.SendActivityNotification;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -26,6 +29,21 @@ namespace Microsoft.Graph.Users.Item.Teamwork
         {
             get => new global::Microsoft.Graph.Users.Item.Teamwork.AssociatedTeams.AssociatedTeamsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the deleteTargetedMessage method.</summary>
+        public global::Microsoft.Graph.Users.Item.Teamwork.DeleteTargetedMessage.DeleteTargetedMessageRequestBuilder DeleteTargetedMessage
+        {
+            get => new global::Microsoft.Graph.Users.Item.Teamwork.DeleteTargetedMessage.DeleteTargetedMessageRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getAllRetainedTargetedMessages method.</summary>
+        public global::Microsoft.Graph.Users.Item.Teamwork.GetAllRetainedTargetedMessages.GetAllRetainedTargetedMessagesRequestBuilder GetAllRetainedTargetedMessages
+        {
+            get => new global::Microsoft.Graph.Users.Item.Teamwork.GetAllRetainedTargetedMessages.GetAllRetainedTargetedMessagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getAllTargetedMessages method.</summary>
+        public global::Microsoft.Graph.Users.Item.Teamwork.GetAllTargetedMessages.GetAllTargetedMessagesRequestBuilder GetAllTargetedMessages
+        {
+            get => new global::Microsoft.Graph.Users.Item.Teamwork.GetAllTargetedMessages.GetAllTargetedMessagesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the installedApps property of the microsoft.graph.userTeamwork entity.</summary>
         public global::Microsoft.Graph.Users.Item.Teamwork.InstalledApps.InstalledAppsRequestBuilder InstalledApps
         {
@@ -41,7 +59,7 @@ namespace Microsoft.Graph.Users.Item.Teamwork
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TeamworkRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/teamwork{?%24expand,%24select}", pathParameters)
+        public TeamworkRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/teamwork", pathParameters)
         {
         }
         /// <summary>
@@ -49,7 +67,7 @@ namespace Microsoft.Graph.Users.Item.Teamwork
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TeamworkRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/teamwork{?%24expand,%24select}", rawUrl)
+        public TeamworkRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/teamwork", rawUrl)
         {
         }
         /// <summary>

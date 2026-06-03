@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The clientExtensionResults property</summary>
+        /// <summary>The output of the WebAuthn extension processing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.WebauthnAuthenticationExtensionsClientOutputs? ClientExtensionResults
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("clientExtensionResults", value); }
         }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>The credential ID created by the WebAuthn Authenticator. This value is Base64URL-encoded without padding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The response property</summary>
+        /// <summary>The response from the WebAuthn Authenticator after generating an attestation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.WebauthnAuthenticatorAttestationResponse? Response

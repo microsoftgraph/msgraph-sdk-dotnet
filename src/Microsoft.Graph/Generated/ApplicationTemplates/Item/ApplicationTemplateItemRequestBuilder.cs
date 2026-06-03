@@ -41,7 +41,7 @@ namespace Microsoft.Graph.ApplicationTemplates.Item
         {
         }
         /// <summary>
-        /// Retrieve the properties of an applicationTemplate object.
+        /// Retrieve the properties of an applicationTemplate object. Details about optional risk properties such as riskScore and riskFactors are available with either the Microsoft Entra Suite or Microsoft Entra Internet Access license.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/applicationtemplate-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ApplicationTemplate"/></returns>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.ApplicationTemplates.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ApplicationTemplate>(requestInfo, global::Microsoft.Graph.Models.ApplicationTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties of an applicationTemplate object.
+        /// Retrieve the properties of an applicationTemplate object. Details about optional risk properties such as riskScore and riskFactors are available with either the Microsoft Entra Suite or Microsoft Entra Internet Access license.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.ApplicationTemplates.Item
             return new global::Microsoft.Graph.ApplicationTemplates.Item.ApplicationTemplateItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the properties of an applicationTemplate object.
+        /// Retrieve the properties of an applicationTemplate object. Details about optional risk properties such as riskScore and riskFactors are available with either the Microsoft Entra Suite or Microsoft Entra Internet Access license.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ApplicationTemplateItemRequestBuilderGetQueryParameters 

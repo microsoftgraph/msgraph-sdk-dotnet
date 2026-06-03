@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.SharePointG
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SharePointGroupMemberItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/storage/fileStorage/deletedContainers/{fileStorageContainer%2Did}/sharePointGroups/{sharePointGroup%2Did}/members/{sharePointGroupMember%2Did}{?%24expand,%24select}", pathParameters)
+        public SharePointGroupMemberItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/storage/fileStorage/deletedContainers/{fileStorageContainer%2Did}/sharePointGroups/{sharePointGroup%2Did}/members/{sharePointGroupMember%2Did}", pathParameters)
         {
         }
         /// <summary>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.SharePointG
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SharePointGroupMemberItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/storage/fileStorage/deletedContainers/{fileStorageContainer%2Did}/sharePointGroups/{sharePointGroup%2Did}/members/{sharePointGroupMember%2Did}{?%24expand,%24select}", rawUrl)
+        public SharePointGroupMemberItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/storage/fileStorage/deletedContainers/{fileStorageContainer%2Did}/sharePointGroups/{sharePointGroup%2Did}/members/{sharePointGroupMember%2Did}", rawUrl)
         {
         }
         /// <summary>

@@ -962,6 +962,7 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.synchronizationSchema" => new global::Microsoft.Graph.Models.SynchronizationSchema(),
                 "#microsoft.graph.synchronizationTemplate" => new global::Microsoft.Graph.Models.SynchronizationTemplate(),
                 "#microsoft.graph.targetDeviceGroup" => new global::Microsoft.Graph.Models.TargetDeviceGroup(),
+                "#microsoft.graph.targetedChatMessage" => new global::Microsoft.Graph.Models.TargetedChatMessage(),
                 "#microsoft.graph.targetedManagedAppConfiguration" => new global::Microsoft.Graph.Models.TargetedManagedAppConfiguration(),
                 "#microsoft.graph.targetedManagedAppPolicyAssignment" => new global::Microsoft.Graph.Models.TargetedManagedAppPolicyAssignment(),
                 "#microsoft.graph.targetedManagedAppProtection" => new global::Microsoft.Graph.Models.TargetedManagedAppProtection(),

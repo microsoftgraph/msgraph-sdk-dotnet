@@ -35,7 +35,8 @@ namespace Microsoft.Graph.Me.Authentication.Fido2Methods.CreationOptions
         {
         }
         /// <summary>
-        /// Invoke function creationOptions
+        /// Retrieve creation options required to generate and register a Microsoft Entra ID-compatible passkey. This function returns WebAuthn credential creation options that include a challenge, relying party information, and user information, which are used by the client to create a new FIDO2 credential. The challenge property and credential IDs in excludeCredentials are Base64URL-encoded without padding. All binary data in the response follows Base64URL encoding as defined in RFC 4648 Section 5.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/fido2authenticationmethod-creationoptions?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.WebauthnCredentialCreationOptions"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +59,7 @@ namespace Microsoft.Graph.Me.Authentication.Fido2Methods.CreationOptions
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.WebauthnCredentialCreationOptions>(requestInfo, global::Microsoft.Graph.Models.WebauthnCredentialCreationOptions.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke function creationOptions
+        /// Retrieve creation options required to generate and register a Microsoft Entra ID-compatible passkey. This function returns WebAuthn credential creation options that include a challenge, relying party information, and user information, which are used by the client to create a new FIDO2 credential. The challenge property and credential IDs in excludeCredentials are Base64URL-encoded without padding. All binary data in the response follows Base64URL encoding as defined in RFC 4648 Section 5.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

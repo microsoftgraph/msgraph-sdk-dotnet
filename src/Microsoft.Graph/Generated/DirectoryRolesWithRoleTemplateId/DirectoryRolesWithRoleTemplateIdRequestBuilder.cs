@@ -24,7 +24,7 @@ namespace Microsoft.Graph.DirectoryRolesWithRoleTemplateId
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="roleTemplateId">Alternate key of directoryRole</param>
-        public DirectoryRolesWithRoleTemplateIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string roleTemplateId = "") : base(requestAdapter, "{+baseurl}/directoryRoles(roleTemplateId='{roleTemplateId}'){?%24expand,%24select}", pathParameters)
+        public DirectoryRolesWithRoleTemplateIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string roleTemplateId = "") : base(requestAdapter, "{+baseurl}/directoryRoles(roleTemplateId='{roleTemplateId}')", pathParameters)
         {
             if (!string.IsNullOrWhiteSpace(roleTemplateId)) PathParameters.Add("roleTemplateId", roleTemplateId);
         }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.DirectoryRolesWithRoleTemplateId
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DirectoryRolesWithRoleTemplateIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directoryRoles(roleTemplateId='{roleTemplateId}'){?%24expand,%24select}", rawUrl)
+        public DirectoryRolesWithRoleTemplateIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directoryRoles(roleTemplateId='{roleTemplateId}')", rawUrl)
         {
         }
         /// <summary>

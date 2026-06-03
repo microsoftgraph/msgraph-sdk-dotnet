@@ -24,7 +24,7 @@ namespace Microsoft.Graph.ApplicationsWithUniqueName
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="uniqueName">Alternate key of application</param>
-        public ApplicationsWithUniqueNameRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string uniqueName = "") : base(requestAdapter, "{+baseurl}/applications(uniqueName='{uniqueName}'){?%24expand,%24select}", pathParameters)
+        public ApplicationsWithUniqueNameRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string uniqueName = "") : base(requestAdapter, "{+baseurl}/applications(uniqueName='{uniqueName}')", pathParameters)
         {
             if (!string.IsNullOrWhiteSpace(uniqueName)) PathParameters.Add("uniqueName", uniqueName);
         }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.ApplicationsWithUniqueName
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ApplicationsWithUniqueNameRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/applications(uniqueName='{uniqueName}'){?%24expand,%24select}", rawUrl)
+        public ApplicationsWithUniqueNameRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/applications(uniqueName='{uniqueName}')", rawUrl)
         {
         }
         /// <summary>

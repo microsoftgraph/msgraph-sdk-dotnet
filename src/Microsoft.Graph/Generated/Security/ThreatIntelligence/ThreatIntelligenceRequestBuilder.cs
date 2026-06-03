@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ThreatIntelligenceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence{?%24expand,%24select}", pathParameters)
+        public ThreatIntelligenceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence", pathParameters)
         {
         }
         /// <summary>
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Security.ThreatIntelligence
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ThreatIntelligenceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence{?%24expand,%24select}", rawUrl)
+        public ThreatIntelligenceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/threatIntelligence", rawUrl)
         {
         }
         /// <summary>

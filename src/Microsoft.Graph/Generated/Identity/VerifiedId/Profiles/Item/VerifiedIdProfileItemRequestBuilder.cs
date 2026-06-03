@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Identity.VerifiedId.Profiles.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VerifiedIdProfileItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/verifiedId/profiles/{verifiedIdProfile%2Did}{?%24expand,%24select}", pathParameters)
+        public VerifiedIdProfileItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/verifiedId/profiles/{verifiedIdProfile%2Did}", pathParameters)
         {
         }
         /// <summary>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Identity.VerifiedId.Profiles.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VerifiedIdProfileItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/verifiedId/profiles/{verifiedIdProfile%2Did}{?%24expand,%24select}", rawUrl)
+        public VerifiedIdProfileItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identity/verifiedId/profiles/{verifiedIdProfile%2Did}", rawUrl)
         {
         }
         /// <summary>

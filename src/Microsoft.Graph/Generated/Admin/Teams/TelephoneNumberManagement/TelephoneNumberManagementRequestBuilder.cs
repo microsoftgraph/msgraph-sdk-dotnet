@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Admin.Teams.TelephoneNumberManagement
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TelephoneNumberManagementRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/teams/telephoneNumberManagement{?%24expand,%24select}", pathParameters)
+        public TelephoneNumberManagementRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/teams/telephoneNumberManagement", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Admin.Teams.TelephoneNumberManagement
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TelephoneNumberManagementRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/teams/telephoneNumberManagement{?%24expand,%24select}", rawUrl)
+        public TelephoneNumberManagementRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/teams/telephoneNumberManagement", rawUrl)
         {
         }
         /// <summary>

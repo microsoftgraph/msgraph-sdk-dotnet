@@ -23,7 +23,7 @@ namespace Microsoft.Graph.SubscribedSkus.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubscribedSkuItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/subscribedSkus/{subscribedSku%2Did}{?%24select}", pathParameters)
+        public SubscribedSkuItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/subscribedSkus/{subscribedSku%2Did}", pathParameters)
         {
         }
         /// <summary>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.SubscribedSkus.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubscribedSkuItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/subscribedSkus/{subscribedSku%2Did}{?%24select}", rawUrl)
+        public SubscribedSkuItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/subscribedSkus/{subscribedSku%2Did}", rawUrl)
         {
         }
         /// <summary>

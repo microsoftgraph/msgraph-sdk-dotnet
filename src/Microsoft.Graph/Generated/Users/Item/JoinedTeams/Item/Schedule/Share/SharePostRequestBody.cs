@@ -46,6 +46,7 @@ namespace Microsoft.Graph.Users.Item.JoinedTeams.Item.Schedule.Share
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            NotifyTeam = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

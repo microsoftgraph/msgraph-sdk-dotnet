@@ -24,7 +24,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.FederatedIdentityCredentialsWit
         /// <param name="name">Alternate key of federatedIdentityCredential</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FederatedIdentityCredentialsWithNameRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string name = "") : base(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/federatedIdentityCredentials(name='{name}'){?%24expand,%24select}", pathParameters)
+        public FederatedIdentityCredentialsWithNameRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string name = "") : base(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/federatedIdentityCredentials(name='{name}')", pathParameters)
         {
             if (!string.IsNullOrWhiteSpace(name)) PathParameters.Add("name", name);
         }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.FederatedIdentityCredentialsWit
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FederatedIdentityCredentialsWithNameRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/federatedIdentityCredentials(name='{name}'){?%24expand,%24select}", rawUrl)
+        public FederatedIdentityCredentialsWithNameRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/servicePrincipals/{servicePrincipal%2Did}/federatedIdentityCredentials(name='{name}')", rawUrl)
         {
         }
         /// <summary>

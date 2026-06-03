@@ -24,7 +24,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item.LearningCont
         /// <param name="externalId">Alternate key of learningContent</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LearningContentsWithExternalIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string externalId = "") : base(requestAdapter, "{+baseurl}/employeeExperience/learningProviders/{learningProvider%2Did}/learningContents(externalId='{externalId}'){?%24expand,%24select}", pathParameters)
+        public LearningContentsWithExternalIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string externalId = "") : base(requestAdapter, "{+baseurl}/employeeExperience/learningProviders/{learningProvider%2Did}/learningContents(externalId='{externalId}')", pathParameters)
         {
             if (!string.IsNullOrWhiteSpace(externalId)) PathParameters.Add("externalId", externalId);
         }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.EmployeeExperience.LearningProviders.Item.LearningCont
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LearningContentsWithExternalIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/employeeExperience/learningProviders/{learningProvider%2Did}/learningContents(externalId='{externalId}'){?%24expand,%24select}", rawUrl)
+        public LearningContentsWithExternalIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/employeeExperience/learningProviders/{learningProvider%2Did}/learningContents(externalId='{externalId}')", rawUrl)
         {
         }
         /// <summary>

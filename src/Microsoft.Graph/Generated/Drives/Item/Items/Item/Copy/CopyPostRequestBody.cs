@@ -73,6 +73,8 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Copy
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            ChildrenOnly = false;
+            IncludeAllVersionHistory = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
