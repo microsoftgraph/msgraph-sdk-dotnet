@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Storage.FileStorage.ContainerTypeRegistrations.Item.Ap
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FileStorageContainerTypeAppPermissionGrantAppItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/storage/fileStorage/containerTypeRegistrations/{fileStorageContainerTypeRegistration%2Did}/applicationPermissionGrants/{fileStorageContainerTypeAppPermissionGrant%2DappId}{?%24expand,%24select}", pathParameters)
+        public FileStorageContainerTypeAppPermissionGrantAppItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/storage/fileStorage/containerTypeRegistrations/{fileStorageContainerTypeRegistration%2Did}/applicationPermissionGrants/{fileStorageContainerTypeAppPermissionGrant%2DappId}", pathParameters)
         {
         }
         /// <summary>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Storage.FileStorage.ContainerTypeRegistrations.Item.Ap
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FileStorageContainerTypeAppPermissionGrantAppItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/storage/fileStorage/containerTypeRegistrations/{fileStorageContainerTypeRegistration%2Did}/applicationPermissionGrants/{fileStorageContainerTypeAppPermissionGrant%2DappId}{?%24expand,%24select}", rawUrl)
+        public FileStorageContainerTypeAppPermissionGrantAppItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/storage/fileStorage/containerTypeRegistrations/{fileStorageContainerTypeRegistration%2Did}/applicationPermissionGrants/{fileStorageContainerTypeAppPermissionGrant%2DappId}", rawUrl)
         {
         }
         /// <summary>
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Storage.FileStorage.ContainerTypeRegistrations.Item.Ap
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Storage.FileStorage.ContainerTypeRegistrations.Item.ApplicationPermissionGrants.Item.FileStorageContainerTypeAppPermissionGrantAppItemRequestBuilder.FileStorageContainerTypeAppPermissionGrantAppItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/storage/fileStorage/containerTypeRegistrations/{fileStorageContainerTypeRegistration%2Did}/applicationPermissionGrants/{fileStorageContainerTypeAppPermissionGrant%2DappId}{?%24expand,%24select}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

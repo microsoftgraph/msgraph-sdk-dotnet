@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System;
@@ -28,6 +29,12 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("categories", value); }
         }
 #endif
+        /// <summary>Deprecation date for this application. If specified, the application will be removed from the Microsoft Entra application gallery on this date.</summary>
+        public Date? DeprecationDate
+        {
+            get { return BackingStore?.Get<Date?>("deprecationDate"); }
+            set { BackingStore?.Set("deprecationDate", value); }
+        }
         /// <summary>A description of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,6 +67,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>A collection of string URLs representing various domains that are used by this application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Endpoints
+        {
+            get { return BackingStore?.Get<List<string>?>("endpoints"); }
+            set { BackingStore?.Set("endpoints", value); }
+        }
+#nullable restore
+#else
+        public List<string> Endpoints
+        {
+            get { return BackingStore?.Get<List<string>>("endpoints"); }
+            set { BackingStore?.Set("endpoints", value); }
+        }
+#endif
         /// <summary>The home page URL of the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,6 +99,18 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("homePageUrl", value); }
         }
 #endif
+        /// <summary>Indicates whether the application is integrated with Entra ID (for example, through single sign-on or user provisioning).</summary>
+        public bool? IsEntraIntegrated
+        {
+            get { return BackingStore?.Get<bool?>("isEntraIntegrated"); }
+            set { BackingStore?.Set("isEntraIntegrated", value); }
+        }
+        /// <summary>The date and time when the data for the application was last updated, represented using ISO 8601 format and always in UTC time.</summary>
+        public DateTimeOffset? LastModifiedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
+            set { BackingStore?.Set("lastModifiedDateTime", value); }
+        }
         /// <summary>The URL to get the logo for this application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -106,6 +141,38 @@ namespace Microsoft.Graph.Models
         {
             get { return BackingStore?.Get<string>("publisher"); }
             set { BackingStore?.Set("publisher", value); }
+        }
+#endif
+        /// <summary>A comprehensive set of risk assessment data for the application, including general, security, compliance, and legal dimensions. Returned only when $select is used.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.ApplicationRiskFactors? RiskFactors
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ApplicationRiskFactors?>("riskFactors"); }
+            set { BackingStore?.Set("riskFactors", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.ApplicationRiskFactors RiskFactors
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ApplicationRiskFactors>("riskFactors"); }
+            set { BackingStore?.Set("riskFactors", value); }
+        }
+#endif
+        /// <summary>Represents the Microsoft-generated numerical risk score assessment for the application. Supported $orderby on total (for example, $orderby=riskScore/total desc). Returned only when $select is used.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.ApplicationRiskScore? RiskScore
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ApplicationRiskScore?>("riskScore"); }
+            set { BackingStore?.Set("riskScore", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.ApplicationRiskScore RiskScore
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ApplicationRiskScore>("riskScore"); }
+            set { BackingStore?.Set("riskScore", value); }
         }
 #endif
         /// <summary>The list of provisioning modes supported by this application. The only valid value is sync.</summary>
@@ -159,11 +226,17 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "deprecationDate", n => { DeprecationDate = n.GetDateValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "endpoints", n => { Endpoints = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "homePageUrl", n => { HomePageUrl = n.GetStringValue(); } },
+                { "isEntraIntegrated", n => { IsEntraIntegrated = n.GetBoolValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "logoUrl", n => { LogoUrl = n.GetStringValue(); } },
                 { "publisher", n => { Publisher = n.GetStringValue(); } },
+                { "riskFactors", n => { RiskFactors = n.GetObjectValue<global::Microsoft.Graph.Models.ApplicationRiskFactors>(global::Microsoft.Graph.Models.ApplicationRiskFactors.CreateFromDiscriminatorValue); } },
+                { "riskScore", n => { RiskScore = n.GetObjectValue<global::Microsoft.Graph.Models.ApplicationRiskScore>(global::Microsoft.Graph.Models.ApplicationRiskScore.CreateFromDiscriminatorValue); } },
                 { "supportedProvisioningTypes", n => { SupportedProvisioningTypes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "supportedSingleSignOnModes", n => { SupportedSingleSignOnModes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -177,11 +250,17 @@ namespace Microsoft.Graph.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfPrimitiveValues<string>("categories", Categories);
+            writer.WriteDateValue("deprecationDate", DeprecationDate);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteCollectionOfPrimitiveValues<string>("endpoints", Endpoints);
             writer.WriteStringValue("homePageUrl", HomePageUrl);
+            writer.WriteBoolValue("isEntraIntegrated", IsEntraIntegrated);
+            writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("logoUrl", LogoUrl);
             writer.WriteStringValue("publisher", Publisher);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.ApplicationRiskFactors>("riskFactors", RiskFactors);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.ApplicationRiskScore>("riskScore", RiskScore);
             writer.WriteCollectionOfPrimitiveValues<string>("supportedProvisioningTypes", SupportedProvisioningTypes);
             writer.WriteCollectionOfPrimitiveValues<string>("supportedSingleSignOnModes", SupportedSingleSignOnModes);
         }

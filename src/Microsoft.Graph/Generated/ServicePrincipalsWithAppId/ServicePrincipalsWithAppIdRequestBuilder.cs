@@ -24,7 +24,7 @@ namespace Microsoft.Graph.ServicePrincipalsWithAppId
         /// <param name="appId">Alternate key of servicePrincipal</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ServicePrincipalsWithAppIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string appId = "") : base(requestAdapter, "{+baseurl}/servicePrincipals(appId='{appId}'){?%24expand,%24select}", pathParameters)
+        public ServicePrincipalsWithAppIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string appId = "") : base(requestAdapter, "{+baseurl}/servicePrincipals(appId='{appId}')", pathParameters)
         {
             if (!string.IsNullOrWhiteSpace(appId)) PathParameters.Add("appId", appId);
         }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.ServicePrincipalsWithAppId
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ServicePrincipalsWithAppIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/servicePrincipals(appId='{appId}'){?%24expand,%24select}", rawUrl)
+        public ServicePrincipalsWithAppIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/servicePrincipals(appId='{appId}')", rawUrl)
         {
         }
         /// <summary>
@@ -142,7 +142,7 @@ namespace Microsoft.Graph.ServicePrincipalsWithAppId
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.ServicePrincipalsWithAppId.ServicePrincipalsWithAppIdRequestBuilder.ServicePrincipalsWithAppIdRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/servicePrincipals(appId='{appId}'){?%24expand,%24select}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

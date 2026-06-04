@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.RegistrationsWit
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="userId">Alternate key of virtualEventRegistration</param>
-        public RegistrationsWithUserIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string userId = "") : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/webinars/{virtualEventWebinar%2Did}/registrations(userId='{userId}'){?%24expand,%24select}", pathParameters)
+        public RegistrationsWithUserIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string userId = "") : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/webinars/{virtualEventWebinar%2Did}/registrations(userId='{userId}')", pathParameters)
         {
             if (!string.IsNullOrWhiteSpace(userId)) PathParameters.Add("userId", userId);
         }
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.RegistrationsWit
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RegistrationsWithUserIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/webinars/{virtualEventWebinar%2Did}/registrations(userId='{userId}'){?%24expand,%24select}", rawUrl)
+        public RegistrationsWithUserIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/solutions/virtualEvents/webinars/{virtualEventWebinar%2Did}/registrations(userId='{userId}')", rawUrl)
         {
         }
         /// <summary>
@@ -146,7 +146,7 @@ namespace Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.RegistrationsWit
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Solutions.VirtualEvents.Webinars.Item.RegistrationsWithUserId.RegistrationsWithUserIdRequestBuilder.RegistrationsWithUserIdRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/solutions/virtualEvents/webinars/{virtualEventWebinar%2Did}/registrations(userId='{userId}'){?%24expand,%24select}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

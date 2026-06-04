@@ -67,6 +67,7 @@ namespace Microsoft.Graph.Groups.Item.Team.Schedule.TimeCards.ClockIn
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            IsAtApprovedLocation = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

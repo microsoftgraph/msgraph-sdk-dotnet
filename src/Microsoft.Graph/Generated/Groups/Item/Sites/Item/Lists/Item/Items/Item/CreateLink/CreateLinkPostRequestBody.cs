@@ -127,6 +127,8 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.CreateLin
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            RetainInheritedPermissions = false;
+            SendNotification = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

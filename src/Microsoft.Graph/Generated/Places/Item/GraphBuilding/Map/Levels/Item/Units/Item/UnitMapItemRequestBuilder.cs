@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Places.Item.GraphBuilding.Map.Levels.Item.Units.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UnitMapItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/places/{place%2Did}/graph.building/map/levels/{levelMap%2Did}/units/{unitMap%2Did}{?%24expand,%24select}", pathParameters)
+        public UnitMapItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/places/{place%2Did}/graph.building/map/levels/{levelMap%2Did}/units/{unitMap%2Did}", pathParameters)
         {
         }
         /// <summary>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Places.Item.GraphBuilding.Map.Levels.Item.Units.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UnitMapItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/places/{place%2Did}/graph.building/map/levels/{levelMap%2Did}/units/{unitMap%2Did}{?%24expand,%24select}", rawUrl)
+        public UnitMapItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/places/{place%2Did}/graph.building/map/levels/{levelMap%2Did}/units/{unitMap%2Did}", rawUrl)
         {
         }
         /// <summary>
@@ -139,7 +139,7 @@ namespace Microsoft.Graph.Places.Item.GraphBuilding.Map.Levels.Item.Units.Item
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Places.Item.GraphBuilding.Map.Levels.Item.Units.Item.UnitMapItemRequestBuilder.UnitMapItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/places/{place%2Did}/graph.building/map/levels/{levelMap%2Did}/units/{unitMap%2Did}{?%24expand,%24select}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

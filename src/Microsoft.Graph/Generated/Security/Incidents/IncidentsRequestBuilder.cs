@@ -4,6 +4,7 @@ using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models.Security;
 using Microsoft.Graph.Security.Incidents.Count;
 using Microsoft.Graph.Security.Incidents.Item;
+using Microsoft.Graph.Security.Incidents.MicrosoftGraphSecurityMergeIncidents;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -25,6 +26,11 @@ namespace Microsoft.Graph.Security.Incidents
         {
             get => new global::Microsoft.Graph.Security.Incidents.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the mergeIncidents method.</summary>
+        public global::Microsoft.Graph.Security.Incidents.MicrosoftGraphSecurityMergeIncidents.MicrosoftGraphSecurityMergeIncidentsRequestBuilder MicrosoftGraphSecurityMergeIncidents
+        {
+            get => new global::Microsoft.Graph.Security.Incidents.MicrosoftGraphSecurityMergeIncidents.MicrosoftGraphSecurityMergeIncidentsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the incidents property of the microsoft.graph.security entity.</summary>
         /// <param name="position">The unique identifier of incident</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Security.Incidents.Item.IncidentItemRequestBuilder"/></returns>
@@ -42,7 +48,7 @@ namespace Microsoft.Graph.Security.Incidents
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IncidentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/incidents{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", pathParameters)
+        public IncidentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -50,7 +56,7 @@ namespace Microsoft.Graph.Security.Incidents
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IncidentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/incidents{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", rawUrl)
+        public IncidentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>
@@ -116,7 +122,7 @@ namespace Microsoft.Graph.Security.Incidents
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Security.Incidents.IncidentsRequestBuilder.IncidentsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/security/incidents{?%24count,%24expand,%24filter,%24orderby,%24search,%24select,%24skip,%24top}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -137,7 +143,7 @@ namespace Microsoft.Graph.Security.Incidents
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/security/incidents", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

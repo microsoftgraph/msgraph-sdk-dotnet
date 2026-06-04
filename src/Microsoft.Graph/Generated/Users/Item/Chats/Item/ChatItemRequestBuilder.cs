@@ -16,6 +16,7 @@ using Microsoft.Graph.Users.Item.Chats.Item.RemoveAllAccessForUser;
 using Microsoft.Graph.Users.Item.Chats.Item.SendActivityNotification;
 using Microsoft.Graph.Users.Item.Chats.Item.StartMigration;
 using Microsoft.Graph.Users.Item.Chats.Item.Tabs;
+using Microsoft.Graph.Users.Item.Chats.Item.TargetedMessages;
 using Microsoft.Graph.Users.Item.Chats.Item.UnhideForUser;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -103,6 +104,11 @@ namespace Microsoft.Graph.Users.Item.Chats.Item
         {
             get => new global::Microsoft.Graph.Users.Item.Chats.Item.Tabs.TabsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the targetedMessages property of the microsoft.graph.chat entity.</summary>
+        public global::Microsoft.Graph.Users.Item.Chats.Item.TargetedMessages.TargetedMessagesRequestBuilder TargetedMessages
+        {
+            get => new global::Microsoft.Graph.Users.Item.Chats.Item.TargetedMessages.TargetedMessagesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the unhideForUser method.</summary>
         public global::Microsoft.Graph.Users.Item.Chats.Item.UnhideForUser.UnhideForUserRequestBuilder UnhideForUser
         {
@@ -113,7 +119,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ChatItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/chats/{chat%2Did}{?%24expand,%24select}", pathParameters)
+        public ChatItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/chats/{chat%2Did}", pathParameters)
         {
         }
         /// <summary>
@@ -121,7 +127,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ChatItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/chats/{chat%2Did}{?%24expand,%24select}", rawUrl)
+        public ChatItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/chats/{chat%2Did}", rawUrl)
         {
         }
         /// <summary>
@@ -228,7 +234,7 @@ namespace Microsoft.Graph.Users.Item.Chats.Item
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Users.Item.Chats.Item.ChatItemRequestBuilder.ChatItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/users/{user%2Did}/chats/{chat%2Did}{?%24expand,%24select}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

@@ -24,7 +24,7 @@ namespace Microsoft.Graph.DevicesWithDeviceId
         /// <param name="deviceId">Alternate key of device</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DevicesWithDeviceIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string deviceId = "") : base(requestAdapter, "{+baseurl}/devices(deviceId='{deviceId}'){?%24expand,%24select}", pathParameters)
+        public DevicesWithDeviceIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string deviceId = "") : base(requestAdapter, "{+baseurl}/devices(deviceId='{deviceId}')", pathParameters)
         {
             if (!string.IsNullOrWhiteSpace(deviceId)) PathParameters.Add("deviceId", deviceId);
         }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.DevicesWithDeviceId
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DevicesWithDeviceIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/devices(deviceId='{deviceId}'){?%24expand,%24select}", rawUrl)
+        public DevicesWithDeviceIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/devices(deviceId='{deviceId}')", rawUrl)
         {
         }
         /// <summary>
@@ -142,7 +142,7 @@ namespace Microsoft.Graph.DevicesWithDeviceId
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.DevicesWithDeviceId.DevicesWithDeviceIdRequestBuilder.DevicesWithDeviceIdRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/devices(deviceId='{deviceId}'){?%24expand,%24select}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The authentication method that the user is prompted to register. The value must be microsoftAuthenticator.</summary>
+        /// <summary>The authentication method that the user is prompted to register. The value can be Fido2 or microsoftAuthenticator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetedAuthenticationMethod

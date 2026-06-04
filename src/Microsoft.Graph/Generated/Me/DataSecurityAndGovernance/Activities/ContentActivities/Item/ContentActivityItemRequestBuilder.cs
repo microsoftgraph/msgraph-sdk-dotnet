@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Me.DataSecurityAndGovernance.Activities.ContentActivit
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ContentActivityItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/dataSecurityAndGovernance/activities/contentActivities/{contentActivity%2Did}{?%24expand,%24select}", pathParameters)
+        public ContentActivityItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/dataSecurityAndGovernance/activities/contentActivities/{contentActivity%2Did}", pathParameters)
         {
         }
         /// <summary>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Me.DataSecurityAndGovernance.Activities.ContentActivit
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ContentActivityItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/dataSecurityAndGovernance/activities/contentActivities/{contentActivity%2Did}{?%24expand,%24select}", rawUrl)
+        public ContentActivityItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/dataSecurityAndGovernance/activities/contentActivities/{contentActivity%2Did}", rawUrl)
         {
         }
         /// <summary>
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Me.DataSecurityAndGovernance.Activities.ContentActivit
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Me.DataSecurityAndGovernance.Activities.ContentActivities.Item.ContentActivityItemRequestBuilder.ContentActivityItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/me/dataSecurityAndGovernance/activities/contentActivities/{contentActivity%2Did}{?%24expand,%24select}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

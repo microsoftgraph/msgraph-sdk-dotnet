@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Security.Identities.SensorCandidateActivationConfigura
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SensorCandidateActivationConfigurationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/identities/sensorCandidateActivationConfiguration{?%24expand,%24select}", pathParameters)
+        public SensorCandidateActivationConfigurationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/identities/sensorCandidateActivationConfiguration", pathParameters)
         {
         }
         /// <summary>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Security.Identities.SensorCandidateActivationConfigura
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SensorCandidateActivationConfigurationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/identities/sensorCandidateActivationConfiguration{?%24expand,%24select}", rawUrl)
+        public SensorCandidateActivationConfigurationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/security/identities/sensorCandidateActivationConfiguration", rawUrl)
         {
         }
         /// <summary>
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Security.Identities.SensorCandidateActivationConfigura
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Security.Identities.SensorCandidateActivationConfiguration.SensorCandidateActivationConfigurationRequestBuilder.SensorCandidateActivationConfigurationRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/security/identities/sensorCandidateActivationConfiguration{?%24expand,%24select}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

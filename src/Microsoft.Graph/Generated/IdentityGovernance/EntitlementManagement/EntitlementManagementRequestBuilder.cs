@@ -12,6 +12,8 @@ using Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRequests;
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRoleScopes;
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement.Resources;
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement.Settings;
+using Microsoft.Graph.IdentityGovernance.EntitlementManagement.Subjects;
+using Microsoft.Graph.IdentityGovernance.EntitlementManagement.SubjectsWithObjectId;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -90,12 +92,17 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement
         {
             get => new global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the subjects property of the microsoft.graph.entitlementManagement entity.</summary>
+        public global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.Subjects.SubjectsRequestBuilder Subjects
+        {
+            get => new global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.Subjects.SubjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.EntitlementManagementRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EntitlementManagementRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement{?%24expand,%24select}", pathParameters)
+        public EntitlementManagementRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement", pathParameters)
         {
         }
         /// <summary>
@@ -103,7 +110,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EntitlementManagementRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement{?%24expand,%24select}", rawUrl)
+        public EntitlementManagementRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/identityGovernance/entitlementManagement", rawUrl)
         {
         }
         /// <summary>
@@ -177,6 +184,16 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.EntitlementManagement>(requestInfo, global::Microsoft.Graph.Models.EntitlementManagement.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// Provides operations to manage the subjects property of the microsoft.graph.entitlementManagement entity.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.SubjectsWithObjectId.SubjectsWithObjectIdRequestBuilder"/></returns>
+        /// <param name="objectId">Alternate key of accessPackageSubject</param>
+        public global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.SubjectsWithObjectId.SubjectsWithObjectIdRequestBuilder SubjectsWithObjectId(string objectId)
+        {
+            if(string.IsNullOrEmpty(objectId)) throw new ArgumentNullException(nameof(objectId));
+            return new global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.SubjectsWithObjectId.SubjectsWithObjectIdRequestBuilder(PathParameters, RequestAdapter, objectId);
+        }
+        /// <summary>
         /// Delete navigation property entitlementManagement for identityGovernance
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -209,7 +226,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.EntitlementManagementRequestBuilder.EntitlementManagementRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/identityGovernance/entitlementManagement{?%24expand,%24select}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

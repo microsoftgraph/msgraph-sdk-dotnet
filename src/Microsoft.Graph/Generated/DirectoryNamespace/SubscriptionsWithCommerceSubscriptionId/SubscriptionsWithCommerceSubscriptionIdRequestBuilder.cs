@@ -24,7 +24,7 @@ namespace Microsoft.Graph.DirectoryNamespace.SubscriptionsWithCommerceSubscripti
         /// <param name="commerceSubscriptionId">Alternate key of companySubscription</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubscriptionsWithCommerceSubscriptionIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string commerceSubscriptionId = "") : base(requestAdapter, "{+baseurl}/directory/subscriptions(commerceSubscriptionId='{commerceSubscriptionId}'){?%24expand,%24select}", pathParameters)
+        public SubscriptionsWithCommerceSubscriptionIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string commerceSubscriptionId = "") : base(requestAdapter, "{+baseurl}/directory/subscriptions(commerceSubscriptionId='{commerceSubscriptionId}')", pathParameters)
         {
             if (!string.IsNullOrWhiteSpace(commerceSubscriptionId)) PathParameters.Add("commerceSubscriptionId", commerceSubscriptionId);
         }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.DirectoryNamespace.SubscriptionsWithCommerceSubscripti
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubscriptionsWithCommerceSubscriptionIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/subscriptions(commerceSubscriptionId='{commerceSubscriptionId}'){?%24expand,%24select}", rawUrl)
+        public SubscriptionsWithCommerceSubscriptionIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/directory/subscriptions(commerceSubscriptionId='{commerceSubscriptionId}')", rawUrl)
         {
         }
         /// <summary>
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.DirectoryNamespace.SubscriptionsWithCommerceSubscripti
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.DirectoryNamespace.SubscriptionsWithCommerceSubscriptionId.SubscriptionsWithCommerceSubscriptionIdRequestBuilder.SubscriptionsWithCommerceSubscriptionIdRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/directory/subscriptions(commerceSubscriptionId='{commerceSubscriptionId}'){?%24expand,%24select}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

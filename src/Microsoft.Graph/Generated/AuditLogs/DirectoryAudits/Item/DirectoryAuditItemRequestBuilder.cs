@@ -23,7 +23,7 @@ namespace Microsoft.Graph.AuditLogs.DirectoryAudits.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DirectoryAuditItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/auditLogs/directoryAudits/{directoryAudit%2Did}{?%24expand,%24select}", pathParameters)
+        public DirectoryAuditItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/auditLogs/directoryAudits/{directoryAudit%2Did}", pathParameters)
         {
         }
         /// <summary>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.AuditLogs.DirectoryAudits.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DirectoryAuditItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/auditLogs/directoryAudits/{directoryAudit%2Did}{?%24expand,%24select}", rawUrl)
+        public DirectoryAuditItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/auditLogs/directoryAudits/{directoryAudit%2Did}", rawUrl)
         {
         }
         /// <summary>
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.AuditLogs.DirectoryAudits.Item
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.AuditLogs.DirectoryAudits.Item.DirectoryAuditItemRequestBuilder.DirectoryAuditItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/auditLogs/directoryAudits/{directoryAudit%2Did}{?%24expand,%24select}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

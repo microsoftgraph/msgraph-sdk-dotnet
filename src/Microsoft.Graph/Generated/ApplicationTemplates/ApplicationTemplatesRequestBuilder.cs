@@ -54,7 +54,7 @@ namespace Microsoft.Graph.ApplicationTemplates
         {
         }
         /// <summary>
-        /// Retrieve a list of applicationTemplate objects from the Microsoft Entra application gallery.
+        /// Retrieve a list of applicationTemplate objects from the Microsoft Entra application gallery. Details about optional risk properties such as riskScore and riskFactors are available with either the Microsoft Entra Suite or Microsoft Entra Internet Access license. If a risk property is included in the request without appropriate license, a @microsoft.graph.licenseRequired OData annotation is returned in the response.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/applicationtemplate-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ApplicationTemplateCollectionResponse"/></returns>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.ApplicationTemplates
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ApplicationTemplateCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.ApplicationTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of applicationTemplate objects from the Microsoft Entra application gallery.
+        /// Retrieve a list of applicationTemplate objects from the Microsoft Entra application gallery. Details about optional risk properties such as riskScore and riskFactors are available with either the Microsoft Entra Suite or Microsoft Entra Internet Access license. If a risk property is included in the request without appropriate license, a @microsoft.graph.licenseRequired OData annotation is returned in the response.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.ApplicationTemplates
             return new global::Microsoft.Graph.ApplicationTemplates.ApplicationTemplatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of applicationTemplate objects from the Microsoft Entra application gallery.
+        /// Retrieve a list of applicationTemplate objects from the Microsoft Entra application gallery. Details about optional risk properties such as riskScore and riskFactors are available with either the Microsoft Entra Suite or Microsoft Entra Internet Access license. If a risk property is included in the request without appropriate license, a @microsoft.graph.licenseRequired OData annotation is returned in the response.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ApplicationTemplatesRequestBuilderGetQueryParameters 

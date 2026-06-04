@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Admin.ConfigurationManagement.ConfigurationMonitors.It
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BaselineRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/configurationManagement/configurationMonitors/{configurationMonitor%2Did}/baseline{?%24expand,%24select}", pathParameters)
+        public BaselineRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/configurationManagement/configurationMonitors/{configurationMonitor%2Did}/baseline", pathParameters)
         {
         }
         /// <summary>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Admin.ConfigurationManagement.ConfigurationMonitors.It
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BaselineRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/configurationManagement/configurationMonitors/{configurationMonitor%2Did}/baseline{?%24expand,%24select}", rawUrl)
+        public BaselineRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/admin/configurationManagement/configurationMonitors/{configurationMonitor%2Did}/baseline", rawUrl)
         {
         }
         /// <summary>
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Admin.ConfigurationManagement.ConfigurationMonitors.It
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.Admin.ConfigurationManagement.ConfigurationMonitors.Item.Baseline.BaselineRequestBuilder.BaselineRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/admin/configurationManagement/configurationMonitors/{configurationMonitor%2Did}/baseline{?%24expand,%24select}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

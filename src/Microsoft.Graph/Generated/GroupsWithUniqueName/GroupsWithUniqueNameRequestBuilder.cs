@@ -24,7 +24,7 @@ namespace Microsoft.Graph.GroupsWithUniqueName
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="uniqueName">Alternate key of group</param>
-        public GroupsWithUniqueNameRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string uniqueName = "") : base(requestAdapter, "{+baseurl}/groups(uniqueName='{uniqueName}'){?%24expand,%24select}", pathParameters)
+        public GroupsWithUniqueNameRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string uniqueName = "") : base(requestAdapter, "{+baseurl}/groups(uniqueName='{uniqueName}')", pathParameters)
         {
             if (!string.IsNullOrWhiteSpace(uniqueName)) PathParameters.Add("uniqueName", uniqueName);
         }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.GroupsWithUniqueName
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GroupsWithUniqueNameRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups(uniqueName='{uniqueName}'){?%24expand,%24select}", rawUrl)
+        public GroupsWithUniqueNameRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/groups(uniqueName='{uniqueName}')", rawUrl)
         {
         }
         /// <summary>
@@ -142,7 +142,7 @@ namespace Microsoft.Graph.GroupsWithUniqueName
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Microsoft.Graph.GroupsWithUniqueName.GroupsWithUniqueNameRequestBuilder.GroupsWithUniqueNameRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/groups(uniqueName='{uniqueName}'){?%24expand,%24select}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
