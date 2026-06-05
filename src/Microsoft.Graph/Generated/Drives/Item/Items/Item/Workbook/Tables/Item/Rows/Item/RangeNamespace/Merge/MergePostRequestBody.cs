@@ -34,6 +34,7 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Workbook.Tables.Item.Rows.Item.
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            Across = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

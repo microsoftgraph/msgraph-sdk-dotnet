@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.PasskeyType?>("passkeyType"); }
             set { BackingStore?.Set("passkeyType", value); }
         }
-        /// <summary>The publicKeyCredential property</summary>
+        /// <summary>Contains the WebAuthn public key credential information being registered. This property is used only for write requests and isn&apos;t returned on read operations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.WebauthnPublicKeyCredential? PublicKeyCredential

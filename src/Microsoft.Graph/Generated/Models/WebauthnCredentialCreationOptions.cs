@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The challengeTimeoutDateTime property</summary>
+        /// <summary>The date and time when the challenge times out and can no longer be used to create a credential.</summary>
         public DateTimeOffset? ChallengeTimeoutDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("challengeTimeoutDateTime"); }
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The publicKey property</summary>
+        /// <summary>The WebAuthn public key creation options.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.WebauthnPublicKeyCredentialCreationOptions? PublicKey

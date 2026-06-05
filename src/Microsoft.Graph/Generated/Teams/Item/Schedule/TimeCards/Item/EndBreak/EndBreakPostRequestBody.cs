@@ -51,6 +51,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.TimeCards.Item.EndBreak
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            IsAtApprovedLocation = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
