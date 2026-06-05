@@ -62,6 +62,9 @@ namespace Microsoft.Graph.Me.ManagedDevices.Item.Wipe
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            KeepEnrollmentData = false;
+            KeepUserData = false;
+            PersistEsimDataPlan = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

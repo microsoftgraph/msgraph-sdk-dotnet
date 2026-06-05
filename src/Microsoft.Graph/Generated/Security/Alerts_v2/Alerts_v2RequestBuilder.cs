@@ -4,6 +4,7 @@ using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models.Security;
 using Microsoft.Graph.Security.Alerts_v2.Count;
 using Microsoft.Graph.Security.Alerts_v2.Item;
+using Microsoft.Graph.Security.Alerts_v2.MicrosoftGraphSecurityMoveAlerts;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -24,6 +25,11 @@ namespace Microsoft.Graph.Security.Alerts_v2
         public global::Microsoft.Graph.Security.Alerts_v2.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Security.Alerts_v2.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the moveAlerts method.</summary>
+        public global::Microsoft.Graph.Security.Alerts_v2.MicrosoftGraphSecurityMoveAlerts.MicrosoftGraphSecurityMoveAlertsRequestBuilder MicrosoftGraphSecurityMoveAlerts
+        {
+            get => new global::Microsoft.Graph.Security.Alerts_v2.MicrosoftGraphSecurityMoveAlerts.MicrosoftGraphSecurityMoveAlertsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the alerts_v2 property of the microsoft.graph.security entity.</summary>
         /// <param name="position">The unique identifier of alert</param>

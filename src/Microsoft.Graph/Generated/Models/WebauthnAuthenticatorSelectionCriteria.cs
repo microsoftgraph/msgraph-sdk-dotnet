@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>The authenticatorAttachment property</summary>
+        /// <summary>Specifies the preferred attachment modality for the authenticator. Possible values: platform (device-bound authenticator, such as Windows Hello), cross-platform (removable authenticator, such as a USB security key), or null (no preference).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AuthenticatorAttachment
@@ -53,13 +53,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The requireResidentKey property</summary>
+        /// <summary>Indicates whether the authenticator must create a client-side-resident credential (also known as a discoverable credential). If true, the credential can be used without providing a credential ID.</summary>
         public bool? RequireResidentKey
         {
             get { return BackingStore?.Get<bool?>("requireResidentKey"); }
             set { BackingStore?.Set("requireResidentKey", value); }
         }
-        /// <summary>The userVerification property</summary>
+        /// <summary>Specifies the relying party&apos;s preference for user verification during credential creation. Possible values: required, preferred, or discouraged.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserVerification

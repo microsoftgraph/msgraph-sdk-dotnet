@@ -50,6 +50,7 @@ namespace Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item.Events.I
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            SendResponse = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

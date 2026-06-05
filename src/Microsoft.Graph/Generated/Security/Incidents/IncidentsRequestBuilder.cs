@@ -4,6 +4,7 @@ using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models.Security;
 using Microsoft.Graph.Security.Incidents.Count;
 using Microsoft.Graph.Security.Incidents.Item;
+using Microsoft.Graph.Security.Incidents.MicrosoftGraphSecurityMergeIncidents;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -24,6 +25,11 @@ namespace Microsoft.Graph.Security.Incidents
         public global::Microsoft.Graph.Security.Incidents.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Security.Incidents.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the mergeIncidents method.</summary>
+        public global::Microsoft.Graph.Security.Incidents.MicrosoftGraphSecurityMergeIncidents.MicrosoftGraphSecurityMergeIncidentsRequestBuilder MicrosoftGraphSecurityMergeIncidents
+        {
+            get => new global::Microsoft.Graph.Security.Incidents.MicrosoftGraphSecurityMergeIncidents.MicrosoftGraphSecurityMergeIncidentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the incidents property of the microsoft.graph.security entity.</summary>
         /// <param name="position">The unique identifier of incident</param>

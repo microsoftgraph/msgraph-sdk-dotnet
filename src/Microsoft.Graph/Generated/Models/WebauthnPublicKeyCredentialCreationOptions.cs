@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>The attestation property</summary>
+        /// <summary>Specifies the relying party&apos;s preference for attestation conveyance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Attestation
@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("attestation", value); }
         }
 #endif
-        /// <summary>The authenticatorSelection property</summary>
+        /// <summary>Criteria for selecting an appropriate authenticator for credential creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.WebauthnAuthenticatorSelectionCriteria? AuthenticatorSelection
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Models
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The challenge property</summary>
+        /// <summary>The challenge that the authenticator must sign to prove possession of the credential. This value is Base64URL-encoded without padding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Challenge
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("challenge", value); }
         }
 #endif
-        /// <summary>The excludeCredentials property</summary>
+        /// <summary>A list of credentials that are already registered for this user, which should be excluded from selection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.WebauthnPublicKeyCredentialDescriptor>? ExcludeCredentials
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("excludeCredentials", value); }
         }
 #endif
-        /// <summary>The extensions property</summary>
+        /// <summary>Inputs for requested WebAuthn extensions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.WebauthnAuthenticationExtensionsClientInputs? Extensions
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The pubKeyCredParams property</summary>
+        /// <summary>The cryptographic parameters that the relying party supports, in order of preference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.WebauthnPublicKeyCredentialParameters>? PubKeyCredParams
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("pubKeyCredParams", value); }
         }
 #endif
-        /// <summary>The rp property</summary>
+        /// <summary>Information about the relying party (RP) requesting credential creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.WebauthnPublicKeyCredentialRpEntity? Rp
@@ -149,13 +149,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("rp", value); }
         }
 #endif
-        /// <summary>The timeout property</summary>
+        /// <summary>The time, in milliseconds, that the caller is willing to wait for the operation to complete.</summary>
         public int? Timeout
         {
             get { return BackingStore?.Get<int?>("timeout"); }
             set { BackingStore?.Set("timeout", value); }
         }
-        /// <summary>The user property</summary>
+        /// <summary>Information about the user account for which the credential is being created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.WebauthnPublicKeyCredentialUserEntity? User
