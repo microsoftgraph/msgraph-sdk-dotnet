@@ -21,7 +21,8 @@ extends:
   parameters:
     pool:
       name: Azure-Pipelines-1ESPT-ExDShared
-      os: linux
+      image: windows-latest
+      os: windows
     sdl:
       sourceAnalysisPool:
         name: Azure-Pipelines-1ESPT-ExDShared
@@ -43,12 +44,33 @@ extends:
                 submodules: recursive
 
               - task: UseDotNet@2
-                displayName: Set up .NET
+                displayName: Set up .NET 8
                 inputs:
                   packageType: 'sdk'
-                  version: '8.x'
+                  version: 8.x
 
-              - script: dotnet restore Microsoft.Graph.sln
+              - task: UseDotNet@2
+                displayName: Set up .NET 10
+                inputs:
+                  packageType: 'sdk'
+                  version: 10.x
+
+              - task: NuGetAuthenticate@1
+                displayName: Authenticate to Azure Artifacts
+
+              - powershell: |
+                  @"
+                  <?xml version="1.0" encoding="utf-8"?>
+                  <configuration>
+                    <packageSources>
+                      <clear />
+                      <add key="GraphDeveloperExperiences_Public" value="$(NUGET_FEED_URI)" />
+                    </packageSources>
+                  </configuration>
+                  "@ | Set-Content -Path "$(Build.SourcesDirectory)\nuget.config" -Encoding UTF8
+                displayName: Create nuget.config
+
+              - script: dotnet restore Microsoft.Graph.sln --configfile nuget.config
                 displayName: Restore dependencies
                 workingDirectory: $(Build.SourcesDirectory)
 
