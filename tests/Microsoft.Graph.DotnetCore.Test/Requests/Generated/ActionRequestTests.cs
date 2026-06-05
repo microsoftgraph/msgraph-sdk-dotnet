@@ -61,7 +61,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
             
             Assert.NotNull(requestInformation);
             Assert.Equal(new Uri(expectedRequestUrl), requestInformation.URI);
-            Assert.Null(requestBody.SecurityEnabledOnly);
+            Assert.False(requestBody.SecurityEnabledOnly);
         }
 
         /// <summary>
