@@ -57,7 +57,8 @@ extends:
 
               - task: NuGetAuthenticate@1
                 displayName: Authenticate to Azure Artifacts
-
+                inputs:
+                  feedsToAuthenticate: '$(NUGET_FEED_URI)'
               - powershell: |
                   @"
                   <?xml version="1.0" encoding="utf-8"?>
