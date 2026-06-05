@@ -108,6 +108,12 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("principalName", value); }
         }
 #endif
+        /// <summary>The subjectLifecycle property</summary>
+        public global::Microsoft.Graph.Models.AccessPackageSubjectLifecycle? SubjectLifecycle
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.AccessPackageSubjectLifecycle?>("subjectLifecycle"); }
+            set { BackingStore?.Set("subjectLifecycle", value); }
+        }
         /// <summary>The resource type of the subject. The possible values are: notSpecified, user, servicePrincipal, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.AccessPackageSubjectType? SubjectType
         {
@@ -138,6 +144,7 @@ namespace Microsoft.Graph.Models
                 { "objectId", n => { ObjectId = n.GetStringValue(); } },
                 { "onPremisesSecurityIdentifier", n => { OnPremisesSecurityIdentifier = n.GetStringValue(); } },
                 { "principalName", n => { PrincipalName = n.GetStringValue(); } },
+                { "subjectLifecycle", n => { SubjectLifecycle = n.GetEnumValue<global::Microsoft.Graph.Models.AccessPackageSubjectLifecycle>(); } },
                 { "subjectType", n => { SubjectType = n.GetEnumValue<global::Microsoft.Graph.Models.AccessPackageSubjectType>(); } },
             };
         }
@@ -155,6 +162,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("objectId", ObjectId);
             writer.WriteStringValue("onPremisesSecurityIdentifier", OnPremisesSecurityIdentifier);
             writer.WriteStringValue("principalName", PrincipalName);
+            writer.WriteEnumValue<global::Microsoft.Graph.Models.AccessPackageSubjectLifecycle>("subjectLifecycle", SubjectLifecycle);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.AccessPackageSubjectType>("subjectType", SubjectType);
         }
     }

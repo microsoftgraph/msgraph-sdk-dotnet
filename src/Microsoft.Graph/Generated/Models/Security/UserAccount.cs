@@ -123,6 +123,22 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("resourceAccessEvents", value); }
         }
 #endif
+        /// <summary>The tenantId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TenantId
+        {
+            get { return BackingStore?.Get<string?>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
+        }
+#nullable restore
+#else
+        public string TenantId
+        {
+            get { return BackingStore?.Get<string>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
+        }
+#endif
         /// <summary>The user principal name of the account in Microsoft Entra ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -188,6 +204,7 @@ namespace Microsoft.Graph.Models.Security
                 { "domainName", n => { DomainName = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "resourceAccessEvents", n => { ResourceAccessEvents = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.ResourceAccessEvent>(global::Microsoft.Graph.Models.Security.ResourceAccessEvent.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "tenantId", n => { TenantId = n.GetStringValue(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
                 { "userSid", n => { UserSid = n.GetStringValue(); } },
             };
@@ -206,6 +223,7 @@ namespace Microsoft.Graph.Models.Security
             writer.WriteStringValue("domainName", DomainName);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.ResourceAccessEvent>("resourceAccessEvents", ResourceAccessEvents);
+            writer.WriteStringValue("tenantId", TenantId);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
             writer.WriteStringValue("userSid", UserSid);
             writer.WriteAdditionalData(AdditionalData);

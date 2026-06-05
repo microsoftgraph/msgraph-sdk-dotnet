@@ -12,6 +12,8 @@ using Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRequests;
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRoleScopes;
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement.Resources;
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement.Settings;
+using Microsoft.Graph.IdentityGovernance.EntitlementManagement.Subjects;
+using Microsoft.Graph.IdentityGovernance.EntitlementManagement.SubjectsWithObjectId;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -89,6 +91,11 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement
         public global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.Settings.SettingsRequestBuilder Settings
         {
             get => new global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the subjects property of the microsoft.graph.entitlementManagement entity.</summary>
+        public global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.Subjects.SubjectsRequestBuilder Subjects
+        {
+            get => new global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.Subjects.SubjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.EntitlementManagementRequestBuilder"/> and sets the default values.
@@ -175,6 +182,16 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement
                 { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.EntitlementManagement>(requestInfo, global::Microsoft.Graph.Models.EntitlementManagement.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Provides operations to manage the subjects property of the microsoft.graph.entitlementManagement entity.
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.SubjectsWithObjectId.SubjectsWithObjectIdRequestBuilder"/></returns>
+        /// <param name="objectId">Alternate key of accessPackageSubject</param>
+        public global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.SubjectsWithObjectId.SubjectsWithObjectIdRequestBuilder SubjectsWithObjectId(string objectId)
+        {
+            if(string.IsNullOrEmpty(objectId)) throw new ArgumentNullException(nameof(objectId));
+            return new global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.SubjectsWithObjectId.SubjectsWithObjectIdRequestBuilder(PathParameters, RequestAdapter, objectId);
         }
         /// <summary>
         /// Delete navigation property entitlementManagement for identityGovernance

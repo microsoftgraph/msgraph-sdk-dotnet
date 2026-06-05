@@ -14,6 +14,7 @@ using Microsoft.Graph.Chats.Item.RemoveAllAccessForUser;
 using Microsoft.Graph.Chats.Item.SendActivityNotification;
 using Microsoft.Graph.Chats.Item.StartMigration;
 using Microsoft.Graph.Chats.Item.Tabs;
+using Microsoft.Graph.Chats.Item.TargetedMessages;
 using Microsoft.Graph.Chats.Item.UnhideForUser;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
@@ -102,6 +103,11 @@ namespace Microsoft.Graph.Chats.Item
         public global::Microsoft.Graph.Chats.Item.Tabs.TabsRequestBuilder Tabs
         {
             get => new global::Microsoft.Graph.Chats.Item.Tabs.TabsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the targetedMessages property of the microsoft.graph.chat entity.</summary>
+        public global::Microsoft.Graph.Chats.Item.TargetedMessages.TargetedMessagesRequestBuilder TargetedMessages
+        {
+            get => new global::Microsoft.Graph.Chats.Item.TargetedMessages.TargetedMessagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unhideForUser method.</summary>
         public global::Microsoft.Graph.Chats.Item.UnhideForUser.UnhideForUserRequestBuilder UnhideForUser

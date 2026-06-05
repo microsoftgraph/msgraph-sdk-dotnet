@@ -127,6 +127,9 @@ namespace Microsoft.Graph.Drives.Item.Items.Item.Invite
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            RequireSignIn = false;
+            RetainInheritedPermissions = false;
+            SendInvitation = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

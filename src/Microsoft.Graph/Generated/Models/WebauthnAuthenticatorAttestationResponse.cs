@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>The attestationObject property</summary>
+        /// <summary>A CBOR-encoded attestation object containing the authenticator data and attestation statement. This value is Base64URL-encoded without padding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AttestationObject
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Models
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The clientDataJSON property</summary>
+        /// <summary>Contains the JSON-compatible serialization of client data passed to the authenticator by the client. This value is Base64URL-encoded without padding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClientDataJSON

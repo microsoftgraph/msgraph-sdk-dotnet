@@ -67,6 +67,7 @@ namespace Microsoft.Graph.Me.CalendarGroups.Item.Calendars.Item.Events.Item.Decl
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            SendResponse = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

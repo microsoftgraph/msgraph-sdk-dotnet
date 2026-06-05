@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>The alg property</summary>
+        /// <summary>A COSE algorithm identifier representing the cryptographic algorithm to use for this credential type. For example, -7 represents ES256.</summary>
         public int? Alg
         {
             get { return BackingStore?.Get<int?>("alg"); }
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>The type of credential to create. Currently, the only supported value is public-key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type

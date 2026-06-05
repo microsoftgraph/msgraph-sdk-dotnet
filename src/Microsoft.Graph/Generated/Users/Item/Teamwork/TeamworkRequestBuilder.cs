@@ -3,6 +3,9 @@
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Users.Item.Teamwork.AssociatedTeams;
+using Microsoft.Graph.Users.Item.Teamwork.DeleteTargetedMessage;
+using Microsoft.Graph.Users.Item.Teamwork.GetAllRetainedTargetedMessages;
+using Microsoft.Graph.Users.Item.Teamwork.GetAllTargetedMessages;
 using Microsoft.Graph.Users.Item.Teamwork.InstalledApps;
 using Microsoft.Graph.Users.Item.Teamwork.SendActivityNotification;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -25,6 +28,21 @@ namespace Microsoft.Graph.Users.Item.Teamwork
         public global::Microsoft.Graph.Users.Item.Teamwork.AssociatedTeams.AssociatedTeamsRequestBuilder AssociatedTeams
         {
             get => new global::Microsoft.Graph.Users.Item.Teamwork.AssociatedTeams.AssociatedTeamsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the deleteTargetedMessage method.</summary>
+        public global::Microsoft.Graph.Users.Item.Teamwork.DeleteTargetedMessage.DeleteTargetedMessageRequestBuilder DeleteTargetedMessage
+        {
+            get => new global::Microsoft.Graph.Users.Item.Teamwork.DeleteTargetedMessage.DeleteTargetedMessageRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getAllRetainedTargetedMessages method.</summary>
+        public global::Microsoft.Graph.Users.Item.Teamwork.GetAllRetainedTargetedMessages.GetAllRetainedTargetedMessagesRequestBuilder GetAllRetainedTargetedMessages
+        {
+            get => new global::Microsoft.Graph.Users.Item.Teamwork.GetAllRetainedTargetedMessages.GetAllRetainedTargetedMessagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getAllTargetedMessages method.</summary>
+        public global::Microsoft.Graph.Users.Item.Teamwork.GetAllTargetedMessages.GetAllTargetedMessagesRequestBuilder GetAllTargetedMessages
+        {
+            get => new global::Microsoft.Graph.Users.Item.Teamwork.GetAllTargetedMessages.GetAllTargetedMessagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the installedApps property of the microsoft.graph.userTeamwork entity.</summary>
         public global::Microsoft.Graph.Users.Item.Teamwork.InstalledApps.InstalledAppsRequestBuilder InstalledApps

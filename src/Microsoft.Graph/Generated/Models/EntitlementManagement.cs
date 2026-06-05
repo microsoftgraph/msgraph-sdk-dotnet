@@ -204,6 +204,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("settings", value); }
         }
 #endif
+        /// <summary>The subjects property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.AccessPackageSubject>? Subjects
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.AccessPackageSubject>?>("subjects"); }
+            set { BackingStore?.Set("subjects", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.AccessPackageSubject> Subjects
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.AccessPackageSubject>>("subjects"); }
+            set { BackingStore?.Set("subjects", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -234,6 +250,7 @@ namespace Microsoft.Graph.Models
                 { "resourceRoleScopes", n => { ResourceRoleScopes = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageResourceRoleScope>(global::Microsoft.Graph.Models.AccessPackageResourceRoleScope.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "resources", n => { Resources = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageResource>(global::Microsoft.Graph.Models.AccessPackageResource.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Models.EntitlementManagementSettings>(global::Microsoft.Graph.Models.EntitlementManagementSettings.CreateFromDiscriminatorValue); } },
+                { "subjects", n => { Subjects = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageSubject>(global::Microsoft.Graph.Models.AccessPackageSubject.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -256,6 +273,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageResourceRoleScope>("resourceRoleScopes", ResourceRoleScopes);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageResource>("resources", Resources);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.EntitlementManagementSettings>("settings", Settings);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageSubject>("subjects", Subjects);
         }
     }
 }

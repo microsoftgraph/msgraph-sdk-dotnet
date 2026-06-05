@@ -107,6 +107,8 @@ namespace Microsoft.Graph.Users.Item.FindMeetingTimes
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            IsOrganizerOptional = false;
+            ReturnSuggestionReasons = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
