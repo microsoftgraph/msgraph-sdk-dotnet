@@ -75,10 +75,28 @@ extends:
                 displayName: Restore dependencies
                 workingDirectory: $(Build.SourcesDirectory)
 
-              - script: dotnet build Microsoft.Graph.sln --no-restore
-                displayName: Build SDK
+              # Build each TFM sequentially to avoid OOM kills on the build agent.
+              # Building all TFMs in parallel exhausts memory on standard runners.
+              - script: dotnet build src\Microsoft.Graph\Microsoft.Graph.csproj --no-restore -f netstandard2.0
+                displayName: Build SDK (netstandard2.0)
                 workingDirectory: $(Build.SourcesDirectory)
 
-              - script: dotnet test Microsoft.Graph.sln --no-build
+              - script: dotnet build src\Microsoft.Graph\Microsoft.Graph.csproj --no-restore -f netstandard2.1
+                displayName: Build SDK (netstandard2.1)
+                workingDirectory: $(Build.SourcesDirectory)
+
+              - script: dotnet build src\Microsoft.Graph\Microsoft.Graph.csproj --no-restore -f net8.0
+                displayName: Build SDK (net8.0)
+                workingDirectory: $(Build.SourcesDirectory)
+
+              - script: dotnet build src\Microsoft.Graph\Microsoft.Graph.csproj --no-restore -f net10.0
+                displayName: Build SDK (net10.0)
+                workingDirectory: $(Build.SourcesDirectory)
+
+              - script: dotnet build tests\Microsoft.Graph.DotnetCore.Test\Microsoft.Graph.DotnetCore.Test.csproj --no-restore
+                displayName: Build test project
+                workingDirectory: $(Build.SourcesDirectory)
+
+              - script: dotnet test tests\Microsoft.Graph.DotnetCore.Test\Microsoft.Graph.DotnetCore.Test.csproj --no-build
                 displayName: Run unit tests
                 workingDirectory: $(Build.SourcesDirectory)
