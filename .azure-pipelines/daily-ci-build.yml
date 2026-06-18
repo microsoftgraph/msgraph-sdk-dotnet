@@ -19,10 +19,7 @@ resources:
 extends:
   template: v1/1ES.Unofficial.PipelineTemplate.yml@1ESPipelineTemplates
   parameters:
-    pool:
-      name: Azure-Pipelines-1ESPT-ExDShared
-      image: windows-latest
-      os: windows
+    pool: 1es-windows-ps-compute-m
     sdl:
       sourceAnalysisPool:
         name: Azure-Pipelines-1ESPT-ExDShared
