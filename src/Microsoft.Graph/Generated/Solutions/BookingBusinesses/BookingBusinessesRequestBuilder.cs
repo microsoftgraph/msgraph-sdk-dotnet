@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses
         {
         }
         /// <summary>
-        /// Get a collection of bookingBusiness objects that has been created for the tenant. This operation returns only the id and displayName of each Microsoft Bookings business in the collection. For performance considerations, it does not return other properties. You can get the other properties of a Bookings business by specifying its id in a GET operation.
+        /// Get a collection of bookingBusiness objects that has been created for the tenant. This operation returns only the id and displayName of each Microsoft Bookings business in the collection. For performance considerations, it doesn&apos;t return other properties. You can get the other properties of a Bookings business by specifying its id in a GET operation.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/bookingbusiness-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.BookingBusinessCollectionResponse"/></returns>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.BookingBusiness>(requestInfo, global::Microsoft.Graph.Models.BookingBusiness.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a collection of bookingBusiness objects that has been created for the tenant. This operation returns only the id and displayName of each Microsoft Bookings business in the collection. For performance considerations, it does not return other properties. You can get the other properties of a Bookings business by specifying its id in a GET operation.
+        /// Get a collection of bookingBusiness objects that has been created for the tenant. This operation returns only the id and displayName of each Microsoft Bookings business in the collection. For performance considerations, it doesn&apos;t return other properties. You can get the other properties of a Bookings business by specifying its id in a GET operation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Solutions.BookingBusinesses
             return new global::Microsoft.Graph.Solutions.BookingBusinesses.BookingBusinessesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a collection of bookingBusiness objects that has been created for the tenant. This operation returns only the id and displayName of each Microsoft Bookings business in the collection. For performance considerations, it does not return other properties. You can get the other properties of a Bookings business by specifying its id in a GET operation.
+        /// Get a collection of bookingBusiness objects that has been created for the tenant. This operation returns only the id and displayName of each Microsoft Bookings business in the collection. For performance considerations, it doesn&apos;t return other properties. You can get the other properties of a Bookings business by specifying its id in a GET operation.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BookingBusinessesRequestBuilderGetQueryParameters 

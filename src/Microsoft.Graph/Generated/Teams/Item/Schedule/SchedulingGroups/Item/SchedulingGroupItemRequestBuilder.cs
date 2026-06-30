@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.SchedulingGroups.Item
         {
         }
         /// <summary>
-        /// Mark a schedulingGroup as inactive by setting its isActive property.This method does not remove the schedulingGroup from the schedule. Existing shift instances assigned to the scheduling group remain part of the group.
+        /// Mark a schedulingGroup as inactive by setting its isActive property.This method doesn&apos;t remove the schedulingGroup from the schedule. Existing shift instances assigned to the scheduling group remain part of the group.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/schedulinggroup-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Teams.Item.Schedule.SchedulingGroups.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.SchedulingGroup>(requestInfo, global::Microsoft.Graph.Models.SchedulingGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Mark a schedulingGroup as inactive by setting its isActive property.This method does not remove the schedulingGroup from the schedule. Existing shift instances assigned to the scheduling group remain part of the group.
+        /// Mark a schedulingGroup as inactive by setting its isActive property.This method doesn&apos;t remove the schedulingGroup from the schedule. Existing shift instances assigned to the scheduling group remain part of the group.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

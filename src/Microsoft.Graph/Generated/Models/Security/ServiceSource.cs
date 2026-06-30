@@ -64,5 +64,9 @@ namespace Microsoft.Graph.Models.Security
         #pragma warning disable CS1591
         MicrosoftThreatIntelligence,
         #pragma warning restore CS1591
+        [EnumMember(Value = "microsoftSecurityForAI")]
+        #pragma warning disable CS1591
+        MicrosoftSecurityForAI,
+        #pragma warning restore CS1591
     }
 }

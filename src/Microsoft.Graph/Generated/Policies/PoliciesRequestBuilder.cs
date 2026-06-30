@@ -15,6 +15,7 @@ using Microsoft.Graph.Policies.CrossTenantAccessPolicy;
 using Microsoft.Graph.Policies.DefaultAppManagementPolicy;
 using Microsoft.Graph.Policies.DeviceRegistrationPolicy;
 using Microsoft.Graph.Policies.FeatureRolloutPolicies;
+using Microsoft.Graph.Policies.FederatedTokenValidationPolicy;
 using Microsoft.Graph.Policies.HomeRealmDiscoveryPolicies;
 using Microsoft.Graph.Policies.IdentitySecurityDefaultsEnforcementPolicy;
 using Microsoft.Graph.Policies.OwnerlessGroupPolicy;
@@ -103,6 +104,11 @@ namespace Microsoft.Graph.Policies
         public global::Microsoft.Graph.Policies.FeatureRolloutPolicies.FeatureRolloutPoliciesRequestBuilder FeatureRolloutPolicies
         {
             get => new global::Microsoft.Graph.Policies.FeatureRolloutPolicies.FeatureRolloutPoliciesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the federatedTokenValidationPolicy property of the microsoft.graph.policyRoot entity.</summary>
+        public global::Microsoft.Graph.Policies.FederatedTokenValidationPolicy.FederatedTokenValidationPolicyRequestBuilder FederatedTokenValidationPolicy
+        {
+            get => new global::Microsoft.Graph.Policies.FederatedTokenValidationPolicy.FederatedTokenValidationPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the homeRealmDiscoveryPolicies property of the microsoft.graph.policyRoot entity.</summary>
         public global::Microsoft.Graph.Policies.HomeRealmDiscoveryPolicies.HomeRealmDiscoveryPoliciesRequestBuilder HomeRealmDiscoveryPolicies

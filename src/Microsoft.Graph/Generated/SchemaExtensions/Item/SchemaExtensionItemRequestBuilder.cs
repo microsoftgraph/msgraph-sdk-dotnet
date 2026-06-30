@@ -35,7 +35,7 @@ namespace Microsoft.Graph.SchemaExtensions.Item
         {
         }
         /// <summary>
-        /// Delete the definition of a schema extension. Only the app that created the schema extension (owner app) can delete the schema extension definition, and only when the extension is in the InDevelopment state. Deleting a schema extension definition does not affect accessing custom data that has been added to resource instances based on that definition.
+        /// Delete the definition of a schema extension. Only the app that created the schema extension (owner app) can delete the schema extension definition, and only when the extension is in the InDevelopment state. Deleting a schema extension definition doesn&apos;t affect accessing custom data that has been added to resource instances based on that definition.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/schemaextension-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.SchemaExtensions.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.SchemaExtension>(requestInfo, global::Microsoft.Graph.Models.SchemaExtension.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete the definition of a schema extension. Only the app that created the schema extension (owner app) can delete the schema extension definition, and only when the extension is in the InDevelopment state. Deleting a schema extension definition does not affect accessing custom data that has been added to resource instances based on that definition.
+        /// Delete the definition of a schema extension. Only the app that created the schema extension (owner app) can delete the schema extension definition, and only when the extension is in the InDevelopment state. Deleting a schema extension definition doesn&apos;t affect accessing custom data that has been added to resource instances based on that definition.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

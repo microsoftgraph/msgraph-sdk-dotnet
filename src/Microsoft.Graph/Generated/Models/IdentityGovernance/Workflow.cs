@@ -56,6 +56,38 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             get { return BackingStore?.Get<DateTimeOffset?>("nextScheduleRunDateTime"); }
             set { BackingStore?.Set("nextScheduleRunDateTime", value); }
         }
+        /// <summary>The preview scope for the workflow.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.DirectoryObject>? PreviewScope
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.DirectoryObject>?>("previewScope"); }
+            set { BackingStore?.Set("previewScope", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.DirectoryObject> PreviewScope
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.DirectoryObject>>("previewScope"); }
+            set { BackingStore?.Set("previewScope", value); }
+        }
+#endif
+        /// <summary>The quarantineDetails property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.IdentityGovernance.QuarantineDetails? QuarantineDetails
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.IdentityGovernance.QuarantineDetails?>("quarantineDetails"); }
+            set { BackingStore?.Set("quarantineDetails", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.IdentityGovernance.QuarantineDetails QuarantineDetails
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.IdentityGovernance.QuarantineDetails>("quarantineDetails"); }
+            set { BackingStore?.Set("quarantineDetails", value); }
+        }
+#endif
         /// <summary>Workflow runs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,6 +102,22 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         {
             get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.IdentityGovernance.Run>>("runs"); }
             set { BackingStore?.Set("runs", value); }
+        }
+#endif
+        /// <summary>The settings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.IdentityGovernance.WorkflowSetting? Settings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.IdentityGovernance.WorkflowSetting?>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.IdentityGovernance.WorkflowSetting Settings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.IdentityGovernance.WorkflowSetting>("settings"); }
+            set { BackingStore?.Set("settings", value); }
         }
 #endif
         /// <summary>Represents the aggregation of task execution data for tasks within a workflow object.</summary>
@@ -155,7 +203,10 @@ namespace Microsoft.Graph.Models.IdentityGovernance
                 { "executionScope", n => { ExecutionScope = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.IdentityGovernance.UserProcessingResult>(global::Microsoft.Graph.Models.IdentityGovernance.UserProcessingResult.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "nextScheduleRunDateTime", n => { NextScheduleRunDateTime = n.GetDateTimeOffsetValue(); } },
+                { "previewScope", n => { PreviewScope = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DirectoryObject>(global::Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "quarantineDetails", n => { QuarantineDetails = n.GetObjectValue<global::Microsoft.Graph.Models.IdentityGovernance.QuarantineDetails>(global::Microsoft.Graph.Models.IdentityGovernance.QuarantineDetails.CreateFromDiscriminatorValue); } },
                 { "runs", n => { Runs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.IdentityGovernance.Run>(global::Microsoft.Graph.Models.IdentityGovernance.Run.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Models.IdentityGovernance.WorkflowSetting>(global::Microsoft.Graph.Models.IdentityGovernance.WorkflowSetting.CreateFromDiscriminatorValue); } },
                 { "taskReports", n => { TaskReports = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.IdentityGovernance.TaskReport>(global::Microsoft.Graph.Models.IdentityGovernance.TaskReport.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "userProcessingResults", n => { UserProcessingResults = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.IdentityGovernance.UserProcessingResult>(global::Microsoft.Graph.Models.IdentityGovernance.UserProcessingResult.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "version", n => { Version = n.GetIntValue(); } },
@@ -174,7 +225,10 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.IdentityGovernance.UserProcessingResult>("executionScope", ExecutionScope);
             writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("nextScheduleRunDateTime", NextScheduleRunDateTime);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DirectoryObject>("previewScope", PreviewScope);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.IdentityGovernance.QuarantineDetails>("quarantineDetails", QuarantineDetails);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.IdentityGovernance.Run>("runs", Runs);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.IdentityGovernance.WorkflowSetting>("settings", Settings);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.IdentityGovernance.TaskReport>("taskReports", TaskReports);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.IdentityGovernance.UserProcessingResult>("userProcessingResults", UserProcessingResults);
             writer.WriteIntValue("version", Version);

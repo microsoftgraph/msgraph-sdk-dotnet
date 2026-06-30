@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Security.Alerts_v2.MicrosoftGraphSecurityMoveAlerts
         {
         }
         /// <summary>
-        /// Invoke action moveAlerts
+        /// Move one or more alert resources to a new or existing incident.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Security.MergeResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Security.Alerts_v2.MicrosoftGraphSecurityMoveAlerts
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Security.MergeResponse>(requestInfo, global::Microsoft.Graph.Models.Security.MergeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action moveAlerts
+        /// Move one or more alert resources to a new or existing incident.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

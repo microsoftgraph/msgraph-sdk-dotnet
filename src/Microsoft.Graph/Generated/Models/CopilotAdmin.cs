@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Models
     public partial class CopilotAdmin : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The catalog property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.CopilotAdminCatalog? Catalog
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.CopilotAdminCatalog?>("catalog"); }
+            set { BackingStore?.Set("catalog", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.CopilotAdminCatalog Catalog
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.CopilotAdminCatalog>("catalog"); }
+            set { BackingStore?.Set("catalog", value); }
+        }
+#endif
         /// <summary>The settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,6 +62,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "catalog", n => { Catalog = n.GetObjectValue<global::Microsoft.Graph.Models.CopilotAdminCatalog>(global::Microsoft.Graph.Models.CopilotAdminCatalog.CreateFromDiscriminatorValue); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Models.CopilotAdminSetting>(global::Microsoft.Graph.Models.CopilotAdminSetting.CreateFromDiscriminatorValue); } },
             };
         }
@@ -57,6 +74,7 @@ namespace Microsoft.Graph.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.CopilotAdminCatalog>("catalog", Catalog);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.CopilotAdminSetting>("settings", Settings);
         }
     }
