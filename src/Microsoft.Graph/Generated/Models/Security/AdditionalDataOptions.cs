@@ -45,5 +45,9 @@ namespace Microsoft.Graph.Models.Security
         #pragma warning disable CS1591
         AllItemsInFolder = 256,
         #pragma warning restore CS1591
+        [EnumMember(Value = "cloudNativeHtmlConversion")]
+        #pragma warning disable CS1591
+        CloudNativeHtmlConversion = 512,
+        #pragma warning restore CS1591
     }
 }

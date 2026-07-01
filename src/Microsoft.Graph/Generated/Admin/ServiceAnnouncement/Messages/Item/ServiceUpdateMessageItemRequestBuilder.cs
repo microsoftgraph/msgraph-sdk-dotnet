@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a serviceUpdateMessage object. This operation retrieves a specified service update message for the tenant. The operation returns an error if the message does not exist for the tenant.
+        /// Retrieve the properties and relationships of a serviceUpdateMessage object. This operation retrieves a specified service update message for the tenant. The operation returns an error if the message doesn&apos;t exist for the tenant.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceupdatemessage-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ServiceUpdateMessage"/></returns>
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a serviceUpdateMessage object. This operation retrieves a specified service update message for the tenant. The operation returns an error if the message does not exist for the tenant.
+        /// Retrieve the properties and relationships of a serviceUpdateMessage object. This operation retrieves a specified service update message for the tenant. The operation returns an error if the message doesn&apos;t exist for the tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -195,7 +195,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Messages.Item
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a serviceUpdateMessage object. This operation retrieves a specified service update message for the tenant. The operation returns an error if the message does not exist for the tenant.
+        /// Retrieve the properties and relationships of a serviceUpdateMessage object. This operation retrieves a specified service update message for the tenant. The operation returns an error if the message doesn&apos;t exist for the tenant.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ServiceUpdateMessageItemRequestBuilderGetQueryParameters 

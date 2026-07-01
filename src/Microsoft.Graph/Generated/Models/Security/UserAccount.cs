@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("resourceAccessEvents", value); }
         }
 #endif
-        /// <summary>The tenantId property</summary>
+        /// <summary>The Microsoft Entra tenant ID of the user account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TenantId

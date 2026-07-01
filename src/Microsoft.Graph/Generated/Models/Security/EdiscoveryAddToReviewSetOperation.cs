@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models.Security
     public partial class EdiscoveryAddToReviewSetOperation : global::Microsoft.Graph.Models.Security.CaseOperation, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The options to add items to the review set. The possible values are: allVersions, linkedFiles, unknownFutureValue, advancedIndexing, listAttachments, htmlTranscripts, messageConversationExpansion, locationsWithoutHits, allItemsInFolder. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: advancedIndexing, listAttachments, htmlTranscripts, messageConversationExpansion, locationsWithoutHits, allItemsInFolder.</summary>
+        /// <summary>The options to add items to the review set. The possible values are: allVersions, linkedFiles, unknownFutureValue, advancedIndexing, listAttachments, htmlTranscripts, messageConversationExpansion, locationsWithoutHits, allItemsInFolder, cloudNativeHtmlConversion. Use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: advancedIndexing, listAttachments, htmlTranscripts, messageConversationExpansion, locationsWithoutHits, allItemsInFolder, cloudNativeHtmlConversion.</summary>
         public global::Microsoft.Graph.Models.Security.AdditionalDataOptions? AdditionalDataOptions
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.AdditionalDataOptions?>("additionalDataOptions"); }

@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class ExternalDomainFederation : global::Microsoft.Graph.Models.IdentitySource, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The name of the identity source, typically also the domain name. Read only.</summary>
+        /// <summary>The name of the identity source, typically also the domain name. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The domain name. Read only.</summary>
+        /// <summary>The domain name. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DomainName
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("domainName", value); }
         }
 #endif
-        /// <summary>The issuerURI of the incoming federation. Read only.</summary>
+        /// <summary>The issuerURI of the incoming federation. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IssuerUri

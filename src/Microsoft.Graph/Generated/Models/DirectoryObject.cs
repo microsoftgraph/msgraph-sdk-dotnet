@@ -50,6 +50,7 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.directoryRoleTemplate" => new global::Microsoft.Graph.Models.DirectoryRoleTemplate(),
                 "#microsoft.graph.endpoint" => new global::Microsoft.Graph.Models.Endpoint(),
                 "#microsoft.graph.extensionProperty" => new global::Microsoft.Graph.Models.ExtensionProperty(),
+                "#microsoft.graph.federatedTokenValidationPolicy" => new global::Microsoft.Graph.Models.FederatedTokenValidationPolicy(),
                 "#microsoft.graph.group" => new global::Microsoft.Graph.Models.Group(),
                 "#microsoft.graph.groupSettingTemplate" => new global::Microsoft.Graph.Models.GroupSettingTemplate(),
                 "#microsoft.graph.homeRealmDiscoveryPolicy" => new global::Microsoft.Graph.Models.HomeRealmDiscoveryPolicy(),

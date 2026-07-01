@@ -29,6 +29,12 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("acceptedSenders", value); }
         }
 #endif
+        /// <summary>Indicates the type of access to the group. The possible values are: none, private, secret, public, unknownFutureValue. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).</summary>
+        public global::Microsoft.Graph.Models.GroupAccessType? AccessType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.GroupAccessType?>("accessType"); }
+            set { BackingStore?.Set("accessType", value); }
+        }
         /// <summary>Indicates if people external to the organization can send messages to the group. The default value is false. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).</summary>
         public bool? AllowExternalSenders
         {
@@ -355,6 +361,12 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("isAssignableToRole"); }
             set { BackingStore?.Set("isAssignableToRole", value); }
         }
+        /// <summary>Indicates whether the user marked the group as favorite. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).</summary>
+        public bool? IsFavorite
+        {
+            get { return BackingStore?.Get<bool?>("isFavorite"); }
+            set { BackingStore?.Set("isFavorite", value); }
+        }
         /// <summary>Indicates whether the group is a member of a restricted management administrative unit. If not set, the default value is null and the default behavior is false. Read-only.  To manage a group member of a restricted management administrative unit, the administrator or calling app must be assigned a Microsoft Entra role at the scope of the restricted management administrative unit. Requires $select to retrieve.</summary>
         public bool? IsManagementRestricted
         {
@@ -531,6 +543,22 @@ namespace Microsoft.Graph.Models
         {
             get { return BackingStore?.Get<string>("onPremisesDomainName"); }
             set { BackingStore?.Set("onPremisesDomainName", value); }
+        }
+#endif
+        /// <summary>The onPremisesExtensionAttributes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.OnPremisesExtensionAttributes? OnPremisesExtensionAttributes
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.OnPremisesExtensionAttributes?>("onPremisesExtensionAttributes"); }
+            set { BackingStore?.Set("onPremisesExtensionAttributes", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.OnPremisesExtensionAttributes OnPremisesExtensionAttributes
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.OnPremisesExtensionAttributes>("onPremisesExtensionAttributes"); }
+            set { BackingStore?.Set("onPremisesExtensionAttributes", value); }
         }
 #endif
         /// <summary>Indicates the last time at which the group was synced with the on-premises directory. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on January 1, 2014 is 2014-01-01T00:00:00Z. Returned by default. Read-only. Supports $filter (eq, ne, not, ge, le, in).</summary>
@@ -973,11 +1001,23 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("uniqueName", value); }
         }
 #endif
-        /// <summary>Count of conversations that received new posts since the signed-in user last visited the group. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).</summary>
+        /// <summary>Count of conversations that have had one or more new posts delivered since the signed-in user&apos;s last visit to the group. This property is the same as unseenCount. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).</summary>
+        public int? UnseenConversationsCount
+        {
+            get { return BackingStore?.Get<int?>("unseenConversationsCount"); }
+            set { BackingStore?.Set("unseenConversationsCount", value); }
+        }
+        /// <summary>Count of conversations that have received new posts since the signed-in user last visited the group. This property is the same as unseenConversationsCount.Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).</summary>
         public int? UnseenCount
         {
             get { return BackingStore?.Get<int?>("unseenCount"); }
             set { BackingStore?.Set("unseenCount", value); }
+        }
+        /// <summary>Count of new posts that have been delivered to the group&apos;s conversations since the signed-in user&apos;s last visit to the group. Requires $select to retrieve. Supported only on the Get group API (GET /groups/{ID}).</summary>
+        public int? UnseenMessagesCount
+        {
+            get { return BackingStore?.Get<int?>("unseenMessagesCount"); }
+            set { BackingStore?.Set("unseenMessagesCount", value); }
         }
         /// <summary>Specifies the group join policy and group content visibility for groups. The possible values are: Private, Public, or HiddenMembership. HiddenMembership can be set only for Microsoft 365 groups when the groups are created. It can&apos;t be updated later. Other values of visibility can be updated after group creation. If visibility value isn&apos;t specified during group creation on Microsoft Graph, a security group is created as Private by default, and the Microsoft 365 group is Public. Groups assignable to roles are always Private. To learn more, see group visibility options. Returned by default. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -1027,6 +1067,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "acceptedSenders", n => { AcceptedSenders = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DirectoryObject>(global::Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "accessType", n => { AccessType = n.GetEnumValue<global::Microsoft.Graph.Models.GroupAccessType>(); } },
                 { "allowExternalSenders", n => { AllowExternalSenders = n.GetBoolValue(); } },
                 { "appRoleAssignments", n => { AppRoleAssignments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AppRoleAssignment>(global::Microsoft.Graph.Models.AppRoleAssignment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "assignedLabels", n => { AssignedLabels = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AssignedLabel>(global::Microsoft.Graph.Models.AssignedLabel.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -1053,6 +1094,7 @@ namespace Microsoft.Graph.Models
                 { "infoCatalogs", n => { InfoCatalogs = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
                 { "isAssignableToRole", n => { IsAssignableToRole = n.GetBoolValue(); } },
+                { "isFavorite", n => { IsFavorite = n.GetBoolValue(); } },
                 { "isManagementRestricted", n => { IsManagementRestricted = n.GetBoolValue(); } },
                 { "isSubscribedByMail", n => { IsSubscribedByMail = n.GetBoolValue(); } },
                 { "licenseProcessingState", n => { LicenseProcessingState = n.GetObjectValue<global::Microsoft.Graph.Models.LicenseProcessingState>(global::Microsoft.Graph.Models.LicenseProcessingState.CreateFromDiscriminatorValue); } },
@@ -1065,6 +1107,7 @@ namespace Microsoft.Graph.Models
                 { "membershipRule", n => { MembershipRule = n.GetStringValue(); } },
                 { "membershipRuleProcessingState", n => { MembershipRuleProcessingState = n.GetStringValue(); } },
                 { "onPremisesDomainName", n => { OnPremisesDomainName = n.GetStringValue(); } },
+                { "onPremisesExtensionAttributes", n => { OnPremisesExtensionAttributes = n.GetObjectValue<global::Microsoft.Graph.Models.OnPremisesExtensionAttributes>(global::Microsoft.Graph.Models.OnPremisesExtensionAttributes.CreateFromDiscriminatorValue); } },
                 { "onPremisesLastSyncDateTime", n => { OnPremisesLastSyncDateTime = n.GetDateTimeOffsetValue(); } },
                 { "onPremisesNetBiosName", n => { OnPremisesNetBiosName = n.GetStringValue(); } },
                 { "onPremisesProvisioningErrors", n => { OnPremisesProvisioningErrors = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.OnPremisesProvisioningError>(global::Microsoft.Graph.Models.OnPremisesProvisioningError.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -1096,7 +1139,9 @@ namespace Microsoft.Graph.Models
                 { "transitiveMemberOf", n => { TransitiveMemberOf = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DirectoryObject>(global::Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "transitiveMembers", n => { TransitiveMembers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DirectoryObject>(global::Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "uniqueName", n => { UniqueName = n.GetStringValue(); } },
+                { "unseenConversationsCount", n => { UnseenConversationsCount = n.GetIntValue(); } },
                 { "unseenCount", n => { UnseenCount = n.GetIntValue(); } },
+                { "unseenMessagesCount", n => { UnseenMessagesCount = n.GetIntValue(); } },
                 { "visibility", n => { Visibility = n.GetStringValue(); } },
                 { "welcomeMessageEnabled", n => { WelcomeMessageEnabled = n.GetBoolValue(); } },
             };
@@ -1110,6 +1155,7 @@ namespace Microsoft.Graph.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DirectoryObject>("acceptedSenders", AcceptedSenders);
+            writer.WriteEnumValue<global::Microsoft.Graph.Models.GroupAccessType>("accessType", AccessType);
             writer.WriteBoolValue("allowExternalSenders", AllowExternalSenders);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AppRoleAssignment>("appRoleAssignments", AppRoleAssignments);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AssignedLabel>("assignedLabels", AssignedLabels);
@@ -1136,6 +1182,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfPrimitiveValues<string>("infoCatalogs", InfoCatalogs);
             writer.WriteBoolValue("isArchived", IsArchived);
             writer.WriteBoolValue("isAssignableToRole", IsAssignableToRole);
+            writer.WriteBoolValue("isFavorite", IsFavorite);
             writer.WriteBoolValue("isManagementRestricted", IsManagementRestricted);
             writer.WriteBoolValue("isSubscribedByMail", IsSubscribedByMail);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.LicenseProcessingState>("licenseProcessingState", LicenseProcessingState);
@@ -1149,6 +1196,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DirectoryObject>("membersWithLicenseErrors", MembersWithLicenseErrors);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Onenote>("onenote", Onenote);
             writer.WriteStringValue("onPremisesDomainName", OnPremisesDomainName);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.OnPremisesExtensionAttributes>("onPremisesExtensionAttributes", OnPremisesExtensionAttributes);
             writer.WriteDateTimeOffsetValue("onPremisesLastSyncDateTime", OnPremisesLastSyncDateTime);
             writer.WriteStringValue("onPremisesNetBiosName", OnPremisesNetBiosName);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.OnPremisesProvisioningError>("onPremisesProvisioningErrors", OnPremisesProvisioningErrors);
@@ -1179,7 +1227,9 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DirectoryObject>("transitiveMemberOf", TransitiveMemberOf);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DirectoryObject>("transitiveMembers", TransitiveMembers);
             writer.WriteStringValue("uniqueName", UniqueName);
+            writer.WriteIntValue("unseenConversationsCount", UnseenConversationsCount);
             writer.WriteIntValue("unseenCount", UnseenCount);
+            writer.WriteIntValue("unseenMessagesCount", UnseenMessagesCount);
             writer.WriteStringValue("visibility", Visibility);
             writer.WriteBoolValue("welcomeMessageEnabled", WelcomeMessageEnabled);
         }

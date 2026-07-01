@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("allMembers", value); }
         }
 #endif
-        /// <summary>Read only. Timestamp at which the channel was created.</summary>
+        /// <summary>Read-only. Timestamp at which the channel was created.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }

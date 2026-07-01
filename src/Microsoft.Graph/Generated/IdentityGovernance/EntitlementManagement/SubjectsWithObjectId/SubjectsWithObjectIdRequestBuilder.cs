@@ -82,7 +82,8 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.SubjectsWithO
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.AccessPackageSubject>(requestInfo, global::Microsoft.Graph.Models.AccessPackageSubject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property subjects in identityGovernance
+        /// Update an external directory user represented by an existing accessPackageSubject object to change the subject lifecycle.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackagesubject-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.AccessPackageSubject"/></returns>
         /// <param name="body">The request body</param>
@@ -145,7 +146,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.SubjectsWithO
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property subjects in identityGovernance
+        /// Update an external directory user represented by an existing accessPackageSubject object to change the subject lifecycle.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

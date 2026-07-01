@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class ServiceAnnouncement : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.</summary>
+        /// <summary>A collection of service health information for tenant. This property is a contained navigation property, it is nullable and read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.ServiceHealth>? HealthOverviews
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("healthOverviews", value); }
         }
 #endif
-        /// <summary>A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.</summary>
+        /// <summary>A collection of service issues for tenant. This property is a contained navigation property, it is nullable and read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.ServiceHealthIssue>? Issues
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("issues", value); }
         }
 #endif
-        /// <summary>A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.</summary>
+        /// <summary>A collection of service messages for tenant. This property is a contained navigation property, it is nullable and read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.ServiceUpdateMessage>? Messages

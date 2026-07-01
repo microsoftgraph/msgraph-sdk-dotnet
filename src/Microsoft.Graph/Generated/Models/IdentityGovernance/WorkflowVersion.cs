@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Models.IdentityGovernance
     public partial class WorkflowVersion : global::Microsoft.Graph.Models.IdentityGovernance.WorkflowBase, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The settings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.IdentityGovernance.WorkflowSetting? Settings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.IdentityGovernance.WorkflowSetting?>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.IdentityGovernance.WorkflowSetting Settings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.IdentityGovernance.WorkflowSetting>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#endif
         /// <summary>The version of the workflow.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
         public int? VersionNumber
         {
@@ -43,6 +59,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Models.IdentityGovernance.WorkflowSetting>(global::Microsoft.Graph.Models.IdentityGovernance.WorkflowSetting.CreateFromDiscriminatorValue); } },
                 { "versionNumber", n => { VersionNumber = n.GetIntValue(); } },
             };
         }
@@ -54,6 +71,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.IdentityGovernance.WorkflowSetting>("settings", Settings);
             writer.WriteIntValue("versionNumber", VersionNumber);
         }
     }
