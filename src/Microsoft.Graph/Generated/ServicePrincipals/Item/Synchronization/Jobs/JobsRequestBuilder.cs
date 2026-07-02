@@ -60,7 +60,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs
         {
         }
         /// <summary>
-        /// List existing jobs for a given application instance (service principal).
+        /// List existing synchronizationJob objects for a given application instance (service principal).
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronization-list-jobs?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.SynchronizationJobCollectionResponse"/></returns>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.SynchronizationJobCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.SynchronizationJobCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new synchronization job with a default synchronization schema. The job is created in a disabled state. Call Start job to start synchronization.
+        /// Create a new synchronizationJob with a default synchronization schema. The job is created in a disabled state. Call Start job to start synchronization.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronization-post-jobs?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.SynchronizationJob"/></returns>
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.SynchronizationJob>(requestInfo, global::Microsoft.Graph.Models.SynchronizationJob.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List existing jobs for a given application instance (service principal).
+        /// List existing synchronizationJob objects for a given application instance (service principal).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -129,7 +129,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs
             return requestInfo;
         }
         /// <summary>
-        /// Create new synchronization job with a default synchronization schema. The job is created in a disabled state. Call Start job to start synchronization.
+        /// Create a new synchronizationJob with a default synchronization schema. The job is created in a disabled state. Call Start job to start synchronization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -160,7 +160,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs
             return new global::Microsoft.Graph.ServicePrincipals.Item.Synchronization.Jobs.JobsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List existing jobs for a given application instance (service principal).
+        /// List existing synchronizationJob objects for a given application instance (service principal).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class JobsRequestBuilderGetQueryParameters 

@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>Read only. Timestamp at which the chat message was deleted, or null if not deleted.</summary>
+        /// <summary>Read-only. Timestamp at which the chat message was deleted, or null if not deleted.</summary>
         public DateTimeOffset? DeletedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("deletedDateTime"); }
@@ -158,13 +158,13 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.ChatMessageImportance?>("importance"); }
             set { BackingStore?.Set("importance", value); }
         }
-        /// <summary>Read only. Timestamp when edits to the chat message were made. Triggers an &apos;Edited&apos; flag in the Teams UI. If no edits are made the value is null.</summary>
+        /// <summary>Read-only. Timestamp when edits to the chat message were made. Triggers an &apos;Edited&apos; flag in the Teams UI. If no edits are made the value is null.</summary>
         public DateTimeOffset? LastEditedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastEditedDateTime"); }
             set { BackingStore?.Set("lastEditedDateTime", value); }
         }
-        /// <summary>Read only. Timestamp when the chat message is created (initial setting) or modified, including when a reaction is added or removed.</summary>
+        /// <summary>Read-only. Timestamp when the chat message is created (initial setting) or modified, including when a reaction is added or removed.</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }

@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("accessPackages", value); }
         }
 #endif
+        /// <summary>Suggested access packages for end users based on various criteria such as related people insights and assignment history.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.AccessPackageSuggestion>? AccessPackageSuggestions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.AccessPackageSuggestion>?>("accessPackageSuggestions"); }
+            set { BackingStore?.Set("accessPackageSuggestions", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.AccessPackageSuggestion> AccessPackageSuggestions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.AccessPackageSuggestion>>("accessPackageSuggestions"); }
+            set { BackingStore?.Set("accessPackageSuggestions", value); }
+        }
+#endif
         /// <summary>Access package assignment policies govern which subjects can request or be assigned an access package via an access package assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -92,6 +108,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
+        /// <summary>Access packages available for end users to browse and request.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.AvailableAccessPackage>? AvailableAccessPackages
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.AvailableAccessPackage>?>("availableAccessPackages"); }
+            set { BackingStore?.Set("availableAccessPackages", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.AvailableAccessPackage> AvailableAccessPackages
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.AvailableAccessPackage>>("availableAccessPackages"); }
+            set { BackingStore?.Set("availableAccessPackages", value); }
+        }
+#endif
         /// <summary>A container for access packages.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -122,6 +154,22 @@ namespace Microsoft.Graph.Models
         {
             get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.ConnectedOrganization>>("connectedOrganizations"); }
             set { BackingStore?.Set("connectedOrganizations", value); }
+        }
+#endif
+        /// <summary>Configuration settings that control the lifecycle and access policies of entitlement management within a tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.ControlConfiguration>? ControlConfigurations
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.ControlConfiguration>?>("controlConfigurations"); }
+            set { BackingStore?.Set("controlConfigurations", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.ControlConfiguration> ControlConfigurations
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.ControlConfiguration>>("controlConfigurations"); }
+            set { BackingStore?.Set("controlConfigurations", value); }
         }
 #endif
         /// <summary>A reference to the geolocation environments in which a resource is located.</summary>
@@ -239,12 +287,15 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "accessPackageAssignmentApprovals", n => { AccessPackageAssignmentApprovals = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Approval>(global::Microsoft.Graph.Models.Approval.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "accessPackageSuggestions", n => { AccessPackageSuggestions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageSuggestion>(global::Microsoft.Graph.Models.AccessPackageSuggestion.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "accessPackages", n => { AccessPackages = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackage>(global::Microsoft.Graph.Models.AccessPackage.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "assignmentPolicies", n => { AssignmentPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageAssignmentPolicy>(global::Microsoft.Graph.Models.AccessPackageAssignmentPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "assignmentRequests", n => { AssignmentRequests = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageAssignmentRequest>(global::Microsoft.Graph.Models.AccessPackageAssignmentRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageAssignment>(global::Microsoft.Graph.Models.AccessPackageAssignment.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "availableAccessPackages", n => { AvailableAccessPackages = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AvailableAccessPackage>(global::Microsoft.Graph.Models.AvailableAccessPackage.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "catalogs", n => { Catalogs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageCatalog>(global::Microsoft.Graph.Models.AccessPackageCatalog.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "connectedOrganizations", n => { ConnectedOrganizations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ConnectedOrganization>(global::Microsoft.Graph.Models.ConnectedOrganization.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "controlConfigurations", n => { ControlConfigurations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ControlConfiguration>(global::Microsoft.Graph.Models.ControlConfiguration.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "resourceEnvironments", n => { ResourceEnvironments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageResourceEnvironment>(global::Microsoft.Graph.Models.AccessPackageResourceEnvironment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "resourceRequests", n => { ResourceRequests = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageResourceRequest>(global::Microsoft.Graph.Models.AccessPackageResourceRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "resourceRoleScopes", n => { ResourceRoleScopes = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageResourceRoleScope>(global::Microsoft.Graph.Models.AccessPackageResourceRoleScope.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -263,11 +314,14 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Approval>("accessPackageAssignmentApprovals", AccessPackageAssignmentApprovals);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackage>("accessPackages", AccessPackages);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageSuggestion>("accessPackageSuggestions", AccessPackageSuggestions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageAssignmentPolicy>("assignmentPolicies", AssignmentPolicies);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageAssignmentRequest>("assignmentRequests", AssignmentRequests);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageAssignment>("assignments", Assignments);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AvailableAccessPackage>("availableAccessPackages", AvailableAccessPackages);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageCatalog>("catalogs", Catalogs);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ConnectedOrganization>("connectedOrganizations", ConnectedOrganizations);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ControlConfiguration>("controlConfigurations", ControlConfigurations);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageResourceEnvironment>("resourceEnvironments", ResourceEnvironments);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageResourceRequest>("resourceRequests", ResourceRequests);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageResourceRoleScope>("resourceRoleScopes", ResourceRoleScopes);

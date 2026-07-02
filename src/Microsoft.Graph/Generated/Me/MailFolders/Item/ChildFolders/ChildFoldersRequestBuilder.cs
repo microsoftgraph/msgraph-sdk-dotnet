@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Me.MailFolders.Item.ChildFolders
         {
         }
         /// <summary>
-        /// Get the folder collection under the specified folder. You can use the .../me/mailFolders shortcut to get the top-levelfolder collection and navigate to another folder. By default, this operation does not return hidden folders. Use a query parameter includeHiddenFolders to include them in the response.
+        /// Get the folder collection under the specified folder. You can use the .../me/mailFolders shortcut to get the top-levelfolder collection and navigate to another folder. By default, this operation doesn&apos;t return hidden folders. Use a query parameter includeHiddenFolders to include them in the response.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailfolder-list-childfolders?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.MailFolderCollectionResponse"/></returns>
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Me.MailFolders.Item.ChildFolders
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.MailFolder>(requestInfo, global::Microsoft.Graph.Models.MailFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the folder collection under the specified folder. You can use the .../me/mailFolders shortcut to get the top-levelfolder collection and navigate to another folder. By default, this operation does not return hidden folders. Use a query parameter includeHiddenFolders to include them in the response.
+        /// Get the folder collection under the specified folder. You can use the .../me/mailFolders shortcut to get the top-levelfolder collection and navigate to another folder. By default, this operation doesn&apos;t return hidden folders. Use a query parameter includeHiddenFolders to include them in the response.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -160,7 +160,7 @@ namespace Microsoft.Graph.Me.MailFolders.Item.ChildFolders
             return new global::Microsoft.Graph.Me.MailFolders.Item.ChildFolders.ChildFoldersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the folder collection under the specified folder. You can use the .../me/mailFolders shortcut to get the top-levelfolder collection and navigate to another folder. By default, this operation does not return hidden folders. Use a query parameter includeHiddenFolders to include them in the response.
+        /// Get the folder collection under the specified folder. You can use the .../me/mailFolders shortcut to get the top-levelfolder collection and navigate to another folder. By default, this operation doesn&apos;t return hidden folders. Use a query parameter includeHiddenFolders to include them in the response.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ChildFoldersRequestBuilderGetQueryParameters 

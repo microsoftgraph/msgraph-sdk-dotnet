@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Me.InferenceClassification.Overrides
         {
         }
         /// <summary>
-        /// Get the overrides that a user has set up to always classify messages from certain senders in specific ways. Each override corresponds to an SMTP address of a sender. Initially, a user does not have any overrides.
+        /// Get the overrides that a user has set up to always classify messages from certain senders in specific ways. Each override corresponds to an SMTP address of a sender. Initially, a user doesn&apos;t have any overrides.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/inferenceclassification-list-overrides?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.InferenceClassificationOverrideCollectionResponse"/></returns>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Me.InferenceClassification.Overrides
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.InferenceClassificationOverride>(requestInfo, global::Microsoft.Graph.Models.InferenceClassificationOverride.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the overrides that a user has set up to always classify messages from certain senders in specific ways. Each override corresponds to an SMTP address of a sender. Initially, a user does not have any overrides.
+        /// Get the overrides that a user has set up to always classify messages from certain senders in specific ways. Each override corresponds to an SMTP address of a sender. Initially, a user doesn&apos;t have any overrides.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Me.InferenceClassification.Overrides
             return new global::Microsoft.Graph.Me.InferenceClassification.Overrides.OverridesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the overrides that a user has set up to always classify messages from certain senders in specific ways. Each override corresponds to an SMTP address of a sender. Initially, a user does not have any overrides.
+        /// Get the overrides that a user has set up to always classify messages from certain senders in specific ways. Each override corresponds to an SMTP address of a sender. Initially, a user doesn&apos;t have any overrides.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OverridesRequestBuilderGetQueryParameters 

@@ -34,7 +34,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Templates.Item.
         {
         }
         /// <summary>
-        /// List all operators supported in the scoping filters.
+        /// List all operators supported in the scoping filters for a synchronizationSchema.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-filteroperators?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.FilterOperators.FilterOperatorsGetResponse"/></returns>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Templates.Item.
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.FilterOperators.FilterOperatorsGetResponse>(requestInfo, global::Microsoft.Graph.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.FilterOperators.FilterOperatorsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all operators supported in the scoping filters.
+        /// List all operators supported in the scoping filters for a synchronizationSchema.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-filteroperators?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.FilterOperators.FilterOperatorsResponse"/></returns>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Templates.Item.
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.FilterOperators.FilterOperatorsResponse>(requestInfo, global::Microsoft.Graph.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.FilterOperators.FilterOperatorsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all operators supported in the scoping filters.
+        /// List all operators supported in the scoping filters for a synchronizationSchema.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Templates.Item.
             return new global::Microsoft.Graph.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.FilterOperators.FilterOperatorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all operators supported in the scoping filters.
+        /// List all operators supported in the scoping filters for a synchronizationSchema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FilterOperatorsRequestBuilderGetQueryParameters 

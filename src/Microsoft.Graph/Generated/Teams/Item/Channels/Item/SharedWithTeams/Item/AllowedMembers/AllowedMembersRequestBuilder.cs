@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.SharedWithTeams.Item.AllowedM
         {
         }
         /// <summary>
-        /// Get the list of conversationMembers who can access a shared channel. This method does not return the following conversationMembers from the team:- Users with Guest role- Users who are externally authenticated in the tenant
+        /// Get the list of conversationMembers who can access a shared channel. This method doesn&apos;t return the following conversationMembers from the team:- Users with Guest role- Users who are externally authenticated in the tenant
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/sharedwithchannelteaminfo-list-allowedmembers?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ConversationMemberCollectionResponse"/></returns>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.SharedWithTeams.Item.AllowedM
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ConversationMemberCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.ConversationMemberCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of conversationMembers who can access a shared channel. This method does not return the following conversationMembers from the team:- Users with Guest role- Users who are externally authenticated in the tenant
+        /// Get the list of conversationMembers who can access a shared channel. This method doesn&apos;t return the following conversationMembers from the team:- Users with Guest role- Users who are externally authenticated in the tenant
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Teams.Item.Channels.Item.SharedWithTeams.Item.AllowedM
             return new global::Microsoft.Graph.Teams.Item.Channels.Item.SharedWithTeams.Item.AllowedMembers.AllowedMembersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of conversationMembers who can access a shared channel. This method does not return the following conversationMembers from the team:- Users with Guest role- Users who are externally authenticated in the tenant
+        /// Get the list of conversationMembers who can access a shared channel. This method doesn&apos;t return the following conversationMembers from the team:- Users with Guest role- Users who are externally authenticated in the tenant
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AllowedMembersRequestBuilderGetQueryParameters 

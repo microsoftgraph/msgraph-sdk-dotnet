@@ -220,6 +220,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("featureRolloutPolicies", value); }
         }
 #endif
+        /// <summary>The federatedTokenValidationPolicy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.FederatedTokenValidationPolicy? FederatedTokenValidationPolicy
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.FederatedTokenValidationPolicy?>("federatedTokenValidationPolicy"); }
+            set { BackingStore?.Set("federatedTokenValidationPolicy", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.FederatedTokenValidationPolicy FederatedTokenValidationPolicy
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.FederatedTokenValidationPolicy>("federatedTokenValidationPolicy"); }
+            set { BackingStore?.Set("federatedTokenValidationPolicy", value); }
+        }
+#endif
         /// <summary>The policy to control Microsoft Entra authentication behavior for federated users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -379,6 +395,7 @@ namespace Microsoft.Graph.Models
                 { "defaultAppManagementPolicy", n => { DefaultAppManagementPolicy = n.GetObjectValue<global::Microsoft.Graph.Models.TenantAppManagementPolicy>(global::Microsoft.Graph.Models.TenantAppManagementPolicy.CreateFromDiscriminatorValue); } },
                 { "deviceRegistrationPolicy", n => { DeviceRegistrationPolicy = n.GetObjectValue<global::Microsoft.Graph.Models.DeviceRegistrationPolicy>(global::Microsoft.Graph.Models.DeviceRegistrationPolicy.CreateFromDiscriminatorValue); } },
                 { "featureRolloutPolicies", n => { FeatureRolloutPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.FeatureRolloutPolicy>(global::Microsoft.Graph.Models.FeatureRolloutPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "federatedTokenValidationPolicy", n => { FederatedTokenValidationPolicy = n.GetObjectValue<global::Microsoft.Graph.Models.FederatedTokenValidationPolicy>(global::Microsoft.Graph.Models.FederatedTokenValidationPolicy.CreateFromDiscriminatorValue); } },
                 { "homeRealmDiscoveryPolicies", n => { HomeRealmDiscoveryPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.HomeRealmDiscoveryPolicy>(global::Microsoft.Graph.Models.HomeRealmDiscoveryPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "identitySecurityDefaultsEnforcementPolicy", n => { IdentitySecurityDefaultsEnforcementPolicy = n.GetObjectValue<global::Microsoft.Graph.Models.IdentitySecurityDefaultsEnforcementPolicy>(global::Microsoft.Graph.Models.IdentitySecurityDefaultsEnforcementPolicy.CreateFromDiscriminatorValue); } },
                 { "ownerlessGroupPolicy", n => { OwnerlessGroupPolicy = n.GetObjectValue<global::Microsoft.Graph.Models.OwnerlessGroupPolicy>(global::Microsoft.Graph.Models.OwnerlessGroupPolicy.CreateFromDiscriminatorValue); } },
@@ -410,6 +427,7 @@ namespace Microsoft.Graph.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Models.TenantAppManagementPolicy>("defaultAppManagementPolicy", DefaultAppManagementPolicy);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.DeviceRegistrationPolicy>("deviceRegistrationPolicy", DeviceRegistrationPolicy);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.FeatureRolloutPolicy>("featureRolloutPolicies", FeatureRolloutPolicies);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.FederatedTokenValidationPolicy>("federatedTokenValidationPolicy", FederatedTokenValidationPolicy);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.HomeRealmDiscoveryPolicy>("homeRealmDiscoveryPolicies", HomeRealmDiscoveryPolicies);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.IdentitySecurityDefaultsEnforcementPolicy>("identitySecurityDefaultsEnforcementPolicy", IdentitySecurityDefaultsEnforcementPolicy);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.OwnerlessGroupPolicy>("ownerlessGroupPolicy", OwnerlessGroupPolicy);

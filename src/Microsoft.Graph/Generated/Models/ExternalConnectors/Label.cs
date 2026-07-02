@@ -224,5 +224,9 @@ namespace Microsoft.Graph.Models.ExternalConnectors
         #pragma warning disable CS1591
         PersonPatents,
         #pragma warning restore CS1591
+        [EnumMember(Value = "personWorkPositions")]
+        #pragma warning disable CS1591
+        PersonWorkPositions,
+        #pragma warning restore CS1591
     }
 }

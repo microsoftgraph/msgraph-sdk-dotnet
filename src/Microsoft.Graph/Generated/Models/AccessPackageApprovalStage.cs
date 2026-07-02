@@ -19,6 +19,12 @@ namespace Microsoft.Graph.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
+        /// <summary>The approverInformationVisibility property</summary>
+        public global::Microsoft.Graph.Models.ApproverInformationVisibility? ApproverInformationVisibility
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ApproverInformationVisibility?>("approverInformationVisibility"); }
+            set { BackingStore?.Set("approverInformationVisibility", value); }
+        }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The number of days that a request can be pending a response before it is automatically denied.</summary>
@@ -33,7 +39,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<TimeSpan?>("durationBeforeEscalation"); }
             set { BackingStore?.Set("durationBeforeEscalation", value); }
         }
-        /// <summary>If escalation is enabled and the primary approvers do not respond before the escalation time, the escalationApprovers are the users who will be asked to approve requests.</summary>
+        /// <summary>If escalation is enabled and the primary approvers do not respond before the escalation time, the escalationApprovers are the users who are asked to approve requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.SubjectSet>? EscalationApprovers
@@ -109,7 +115,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The subjects, typically users, who will be asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors, externalSponsors, or targetUserSponsors.</summary>
+        /// <summary>The subjects, typically users, who are asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors, externalSponsors, or targetUserSponsors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.SubjectSet>? PrimaryApprovers
@@ -156,6 +162,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "approverInformationVisibility", n => { ApproverInformationVisibility = n.GetEnumValue<global::Microsoft.Graph.Models.ApproverInformationVisibility>(); } },
                 { "durationBeforeAutomaticDenial", n => { DurationBeforeAutomaticDenial = n.GetTimeSpanValue(); } },
                 { "durationBeforeEscalation", n => { DurationBeforeEscalation = n.GetTimeSpanValue(); } },
                 { "escalationApprovers", n => { EscalationApprovers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.SubjectSet>(global::Microsoft.Graph.Models.SubjectSet.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -174,6 +181,7 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Microsoft.Graph.Models.ApproverInformationVisibility>("approverInformationVisibility", ApproverInformationVisibility);
             writer.WriteTimeSpanValue("durationBeforeAutomaticDenial", DurationBeforeAutomaticDenial);
             writer.WriteTimeSpanValue("durationBeforeEscalation", DurationBeforeEscalation);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.SubjectSet>("escalationApprovers", EscalationApprovers);

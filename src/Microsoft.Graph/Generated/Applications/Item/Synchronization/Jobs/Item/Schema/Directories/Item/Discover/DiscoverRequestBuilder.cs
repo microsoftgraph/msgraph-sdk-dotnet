@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item.Schema.Dir
         {
         }
         /// <summary>
-        /// Discover the latest schema definition for provisioning to an application. 
+        /// Discover the latest schema definition for provisioning to an application for the directoryDefinition.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-directorydefinition-discover?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DirectoryDefinition"/></returns>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item.Schema.Dir
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.DirectoryDefinition>(requestInfo, global::Microsoft.Graph.Models.DirectoryDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Discover the latest schema definition for provisioning to an application. 
+        /// Discover the latest schema definition for provisioning to an application for the directoryDefinition.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

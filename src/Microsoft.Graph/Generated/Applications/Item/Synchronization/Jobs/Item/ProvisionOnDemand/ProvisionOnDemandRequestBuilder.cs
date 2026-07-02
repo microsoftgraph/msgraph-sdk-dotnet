@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item.ProvisionO
         {
         }
         /// <summary>
-        /// Select a user and provision the account on-demand. The rate limit for this API is 5 requests per 10 seconds.
+        /// Select a user and provision the account on-demand for a synchronizationJob. The rate limit for this API is 5 requests per 10 seconds.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-provisionondemand?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.StringKeyStringValuePair"/></returns>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item.ProvisionO
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.StringKeyStringValuePair>(requestInfo, global::Microsoft.Graph.Models.StringKeyStringValuePair.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Select a user and provision the account on-demand. The rate limit for this API is 5 requests per 10 seconds.
+        /// Select a user and provision the account on-demand for a synchronizationJob. The rate limit for this API is 5 requests per 10 seconds.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

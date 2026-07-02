@@ -6,6 +6,7 @@ using Microsoft.Graph.Solutions.BackupRestore.BrowseSessions;
 using Microsoft.Graph.Solutions.BackupRestore.DriveInclusionRules;
 using Microsoft.Graph.Solutions.BackupRestore.DriveProtectionUnits;
 using Microsoft.Graph.Solutions.BackupRestore.DriveProtectionUnitsBulkAdditionJobs;
+using Microsoft.Graph.Solutions.BackupRestore.EmailNotificationsSetting;
 using Microsoft.Graph.Solutions.BackupRestore.Enable;
 using Microsoft.Graph.Solutions.BackupRestore.ExchangeProtectionPolicies;
 using Microsoft.Graph.Solutions.BackupRestore.ExchangeRestoreSessions;
@@ -61,6 +62,11 @@ namespace Microsoft.Graph.Solutions.BackupRestore
         public global::Microsoft.Graph.Solutions.BackupRestore.DriveProtectionUnitsBulkAdditionJobs.DriveProtectionUnitsBulkAdditionJobsRequestBuilder DriveProtectionUnitsBulkAdditionJobs
         {
             get => new global::Microsoft.Graph.Solutions.BackupRestore.DriveProtectionUnitsBulkAdditionJobs.DriveProtectionUnitsBulkAdditionJobsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the emailNotificationsSetting property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        public global::Microsoft.Graph.Solutions.BackupRestore.EmailNotificationsSetting.EmailNotificationsSettingRequestBuilder EmailNotificationsSetting
+        {
+            get => new global::Microsoft.Graph.Solutions.BackupRestore.EmailNotificationsSetting.EmailNotificationsSettingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the enable method.</summary>
         public global::Microsoft.Graph.Solutions.BackupRestore.Enable.EnableRequestBuilder Enable
