@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.Simulations.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Simulation>(requestInfo, global::Microsoft.Graph.Models.Simulation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update an attack simulation campaign for a tenant.
+        /// Update an attack simulation campaign for a tenant. You can only update simulations that are in draft status.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/simulation-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Simulation"/></returns>
@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Security.AttackSimulation.Simulations.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update an attack simulation campaign for a tenant.
+        /// Update an attack simulation campaign for a tenant. You can only update simulations that are in draft status.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

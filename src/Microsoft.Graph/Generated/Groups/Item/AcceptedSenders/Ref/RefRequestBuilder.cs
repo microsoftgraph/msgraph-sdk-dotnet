@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Groups.Item.AcceptedSenders.Ref
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Users in the accepted senders list can post to conversations of the group (identified in the GET request URL).Make sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
+        /// Users in the accepted senders list can post to conversations of the group (identified in the GET request URL).Make sure you don&apos;t specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-list-acceptedsenders?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.StringCollectionResponse"/></returns>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Groups.Item.AcceptedSenders.Ref
             return requestInfo;
         }
         /// <summary>
-        /// Users in the accepted senders list can post to conversations of the group (identified in the GET request URL).Make sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
+        /// Users in the accepted senders list can post to conversations of the group (identified in the GET request URL).Make sure you don&apos;t specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -201,7 +201,7 @@ namespace Microsoft.Graph.Groups.Item.AcceptedSenders.Ref
         {
         }
         /// <summary>
-        /// Users in the accepted senders list can post to conversations of the group (identified in the GET request URL).Make sure you do not specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
+        /// Users in the accepted senders list can post to conversations of the group (identified in the GET request URL).Make sure you don&apos;t specify the same user or group in the accepted senders and rejected senders lists, otherwise you will get an error.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RefRequestBuilderGetQueryParameters 

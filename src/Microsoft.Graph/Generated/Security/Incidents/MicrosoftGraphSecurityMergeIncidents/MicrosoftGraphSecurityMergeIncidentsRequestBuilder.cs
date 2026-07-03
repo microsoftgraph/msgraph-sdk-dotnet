@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Security.Incidents.MicrosoftGraphSecurityMergeIncident
         {
         }
         /// <summary>
-        /// Invoke action mergeIncidents
+        /// Merge multiple incident resources into a single incident.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Security.MergeResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Security.Incidents.MicrosoftGraphSecurityMergeIncident
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Security.MergeResponse>(requestInfo, global::Microsoft.Graph.Models.Security.MergeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action mergeIncidents
+        /// Merge multiple incident resources into a single incident.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

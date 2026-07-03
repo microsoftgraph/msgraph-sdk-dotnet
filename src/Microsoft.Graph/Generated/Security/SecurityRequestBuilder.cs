@@ -6,6 +6,7 @@ using Microsoft.Graph.Security.Alerts;
 using Microsoft.Graph.Security.Alerts_v2;
 using Microsoft.Graph.Security.AttackSimulation;
 using Microsoft.Graph.Security.Cases;
+using Microsoft.Graph.Security.Collaboration;
 using Microsoft.Graph.Security.DataSecurityAndGovernance;
 using Microsoft.Graph.Security.Identities;
 using Microsoft.Graph.Security.Incidents;
@@ -52,6 +53,11 @@ namespace Microsoft.Graph.Security
         public global::Microsoft.Graph.Security.Cases.CasesRequestBuilder Cases
         {
             get => new global::Microsoft.Graph.Security.Cases.CasesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the collaboration property of the microsoft.graph.security entity.</summary>
+        public global::Microsoft.Graph.Security.Collaboration.CollaborationRequestBuilder Collaboration
+        {
+            get => new global::Microsoft.Graph.Security.Collaboration.CollaborationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the dataSecurityAndGovernance property of the microsoft.graph.security entity.</summary>
         public global::Microsoft.Graph.Security.DataSecurityAndGovernance.DataSecurityAndGovernanceRequestBuilder DataSecurityAndGovernance

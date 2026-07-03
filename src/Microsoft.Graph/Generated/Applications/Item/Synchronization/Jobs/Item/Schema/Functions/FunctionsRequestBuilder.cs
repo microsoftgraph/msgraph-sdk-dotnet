@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item.Schema.Fun
         {
         }
         /// <summary>
-        /// List all the functions currently supported in the attributeMappingSource.
+        /// List all the functions currently supported in the attributeMappingSource for a synchronizationSchema.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-functions?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item.Schema.Functions.FunctionsGetResponse"/></returns>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item.Schema.Fun
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item.Schema.Functions.FunctionsGetResponse>(requestInfo, global::Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item.Schema.Functions.FunctionsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all the functions currently supported in the attributeMappingSource.
+        /// List all the functions currently supported in the attributeMappingSource for a synchronizationSchema.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronizationschema-functions?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item.Schema.Functions.FunctionsResponse"/></returns>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item.Schema.Fun
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item.Schema.Functions.FunctionsResponse>(requestInfo, global::Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item.Schema.Functions.FunctionsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all the functions currently supported in the attributeMappingSource.
+        /// List all the functions currently supported in the attributeMappingSource for a synchronizationSchema.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item.Schema.Fun
             return new global::Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item.Schema.Functions.FunctionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all the functions currently supported in the attributeMappingSource.
+        /// List all the functions currently supported in the attributeMappingSource for a synchronizationSchema.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FunctionsRequestBuilderGetQueryParameters 

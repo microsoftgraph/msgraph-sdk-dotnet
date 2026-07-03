@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class CrossCloudAzureActiveDirectoryTenant : global::Microsoft.Graph.Models.IdentitySource, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The ID of the cloud where the tenant is located, one of microsoftonline.com, microsoftonline.us or partner.microsoftonline.cn. Read only.</summary>
+        /// <summary>The ID of the cloud where the tenant is located, one of microsoftonline.com, microsoftonline.us or partner.microsoftonline.cn. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CloudInstance
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("cloudInstance", value); }
         }
 #endif
-        /// <summary>The name of the Microsoft Entra tenant. Read only.</summary>
+        /// <summary>The name of the Microsoft Entra tenant. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The ID of the Microsoft Entra tenant. Read only.</summary>
+        /// <summary>The ID of the Microsoft Entra tenant. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TenantId

@@ -36,5 +36,9 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         #pragma warning disable CS1591
         UnknownFutureValue,
         #pragma warning restore CS1591
+        [EnumMember(Value = "quarantined")]
+        #pragma warning disable CS1591
+        Quarantined,
+        #pragma warning restore CS1591
     }
 }

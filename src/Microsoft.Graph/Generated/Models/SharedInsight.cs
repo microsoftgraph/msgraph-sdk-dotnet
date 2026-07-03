@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class SharedInsight : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Details about the shared item. Read only.</summary>
+        /// <summary>Details about the shared item. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.SharingDetail? LastShared
