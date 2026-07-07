@@ -108,6 +108,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("sensitivity", value); }
         }
 #endif
+        /// <summary>The sharedWithUsersAndGroups property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.PackageAccessEntity>? SharedWithUsersAndGroups
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.PackageAccessEntity>?>("sharedWithUsersAndGroups"); }
+            set { BackingStore?.Set("sharedWithUsersAndGroups", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.PackageAccessEntity> SharedWithUsersAndGroups
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.PackageAccessEntity>>("sharedWithUsersAndGroups"); }
+            set { BackingStore?.Set("sharedWithUsersAndGroups", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -132,6 +148,7 @@ namespace Microsoft.Graph.Models
                 { "elementDetails", n => { ElementDetails = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.PackageElementDetail>(global::Microsoft.Graph.Models.PackageElementDetail.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "longDescription", n => { LongDescription = n.GetStringValue(); } },
                 { "sensitivity", n => { Sensitivity = n.GetStringValue(); } },
+                { "sharedWithUsersAndGroups", n => { SharedWithUsersAndGroups = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.PackageAccessEntity>(global::Microsoft.Graph.Models.PackageAccessEntity.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -148,6 +165,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.PackageElementDetail>("elementDetails", ElementDetails);
             writer.WriteStringValue("longDescription", LongDescription);
             writer.WriteStringValue("sensitivity", Sensitivity);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.PackageAccessEntity>("sharedWithUsersAndGroups", SharedWithUsersAndGroups);
         }
     }
 }

@@ -6,6 +6,7 @@ using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Execu
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.LastModifiedBy;
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceActivate;
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceActivateWithScope;
+using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceCancelProcessing;
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceClearQuarantine;
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceCreateNewVersion;
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernancePreviewTaskFailures;
@@ -64,6 +65,11 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item
         public global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceActivateWithScope.MicrosoftGraphIdentityGovernanceActivateWithScopeRequestBuilder MicrosoftGraphIdentityGovernanceActivateWithScope
         {
             get => new global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceActivateWithScope.MicrosoftGraphIdentityGovernanceActivateWithScopeRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the cancelProcessing method.</summary>
+        public global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceCancelProcessing.MicrosoftGraphIdentityGovernanceCancelProcessingRequestBuilder MicrosoftGraphIdentityGovernanceCancelProcessing
+        {
+            get => new global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceCancelProcessing.MicrosoftGraphIdentityGovernanceCancelProcessingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the clearQuarantine method.</summary>
         public global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceClearQuarantine.MicrosoftGraphIdentityGovernanceClearQuarantineRequestBuilder MicrosoftGraphIdentityGovernanceClearQuarantine
@@ -137,7 +143,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item
         {
         }
         /// <summary>
-        /// Delete a workflow object and its associated tasks, taskProcessingResults and versions. You can restore a deleted workflow and its associated objects within 30 days of deletion.
+        /// Delete a workflow object and its associated tasks, taskProcessingResults and versions. The deleted workflow is sent to the deleted workflows container. You can restore a deleted workflow and its associated objects within 30 days of deletion.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-workflow-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -210,7 +216,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.IdentityGovernance.Workflow>(requestInfo, global::Microsoft.Graph.Models.IdentityGovernance.Workflow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a workflow object and its associated tasks, taskProcessingResults and versions. You can restore a deleted workflow and its associated objects within 30 days of deletion.
+        /// Delete a workflow object and its associated tasks, taskProcessingResults and versions. The deleted workflow is sent to the deleted workflows container. You can restore a deleted workflow and its associated objects within 30 days of deletion.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

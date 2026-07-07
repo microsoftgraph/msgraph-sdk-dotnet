@@ -7,11 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Models
 {
-    /// <summary>
-    /// Represents a Microsoft Entra user account.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class AgentUser : global::Microsoft.Graph.Models.User, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Models.AgentUser"/> and sets the default values.
