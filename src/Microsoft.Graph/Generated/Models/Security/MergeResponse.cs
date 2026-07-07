@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The targetIncidentId property</summary>
+        /// <summary>The ID of the target incident after the operation completes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetIncidentId

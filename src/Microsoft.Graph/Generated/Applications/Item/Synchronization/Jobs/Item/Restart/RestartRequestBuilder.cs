@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item.Restart
         {
         }
         /// <summary>
-        /// Restart a stopped synchronization job, forcing it to reprocess all the objects in the directory. Optionally clears existing the synchronization state and previous errors.
+        /// Restart a stopped synchronizationJob, forcing it to reprocess all the objects in the directory. Optionally clears existing the synchronization state and previous errors.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-restart?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item.Restart
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Restart a stopped synchronization job, forcing it to reprocess all the objects in the directory. Optionally clears existing the synchronization state and previous errors.
+        /// Restart a stopped synchronizationJob, forcing it to reprocess all the objects in the directory. Optionally clears existing the synchronization state and previous errors.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -76,6 +76,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("driveProtectionUnitsBulkAdditionJobs", value); }
         }
 #endif
+        /// <summary>The email notification settings in the tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.EmailNotificationsSetting? EmailNotificationsSetting
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.EmailNotificationsSetting?>("emailNotificationsSetting"); }
+            set { BackingStore?.Set("emailNotificationsSetting", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.EmailNotificationsSetting EmailNotificationsSetting
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.EmailNotificationsSetting>("emailNotificationsSetting"); }
+            set { BackingStore?.Set("emailNotificationsSetting", value); }
+        }
+#endif
         /// <summary>The list of Exchange protection policies in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -418,6 +434,7 @@ namespace Microsoft.Graph.Models
                 { "driveInclusionRules", n => { DriveInclusionRules = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DriveProtectionRule>(global::Microsoft.Graph.Models.DriveProtectionRule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "driveProtectionUnits", n => { DriveProtectionUnits = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DriveProtectionUnit>(global::Microsoft.Graph.Models.DriveProtectionUnit.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "driveProtectionUnitsBulkAdditionJobs", n => { DriveProtectionUnitsBulkAdditionJobs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DriveProtectionUnitsBulkAdditionJob>(global::Microsoft.Graph.Models.DriveProtectionUnitsBulkAdditionJob.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "emailNotificationsSetting", n => { EmailNotificationsSetting = n.GetObjectValue<global::Microsoft.Graph.Models.EmailNotificationsSetting>(global::Microsoft.Graph.Models.EmailNotificationsSetting.CreateFromDiscriminatorValue); } },
                 { "exchangeProtectionPolicies", n => { ExchangeProtectionPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ExchangeProtectionPolicy>(global::Microsoft.Graph.Models.ExchangeProtectionPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "exchangeRestoreSessions", n => { ExchangeRestoreSessions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ExchangeRestoreSession>(global::Microsoft.Graph.Models.ExchangeRestoreSession.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "mailboxInclusionRules", n => { MailboxInclusionRules = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.MailboxProtectionRule>(global::Microsoft.Graph.Models.MailboxProtectionRule.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -452,6 +469,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DriveProtectionRule>("driveInclusionRules", DriveInclusionRules);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DriveProtectionUnit>("driveProtectionUnits", DriveProtectionUnits);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DriveProtectionUnitsBulkAdditionJob>("driveProtectionUnitsBulkAdditionJobs", DriveProtectionUnitsBulkAdditionJobs);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.EmailNotificationsSetting>("emailNotificationsSetting", EmailNotificationsSetting);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ExchangeProtectionPolicy>("exchangeProtectionPolicies", ExchangeProtectionPolicies);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ExchangeRestoreSession>("exchangeRestoreSessions", ExchangeRestoreSessions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.MailboxProtectionRule>("mailboxInclusionRules", MailboxInclusionRules);

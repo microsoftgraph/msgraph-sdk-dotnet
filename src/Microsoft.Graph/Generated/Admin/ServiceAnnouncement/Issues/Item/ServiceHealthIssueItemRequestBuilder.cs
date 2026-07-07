@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Issues.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a serviceHealthIssue object. This operation retrieves a specified service health issue for tenant. The operation returns an error if the issue does not exist for the tenant.
+        /// Retrieve the properties and relationships of a serviceHealthIssue object. This operation retrieves a specified service health issue for tenant. The operation returns an error if the issue doesn&apos;t exist for the tenant.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/servicehealthissue-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ServiceHealthIssue"/></returns>
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Issues.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a serviceHealthIssue object. This operation retrieves a specified service health issue for tenant. The operation returns an error if the issue does not exist for the tenant.
+        /// Retrieve the properties and relationships of a serviceHealthIssue object. This operation retrieves a specified service health issue for tenant. The operation returns an error if the issue doesn&apos;t exist for the tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Admin.ServiceAnnouncement.Issues.Item
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a serviceHealthIssue object. This operation retrieves a specified service health issue for tenant. The operation returns an error if the issue does not exist for the tenant.
+        /// Retrieve the properties and relationships of a serviceHealthIssue object. This operation retrieves a specified service health issue for tenant. The operation returns an error if the issue doesn&apos;t exist for the tenant.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ServiceHealthIssueItemRequestBuilderGetQueryParameters 

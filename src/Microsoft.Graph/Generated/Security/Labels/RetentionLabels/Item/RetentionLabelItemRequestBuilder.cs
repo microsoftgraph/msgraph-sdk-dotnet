@@ -76,7 +76,8 @@ namespace Microsoft.Graph.Security.Labels.RetentionLabels.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Represents how customers can manage their data, whether and for how long to retain or delete it.
+        /// Read the properties and relationships of a retentionLabel object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-retentionlabel-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Security.RetentionLabel"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -144,7 +145,7 @@ namespace Microsoft.Graph.Security.Labels.RetentionLabels.Item
             return requestInfo;
         }
         /// <summary>
-        /// Represents how customers can manage their data, whether and for how long to retain or delete it.
+        /// Read the properties and relationships of a retentionLabel object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -202,7 +203,7 @@ namespace Microsoft.Graph.Security.Labels.RetentionLabels.Item
         {
         }
         /// <summary>
-        /// Represents how customers can manage their data, whether and for how long to retain or delete it.
+        /// Read the properties and relationships of a retentionLabel object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RetentionLabelItemRequestBuilderGetQueryParameters 

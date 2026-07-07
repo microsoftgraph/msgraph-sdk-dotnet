@@ -65,7 +65,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Inst
             return new global::Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Stages.FilterByCurrentUserWithOn.FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// Retrieve the stages in a multi-stage access review instance.
+        /// Retrieve the accessReviewStage objects for a specific accessReviewInstance in a multi-stage access review.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/accessreviewinstance-list-stages?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.AccessReviewStageCollectionResponse"/></returns>
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Inst
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.AccessReviewStage>(requestInfo, global::Microsoft.Graph.Models.AccessReviewStage.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the stages in a multi-stage access review instance.
+        /// Retrieve the accessReviewStage objects for a specific accessReviewInstance in a multi-stage access review.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -164,7 +164,7 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Inst
             return new global::Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Stages.StagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the stages in a multi-stage access review instance.
+        /// Retrieve the accessReviewStage objects for a specific accessReviewInstance in a multi-stage access review.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class StagesRequestBuilderGetQueryParameters 

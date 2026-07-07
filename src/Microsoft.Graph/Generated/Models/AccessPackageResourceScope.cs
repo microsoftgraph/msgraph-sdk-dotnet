@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("isRootScope"); }
             set { BackingStore?.Set("isRootScope", value); }
         }
-        /// <summary>The unique identifier for the scope in the resource as defined in the origin system.</summary>
+        /// <summary>The unique identifier of the resource in the origin system. If a Microsoft Entra group, originId is the identifier of the group. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OriginId
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("originId", value); }
         }
 #endif
-        /// <summary>The origin system for the scope.</summary>
+        /// <summary>The type of the resource in the origin system, such as SharePointOnline, AadApplication, AadGroup, AzureResources, or CustomDataProvidedResource. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OriginSystem
