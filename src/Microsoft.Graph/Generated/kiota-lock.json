@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "673171C8DE37FE83DA84B3A8B3EEBBDD1F293C64BD4FE38498612FA4501FFA2B6542C20857CAC6395AF1402497B5AE87B0BABCD6C54A59AD7C8EF17E50BF11F4",
+  "descriptionHash": "6EA46DF4FF6E4827A06A17163D3F24700E43202A7D3F73CB66ECD7C7EB08061DE27D1E02E07162B0D074E1F8084F53681AD6DF8C457316A4D00677E86A5D5EA8",
   "descriptionLocation": "../../msgraph-metadata/clean_v10_openapi/openapi.yaml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.32.4",
+  "kiotaVersion": "1.33.0",
   "clientClassName": "BaseGraphServiceClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Microsoft.Graph",
@@ -33,5 +33,6 @@
     "/copilot",
     "/copilot/**"
   ],
-  "disabledValidationRules": []
+  "disabledValidationRules": [],
+  "allowedExternalOrigins": []
 }

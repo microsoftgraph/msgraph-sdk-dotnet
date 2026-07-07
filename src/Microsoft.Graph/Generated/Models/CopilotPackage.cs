@@ -50,6 +50,12 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.PackageStatus?>("availableTo"); }
             set { BackingStore?.Set("availableTo", value); }
         }
+        /// <summary>The createdDateTime property</summary>
+        public DateTimeOffset? CreatedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
+            set { BackingStore?.Set("createdDateTime", value); }
+        }
         /// <summary>The deployedTo property</summary>
         public global::Microsoft.Graph.Models.PackageStatus? DeployedTo
         {
@@ -276,6 +282,7 @@ namespace Microsoft.Graph.Models
                 { "appId", n => { AppId = n.GetStringValue(); } },
                 { "assetId", n => { AssetId = n.GetStringValue(); } },
                 { "availableTo", n => { AvailableTo = n.GetEnumValue<global::Microsoft.Graph.Models.PackageStatus>(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "deployedTo", n => { DeployedTo = n.GetEnumValue<global::Microsoft.Graph.Models.PackageStatus>(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "elementTypes", n => { ElementTypes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -304,6 +311,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("appId", AppId);
             writer.WriteStringValue("assetId", AssetId);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.PackageStatus>("availableTo", AvailableTo);
+            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.PackageStatus>("deployedTo", DeployedTo);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteCollectionOfPrimitiveValues<string>("elementTypes", ElementTypes);

@@ -36,6 +36,7 @@ namespace Microsoft.Graph.Security.Alerts_v2.MicrosoftGraphSecurityMoveAlerts
         }
         /// <summary>
         /// Move one or more alert resources to a new or existing incident.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-alert-movealerts?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Security.MergeResponse"/></returns>
         /// <param name="body">The request body</param>

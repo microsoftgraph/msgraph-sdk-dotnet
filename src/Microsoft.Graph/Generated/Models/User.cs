@@ -7,11 +7,10 @@ using System.IO;
 using System;
 namespace Microsoft.Graph.Models
 {
-    /// <summary>
-    /// Represents a Microsoft Entra user account.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class User : global::Microsoft.Graph.Models.DirectoryObject, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>A freeform text entry field for the user to describe themselves. Requires $select to retrieve.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

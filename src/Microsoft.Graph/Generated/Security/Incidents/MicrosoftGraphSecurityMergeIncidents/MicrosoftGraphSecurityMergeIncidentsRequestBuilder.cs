@@ -36,6 +36,7 @@ namespace Microsoft.Graph.Security.Incidents.MicrosoftGraphSecurityMergeIncident
         }
         /// <summary>
         /// Merge multiple incident resources into a single incident.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-incident-mergeincidents?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Security.MergeResponse"/></returns>
         /// <param name="body">The request body</param>

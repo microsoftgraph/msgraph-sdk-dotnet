@@ -35,6 +35,7 @@ namespace Microsoft.Graph.Security.Collaboration.AnalyzedEmails.MicrosoftGraphSe
         }
         /// <summary>
         /// Remove a potential threat from end users&apos; mailboxes. Remediation means to take prescribed action against a threat. This API can trigger email purge actions like move to junk, move to deleted items, soft delete, hard delete, or move to Inbox. This API enables scenarios and use cases such as SOAR integration, playbooks, and automations. For more information read email remediation, trigger action and track actions. If there is false positives admins can take move to inbox action.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-analyzedemail-remediate?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -54,7 +54,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.T
         {
         }
         /// <summary>
-        /// Retrieve the details of the built-in tasks in Lifecycle Workflows.
+        /// Retrieve the details of the built-in task objects in a workflow.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-workflow-list-task?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.IdentityGovernance.TaskCollectionResponse"/></returns>
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.T
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.IdentityGovernance.TaskObject>(requestInfo, global::Microsoft.Graph.Models.IdentityGovernance.TaskObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the details of the built-in tasks in Lifecycle Workflows.
+        /// Retrieve the details of the built-in task objects in a workflow.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.T
             return new global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Tasks.TasksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the details of the built-in tasks in Lifecycle Workflows.
+        /// Retrieve the details of the built-in task objects in a workflow.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TasksRequestBuilderGetQueryParameters 
