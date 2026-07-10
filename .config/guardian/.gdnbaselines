@@ -1,0 +1,717 @@
+{
+  "properties": {
+    "helpUri": "https://eng.ms/docs/microsoft-security/security/azure-security/cloudai-security-fundamentals-engineering/security-integration/guardian-wiki/microsoft-guardian/general/baselines"
+  },
+  "version": "1.0.0",
+  "baselines": {
+    "default": {
+      "name": "default",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "lastUpdatedDate": "2026-06-20 00:48:18Z"
+    }
+  },
+  "results": {
+    "d02d560dfa2b990239a116442fa49696a9f86107683300985856426fb4afa2a6": {
+      "signature": "d02d560dfa2b990239a116442fa49696a9f86107683300985856426fb4afa2a6",
+      "alternativeSignatures": [
+        "704b6ea23cd88a5bc03dbd28298c23b5ec6b49c9477370c232f67613567fbb7c",
+        "bbfb28331674c2dcd04194e6990b60be609757e79c2d811067893c3e965f6d81"
+      ],
+      "target": "docs/v4-reference-docs/authenticationmethod-resetpassword.md",
+      "line": 109,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "ac3bfa7c3028669618563f9295b4746774a51880defa826dd9c5b51bdb8af319": {
+      "signature": "ac3bfa7c3028669618563f9295b4746774a51880defa826dd9c5b51bdb8af319",
+      "alternativeSignatures": [
+        "c7007a92cac1ee809dc016f0f71b0bb5778c2aa0ac510683016ba1156196cf1d",
+        "5db8f5c2ea26d6bc917a44f3d0f927d4bc903f87c2624811385012ca82f111e5"
+      ],
+      "target": "docs/v4-reference-docs/authenticationmethod-resetpassword.md",
+      "line": 203,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "ce5fb869bd8e8a1e75f5f4a54b7309cd16f76ce9af950bb2358da70269857142": {
+      "signature": "ce5fb869bd8e8a1e75f5f4a54b7309cd16f76ce9af950bb2358da70269857142",
+      "alternativeSignatures": [
+        "40f08b0dcf454a1e92b71d4c7cc8a3d75e77379bf601b8c648ed5c2f5636065e",
+        "56c67f29f04f3dd8316fa7d9172023aa6c0f74cbefbe779c8e47b5b3ed849a69"
+      ],
+      "target": "docs/v4-reference-docs/user-changepassword.md",
+      "line": 66,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "d9e6949d68f096882005442a0619fd2aaa61192ae6ed3f6cc2b7572f4f9b6dc0": {
+      "signature": "d9e6949d68f096882005442a0619fd2aaa61192ae6ed3f6cc2b7572f4f9b6dc0",
+      "alternativeSignatures": [
+        "4012ca46caf7619851b16792c34cbd1826209fea46cb1236f0c0a4abf869ee10",
+        "373c0021ecc183d8a701e73791d5e2e895042fc063b3d97460992faa9dc96ce4"
+      ],
+      "target": "docs/v4-reference-docs/user-changepassword.md",
+      "line": 78,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "6287ef7747910add8aabbda0b467bea127205735bde3472fc9e3dffbe700b276": {
+      "signature": "6287ef7747910add8aabbda0b467bea127205735bde3472fc9e3dffbe700b276",
+      "alternativeSignatures": [
+        "388d6ecc3e8d7a3452f2a13e67be3729d74d86c1e40936114c9e34590f7adfcc",
+        "0e06078e507dc409586853b9299963ebac9693abbc25739ac247ac43a4e981bd"
+      ],
+      "target": "src/Microsoft.Graph/Generated/kiota-dom-export.txt",
+      "line": 126268,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "75212f0e9140caa34282304fa449353c1927f512903e9580985121f716834a7e": {
+      "signature": "75212f0e9140caa34282304fa449353c1927f512903e9580985121f716834a7e",
+      "alternativeSignatures": [
+        "36e7c468e68de694e85205cda5fdb3cf566bde58611481fdabd96553fe4e547d",
+        "0ea69de9579e23c0db243b6fb89dc40fc4fe20df139efe02f9e36f0aba662347"
+      ],
+      "target": "src/Microsoft.Graph/Generated/kiota-dom-export.txt",
+      "line": 126269,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "d7fbc1fbbbf1805b6673e7b365937be189c63beb1ada4280512b24101bdd8a82": {
+      "signature": "d7fbc1fbbbf1805b6673e7b365937be189c63beb1ada4280512b24101bdd8a82",
+      "alternativeSignatures": [
+        "d2b4c2363a18566de6cded687e8c7a79761cdca2042db44afc2ae7d7994c2393",
+        "ee61fd157f6d04f78ea98033311127e8b51cd3d02b92a019591f0fcabcde365d"
+      ],
+      "target": "src/Microsoft.Graph/Generated/kiota-dom-export.txt",
+      "line": 126270,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "27217d94f00bae968c4f17fff00910f6b8da79d07b3f979ed6146fd53d9dd129": {
+      "signature": "27217d94f00bae968c4f17fff00910f6b8da79d07b3f979ed6146fd53d9dd129",
+      "alternativeSignatures": [
+        "6c83e040bbdc93eca130cc3acbcd9ef09b9fd60d7ffc660af38bb50d359bf584",
+        "f74a68ceacd8b1e6935443ee1786e17d2314d2f83c7501f08aba5943c26d26e9"
+      ],
+      "target": "src/Microsoft.Graph/Generated/kiota-dom-export.txt",
+      "line": 126271,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "f28fa5314260553f0ef0e58a1b151ac520bca7832a8488c5368bde9225b84364": {
+      "signature": "f28fa5314260553f0ef0e58a1b151ac520bca7832a8488c5368bde9225b84364",
+      "alternativeSignatures": [
+        "db50405db555c298c051bb8e6f6b44b28d03bff31035be3b42ee2329d469ce0f",
+        "dd301eb80cb2de08bef3e3e2f70fd1bb671d6fd607564dda285631e70de4e625"
+      ],
+      "target": "src/Microsoft.Graph/Generated/kiota-dom-export.txt",
+      "line": 126273,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "223e2aaeb434aae0dcc9b6bf7accb20191d7415ee9d2413c7a4f2a68fb870529": {
+      "signature": "223e2aaeb434aae0dcc9b6bf7accb20191d7415ee9d2413c7a4f2a68fb870529",
+      "alternativeSignatures": [
+        "0b37cc0026ec91db2cdcff49efe1a7014760e6cbf3512830755895ac281d2e3d",
+        "1cffe894ad8da5247e0baa799dd49929180b0714b8c55912aa86498709494798"
+      ],
+      "target": "src/Microsoft.Graph/Generated/kiota-dom-export.txt",
+      "line": 126275,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "de44ea21a0137f8cb21c349ddc1088749b4f25d22eb18132c64c94d1a5d5f116": {
+      "signature": "de44ea21a0137f8cb21c349ddc1088749b4f25d22eb18132c64c94d1a5d5f116",
+      "alternativeSignatures": [
+        "119becb123bc27916a3db419f0871d129cd1361f334b8cc08e039f8fbd42ade1",
+        "b50dcabc0702fa2611d320589f505507cfa6ecf1c6c2fcff3e3500c81d6e50be"
+      ],
+      "target": "src/Microsoft.Graph/Generated/kiota-dom-export.txt",
+      "line": 126276,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "0155fd003b044485332c1c69337aaecf280a414a2e5913db7614b34388ce78b3": {
+      "signature": "0155fd003b044485332c1c69337aaecf280a414a2e5913db7614b34388ce78b3",
+      "alternativeSignatures": [
+        "9f7eba62ae70376b0df0914573b8330a79de9dd26583a0d6fafbd2a2500582a0",
+        "ef409dd73a76a33b63751cceb68f32efb65e7d689f6abe2361c78e5d36fc4d20"
+      ],
+      "target": "src/Microsoft.Graph/Generated/kiota-dom-export.txt",
+      "line": 126277,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "3cbce2ff5486ca6c7ef8a022753b55da58b3464a4f40307996fb7f18c748eac7": {
+      "signature": "3cbce2ff5486ca6c7ef8a022753b55da58b3464a4f40307996fb7f18c748eac7",
+      "alternativeSignatures": [
+        "93739fad42f5031efd8f701e9f313b13562779504658aa1e26a091df0e63a036",
+        "864c64bfde737358c5458f3f404f8dceceb2105c336e0fb79044ba6c2781d719"
+      ],
+      "target": "src/Microsoft.Graph/Generated/kiota-dom-export.txt",
+      "line": 126278,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "14ff2bcb37c66acd8227e8ccbbdd028a935e8c4a840a5afbffff3b0a8f746733": {
+      "signature": "14ff2bcb37c66acd8227e8ccbbdd028a935e8c4a840a5afbffff3b0a8f746733",
+      "alternativeSignatures": [
+        "2d2bc1206a9e17d43b0e8881f4ba4dd7faadf644d42c7e4ae627a00a6c32b74b",
+        "d04d23e92f9c1b4b49e3b853429013a5e21d72450dc23541f935746de65c51a8"
+      ],
+      "target": "src/Microsoft.Graph/Generated/kiota-dom-export.txt",
+      "line": 126279,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "af825297310fe339e01d7e93a8b3186167d2a52d657434437b421fb4576abef9": {
+      "signature": "af825297310fe339e01d7e93a8b3186167d2a52d657434437b421fb4576abef9",
+      "alternativeSignatures": [
+        "ea455499ce21c055d1404ec3d276287d4295178f565b4a2fe21981248f4cb707",
+        "0e1a415f2d96a4c6e598dd3a3c03997e3ea7f0ed4c2936374ed91328371ed1f4"
+      ],
+      "target": "src/Microsoft.Graph/Generated/kiota-dom-export.txt",
+      "line": 126281,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "92bda4c67d6d12c3c0a0a61126eb200569d53cb4d1e0b65df278bbf881cff22d": {
+      "signature": "92bda4c67d6d12c3c0a0a61126eb200569d53cb4d1e0b65df278bbf881cff22d",
+      "alternativeSignatures": [
+        "e616d16e497736ef9dac45fe271095a7909f6e543dc3b65a6190fdb7728e6ba0",
+        "4c23fe9ab90dcfc69b9027f98f766ca44dc690603772de6849a4d57117ab6579"
+      ],
+      "target": "src/Microsoft.Graph/Generated/kiota-dom-export.txt",
+      "line": 126283,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "2c7df309537deb6819b150b20bd78cdfbc457203df5dff586633e53c8c1182ea": {
+      "signature": "2c7df309537deb6819b150b20bd78cdfbc457203df5dff586633e53c8c1182ea",
+      "alternativeSignatures": [
+        "0621ba2dd2b4bea906ef2a3d18a373308f5c98dfba75e9e639d8540b1530d3a7",
+        "4ec6a45cdab5d33dc66727f9b9f5e1bc0921492cd026f5b83918a29dae0a4ce2"
+      ],
+      "target": "src/Microsoft.Graph/Generated/kiota-dom-export.txt",
+      "line": 126284,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "a18fe094d425eaef223b3ed020edc77e5a2f61c05e21d7eaf4f0e3de12528137": {
+      "signature": "a18fe094d425eaef223b3ed020edc77e5a2f61c05e21d7eaf4f0e3de12528137",
+      "alternativeSignatures": [
+        "03407054c2ef2aa84309ed417847da5e141fc37eb171b358eb74cc4b62e989c1",
+        "9a77b431b0ad22fb2f3d0c30208c503b547b7c7fe72732eb79967a982b3b6f2e"
+      ],
+      "target": "src/Microsoft.Graph/Generated/kiota-dom-export.txt",
+      "line": 126285,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "5149214ddd75abeb00a5db330476b97ae5f4eaaf8fe790ece2b6ab80a9ffb10a": {
+      "signature": "5149214ddd75abeb00a5db330476b97ae5f4eaaf8fe790ece2b6ab80a9ffb10a",
+      "alternativeSignatures": [
+        "4a39a8969af793c0329737eb5d076f7355df07c93a63f8439fbb9a2ea446cba2",
+        "ad30d174ef5fc12e91fc3d941a45d09b23f0a365ec614a5d4a77ad10feff0b3f"
+      ],
+      "target": "src/Microsoft.Graph/Generated/kiota-dom-export.txt",
+      "line": 126286,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "762eb6f1837ef0393dcd2573f9eea0059b7c39c1af1a680bc408be20841c2de3": {
+      "signature": "762eb6f1837ef0393dcd2573f9eea0059b7c39c1af1a680bc408be20841c2de3",
+      "alternativeSignatures": [
+        "6206f8406610b02a84e4b0257379a0d952a2434a6bd74e3275f8888ae1a4c012",
+        "708f49d500ea3477a760718f38555db701e83f61609f4228bbfcbc37ecc15309"
+      ],
+      "target": "src/Microsoft.Graph/Generated/kiota-dom-export.txt",
+      "line": 126287,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "8df587f1a863a8324a66f5518a045475f360f513232b282befea60a0606f4c70": {
+      "signature": "8df587f1a863a8324a66f5518a045475f360f513232b282befea60a0606f4c70",
+      "alternativeSignatures": [
+        "c1e719c00b47a537aa9322782e52372a4d201af0153ae17acd57ad4ad992caaa",
+        "f3385d16402dbe01d41e8bf85a494e23632d982a28696da7002b9391f9e2f5af"
+      ],
+      "target": "src/Microsoft.Graph/Generated/kiota-dom-export.txt",
+      "line": 126288,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "346a2485b7d2f292568f667423dc51a1fa6f282092c3e919fa61f2220ef53235": {
+      "signature": "346a2485b7d2f292568f667423dc51a1fa6f282092c3e919fa61f2220ef53235",
+      "alternativeSignatures": [
+        "93d5283e9f327ea1ef0bb66f894946cb323381fe74688bfb95cff81154aeb8f7",
+        "4c1c5b763bb34b3806467938517ce0d2a60ba3466f70c890ffaf8e8875d41108"
+      ],
+      "target": "src/Microsoft.Graph/Generated/kiota-dom-export.txt",
+      "line": 126289,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "db0920dc36f7ac1ccd66b76e47f8afaa53b00e233344f4d3f997e611fb13aec7": {
+      "signature": "db0920dc36f7ac1ccd66b76e47f8afaa53b00e233344f4d3f997e611fb13aec7",
+      "alternativeSignatures": [
+        "04f0f93a1b7180a75ca3dfa18ebac3f636c9b929fd1c5f6f2f8b6a8e844e13e6",
+        "94fc6a123393e4bbf932c2276ea9ab5a38fbb88977894ab037125afb9113f469"
+      ],
+      "target": "src/Microsoft.Graph/Generated/kiota-dom-export.txt",
+      "line": 126290,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "1d7fe5a5d84835ac3874c862a0806fcf97da2591c324e3d1a0a8241f768fbcd5": {
+      "signature": "1d7fe5a5d84835ac3874c862a0806fcf97da2591c324e3d1a0a8241f768fbcd5",
+      "alternativeSignatures": [
+        "0ecd4b8ce887dc0cd9f58ac7562f32b36c3287a6f78d448b09ccd8ba2235b006",
+        "204e59c12e007833a8fa5a64e43395e87d33f8f6257afe664adaf561d71fe512"
+      ],
+      "target": "src/Microsoft.Graph/Generated/kiota-dom-export.txt",
+      "line": 126291,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "e891045e62c27cc84dafd3db31bfb0940fc9d288ed185d580d21b057c773eb82": {
+      "signature": "e891045e62c27cc84dafd3db31bfb0940fc9d288ed185d580d21b057c773eb82",
+      "alternativeSignatures": [
+        "24a04fe83e4158301dc894ed93a1b0dedf4963516b4e5e1c18843d9f61f06aa7",
+        "b021a88f55950d9224edaa3a7b0e7b626c2efe779394fc74e2713158bc32e296"
+      ],
+      "target": "src/Microsoft.Graph/Generated/kiota-dom-export.txt",
+      "line": 126292,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "89470e5b0d71fdf6cf0912457bb3ffb016d04ef7117b6d404f1eedfbb0122fd1": {
+      "signature": "89470e5b0d71fdf6cf0912457bb3ffb016d04ef7117b6d404f1eedfbb0122fd1",
+      "alternativeSignatures": [
+        "e2b45d793303c1ba4e978db503b7415a2f9356a6356af64400016992e11cfe2c",
+        "67bb38cfffac37c694bb7f0f4a4875d0e333dc59cb56c68b64764df59f343203"
+      ],
+      "target": "src/Microsoft.Graph/Generated/kiota-dom-export.txt",
+      "line": 126293,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "c6afa70ab33f417028f0142067beb38e58e3e87ac7e7412d30027891e106d567": {
+      "signature": "c6afa70ab33f417028f0142067beb38e58e3e87ac7e7412d30027891e106d567",
+      "alternativeSignatures": [
+        "e098e45cf4b6a68ea6d2ef11dc184e36513ee22e15e227901f5eda0fc71a2b49",
+        "4c154772db2b9208b3e718bcb278be2a35df1e11c2e6192154cd6c784cf15893"
+      ],
+      "target": "src/Microsoft.Graph/Generated/kiota-dom-export.txt",
+      "line": 126294,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "9f5c08e0f1d115b6889c477aa33aa02f05cb035759ecfac9e412f090a804e1bf": {
+      "signature": "9f5c08e0f1d115b6889c477aa33aa02f05cb035759ecfac9e412f090a804e1bf",
+      "alternativeSignatures": [
+        "6bf08f04a9b19887a4db8e9719c3ebdfd556b851b0135df69cf863c8cbce487c",
+        "9cf54c540c8138864d55736840083cd02a167ab9995b127e5ea11fbf5ee680f7"
+      ],
+      "target": "src/Microsoft.Graph/Generated/kiota-dom-export.txt",
+      "line": 126295,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "0fb38b22e70c8e3d2435d008ee45bb0edcf64ece413d20aad1eb624cf3d33214": {
+      "signature": "0fb38b22e70c8e3d2435d008ee45bb0edcf64ece413d20aad1eb624cf3d33214",
+      "alternativeSignatures": [
+        "02e4ee91c6240c39e03ca3a335e60ca3c9e280b0a1f30bffae3d19bffa821a60",
+        "a56bce080cc550cd87f4e7a52c4652bfc6db0f07f74e9517d8cc4b9fcc169eee"
+      ],
+      "target": "src/Microsoft.Graph/Generated/kiota-dom-export.txt",
+      "line": 126296,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "1ef060df54ddd517852d687b4c1e1fab0aa9a700cb82e49fcd3f6ea4ac31eda8": {
+      "signature": "1ef060df54ddd517852d687b4c1e1fab0aa9a700cb82e49fcd3f6ea4ac31eda8",
+      "alternativeSignatures": [
+        "512594ec7be1e69cbf6e03294acfeca519eda2826f16ae88d58c738fd8a0da97",
+        "70584542968ea6106ec2c6aa19e8efd7a8027928ac643f8a5f7a3b6e36a7590f"
+      ],
+      "target": "src/Microsoft.Graph/Generated/kiota-dom-export.txt",
+      "line": 126298,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "99231c4559414854e7e9a207904a26aaeb2276a61a1c7a9ebe7ca1378436645c": {
+      "signature": "99231c4559414854e7e9a207904a26aaeb2276a61a1c7a9ebe7ca1378436645c",
+      "alternativeSignatures": [
+        "da3e1275ecd41e5a13aed05a17e51afa39dec823fe7896fdc37462616024eb02",
+        "9ad761d17bd56b320be2ba700e6973495998794a60e3d59d8c4b71ef6cd55bd9"
+      ],
+      "target": "src/Microsoft.Graph/Generated/kiota-dom-export.txt",
+      "line": 126299,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "756bfbc131142810ab628a1f3484465d7b15a0a95125d6963cd7c57096b2b660": {
+      "signature": "756bfbc131142810ab628a1f3484465d7b15a0a95125d6963cd7c57096b2b660",
+      "alternativeSignatures": [
+        "1f18faaa14915530b12aafa4d345f017c25297814c9f2202685bbe0f3f4e5a5d",
+        "f9337571301013022c844714fe4ae6dbda2d05b59e601853a344e8f741775f65"
+      ],
+      "target": "src/Microsoft.Graph/Generated/kiota-dom-export.txt",
+      "line": 126304,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "e866d38d17e9f252ff4a0818c855f246cc283f58fb728e7160bdacd1cb173cd2": {
+      "signature": "e866d38d17e9f252ff4a0818c855f246cc283f58fb728e7160bdacd1cb173cd2",
+      "alternativeSignatures": [
+        "3792f413a15e36b77497f8a9323963248e8d98e3f0808d3dd240f55d4f2ef6e5",
+        "3e411d5a7eaa5905e9a272d4b6dd8b66d5a512fbc0da083aaf2c29ddb097ebec"
+      ],
+      "target": "src/Microsoft.Graph/Generated/kiota-dom-export.txt",
+      "line": 126305,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "feaf672b1a411eccaa3cf7249be8294d3266f41899998649baf81e2b493b3950": {
+      "signature": "feaf672b1a411eccaa3cf7249be8294d3266f41899998649baf81e2b493b3950",
+      "alternativeSignatures": [
+        "21c096de6f66579a4ec329054d08eeb8a662003c84ac70f7f6ebce9f2b7b66d7",
+        "776f54534c647e7f1ab759c13bef54d5fb248059de22157c420b83759688c8a6"
+      ],
+      "target": "src/Microsoft.Graph/Generated/kiota-dom-export.txt",
+      "line": 126306,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "672390f32a019be7f424769591476aac5d5268442197ce769258994077de4eec": {
+      "signature": "672390f32a019be7f424769591476aac5d5268442197ce769258994077de4eec",
+      "alternativeSignatures": [
+        "ded52c712738bec28d03ac513c8937cffa75bcd48ec2cb60af7e42fa087dc16d",
+        "b535d3f898fd347ea9b201168ba71c7e7f2c97aef6224aa0fd363eb2a73eb99e"
+      ],
+      "target": "src/Microsoft.Graph/Generated/kiota-dom-export.txt",
+      "line": 126307,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "93466e9af6ef31938592cbec8cf189a41a93155fa3b9d0c285d5cd0ade760d14": {
+      "signature": "93466e9af6ef31938592cbec8cf189a41a93155fa3b9d0c285d5cd0ade760d14",
+      "alternativeSignatures": [
+        "f7570d6dbd047680c396fdb830fe1e647898964992f7141522e4ccbc3447688b",
+        "4da9b1d5018645ba941d3deba692faf3c09fcb0f3dac965ed7a1b8fb9dab1384"
+      ],
+      "target": "src/Microsoft.Graph/Generated/kiota-dom-export.txt",
+      "line": 126309,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "d9bd2587e42ecbd5ae18b585017bdf0866630f003187007f47c0c26dc62bc225": {
+      "signature": "d9bd2587e42ecbd5ae18b585017bdf0866630f003187007f47c0c26dc62bc225",
+      "alternativeSignatures": [
+        "7413335a04fbcc4916404aff7a36f22de1bf8422a49aadb775f85b0ff3a61f50",
+        "2934b7faedac7af114b0a5628db82546afb07f48c36984411a96cbacfc07ced9"
+      ],
+      "target": "src/Microsoft.Graph/Generated/kiota-dom-export.txt",
+      "line": 126310,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "2aff9da8a8bc15fc5b7bc785559e02d5bcec19663623dd346a97be333e761c92": {
+      "signature": "2aff9da8a8bc15fc5b7bc785559e02d5bcec19663623dd346a97be333e761c92",
+      "alternativeSignatures": [
+        "23742931f7151b5874f6a80dfffb8fa11609b0c138bc11862536fd29c0f620ca",
+        "335f5c03c2b817e1852e01504e35e7ac93e9a164d33aba280eb88255cc352617"
+      ],
+      "target": "src/Microsoft.Graph/Generated/kiota-dom-export.txt",
+      "line": 126311,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0060",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    },
+    "390d21d9ca1233762b9b807625a7748863063253e1e7cf529266e5d328bd0f4c": {
+      "signature": "390d21d9ca1233762b9b807625a7748863063253e1e7cf529266e5d328bd0f4c",
+      "alternativeSignatures": [
+        "bf4d59e831f4701a2ac5badc6c61586caf49626874a641627bf83fd6dc7d1dd8",
+        "86862257c2d5978e68f8c59de2307721f3640294ad6fefd006018168b9b85b2a"
+      ],
+      "target": "src/Microsoft.Graph/Generated/Models/SynchronizationSecret.cs",
+      "line": 99,
+      "uriBaseId": "file:///D:/a/_work/1/s/",
+      "memberOf": [
+        "default"
+      ],
+      "tool": "credscan",
+      "ruleId": "CSCAN-GENERAL0120",
+      "createdDate": "2026-06-20 00:48:18Z",
+      "expirationDate": "2026-12-07 00:48:47Z",
+      "justification": "This error is baselined with an expiration date of 180 days from 2026-06-20 00:48:47Z"
+    }
+  }
+}
