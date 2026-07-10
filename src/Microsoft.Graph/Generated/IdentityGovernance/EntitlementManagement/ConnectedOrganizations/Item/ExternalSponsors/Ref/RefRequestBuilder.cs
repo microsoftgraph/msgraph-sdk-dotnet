@@ -35,7 +35,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrga
         {
         }
         /// <summary>
-        /// Remove a user or a group from the connected organization&apos;s external sponsors. The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+        /// Remove a user or a group from the externalSponsors relationship of a connectedOrganization. External sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/connectedorganization-delete-externalsponsors?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrga
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.StringCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.StringCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add a user or a group to the connected organization&apos;s external sponsors. The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+        /// Add a user or a group to the externalSponsors relationship of a connectedOrganization. External sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/connectedorganization-post-externalsponsors?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrga
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a user or a group from the connected organization&apos;s external sponsors. The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+        /// Remove a user or a group from the externalSponsors relationship of a connectedOrganization. External sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrga
             return requestInfo;
         }
         /// <summary>
-        /// Add a user or a group to the connected organization&apos;s external sponsors. The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+        /// Add a user or a group to the externalSponsors relationship of a connectedOrganization. External sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -175,7 +175,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrga
             return new global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.Item.ExternalSponsors.Ref.RefRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Remove a user or a group from the connected organization&apos;s external sponsors. The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+        /// Remove a user or a group from the externalSponsors relationship of a connectedOrganization. External sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RefRequestBuilderDeleteQueryParameters 

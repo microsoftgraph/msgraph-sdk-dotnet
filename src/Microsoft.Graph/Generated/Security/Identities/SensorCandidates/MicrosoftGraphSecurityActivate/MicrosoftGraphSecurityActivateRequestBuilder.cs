@@ -35,6 +35,7 @@ namespace Microsoft.Graph.Security.Identities.SensorCandidates.MicrosoftGraphSec
         }
         /// <summary>
         /// Activate Microsoft Defender for Identity sensors.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/security-sensorcandidate-activate?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

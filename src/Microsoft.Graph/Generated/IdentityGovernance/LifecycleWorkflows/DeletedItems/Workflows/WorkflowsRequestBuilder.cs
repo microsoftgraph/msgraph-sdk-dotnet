@@ -54,7 +54,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Wor
         {
         }
         /// <summary>
-        /// Get a list of the deleted workflow objects and their properties.
+        /// Get a list of deleted workflow objects and their properties from the deletedItemContainer.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-lifecycleworkflowscontainer-list-deleteditems?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.IdentityGovernance.WorkflowCollectionResponse"/></returns>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Wor
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.IdentityGovernance.WorkflowCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.IdentityGovernance.WorkflowCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the deleted workflow objects and their properties.
+        /// Get a list of deleted workflow objects and their properties from the deletedItemContainer.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Wor
             return new global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.WorkflowsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the deleted workflow objects and their properties.
+        /// Get a list of deleted workflow objects and their properties from the deletedItemContainer.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WorkflowsRequestBuilderGetQueryParameters 

@@ -6,8 +6,13 @@ using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Execu
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.LastModifiedBy;
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceActivate;
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceActivateWithScope;
+using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceCancelProcessing;
+using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceClearQuarantine;
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceCreateNewVersion;
+using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernancePreviewTaskFailures;
+using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernancePreviewWorkflow;
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceRestore;
+using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.PreviewScope;
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs;
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.TaskReports;
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Tasks;
@@ -61,15 +66,40 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item
         {
             get => new global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceActivateWithScope.MicrosoftGraphIdentityGovernanceActivateWithScopeRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the cancelProcessing method.</summary>
+        public global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceCancelProcessing.MicrosoftGraphIdentityGovernanceCancelProcessingRequestBuilder MicrosoftGraphIdentityGovernanceCancelProcessing
+        {
+            get => new global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceCancelProcessing.MicrosoftGraphIdentityGovernanceCancelProcessingRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the clearQuarantine method.</summary>
+        public global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceClearQuarantine.MicrosoftGraphIdentityGovernanceClearQuarantineRequestBuilder MicrosoftGraphIdentityGovernanceClearQuarantine
+        {
+            get => new global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceClearQuarantine.MicrosoftGraphIdentityGovernanceClearQuarantineRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the createNewVersion method.</summary>
         public global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceCreateNewVersion.MicrosoftGraphIdentityGovernanceCreateNewVersionRequestBuilder MicrosoftGraphIdentityGovernanceCreateNewVersion
         {
             get => new global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceCreateNewVersion.MicrosoftGraphIdentityGovernanceCreateNewVersionRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the previewTaskFailures method.</summary>
+        public global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernancePreviewTaskFailures.MicrosoftGraphIdentityGovernancePreviewTaskFailuresRequestBuilder MicrosoftGraphIdentityGovernancePreviewTaskFailures
+        {
+            get => new global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernancePreviewTaskFailures.MicrosoftGraphIdentityGovernancePreviewTaskFailuresRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the previewWorkflow method.</summary>
+        public global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernancePreviewWorkflow.MicrosoftGraphIdentityGovernancePreviewWorkflowRequestBuilder MicrosoftGraphIdentityGovernancePreviewWorkflow
+        {
+            get => new global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernancePreviewWorkflow.MicrosoftGraphIdentityGovernancePreviewWorkflowRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the restore method.</summary>
         public global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceRestore.MicrosoftGraphIdentityGovernanceRestoreRequestBuilder MicrosoftGraphIdentityGovernanceRestore
         {
             get => new global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.MicrosoftGraphIdentityGovernanceRestore.MicrosoftGraphIdentityGovernanceRestoreRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the previewScope property of the microsoft.graph.identityGovernance.workflow entity.</summary>
+        public global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.PreviewScope.PreviewScopeRequestBuilder PreviewScope
+        {
+            get => new global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.PreviewScope.PreviewScopeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the runs property of the microsoft.graph.identityGovernance.workflow entity.</summary>
         public global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item.Runs.RunsRequestBuilder Runs
@@ -113,7 +143,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item
         {
         }
         /// <summary>
-        /// Delete a workflow object and its associated tasks, taskProcessingResults and versions. You can restore a deleted workflow and its associated objects within 30 days of deletion.
+        /// Delete a workflow object and its associated tasks, taskProcessingResults and versions. The deleted workflow is sent to the deleted workflows container. You can restore a deleted workflow and its associated objects within 30 days of deletion.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/identitygovernance-workflow-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -186,7 +216,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.Workflows.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.IdentityGovernance.Workflow>(requestInfo, global::Microsoft.Graph.Models.IdentityGovernance.Workflow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a workflow object and its associated tasks, taskProcessingResults and versions. You can restore a deleted workflow and its associated objects within 30 days of deletion.
+        /// Delete a workflow object and its associated tasks, taskProcessingResults and versions. The deleted workflow is sent to the deleted workflows container. You can restore a deleted workflow and its associated objects within 30 days of deletion.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

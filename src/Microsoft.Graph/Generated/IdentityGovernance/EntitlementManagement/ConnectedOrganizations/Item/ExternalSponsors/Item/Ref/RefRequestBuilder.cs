@@ -34,7 +34,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrga
         {
         }
         /// <summary>
-        /// Remove a user or a group from the connected organization&apos;s external sponsors. The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+        /// Remove a user or a group from the externalSponsors relationship of a connectedOrganization. External sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/connectedorganization-delete-externalsponsors?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrga
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a user or a group from the connected organization&apos;s external sponsors. The external sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+        /// Remove a user or a group from the externalSponsors relationship of a connectedOrganization. External sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -5,7 +5,9 @@ using Microsoft.Graph.Models.Security;
 using Microsoft.Graph.Security.Alerts;
 using Microsoft.Graph.Security.Alerts_v2;
 using Microsoft.Graph.Security.AttackSimulation;
+using Microsoft.Graph.Security.AuditLog;
 using Microsoft.Graph.Security.Cases;
+using Microsoft.Graph.Security.Collaboration;
 using Microsoft.Graph.Security.DataSecurityAndGovernance;
 using Microsoft.Graph.Security.Identities;
 using Microsoft.Graph.Security.Incidents;
@@ -48,10 +50,20 @@ namespace Microsoft.Graph.Security
         {
             get => new global::Microsoft.Graph.Security.AttackSimulation.AttackSimulationRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the auditLog property of the microsoft.graph.security entity.</summary>
+        public global::Microsoft.Graph.Security.AuditLog.AuditLogRequestBuilder AuditLog
+        {
+            get => new global::Microsoft.Graph.Security.AuditLog.AuditLogRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the cases property of the microsoft.graph.security entity.</summary>
         public global::Microsoft.Graph.Security.Cases.CasesRequestBuilder Cases
         {
             get => new global::Microsoft.Graph.Security.Cases.CasesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the collaboration property of the microsoft.graph.security entity.</summary>
+        public global::Microsoft.Graph.Security.Collaboration.CollaborationRequestBuilder Collaboration
+        {
+            get => new global::Microsoft.Graph.Security.Collaboration.CollaborationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the dataSecurityAndGovernance property of the microsoft.graph.security entity.</summary>
         public global::Microsoft.Graph.Security.DataSecurityAndGovernance.DataSecurityAndGovernanceRequestBuilder DataSecurityAndGovernance

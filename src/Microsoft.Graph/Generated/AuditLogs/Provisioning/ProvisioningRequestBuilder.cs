@@ -54,7 +54,7 @@ namespace Microsoft.Graph.AuditLogs.Provisioning
         {
         }
         /// <summary>
-        /// Get all provisioning events that occurred in your tenant, such as the deletion of a group in a target application or the creation of a user when provisioning user accounts from your HR system. 
+        /// Get all provisioningObjectSummary events that occurred in your tenant, such as the deletion of a group in a target application or the creation of a user when provisioning user accounts from your HR system. 
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/provisioningobjectsummary-list?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ProvisioningObjectSummaryCollectionResponse"/></returns>
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.AuditLogs.Provisioning
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ProvisioningObjectSummary>(requestInfo, global::Microsoft.Graph.Models.ProvisioningObjectSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all provisioning events that occurred in your tenant, such as the deletion of a group in a target application or the creation of a user when provisioning user accounts from your HR system. 
+        /// Get all provisioningObjectSummary events that occurred in your tenant, such as the deletion of a group in a target application or the creation of a user when provisioning user accounts from your HR system. 
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.AuditLogs.Provisioning
             return new global::Microsoft.Graph.AuditLogs.Provisioning.ProvisioningRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get all provisioning events that occurred in your tenant, such as the deletion of a group in a target application or the creation of a user when provisioning user accounts from your HR system. 
+        /// Get all provisioningObjectSummary events that occurred in your tenant, such as the deletion of a group in a target application or the creation of a user when provisioning user accounts from your HR system. 
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ProvisioningRequestBuilderGetQueryParameters 

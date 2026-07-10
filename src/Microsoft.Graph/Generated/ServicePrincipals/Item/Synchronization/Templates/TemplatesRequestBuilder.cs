@@ -54,7 +54,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Templates
         {
         }
         /// <summary>
-        /// List the synchronization templates associated with a given application or service principal.
+        /// List synchronizationTemplate objects associated with a given application or service principal.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronization-list-templates?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.SynchronizationTemplateCollectionResponse"/></returns>
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Templates
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.SynchronizationTemplate>(requestInfo, global::Microsoft.Graph.Models.SynchronizationTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List the synchronization templates associated with a given application or service principal.
+        /// List synchronizationTemplate objects associated with a given application or service principal.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.ServicePrincipals.Item.Synchronization.Templates
             return new global::Microsoft.Graph.ServicePrincipals.Item.Synchronization.Templates.TemplatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List the synchronization templates associated with a given application or service principal.
+        /// List synchronizationTemplate objects associated with a given application or service principal.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TemplatesRequestBuilderGetQueryParameters 

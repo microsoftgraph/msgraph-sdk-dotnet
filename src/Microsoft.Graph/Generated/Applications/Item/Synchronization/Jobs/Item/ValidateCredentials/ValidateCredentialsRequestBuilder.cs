@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item.ValidateCr
         {
         }
         /// <summary>
-        /// Validate that the credentials are valid in the tenant.
+        /// Validate that the credentials are valid in the tenant for a synchronizationJob.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/synchronization-synchronizationjob-validatecredentials?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Applications.Item.Synchronization.Jobs.Item.ValidateCr
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Validate that the credentials are valid in the tenant.
+        /// Validate that the credentials are valid in the tenant for a synchronizationJob.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

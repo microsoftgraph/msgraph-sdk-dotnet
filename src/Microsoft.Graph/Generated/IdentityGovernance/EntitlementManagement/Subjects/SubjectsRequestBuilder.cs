@@ -54,7 +54,8 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Subjects
         {
         }
         /// <summary>
-        /// Get subjects from identityGovernance
+        /// Get the properties of an external directory user represented by an existing accessPackageSubject object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackagesubject-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.AccessPackageSubjectCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Subjects
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.AccessPackageSubject>(requestInfo, global::Microsoft.Graph.Models.AccessPackageSubject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get subjects from identityGovernance
+        /// Get the properties of an external directory user represented by an existing accessPackageSubject object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +153,7 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Subjects
             return new global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.Subjects.SubjectsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get subjects from identityGovernance
+        /// Get the properties of an external directory user represented by an existing accessPackageSubject object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SubjectsRequestBuilderGetQueryParameters 

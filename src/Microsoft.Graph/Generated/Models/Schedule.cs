@@ -274,7 +274,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("timesOff", value); }
         }
 #endif
-        /// <summary>Indicates the time zone of the schedule team using tz database format. Required.</summary>
+        /// <summary>The time zone of the schedule team as an IANA time zone database (tz database) name; for example, America/Chicago. For the full list of valid values, see List of tz database time zones. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TimeZone

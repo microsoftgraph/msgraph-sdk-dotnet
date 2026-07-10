@@ -28,6 +28,22 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             set { BackingStore?.Set("emailSettings", value); }
         }
 #endif
+        /// <summary>The tenant-level quarantine configuration that automatically halts a workflow when its threshold conditions are met. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.IdentityGovernance.QuarantineConfiguration? QuarantineConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.IdentityGovernance.QuarantineConfiguration?>("quarantineConfiguration"); }
+            set { BackingStore?.Set("quarantineConfiguration", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.IdentityGovernance.QuarantineConfiguration QuarantineConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.IdentityGovernance.QuarantineConfiguration>("quarantineConfiguration"); }
+            set { BackingStore?.Set("quarantineConfiguration", value); }
+        }
+#endif
         /// <summary>The interval in hours at which all workflows running in the tenant should be scheduled for execution. This interval has a minimum value of 1 and a maximum value of 24. The default value is 3 hours.</summary>
         public int? WorkflowScheduleIntervalInHours
         {
@@ -53,6 +69,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "emailSettings", n => { EmailSettings = n.GetObjectValue<global::Microsoft.Graph.Models.EmailSettings>(global::Microsoft.Graph.Models.EmailSettings.CreateFromDiscriminatorValue); } },
+                { "quarantineConfiguration", n => { QuarantineConfiguration = n.GetObjectValue<global::Microsoft.Graph.Models.IdentityGovernance.QuarantineConfiguration>(global::Microsoft.Graph.Models.IdentityGovernance.QuarantineConfiguration.CreateFromDiscriminatorValue); } },
                 { "workflowScheduleIntervalInHours", n => { WorkflowScheduleIntervalInHours = n.GetIntValue(); } },
             };
         }
@@ -65,6 +82,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.EmailSettings>("emailSettings", EmailSettings);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.IdentityGovernance.QuarantineConfiguration>("quarantineConfiguration", QuarantineConfiguration);
             writer.WriteIntValue("workflowScheduleIntervalInHours", WorkflowScheduleIntervalInHours);
         }
     }

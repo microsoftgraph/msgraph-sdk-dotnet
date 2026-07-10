@@ -541,7 +541,7 @@ namespace Microsoft.Graph.Me
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.User>(requestInfo, global::Microsoft.Graph.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a user object.
+        /// Update the properties of a user object. To use this API to update an agentUser, specify an @odata.type property with a value of #microsoft.graph.agentUser in the request body.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.User"/></returns>
@@ -598,7 +598,7 @@ namespace Microsoft.Graph.Me
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a user object.
+        /// Update the properties of a user object. To use this API to update an agentUser, specify an @odata.type property with a value of #microsoft.graph.agentUser in the request body.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
