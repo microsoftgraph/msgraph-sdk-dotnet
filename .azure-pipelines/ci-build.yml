@@ -62,11 +62,27 @@ extends:
             packageType: sdk
             version: 10.x
               
+        - task: NuGetAuthenticate@1
+          displayName: 'Authenticate to Azure Artifacts'
+
+        - pwsh: |
+            @"
+            <?xml version="1.0" encoding="utf-8"?>
+            <configuration>
+              <packageSources>
+                <clear />
+                <add key="GraphDeveloperExperiences_Public" value="https://microsoftgraph.pkgs.visualstudio.com/0985d294-5762-4bc2-a565-161ef349ca3e/_packaging/GraphDeveloperExperiences_Public/nuget/v3/index.json" />
+              </packageSources>
+            </configuration>
+            "@ | Set-Content -Path "$(Build.SourcesDirectory)/nuget.config" -Encoding UTF8
+          displayName: 'Create nuget.config (central feed)'
         - task: DotNetCoreCLI@2
           displayName: 'dotnet restore'
           inputs:
             command: restore
             projects: '**/*.csproj'
+            feedsToUse: "config"
+            nugetConfigPath: "$(Build.SourcesDirectory)/nuget.config"
         - powershell: |
             # This allows us to not have to checkin .csproj files with DelaySign and SignAssembly set to to true. If the flag is set,
             # then project is not debuggable with SignAssembly set to true.
