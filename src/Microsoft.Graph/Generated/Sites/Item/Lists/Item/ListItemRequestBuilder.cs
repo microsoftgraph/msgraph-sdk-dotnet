@@ -9,6 +9,7 @@ using Microsoft.Graph.Sites.Item.Lists.Item.Drive;
 using Microsoft.Graph.Sites.Item.Lists.Item.Items;
 using Microsoft.Graph.Sites.Item.Lists.Item.LastModifiedByUser;
 using Microsoft.Graph.Sites.Item.Lists.Item.Operations;
+using Microsoft.Graph.Sites.Item.Lists.Item.Permissions;
 using Microsoft.Graph.Sites.Item.Lists.Item.Subscriptions;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -60,6 +61,11 @@ namespace Microsoft.Graph.Sites.Item.Lists.Item
         public global::Microsoft.Graph.Sites.Item.Lists.Item.Operations.OperationsRequestBuilder Operations
         {
             get => new global::Microsoft.Graph.Sites.Item.Lists.Item.Operations.OperationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the permissions property of the microsoft.graph.list entity.</summary>
+        public global::Microsoft.Graph.Sites.Item.Lists.Item.Permissions.PermissionsRequestBuilder Permissions
+        {
+            get => new global::Microsoft.Graph.Sites.Item.Lists.Item.Permissions.PermissionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the subscriptions property of the microsoft.graph.list entity.</summary>
         public global::Microsoft.Graph.Sites.Item.Lists.Item.Subscriptions.SubscriptionsRequestBuilder Subscriptions

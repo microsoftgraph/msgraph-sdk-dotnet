@@ -9,6 +9,7 @@ using Microsoft.Graph.Drives.Item.List.Items.Item.Fields;
 using Microsoft.Graph.Drives.Item.List.Items.Item.GetActivitiesByInterval;
 using Microsoft.Graph.Drives.Item.List.Items.Item.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval;
 using Microsoft.Graph.Drives.Item.List.Items.Item.LastModifiedByUser;
+using Microsoft.Graph.Drives.Item.List.Items.Item.Permissions;
 using Microsoft.Graph.Drives.Item.List.Items.Item.Versions;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
@@ -67,6 +68,11 @@ namespace Microsoft.Graph.Drives.Item.List.Items.Item
         public global::Microsoft.Graph.Drives.Item.List.Items.Item.LastModifiedByUser.LastModifiedByUserRequestBuilder LastModifiedByUser
         {
             get => new global::Microsoft.Graph.Drives.Item.List.Items.Item.LastModifiedByUser.LastModifiedByUserRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the permissions property of the microsoft.graph.listItem entity.</summary>
+        public global::Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.PermissionsRequestBuilder Permissions
+        {
+            get => new global::Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.PermissionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the versions property of the microsoft.graph.listItem entity.</summary>
         public global::Microsoft.Graph.Drives.Item.List.Items.Item.Versions.VersionsRequestBuilder Versions

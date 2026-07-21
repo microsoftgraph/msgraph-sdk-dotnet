@@ -7,6 +7,7 @@ using Microsoft.Graph.Drives.Item.List.Drive;
 using Microsoft.Graph.Drives.Item.List.Items;
 using Microsoft.Graph.Drives.Item.List.LastModifiedByUser;
 using Microsoft.Graph.Drives.Item.List.Operations;
+using Microsoft.Graph.Drives.Item.List.Permissions;
 using Microsoft.Graph.Drives.Item.List.Subscriptions;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
@@ -60,6 +61,11 @@ namespace Microsoft.Graph.Drives.Item.List
         public global::Microsoft.Graph.Drives.Item.List.Operations.OperationsRequestBuilder Operations
         {
             get => new global::Microsoft.Graph.Drives.Item.List.Operations.OperationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the permissions property of the microsoft.graph.list entity.</summary>
+        public global::Microsoft.Graph.Drives.Item.List.Permissions.PermissionsRequestBuilder Permissions
+        {
+            get => new global::Microsoft.Graph.Drives.Item.List.Permissions.PermissionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the subscriptions property of the microsoft.graph.list entity.</summary>
         public global::Microsoft.Graph.Drives.Item.List.Subscriptions.SubscriptionsRequestBuilder Subscriptions

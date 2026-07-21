@@ -257,6 +257,7 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.cloudPcProvisioningPolicy" => new global::Microsoft.Graph.Models.CloudPcProvisioningPolicy(),
                 "#microsoft.graph.cloudPcProvisioningPolicyAssignment" => new global::Microsoft.Graph.Models.CloudPcProvisioningPolicyAssignment(),
                 "#microsoft.graph.cloudPcReport" => new global::Microsoft.Graph.Models.CloudPcReport(),
+                "#microsoft.graph.cloudPcServicePlan" => new global::Microsoft.Graph.Models.CloudPcServicePlan(),
                 "#microsoft.graph.cloudPcUserSetting" => new global::Microsoft.Graph.Models.CloudPcUserSetting(),
                 "#microsoft.graph.cloudPcUserSettingAssignment" => new global::Microsoft.Graph.Models.CloudPcUserSettingAssignment(),
                 "#microsoft.graph.columnDefinition" => new global::Microsoft.Graph.Models.ColumnDefinition(),
