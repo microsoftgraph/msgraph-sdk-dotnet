@@ -124,6 +124,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("report", value); }
         }
 #endif
+        /// <summary>A collection of Cloud PC service plans.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.CloudPcServicePlan>? ServicePlans
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.CloudPcServicePlan>?>("servicePlans"); }
+            set { BackingStore?.Set("servicePlans", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.CloudPcServicePlan> ServicePlans
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.CloudPcServicePlan>>("servicePlans"); }
+            set { BackingStore?.Set("servicePlans", value); }
+        }
+#endif
         /// <summary>A collection of Cloud PC user settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -165,6 +181,7 @@ namespace Microsoft.Graph.Models
                 { "onPremisesConnections", n => { OnPremisesConnections = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.CloudPcOnPremisesConnection>(global::Microsoft.Graph.Models.CloudPcOnPremisesConnection.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "provisioningPolicies", n => { ProvisioningPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.CloudPcProvisioningPolicy>(global::Microsoft.Graph.Models.CloudPcProvisioningPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "report", n => { Report = n.GetObjectValue<global::Microsoft.Graph.Models.CloudPcReport>(global::Microsoft.Graph.Models.CloudPcReport.CreateFromDiscriminatorValue); } },
+                { "servicePlans", n => { ServicePlans = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.CloudPcServicePlan>(global::Microsoft.Graph.Models.CloudPcServicePlan.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "userSettings", n => { UserSettings = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.CloudPcUserSetting>(global::Microsoft.Graph.Models.CloudPcUserSetting.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -183,6 +200,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.CloudPcOnPremisesConnection>("onPremisesConnections", OnPremisesConnections);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.CloudPcProvisioningPolicy>("provisioningPolicies", ProvisioningPolicies);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.CloudPcReport>("report", Report);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.CloudPcServicePlan>("servicePlans", ServicePlans);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.CloudPcUserSetting>("userSettings", UserSettings);
         }
     }

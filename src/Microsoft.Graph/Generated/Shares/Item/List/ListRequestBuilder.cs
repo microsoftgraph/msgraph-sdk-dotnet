@@ -9,6 +9,7 @@ using Microsoft.Graph.Shares.Item.List.Drive;
 using Microsoft.Graph.Shares.Item.List.Items;
 using Microsoft.Graph.Shares.Item.List.LastModifiedByUser;
 using Microsoft.Graph.Shares.Item.List.Operations;
+using Microsoft.Graph.Shares.Item.List.Permissions;
 using Microsoft.Graph.Shares.Item.List.Subscriptions;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -60,6 +61,11 @@ namespace Microsoft.Graph.Shares.Item.List
         public global::Microsoft.Graph.Shares.Item.List.Operations.OperationsRequestBuilder Operations
         {
             get => new global::Microsoft.Graph.Shares.Item.List.Operations.OperationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the permissions property of the microsoft.graph.list entity.</summary>
+        public global::Microsoft.Graph.Shares.Item.List.Permissions.PermissionsRequestBuilder Permissions
+        {
+            get => new global::Microsoft.Graph.Shares.Item.List.Permissions.PermissionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the subscriptions property of the microsoft.graph.list entity.</summary>
         public global::Microsoft.Graph.Shares.Item.List.Subscriptions.SubscriptionsRequestBuilder Subscriptions

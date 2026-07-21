@@ -108,6 +108,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("fields", value); }
         }
 #endif
+        /// <summary>The permissions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.Permission>? Permissions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Permission>?>("permissions"); }
+            set { BackingStore?.Set("permissions", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.Permission> Permissions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Permission>>("permissions"); }
+            set { BackingStore?.Set("permissions", value); }
+        }
+#endif
         /// <summary>Returns identifiers useful for SharePoint REST compatibility. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -171,6 +187,7 @@ namespace Microsoft.Graph.Models
                 { "documentSetVersions", n => { DocumentSetVersions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DocumentSetVersion>(global::Microsoft.Graph.Models.DocumentSetVersion.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "driveItem", n => { DriveItem = n.GetObjectValue<global::Microsoft.Graph.Models.DriveItem>(global::Microsoft.Graph.Models.DriveItem.CreateFromDiscriminatorValue); } },
                 { "fields", n => { Fields = n.GetObjectValue<global::Microsoft.Graph.Models.FieldValueSet>(global::Microsoft.Graph.Models.FieldValueSet.CreateFromDiscriminatorValue); } },
+                { "permissions", n => { Permissions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Permission>(global::Microsoft.Graph.Models.Permission.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sharepointIds", n => { SharepointIds = n.GetObjectValue<global::Microsoft.Graph.Models.SharepointIds>(global::Microsoft.Graph.Models.SharepointIds.CreateFromDiscriminatorValue); } },
                 { "versions", n => { Versions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ListItemVersion>(global::Microsoft.Graph.Models.ListItemVersion.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -189,6 +206,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DocumentSetVersion>("documentSetVersions", DocumentSetVersions);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.DriveItem>("driveItem", DriveItem);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.FieldValueSet>("fields", Fields);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Permission>("permissions", Permissions);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.SharepointIds>("sharepointIds", SharepointIds);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ListItemVersion>("versions", Versions);
         }

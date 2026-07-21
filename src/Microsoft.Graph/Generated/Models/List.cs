@@ -124,6 +124,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("operations", value); }
         }
 #endif
+        /// <summary>The permissions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.Permission>? Permissions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Permission>?>("permissions"); }
+            set { BackingStore?.Set("permissions", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.Permission> Permissions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Permission>>("permissions"); }
+            set { BackingStore?.Set("permissions", value); }
+        }
+#endif
         /// <summary>Returns identifiers useful for SharePoint REST compatibility. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -204,6 +220,7 @@ namespace Microsoft.Graph.Models
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ListItem>(global::Microsoft.Graph.Models.ListItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "list", n => { ListProp = n.GetObjectValue<global::Microsoft.Graph.Models.ListInfo>(global::Microsoft.Graph.Models.ListInfo.CreateFromDiscriminatorValue); } },
                 { "operations", n => { Operations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.RichLongRunningOperation>(global::Microsoft.Graph.Models.RichLongRunningOperation.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "permissions", n => { Permissions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Permission>(global::Microsoft.Graph.Models.Permission.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sharepointIds", n => { SharepointIds = n.GetObjectValue<global::Microsoft.Graph.Models.SharepointIds>(global::Microsoft.Graph.Models.SharepointIds.CreateFromDiscriminatorValue); } },
                 { "subscriptions", n => { Subscriptions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Subscription>(global::Microsoft.Graph.Models.Subscription.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "system", n => { System = n.GetObjectValue<global::Microsoft.Graph.Models.SystemFacet>(global::Microsoft.Graph.Models.SystemFacet.CreateFromDiscriminatorValue); } },
@@ -224,6 +241,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ListItem>("items", Items);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ListInfo>("list", ListProp);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.RichLongRunningOperation>("operations", Operations);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Permission>("permissions", Permissions);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.SharepointIds>("sharepointIds", SharepointIds);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Subscription>("subscriptions", Subscriptions);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.SystemFacet>("system", System);

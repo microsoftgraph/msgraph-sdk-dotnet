@@ -82,22 +82,6 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("nickname", value); }
         }
 #endif
-        /// <summary>An alternative immutable unique identifier of the workspace. Read-only.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PlaceId
-        {
-            get { return BackingStore?.Get<string?>("placeId"); }
-            set { BackingStore?.Set("placeId", value); }
-        }
-#nullable restore
-#else
-        public string PlaceId
-        {
-            get { return BackingStore?.Get<string>("placeId"); }
-            set { BackingStore?.Set("placeId", value); }
-        }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Models.Workspace"/> and sets the default values.
         /// </summary>
@@ -128,7 +112,6 @@ namespace Microsoft.Graph.Models
                 { "emailAddress", n => { EmailAddress = n.GetStringValue(); } },
                 { "mode", n => { Mode = n.GetObjectValue<global::Microsoft.Graph.Models.PlaceMode>(global::Microsoft.Graph.Models.PlaceMode.CreateFromDiscriminatorValue); } },
                 { "nickname", n => { Nickname = n.GetStringValue(); } },
-                { "placeId", n => { PlaceId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -144,7 +127,6 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("emailAddress", EmailAddress);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.PlaceMode>("mode", Mode);
             writer.WriteStringValue("nickname", Nickname);
-            writer.WriteStringValue("placeId", PlaceId);
         }
     }
 }
