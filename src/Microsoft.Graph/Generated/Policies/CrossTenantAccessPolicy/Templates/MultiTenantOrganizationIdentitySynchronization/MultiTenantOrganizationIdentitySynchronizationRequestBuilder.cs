@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Graph.Policies.CrossTenantAccessPolicy.Templates.MultiTenantOrganizationIdentitySynchronization.ResetToDefaultSettings;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -18,6 +19,11 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Templates.MultiTenant
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MultiTenantOrganizationIdentitySynchronizationRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to call the resetToDefaultSettings method.</summary>
+        public global::Microsoft.Graph.Policies.CrossTenantAccessPolicy.Templates.MultiTenantOrganizationIdentitySynchronization.ResetToDefaultSettings.ResetToDefaultSettingsRequestBuilder ResetToDefaultSettings
+        {
+            get => new global::Microsoft.Graph.Policies.CrossTenantAccessPolicy.Templates.MultiTenantOrganizationIdentitySynchronization.ResetToDefaultSettings.ResetToDefaultSettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Policies.CrossTenantAccessPolicy.Templates.MultiTenantOrganizationIdentitySynchronization.MultiTenantOrganizationIdentitySynchronizationRequestBuilder"/> and sets the default values.
         /// </summary>

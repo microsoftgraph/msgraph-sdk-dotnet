@@ -1846,6 +1846,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("solutions", value); }
         }
 #endif
+        /// <summary>Directory objects that this user sponsors, such as guest users, agent users, agent blueprints, agent blueprint principals, and agent identities. If the user is a member of a group that&apos;s a sponsor, the objects sponsored by that group are also included. Read-only. Nullable. Supports $filter, $count, $select, $expand, $top, and $skip.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.DirectoryObject>? SponsorOf
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.DirectoryObject>?>("sponsorOf"); }
+            set { BackingStore?.Set("sponsorOf", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.DirectoryObject> SponsorOf
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.DirectoryObject>>("sponsorOf"); }
+            set { BackingStore?.Set("sponsorOf", value); }
+        }
+#endif
         /// <summary>The users and groups responsible for this guest&apos;s privileges in the tenant and keeping the guest&apos;s information and access updated. (HTTP Methods: GET, POST, DELETE.). Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -2160,6 +2176,7 @@ namespace Microsoft.Graph.Models
                 { "signInSessionsValidFromDateTime", n => { SignInSessionsValidFromDateTime = n.GetDateTimeOffsetValue(); } },
                 { "skills", n => { Skills = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "solutions", n => { Solutions = n.GetObjectValue<global::Microsoft.Graph.Models.UserSolutionRoot>(global::Microsoft.Graph.Models.UserSolutionRoot.CreateFromDiscriminatorValue); } },
+                { "sponsorOf", n => { SponsorOf = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DirectoryObject>(global::Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sponsors", n => { Sponsors = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DirectoryObject>(global::Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "state", n => { State = n.GetStringValue(); } },
                 { "streetAddress", n => { StreetAddress = n.GetStringValue(); } },
@@ -2304,6 +2321,7 @@ namespace Microsoft.Graph.Models
             writer.WriteDateTimeOffsetValue("signInSessionsValidFromDateTime", SignInSessionsValidFromDateTime);
             writer.WriteCollectionOfPrimitiveValues<string>("skills", Skills);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.UserSolutionRoot>("solutions", Solutions);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DirectoryObject>("sponsorOf", SponsorOf);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DirectoryObject>("sponsors", Sponsors);
             writer.WriteStringValue("state", State);
             writer.WriteStringValue("streetAddress", StreetAddress);

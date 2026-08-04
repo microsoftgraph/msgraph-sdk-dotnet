@@ -12,18 +12,6 @@ namespace Microsoft.Graph.Models
     public partial class VirtualEventWebinarRegistrationConfiguration : global::Microsoft.Graph.Models.VirtualEventRegistrationConfiguration, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The isManualApprovalEnabled property</summary>
-        public bool? IsManualApprovalEnabled
-        {
-            get { return BackingStore?.Get<bool?>("isManualApprovalEnabled"); }
-            set { BackingStore?.Set("isManualApprovalEnabled", value); }
-        }
-        /// <summary>The isWaitlistEnabled property</summary>
-        public bool? IsWaitlistEnabled
-        {
-            get { return BackingStore?.Get<bool?>("isWaitlistEnabled"); }
-            set { BackingStore?.Set("isWaitlistEnabled", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -42,8 +30,6 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "isManualApprovalEnabled", n => { IsManualApprovalEnabled = n.GetBoolValue(); } },
-                { "isWaitlistEnabled", n => { IsWaitlistEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -54,8 +40,6 @@ namespace Microsoft.Graph.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteBoolValue("isManualApprovalEnabled", IsManualApprovalEnabled);
-            writer.WriteBoolValue("isWaitlistEnabled", IsWaitlistEnabled);
         }
     }
 }

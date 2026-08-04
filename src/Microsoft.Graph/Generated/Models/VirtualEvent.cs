@@ -92,6 +92,12 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("externalEventInformation", value); }
         }
 #endif
+        /// <summary>Indicates whether attendee registration is enabled for the virtual event.</summary>
+        public bool? IsRegistrationRequired
+        {
+            get { return BackingStore?.Get<bool?>("isRegistrationRequired"); }
+            set { BackingStore?.Set("isRegistrationRequired", value); }
+        }
         /// <summary>The virtual event presenters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -191,6 +197,7 @@ namespace Microsoft.Graph.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "endDateTime", n => { EndDateTime = n.GetObjectValue<global::Microsoft.Graph.Models.DateTimeTimeZone>(global::Microsoft.Graph.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 { "externalEventInformation", n => { ExternalEventInformation = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.VirtualEventExternalInformation>(global::Microsoft.Graph.Models.VirtualEventExternalInformation.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "isRegistrationRequired", n => { IsRegistrationRequired = n.GetBoolValue(); } },
                 { "presenters", n => { Presenters = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.VirtualEventPresenter>(global::Microsoft.Graph.Models.VirtualEventPresenter.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sessions", n => { Sessions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.VirtualEventSession>(global::Microsoft.Graph.Models.VirtualEventSession.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Models.VirtualEventSettings>(global::Microsoft.Graph.Models.VirtualEventSettings.CreateFromDiscriminatorValue); } },
@@ -211,6 +218,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.DateTimeTimeZone>("endDateTime", EndDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.VirtualEventExternalInformation>("externalEventInformation", ExternalEventInformation);
+            writer.WriteBoolValue("isRegistrationRequired", IsRegistrationRequired);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.VirtualEventPresenter>("presenters", Presenters);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.VirtualEventSession>("sessions", Sessions);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.VirtualEventSettings>("settings", Settings);

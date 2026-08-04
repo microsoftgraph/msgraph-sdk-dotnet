@@ -53,6 +53,22 @@ namespace Microsoft.Graph.Models.IdentityGovernance
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The catalogs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.AccessPackageCatalog>? Catalogs
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.AccessPackageCatalog>?>("catalogs"); }
+            set { BackingStore?.Set("catalogs", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.AccessPackageCatalog> Catalogs
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.AccessPackageCatalog>>("catalogs"); }
+            set { BackingStore?.Set("catalogs", value); }
+        }
+#endif
         /// <summary>The entitlementManagement property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -161,6 +177,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             {
                 { "accessReviews", n => { AccessReviews = n.GetObjectValue<global::Microsoft.Graph.Models.AccessReviewSet>(global::Microsoft.Graph.Models.AccessReviewSet.CreateFromDiscriminatorValue); } },
                 { "appConsent", n => { AppConsent = n.GetObjectValue<global::Microsoft.Graph.Models.AppConsentApprovalRoute>(global::Microsoft.Graph.Models.AppConsentApprovalRoute.CreateFromDiscriminatorValue); } },
+                { "catalogs", n => { Catalogs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageCatalog>(global::Microsoft.Graph.Models.AccessPackageCatalog.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "entitlementManagement", n => { EntitlementManagement = n.GetObjectValue<global::Microsoft.Graph.Models.EntitlementManagement>(global::Microsoft.Graph.Models.EntitlementManagement.CreateFromDiscriminatorValue); } },
                 { "lifecycleWorkflows", n => { LifecycleWorkflows = n.GetObjectValue<global::Microsoft.Graph.Models.IdentityGovernance.LifecycleWorkflowsContainer>(global::Microsoft.Graph.Models.IdentityGovernance.LifecycleWorkflowsContainer.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -177,6 +194,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Microsoft.Graph.Models.AccessReviewSet>("accessReviews", AccessReviews);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.AppConsentApprovalRoute>("appConsent", AppConsent);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageCatalog>("catalogs", Catalogs);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.EntitlementManagement>("entitlementManagement", EntitlementManagement);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.IdentityGovernance.LifecycleWorkflowsContainer>("lifecycleWorkflows", LifecycleWorkflows);
             writer.WriteStringValue("@odata.type", OdataType);

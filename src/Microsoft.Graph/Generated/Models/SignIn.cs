@@ -60,6 +60,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("appliedConditionalAccessPolicies", value); }
         }
 #endif
+        /// <summary>The authenticationAppDeviceDetails property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.AuthenticationAppDeviceDetails? AuthenticationAppDeviceDetails
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.AuthenticationAppDeviceDetails?>("authenticationAppDeviceDetails"); }
+            set { BackingStore?.Set("authenticationAppDeviceDetails", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.AuthenticationAppDeviceDetails AuthenticationAppDeviceDetails
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.AuthenticationAppDeviceDetails>("authenticationAppDeviceDetails"); }
+            set { BackingStore?.Set("authenticationAppDeviceDetails", value); }
+        }
+#endif
         /// <summary>Identifies the client used for the sign-in activity. Modern authentication clients include Browser, modern clients. Legacy authentication clients include Exchange ActiveSync, IMAP, MAPI, SMTP, POP, and other clients.  Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -118,6 +134,22 @@ namespace Microsoft.Graph.Models
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.DeviceDetail>("deviceDetail"); }
             set { BackingStore?.Set("deviceDetail", value); }
+        }
+#endif
+        /// <summary>The homeTenantId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? HomeTenantId
+        {
+            get { return BackingStore?.Get<string?>("homeTenantId"); }
+            set { BackingStore?.Set("homeTenantId", value); }
+        }
+#nullable restore
+#else
+        public string HomeTenantId
+        {
+            get { return BackingStore?.Get<string>("homeTenantId"); }
+            set { BackingStore?.Set("homeTenantId", value); }
         }
 #endif
         /// <summary>IP address of the client used to sign in.  Supports $filter (eq, startsWith).</summary>
@@ -190,6 +222,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("resourceId", value); }
         }
 #endif
+        /// <summary>The resourceTenantId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ResourceTenantId
+        {
+            get { return BackingStore?.Get<string?>("resourceTenantId"); }
+            set { BackingStore?.Set("resourceTenantId", value); }
+        }
+#nullable restore
+#else
+        public string ResourceTenantId
+        {
+            get { return BackingStore?.Get<string>("resourceTenantId"); }
+            set { BackingStore?.Set("resourceTenantId", value); }
+        }
+#endif
         /// <summary>The reason behind a specific state of a risky user, sign-in, or a risk event. The value none means that Microsoft Entra risk detection did not flag the user or the sign-in as a risky event so far.  Supports $filter (eq). Note: Details for this property are only available for Microsoft Entra ID P2 customers. All other customers are returned hidden.</summary>
         public global::Microsoft.Graph.Models.RiskDetail? RiskDetail
         {
@@ -246,6 +294,38 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.RiskState?>("riskState"); }
             set { BackingStore?.Set("riskState", value); }
         }
+        /// <summary>The servicePrincipalId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ServicePrincipalId
+        {
+            get { return BackingStore?.Get<string?>("servicePrincipalId"); }
+            set { BackingStore?.Set("servicePrincipalId", value); }
+        }
+#nullable restore
+#else
+        public string ServicePrincipalId
+        {
+            get { return BackingStore?.Get<string>("servicePrincipalId"); }
+            set { BackingStore?.Set("servicePrincipalId", value); }
+        }
+#endif
+        /// <summary>The servicePrincipalName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ServicePrincipalName
+        {
+            get { return BackingStore?.Get<string?>("servicePrincipalName"); }
+            set { BackingStore?.Set("servicePrincipalName", value); }
+        }
+#nullable restore
+#else
+        public string ServicePrincipalName
+        {
+            get { return BackingStore?.Get<string>("servicePrincipalName"); }
+            set { BackingStore?.Set("servicePrincipalName", value); }
+        }
+#endif
         /// <summary>Sign-in status. Includes the error code and description of the error (if a sign-in failure occurs).  Supports $filter (eq) on errorCode property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -260,6 +340,22 @@ namespace Microsoft.Graph.Models
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.SignInStatus>("status"); }
             set { BackingStore?.Set("status", value); }
+        }
+#endif
+        /// <summary>The userAgent property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UserAgent
+        {
+            get { return BackingStore?.Get<string?>("userAgent"); }
+            set { BackingStore?.Set("userAgent", value); }
+        }
+#nullable restore
+#else
+        public string UserAgent
+        {
+            get { return BackingStore?.Get<string>("userAgent"); }
+            set { BackingStore?.Set("userAgent", value); }
         }
 #endif
         /// <summary>Display name of the user that initiated the sign-in.  Supports $filter (eq, startsWith).</summary>
@@ -331,23 +427,29 @@ namespace Microsoft.Graph.Models
                 { "appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
                 { "appId", n => { AppId = n.GetStringValue(); } },
                 { "appliedConditionalAccessPolicies", n => { AppliedConditionalAccessPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AppliedConditionalAccessPolicy>(global::Microsoft.Graph.Models.AppliedConditionalAccessPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "authenticationAppDeviceDetails", n => { AuthenticationAppDeviceDetails = n.GetObjectValue<global::Microsoft.Graph.Models.AuthenticationAppDeviceDetails>(global::Microsoft.Graph.Models.AuthenticationAppDeviceDetails.CreateFromDiscriminatorValue); } },
                 { "clientAppUsed", n => { ClientAppUsed = n.GetStringValue(); } },
                 { "conditionalAccessStatus", n => { ConditionalAccessStatus = n.GetEnumValue<global::Microsoft.Graph.Models.ConditionalAccessStatus>(); } },
                 { "correlationId", n => { CorrelationId = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "deviceDetail", n => { DeviceDetail = n.GetObjectValue<global::Microsoft.Graph.Models.DeviceDetail>(global::Microsoft.Graph.Models.DeviceDetail.CreateFromDiscriminatorValue); } },
+                { "homeTenantId", n => { HomeTenantId = n.GetStringValue(); } },
                 { "ipAddress", n => { IpAddress = n.GetStringValue(); } },
                 { "isInteractive", n => { IsInteractive = n.GetBoolValue(); } },
                 { "location", n => { Location = n.GetObjectValue<global::Microsoft.Graph.Models.SignInLocation>(global::Microsoft.Graph.Models.SignInLocation.CreateFromDiscriminatorValue); } },
                 { "resourceDisplayName", n => { ResourceDisplayName = n.GetStringValue(); } },
                 { "resourceId", n => { ResourceId = n.GetStringValue(); } },
+                { "resourceTenantId", n => { ResourceTenantId = n.GetStringValue(); } },
                 { "riskDetail", n => { RiskDetail = n.GetEnumValue<global::Microsoft.Graph.Models.RiskDetail>(); } },
                 { "riskEventTypes", n => { RiskEventTypes = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Models.RiskEventType>()?.AsList(); } },
                 { "riskEventTypes_v2", n => { RiskEventTypesV2 = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "riskLevelAggregated", n => { RiskLevelAggregated = n.GetEnumValue<global::Microsoft.Graph.Models.RiskLevel>(); } },
                 { "riskLevelDuringSignIn", n => { RiskLevelDuringSignIn = n.GetEnumValue<global::Microsoft.Graph.Models.RiskLevel>(); } },
                 { "riskState", n => { RiskState = n.GetEnumValue<global::Microsoft.Graph.Models.RiskState>(); } },
+                { "servicePrincipalId", n => { ServicePrincipalId = n.GetStringValue(); } },
+                { "servicePrincipalName", n => { ServicePrincipalName = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetObjectValue<global::Microsoft.Graph.Models.SignInStatus>(global::Microsoft.Graph.Models.SignInStatus.CreateFromDiscriminatorValue); } },
+                { "userAgent", n => { UserAgent = n.GetStringValue(); } },
                 { "userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
@@ -364,23 +466,29 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("appDisplayName", AppDisplayName);
             writer.WriteStringValue("appId", AppId);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AppliedConditionalAccessPolicy>("appliedConditionalAccessPolicies", AppliedConditionalAccessPolicies);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.AuthenticationAppDeviceDetails>("authenticationAppDeviceDetails", AuthenticationAppDeviceDetails);
             writer.WriteStringValue("clientAppUsed", ClientAppUsed);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.ConditionalAccessStatus>("conditionalAccessStatus", ConditionalAccessStatus);
             writer.WriteStringValue("correlationId", CorrelationId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.DeviceDetail>("deviceDetail", DeviceDetail);
+            writer.WriteStringValue("homeTenantId", HomeTenantId);
             writer.WriteStringValue("ipAddress", IpAddress);
             writer.WriteBoolValue("isInteractive", IsInteractive);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.SignInLocation>("location", Location);
             writer.WriteStringValue("resourceDisplayName", ResourceDisplayName);
             writer.WriteStringValue("resourceId", ResourceId);
+            writer.WriteStringValue("resourceTenantId", ResourceTenantId);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.RiskDetail>("riskDetail", RiskDetail);
             writer.WriteCollectionOfEnumValues<global::Microsoft.Graph.Models.RiskEventType>("riskEventTypes", RiskEventTypes);
             writer.WriteCollectionOfPrimitiveValues<string>("riskEventTypes_v2", RiskEventTypesV2);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.RiskLevel>("riskLevelAggregated", RiskLevelAggregated);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.RiskLevel>("riskLevelDuringSignIn", RiskLevelDuringSignIn);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.RiskState>("riskState", RiskState);
+            writer.WriteStringValue("servicePrincipalId", ServicePrincipalId);
+            writer.WriteStringValue("servicePrincipalName", ServicePrincipalName);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.SignInStatus>("status", Status);
+            writer.WriteStringValue("userAgent", UserAgent);
             writer.WriteStringValue("userDisplayName", UserDisplayName);
             writer.WriteStringValue("userId", UserId);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);

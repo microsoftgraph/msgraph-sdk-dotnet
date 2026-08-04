@@ -18,6 +18,18 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<int?>("capacity"); }
             set { BackingStore?.Set("capacity", value); }
         }
+        /// <summary>Indicates whether registrations require organizer approval before a participant is confirmed.</summary>
+        public bool? IsManualApprovalEnabled
+        {
+            get { return BackingStore?.Get<bool?>("isManualApprovalEnabled"); }
+            set { BackingStore?.Set("isManualApprovalEnabled", value); }
+        }
+        /// <summary>Indicates whether more registrants are automatically placed on a waitlist when capacity is reached.</summary>
+        public bool? IsWaitlistEnabled
+        {
+            get { return BackingStore?.Get<bool?>("isWaitlistEnabled"); }
+            set { BackingStore?.Set("isWaitlistEnabled", value); }
+        }
         /// <summary>Registration questions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,6 +73,7 @@ namespace Microsoft.Graph.Models
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.virtualEventTownhallRegistrationConfiguration" => new global::Microsoft.Graph.Models.VirtualEventTownhallRegistrationConfiguration(),
                 "#microsoft.graph.virtualEventWebinarRegistrationConfiguration" => new global::Microsoft.Graph.Models.VirtualEventWebinarRegistrationConfiguration(),
                 _ => new global::Microsoft.Graph.Models.VirtualEventRegistrationConfiguration(),
             };
@@ -74,6 +87,8 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "capacity", n => { Capacity = n.GetIntValue(); } },
+                { "isManualApprovalEnabled", n => { IsManualApprovalEnabled = n.GetBoolValue(); } },
+                { "isWaitlistEnabled", n => { IsWaitlistEnabled = n.GetBoolValue(); } },
                 { "questions", n => { Questions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.VirtualEventRegistrationQuestionBase>(global::Microsoft.Graph.Models.VirtualEventRegistrationQuestionBase.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "registrationWebUrl", n => { RegistrationWebUrl = n.GetStringValue(); } },
             };
@@ -87,6 +102,8 @@ namespace Microsoft.Graph.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteIntValue("capacity", Capacity);
+            writer.WriteBoolValue("isManualApprovalEnabled", IsManualApprovalEnabled);
+            writer.WriteBoolValue("isWaitlistEnabled", IsWaitlistEnabled);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.VirtualEventRegistrationQuestionBase>("questions", Questions);
             writer.WriteStringValue("registrationWebUrl", RegistrationWebUrl);
         }

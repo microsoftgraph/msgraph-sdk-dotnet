@@ -652,6 +652,22 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("onPremisesSyncEnabled"); }
             set { BackingStore?.Set("onPremisesSyncEnabled", value); }
         }
+        /// <summary>The organizationId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OrganizationId
+        {
+            get { return BackingStore?.Get<string?>("organizationId"); }
+            set { BackingStore?.Set("organizationId", value); }
+        }
+#nullable restore
+#else
+        public string OrganizationId
+        {
+            get { return BackingStore?.Get<string>("organizationId"); }
+            set { BackingStore?.Set("organizationId", value); }
+        }
+#endif
         /// <summary>The owners of the group who can be users or service principals. Limited to 100 owners. Nullable. If this property isn&apos;t specified when creating a Microsoft 365 group the calling user (admin or non-admin) is automatically assigned as the group owner. A non-admin user can&apos;t explicitly add themselves to this collection when they&apos;re creating the group. For more information, see the related known issue. For security groups, the admin user isn&apos;t automatically added to this collection. For more information, see the related known issue. Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1); Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,&apos;Role&apos;)&amp;$select=id,displayName&amp;$expand=owners($select=id,userPrincipalName,displayName).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1115,6 +1131,7 @@ namespace Microsoft.Graph.Models
                 { "onPremisesSyncBehavior", n => { OnPremisesSyncBehavior = n.GetObjectValue<global::Microsoft.Graph.Models.OnPremisesSyncBehavior>(global::Microsoft.Graph.Models.OnPremisesSyncBehavior.CreateFromDiscriminatorValue); } },
                 { "onPremisesSyncEnabled", n => { OnPremisesSyncEnabled = n.GetBoolValue(); } },
                 { "onenote", n => { Onenote = n.GetObjectValue<global::Microsoft.Graph.Models.Onenote>(global::Microsoft.Graph.Models.Onenote.CreateFromDiscriminatorValue); } },
+                { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
                 { "owners", n => { Owners = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DirectoryObject>(global::Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "permissionGrants", n => { PermissionGrants = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ResourceSpecificPermissionGrant>(global::Microsoft.Graph.Models.ResourceSpecificPermissionGrant.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "photo", n => { Photo = n.GetObjectValue<global::Microsoft.Graph.Models.ProfilePhoto>(global::Microsoft.Graph.Models.ProfilePhoto.CreateFromDiscriminatorValue); } },
@@ -1203,6 +1220,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("onPremisesSecurityIdentifier", OnPremisesSecurityIdentifier);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.OnPremisesSyncBehavior>("onPremisesSyncBehavior", OnPremisesSyncBehavior);
             writer.WriteBoolValue("onPremisesSyncEnabled", OnPremisesSyncEnabled);
+            writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DirectoryObject>("owners", Owners);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ResourceSpecificPermissionGrant>("permissionGrants", PermissionGrants);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ProfilePhoto>("photo", Photo);
