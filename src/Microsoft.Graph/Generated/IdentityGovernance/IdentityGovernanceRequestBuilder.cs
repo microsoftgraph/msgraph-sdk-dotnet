@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.IdentityGovernance.AccessReviews;
 using Microsoft.Graph.IdentityGovernance.AppConsent;
+using Microsoft.Graph.IdentityGovernance.Catalogs;
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement;
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows;
 using Microsoft.Graph.IdentityGovernance.PrivilegedAccess;
@@ -33,6 +34,11 @@ namespace Microsoft.Graph.IdentityGovernance
         public global::Microsoft.Graph.IdentityGovernance.AppConsent.AppConsentRequestBuilder AppConsent
         {
             get => new global::Microsoft.Graph.IdentityGovernance.AppConsent.AppConsentRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the catalogs property of the microsoft.graph.identityGovernance entity.</summary>
+        public global::Microsoft.Graph.IdentityGovernance.Catalogs.CatalogsRequestBuilder Catalogs
+        {
+            get => new global::Microsoft.Graph.IdentityGovernance.Catalogs.CatalogsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the entitlementManagement property of the microsoft.graph.identityGovernance entity.</summary>
         public global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.EntitlementManagementRequestBuilder EntitlementManagement

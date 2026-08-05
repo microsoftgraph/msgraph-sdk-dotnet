@@ -76,6 +76,7 @@ using Microsoft.Graph.Users.Item.SendMail;
 using Microsoft.Graph.Users.Item.ServiceProvisioningErrors;
 using Microsoft.Graph.Users.Item.Settings;
 using Microsoft.Graph.Users.Item.Solutions;
+using Microsoft.Graph.Users.Item.SponsorOf;
 using Microsoft.Graph.Users.Item.Sponsors;
 using Microsoft.Graph.Users.Item.Teamwork;
 using Microsoft.Graph.Users.Item.Todo;
@@ -457,6 +458,11 @@ namespace Microsoft.Graph.Users.Item
         public global::Microsoft.Graph.Users.Item.Solutions.SolutionsRequestBuilder Solutions
         {
             get => new global::Microsoft.Graph.Users.Item.Solutions.SolutionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the sponsorOf property of the microsoft.graph.user entity.</summary>
+        public global::Microsoft.Graph.Users.Item.SponsorOf.SponsorOfRequestBuilder SponsorOf
+        {
+            get => new global::Microsoft.Graph.Users.Item.SponsorOf.SponsorOfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sponsors property of the microsoft.graph.user entity.</summary>
         public global::Microsoft.Graph.Users.Item.Sponsors.SponsorsRequestBuilder Sponsors

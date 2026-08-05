@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceEnvironments.Item.Resources.Item.Roles.Item.Resource.Scopes.Item.Resource.EnvironmentNamespace;
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceEnvironments.Item.Resources.Item.Roles.Item.Resource.Scopes.Item.Resource.Refresh;
+using Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceEnvironments.Item.Resources.Item.Roles.Item.Resource.Scopes.Item.Resource.UploadSessions;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -29,6 +30,11 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceEnvir
         public global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceEnvironments.Item.Resources.Item.Roles.Item.Resource.Scopes.Item.Resource.Refresh.RefreshRequestBuilder Refresh
         {
             get => new global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceEnvironments.Item.Resources.Item.Roles.Item.Resource.Scopes.Item.Resource.Refresh.RefreshRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the uploadSessions property of the microsoft.graph.accessPackageResource entity.</summary>
+        public global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceEnvironments.Item.Resources.Item.Roles.Item.Resource.Scopes.Item.Resource.UploadSessions.UploadSessionsRequestBuilder UploadSessions
+        {
+            get => new global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceEnvironments.Item.Resources.Item.Roles.Item.Resource.Scopes.Item.Resource.UploadSessions.UploadSessionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceEnvironments.Item.Resources.Item.Roles.Item.Resource.Scopes.Item.Resource.ResourceRequestBuilder"/> and sets the default values.

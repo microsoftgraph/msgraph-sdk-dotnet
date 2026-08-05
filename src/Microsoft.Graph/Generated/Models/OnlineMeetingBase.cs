@@ -160,6 +160,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("chatRestrictions", value); }
         }
 #endif
+        /// <summary>Conferencing device integration settings for Cloud Video Interop (CVI). Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.CloudVideoInteropInfo? CloudVideoInteropInfo
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.CloudVideoInteropInfo?>("cloudVideoInteropInfo"); }
+            set { BackingStore?.Set("cloudVideoInteropInfo", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.CloudVideoInteropInfo CloudVideoInteropInfo
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.CloudVideoInteropInfo>("cloudVideoInteropInfo"); }
+            set { BackingStore?.Set("cloudVideoInteropInfo", value); }
+        }
+#endif
         /// <summary>Indicates the date and time when the meeting resource expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? ExpiryDateTime
         {
@@ -274,6 +290,12 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("meetingSpokenLanguageTag", value); }
         }
 #endif
+        /// <summary>The type of the online meeting. The possible values are: adhoc, scheduled, recurring, broadcast, meetnow, unknownFutureValue. Read-only.</summary>
+        public global::Microsoft.Graph.Models.OnlineMeetingType? MeetingType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.OnlineMeetingType?>("meetingType"); }
+            set { BackingStore?.Set("meetingType", value); }
+        }
         /// <summary>Indicates whether to record the meeting automatically.</summary>
         public bool? RecordAutomatically
         {
@@ -392,6 +414,7 @@ namespace Microsoft.Graph.Models
                 { "audioConferencing", n => { AudioConferencing = n.GetObjectValue<global::Microsoft.Graph.Models.AudioConferencing>(global::Microsoft.Graph.Models.AudioConferencing.CreateFromDiscriminatorValue); } },
                 { "chatInfo", n => { ChatInfo = n.GetObjectValue<global::Microsoft.Graph.Models.ChatInfo>(global::Microsoft.Graph.Models.ChatInfo.CreateFromDiscriminatorValue); } },
                 { "chatRestrictions", n => { ChatRestrictions = n.GetObjectValue<global::Microsoft.Graph.Models.ChatRestrictions>(global::Microsoft.Graph.Models.ChatRestrictions.CreateFromDiscriminatorValue); } },
+                { "cloudVideoInteropInfo", n => { CloudVideoInteropInfo = n.GetObjectValue<global::Microsoft.Graph.Models.CloudVideoInteropInfo>(global::Microsoft.Graph.Models.CloudVideoInteropInfo.CreateFromDiscriminatorValue); } },
                 { "expiryDateTime", n => { ExpiryDateTime = n.GetDateTimeOffsetValue(); } },
                 { "isEndToEndEncryptionEnabled", n => { IsEndToEndEncryptionEnabled = n.GetBoolValue(); } },
                 { "isEntryExitAnnounced", n => { IsEntryExitAnnounced = n.GetBoolValue(); } },
@@ -401,6 +424,7 @@ namespace Microsoft.Graph.Models
                 { "lobbyBypassSettings", n => { LobbyBypassSettings = n.GetObjectValue<global::Microsoft.Graph.Models.LobbyBypassSettings>(global::Microsoft.Graph.Models.LobbyBypassSettings.CreateFromDiscriminatorValue); } },
                 { "meetingOptionsWebUrl", n => { MeetingOptionsWebUrl = n.GetStringValue(); } },
                 { "meetingSpokenLanguageTag", n => { MeetingSpokenLanguageTag = n.GetStringValue(); } },
+                { "meetingType", n => { MeetingType = n.GetEnumValue<global::Microsoft.Graph.Models.OnlineMeetingType>(); } },
                 { "recordAutomatically", n => { RecordAutomatically = n.GetBoolValue(); } },
                 { "sensitivityLabelAssignment", n => { SensitivityLabelAssignment = n.GetObjectValue<global::Microsoft.Graph.Models.OnlineMeetingSensitivityLabelAssignment>(global::Microsoft.Graph.Models.OnlineMeetingSensitivityLabelAssignment.CreateFromDiscriminatorValue); } },
                 { "shareMeetingChatHistoryDefault", n => { ShareMeetingChatHistoryDefault = n.GetEnumValue<global::Microsoft.Graph.Models.MeetingChatHistoryDefaultMode>(); } },
@@ -435,6 +459,7 @@ namespace Microsoft.Graph.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Models.AudioConferencing>("audioConferencing", AudioConferencing);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ChatInfo>("chatInfo", ChatInfo);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ChatRestrictions>("chatRestrictions", ChatRestrictions);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.CloudVideoInteropInfo>("cloudVideoInteropInfo", CloudVideoInteropInfo);
             writer.WriteDateTimeOffsetValue("expiryDateTime", ExpiryDateTime);
             writer.WriteBoolValue("isEndToEndEncryptionEnabled", IsEndToEndEncryptionEnabled);
             writer.WriteBoolValue("isEntryExitAnnounced", IsEntryExitAnnounced);
@@ -444,6 +469,7 @@ namespace Microsoft.Graph.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Models.LobbyBypassSettings>("lobbyBypassSettings", LobbyBypassSettings);
             writer.WriteStringValue("meetingOptionsWebUrl", MeetingOptionsWebUrl);
             writer.WriteStringValue("meetingSpokenLanguageTag", MeetingSpokenLanguageTag);
+            writer.WriteEnumValue<global::Microsoft.Graph.Models.OnlineMeetingType>("meetingType", MeetingType);
             writer.WriteBoolValue("recordAutomatically", RecordAutomatically);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.OnlineMeetingSensitivityLabelAssignment>("sensitivityLabelAssignment", SensitivityLabelAssignment);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.MeetingChatHistoryDefaultMode>("shareMeetingChatHistoryDefault", ShareMeetingChatHistoryDefault);

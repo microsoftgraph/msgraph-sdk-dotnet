@@ -61,6 +61,7 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.orgContact" => new global::Microsoft.Graph.Models.OrgContact(),
                 "#microsoft.graph.permissionGrantPolicy" => new global::Microsoft.Graph.Models.PermissionGrantPolicy(),
                 "#microsoft.graph.policyBase" => new global::Microsoft.Graph.Models.PolicyBase(),
+                "#microsoft.graph.remoteTenantGroup" => new global::Microsoft.Graph.Models.RemoteTenantGroup(),
                 "#microsoft.graph.resourceSpecificPermissionGrant" => new global::Microsoft.Graph.Models.ResourceSpecificPermissionGrant(),
                 "#microsoft.graph.servicePrincipal" => new global::Microsoft.Graph.Models.ServicePrincipal(),
                 "#microsoft.graph.stsPolicy" => new global::Microsoft.Graph.Models.StsPolicy(),

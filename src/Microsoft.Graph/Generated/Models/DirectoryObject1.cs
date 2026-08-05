@@ -157,6 +157,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("recovery", value); }
         }
 #endif
+        /// <summary>Collection of groups in remote Microsoft Entra tenants that are available in the directory.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.RemoteTenantGroup>? RemoteTenantGroups
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.RemoteTenantGroup>?>("remoteTenantGroups"); }
+            set { BackingStore?.Set("remoteTenantGroups", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.RemoteTenantGroup> RemoteTenantGroups
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.RemoteTenantGroup>>("remoteTenantGroups"); }
+            set { BackingStore?.Set("remoteTenantGroups", value); }
+        }
+#endif
         /// <summary>List of commercial subscriptions that an organization acquired.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -200,6 +216,7 @@ namespace Microsoft.Graph.Models
                 { "onPremisesSynchronization", n => { OnPremisesSynchronization = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.OnPremisesDirectorySynchronization>(global::Microsoft.Graph.Models.OnPremisesDirectorySynchronization.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "publicKeyInfrastructure", n => { PublicKeyInfrastructure = n.GetObjectValue<global::Microsoft.Graph.Models.PublicKeyInfrastructureRoot>(global::Microsoft.Graph.Models.PublicKeyInfrastructureRoot.CreateFromDiscriminatorValue); } },
                 { "recovery", n => { Recovery = n.GetObjectValue<global::Microsoft.Graph.Models.EntraRecoveryServices.Recovery>(global::Microsoft.Graph.Models.EntraRecoveryServices.Recovery.CreateFromDiscriminatorValue); } },
+                { "remoteTenantGroups", n => { RemoteTenantGroups = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.RemoteTenantGroup>(global::Microsoft.Graph.Models.RemoteTenantGroup.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "subscriptions", n => { Subscriptions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.CompanySubscription>(global::Microsoft.Graph.Models.CompanySubscription.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -220,6 +237,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.OnPremisesDirectorySynchronization>("onPremisesSynchronization", OnPremisesSynchronization);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.PublicKeyInfrastructureRoot>("publicKeyInfrastructure", PublicKeyInfrastructure);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.EntraRecoveryServices.Recovery>("recovery", Recovery);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.RemoteTenantGroup>("remoteTenantGroups", RemoteTenantGroups);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.CompanySubscription>("subscriptions", Subscriptions);
         }
     }
