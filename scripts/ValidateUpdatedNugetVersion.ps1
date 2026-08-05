@@ -45,7 +45,7 @@ if($xmlDoc.Project.PropertyGroup[0].VersionSuffix){
 $currentProjectVersion = [System.Management.Automation.SemanticVersion]"$versionPrefixString"
 
 Try {
-    $searchResultJson = dotnet package search $packageName --configfile $nugetConfigPath --exact-match --prerelease --format json
+    $searchResultJson = dotnet package search $packageName --configfile $nugetConfigPath --exact-match --prerelease --format json | Out-String
     if ($LASTEXITCODE -ne 0) {
         throw "dotnet package search exited with code $LASTEXITCODE"
     }
