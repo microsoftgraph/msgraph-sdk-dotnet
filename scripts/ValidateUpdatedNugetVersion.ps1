@@ -40,7 +40,7 @@ $currentProjectVersion = [System.Management.Automation.SemanticVersion]"$version
 
 # API is case-sensitive
 $packageName = $packageName.ToLower()
-$url = "https://api.nuget.org/v3/registration5-gz-semver2/$packageName/index.json"
+$url = "https://azuresearch-usnc.nuget.org/query?q=packageid:$packageName&prerelease=true&semVerLevel=2.0.0"
 
 # Call the NuGet API for the package and get the current published version.
 Try {
@@ -56,7 +56,7 @@ Catch {
     Exit 1
 }
 
-$currentPublishedVersion = [System.Management.Automation.SemanticVersion]$nugetIndex.items[$nugetIndex.items.Count-1].upper
+$currentPublishedVersion = [System.Management.Automation.SemanticVersion]$nugetIndex.data[0].version
 
 # Validate that the version number has been updated.
 if ($currentProjectVersion -le $currentPublishedVersion) {
