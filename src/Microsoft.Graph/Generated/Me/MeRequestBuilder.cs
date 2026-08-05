@@ -74,6 +74,7 @@ using Microsoft.Graph.Me.SendMail;
 using Microsoft.Graph.Me.ServiceProvisioningErrors;
 using Microsoft.Graph.Me.Settings;
 using Microsoft.Graph.Me.Solutions;
+using Microsoft.Graph.Me.SponsorOf;
 using Microsoft.Graph.Me.Sponsors;
 using Microsoft.Graph.Me.Teamwork;
 using Microsoft.Graph.Me.Todo;
@@ -457,6 +458,11 @@ namespace Microsoft.Graph.Me
         public global::Microsoft.Graph.Me.Solutions.SolutionsRequestBuilder Solutions
         {
             get => new global::Microsoft.Graph.Me.Solutions.SolutionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the sponsorOf property of the microsoft.graph.user entity.</summary>
+        public global::Microsoft.Graph.Me.SponsorOf.SponsorOfRequestBuilder SponsorOf
+        {
+            get => new global::Microsoft.Graph.Me.SponsorOf.SponsorOfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sponsors property of the microsoft.graph.user entity.</summary>
         public global::Microsoft.Graph.Me.Sponsors.SponsorsRequestBuilder Sponsors

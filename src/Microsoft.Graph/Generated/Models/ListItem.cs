@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("fields", value); }
         }
 #endif
-        /// <summary>The permissions property</summary>
+        /// <summary>The set of permissions for the item. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.Permission>? Permissions

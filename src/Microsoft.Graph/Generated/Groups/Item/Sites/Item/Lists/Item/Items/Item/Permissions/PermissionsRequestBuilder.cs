@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissio
         {
         }
         /// <summary>
-        /// Get permissions from groups
+        /// The set of permissions for the item. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.PermissionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissio
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Permission>(requestInfo, global::Microsoft.Graph.Models.Permission.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get permissions from groups
+        /// The set of permissions for the item. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissio
             return new global::Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissions.PermissionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get permissions from groups
+        /// The set of permissions for the item. Read-only. Nullable.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PermissionsRequestBuilderGetQueryParameters 

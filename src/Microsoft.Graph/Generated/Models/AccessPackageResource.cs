@@ -152,6 +152,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("scopes", value); }
         }
 #endif
+        /// <summary>The upload sessions for uploading external access data to this resource through the Bring Your Own Data (BYOD) flow.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.CustomDataProvidedResourceUploadSession>? UploadSessions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.CustomDataProvidedResourceUploadSession>?>("uploadSessions"); }
+            set { BackingStore?.Set("uploadSessions", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.CustomDataProvidedResourceUploadSession> UploadSessions
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.CustomDataProvidedResourceUploadSession>>("uploadSessions"); }
+            set { BackingStore?.Set("uploadSessions", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -160,7 +176,12 @@ namespace Microsoft.Graph.Models
         public static new global::Microsoft.Graph.Models.AccessPackageResource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Models.AccessPackageResource();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "#microsoft.graph.customDataProvidedResource" => new global::Microsoft.Graph.Models.CustomDataProvidedResource(),
+                _ => new global::Microsoft.Graph.Models.AccessPackageResource(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -180,6 +201,7 @@ namespace Microsoft.Graph.Models
                 { "originSystem", n => { OriginSystem = n.GetStringValue(); } },
                 { "roles", n => { Roles = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageResourceRole>(global::Microsoft.Graph.Models.AccessPackageResourceRole.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "scopes", n => { Scopes = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageResourceScope>(global::Microsoft.Graph.Models.AccessPackageResourceScope.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "uploadSessions", n => { UploadSessions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.CustomDataProvidedResourceUploadSession>(global::Microsoft.Graph.Models.CustomDataProvidedResourceUploadSession.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -200,6 +222,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("originSystem", OriginSystem);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageResourceRole>("roles", Roles);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageResourceScope>("scopes", Scopes);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.CustomDataProvidedResourceUploadSession>("uploadSessions", UploadSessions);
         }
     }
 }

@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRequests.Item.Catalog.Resources.Item.Scopes.Item.Resource.Roles.Item.Resource.EnvironmentNamespace;
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRequests.Item.Catalog.Resources.Item.Scopes.Item.Resource.Roles.Item.Resource.Refresh;
+using Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRequests.Item.Catalog.Resources.Item.Scopes.Item.Resource.Roles.Item.Resource.UploadSessions;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -29,6 +30,11 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceReque
         public global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRequests.Item.Catalog.Resources.Item.Scopes.Item.Resource.Roles.Item.Resource.Refresh.RefreshRequestBuilder Refresh
         {
             get => new global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRequests.Item.Catalog.Resources.Item.Scopes.Item.Resource.Roles.Item.Resource.Refresh.RefreshRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the uploadSessions property of the microsoft.graph.accessPackageResource entity.</summary>
+        public global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRequests.Item.Catalog.Resources.Item.Scopes.Item.Resource.Roles.Item.Resource.UploadSessions.UploadSessionsRequestBuilder UploadSessions
+        {
+            get => new global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRequests.Item.Catalog.Resources.Item.Scopes.Item.Resource.Roles.Item.Resource.UploadSessions.UploadSessionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRequests.Item.Catalog.Resources.Item.Scopes.Item.Resource.Roles.Item.Resource.ResourceRequestBuilder"/> and sets the default values.

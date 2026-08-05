@@ -209,6 +209,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>The serviceProviderConstraints property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.ServiceProviderConstraints? ServiceProviderConstraints
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ServiceProviderConstraints?>("serviceProviderConstraints"); }
+            set { BackingStore?.Set("serviceProviderConstraints", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.ServiceProviderConstraints ServiceProviderConstraints
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ServiceProviderConstraints>("serviceProviderConstraints"); }
+            set { BackingStore?.Set("serviceProviderConstraints", value); }
+        }
+#endif
         /// <summary>The tenant identifier for the partner Microsoft Entra organization. Read-only. Key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -280,6 +296,7 @@ namespace Microsoft.Graph.Models
                 { "m365CollaborationInbound", n => { M365CollaborationInbound = n.GetObjectValue<global::Microsoft.Graph.Models.CrossTenantAccessPolicyM365CollaborationInboundSetting>(global::Microsoft.Graph.Models.CrossTenantAccessPolicyM365CollaborationInboundSetting.CreateFromDiscriminatorValue); } },
                 { "m365CollaborationOutbound", n => { M365CollaborationOutbound = n.GetObjectValue<global::Microsoft.Graph.Models.CrossTenantAccessPolicyM365CollaborationOutboundSetting>(global::Microsoft.Graph.Models.CrossTenantAccessPolicyM365CollaborationOutboundSetting.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "serviceProviderConstraints", n => { ServiceProviderConstraints = n.GetObjectValue<global::Microsoft.Graph.Models.ServiceProviderConstraints>(global::Microsoft.Graph.Models.ServiceProviderConstraints.CreateFromDiscriminatorValue); } },
                 { "tenantId", n => { TenantId = n.GetStringValue(); } },
                 { "tenantRestrictions", n => { TenantRestrictions = n.GetObjectValue<global::Microsoft.Graph.Models.CrossTenantAccessPolicyTenantRestrictions>(global::Microsoft.Graph.Models.CrossTenantAccessPolicyTenantRestrictions.CreateFromDiscriminatorValue); } },
             };
@@ -304,6 +321,7 @@ namespace Microsoft.Graph.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Models.CrossTenantAccessPolicyM365CollaborationInboundSetting>("m365CollaborationInbound", M365CollaborationInbound);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.CrossTenantAccessPolicyM365CollaborationOutboundSetting>("m365CollaborationOutbound", M365CollaborationOutbound);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.ServiceProviderConstraints>("serviceProviderConstraints", ServiceProviderConstraints);
             writer.WriteStringValue("tenantId", TenantId);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.CrossTenantAccessPolicyTenantRestrictions>("tenantRestrictions", TenantRestrictions);
             writer.WriteAdditionalData(AdditionalData);

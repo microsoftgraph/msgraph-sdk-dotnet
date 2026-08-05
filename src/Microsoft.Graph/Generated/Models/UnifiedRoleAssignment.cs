@@ -124,6 +124,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("principalId", value); }
         }
 #endif
+        /// <summary>The principalOrganizationId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PrincipalOrganizationId
+        {
+            get { return BackingStore?.Get<string?>("principalOrganizationId"); }
+            set { BackingStore?.Set("principalOrganizationId", value); }
+        }
+#nullable restore
+#else
+        public string PrincipalOrganizationId
+        {
+            get { return BackingStore?.Get<string>("principalOrganizationId"); }
+            set { BackingStore?.Set("principalOrganizationId", value); }
+        }
+#endif
         /// <summary>The roleDefinition the assignment is for. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -181,6 +197,7 @@ namespace Microsoft.Graph.Models
                 { "directoryScopeId", n => { DirectoryScopeId = n.GetStringValue(); } },
                 { "principal", n => { Principal = n.GetObjectValue<global::Microsoft.Graph.Models.DirectoryObject>(global::Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue); } },
                 { "principalId", n => { PrincipalId = n.GetStringValue(); } },
+                { "principalOrganizationId", n => { PrincipalOrganizationId = n.GetStringValue(); } },
                 { "roleDefinition", n => { RoleDefinition = n.GetObjectValue<global::Microsoft.Graph.Models.UnifiedRoleDefinition>(global::Microsoft.Graph.Models.UnifiedRoleDefinition.CreateFromDiscriminatorValue); } },
                 { "roleDefinitionId", n => { RoleDefinitionId = n.GetStringValue(); } },
             };
@@ -200,6 +217,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("directoryScopeId", DirectoryScopeId);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.DirectoryObject>("principal", Principal);
             writer.WriteStringValue("principalId", PrincipalId);
+            writer.WriteStringValue("principalOrganizationId", PrincipalOrganizationId);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.UnifiedRoleDefinition>("roleDefinition", RoleDefinition);
             writer.WriteStringValue("roleDefinitionId", RoleDefinitionId);
         }

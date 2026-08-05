@@ -18,6 +18,12 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.MeetingAudience?>("audience"); }
             set { BackingStore?.Set("audience", value); }
         }
+        /// <summary>Represents the expected number of attendees for the town hall.</summary>
+        public int? Capacity
+        {
+            get { return BackingStore?.Get<int?>("capacity"); }
+            set { BackingStore?.Set("capacity", value); }
+        }
         /// <summary>Identity information of the coorganizers of the town hall.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,6 +62,38 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("isInviteOnly"); }
             set { BackingStore?.Set("isInviteOnly", value); }
         }
+        /// <summary>Registration configuration of the town hall.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.VirtualEventTownhallRegistrationConfiguration? RegistrationConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.VirtualEventTownhallRegistrationConfiguration?>("registrationConfiguration"); }
+            set { BackingStore?.Set("registrationConfiguration", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.VirtualEventTownhallRegistrationConfiguration RegistrationConfiguration
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.VirtualEventTownhallRegistrationConfiguration>("registrationConfiguration"); }
+            set { BackingStore?.Set("registrationConfiguration", value); }
+        }
+#endif
+        /// <summary>Registration records of the town hall.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.VirtualEventRegistration>? Registrations
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.VirtualEventRegistration>?>("registrations"); }
+            set { BackingStore?.Set("registrations", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.VirtualEventRegistration> Registrations
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.VirtualEventRegistration>>("registrations"); }
+            set { BackingStore?.Set("registrations", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Models.VirtualEventTownhall"/> and sets the default values.
         /// </summary>
@@ -82,9 +120,12 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "audience", n => { Audience = n.GetEnumValue<global::Microsoft.Graph.Models.MeetingAudience>(); } },
+                { "capacity", n => { Capacity = n.GetIntValue(); } },
                 { "coOrganizers", n => { CoOrganizers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.CommunicationsUserIdentity>(global::Microsoft.Graph.Models.CommunicationsUserIdentity.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "invitedAttendees", n => { InvitedAttendees = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Identity>(global::Microsoft.Graph.Models.Identity.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "isInviteOnly", n => { IsInviteOnly = n.GetBoolValue(); } },
+                { "registrationConfiguration", n => { RegistrationConfiguration = n.GetObjectValue<global::Microsoft.Graph.Models.VirtualEventTownhallRegistrationConfiguration>(global::Microsoft.Graph.Models.VirtualEventTownhallRegistrationConfiguration.CreateFromDiscriminatorValue); } },
+                { "registrations", n => { Registrations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.VirtualEventRegistration>(global::Microsoft.Graph.Models.VirtualEventRegistration.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -96,9 +137,12 @@ namespace Microsoft.Graph.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.MeetingAudience>("audience", Audience);
+            writer.WriteIntValue("capacity", Capacity);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.CommunicationsUserIdentity>("coOrganizers", CoOrganizers);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Identity>("invitedAttendees", InvitedAttendees);
             writer.WriteBoolValue("isInviteOnly", IsInviteOnly);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.VirtualEventTownhallRegistrationConfiguration>("registrationConfiguration", RegistrationConfiguration);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.VirtualEventRegistration>("registrations", Registrations);
         }
     }
 }

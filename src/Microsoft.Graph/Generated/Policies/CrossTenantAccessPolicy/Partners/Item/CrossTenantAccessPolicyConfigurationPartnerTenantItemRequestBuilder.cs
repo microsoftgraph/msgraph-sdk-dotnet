@@ -3,6 +3,7 @@
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.Item.IdentitySynchronization;
+using Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.Item.ServiceProviderConstraints;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -23,6 +24,11 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.Item
         public global::Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.Item.IdentitySynchronization.IdentitySynchronizationRequestBuilder IdentitySynchronization
         {
             get => new global::Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.Item.IdentitySynchronization.IdentitySynchronizationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the serviceProviderConstraints property of the microsoft.graph.crossTenantAccessPolicyConfigurationPartner entity.</summary>
+        public global::Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.Item.ServiceProviderConstraints.ServiceProviderConstraintsRequestBuilder ServiceProviderConstraints
+        {
+            get => new global::Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.Item.ServiceProviderConstraints.ServiceProviderConstraintsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Policies.CrossTenantAccessPolicy.Partners.Item.CrossTenantAccessPolicyConfigurationPartnerTenantItemRequestBuilder"/> and sets the default values.

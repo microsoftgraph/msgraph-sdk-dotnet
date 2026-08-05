@@ -4,6 +4,7 @@ using Microsoft.Graph.IdentityGovernance.EntitlementManagement.Resources.Item.En
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement.Resources.Item.Refresh;
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement.Resources.Item.Roles;
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement.Resources.Item.Scopes;
+using Microsoft.Graph.IdentityGovernance.EntitlementManagement.Resources.Item.UploadSessions;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -41,6 +42,11 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement.Resources.Ite
         public global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.Resources.Item.Scopes.ScopesRequestBuilder Scopes
         {
             get => new global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.Resources.Item.Scopes.ScopesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the uploadSessions property of the microsoft.graph.accessPackageResource entity.</summary>
+        public global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.Resources.Item.UploadSessions.UploadSessionsRequestBuilder UploadSessions
+        {
+            get => new global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.Resources.Item.UploadSessions.UploadSessionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.Resources.Item.AccessPackageResourceItemRequestBuilder"/> and sets the default values.

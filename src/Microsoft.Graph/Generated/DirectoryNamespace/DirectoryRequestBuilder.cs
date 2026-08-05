@@ -9,6 +9,7 @@ using Microsoft.Graph.DirectoryNamespace.FederationConfigurations;
 using Microsoft.Graph.DirectoryNamespace.OnPremisesSynchronization;
 using Microsoft.Graph.DirectoryNamespace.PublicKeyInfrastructure;
 using Microsoft.Graph.DirectoryNamespace.Recovery;
+using Microsoft.Graph.DirectoryNamespace.RemoteTenantGroups;
 using Microsoft.Graph.DirectoryNamespace.Subscriptions;
 using Microsoft.Graph.DirectoryNamespace.SubscriptionsWithCommerceSubscriptionId;
 using Microsoft.Graph.Models.ODataErrors;
@@ -73,6 +74,11 @@ namespace Microsoft.Graph.DirectoryNamespace
         public global::Microsoft.Graph.DirectoryNamespace.Recovery.RecoveryRequestBuilder Recovery
         {
             get => new global::Microsoft.Graph.DirectoryNamespace.Recovery.RecoveryRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the remoteTenantGroups property of the microsoft.graph.directory entity.</summary>
+        public global::Microsoft.Graph.DirectoryNamespace.RemoteTenantGroups.RemoteTenantGroupsRequestBuilder RemoteTenantGroups
+        {
+            get => new global::Microsoft.Graph.DirectoryNamespace.RemoteTenantGroups.RemoteTenantGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the subscriptions property of the microsoft.graph.directory entity.</summary>
         public global::Microsoft.Graph.DirectoryNamespace.Subscriptions.SubscriptionsRequestBuilder Subscriptions
