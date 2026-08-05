@@ -144,7 +144,7 @@ extends:
           inputs:
             targetType: filePath
             filePath: '$(Build.SourcesDirectory)\scripts\ValidateUpdatedNugetVersion.ps1'
-            arguments: '-packageName "Microsoft.Graph" -projectPath "$(Build.SourcesDirectory)\src\Microsoft.Graph\Microsoft.Graph.csproj"'
+            arguments: '-packageName "Microsoft.Graph" -projectPath "$(Build.SourcesDirectory)\src\Microsoft.Graph\Microsoft.Graph.csproj" -nugetConfigPath "$(Build.SourcesDirectory)\nuget.config"'
             pwsh: true
           enabled: true
         - task: EsrpCodeSigning@5
