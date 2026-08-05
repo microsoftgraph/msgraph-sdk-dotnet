@@ -16,6 +16,9 @@
 
 .Parameter projectPath
     Specifies the path to the project file.
+
+.Parameter nugetConfigPath
+    Specifies the path to the NuGet configuration for the Central Feed Service.
 #>
 
 Param(
@@ -23,7 +26,10 @@ Param(
     [string]$packageName,
 
     [parameter(Mandatory = $true)]
-    [string]$projectPath
+    [string]$projectPath,
+
+    [parameter(Mandatory = $true)]
+    [string]$nugetConfigPath
 )
 
 [xml]$xmlDoc = Get-Content $projectPath
@@ -38,25 +44,26 @@ if($xmlDoc.Project.PropertyGroup[0].VersionSuffix){
 # System.Version, get the version prefix.
 $currentProjectVersion = [System.Management.Automation.SemanticVersion]"$versionPrefixString"
 
-# API is case-sensitive
-$packageName = $packageName.ToLower()
-$url = "https://api.nuget.org/v3/registration5-gz-semver2/$packageName/index.json"
-
-# Call the NuGet API for the package and get the current published version.
 Try {
-    $nugetIndex = Invoke-RestMethod -Uri $url -Method Get
+    $searchResultJson = dotnet package search $packageName --configfile $nugetConfigPath --exact-match --prerelease --format json | Out-String
+    if ($LASTEXITCODE -ne 0) {
+        throw "dotnet package search exited with code $LASTEXITCODE"
+    }
+
+    $searchResult = $searchResultJson | ConvertFrom-Json
+    $matchingPackages = $searchResult.searchResult | ForEach-Object { $_.packages } | Where-Object { $_.id -ieq $packageName }
 }
 Catch {
-    if ($_.ErrorDetails.Message && $_.ErrorDetails.Message.Contains("The specified blob does not exist.")) {
-        Write-Host "No package exists. You will probably be publishing $packageName for the first time."
-        Exit # exit gracefully
-    }
-    
     Write-Host $_
     Exit 1
 }
 
-$currentPublishedVersion = [System.Management.Automation.SemanticVersion]$nugetIndex.items[$nugetIndex.items.Count-1].upper
+if (-not $matchingPackages) {
+    Write-Host "No package exists. You will probably be publishing $packageName for the first time."
+    Exit # exit gracefully
+}
+
+$currentPublishedVersion = ($matchingPackages | ForEach-Object { [System.Management.Automation.SemanticVersion]$_.version } | Sort-Object)[-1]
 
 # Validate that the version number has been updated.
 if ($currentProjectVersion -le $currentPublishedVersion) {
