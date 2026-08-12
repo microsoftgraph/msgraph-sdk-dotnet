@@ -147,7 +147,7 @@ extends:
             arguments: '-packageName "Microsoft.Graph" -projectPath "$(Build.SourcesDirectory)\src\Microsoft.Graph\Microsoft.Graph.csproj" -nugetConfigPath "$(Build.SourcesDirectory)\nuget.config"'
             pwsh: true
           enabled: true
-        - task: EsrpCodeSigning@5
+        - task: EsrpCodeSigning@6
           displayName: 'ESRP DLL Strong Name (Microsoft.Graph)'
           inputs:
             ConnectedServiceName: 'Federated DevX ESRP Managed Identity Connection'
@@ -180,7 +180,7 @@ extends:
             MaxConcurrency: 50
             MaxRetryAttempts: 5
             PendingAnalysisWaitTimeoutMinutes: 5
-        - task: EsrpCodeSigning@5
+        - task: EsrpCodeSigning@6
           displayName: 'ESRP DLL CodeSigning (Microsoft.Graph)'
           inputs:
             ConnectedServiceName: 'Federated DevX ESRP Managed Identity Connection'
@@ -239,7 +239,7 @@ extends:
           env:
             BUILD_CONFIGURATION: $(BuildConfiguration)
           displayName: dotnet pack
-        - task: EsrpCodeSigning@5
+        - task: EsrpCodeSigning@6
           displayName: 'ESRP NuGet CodeSigning'
           inputs:
             ConnectedServiceName: 'Federated DevX ESRP Managed Identity Connection'
