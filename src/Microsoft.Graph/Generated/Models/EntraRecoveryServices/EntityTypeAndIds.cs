@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Models.EntraRecoveryServices
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The entityIds property</summary>
+        /// <summary>The list of entity IDs for the specified entity type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? EntityIds

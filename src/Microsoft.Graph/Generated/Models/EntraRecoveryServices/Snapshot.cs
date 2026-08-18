@@ -12,13 +12,13 @@ namespace Microsoft.Graph.Models.EntraRecoveryServices
     public partial class Snapshot : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The date and time when the snapshot was created.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The recoveryJobs property</summary>
+        /// <summary>Collection of recovery jobs created for this snapshot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.EntraRecoveryServices.RecoveryJob>? RecoveryJobs
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models.EntraRecoveryServices
             set { BackingStore?.Set("recoveryJobs", value); }
         }
 #endif
-        /// <summary>The recoveryPreviewJobs property</summary>
+        /// <summary>Collection of preview jobs created for this snapshot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.EntraRecoveryServices.RecoveryPreviewJob>? RecoveryPreviewJobs
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Models.EntraRecoveryServices
             set { BackingStore?.Set("recoveryPreviewJobs", value); }
         }
 #endif
-        /// <summary>The totalChangedObjects property</summary>
+        /// <summary>The total number of changed objects identified in this snapshot.</summary>
         public int? TotalChangedObjects
         {
             get { return BackingStore?.Get<int?>("totalChangedObjects"); }

@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models.EntraRecoveryServices
     public partial class RecoveryJobEntityNamesFilter : global::Microsoft.Graph.Models.EntraRecoveryServices.RecoveryJobFilteringCriteriaBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The entityTypes property</summary>
+        /// <summary>The list of entity types to include in the recovery job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.EntraRecoveryServices.ResourceTypeName?>? EntityTypes

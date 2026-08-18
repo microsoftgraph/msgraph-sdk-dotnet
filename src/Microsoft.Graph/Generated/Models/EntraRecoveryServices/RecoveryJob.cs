@@ -12,19 +12,19 @@ namespace Microsoft.Graph.Models.EntraRecoveryServices
     public partial class RecoveryJob : global::Microsoft.Graph.Models.EntraRecoveryServices.RecoveryJobBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The totalFailedChanges property</summary>
+        /// <summary>The count of changes (including both objects and links) that failed to apply during recovery.</summary>
         public int? TotalFailedChanges
         {
             get { return BackingStore?.Get<int?>("totalFailedChanges"); }
             set { BackingStore?.Set("totalFailedChanges", value); }
         }
-        /// <summary>The totalLinksModified property</summary>
+        /// <summary>The count of directory object links (relationships) that were successfully modified during recovery. This value may be less than totalChangedLinksCalculated if some link changes failed.</summary>
         public int? TotalLinksModified
         {
             get { return BackingStore?.Get<int?>("totalLinksModified"); }
             set { BackingStore?.Set("totalLinksModified", value); }
         }
-        /// <summary>The totalObjectsModified property</summary>
+        /// <summary>The count of directory objects that were successfully modified during recovery. This value may be less than totalChangedObjectsCalculated if some object changes failed.</summary>
         public int? TotalObjectsModified
         {
             get { return BackingStore?.Get<int?>("totalObjectsModified"); }

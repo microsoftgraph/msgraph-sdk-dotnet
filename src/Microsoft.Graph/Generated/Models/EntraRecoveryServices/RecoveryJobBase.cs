@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models.EntraRecoveryServices
     public partial class RecoveryJobBase : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The filteringCriteria property</summary>
+        /// <summary>Optional filtering criteria used to scope the job to specific entity types or entity IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.EntraRecoveryServices.RecoveryJobFilteringCriteriaBase? FilteringCriteria
@@ -28,13 +28,13 @@ namespace Microsoft.Graph.Models.EntraRecoveryServices
             set { BackingStore?.Set("filteringCriteria", value); }
         }
 #endif
-        /// <summary>The jobCompletionDateTime property</summary>
+        /// <summary>The date and time when the job completed. Null if the job is still running.</summary>
         public DateTimeOffset? JobCompletionDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("jobCompletionDateTime"); }
             set { BackingStore?.Set("jobCompletionDateTime", value); }
         }
-        /// <summary>The jobStartDateTime property</summary>
+        /// <summary>The date and time when the job started.</summary>
         public DateTimeOffset? JobStartDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("jobStartDateTime"); }
@@ -46,19 +46,19 @@ namespace Microsoft.Graph.Models.EntraRecoveryServices
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.EntraRecoveryServices.RecoveryStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>The targetStateDateTime property</summary>
+        /// <summary>The target snapshot timestamp to which the tenant is being restored. Supports $filter (eq, ne).</summary>
         public DateTimeOffset? TargetStateDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("targetStateDateTime"); }
             set { BackingStore?.Set("targetStateDateTime", value); }
         }
-        /// <summary>The totalChangedLinksCalculated property</summary>
+        /// <summary>The total count of changed directory object links (relationships) calculated by the job. null until the job completes calculation. Not all calculated link changes may be successfully applied; see totalLinksModified on derived types for the count of links that were actually modified.</summary>
         public int? TotalChangedLinksCalculated
         {
             get { return BackingStore?.Get<int?>("totalChangedLinksCalculated"); }
             set { BackingStore?.Set("totalChangedLinksCalculated", value); }
         }
-        /// <summary>The totalChangedObjectsCalculated property</summary>
+        /// <summary>The total count of changed directory objects calculated by the job. null until the job completes calculation. Not all calculated object changes may be successfully applied; see totalObjectsModified on derived types for the count of objects that were actually modified.</summary>
         public int? TotalChangedObjectsCalculated
         {
             get { return BackingStore?.Get<int?>("totalChangedObjectsCalculated"); }
