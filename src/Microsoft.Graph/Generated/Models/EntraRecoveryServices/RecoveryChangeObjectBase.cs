@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models.EntraRecoveryServices
     public partial class RecoveryChangeObjectBase : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name of the changed object in its current state, used to uniquely identify the object. Supports $filter (eq, ne, startswith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models.EntraRecoveryServices
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.EntraRecoveryServices.ResourceTypeName?>("entityTypeName"); }
             set { BackingStore?.Set("entityTypeName", value); }
         }
-        /// <summary>The failureMessage property</summary>
+        /// <summary>The error message if the change failed to apply. Only populated in getFailedChanges responses. null otherwise.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FailureMessage

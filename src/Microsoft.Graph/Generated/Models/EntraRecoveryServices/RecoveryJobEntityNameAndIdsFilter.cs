@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models.EntraRecoveryServices
     public partial class RecoveryJobEntityNameAndIdsFilter : global::Microsoft.Graph.Models.EntraRecoveryServices.RecoveryJobFilteringCriteriaBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The filterValues property</summary>
+        /// <summary>The list of entity type and ID pairs to include in the recovery job. Duplicate entity types are not allowed and return a 400 Bad Request error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.EntraRecoveryServices.EntityTypeAndIds>? FilterValues

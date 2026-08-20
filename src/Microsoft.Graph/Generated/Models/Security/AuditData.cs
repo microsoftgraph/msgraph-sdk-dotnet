@@ -22,7 +22,7 @@ namespace Microsoft.Graph.Models.Security
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The dynamicProperties property</summary>
+        /// <summary>An open-type dictionary that contains dynamic audit event properties as name-value pairs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.Security.AuditRecordTypeDictionary? DynamicProperties

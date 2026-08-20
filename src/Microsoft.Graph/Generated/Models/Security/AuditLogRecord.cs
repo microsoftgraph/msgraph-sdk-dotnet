@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Models.Security
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AuditLogRecord : global::Microsoft.Graph.Models.Entity, IParsable
     {
-        /// <summary>The administrative units tagged to an audit log record.</summary>
+        /// <summary>The collection of administrative units associated with the record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AdministrativeUnits
@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("administrativeUnits", value); }
         }
 #endif
-        /// <summary>A JSON object that contains the actual audit log data.</summary>
+        /// <summary>The audit data associated with the record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.Security.AuditData? AuditData
@@ -45,13 +45,13 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("auditData", value); }
         }
 #endif
-        /// <summary>The type of operation indicated by the record. For the list of member values, see auditLogRecordType.</summary>
+        /// <summary>The type of the audit log record.</summary>
         public global::Microsoft.Graph.Models.Security.AuditLogRecordType? AuditLogRecordType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.AuditLogRecordType?>("auditLogRecordType"); }
             set { BackingStore?.Set("auditLogRecordType", value); }
         }
-        /// <summary>The IP address of the device used when the activity was logged. The IP address is displayed in either an IPv4 or IPv6 address format.</summary>
+        /// <summary>The IP address of the client that performed the activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClientIp
@@ -67,13 +67,13 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("clientIp", value); }
         }
 #endif
-        /// <summary>The date and time in UTC when the user performed the activity.</summary>
+        /// <summary>The date and time when the activity was performed.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>For Exchange admin audit logging, the name of the object modified by the cmdlet. For SharePoint activity, the full URL path name of the file or folder accessed by a user. For Microsoft Entra activity, the name of the user account that was modified.</summary>
+        /// <summary>The identifier of the object that was affected by the activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectId
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("objectId", value); }
         }
 #endif
-        /// <summary>The name of the user or admin activity.</summary>
+        /// <summary>The name of the activity that was performed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Operation
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("operation", value); }
         }
 #endif
-        /// <summary>The GUID for your organization.</summary>
+        /// <summary>The GUID of the organization&apos;s Microsoft 365 tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrganizationId
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("service", value); }
         }
 #endif
-        /// <summary>The user who performed the action (specified in the Operation property) that resulted in the record being logged. Audit records for activity performed by system accounts (such as SHAREPOINT/system or NT AUTHORITY/SYSTEM) are also included in the audit log. Another common value for the UserId property is app@sharepoint. It indicates that the &apos;user&apos; who performed the activity was an application with the necessary permissions in SharePoint to perform organization-wide actions (such as searching a SharePoint site or OneDrive account) on behalf of a user, admin, or service.</summary>
+        /// <summary>The identifier of the user, system account, service, or application that performed the activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("userId", value); }
         }
 #endif
-        /// <summary>UPN of the user who performed the action.</summary>
+        /// <summary>The user principal name of the user who performed the activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserPrincipalName
@@ -169,7 +169,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #endif
-        /// <summary>The type of user that performed the operation. The possible values are: regular, reserved, admin, dcAdmin, system, application, servicePrincipal, customPolicy, systemPolicy, partnerTechnician, guest, unknownFutureValue.</summary>
+        /// <summary>The type of user who performed the activity. Possible values are: regular, reserved, admin, dcAdmin, system, application, servicePrincipal, customPolicy, systemPolicy, partnerTechnician, guest, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.Security.AuditLogUserType? UserType
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.AuditLogUserType?>("userType"); }

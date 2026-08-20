@@ -35,7 +35,7 @@ namespace Microsoft.Graph.DirectoryNamespace.Recovery.Snapshots.Item.RecoveryJob
         {
         }
         /// <summary>
-        /// Get recoveryJobs from directory
+        /// Collection of recovery jobs created for this snapshot.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.EntraRecoveryServices.RecoveryJob"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.DirectoryNamespace.Recovery.Snapshots.Item.RecoveryJob
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.EntraRecoveryServices.RecoveryJob>(requestInfo, global::Microsoft.Graph.Models.EntraRecoveryServices.RecoveryJob.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get recoveryJobs from directory
+        /// Collection of recovery jobs created for this snapshot.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.DirectoryNamespace.Recovery.Snapshots.Item.RecoveryJob
             return new global::Microsoft.Graph.DirectoryNamespace.Recovery.Snapshots.Item.RecoveryJobs.Item.RecoveryJobItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get recoveryJobs from directory
+        /// Collection of recovery jobs created for this snapshot.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RecoveryJobItemRequestBuilderGetQueryParameters 

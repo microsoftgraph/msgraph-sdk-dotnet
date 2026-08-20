@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("attackSimulation", value); }
         }
 #endif
-        /// <summary>The auditLog property</summary>
+        /// <summary>The entry point for the audit log query API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.Security.AuditCoreRoot? AuditLog

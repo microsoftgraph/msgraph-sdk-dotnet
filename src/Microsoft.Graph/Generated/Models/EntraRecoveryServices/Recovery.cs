@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models.EntraRecoveryServices
     public partial class Recovery : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The jobs property</summary>
+        /// <summary>Collection of all recovery jobs (both preview and recovery) for the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.EntraRecoveryServices.RecoveryJobBase>? Jobs
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models.EntraRecoveryServices
             set { BackingStore?.Set("jobs", value); }
         }
 #endif
-        /// <summary>The snapshots property</summary>
+        /// <summary>Collection of backup snapshots available for the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.EntraRecoveryServices.Snapshot>? Snapshots

@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Security.AuditLog.Queries.Item.Records.Item
         {
         }
         /// <summary>
-        /// An individual audit log record.
+        /// The collection of audit log records retrieved by the query.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.Security.AuditLogRecord"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Security.AuditLog.Queries.Item.Records.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Security.AuditLogRecord>(requestInfo, global::Microsoft.Graph.Models.Security.AuditLogRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// An individual audit log record.
+        /// The collection of audit log records retrieved by the query.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Security.AuditLog.Queries.Item.Records.Item
             return new global::Microsoft.Graph.Security.AuditLog.Queries.Item.Records.Item.AuditLogRecordItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// An individual audit log record.
+        /// The collection of audit log records retrieved by the query.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AuditLogRecordItemRequestBuilderGetQueryParameters 
