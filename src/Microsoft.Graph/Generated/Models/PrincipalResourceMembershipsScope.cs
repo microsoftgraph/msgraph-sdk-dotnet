@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class PrincipalResourceMembershipsScope : global::Microsoft.Graph.Models.AccessReviewScope, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Defines the scopes of the principals whose access to resources are reviewed in the access review.</summary>
+        /// <summary>Defines the scopes of the principals whose access to resources are reviewed in the access review. Use an accessReviewPrincipalScope object to select a well-known population of principals, such as all guest users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.AccessReviewScope>? PrincipalScopes
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("principalScopes", value); }
         }
 #endif
-        /// <summary>Defines the scopes of the resources for which access is reviewed.</summary>
+        /// <summary>Defines the scopes of the resources for which access is reviewed. Use an accessReviewResourceScope object to identify the resource, or an accessReviewAccessPackageAssignmentPolicyScope object when the resource is an access package assignment policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.AccessReviewScope>? ResourceScopes
