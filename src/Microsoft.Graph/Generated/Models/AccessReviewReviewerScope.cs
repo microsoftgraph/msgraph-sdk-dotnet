@@ -85,6 +85,28 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("queryType", value); }
         }
 #endif
+        /// <summary>The identifier of the reviewer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ReviewerId
+        {
+            get { return BackingStore?.Get<string?>("reviewerId"); }
+            set { BackingStore?.Set("reviewerId", value); }
+        }
+#nullable restore
+#else
+        public string ReviewerId
+        {
+            get { return BackingStore?.Get<string>("reviewerId"); }
+            set { BackingStore?.Set("reviewerId", value); }
+        }
+#endif
+        /// <summary>The scopeType property</summary>
+        public global::Microsoft.Graph.Models.AccessReviewReviewerScopeType? ScopeType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.AccessReviewReviewerScopeType?>("scopeType"); }
+            set { BackingStore?.Set("scopeType", value); }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Models.AccessReviewReviewerScope"/> and sets the default values.
         /// </summary>
@@ -115,6 +137,8 @@ namespace Microsoft.Graph.Models
                 { "query", n => { Query = n.GetStringValue(); } },
                 { "queryRoot", n => { QueryRoot = n.GetStringValue(); } },
                 { "queryType", n => { QueryType = n.GetStringValue(); } },
+                { "reviewerId", n => { ReviewerId = n.GetStringValue(); } },
+                { "scopeType", n => { ScopeType = n.GetEnumValue<global::Microsoft.Graph.Models.AccessReviewReviewerScopeType>(); } },
             };
         }
         /// <summary>
@@ -128,6 +152,8 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("query", Query);
             writer.WriteStringValue("queryRoot", QueryRoot);
             writer.WriteStringValue("queryType", QueryType);
+            writer.WriteStringValue("reviewerId", ReviewerId);
+            writer.WriteEnumValue<global::Microsoft.Graph.Models.AccessReviewReviewerScopeType>("scopeType", ScopeType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Models
     public partial class CopilotPackage : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The agentIdentityId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AgentIdentityId
+        {
+            get { return BackingStore?.Get<string?>("agentIdentityId"); }
+            set { BackingStore?.Set("agentIdentityId", value); }
+        }
+#nullable restore
+#else
+        public string AgentIdentityId
+        {
+            get { return BackingStore?.Get<string>("agentIdentityId"); }
+            set { BackingStore?.Set("agentIdentityId", value); }
+        }
+#endif
         /// <summary>The appId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -279,6 +295,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "agentIdentityId", n => { AgentIdentityId = n.GetStringValue(); } },
                 { "appId", n => { AppId = n.GetStringValue(); } },
                 { "assetId", n => { AssetId = n.GetStringValue(); } },
                 { "availableTo", n => { AvailableTo = n.GetEnumValue<global::Microsoft.Graph.Models.PackageStatus>(); } },
@@ -308,6 +325,7 @@ namespace Microsoft.Graph.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteStringValue("agentIdentityId", AgentIdentityId);
             writer.WriteStringValue("appId", AppId);
             writer.WriteStringValue("assetId", AssetId);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.PackageStatus>("availableTo", AvailableTo);

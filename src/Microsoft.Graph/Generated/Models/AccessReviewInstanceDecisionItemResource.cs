@@ -105,6 +105,7 @@ namespace Microsoft.Graph.Models
             return mappingValue switch
             {
                 "#microsoft.graph.accessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource" => new global::Microsoft.Graph.Models.AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource(),
+                "#microsoft.graph.accessReviewInstanceDecisionItemAccessPackageResource" => new global::Microsoft.Graph.Models.AccessReviewInstanceDecisionItemAccessPackageResource(),
                 "#microsoft.graph.accessReviewInstanceDecisionItemAzureRoleResource" => new global::Microsoft.Graph.Models.AccessReviewInstanceDecisionItemAzureRoleResource(),
                 "#microsoft.graph.accessReviewInstanceDecisionItemServicePrincipalResource" => new global::Microsoft.Graph.Models.AccessReviewInstanceDecisionItemServicePrincipalResource(),
                 _ => new global::Microsoft.Graph.Models.AccessReviewInstanceDecisionItemResource(),

@@ -172,6 +172,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("controlConfigurations", value); }
         }
 #endif
+        /// <summary>Represents the connectors used to communicate with external resource systems.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.ExternalOriginResourceConnector>? ExternalOriginResourceConnectors
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.ExternalOriginResourceConnector>?>("externalOriginResourceConnectors"); }
+            set { BackingStore?.Set("externalOriginResourceConnectors", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.ExternalOriginResourceConnector> ExternalOriginResourceConnectors
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.ExternalOriginResourceConnector>>("externalOriginResourceConnectors"); }
+            set { BackingStore?.Set("externalOriginResourceConnectors", value); }
+        }
+#endif
         /// <summary>A reference to the geolocation environments in which a resource is located.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -296,6 +312,7 @@ namespace Microsoft.Graph.Models
                 { "catalogs", n => { Catalogs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageCatalog>(global::Microsoft.Graph.Models.AccessPackageCatalog.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "connectedOrganizations", n => { ConnectedOrganizations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ConnectedOrganization>(global::Microsoft.Graph.Models.ConnectedOrganization.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "controlConfigurations", n => { ControlConfigurations = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ControlConfiguration>(global::Microsoft.Graph.Models.ControlConfiguration.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "externalOriginResourceConnectors", n => { ExternalOriginResourceConnectors = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ExternalOriginResourceConnector>(global::Microsoft.Graph.Models.ExternalOriginResourceConnector.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "resourceEnvironments", n => { ResourceEnvironments = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageResourceEnvironment>(global::Microsoft.Graph.Models.AccessPackageResourceEnvironment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "resourceRequests", n => { ResourceRequests = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageResourceRequest>(global::Microsoft.Graph.Models.AccessPackageResourceRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "resourceRoleScopes", n => { ResourceRoleScopes = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageResourceRoleScope>(global::Microsoft.Graph.Models.AccessPackageResourceRoleScope.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -322,6 +339,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageCatalog>("catalogs", Catalogs);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ConnectedOrganization>("connectedOrganizations", ConnectedOrganizations);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ControlConfiguration>("controlConfigurations", ControlConfigurations);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ExternalOriginResourceConnector>("externalOriginResourceConnectors", ExternalOriginResourceConnectors);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageResourceEnvironment>("resourceEnvironments", ResourceEnvironments);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageResourceRequest>("resourceRequests", ResourceRequests);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessPackageResourceRoleScope>("resourceRoleScopes", ResourceRoleScopes);

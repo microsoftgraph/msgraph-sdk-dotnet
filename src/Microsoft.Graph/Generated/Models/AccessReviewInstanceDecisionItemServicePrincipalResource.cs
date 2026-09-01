@@ -28,6 +28,38 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("appId", value); }
         }
 #endif
+        /// <summary>The display name of the app role.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AppRoleDisplayName
+        {
+            get { return BackingStore?.Get<string?>("appRoleDisplayName"); }
+            set { BackingStore?.Set("appRoleDisplayName", value); }
+        }
+#nullable restore
+#else
+        public string AppRoleDisplayName
+        {
+            get { return BackingStore?.Get<string>("appRoleDisplayName"); }
+            set { BackingStore?.Set("appRoleDisplayName", value); }
+        }
+#endif
+        /// <summary>The identifier of the app role.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AppRoleId
+        {
+            get { return BackingStore?.Get<string?>("appRoleId"); }
+            set { BackingStore?.Set("appRoleId", value); }
+        }
+#nullable restore
+#else
+        public string AppRoleId
+        {
+            get { return BackingStore?.Get<string>("appRoleId"); }
+            set { BackingStore?.Set("appRoleId", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Models.AccessReviewInstanceDecisionItemServicePrincipalResource"/> and sets the default values.
         /// </summary>
@@ -54,6 +86,8 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "appId", n => { AppId = n.GetStringValue(); } },
+                { "appRoleDisplayName", n => { AppRoleDisplayName = n.GetStringValue(); } },
+                { "appRoleId", n => { AppRoleId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -65,6 +99,8 @@ namespace Microsoft.Graph.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("appId", AppId);
+            writer.WriteStringValue("appRoleDisplayName", AppRoleDisplayName);
+            writer.WriteStringValue("appRoleId", AppRoleId);
         }
     }
 }

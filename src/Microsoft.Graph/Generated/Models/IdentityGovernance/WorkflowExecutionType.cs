@@ -28,5 +28,9 @@ namespace Microsoft.Graph.Models.IdentityGovernance
         #pragma warning disable CS1591
         Preview,
         #pragma warning restore CS1591
+        [EnumMember(Value = "extensibilityOnDemand")]
+        #pragma warning disable CS1591
+        ExtensibilityOnDemand,
+        #pragma warning restore CS1591
     }
 }

@@ -28,6 +28,22 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             set { BackingStore?.Set("subject", value); }
         }
 #endif
+        /// <summary>The target subject for workflow execution.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.IdentityGovernance.WorkflowSubject? TargetSubject
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.IdentityGovernance.WorkflowSubject?>("targetSubject"); }
+            set { BackingStore?.Set("targetSubject", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.IdentityGovernance.WorkflowSubject TargetSubject
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.IdentityGovernance.WorkflowSubject>("targetSubject"); }
+            set { BackingStore?.Set("targetSubject", value); }
+        }
+#endif
         /// <summary>The task property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,6 +118,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "subject", n => { Subject = n.GetObjectValue<global::Microsoft.Graph.Models.User>(global::Microsoft.Graph.Models.User.CreateFromDiscriminatorValue); } },
+                { "targetSubject", n => { TargetSubject = n.GetObjectValue<global::Microsoft.Graph.Models.IdentityGovernance.WorkflowSubject>(global::Microsoft.Graph.Models.IdentityGovernance.WorkflowSubject.CreateFromDiscriminatorValue); } },
                 { "task", n => { Task = n.GetObjectValue<global::Microsoft.Graph.Models.IdentityGovernance.TaskObject>(global::Microsoft.Graph.Models.IdentityGovernance.TaskObject.CreateFromDiscriminatorValue); } },
                 { "taskProcessingresult", n => { TaskProcessingresult = n.GetObjectValue<global::Microsoft.Graph.Models.IdentityGovernance.TaskProcessingResult>(global::Microsoft.Graph.Models.IdentityGovernance.TaskProcessingResult.CreateFromDiscriminatorValue); } },
                 { "workflow", n => { Workflow = n.GetObjectValue<global::Microsoft.Graph.Models.IdentityGovernance.Workflow>(global::Microsoft.Graph.Models.IdentityGovernance.Workflow.CreateFromDiscriminatorValue); } },
@@ -116,6 +133,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.User>("subject", Subject);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.IdentityGovernance.WorkflowSubject>("targetSubject", TargetSubject);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.IdentityGovernance.TaskObject>("task", Task);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.IdentityGovernance.TaskProcessingResult>("taskProcessingresult", TaskProcessingresult);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.IdentityGovernance.Workflow>("workflow", Workflow);

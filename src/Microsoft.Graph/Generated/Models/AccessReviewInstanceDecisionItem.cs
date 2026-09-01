@@ -50,6 +50,22 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<DateTimeOffset?>("appliedDateTime"); }
             set { BackingStore?.Set("appliedDateTime", value); }
         }
+        /// <summary>The description of the apply result. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ApplyDescription
+        {
+            get { return BackingStore?.Get<string?>("applyDescription"); }
+            set { BackingStore?.Set("applyDescription", value); }
+        }
+#nullable restore
+#else
+        public string ApplyDescription
+        {
+            get { return BackingStore?.Get<string>("applyDescription"); }
+            set { BackingStore?.Set("applyDescription", value); }
+        }
+#endif
         /// <summary>The result of applying the decision. Possible values: New, AppliedSuccessfully, AppliedWithUnknownFailure, AppliedSuccessfullyButObjectNotFound and ApplyNotSupported. Supports $select, $orderby, and $filter (eq only). Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -237,6 +253,7 @@ namespace Microsoft.Graph.Models
                 { "accessReviewId", n => { AccessReviewId = n.GetStringValue(); } },
                 { "appliedBy", n => { AppliedBy = n.GetObjectValue<global::Microsoft.Graph.Models.UserIdentity>(global::Microsoft.Graph.Models.UserIdentity.CreateFromDiscriminatorValue); } },
                 { "appliedDateTime", n => { AppliedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "applyDescription", n => { ApplyDescription = n.GetStringValue(); } },
                 { "applyResult", n => { ApplyResult = n.GetStringValue(); } },
                 { "decision", n => { Decision = n.GetStringValue(); } },
                 { "insights", n => { Insights = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.GovernanceInsight>(global::Microsoft.Graph.Models.GovernanceInsight.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -261,6 +278,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("accessReviewId", AccessReviewId);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.UserIdentity>("appliedBy", AppliedBy);
             writer.WriteDateTimeOffsetValue("appliedDateTime", AppliedDateTime);
+            writer.WriteStringValue("applyDescription", ApplyDescription);
             writer.WriteStringValue("applyResult", ApplyResult);
             writer.WriteStringValue("decision", Decision);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.GovernanceInsight>("insights", Insights);

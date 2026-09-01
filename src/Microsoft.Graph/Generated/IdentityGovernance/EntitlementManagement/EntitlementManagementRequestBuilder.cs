@@ -10,6 +10,7 @@ using Microsoft.Graph.IdentityGovernance.EntitlementManagement.AvailableAccessPa
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement.Catalogs;
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement.ConnectedOrganizations;
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement.ControlConfigurations;
+using Microsoft.Graph.IdentityGovernance.EntitlementManagement.ExternalOriginResourceConnectors;
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceEnvironments;
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRequests;
 using Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceRoleScopes;
@@ -84,6 +85,11 @@ namespace Microsoft.Graph.IdentityGovernance.EntitlementManagement
         public global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.ControlConfigurations.ControlConfigurationsRequestBuilder ControlConfigurations
         {
             get => new global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.ControlConfigurations.ControlConfigurationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the externalOriginResourceConnectors property of the microsoft.graph.entitlementManagement entity.</summary>
+        public global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.ExternalOriginResourceConnectors.ExternalOriginResourceConnectorsRequestBuilder ExternalOriginResourceConnectors
+        {
+            get => new global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.ExternalOriginResourceConnectors.ExternalOriginResourceConnectorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the resourceEnvironments property of the microsoft.graph.entitlementManagement entity.</summary>
         public global::Microsoft.Graph.IdentityGovernance.EntitlementManagement.ResourceEnvironments.ResourceEnvironmentsRequestBuilder ResourceEnvironments

@@ -56,8 +56,11 @@ namespace Microsoft.Graph.Models
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.accessReviewAccessPackageAssignmentPolicyScope" => new global::Microsoft.Graph.Models.AccessReviewAccessPackageAssignmentPolicyScope(),
                 "#microsoft.graph.accessReviewInactiveUsersQueryScope" => new global::Microsoft.Graph.Models.AccessReviewInactiveUsersQueryScope(),
+                "#microsoft.graph.accessReviewPrincipalScope" => new global::Microsoft.Graph.Models.AccessReviewPrincipalScope(),
                 "#microsoft.graph.accessReviewQueryScope" => new global::Microsoft.Graph.Models.AccessReviewQueryScope(),
+                "#microsoft.graph.accessReviewResourceScope" => new global::Microsoft.Graph.Models.AccessReviewResourceScope(),
                 "#microsoft.graph.principalResourceMembershipsScope" => new global::Microsoft.Graph.Models.PrincipalResourceMembershipsScope(),
                 _ => new global::Microsoft.Graph.Models.AccessReviewScope(),
             };

@@ -85,7 +85,12 @@ namespace Microsoft.Graph.Models
         public static global::Microsoft.Graph.Models.GenericError CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Models.GenericError();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "#microsoft.graph.accessReviewError" => new global::Microsoft.Graph.Models.AccessReviewError(),
+                _ => new global::Microsoft.Graph.Models.GenericError(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

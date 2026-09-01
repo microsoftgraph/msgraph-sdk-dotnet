@@ -100,6 +100,22 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             set { BackingStore?.Set("task", value); }
         }
 #endif
+        /// <summary>The workflow subject associated with this task processing result. Populated for extensibility and provisioning workflows.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.IdentityGovernance.WorkflowSubject? WorkflowSubject
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.IdentityGovernance.WorkflowSubject?>("workflowSubject"); }
+            set { BackingStore?.Set("workflowSubject", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.IdentityGovernance.WorkflowSubject WorkflowSubject
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.IdentityGovernance.WorkflowSubject>("workflowSubject"); }
+            set { BackingStore?.Set("workflowSubject", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -126,6 +142,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
                 { "startedDateTime", n => { StartedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "subject", n => { Subject = n.GetObjectValue<global::Microsoft.Graph.Models.User>(global::Microsoft.Graph.Models.User.CreateFromDiscriminatorValue); } },
                 { "task", n => { Task = n.GetObjectValue<global::Microsoft.Graph.Models.IdentityGovernance.TaskObject>(global::Microsoft.Graph.Models.IdentityGovernance.TaskObject.CreateFromDiscriminatorValue); } },
+                { "workflowSubject", n => { WorkflowSubject = n.GetObjectValue<global::Microsoft.Graph.Models.IdentityGovernance.WorkflowSubject>(global::Microsoft.Graph.Models.IdentityGovernance.WorkflowSubject.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -144,6 +161,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             writer.WriteDateTimeOffsetValue("startedDateTime", StartedDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.User>("subject", Subject);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.IdentityGovernance.TaskObject>("task", Task);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.IdentityGovernance.WorkflowSubject>("workflowSubject", WorkflowSubject);
         }
     }
 }
