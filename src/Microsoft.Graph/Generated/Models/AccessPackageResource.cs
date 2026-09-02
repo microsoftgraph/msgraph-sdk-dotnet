@@ -82,6 +82,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("environment", value); }
         }
 #endif
+        /// <summary>The connector that integrates with external origin systems to provision access to resources from those systems. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.ExternalOriginResourceConnector? ExternalOriginResourceConnector
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ExternalOriginResourceConnector?>("externalOriginResourceConnector"); }
+            set { BackingStore?.Set("externalOriginResourceConnector", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.ExternalOriginResourceConnector ExternalOriginResourceConnector
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ExternalOriginResourceConnector>("externalOriginResourceConnector"); }
+            set { BackingStore?.Set("externalOriginResourceConnector", value); }
+        }
+#endif
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? ModifiedDateTime
         {
@@ -196,6 +212,7 @@ namespace Microsoft.Graph.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "environment", n => { Environment = n.GetObjectValue<global::Microsoft.Graph.Models.AccessPackageResourceEnvironment>(global::Microsoft.Graph.Models.AccessPackageResourceEnvironment.CreateFromDiscriminatorValue); } },
+                { "externalOriginResourceConnector", n => { ExternalOriginResourceConnector = n.GetObjectValue<global::Microsoft.Graph.Models.ExternalOriginResourceConnector>(global::Microsoft.Graph.Models.ExternalOriginResourceConnector.CreateFromDiscriminatorValue); } },
                 { "modifiedDateTime", n => { ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "originId", n => { OriginId = n.GetStringValue(); } },
                 { "originSystem", n => { OriginSystem = n.GetStringValue(); } },
@@ -217,6 +234,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.AccessPackageResourceEnvironment>("environment", Environment);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.ExternalOriginResourceConnector>("externalOriginResourceConnector", ExternalOriginResourceConnector);
             writer.WriteDateTimeOffsetValue("modifiedDateTime", ModifiedDateTime);
             writer.WriteStringValue("originId", OriginId);
             writer.WriteStringValue("originSystem", OriginSystem);

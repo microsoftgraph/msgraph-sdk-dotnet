@@ -136,6 +136,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("type", value); }
         }
 #endif
+        /// <summary>The locale-independent well-known name of the folder for folders created by Outlook, such as inbox, sentitems, drafts, deleteditems, or archive. For user-created folders, the value is null. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WellKnownName
+        {
+            get { return BackingStore?.Get<string?>("wellKnownName"); }
+            set { BackingStore?.Set("wellKnownName", value); }
+        }
+#nullable restore
+#else
+        public string WellKnownName
+        {
+            get { return BackingStore?.Get<string>("wellKnownName"); }
+            set { BackingStore?.Set("wellKnownName", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -163,6 +179,7 @@ namespace Microsoft.Graph.Models
                 { "singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.SingleValueLegacyExtendedProperty>(global::Microsoft.Graph.Models.SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "totalItemCount", n => { TotalItemCount = n.GetIntValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
+                { "wellKnownName", n => { WellKnownName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -182,6 +199,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.SingleValueLegacyExtendedProperty>("singleValueExtendedProperties", SingleValueExtendedProperties);
             writer.WriteIntValue("totalItemCount", TotalItemCount);
             writer.WriteStringValue("type", Type);
+            writer.WriteStringValue("wellKnownName", WellKnownName);
         }
     }
 }

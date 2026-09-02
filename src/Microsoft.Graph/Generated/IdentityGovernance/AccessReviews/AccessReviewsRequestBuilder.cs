@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.IdentityGovernance.AccessReviews.Definitions;
 using Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions;
+using Microsoft.Graph.IdentityGovernance.AccessReviews.Unified;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -29,6 +30,11 @@ namespace Microsoft.Graph.IdentityGovernance.AccessReviews
         public global::Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.HistoryDefinitionsRequestBuilder HistoryDefinitions
         {
             get => new global::Microsoft.Graph.IdentityGovernance.AccessReviews.HistoryDefinitions.HistoryDefinitionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the unified property of the microsoft.graph.accessReviewSet entity.</summary>
+        public global::Microsoft.Graph.IdentityGovernance.AccessReviews.Unified.UnifiedRequestBuilder Unified
+        {
+            get => new global::Microsoft.Graph.IdentityGovernance.AccessReviews.Unified.UnifiedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.IdentityGovernance.AccessReviews.AccessReviewsRequestBuilder"/> and sets the default values.

@@ -5,6 +5,7 @@ using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflo
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.ExecutionScope;
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.LastModifiedBy;
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.MicrosoftGraphIdentityGovernanceActivate;
+using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.MicrosoftGraphIdentityGovernanceActivateAndWait;
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.MicrosoftGraphIdentityGovernanceActivateWithScope;
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.MicrosoftGraphIdentityGovernanceCancelProcessing;
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.MicrosoftGraphIdentityGovernanceClearQuarantine;
@@ -14,6 +15,7 @@ using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflo
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.MicrosoftGraphIdentityGovernanceRestore;
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.PreviewScope;
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.Runs;
+using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.SubjectProcessingResults;
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.TaskReports;
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.Tasks;
 using Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.UserProcessingResults;
@@ -61,6 +63,11 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Wor
         {
             get => new global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.MicrosoftGraphIdentityGovernanceActivate.MicrosoftGraphIdentityGovernanceActivateRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the activateAndWait method.</summary>
+        public global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.MicrosoftGraphIdentityGovernanceActivateAndWait.MicrosoftGraphIdentityGovernanceActivateAndWaitRequestBuilder MicrosoftGraphIdentityGovernanceActivateAndWait
+        {
+            get => new global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.MicrosoftGraphIdentityGovernanceActivateAndWait.MicrosoftGraphIdentityGovernanceActivateAndWaitRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the activateWithScope method.</summary>
         public global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.MicrosoftGraphIdentityGovernanceActivateWithScope.MicrosoftGraphIdentityGovernanceActivateWithScopeRequestBuilder MicrosoftGraphIdentityGovernanceActivateWithScope
         {
@@ -105,6 +112,11 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Wor
         public global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.Runs.RunsRequestBuilder Runs
         {
             get => new global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.Runs.RunsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the subjectProcessingResults property of the microsoft.graph.identityGovernance.workflow entity.</summary>
+        public global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.SubjectProcessingResults.SubjectProcessingResultsRequestBuilder SubjectProcessingResults
+        {
+            get => new global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.SubjectProcessingResults.SubjectProcessingResultsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the taskReports property of the microsoft.graph.identityGovernance.workflow entity.</summary>
         public global::Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.TaskReports.TaskReportsRequestBuilder TaskReports

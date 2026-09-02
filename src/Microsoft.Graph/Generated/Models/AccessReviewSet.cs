@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("historyDefinitions", value); }
         }
 #endif
+        /// <summary>Entry point for the unified (vNext) access reviews API surface. Requests under this path are routed to the vNext service through the dedicated accessReviews/unified path segment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.UnifiedRoot? Unified
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.UnifiedRoot?>("unified"); }
+            set { BackingStore?.Set("unified", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.UnifiedRoot Unified
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.UnifiedRoot>("unified"); }
+            set { BackingStore?.Set("unified", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,6 +80,7 @@ namespace Microsoft.Graph.Models
             {
                 { "definitions", n => { Definitions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessReviewScheduleDefinition>(global::Microsoft.Graph.Models.AccessReviewScheduleDefinition.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "historyDefinitions", n => { HistoryDefinitions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessReviewHistoryDefinition>(global::Microsoft.Graph.Models.AccessReviewHistoryDefinition.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "unified", n => { Unified = n.GetObjectValue<global::Microsoft.Graph.Models.UnifiedRoot>(global::Microsoft.Graph.Models.UnifiedRoot.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -76,6 +93,7 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessReviewScheduleDefinition>("definitions", Definitions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessReviewHistoryDefinition>("historyDefinitions", HistoryDefinitions);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.UnifiedRoot>("unified", Unified);
         }
     }
 }

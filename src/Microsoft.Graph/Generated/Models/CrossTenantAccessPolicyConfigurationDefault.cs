@@ -146,6 +146,22 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("isServiceDefault"); }
             set { BackingStore?.Set("isServiceDefault", value); }
         }
+        /// <summary>Defines the default Microsoft 365 cross-tenant capabilities for inbound access from external organizations.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.M365CapabilityBase>? M365Capabilities
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.M365CapabilityBase>?>("m365Capabilities"); }
+            set { BackingStore?.Set("m365Capabilities", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.M365CapabilityBase> M365Capabilities
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.M365CapabilityBase>>("m365Capabilities"); }
+            set { BackingStore?.Set("m365Capabilities", value); }
+        }
+#endif
         /// <summary>Defines your default configuration for inbound Microsoft 365 collaboration settings that determine which users from other organizations can collaborate with your organization using Microsoft 365 apps.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -221,6 +237,7 @@ namespace Microsoft.Graph.Models
                 { "inboundTrust", n => { InboundTrust = n.GetObjectValue<global::Microsoft.Graph.Models.CrossTenantAccessPolicyInboundTrust>(global::Microsoft.Graph.Models.CrossTenantAccessPolicyInboundTrust.CreateFromDiscriminatorValue); } },
                 { "invitationRedemptionIdentityProviderConfiguration", n => { InvitationRedemptionIdentityProviderConfiguration = n.GetObjectValue<global::Microsoft.Graph.Models.DefaultInvitationRedemptionIdentityProviderConfiguration>(global::Microsoft.Graph.Models.DefaultInvitationRedemptionIdentityProviderConfiguration.CreateFromDiscriminatorValue); } },
                 { "isServiceDefault", n => { IsServiceDefault = n.GetBoolValue(); } },
+                { "m365Capabilities", n => { M365Capabilities = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.M365CapabilityBase>(global::Microsoft.Graph.Models.M365CapabilityBase.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "m365CollaborationInbound", n => { M365CollaborationInbound = n.GetObjectValue<global::Microsoft.Graph.Models.CrossTenantAccessPolicyM365CollaborationInboundSetting>(global::Microsoft.Graph.Models.CrossTenantAccessPolicyM365CollaborationInboundSetting.CreateFromDiscriminatorValue); } },
                 { "m365CollaborationOutbound", n => { M365CollaborationOutbound = n.GetObjectValue<global::Microsoft.Graph.Models.CrossTenantAccessPolicyM365CollaborationOutboundSetting>(global::Microsoft.Graph.Models.CrossTenantAccessPolicyM365CollaborationOutboundSetting.CreateFromDiscriminatorValue); } },
                 { "tenantRestrictions", n => { TenantRestrictions = n.GetObjectValue<global::Microsoft.Graph.Models.CrossTenantAccessPolicyTenantRestrictions>(global::Microsoft.Graph.Models.CrossTenantAccessPolicyTenantRestrictions.CreateFromDiscriminatorValue); } },
@@ -243,6 +260,7 @@ namespace Microsoft.Graph.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Models.CrossTenantAccessPolicyInboundTrust>("inboundTrust", InboundTrust);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.DefaultInvitationRedemptionIdentityProviderConfiguration>("invitationRedemptionIdentityProviderConfiguration", InvitationRedemptionIdentityProviderConfiguration);
             writer.WriteBoolValue("isServiceDefault", IsServiceDefault);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.M365CapabilityBase>("m365Capabilities", M365Capabilities);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.CrossTenantAccessPolicyM365CollaborationInboundSetting>("m365CollaborationInbound", M365CollaborationInbound);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.CrossTenantAccessPolicyM365CollaborationOutboundSetting>("m365CollaborationOutbound", M365CollaborationOutbound);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.CrossTenantAccessPolicyTenantRestrictions>("tenantRestrictions", TenantRestrictions);

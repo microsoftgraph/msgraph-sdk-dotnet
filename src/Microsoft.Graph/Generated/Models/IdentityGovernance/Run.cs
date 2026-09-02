@@ -86,6 +86,22 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             get { return BackingStore?.Get<DateTimeOffset?>("startedDateTime"); }
             set { BackingStore?.Set("startedDateTime", value); }
         }
+        /// <summary>The processing results for each subject in this workflow run.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.IdentityGovernance.SubjectProcessingResult>? SubjectProcessingResults
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.IdentityGovernance.SubjectProcessingResult>?>("subjectProcessingResults"); }
+            set { BackingStore?.Set("subjectProcessingResults", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.IdentityGovernance.SubjectProcessingResult> SubjectProcessingResults
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.IdentityGovernance.SubjectProcessingResult>>("subjectProcessingResults"); }
+            set { BackingStore?.Set("subjectProcessingResults", value); }
+        }
+#endif
         /// <summary>The number of successfully completed users in the run.</summary>
         public int? SuccessfulUsersCount
         {
@@ -175,6 +191,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
                 { "reprocessedRuns", n => { ReprocessedRuns = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.IdentityGovernance.Run>(global::Microsoft.Graph.Models.IdentityGovernance.Run.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "scheduledDateTime", n => { ScheduledDateTime = n.GetDateTimeOffsetValue(); } },
                 { "startedDateTime", n => { StartedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "subjectProcessingResults", n => { SubjectProcessingResults = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.IdentityGovernance.SubjectProcessingResult>(global::Microsoft.Graph.Models.IdentityGovernance.SubjectProcessingResult.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "successfulUsersCount", n => { SuccessfulUsersCount = n.GetIntValue(); } },
                 { "taskProcessingResults", n => { TaskProcessingResults = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.IdentityGovernance.TaskProcessingResult>(global::Microsoft.Graph.Models.IdentityGovernance.TaskProcessingResult.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "totalTasksCount", n => { TotalTasksCount = n.GetIntValue(); } },
@@ -201,6 +218,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.IdentityGovernance.Run>("reprocessedRuns", ReprocessedRuns);
             writer.WriteDateTimeOffsetValue("scheduledDateTime", ScheduledDateTime);
             writer.WriteDateTimeOffsetValue("startedDateTime", StartedDateTime);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.IdentityGovernance.SubjectProcessingResult>("subjectProcessingResults", SubjectProcessingResults);
             writer.WriteIntValue("successfulUsersCount", SuccessfulUsersCount);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.IdentityGovernance.TaskProcessingResult>("taskProcessingResults", TaskProcessingResults);
             writer.WriteIntValue("totalTasksCount", TotalTasksCount);

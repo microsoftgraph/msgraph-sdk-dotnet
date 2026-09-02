@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>Specifies the determination of the incident. The possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.</summary>
+        /// <summary>Specifies the determination of the incident. The possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedActivity, lineOfBusinessApplication, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.Security.AlertDetermination? Determination
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.AlertDetermination?>("determination"); }

@@ -120,6 +120,22 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             set { BackingStore?.Set("settings", value); }
         }
 #endif
+        /// <summary>Per-subject workflow execution results.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.IdentityGovernance.SubjectProcessingResult>? SubjectProcessingResults
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.IdentityGovernance.SubjectProcessingResult>?>("subjectProcessingResults"); }
+            set { BackingStore?.Set("subjectProcessingResults", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.IdentityGovernance.SubjectProcessingResult> SubjectProcessingResults
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.IdentityGovernance.SubjectProcessingResult>>("subjectProcessingResults"); }
+            set { BackingStore?.Set("subjectProcessingResults", value); }
+        }
+#endif
         /// <summary>Represents the aggregation of task execution data for tasks within a workflow object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -207,6 +223,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
                 { "quarantineDetails", n => { QuarantineDetails = n.GetObjectValue<global::Microsoft.Graph.Models.IdentityGovernance.QuarantineDetails>(global::Microsoft.Graph.Models.IdentityGovernance.QuarantineDetails.CreateFromDiscriminatorValue); } },
                 { "runs", n => { Runs = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.IdentityGovernance.Run>(global::Microsoft.Graph.Models.IdentityGovernance.Run.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Microsoft.Graph.Models.IdentityGovernance.WorkflowSetting>(global::Microsoft.Graph.Models.IdentityGovernance.WorkflowSetting.CreateFromDiscriminatorValue); } },
+                { "subjectProcessingResults", n => { SubjectProcessingResults = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.IdentityGovernance.SubjectProcessingResult>(global::Microsoft.Graph.Models.IdentityGovernance.SubjectProcessingResult.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "taskReports", n => { TaskReports = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.IdentityGovernance.TaskReport>(global::Microsoft.Graph.Models.IdentityGovernance.TaskReport.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "userProcessingResults", n => { UserProcessingResults = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.IdentityGovernance.UserProcessingResult>(global::Microsoft.Graph.Models.IdentityGovernance.UserProcessingResult.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "version", n => { Version = n.GetIntValue(); } },
@@ -229,6 +246,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             writer.WriteObjectValue<global::Microsoft.Graph.Models.IdentityGovernance.QuarantineDetails>("quarantineDetails", QuarantineDetails);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.IdentityGovernance.Run>("runs", Runs);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.IdentityGovernance.WorkflowSetting>("settings", Settings);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.IdentityGovernance.SubjectProcessingResult>("subjectProcessingResults", SubjectProcessingResults);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.IdentityGovernance.TaskReport>("taskReports", TaskReports);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.IdentityGovernance.UserProcessingResult>("userProcessingResults", UserProcessingResults);
             writer.WriteIntValue("version", Version);

@@ -110,6 +110,12 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("signOutUri", value); }
         }
 #endif
+        /// <summary>The systemBrowserEnabledOn property</summary>
+        public global::Microsoft.Graph.Models.SystemBrowserEnabledOn? SystemBrowserEnabledOn
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.SystemBrowserEnabledOn?>("systemBrowserEnabledOn"); }
+            set { BackingStore?.Set("systemBrowserEnabledOn", value); }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Models.InternalDomainFederation"/> and sets the default values.
         /// </summary>
@@ -143,6 +149,7 @@ namespace Microsoft.Graph.Models
                 { "promptLoginBehavior", n => { PromptLoginBehavior = n.GetEnumValue<global::Microsoft.Graph.Models.PromptLoginBehavior>(); } },
                 { "signOutUri", n => { SignOutUri = n.GetStringValue(); } },
                 { "signingCertificateUpdateStatus", n => { SigningCertificateUpdateStatus = n.GetObjectValue<global::Microsoft.Graph.Models.SigningCertificateUpdateStatus>(global::Microsoft.Graph.Models.SigningCertificateUpdateStatus.CreateFromDiscriminatorValue); } },
+                { "systemBrowserEnabledOn", n => { SystemBrowserEnabledOn = n.GetEnumValue<global::Microsoft.Graph.Models.SystemBrowserEnabledOn>(); } },
             };
         }
         /// <summary>
@@ -161,6 +168,7 @@ namespace Microsoft.Graph.Models
             writer.WriteEnumValue<global::Microsoft.Graph.Models.PromptLoginBehavior>("promptLoginBehavior", PromptLoginBehavior);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.SigningCertificateUpdateStatus>("signingCertificateUpdateStatus", SigningCertificateUpdateStatus);
             writer.WriteStringValue("signOutUri", SignOutUri);
+            writer.WriteEnumValue<global::Microsoft.Graph.Models.SystemBrowserEnabledOn>("systemBrowserEnabledOn", SystemBrowserEnabledOn);
         }
     }
 }

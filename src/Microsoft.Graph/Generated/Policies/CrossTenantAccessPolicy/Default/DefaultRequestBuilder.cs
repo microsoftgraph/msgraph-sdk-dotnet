@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Graph.Policies.CrossTenantAccessPolicy.Default.M365Capabilities;
 using Microsoft.Graph.Policies.CrossTenantAccessPolicy.Default.ResetToSystemDefault;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -19,6 +20,11 @@ namespace Microsoft.Graph.Policies.CrossTenantAccessPolicy.Default
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DefaultRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to manage the m365Capabilities property of the microsoft.graph.crossTenantAccessPolicyConfigurationDefault entity.</summary>
+        public global::Microsoft.Graph.Policies.CrossTenantAccessPolicy.Default.M365Capabilities.M365CapabilitiesRequestBuilder M365Capabilities
+        {
+            get => new global::Microsoft.Graph.Policies.CrossTenantAccessPolicy.Default.M365Capabilities.M365CapabilitiesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the resetToSystemDefault method.</summary>
         public global::Microsoft.Graph.Policies.CrossTenantAccessPolicy.Default.ResetToSystemDefault.ResetToSystemDefaultRequestBuilder ResetToSystemDefault
         {

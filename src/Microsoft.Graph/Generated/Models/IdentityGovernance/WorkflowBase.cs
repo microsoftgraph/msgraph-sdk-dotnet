@@ -163,6 +163,12 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>The targetSubjectType property</summary>
+        public global::Microsoft.Graph.Models.IdentityGovernance.SubjectType? TargetSubjectType
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.IdentityGovernance.SubjectType?>("targetSubjectType"); }
+            set { BackingStore?.Set("targetSubjectType", value); }
+        }
         /// <summary>The tasks in the workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -223,6 +229,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<global::Microsoft.Graph.Models.User>(global::Microsoft.Graph.Models.User.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "targetSubjectType", n => { TargetSubjectType = n.GetEnumValue<global::Microsoft.Graph.Models.IdentityGovernance.SubjectType>(); } },
                 { "tasks", n => { Tasks = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.IdentityGovernance.TaskObject>(global::Microsoft.Graph.Models.IdentityGovernance.TaskObject.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -245,6 +252,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             writer.WriteObjectValue<global::Microsoft.Graph.Models.User>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteEnumValue<global::Microsoft.Graph.Models.IdentityGovernance.SubjectType>("targetSubjectType", TargetSubjectType);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.IdentityGovernance.TaskObject>("tasks", Tasks);
             writer.WriteAdditionalData(AdditionalData);
         }

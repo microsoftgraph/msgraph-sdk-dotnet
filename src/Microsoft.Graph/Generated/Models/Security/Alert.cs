@@ -206,7 +206,7 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("detectorId", value); }
         }
 #endif
-        /// <summary>Specifies the result of the investigation, whether the alert represents a true attack and if so, the nature of the attack. The possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedAccount, phishing, maliciousUserActivity, notMalicious, notEnoughDataToValidate, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.</summary>
+        /// <summary>Specifies the result of the investigation, whether the alert represents a true attack and if so, the nature of the attack. The possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedAccount, phishing, maliciousUserActivity, notMalicious, notEnoughDataToValidate, confirmedActivity, lineOfBusinessApplication, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.Security.AlertDetermination? Determination
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.AlertDetermination?>("determination"); }

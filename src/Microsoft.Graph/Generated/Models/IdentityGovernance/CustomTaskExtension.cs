@@ -72,6 +72,12 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
+        /// <summary>The replyMode property</summary>
+        public global::Microsoft.Graph.Models.IdentityGovernance.CustomTaskExtensionReplyMode? ReplyMode
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.IdentityGovernance.CustomTaskExtensionReplyMode?>("replyMode"); }
+            set { BackingStore?.Set("replyMode", value); }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Models.IdentityGovernance.CustomTaskExtension"/> and sets the default values.
         /// </summary>
@@ -102,6 +108,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<global::Microsoft.Graph.Models.User>(global::Microsoft.Graph.Models.User.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "replyMode", n => { ReplyMode = n.GetEnumValue<global::Microsoft.Graph.Models.IdentityGovernance.CustomTaskExtensionReplyMode>(); } },
             };
         }
         /// <summary>
@@ -117,6 +124,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.User>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
+            writer.WriteEnumValue<global::Microsoft.Graph.Models.IdentityGovernance.CustomTaskExtensionReplyMode>("replyMode", ReplyMode);
         }
     }
 }

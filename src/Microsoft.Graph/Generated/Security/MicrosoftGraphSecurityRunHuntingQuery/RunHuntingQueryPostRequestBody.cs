@@ -53,6 +53,12 @@ namespace Microsoft.Graph.Security.MicrosoftGraphSecurityRunHuntingQuery
             set { BackingStore?.Set("timespan", value); }
         }
 #endif
+        /// <summary>The workspaceId property</summary>
+        public Guid? WorkspaceId
+        {
+            get { return BackingStore?.Get<Guid?>("workspaceId"); }
+            set { BackingStore?.Set("workspaceId", value); }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Security.MicrosoftGraphSecurityRunHuntingQuery.RunHuntingQueryPostRequestBody"/> and sets the default values.
         /// </summary>
@@ -81,6 +87,7 @@ namespace Microsoft.Graph.Security.MicrosoftGraphSecurityRunHuntingQuery
             {
                 { "query", n => { Query = n.GetStringValue(); } },
                 { "timespan", n => { Timespan = n.GetStringValue(); } },
+                { "workspaceId", n => { WorkspaceId = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -92,6 +99,7 @@ namespace Microsoft.Graph.Security.MicrosoftGraphSecurityRunHuntingQuery
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("query", Query);
             writer.WriteStringValue("timespan", Timespan);
+            writer.WriteGuidValue("workspaceId", WorkspaceId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

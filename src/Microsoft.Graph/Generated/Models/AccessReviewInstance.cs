@@ -50,6 +50,22 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
+        /// <summary>Collection of errors in an access review instance lifecycle. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.AccessReviewError>? Errors
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.AccessReviewError>?>("errors"); }
+            set { BackingStore?.Set("errors", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.AccessReviewError> Errors
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.AccessReviewError>>("errors"); }
+            set { BackingStore?.Set("errors", value); }
+        }
+#endif
         /// <summary>This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user&apos;s manager does not exist. Supports $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -157,6 +173,7 @@ namespace Microsoft.Graph.Models
                 { "contactedReviewers", n => { ContactedReviewers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessReviewReviewer>(global::Microsoft.Graph.Models.AccessReviewReviewer.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "decisions", n => { Decisions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessReviewInstanceDecisionItem>(global::Microsoft.Graph.Models.AccessReviewInstanceDecisionItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessReviewError>(global::Microsoft.Graph.Models.AccessReviewError.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "fallbackReviewers", n => { FallbackReviewers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessReviewReviewerScope>(global::Microsoft.Graph.Models.AccessReviewReviewerScope.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessReviewReviewerScope>(global::Microsoft.Graph.Models.AccessReviewReviewerScope.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "scope", n => { Scope = n.GetObjectValue<global::Microsoft.Graph.Models.AccessReviewScope>(global::Microsoft.Graph.Models.AccessReviewScope.CreateFromDiscriminatorValue); } },
@@ -176,6 +193,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessReviewReviewer>("contactedReviewers", ContactedReviewers);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessReviewInstanceDecisionItem>("decisions", Decisions);
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessReviewError>("errors", Errors);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessReviewReviewerScope>("fallbackReviewers", FallbackReviewers);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AccessReviewReviewerScope>("reviewers", Reviewers);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.AccessReviewScope>("scope", Scope);

@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Admin
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AdminRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Provides operations to manage the configurationManagement property of the microsoft.graph.admin entity.</summary>
+        /// <summary>The configurationManagement property</summary>
         public global::Microsoft.Graph.Admin.ConfigurationManagement.ConfigurationManagementRequestBuilder ConfigurationManagement
         {
             get => new global::Microsoft.Graph.Admin.ConfigurationManagement.ConfigurationManagementRequestBuilder(PathParameters, RequestAdapter);
