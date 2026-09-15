@@ -12,6 +12,7 @@ using Microsoft.Graph.DirectoryNamespace.Recovery;
 using Microsoft.Graph.DirectoryNamespace.RemoteTenantGroups;
 using Microsoft.Graph.DirectoryNamespace.Subscriptions;
 using Microsoft.Graph.DirectoryNamespace.SubscriptionsWithCommerceSubscriptionId;
+using Microsoft.Graph.DirectoryNamespace.TenantGovernance;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -84,6 +85,11 @@ namespace Microsoft.Graph.DirectoryNamespace
         public global::Microsoft.Graph.DirectoryNamespace.Subscriptions.SubscriptionsRequestBuilder Subscriptions
         {
             get => new global::Microsoft.Graph.DirectoryNamespace.Subscriptions.SubscriptionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the tenantGovernance property of the microsoft.graph.directory entity.</summary>
+        public global::Microsoft.Graph.DirectoryNamespace.TenantGovernance.TenantGovernanceRequestBuilder TenantGovernance
+        {
+            get => new global::Microsoft.Graph.DirectoryNamespace.TenantGovernance.TenantGovernanceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.DirectoryNamespace.DirectoryRequestBuilder"/> and sets the default values.

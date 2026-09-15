@@ -21,11 +21,17 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The blockAzureADGraphAccess property</summary>
+        /// <summary>If false, allows the app to have extended access to Azure AD Graph until August 31, 2025 when Azure AD Graph is fully retired. For more information on Azure AD retirement updates, see June 2024 update on Azure AD Graph API retirement.</summary>
         public bool? BlockAzureADGraphAccess
         {
             get { return BackingStore?.Get<bool?>("blockAzureADGraphAccess"); }
             set { BackingStore?.Set("blockAzureADGraphAccess", value); }
+        }
+        /// <summary>Indicates whether Cross-Origin-Opener-Policy (COOP) headers are enforced on browser-based authentication responses for the application. Set to true to enable enforcement, false to temporarily suppress enforcement, or null to use the service default. For how-to guidance, see Control Cross-Origin-Opener-Policy enforcement.</summary>
+        public bool? CoopEnforcement
+        {
+            get { return BackingStore?.Get<bool?>("coopEnforcement"); }
+            set { BackingStore?.Set("coopEnforcement", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -43,13 +49,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The removeUnverifiedEmailClaim property</summary>
+        /// <summary>If true, removes the email claim from tokens sent to an application when the email address&apos;s domain can&apos;t be verified.</summary>
         public bool? RemoveUnverifiedEmailClaim
         {
             get { return BackingStore?.Get<bool?>("removeUnverifiedEmailClaim"); }
             set { BackingStore?.Set("removeUnverifiedEmailClaim", value); }
         }
-        /// <summary>The requireClientServicePrincipal property</summary>
+        /// <summary>If true, requires multitenant applications to have a service principal in the resource tenant as part of authorization checks before they&apos;re granted access tokens. This property is only modifiable for multitenant resource applications that rely on access from clients without a service principal and had this behavior as set to false by Microsoft. Tenant administrators should respond to security advisories sent through Azure Health Service events and the Microsoft 365 message center.</summary>
         public bool? RequireClientServicePrincipal
         {
             get { return BackingStore?.Get<bool?>("requireClientServicePrincipal"); }
@@ -82,6 +88,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "blockAzureADGraphAccess", n => { BlockAzureADGraphAccess = n.GetBoolValue(); } },
+                { "coopEnforcement", n => { CoopEnforcement = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "removeUnverifiedEmailClaim", n => { RemoveUnverifiedEmailClaim = n.GetBoolValue(); } },
                 { "requireClientServicePrincipal", n => { RequireClientServicePrincipal = n.GetBoolValue(); } },
@@ -95,6 +102,7 @@ namespace Microsoft.Graph.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("blockAzureADGraphAccess", BlockAzureADGraphAccess);
+            writer.WriteBoolValue("coopEnforcement", CoopEnforcement);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("removeUnverifiedEmailClaim", RemoveUnverifiedEmailClaim);
             writer.WriteBoolValue("requireClientServicePrincipal", RequireClientServicePrincipal);

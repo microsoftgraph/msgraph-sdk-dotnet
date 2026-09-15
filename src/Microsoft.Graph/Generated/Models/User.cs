@@ -1134,6 +1134,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("mySite", value); }
         }
 #endif
+        /// <summary>The notes in the user&apos;s Notes folder. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.Note>? Notes
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Note>?>("notes"); }
+            set { BackingStore?.Set("notes", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.Note> Notes
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.Note>>("notes"); }
+            set { BackingStore?.Set("notes", value); }
+        }
+#endif
         /// <summary>The oauth2PermissionGrants property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -2129,6 +2145,7 @@ namespace Microsoft.Graph.Models
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Message>(global::Microsoft.Graph.Models.Message.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "mobilePhone", n => { MobilePhone = n.GetStringValue(); } },
                 { "mySite", n => { MySite = n.GetStringValue(); } },
+                { "notes", n => { Notes = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Note>(global::Microsoft.Graph.Models.Note.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "oauth2PermissionGrants", n => { Oauth2PermissionGrants = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.OAuth2PermissionGrant>(global::Microsoft.Graph.Models.OAuth2PermissionGrant.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "officeLocation", n => { OfficeLocation = n.GetStringValue(); } },
                 { "onPremisesDistinguishedName", n => { OnPremisesDistinguishedName = n.GetStringValue(); } },
@@ -2274,6 +2291,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Message>("messages", Messages);
             writer.WriteStringValue("mobilePhone", MobilePhone);
             writer.WriteStringValue("mySite", MySite);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Note>("notes", Notes);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.OAuth2PermissionGrant>("oauth2PermissionGrants", Oauth2PermissionGrants);
             writer.WriteStringValue("officeLocation", OfficeLocation);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Onenote>("onenote", Onenote);

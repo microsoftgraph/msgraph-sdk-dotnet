@@ -51,6 +51,7 @@ using Microsoft.Graph.Users.Item.ManagedDevices;
 using Microsoft.Graph.Users.Item.Manager;
 using Microsoft.Graph.Users.Item.MemberOf;
 using Microsoft.Graph.Users.Item.Messages;
+using Microsoft.Graph.Users.Item.Notes;
 using Microsoft.Graph.Users.Item.Oauth2PermissionGrants;
 using Microsoft.Graph.Users.Item.OnPremisesSyncBehavior;
 using Microsoft.Graph.Users.Item.Onenote;
@@ -338,6 +339,11 @@ namespace Microsoft.Graph.Users.Item
         public global::Microsoft.Graph.Users.Item.Messages.MessagesRequestBuilder Messages
         {
             get => new global::Microsoft.Graph.Users.Item.Messages.MessagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the notes property of the microsoft.graph.user entity.</summary>
+        public global::Microsoft.Graph.Users.Item.Notes.NotesRequestBuilder Notes
+        {
+            get => new global::Microsoft.Graph.Users.Item.Notes.NotesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the oauth2PermissionGrants property of the microsoft.graph.user entity.</summary>
         public global::Microsoft.Graph.Users.Item.Oauth2PermissionGrants.Oauth2PermissionGrantsRequestBuilder Oauth2PermissionGrants

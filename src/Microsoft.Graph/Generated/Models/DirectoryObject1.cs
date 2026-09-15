@@ -189,6 +189,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("subscriptions", value); }
         }
 #endif
+        /// <summary>The tenantGovernance property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.TenantGovernance? TenantGovernance
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.TenantGovernance?>("tenantGovernance"); }
+            set { BackingStore?.Set("tenantGovernance", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.TenantGovernance TenantGovernance
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.TenantGovernance>("tenantGovernance"); }
+            set { BackingStore?.Set("tenantGovernance", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -218,6 +234,7 @@ namespace Microsoft.Graph.Models
                 { "recovery", n => { Recovery = n.GetObjectValue<global::Microsoft.Graph.Models.EntraRecoveryServices.Recovery>(global::Microsoft.Graph.Models.EntraRecoveryServices.Recovery.CreateFromDiscriminatorValue); } },
                 { "remoteTenantGroups", n => { RemoteTenantGroups = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.RemoteTenantGroup>(global::Microsoft.Graph.Models.RemoteTenantGroup.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "subscriptions", n => { Subscriptions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.CompanySubscription>(global::Microsoft.Graph.Models.CompanySubscription.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "tenantGovernance", n => { TenantGovernance = n.GetObjectValue<global::Microsoft.Graph.Models.TenantGovernance>(global::Microsoft.Graph.Models.TenantGovernance.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -239,6 +256,7 @@ namespace Microsoft.Graph.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Models.EntraRecoveryServices.Recovery>("recovery", Recovery);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.RemoteTenantGroup>("remoteTenantGroups", RemoteTenantGroups);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.CompanySubscription>("subscriptions", Subscriptions);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.TenantGovernance>("tenantGovernance", TenantGovernance);
         }
     }
 }

@@ -75,6 +75,7 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.eventMessageResponse" => new global::Microsoft.Graph.Models.EventMessageResponse(),
                 "#microsoft.graph.mailboxItem" => new global::Microsoft.Graph.Models.MailboxItem(),
                 "#microsoft.graph.message" => new global::Microsoft.Graph.Models.Message(),
+                "#microsoft.graph.note" => new global::Microsoft.Graph.Models.Note(),
                 "#microsoft.graph.post" => new global::Microsoft.Graph.Models.Post(),
                 _ => new global::Microsoft.Graph.Models.OutlookItem(),
             };

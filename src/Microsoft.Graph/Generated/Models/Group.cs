@@ -544,7 +544,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("onPremisesDomainName", value); }
         }
 #endif
-        /// <summary>The onPremisesExtensionAttributes property</summary>
+        /// <summary>Complex type containing extension attributes 1-15 for the group, synchronized from on-premises Active Directory. Returned only on $select. Supports $filter (eq, ne, not, in).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.OnPremisesExtensionAttributes? OnPremisesExtensionAttributes

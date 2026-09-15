@@ -130,6 +130,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("justification", value); }
         }
 #endif
+        /// <summary>The permission property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.AccessReviewInstanceDecisionItemPermission? Permission
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.AccessReviewInstanceDecisionItemPermission?>("permission"); }
+            set { BackingStore?.Set("permission", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.AccessReviewInstanceDecisionItemPermission Permission
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.AccessReviewInstanceDecisionItemPermission>("permission"); }
+            set { BackingStore?.Set("permission", value); }
+        }
+#endif
         /// <summary>Every decision item in an access review represents a principal&apos;s access to a resource. This property represents details of the principal. For example, if a decision item represents access of User &apos;Bob&apos; to Group &apos;Sales&apos; - The principal is &apos;Bob&apos; and the resource is &apos;Sales&apos;. Principals can be of two types - userIdentity and servicePrincipalIdentity. Supports $select. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -258,6 +274,7 @@ namespace Microsoft.Graph.Models
                 { "decision", n => { Decision = n.GetStringValue(); } },
                 { "insights", n => { Insights = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.GovernanceInsight>(global::Microsoft.Graph.Models.GovernanceInsight.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "justification", n => { Justification = n.GetStringValue(); } },
+                { "permission", n => { Permission = n.GetObjectValue<global::Microsoft.Graph.Models.AccessReviewInstanceDecisionItemPermission>(global::Microsoft.Graph.Models.AccessReviewInstanceDecisionItemPermission.CreateFromDiscriminatorValue); } },
                 { "principal", n => { Principal = n.GetObjectValue<global::Microsoft.Graph.Models.Identity>(global::Microsoft.Graph.Models.Identity.CreateFromDiscriminatorValue); } },
                 { "principalLink", n => { PrincipalLink = n.GetStringValue(); } },
                 { "recommendation", n => { Recommendation = n.GetStringValue(); } },
@@ -283,6 +300,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("decision", Decision);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.GovernanceInsight>("insights", Insights);
             writer.WriteStringValue("justification", Justification);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.AccessReviewInstanceDecisionItemPermission>("permission", Permission);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Identity>("principal", Principal);
             writer.WriteStringValue("principalLink", PrincipalLink);
             writer.WriteStringValue("recommendation", Recommendation);

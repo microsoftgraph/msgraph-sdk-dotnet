@@ -104,6 +104,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("justification", value); }
         }
 #endif
+        /// <summary>The parameters property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.AccessPackageAssignmentRequestParameters? Parameters
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.AccessPackageAssignmentRequestParameters?>("parameters"); }
+            set { BackingStore?.Set("parameters", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.AccessPackageAssignmentRequestParameters Parameters
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.AccessPackageAssignmentRequestParameters>("parameters"); }
+            set { BackingStore?.Set("parameters", value); }
+        }
+#endif
         /// <summary>The subject who requested or, if a direct assignment, was assigned. Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -189,6 +205,7 @@ namespace Microsoft.Graph.Models
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "customExtensionCalloutInstances", n => { CustomExtensionCalloutInstances = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.CustomExtensionCalloutInstance>(global::Microsoft.Graph.Models.CustomExtensionCalloutInstance.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "justification", n => { Justification = n.GetStringValue(); } },
+                { "parameters", n => { Parameters = n.GetObjectValue<global::Microsoft.Graph.Models.AccessPackageAssignmentRequestParameters>(global::Microsoft.Graph.Models.AccessPackageAssignmentRequestParameters.CreateFromDiscriminatorValue); } },
                 { "requestType", n => { RequestType = n.GetEnumValue<global::Microsoft.Graph.Models.AccessPackageRequestType>(); } },
                 { "requestor", n => { Requestor = n.GetObjectValue<global::Microsoft.Graph.Models.AccessPackageSubject>(global::Microsoft.Graph.Models.AccessPackageSubject.CreateFromDiscriminatorValue); } },
                 { "schedule", n => { Schedule = n.GetObjectValue<global::Microsoft.Graph.Models.EntitlementManagementSchedule>(global::Microsoft.Graph.Models.EntitlementManagementSchedule.CreateFromDiscriminatorValue); } },
@@ -211,6 +228,7 @@ namespace Microsoft.Graph.Models
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.CustomExtensionCalloutInstance>("customExtensionCalloutInstances", CustomExtensionCalloutInstances);
             writer.WriteStringValue("justification", Justification);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.AccessPackageAssignmentRequestParameters>("parameters", Parameters);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.AccessPackageSubject>("requestor", Requestor);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.AccessPackageRequestType>("requestType", RequestType);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.EntitlementManagementSchedule>("schedule", Schedule);

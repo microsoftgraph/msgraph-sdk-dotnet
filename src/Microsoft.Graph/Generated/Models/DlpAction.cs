@@ -60,5 +60,9 @@ namespace Microsoft.Graph.Models
         #pragma warning disable CS1591
         RestrictWebGrounding,
         #pragma warning restore CS1591
+        [EnumMember(Value = "policyTip")]
+        #pragma warning disable CS1591
+        PolicyTip,
+        #pragma warning restore CS1591
     }
 }
