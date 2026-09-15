@@ -49,6 +49,7 @@ using Microsoft.Graph.Me.ManagedDevices;
 using Microsoft.Graph.Me.Manager;
 using Microsoft.Graph.Me.MemberOf;
 using Microsoft.Graph.Me.Messages;
+using Microsoft.Graph.Me.Notes;
 using Microsoft.Graph.Me.Oauth2PermissionGrants;
 using Microsoft.Graph.Me.OnPremisesSyncBehavior;
 using Microsoft.Graph.Me.Onenote;
@@ -338,6 +339,11 @@ namespace Microsoft.Graph.Me
         public global::Microsoft.Graph.Me.Messages.MessagesRequestBuilder Messages
         {
             get => new global::Microsoft.Graph.Me.Messages.MessagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the notes property of the microsoft.graph.user entity.</summary>
+        public global::Microsoft.Graph.Me.Notes.NotesRequestBuilder Notes
+        {
+            get => new global::Microsoft.Graph.Me.Notes.NotesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the oauth2PermissionGrants property of the microsoft.graph.user entity.</summary>
         public global::Microsoft.Graph.Me.Oauth2PermissionGrants.Oauth2PermissionGrantsRequestBuilder Oauth2PermissionGrants

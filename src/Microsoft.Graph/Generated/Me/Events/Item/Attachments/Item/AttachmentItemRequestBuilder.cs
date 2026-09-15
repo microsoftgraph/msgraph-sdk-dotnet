@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Me.Events.Item.Attachments.Item
         {
         }
         /// <summary>
-        /// Delete an attachment from a user calendar event, mail message, or group post.
+        /// Delete an attachment from a user calendar event, mail message, note, or group post.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/attachment-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Me.Events.Item.Attachments.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.Attachment>(requestInfo, global::Microsoft.Graph.Models.Attachment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an attachment from a user calendar event, mail message, or group post.
+        /// Delete an attachment from a user calendar event, mail message, note, or group post.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.extensionProperty" => new global::Microsoft.Graph.Models.ExtensionProperty(),
                 "#microsoft.graph.federatedTokenValidationPolicy" => new global::Microsoft.Graph.Models.FederatedTokenValidationPolicy(),
                 "#microsoft.graph.group" => new global::Microsoft.Graph.Models.Group(),
+                "#microsoft.graph.groupResource" => new global::Microsoft.Graph.Models.GroupResource(),
                 "#microsoft.graph.groupSettingTemplate" => new global::Microsoft.Graph.Models.GroupSettingTemplate(),
                 "#microsoft.graph.homeRealmDiscoveryPolicy" => new global::Microsoft.Graph.Models.HomeRealmDiscoveryPolicy(),
                 "#microsoft.graph.identitySecurityDefaultsEnforcementPolicy" => new global::Microsoft.Graph.Models.IdentitySecurityDefaultsEnforcementPolicy(),

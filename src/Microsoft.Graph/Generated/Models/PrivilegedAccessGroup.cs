@@ -124,6 +124,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("eligibilitySchedules", value); }
         }
 #endif
+        /// <summary>The resources property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.GroupResource>? Resources
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.GroupResource>?>("resources"); }
+            set { BackingStore?.Set("resources", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.GroupResource> Resources
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.GroupResource>>("resources"); }
+            set { BackingStore?.Set("resources", value); }
+        }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -149,6 +165,7 @@ namespace Microsoft.Graph.Models
                 { "eligibilityScheduleInstances", n => { EligibilityScheduleInstances = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.PrivilegedAccessGroupEligibilityScheduleInstance>(global::Microsoft.Graph.Models.PrivilegedAccessGroupEligibilityScheduleInstance.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "eligibilityScheduleRequests", n => { EligibilityScheduleRequests = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.PrivilegedAccessGroupEligibilityScheduleRequest>(global::Microsoft.Graph.Models.PrivilegedAccessGroupEligibilityScheduleRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "eligibilitySchedules", n => { EligibilitySchedules = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.PrivilegedAccessGroupEligibilitySchedule>(global::Microsoft.Graph.Models.PrivilegedAccessGroupEligibilitySchedule.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "resources", n => { Resources = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.GroupResource>(global::Microsoft.Graph.Models.GroupResource.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -166,6 +183,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.PrivilegedAccessGroupEligibilityScheduleInstance>("eligibilityScheduleInstances", EligibilityScheduleInstances);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.PrivilegedAccessGroupEligibilityScheduleRequest>("eligibilityScheduleRequests", EligibilityScheduleRequests);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.PrivilegedAccessGroupEligibilitySchedule>("eligibilitySchedules", EligibilitySchedules);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.GroupResource>("resources", Resources);
         }
     }
 }

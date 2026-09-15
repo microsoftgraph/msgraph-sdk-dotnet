@@ -62,6 +62,7 @@ namespace Microsoft.Graph.Models
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.policyTipAction" => new global::Microsoft.Graph.Models.PolicyTipAction(),
                 "#microsoft.graph.restrictAccessAction" => new global::Microsoft.Graph.Models.RestrictAccessAction(),
                 "#microsoft.graph.restrictAccessActionBase" => new global::Microsoft.Graph.Models.RestrictAccessActionBase(),
                 _ => new global::Microsoft.Graph.Models.DlpActionInfo(),

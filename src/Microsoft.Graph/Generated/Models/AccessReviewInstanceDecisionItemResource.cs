@@ -21,6 +21,22 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The description property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description
+        {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#nullable restore
+#else
+        public string Description
+        {
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#endif
         /// <summary>Display name of the resource</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -107,6 +123,7 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.accessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource" => new global::Microsoft.Graph.Models.AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource(),
                 "#microsoft.graph.accessReviewInstanceDecisionItemAccessPackageResource" => new global::Microsoft.Graph.Models.AccessReviewInstanceDecisionItemAccessPackageResource(),
                 "#microsoft.graph.accessReviewInstanceDecisionItemAzureRoleResource" => new global::Microsoft.Graph.Models.AccessReviewInstanceDecisionItemAzureRoleResource(),
+                "#microsoft.graph.accessReviewInstanceDecisionItemCustomDataProvidedResource" => new global::Microsoft.Graph.Models.AccessReviewInstanceDecisionItemCustomDataProvidedResource(),
                 "#microsoft.graph.accessReviewInstanceDecisionItemServicePrincipalResource" => new global::Microsoft.Graph.Models.AccessReviewInstanceDecisionItemServicePrincipalResource(),
                 _ => new global::Microsoft.Graph.Models.AccessReviewInstanceDecisionItemResource(),
             };
@@ -119,6 +136,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -132,6 +150,7 @@ namespace Microsoft.Graph.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("@odata.type", OdataType);
