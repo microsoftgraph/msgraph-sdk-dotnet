@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The delegatedAdministrationRoleAssignments property</summary>
+        /// <summary>A snapshot of the delegated administration role assignments configured in this policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.DelegatedAdministrationRoleAssignmentSnapshot>? DelegatedAdministrationRoleAssignments
@@ -37,13 +37,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("delegatedAdministrationRoleAssignments", value); }
         }
 #endif
-        /// <summary>The governedTenantCanTerminate property</summary>
+        /// <summary>Indicates whether the governed tenant can terminate the relationship.</summary>
         public bool? GovernedTenantCanTerminate
         {
             get { return BackingStore?.Get<bool?>("governedTenantCanTerminate"); }
             set { BackingStore?.Set("governedTenantCanTerminate", value); }
         }
-        /// <summary>The multiTenantApplicationsToProvision property</summary>
+        /// <summary>A snapshot of the multi-tenant applications to be provisioned in the governed tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.MultiTenantApplicationsToProvisionSnapshot>? MultiTenantApplicationsToProvision
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The policyId property</summary>
+        /// <summary>The identifier of the source policy template from which this snapshot was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PolicyId
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("policyId", value); }
         }
 #endif
-        /// <summary>The version property</summary>
+        /// <summary>The version of the source policy template from which this snapshot was created.</summary>
         public int? Version
         {
             get { return BackingStore?.Get<int?>("version"); }

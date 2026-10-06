@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("justification", value); }
         }
 #endif
-        /// <summary>The permission property</summary>
+        /// <summary>The permission that grants the principal access to a resource. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.AccessReviewInstanceDecisionItemPermission? Permission

@@ -12,19 +12,19 @@ namespace Microsoft.Graph.Models
     public partial class GovernanceInvitation : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The date and time when the invitation was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The expirationDateTime property</summary>
+        /// <summary>The date and time when the invitation expires. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.</summary>
         public DateTimeOffset? ExpirationDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
-        /// <summary>The governedTenantId property</summary>
+        /// <summary>The Microsoft Entra tenant ID of the governed tenant. Supports $filter (eq, ne) and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GovernedTenantId
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("governedTenantId", value); }
         }
 #endif
-        /// <summary>The governedTenantName property</summary>
+        /// <summary>The display name of the governed tenant. Supports $filter (eq, ne) and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GovernedTenantName
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("governedTenantName", value); }
         }
 #endif
-        /// <summary>The governingTenantId property</summary>
+        /// <summary>The Microsoft Entra tenant ID of the governing tenant. Supports $filter (eq, ne) and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GoverningTenantId
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("governingTenantId", value); }
         }
 #endif
-        /// <summary>The governingTenantName property</summary>
+        /// <summary>The display name of the governing tenant. Supports $filter (eq, ne) and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GoverningTenantName

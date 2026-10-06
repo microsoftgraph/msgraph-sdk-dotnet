@@ -35,7 +35,7 @@ namespace Microsoft.Graph.DirectoryNamespace.TenantGovernance.GovernanceRequests
         {
         }
         /// <summary>
-        /// Get governancePolicyTemplate from directory
+        /// The governance policy template associated with this request.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.TenantGovernancePolicyTemplate"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.DirectoryNamespace.TenantGovernance.GovernanceRequests
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.TenantGovernancePolicyTemplate>(requestInfo, global::Microsoft.Graph.Models.TenantGovernancePolicyTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get governancePolicyTemplate from directory
+        /// The governance policy template associated with this request.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.DirectoryNamespace.TenantGovernance.GovernanceRequests
             return new global::Microsoft.Graph.DirectoryNamespace.TenantGovernance.GovernanceRequests.Item.GovernancePolicyTemplate.GovernancePolicyTemplateRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get governancePolicyTemplate from directory
+        /// The governance policy template associated with this request.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GovernancePolicyTemplateRequestBuilderGetQueryParameters 

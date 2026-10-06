@@ -3,6 +3,7 @@
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Shares.Item.List.Subscriptions.Count;
+using Microsoft.Graph.Shares.Item.List.Subscriptions.GetVapidPublicKey;
 using Microsoft.Graph.Shares.Item.List.Subscriptions.Item;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -24,6 +25,11 @@ namespace Microsoft.Graph.Shares.Item.List.Subscriptions
         public global::Microsoft.Graph.Shares.Item.List.Subscriptions.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Shares.Item.List.Subscriptions.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getVapidPublicKey method.</summary>
+        public global::Microsoft.Graph.Shares.Item.List.Subscriptions.GetVapidPublicKey.GetVapidPublicKeyRequestBuilder GetVapidPublicKey
+        {
+            get => new global::Microsoft.Graph.Shares.Item.List.Subscriptions.GetVapidPublicKey.GetVapidPublicKeyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the subscriptions property of the microsoft.graph.list entity.</summary>
         /// <param name="position">The unique identifier of subscription</param>

@@ -114,6 +114,7 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.onPasswordSubmitCustomExtension" => new global::Microsoft.Graph.Models.OnPasswordSubmitCustomExtension(),
                 "#microsoft.graph.onTokenIssuanceStartCustomExtension" => new global::Microsoft.Graph.Models.OnTokenIssuanceStartCustomExtension(),
                 "#microsoft.graph.onVerifiedIdClaimValidationCustomExtension" => new global::Microsoft.Graph.Models.OnVerifiedIdClaimValidationCustomExtension(),
+                "#microsoft.graph.roleManagementCustomCalloutExtension" => new global::Microsoft.Graph.Models.RoleManagementCustomCalloutExtension(),
                 _ => new global::Microsoft.Graph.Models.CustomCalloutExtension(),
             };
         }

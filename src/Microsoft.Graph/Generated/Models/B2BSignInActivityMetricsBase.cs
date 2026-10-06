@@ -12,31 +12,31 @@ namespace Microsoft.Graph.Models
     public partial class B2BSignInActivityMetricsBase : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The inboundMonthlyTotalApplications property</summary>
+        /// <summary>The total number of applications accessed by inbound users in the last month.</summary>
         public decimal? InboundMonthlyTotalApplications
         {
             get { return BackingStore?.Get<decimal?>("inboundMonthlyTotalApplications"); }
             set { BackingStore?.Set("inboundMonthlyTotalApplications", value); }
         }
-        /// <summary>The inboundMonthlyTotalUsers property</summary>
+        /// <summary>The total number of unique inbound users with sign-in activity in the last month.</summary>
         public decimal? InboundMonthlyTotalUsers
         {
             get { return BackingStore?.Get<decimal?>("inboundMonthlyTotalUsers"); }
             set { BackingStore?.Set("inboundMonthlyTotalUsers", value); }
         }
-        /// <summary>The outboundMonthlyTotalApplications property</summary>
+        /// <summary>The total number of applications accessed by outbound users in the last month.</summary>
         public decimal? OutboundMonthlyTotalApplications
         {
             get { return BackingStore?.Get<decimal?>("outboundMonthlyTotalApplications"); }
             set { BackingStore?.Set("outboundMonthlyTotalApplications", value); }
         }
-        /// <summary>The outboundMonthlyTotalUsers property</summary>
+        /// <summary>The total number of unique outbound users with sign-in activity in the last month.</summary>
         public decimal? OutboundMonthlyTotalUsers
         {
             get { return BackingStore?.Get<decimal?>("outboundMonthlyTotalUsers"); }
             set { BackingStore?.Set("outboundMonthlyTotalUsers", value); }
         }
-        /// <summary>The watermarkDateTime property</summary>
+        /// <summary>The date and time when the metrics snapshot was taken.</summary>
         public DateTimeOffset? WatermarkDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("watermarkDateTime"); }

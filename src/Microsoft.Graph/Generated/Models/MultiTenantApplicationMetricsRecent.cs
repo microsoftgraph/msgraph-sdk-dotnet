@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class MultiTenantApplicationMetricsRecent : global::Microsoft.Graph.Models.MultiTenantApplicationMetricsBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The updateDateTime property</summary>
+        /// <summary>Timestamp that represents when multitenant application metrics are aggregated and have sufficiently changed for the related tenant.</summary>
         public DateTimeOffset? UpdateDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("updateDateTime"); }

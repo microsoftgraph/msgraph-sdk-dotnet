@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class AccessReviewInstanceDecisionItemCustomDataProvidedResource : global::Microsoft.Graph.Models.AccessReviewInstanceDecisionItemResource, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The customData property</summary>
+        /// <summary>Custom data to include with the decision.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomData
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("customData", value); }
         }
 #endif
-        /// <summary>The scopeDisplayName property</summary>
+        /// <summary>The name of the scope for the decision.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ScopeDisplayName
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("scopeDisplayName", value); }
         }
 #endif
-        /// <summary>The scopeId property</summary>
+        /// <summary>The identifier of the scope for the decision.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ScopeId
