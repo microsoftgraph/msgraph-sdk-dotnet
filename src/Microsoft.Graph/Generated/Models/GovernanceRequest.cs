@@ -12,13 +12,13 @@ namespace Microsoft.Graph.Models
     public partial class GovernanceRequest : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The expirationDateTime property</summary>
+        /// <summary>The date and time when the request expires if not accepted or rejected. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.</summary>
         public DateTimeOffset? ExpirationDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
-        /// <summary>The governancePolicyTemplate property</summary>
+        /// <summary>The governance policy template associated with this request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.TenantGovernancePolicyTemplate? GovernancePolicyTemplate
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("governancePolicyTemplate", value); }
         }
 #endif
-        /// <summary>The governedTenantId property</summary>
+        /// <summary>The Microsoft Entra tenant ID of the governed tenant. Supports $filter (eq, ne) and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GovernedTenantId
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("governedTenantId", value); }
         }
 #endif
-        /// <summary>The governedTenantName property</summary>
+        /// <summary>The display name of the governed tenant. Supports $filter (eq, ne) and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GovernedTenantName
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("governedTenantName", value); }
         }
 #endif
-        /// <summary>The governingTenantId property</summary>
+        /// <summary>The Microsoft Entra tenant ID of the governing tenant. Supports $filter (eq, ne) and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GoverningTenantId
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("governingTenantId", value); }
         }
 #endif
-        /// <summary>The governingTenantName property</summary>
+        /// <summary>The display name of the governing tenant. Supports $filter (eq, ne) and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GoverningTenantName
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("policySnapshot", value); }
         }
 #endif
-        /// <summary>The requestDateTime property</summary>
+        /// <summary>The date and time when the request was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.</summary>
         public DateTimeOffset? RequestDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("requestDateTime"); }

@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("subscriptions", value); }
         }
 #endif
-        /// <summary>The tenantGovernance property</summary>
+        /// <summary>Container for Microsoft Entra Tenant Governance capabilities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.TenantGovernance? TenantGovernance

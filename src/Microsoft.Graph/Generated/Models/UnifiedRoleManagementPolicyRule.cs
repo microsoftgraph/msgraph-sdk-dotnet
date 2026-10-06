@@ -41,6 +41,7 @@ namespace Microsoft.Graph.Models
             {
                 "#microsoft.graph.unifiedRoleManagementPolicyApprovalRule" => new global::Microsoft.Graph.Models.UnifiedRoleManagementPolicyApprovalRule(),
                 "#microsoft.graph.unifiedRoleManagementPolicyAuthenticationContextRule" => new global::Microsoft.Graph.Models.UnifiedRoleManagementPolicyAuthenticationContextRule(),
+                "#microsoft.graph.unifiedRoleManagementPolicyCustomExtensionRule" => new global::Microsoft.Graph.Models.UnifiedRoleManagementPolicyCustomExtensionRule(),
                 "#microsoft.graph.unifiedRoleManagementPolicyEnablementRule" => new global::Microsoft.Graph.Models.UnifiedRoleManagementPolicyEnablementRule(),
                 "#microsoft.graph.unifiedRoleManagementPolicyExpirationRule" => new global::Microsoft.Graph.Models.UnifiedRoleManagementPolicyExpirationRule(),
                 "#microsoft.graph.unifiedRoleManagementPolicyNotificationRule" => new global::Microsoft.Graph.Models.UnifiedRoleManagementPolicyNotificationRule(),

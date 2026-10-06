@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class B2BRegistrationMetricsInitial : global::Microsoft.Graph.Models.B2BRegistrationMetricsBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>Timestamp that represents the date time that B2B registration data was initially aggregated.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }

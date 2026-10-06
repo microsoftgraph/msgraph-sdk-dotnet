@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class MultiTenantApplicationMetricsInitial : global::Microsoft.Graph.Models.MultiTenantApplicationMetricsBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>Timestamp that represents when multitenant application metrics are initially aggregated for the related tenant.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }

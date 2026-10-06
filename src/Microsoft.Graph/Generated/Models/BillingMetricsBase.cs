@@ -12,37 +12,37 @@ namespace Microsoft.Graph.Models
     public partial class BillingMetricsBase : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The foreignAssociatedTenantBillingManagementActiveCount property</summary>
+        /// <summary>The number of foreign associated tenants with active billing management.</summary>
         public decimal? ForeignAssociatedTenantBillingManagementActiveCount
         {
             get { return BackingStore?.Get<decimal?>("foreignAssociatedTenantBillingManagementActiveCount"); }
             set { BackingStore?.Set("foreignAssociatedTenantBillingManagementActiveCount", value); }
         }
-        /// <summary>The foreignAssociatedTenantCount property</summary>
+        /// <summary>The total number of foreign associated tenants.</summary>
         public decimal? ForeignAssociatedTenantCount
         {
             get { return BackingStore?.Get<decimal?>("foreignAssociatedTenantCount"); }
             set { BackingStore?.Set("foreignAssociatedTenantCount", value); }
         }
-        /// <summary>The foreignAssociatedTenantProvisioningActiveCount property</summary>
+        /// <summary>The number of foreign associated tenants with active provisioning.</summary>
         public decimal? ForeignAssociatedTenantProvisioningActiveCount
         {
             get { return BackingStore?.Get<decimal?>("foreignAssociatedTenantProvisioningActiveCount"); }
             set { BackingStore?.Set("foreignAssociatedTenantProvisioningActiveCount", value); }
         }
-        /// <summary>The localAssociatedTenantBillingManagementActiveCount property</summary>
+        /// <summary>The number of local associated tenants with active billing management.</summary>
         public decimal? LocalAssociatedTenantBillingManagementActiveCount
         {
             get { return BackingStore?.Get<decimal?>("localAssociatedTenantBillingManagementActiveCount"); }
             set { BackingStore?.Set("localAssociatedTenantBillingManagementActiveCount", value); }
         }
-        /// <summary>The localAssociatedTenantCount property</summary>
+        /// <summary>The total number of local associated tenants.</summary>
         public decimal? LocalAssociatedTenantCount
         {
             get { return BackingStore?.Get<decimal?>("localAssociatedTenantCount"); }
             set { BackingStore?.Set("localAssociatedTenantCount", value); }
         }
-        /// <summary>The localAssociatedTenantIds property</summary>
+        /// <summary>The list of local associated tenant IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? LocalAssociatedTenantIds
@@ -58,13 +58,13 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("localAssociatedTenantIds", value); }
         }
 #endif
-        /// <summary>The localAssociatedTenantProvisioningActiveCount property</summary>
+        /// <summary>The number of local associated tenants with active provisioning.</summary>
         public decimal? LocalAssociatedTenantProvisioningActiveCount
         {
             get { return BackingStore?.Get<decimal?>("localAssociatedTenantProvisioningActiveCount"); }
             set { BackingStore?.Set("localAssociatedTenantProvisioningActiveCount", value); }
         }
-        /// <summary>The watermarkDateTime property</summary>
+        /// <summary>The date and time when the metrics snapshot was taken.</summary>
         public DateTimeOffset? WatermarkDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("watermarkDateTime"); }

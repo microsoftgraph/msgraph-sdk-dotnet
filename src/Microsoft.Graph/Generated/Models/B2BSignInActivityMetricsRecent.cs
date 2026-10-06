@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class B2BSignInActivityMetricsRecent : global::Microsoft.Graph.Models.B2BSignInActivityMetricsBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The updateDateTime property</summary>
+        /// <summary>Timestamp that represents the most recent time B2B registration data was aggregated and have sufficiently changed for the related tenant.</summary>
         public DateTimeOffset? UpdateDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("updateDateTime"); }

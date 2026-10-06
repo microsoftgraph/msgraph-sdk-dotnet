@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Graph.Subscriptions.GetVapidPublicKey;
 using Microsoft.Graph.Subscriptions.Item;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -19,6 +20,11 @@ namespace Microsoft.Graph.Subscriptions
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SubscriptionsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to call the getVapidPublicKey method.</summary>
+        public global::Microsoft.Graph.Subscriptions.GetVapidPublicKey.GetVapidPublicKeyRequestBuilder GetVapidPublicKey
+        {
+            get => new global::Microsoft.Graph.Subscriptions.GetVapidPublicKey.GetVapidPublicKeyRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the collection of subscription entities.</summary>
         /// <param name="position">The unique identifier of subscription</param>
         /// <returns>A <see cref="global::Microsoft.Graph.Subscriptions.Item.SubscriptionItemRequestBuilder"/></returns>

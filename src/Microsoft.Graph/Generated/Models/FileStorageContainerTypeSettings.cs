@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>A comma-separated list of settings that can be overridden in the consuming tenant. The possible values are: urlTemplate, isDiscoverabilityEnabled, isSearchEnabled, isItemVersioningEnabled, itemMajorVersionLimit, maxStoragePerContainerInBytes, unknownFutureValue.</summary>
+        /// <summary>A comma-separated list of settings that can be overridden in the consuming tenant. The possible values are: urlTemplate, isDiscoverabilityEnabled, isSearchEnabled, isItemVersioningEnabled, itemMajorVersionLimit, maxStoragePerContainerInBytes, unknownFutureValue, isOfficeRestricted.</summary>
         public global::Microsoft.Graph.Models.FileStorageContainerTypeSettingsOverride? ConsumingTenantOverridables
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.FileStorageContainerTypeSettingsOverride?>("consumingTenantOverridables"); }

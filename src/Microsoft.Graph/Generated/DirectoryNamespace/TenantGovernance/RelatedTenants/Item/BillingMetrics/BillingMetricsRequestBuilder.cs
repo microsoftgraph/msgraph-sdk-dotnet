@@ -35,7 +35,7 @@ namespace Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.Ite
         {
         }
         /// <summary>
-        /// Get billingMetrics from directory
+        /// Billing metrics for this related tenant. Expanded by default.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.BillingMetrics"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.Ite
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.BillingMetrics>(requestInfo, global::Microsoft.Graph.Models.BillingMetrics.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get billingMetrics from directory
+        /// Billing metrics for this related tenant. Expanded by default.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.Ite
             return new global::Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.Item.BillingMetrics.BillingMetricsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get billingMetrics from directory
+        /// Billing metrics for this related tenant. Expanded by default.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BillingMetricsRequestBuilderGetQueryParameters 

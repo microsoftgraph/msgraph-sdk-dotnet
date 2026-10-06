@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class RelatedTenantsRefreshRequest : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The location property</summary>
+        /// <summary>The location URL where the status of the refresh request can be retrieved.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Location

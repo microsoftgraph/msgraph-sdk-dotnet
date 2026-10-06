@@ -12,19 +12,19 @@ namespace Microsoft.Graph.Models
     public partial class B2BRegistrationMetricsBase : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The inboundTotalUsers property</summary>
+        /// <summary>The total number of inbound B2B guest users registered.</summary>
         public decimal? InboundTotalUsers
         {
             get { return BackingStore?.Get<decimal?>("inboundTotalUsers"); }
             set { BackingStore?.Set("inboundTotalUsers", value); }
         }
-        /// <summary>The outboundTotalUsers property</summary>
+        /// <summary>The total number of outbound B2B users from this tenant registered in other tenants.</summary>
         public decimal? OutboundTotalUsers
         {
             get { return BackingStore?.Get<decimal?>("outboundTotalUsers"); }
             set { BackingStore?.Set("outboundTotalUsers", value); }
         }
-        /// <summary>The watermarkDateTime property</summary>
+        /// <summary>The date and time when the metrics snapshot was taken.</summary>
         public DateTimeOffset? WatermarkDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("watermarkDateTime"); }

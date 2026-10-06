@@ -18,13 +18,13 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.RelationshipCreationType?>("createdType"); }
             set { BackingStore?.Set("createdType", value); }
         }
-        /// <summary>The creationDateTime property</summary>
+        /// <summary>The date and time when the relationship was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2026 is 2026-01-01T00:00:00Z. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.</summary>
         public DateTimeOffset? CreationDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("creationDateTime"); }
             set { BackingStore?.Set("creationDateTime", value); }
         }
-        /// <summary>The governedTenantId property</summary>
+        /// <summary>The Microsoft Entra tenant ID of the governed tenant. Supports $filter (eq, ne) and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GovernedTenantId
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("governedTenantId", value); }
         }
 #endif
-        /// <summary>The governedTenantName property</summary>
+        /// <summary>The display name of the governed tenant. Supports $filter (eq, ne) and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GovernedTenantName
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("governedTenantName", value); }
         }
 #endif
-        /// <summary>The governingTenantId property</summary>
+        /// <summary>The Microsoft Entra tenant ID of the governing tenant. Supports $filter (eq, ne) and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GoverningTenantId
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("governingTenantId", value); }
         }
 #endif
-        /// <summary>The governingTenantName property</summary>
+        /// <summary>The display name of the governing tenant. Supports $filter (eq, ne) and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GoverningTenantName
