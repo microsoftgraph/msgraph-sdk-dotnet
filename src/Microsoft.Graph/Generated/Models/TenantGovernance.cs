@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class TenantGovernance : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The governanceInvitations property</summary>
+        /// <summary>Collection of governance invitations associated with the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.GovernanceInvitation>? GovernanceInvitations
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("governanceInvitations", value); }
         }
 #endif
-        /// <summary>The governancePolicyTemplates property</summary>
+        /// <summary>Collection of governance policy templates associated with the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.TenantGovernancePolicyTemplate>? GovernancePolicyTemplates
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("governancePolicyTemplates", value); }
         }
 #endif
-        /// <summary>The governanceRelationships property</summary>
+        /// <summary>Collection of governance relationships associated with the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.GovernanceRelationship>? GovernanceRelationships
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("governanceRelationships", value); }
         }
 #endif
-        /// <summary>The governanceRequests property</summary>
+        /// <summary>Collection of governance requests associated with the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.GovernanceRequest>? GovernanceRequests
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("governanceRequests", value); }
         }
 #endif
-        /// <summary>The relatedTenants property</summary>
+        /// <summary>Collection of related tenants associated with the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.RelatedTenant>? RelatedTenants
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("relatedTenants", value); }
         }
 #endif
-        /// <summary>The settings property</summary>
+        /// <summary>Settings for the tenant governance container.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.TenantGovernanceSetting? Settings

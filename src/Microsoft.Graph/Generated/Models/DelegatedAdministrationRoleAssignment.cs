@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("group", value); }
         }
 #endif
-        /// <summary>The groupDisplayName property</summary>
+        /// <summary>The display name of the security group referenced by the group navigation property. Server-populated and read-only; returns null if the referenced group has been deleted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GroupDisplayName
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The roleTemplates property</summary>
+        /// <summary>A collection of role templates that define the roles to be assigned to the group in the governed tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.RoleTemplate>? RoleTemplates

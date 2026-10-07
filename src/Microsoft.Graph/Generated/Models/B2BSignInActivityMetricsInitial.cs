@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class B2BSignInActivityMetricsInitial : global::Microsoft.Graph.Models.B2BSignInActivityMetricsBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>Timestamp that represents when the time B2B sign-in activity content was initially aggregated for the related tenant.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }

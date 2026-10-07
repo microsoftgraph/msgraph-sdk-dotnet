@@ -12,19 +12,19 @@ namespace Microsoft.Graph.Models
     public partial class MultiTenantApplicationMetricsBase : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The inboundMonthlyTotalApplications property</summary>
+        /// <summary>The total number of inbound multi-tenant applications in the last month.</summary>
         public decimal? InboundMonthlyTotalApplications
         {
             get { return BackingStore?.Get<decimal?>("inboundMonthlyTotalApplications"); }
             set { BackingStore?.Set("inboundMonthlyTotalApplications", value); }
         }
-        /// <summary>The outboundMonthlyTotalApplications property</summary>
+        /// <summary>The total number of outbound multi-tenant applications in the last month.</summary>
         public decimal? OutboundMonthlyTotalApplications
         {
             get { return BackingStore?.Get<decimal?>("outboundMonthlyTotalApplications"); }
             set { BackingStore?.Set("outboundMonthlyTotalApplications", value); }
         }
-        /// <summary>The watermarkDateTime property</summary>
+        /// <summary>The date and time when the metrics snapshot was taken.</summary>
         public DateTimeOffset? WatermarkDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("watermarkDateTime"); }

@@ -12,13 +12,13 @@ namespace Microsoft.Graph.Models
     public partial class TenantGovernancePolicyTemplate : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The date and time when the template was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The delegatedAdministrationRoleAssignments property</summary>
+        /// <summary>A collection of delegated administration role assignments to be applied in the governed tenant when the governance relationship is established.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.DelegatedAdministrationRoleAssignment>? DelegatedAdministrationRoleAssignments
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("delegatedAdministrationRoleAssignments", value); }
         }
 #endif
-        /// <summary>The description property</summary>
+        /// <summary>A description of the policy template. Supports $filter (eq, ne) and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name of the policy template. Supports $filter (eq, ne) and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -66,19 +66,19 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The governedTenantCanTerminate property</summary>
+        /// <summary>Not implemented.</summary>
         public bool? GovernedTenantCanTerminate
         {
             get { return BackingStore?.Get<bool?>("governedTenantCanTerminate"); }
             set { BackingStore?.Set("governedTenantCanTerminate", value); }
         }
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>The date and time when the template was last modified. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The multiTenantApplicationsToProvision property</summary>
+        /// <summary>A collection of multi-tenant applications to be provisioned in the governed tenant when the governance relationship is established.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.MultiTenantApplicationsToProvision>? MultiTenantApplicationsToProvision
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("multiTenantApplicationsToProvision", value); }
         }
 #endif
-        /// <summary>The version property</summary>
+        /// <summary>The version of the policy template. Version count increased by 1 when updated. Supports $filter (lt, le, gt, ge, eq, ne) and $orderBy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Version

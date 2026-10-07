@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class BillingMetricsInitial : global::Microsoft.Graph.Models.BillingMetricsBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>Timestamp that represents when billing metrics are initially aggregated for the related tenant.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }

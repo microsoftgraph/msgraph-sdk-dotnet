@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Me.Settings.WorkHoursAndLocations.Recurrences
         {
         }
         /// <summary>
-        /// Get the recurrences from your own work plan via the recurrences navigation property.
+        /// Get the recurrences from a user&apos;s work plan via the recurrences navigation property.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/workhoursandlocationssetting-list-recurrences?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.WorkPlanRecurrenceCollectionResponse"/></returns>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Me.Settings.WorkHoursAndLocations.Recurrences
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.WorkPlanRecurrenceCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.WorkPlanRecurrenceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new workPlanRecurrence object in your own work plan.
+        /// Create a new workPlanRecurrence object in a user&apos;s work plan.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/workhoursandlocationssetting-post-recurrences?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.WorkPlanRecurrence"/></returns>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Me.Settings.WorkHoursAndLocations.Recurrences
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.WorkPlanRecurrence>(requestInfo, global::Microsoft.Graph.Models.WorkPlanRecurrence.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the recurrences from your own work plan via the recurrences navigation property.
+        /// Get the recurrences from a user&apos;s work plan via the recurrences navigation property.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Me.Settings.WorkHoursAndLocations.Recurrences
             return requestInfo;
         }
         /// <summary>
-        /// Create a new workPlanRecurrence object in your own work plan.
+        /// Create a new workPlanRecurrence object in a user&apos;s work plan.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Me.Settings.WorkHoursAndLocations.Recurrences
             return new global::Microsoft.Graph.Me.Settings.WorkHoursAndLocations.Recurrences.RecurrencesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the recurrences from your own work plan via the recurrences navigation property.
+        /// Get the recurrences from a user&apos;s work plan via the recurrences navigation property.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RecurrencesRequestBuilderGetQueryParameters 
