@@ -129,11 +129,11 @@ namespace Microsoft.Graph.Me.MailFolders.Item.Messages.Delta {
             /// <summary>Expand properties to be returned</summary>
             #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
             #nullable enable
-                        [QueryParameter("%expand")]
+                        [QueryParameter("%24expand")]
                         public string[]? Expand { get; set; }
             #nullable restore
             #else
-                        [QueryParameter("%expand")]
+                        [QueryParameter("%24expand")]
                         public string[] Expand { get; set; }
             #endif            
         }
