@@ -2,7 +2,7 @@
 
 The SDK stores response properties that are not represented by a generated model property in `AdditionalData`. In the Kiota based v5 SDK, JSON arrays and objects in this dictionary are represented by Kiota `UntypedNode` types, not `System.Text.Json.JsonElement`. Code that tests an additional-data value with `value is JsonElement` will therefore skip the value.
 
-For example, group delta responses can include the `members@delta` annotation. Read its member IDs from the untyped array:
+For example, group delta responses can include the `members@delta` annotation. The following snippet illustrates reading member IDs from the first group's untyped array; it is not a complete delta-sync loop. In a complete sync, process every group entry in `deltaResponse.Value` on every page, following all returned next links, and persist the final delta link only after successfully applying all changes:
 
 ```csharp
 using Microsoft.Graph.Models;
