@@ -35,7 +35,8 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentSch
         {
         }
         /// <summary>
-        /// Invoke action updateRequest
+        /// Update a unifiedRoleAssignmentScheduleRequest object with the result of a custom extension evaluation. This action is used to submit the result of a custom extension evaluation for a role assignment request.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/unifiedroleassignmentschedulerequest-updaterequest?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.UnifiedRoleAssignmentScheduleRequest"/></returns>
         /// <param name="body">The request body</param>
@@ -60,7 +61,7 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentSch
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.UnifiedRoleAssignmentScheduleRequest>(requestInfo, global::Microsoft.Graph.Models.UnifiedRoleAssignmentScheduleRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action updateRequest
+        /// Update a unifiedRoleAssignmentScheduleRequest object with the result of a custom extension evaluation. This action is used to submit the result of a custom extension evaluation for a role assignment request.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

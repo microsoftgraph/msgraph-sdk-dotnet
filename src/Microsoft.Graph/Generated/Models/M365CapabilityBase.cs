@@ -61,6 +61,9 @@ namespace Microsoft.Graph.Models
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
+                "#microsoft.graph.anonymousCalendarSharingFreeBusyDetail" => new global::Microsoft.Graph.Models.AnonymousCalendarSharingFreeBusyDetail(),
+                "#microsoft.graph.anonymousCalendarSharingFreeBusyReviewer" => new global::Microsoft.Graph.Models.AnonymousCalendarSharingFreeBusyReviewer(),
+                "#microsoft.graph.anonymousCalendarSharingFreeBusySimple" => new global::Microsoft.Graph.Models.AnonymousCalendarSharingFreeBusySimple(),
                 "#microsoft.graph.crossTenantCalendarAvailabilityBasic" => new global::Microsoft.Graph.Models.CrossTenantCalendarAvailabilityBasic(),
                 "#microsoft.graph.crossTenantCalendarAvailabilityLimitedDetails" => new global::Microsoft.Graph.Models.CrossTenantCalendarAvailabilityLimitedDetails(),
                 "#microsoft.graph.crossTenantCalendarSharingFreeBusyDetail" => new global::Microsoft.Graph.Models.CrossTenantCalendarSharingFreeBusyDetail(),

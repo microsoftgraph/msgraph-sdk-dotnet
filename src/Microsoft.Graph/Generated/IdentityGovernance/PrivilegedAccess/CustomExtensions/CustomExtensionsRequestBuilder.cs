@@ -54,7 +54,8 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.CustomExtensions
         {
         }
         /// <summary>
-        /// Get customExtensions from identityGovernance
+        /// Get a list of roleManagementCustomCalloutExtension objects configured for Privileged Identity Management (PIM).
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/privilegedaccessroot-list-customextensions?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.RoleManagementCustomCalloutExtensionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -77,7 +78,8 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.CustomExtensions
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.RoleManagementCustomCalloutExtensionCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.RoleManagementCustomCalloutExtensionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new navigation property to customExtensions for identityGovernance
+        /// Create a new roleManagementCustomCalloutExtension object for Privileged Identity Management (PIM).
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/privilegedaccessroot-post-customextensions?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.RoleManagementCustomCalloutExtension"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.CustomExtensions
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.RoleManagementCustomCalloutExtension>(requestInfo, global::Microsoft.Graph.Models.RoleManagementCustomCalloutExtension.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get customExtensions from identityGovernance
+        /// Get a list of roleManagementCustomCalloutExtension objects configured for Privileged Identity Management (PIM).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +123,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.CustomExtensions
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to customExtensions for identityGovernance
+        /// Create a new roleManagementCustomCalloutExtension object for Privileged Identity Management (PIM).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +154,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.CustomExtensions
             return new global::Microsoft.Graph.IdentityGovernance.PrivilegedAccess.CustomExtensions.CustomExtensionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get customExtensions from identityGovernance
+        /// Get a list of roleManagementCustomCalloutExtension objects configured for Privileged Identity Management (PIM).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CustomExtensionsRequestBuilderGetQueryParameters 

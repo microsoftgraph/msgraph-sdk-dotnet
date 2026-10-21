@@ -3,6 +3,7 @@
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Shares.Item.Permission.Grant;
+using Microsoft.Graph.Shares.Item.Permission.RevokeGrants;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -23,6 +24,11 @@ namespace Microsoft.Graph.Shares.Item.Permission
         public global::Microsoft.Graph.Shares.Item.Permission.Grant.GrantRequestBuilder Grant
         {
             get => new global::Microsoft.Graph.Shares.Item.Permission.Grant.GrantRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the revokeGrants method.</summary>
+        public global::Microsoft.Graph.Shares.Item.Permission.RevokeGrants.RevokeGrantsRequestBuilder RevokeGrants
+        {
+            get => new global::Microsoft.Graph.Shares.Item.Permission.RevokeGrants.RevokeGrantsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Shares.Item.Permission.PermissionRequestBuilder"/> and sets the default values.

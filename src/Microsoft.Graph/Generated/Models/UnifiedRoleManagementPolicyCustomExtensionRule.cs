@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class UnifiedRoleManagementPolicyCustomExtensionRule : global::Microsoft.Graph.Models.UnifiedRoleManagementPolicyRule, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The customAttributes property</summary>
+        /// <summary>The custom attributes associated with the policy rule. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? CustomAttributes
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("customAttributes", value); }
         }
 #endif
-        /// <summary>The customExtensionId property</summary>
+        /// <summary>The unique identifier of the roleManagementCustomCalloutExtension associated with this rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomExtensionId
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("customExtensionId", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name of the policy rule. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The isEnabled property</summary>
+        /// <summary>Indicates whether the custom extension rule is enabled.</summary>
         public bool? IsEnabled
         {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
