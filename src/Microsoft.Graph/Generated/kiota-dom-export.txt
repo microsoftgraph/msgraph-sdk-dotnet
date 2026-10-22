@@ -20252,6 +20252,7 @@ Microsoft.Graph.Devices.devicesRequestBuilder::|public|GetAsync(requestConfigura
 Microsoft.Graph.Devices.devicesRequestBuilder::|public|getAvailableExtensionProperties:global.Microsoft.Graph.Devices.GetAvailableExtensionProperties.GetAvailableExtensionPropertiesRequestBuilder
 Microsoft.Graph.Devices.devicesRequestBuilder::|public|getByIds:global.Microsoft.Graph.Devices.GetByIds.GetByIdsRequestBuilder
 Microsoft.Graph.Devices.devicesRequestBuilder::|public|PostAsync(body:global.Microsoft.Graph.Models.Device; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Device
+Microsoft.Graph.Devices.devicesRequestBuilder::|public|provision:global.Microsoft.Graph.Devices.Provision.ProvisionRequestBuilder
 Microsoft.Graph.Devices.devicesRequestBuilder::|public|ToGetRequestInformation(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Devices.DevicesRequestBuilder.DevicesRequestBuilderGetQueryParameters>>):RequestInformation
 Microsoft.Graph.Devices.devicesRequestBuilder::|public|ToPostRequestInformation(body:global.Microsoft.Graph.Models.Device; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
 Microsoft.Graph.Devices.devicesRequestBuilder::|public|validateProperties:global.Microsoft.Graph.Devices.ValidateProperties.ValidatePropertiesRequestBuilder
@@ -21089,6 +21090,21 @@ Microsoft.Graph.Devices.Item.TransitiveMemberOf.transitiveMemberOfRequestBuilder
 Microsoft.Graph.Devices.Item.TransitiveMemberOf.transitiveMemberOfRequestBuilder::|public|graphGroup:global.Microsoft.Graph.Devices.Item.TransitiveMemberOf.GraphGroup.GraphGroupRequestBuilder
 Microsoft.Graph.Devices.Item.TransitiveMemberOf.transitiveMemberOfRequestBuilder::|public|ToGetRequestInformation(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Devices.Item.TransitiveMemberOf.TransitiveMemberOfRequestBuilder.TransitiveMemberOfRequestBuilderGetQueryParameters>>):RequestInformation
 Microsoft.Graph.Devices.Item.TransitiveMemberOf.transitiveMemberOfRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Devices.Item.TransitiveMemberOf.TransitiveMemberOfRequestBuilder
+Microsoft.Graph.Devices.Provision.provisionPostRequestBody::|public|AdditionalData:IDictionary<string, object>
+Microsoft.Graph.Devices.Provision.provisionPostRequestBody::|public|BackingStore:IBackingStore
+Microsoft.Graph.Devices.Provision.provisionPostRequestBody::|public|constructor():void
+Microsoft.Graph.Devices.Provision.provisionPostRequestBody::|public|GetFieldDeserializers():IDictionary<string, Action<IParseNode>>
+Microsoft.Graph.Devices.Provision.provisionPostRequestBody::|public|ProvisioningBlob:string
+Microsoft.Graph.Devices.Provision.provisionPostRequestBody::|public|Serialize(writer:ISerializationWriter):void
+Microsoft.Graph.Devices.Provision.provisionPostRequestBody::|static|public|CreateFromDiscriminatorValue(parseNode:IParseNode):global.Microsoft.Graph.Devices.Provision.ProvisionPostRequestBody
+Microsoft.Graph.Devices.Provision.provisionPostRequestBody~~>IAdditionalDataHolder; IBackedModel; IParsable
+Microsoft.Graph.Devices.Provision.provisionRequestBuilder-->BaseRequestBuilder
+Microsoft.Graph.Devices.Provision.provisionRequestBuilder.provisionRequestBuilderPostRequestConfiguration-->RequestConfiguration<DefaultQueryParameters>
+Microsoft.Graph.Devices.Provision.provisionRequestBuilder::|public|constructor(pathParameters:Dictionary<string, object>; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Devices.Provision.provisionRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Devices.Provision.provisionRequestBuilder::|public|PostAsync(body:global.Microsoft.Graph.Devices.Provision.ProvisionPostRequestBody; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.ProvisionResponse
+Microsoft.Graph.Devices.Provision.provisionRequestBuilder::|public|ToPostRequestInformation(body:global.Microsoft.Graph.Devices.Provision.ProvisionPostRequestBody; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
+Microsoft.Graph.Devices.Provision.provisionRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Devices.Provision.ProvisionRequestBuilder
 Microsoft.Graph.Devices.ValidateProperties.validatePropertiesPostRequestBody::|public|AdditionalData:IDictionary<string, object>
 Microsoft.Graph.Devices.ValidateProperties.validatePropertiesPostRequestBody::|public|BackingStore:IBackingStore
 Microsoft.Graph.Devices.ValidateProperties.validatePropertiesPostRequestBody::|public|constructor():void
@@ -22972,6 +22988,13 @@ Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.Refresh.refre
 Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.Refresh.refreshRequestBuilder::|public|PostAsync(requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>; cancellationToken?:CancellationToken):void
 Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.Refresh.refreshRequestBuilder::|public|ToPostRequestInformation(requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
 Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.Refresh.refreshRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.Refresh.RefreshRequestBuilder
+Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.RefreshStatus.refreshStatusRequestBuilder-->BaseRequestBuilder
+Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.RefreshStatus.refreshStatusRequestBuilder.refreshStatusRequestBuilderGetRequestConfiguration-->RequestConfiguration<DefaultQueryParameters>
+Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.RefreshStatus.refreshStatusRequestBuilder::|public|constructor(pathParameters:Dictionary<string, object>; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.RefreshStatus.refreshStatusRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.RefreshStatus.refreshStatusRequestBuilder::|public|GetAsync(requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.RelatedTenantsRefreshStatus
+Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.RefreshStatus.refreshStatusRequestBuilder::|public|ToGetRequestInformation(requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
+Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.RefreshStatus.refreshStatusRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.RefreshStatus.RefreshStatusRequestBuilder
 Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.relatedTenantsRequestBuilder-->BaseRequestBuilder
 Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.relatedTenantsRequestBuilder.relatedTenantsRequestBuilderGetQueryParameters::|public|Count:bool?
 Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.relatedTenantsRequestBuilder.relatedTenantsRequestBuilderGetQueryParameters::|public|Expand:string[]
@@ -22990,6 +23013,7 @@ Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.relatedTenant
 Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.relatedTenantsRequestBuilder::|public|GetAsync(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.RelatedTenantsRequestBuilder.RelatedTenantsRequestBuilderGetQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.RelatedTenantCollectionResponse
 Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.relatedTenantsRequestBuilder::|public|PostAsync(body:global.Microsoft.Graph.Models.RelatedTenant; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.RelatedTenant
 Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.relatedTenantsRequestBuilder::|public|refresh:global.Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.Refresh.RefreshRequestBuilder
+Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.relatedTenantsRequestBuilder::|public|refreshStatus:global.Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.RefreshStatus.RefreshStatusRequestBuilder
 Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.relatedTenantsRequestBuilder::|public|ToGetRequestInformation(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.RelatedTenantsRequestBuilder.RelatedTenantsRequestBuilderGetQueryParameters>>):RequestInformation
 Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.relatedTenantsRequestBuilder::|public|ToPostRequestInformation(body:global.Microsoft.Graph.Models.RelatedTenant; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
 Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.relatedTenantsRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.RelatedTenantsRequestBuilder
@@ -25267,10 +25291,26 @@ Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.PermissionItemRequestBui
 Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|GetAsync(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.PermissionItemRequestBuilder.PermissionItemRequestBuilderGetQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
 Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|grant:global.Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.Grant.GrantRequestBuilder
 Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|PatchAsync(body:global.Microsoft.Graph.Models.Permission; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
+Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|revokeGrants:global.Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.RevokeGrants.RevokeGrantsRequestBuilder
 Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|ToDeleteRequestInformation(requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
 Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|ToGetRequestInformation(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.PermissionItemRequestBuilder.PermissionItemRequestBuilderGetQueryParameters>>):RequestInformation
 Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|ToPatchRequestInformation(body:global.Microsoft.Graph.Models.Permission; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
 Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.PermissionItemRequestBuilder
+Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|AdditionalData:IDictionary<string, object>
+Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|BackingStore:IBackingStore
+Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|constructor():void
+Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|GetFieldDeserializers():IDictionary<string, Action<IParseNode>>
+Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|Grantees:List<global.Microsoft.Graph.Models.DriveRecipient>
+Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|Serialize(writer:ISerializationWriter):void
+Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|static|public|CreateFromDiscriminatorValue(parseNode:IParseNode):global.Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody
+Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody~~>IAdditionalDataHolder; IBackedModel; IParsable
+Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder-->BaseRequestBuilder
+Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder.revokeGrantsRequestBuilderPostRequestConfiguration-->RequestConfiguration<DefaultQueryParameters>
+Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|constructor(pathParameters:Dictionary<string, object>; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|PostAsync(body:global.Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
+Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|ToPostRequestInformation(body:global.Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
+Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Drives.Item.Items.Item.Permissions.Item.RevokeGrants.RevokeGrantsRequestBuilder
 Microsoft.Graph.Drives.Item.Items.Item.Permissions.permissionsRequestBuilder-->BaseRequestBuilder
 Microsoft.Graph.Drives.Item.Items.Item.Permissions.permissionsRequestBuilder.permissionsRequestBuilderGetQueryParameters::|public|Count:bool?
 Microsoft.Graph.Drives.Item.Items.Item.Permissions.permissionsRequestBuilder.permissionsRequestBuilderGetQueryParameters::|public|Expand:string[]
@@ -44372,10 +44412,26 @@ Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.Item.PermissionItemReque
 Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|GetAsync(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.Item.PermissionItemRequestBuilder.PermissionItemRequestBuilderGetQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
 Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|grant:global.Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.Item.Grant.GrantRequestBuilder
 Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|PatchAsync(body:global.Microsoft.Graph.Models.Permission; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
+Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|revokeGrants:global.Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.Item.RevokeGrants.RevokeGrantsRequestBuilder
 Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|ToDeleteRequestInformation(requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
 Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|ToGetRequestInformation(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.Item.PermissionItemRequestBuilder.PermissionItemRequestBuilderGetQueryParameters>>):RequestInformation
 Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|ToPatchRequestInformation(body:global.Microsoft.Graph.Models.Permission; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
 Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.Item.PermissionItemRequestBuilder
+Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|AdditionalData:IDictionary<string, object>
+Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|BackingStore:IBackingStore
+Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|constructor():void
+Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|GetFieldDeserializers():IDictionary<string, Action<IParseNode>>
+Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|Grantees:List<global.Microsoft.Graph.Models.DriveRecipient>
+Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|Serialize(writer:ISerializationWriter):void
+Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|static|public|CreateFromDiscriminatorValue(parseNode:IParseNode):global.Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody
+Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody~~>IAdditionalDataHolder; IBackedModel; IParsable
+Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder-->BaseRequestBuilder
+Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder.revokeGrantsRequestBuilderPostRequestConfiguration-->RequestConfiguration<DefaultQueryParameters>
+Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|constructor(pathParameters:Dictionary<string, object>; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|PostAsync(body:global.Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
+Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|ToPostRequestInformation(body:global.Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
+Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.Item.RevokeGrants.RevokeGrantsRequestBuilder
 Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.permissionsRequestBuilder-->BaseRequestBuilder
 Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.permissionsRequestBuilder.permissionsRequestBuilderGetQueryParameters::|public|Count:bool?
 Microsoft.Graph.Drives.Item.List.Items.Item.Permissions.permissionsRequestBuilder.permissionsRequestBuilderGetQueryParameters::|public|Expand:string[]
@@ -44647,10 +44703,26 @@ Microsoft.Graph.Drives.Item.List.Permissions.Item.PermissionItemRequestBuilder::
 Microsoft.Graph.Drives.Item.List.Permissions.Item.PermissionItemRequestBuilder::|public|GetAsync(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Drives.Item.List.Permissions.Item.PermissionItemRequestBuilder.PermissionItemRequestBuilderGetQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
 Microsoft.Graph.Drives.Item.List.Permissions.Item.PermissionItemRequestBuilder::|public|grant:global.Microsoft.Graph.Drives.Item.List.Permissions.Item.Grant.GrantRequestBuilder
 Microsoft.Graph.Drives.Item.List.Permissions.Item.PermissionItemRequestBuilder::|public|PatchAsync(body:global.Microsoft.Graph.Models.Permission; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
+Microsoft.Graph.Drives.Item.List.Permissions.Item.PermissionItemRequestBuilder::|public|revokeGrants:global.Microsoft.Graph.Drives.Item.List.Permissions.Item.RevokeGrants.RevokeGrantsRequestBuilder
 Microsoft.Graph.Drives.Item.List.Permissions.Item.PermissionItemRequestBuilder::|public|ToDeleteRequestInformation(requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
 Microsoft.Graph.Drives.Item.List.Permissions.Item.PermissionItemRequestBuilder::|public|ToGetRequestInformation(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Drives.Item.List.Permissions.Item.PermissionItemRequestBuilder.PermissionItemRequestBuilderGetQueryParameters>>):RequestInformation
 Microsoft.Graph.Drives.Item.List.Permissions.Item.PermissionItemRequestBuilder::|public|ToPatchRequestInformation(body:global.Microsoft.Graph.Models.Permission; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
 Microsoft.Graph.Drives.Item.List.Permissions.Item.PermissionItemRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Drives.Item.List.Permissions.Item.PermissionItemRequestBuilder
+Microsoft.Graph.Drives.Item.List.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|AdditionalData:IDictionary<string, object>
+Microsoft.Graph.Drives.Item.List.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|BackingStore:IBackingStore
+Microsoft.Graph.Drives.Item.List.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|constructor():void
+Microsoft.Graph.Drives.Item.List.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|GetFieldDeserializers():IDictionary<string, Action<IParseNode>>
+Microsoft.Graph.Drives.Item.List.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|Grantees:List<global.Microsoft.Graph.Models.DriveRecipient>
+Microsoft.Graph.Drives.Item.List.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|Serialize(writer:ISerializationWriter):void
+Microsoft.Graph.Drives.Item.List.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|static|public|CreateFromDiscriminatorValue(parseNode:IParseNode):global.Microsoft.Graph.Drives.Item.List.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody
+Microsoft.Graph.Drives.Item.List.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody~~>IAdditionalDataHolder; IBackedModel; IParsable
+Microsoft.Graph.Drives.Item.List.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder-->BaseRequestBuilder
+Microsoft.Graph.Drives.Item.List.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder.revokeGrantsRequestBuilderPostRequestConfiguration-->RequestConfiguration<DefaultQueryParameters>
+Microsoft.Graph.Drives.Item.List.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|constructor(pathParameters:Dictionary<string, object>; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Drives.Item.List.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Drives.Item.List.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|PostAsync(body:global.Microsoft.Graph.Drives.Item.List.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
+Microsoft.Graph.Drives.Item.List.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|ToPostRequestInformation(body:global.Microsoft.Graph.Drives.Item.List.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
+Microsoft.Graph.Drives.Item.List.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Drives.Item.List.Permissions.Item.RevokeGrants.RevokeGrantsRequestBuilder
 Microsoft.Graph.Drives.Item.List.Permissions.permissionsRequestBuilder-->BaseRequestBuilder
 Microsoft.Graph.Drives.Item.List.Permissions.permissionsRequestBuilder.permissionsRequestBuilderGetQueryParameters::|public|Count:bool?
 Microsoft.Graph.Drives.Item.List.Permissions.permissionsRequestBuilder.permissionsRequestBuilderGetQueryParameters::|public|Expand:string[]
@@ -56418,10 +56490,26 @@ Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissions.Item.Pe
 Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|GetAsync(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissions.Item.PermissionItemRequestBuilder.PermissionItemRequestBuilderGetQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
 Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|grant:global.Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissions.Item.Grant.GrantRequestBuilder
 Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|PatchAsync(body:global.Microsoft.Graph.Models.Permission; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
+Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|revokeGrants:global.Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.RevokeGrantsRequestBuilder
 Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|ToDeleteRequestInformation(requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
 Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|ToGetRequestInformation(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissions.Item.PermissionItemRequestBuilder.PermissionItemRequestBuilderGetQueryParameters>>):RequestInformation
 Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|ToPatchRequestInformation(body:global.Microsoft.Graph.Models.Permission; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
 Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissions.Item.PermissionItemRequestBuilder
+Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|AdditionalData:IDictionary<string, object>
+Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|BackingStore:IBackingStore
+Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|constructor():void
+Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|GetFieldDeserializers():IDictionary<string, Action<IParseNode>>
+Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|Grantees:List<global.Microsoft.Graph.Models.DriveRecipient>
+Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|Serialize(writer:ISerializationWriter):void
+Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|static|public|CreateFromDiscriminatorValue(parseNode:IParseNode):global.Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody
+Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody~~>IAdditionalDataHolder; IBackedModel; IParsable
+Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder-->BaseRequestBuilder
+Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder.revokeGrantsRequestBuilderPostRequestConfiguration-->RequestConfiguration<DefaultQueryParameters>
+Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|constructor(pathParameters:Dictionary<string, object>; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|PostAsync(body:global.Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
+Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|ToPostRequestInformation(body:global.Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
+Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.RevokeGrantsRequestBuilder
 Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissions.permissionsRequestBuilder-->BaseRequestBuilder
 Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissions.permissionsRequestBuilder.permissionsRequestBuilderGetQueryParameters::|public|Count:bool?
 Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Items.Item.Permissions.permissionsRequestBuilder.permissionsRequestBuilderGetQueryParameters::|public|Expand:string[]
@@ -56692,10 +56780,26 @@ Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Permissions.Item.PermissionIte
 Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Permissions.Item.PermissionItemRequestBuilder::|public|GetAsync(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Permissions.Item.PermissionItemRequestBuilder.PermissionItemRequestBuilderGetQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
 Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Permissions.Item.PermissionItemRequestBuilder::|public|grant:global.Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Permissions.Item.Grant.GrantRequestBuilder
 Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Permissions.Item.PermissionItemRequestBuilder::|public|PatchAsync(body:global.Microsoft.Graph.Models.Permission; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
+Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Permissions.Item.PermissionItemRequestBuilder::|public|revokeGrants:global.Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.RevokeGrantsRequestBuilder
 Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Permissions.Item.PermissionItemRequestBuilder::|public|ToDeleteRequestInformation(requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
 Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Permissions.Item.PermissionItemRequestBuilder::|public|ToGetRequestInformation(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Permissions.Item.PermissionItemRequestBuilder.PermissionItemRequestBuilderGetQueryParameters>>):RequestInformation
 Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Permissions.Item.PermissionItemRequestBuilder::|public|ToPatchRequestInformation(body:global.Microsoft.Graph.Models.Permission; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
 Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Permissions.Item.PermissionItemRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Permissions.Item.PermissionItemRequestBuilder
+Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|AdditionalData:IDictionary<string, object>
+Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|BackingStore:IBackingStore
+Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|constructor():void
+Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|GetFieldDeserializers():IDictionary<string, Action<IParseNode>>
+Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|Grantees:List<global.Microsoft.Graph.Models.DriveRecipient>
+Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|Serialize(writer:ISerializationWriter):void
+Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|static|public|CreateFromDiscriminatorValue(parseNode:IParseNode):global.Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody
+Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody~~>IAdditionalDataHolder; IBackedModel; IParsable
+Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder-->BaseRequestBuilder
+Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder.revokeGrantsRequestBuilderPostRequestConfiguration-->RequestConfiguration<DefaultQueryParameters>
+Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|constructor(pathParameters:Dictionary<string, object>; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|PostAsync(body:global.Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
+Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|ToPostRequestInformation(body:global.Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
+Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.RevokeGrantsRequestBuilder
 Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Permissions.permissionsRequestBuilder-->BaseRequestBuilder
 Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Permissions.permissionsRequestBuilder.permissionsRequestBuilderGetQueryParameters::|public|Count:bool?
 Microsoft.Graph.Groups.Item.Sites.Item.Lists.Item.Permissions.permissionsRequestBuilder.permissionsRequestBuilderGetQueryParameters::|public|Expand:string[]
@@ -58906,10 +59010,26 @@ Microsoft.Graph.Groups.Item.Sites.Item.Permissions.Item.PermissionItemRequestBui
 Microsoft.Graph.Groups.Item.Sites.Item.Permissions.Item.PermissionItemRequestBuilder::|public|GetAsync(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Groups.Item.Sites.Item.Permissions.Item.PermissionItemRequestBuilder.PermissionItemRequestBuilderGetQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
 Microsoft.Graph.Groups.Item.Sites.Item.Permissions.Item.PermissionItemRequestBuilder::|public|grant:global.Microsoft.Graph.Groups.Item.Sites.Item.Permissions.Item.Grant.GrantRequestBuilder
 Microsoft.Graph.Groups.Item.Sites.Item.Permissions.Item.PermissionItemRequestBuilder::|public|PatchAsync(body:global.Microsoft.Graph.Models.Permission; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
+Microsoft.Graph.Groups.Item.Sites.Item.Permissions.Item.PermissionItemRequestBuilder::|public|revokeGrants:global.Microsoft.Graph.Groups.Item.Sites.Item.Permissions.Item.RevokeGrants.RevokeGrantsRequestBuilder
 Microsoft.Graph.Groups.Item.Sites.Item.Permissions.Item.PermissionItemRequestBuilder::|public|ToDeleteRequestInformation(requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
 Microsoft.Graph.Groups.Item.Sites.Item.Permissions.Item.PermissionItemRequestBuilder::|public|ToGetRequestInformation(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Groups.Item.Sites.Item.Permissions.Item.PermissionItemRequestBuilder.PermissionItemRequestBuilderGetQueryParameters>>):RequestInformation
 Microsoft.Graph.Groups.Item.Sites.Item.Permissions.Item.PermissionItemRequestBuilder::|public|ToPatchRequestInformation(body:global.Microsoft.Graph.Models.Permission; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
 Microsoft.Graph.Groups.Item.Sites.Item.Permissions.Item.PermissionItemRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Groups.Item.Sites.Item.Permissions.Item.PermissionItemRequestBuilder
+Microsoft.Graph.Groups.Item.Sites.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|AdditionalData:IDictionary<string, object>
+Microsoft.Graph.Groups.Item.Sites.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|BackingStore:IBackingStore
+Microsoft.Graph.Groups.Item.Sites.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|constructor():void
+Microsoft.Graph.Groups.Item.Sites.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|GetFieldDeserializers():IDictionary<string, Action<IParseNode>>
+Microsoft.Graph.Groups.Item.Sites.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|Grantees:List<global.Microsoft.Graph.Models.DriveRecipient>
+Microsoft.Graph.Groups.Item.Sites.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|Serialize(writer:ISerializationWriter):void
+Microsoft.Graph.Groups.Item.Sites.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|static|public|CreateFromDiscriminatorValue(parseNode:IParseNode):global.Microsoft.Graph.Groups.Item.Sites.Item.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody
+Microsoft.Graph.Groups.Item.Sites.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody~~>IAdditionalDataHolder; IBackedModel; IParsable
+Microsoft.Graph.Groups.Item.Sites.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder-->BaseRequestBuilder
+Microsoft.Graph.Groups.Item.Sites.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder.revokeGrantsRequestBuilderPostRequestConfiguration-->RequestConfiguration<DefaultQueryParameters>
+Microsoft.Graph.Groups.Item.Sites.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|constructor(pathParameters:Dictionary<string, object>; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Groups.Item.Sites.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Groups.Item.Sites.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|PostAsync(body:global.Microsoft.Graph.Groups.Item.Sites.Item.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
+Microsoft.Graph.Groups.Item.Sites.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|ToPostRequestInformation(body:global.Microsoft.Graph.Groups.Item.Sites.Item.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
+Microsoft.Graph.Groups.Item.Sites.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Groups.Item.Sites.Item.Permissions.Item.RevokeGrants.RevokeGrantsRequestBuilder
 Microsoft.Graph.Groups.Item.Sites.Item.Permissions.permissionsRequestBuilder-->BaseRequestBuilder
 Microsoft.Graph.Groups.Item.Sites.Item.Permissions.permissionsRequestBuilder.permissionsRequestBuilderGetQueryParameters::|public|Count:bool?
 Microsoft.Graph.Groups.Item.Sites.Item.Permissions.permissionsRequestBuilder.permissionsRequestBuilderGetQueryParameters::|public|Expand:string[]
@@ -90860,6 +90980,7 @@ Microsoft.Graph.Me.Authentication.authenticationRequestBuilder::|public|password
 Microsoft.Graph.Me.Authentication.authenticationRequestBuilder::|public|PatchAsync(body:global.Microsoft.Graph.Models.Authentication; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Authentication
 Microsoft.Graph.Me.Authentication.authenticationRequestBuilder::|public|phoneMethods:global.Microsoft.Graph.Me.Authentication.PhoneMethods.PhoneMethodsRequestBuilder
 Microsoft.Graph.Me.Authentication.authenticationRequestBuilder::|public|platformCredentialMethods:global.Microsoft.Graph.Me.Authentication.PlatformCredentialMethods.PlatformCredentialMethodsRequestBuilder
+Microsoft.Graph.Me.Authentication.authenticationRequestBuilder::|public|resourceAccountKeyAuthenticationMethods:global.Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.ResourceAccountKeyAuthenticationMethodsRequestBuilder
 Microsoft.Graph.Me.Authentication.authenticationRequestBuilder::|public|softwareOathMethods:global.Microsoft.Graph.Me.Authentication.SoftwareOathMethods.SoftwareOathMethodsRequestBuilder
 Microsoft.Graph.Me.Authentication.authenticationRequestBuilder::|public|temporaryAccessPassMethods:global.Microsoft.Graph.Me.Authentication.TemporaryAccessPassMethods.TemporaryAccessPassMethodsRequestBuilder
 Microsoft.Graph.Me.Authentication.authenticationRequestBuilder::|public|ToDeleteRequestInformation(requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
@@ -91296,6 +91417,54 @@ Microsoft.Graph.Me.Authentication.PlatformCredentialMethods.platformCredentialMe
 Microsoft.Graph.Me.Authentication.PlatformCredentialMethods.platformCredentialMethodsRequestBuilder::|public|GetAsync(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Me.Authentication.PlatformCredentialMethods.PlatformCredentialMethodsRequestBuilder.PlatformCredentialMethodsRequestBuilderGetQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.PlatformCredentialAuthenticationMethodCollectionResponse
 Microsoft.Graph.Me.Authentication.PlatformCredentialMethods.platformCredentialMethodsRequestBuilder::|public|ToGetRequestInformation(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Me.Authentication.PlatformCredentialMethods.PlatformCredentialMethodsRequestBuilder.PlatformCredentialMethodsRequestBuilderGetQueryParameters>>):RequestInformation
 Microsoft.Graph.Me.Authentication.PlatformCredentialMethods.platformCredentialMethodsRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Me.Authentication.PlatformCredentialMethods.PlatformCredentialMethodsRequestBuilder
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Count.CountRequestBuilder-->BaseRequestBuilder
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters::|public|Filter:string
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters::|public|Search:string
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Count.CountRequestBuilder.CountRequestBuilderGetRequestConfiguration-->RequestConfiguration<global.Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Count.CountRequestBuilder::|public|constructor(pathParameters:Dictionary<string, object>; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Count.CountRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Count.CountRequestBuilder::|public|GetAsync(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>>; cancellationToken?:CancellationToken):int?
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Count.CountRequestBuilder::|public|ToGetRequestInformation(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>>):RequestInformation
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Count.CountRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Count.CountRequestBuilder
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Item.Device.deviceRequestBuilder-->BaseRequestBuilder
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Item.Device.deviceRequestBuilder.deviceRequestBuilderGetQueryParameters::|public|Expand:string[]
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Item.Device.deviceRequestBuilder.deviceRequestBuilderGetQueryParameters::|public|Select:string[]
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Item.Device.deviceRequestBuilder.deviceRequestBuilderGetRequestConfiguration-->RequestConfiguration<global.Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Item.Device.DeviceRequestBuilder.DeviceRequestBuilderGetQueryParameters>
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Item.Device.deviceRequestBuilder::|public|constructor(pathParameters:Dictionary<string, object>; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Item.Device.deviceRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Item.Device.deviceRequestBuilder::|public|GetAsync(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Item.Device.DeviceRequestBuilder.DeviceRequestBuilderGetQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Device
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Item.Device.deviceRequestBuilder::|public|ToGetRequestInformation(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Item.Device.DeviceRequestBuilder.DeviceRequestBuilderGetQueryParameters>>):RequestInformation
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Item.Device.deviceRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Item.Device.DeviceRequestBuilder
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Item.ResourceAccountKeyAuthenticationMethodItemRequestBuilder-->BaseRequestBuilder
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Item.ResourceAccountKeyAuthenticationMethodItemRequestBuilder.ResourceAccountKeyAuthenticationMethodItemRequestBuilderDeleteRequestConfiguration-->RequestConfiguration<DefaultQueryParameters>
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Item.ResourceAccountKeyAuthenticationMethodItemRequestBuilder.ResourceAccountKeyAuthenticationMethodItemRequestBuilderGetQueryParameters::|public|Expand:string[]
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Item.ResourceAccountKeyAuthenticationMethodItemRequestBuilder.ResourceAccountKeyAuthenticationMethodItemRequestBuilderGetQueryParameters::|public|Select:string[]
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Item.ResourceAccountKeyAuthenticationMethodItemRequestBuilder.ResourceAccountKeyAuthenticationMethodItemRequestBuilderGetRequestConfiguration-->RequestConfiguration<global.Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Item.ResourceAccountKeyAuthenticationMethodItemRequestBuilder.ResourceAccountKeyAuthenticationMethodItemRequestBuilderGetQueryParameters>
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Item.ResourceAccountKeyAuthenticationMethodItemRequestBuilder::|public|constructor(pathParameters:Dictionary<string, object>; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Item.ResourceAccountKeyAuthenticationMethodItemRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Item.ResourceAccountKeyAuthenticationMethodItemRequestBuilder::|public|DeleteAsync(requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>; cancellationToken?:CancellationToken):void
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Item.ResourceAccountKeyAuthenticationMethodItemRequestBuilder::|public|device:global.Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Item.Device.DeviceRequestBuilder
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Item.ResourceAccountKeyAuthenticationMethodItemRequestBuilder::|public|GetAsync(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Item.ResourceAccountKeyAuthenticationMethodItemRequestBuilder.ResourceAccountKeyAuthenticationMethodItemRequestBuilderGetQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.ResourceAccountKeyAuthenticationMethod
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Item.ResourceAccountKeyAuthenticationMethodItemRequestBuilder::|public|ToDeleteRequestInformation(requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Item.ResourceAccountKeyAuthenticationMethodItemRequestBuilder::|public|ToGetRequestInformation(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Item.ResourceAccountKeyAuthenticationMethodItemRequestBuilder.ResourceAccountKeyAuthenticationMethodItemRequestBuilderGetQueryParameters>>):RequestInformation
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Item.ResourceAccountKeyAuthenticationMethodItemRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Item.ResourceAccountKeyAuthenticationMethodItemRequestBuilder
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.resourceAccountKeyAuthenticationMethodsRequestBuilder-->BaseRequestBuilder
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.resourceAccountKeyAuthenticationMethodsRequestBuilder.resourceAccountKeyAuthenticationMethodsRequestBuilderGetQueryParameters::|public|Count:bool?
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.resourceAccountKeyAuthenticationMethodsRequestBuilder.resourceAccountKeyAuthenticationMethodsRequestBuilderGetQueryParameters::|public|Expand:string[]
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.resourceAccountKeyAuthenticationMethodsRequestBuilder.resourceAccountKeyAuthenticationMethodsRequestBuilderGetQueryParameters::|public|Filter:string
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.resourceAccountKeyAuthenticationMethodsRequestBuilder.resourceAccountKeyAuthenticationMethodsRequestBuilderGetQueryParameters::|public|Orderby:string[]
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.resourceAccountKeyAuthenticationMethodsRequestBuilder.resourceAccountKeyAuthenticationMethodsRequestBuilderGetQueryParameters::|public|Search:string
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.resourceAccountKeyAuthenticationMethodsRequestBuilder.resourceAccountKeyAuthenticationMethodsRequestBuilderGetQueryParameters::|public|Select:string[]
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.resourceAccountKeyAuthenticationMethodsRequestBuilder.resourceAccountKeyAuthenticationMethodsRequestBuilderGetQueryParameters::|public|Skip:int?
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.resourceAccountKeyAuthenticationMethodsRequestBuilder.resourceAccountKeyAuthenticationMethodsRequestBuilderGetQueryParameters::|public|Top:int?
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.resourceAccountKeyAuthenticationMethodsRequestBuilder.resourceAccountKeyAuthenticationMethodsRequestBuilderGetRequestConfiguration-->RequestConfiguration<global.Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.ResourceAccountKeyAuthenticationMethodsRequestBuilder.ResourceAccountKeyAuthenticationMethodsRequestBuilderGetQueryParameters>
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.resourceAccountKeyAuthenticationMethodsRequestBuilder::[ResourceAccountKeyAuthenticationMethodId:string]:global.Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Item.ResourceAccountKeyAuthenticationMethodItemRequestBuilder
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.resourceAccountKeyAuthenticationMethodsRequestBuilder::|public|constructor(pathParameters:Dictionary<string, object>; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.resourceAccountKeyAuthenticationMethodsRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.resourceAccountKeyAuthenticationMethodsRequestBuilder::|public|Count:global.Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.Count.CountRequestBuilder
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.resourceAccountKeyAuthenticationMethodsRequestBuilder::|public|GetAsync(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.ResourceAccountKeyAuthenticationMethodsRequestBuilder.ResourceAccountKeyAuthenticationMethodsRequestBuilderGetQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.ResourceAccountKeyAuthenticationMethodCollectionResponse
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.resourceAccountKeyAuthenticationMethodsRequestBuilder::|public|ToGetRequestInformation(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.ResourceAccountKeyAuthenticationMethodsRequestBuilder.ResourceAccountKeyAuthenticationMethodsRequestBuilderGetQueryParameters>>):RequestInformation
+Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.resourceAccountKeyAuthenticationMethodsRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.ResourceAccountKeyAuthenticationMethodsRequestBuilder
 Microsoft.Graph.Me.Authentication.SoftwareOathMethods.Count.CountRequestBuilder-->BaseRequestBuilder
 Microsoft.Graph.Me.Authentication.SoftwareOathMethods.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters::|public|Filter:string
 Microsoft.Graph.Me.Authentication.SoftwareOathMethods.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters::|public|Search:string
@@ -109097,6 +109266,24 @@ Microsoft.Graph.Models.androidWorkProfileRequiredPasswordType::0004-numericCompl
 Microsoft.Graph.Models.androidWorkProfileRequiredPasswordType::0005-atLeastAlphabetic
 Microsoft.Graph.Models.androidWorkProfileRequiredPasswordType::0006-atLeastAlphanumeric
 Microsoft.Graph.Models.androidWorkProfileRequiredPasswordType::0007-alphanumericWithSymbols
+Microsoft.Graph.Models.anonymousCalendarSharingFreeBusyDetail-->global.Microsoft.Graph.Models.M365CapabilityBase
+Microsoft.Graph.Models.anonymousCalendarSharingFreeBusyDetail::|public|constructor():void
+Microsoft.Graph.Models.anonymousCalendarSharingFreeBusyDetail::|public|GetFieldDeserializers():IDictionary<string, Action<IParseNode>>
+Microsoft.Graph.Models.anonymousCalendarSharingFreeBusyDetail::|public|OdataType:string
+Microsoft.Graph.Models.anonymousCalendarSharingFreeBusyDetail::|public|Serialize(writer:ISerializationWriter):void
+Microsoft.Graph.Models.anonymousCalendarSharingFreeBusyDetail::|static|public|CreateFromDiscriminatorValue(parseNode:IParseNode):global.Microsoft.Graph.Models.AnonymousCalendarSharingFreeBusyDetail
+Microsoft.Graph.Models.anonymousCalendarSharingFreeBusyReviewer-->global.Microsoft.Graph.Models.M365CapabilityBase
+Microsoft.Graph.Models.anonymousCalendarSharingFreeBusyReviewer::|public|constructor():void
+Microsoft.Graph.Models.anonymousCalendarSharingFreeBusyReviewer::|public|GetFieldDeserializers():IDictionary<string, Action<IParseNode>>
+Microsoft.Graph.Models.anonymousCalendarSharingFreeBusyReviewer::|public|OdataType:string
+Microsoft.Graph.Models.anonymousCalendarSharingFreeBusyReviewer::|public|Serialize(writer:ISerializationWriter):void
+Microsoft.Graph.Models.anonymousCalendarSharingFreeBusyReviewer::|static|public|CreateFromDiscriminatorValue(parseNode:IParseNode):global.Microsoft.Graph.Models.AnonymousCalendarSharingFreeBusyReviewer
+Microsoft.Graph.Models.anonymousCalendarSharingFreeBusySimple-->global.Microsoft.Graph.Models.M365CapabilityBase
+Microsoft.Graph.Models.anonymousCalendarSharingFreeBusySimple::|public|constructor():void
+Microsoft.Graph.Models.anonymousCalendarSharingFreeBusySimple::|public|GetFieldDeserializers():IDictionary<string, Action<IParseNode>>
+Microsoft.Graph.Models.anonymousCalendarSharingFreeBusySimple::|public|OdataType:string
+Microsoft.Graph.Models.anonymousCalendarSharingFreeBusySimple::|public|Serialize(writer:ISerializationWriter):void
+Microsoft.Graph.Models.anonymousCalendarSharingFreeBusySimple::|static|public|CreateFromDiscriminatorValue(parseNode:IParseNode):global.Microsoft.Graph.Models.AnonymousCalendarSharingFreeBusySimple
 Microsoft.Graph.Models.anonymousGuestConversationMember-->global.Microsoft.Graph.Models.ConversationMember
 Microsoft.Graph.Models.anonymousGuestConversationMember::|public|AnonymousGuestId:string
 Microsoft.Graph.Models.anonymousGuestConversationMember::|public|constructor():void
@@ -110408,6 +110595,7 @@ Microsoft.Graph.Models.authentication::|public|Operations:List<global.Microsoft.
 Microsoft.Graph.Models.authentication::|public|PasswordMethods:List<global.Microsoft.Graph.Models.PasswordAuthenticationMethod>
 Microsoft.Graph.Models.authentication::|public|PhoneMethods:List<global.Microsoft.Graph.Models.PhoneAuthenticationMethod>
 Microsoft.Graph.Models.authentication::|public|PlatformCredentialMethods:List<global.Microsoft.Graph.Models.PlatformCredentialAuthenticationMethod>
+Microsoft.Graph.Models.authentication::|public|ResourceAccountKeyAuthenticationMethods:List<global.Microsoft.Graph.Models.ResourceAccountKeyAuthenticationMethod>
 Microsoft.Graph.Models.authentication::|public|Serialize(writer:ISerializationWriter):void
 Microsoft.Graph.Models.authentication::|public|SoftwareOathMethods:List<global.Microsoft.Graph.Models.SoftwareOathAuthenticationMethod>
 Microsoft.Graph.Models.authentication::|public|TemporaryAccessPassMethods:List<global.Microsoft.Graph.Models.TemporaryAccessPassAuthenticationMethod>
@@ -120474,6 +120662,7 @@ Microsoft.Graph.Models.fileStorageContainerTypeRegistrationSettings::|public|con
 Microsoft.Graph.Models.fileStorageContainerTypeRegistrationSettings::|public|GetFieldDeserializers():IDictionary<string, Action<IParseNode>>
 Microsoft.Graph.Models.fileStorageContainerTypeRegistrationSettings::|public|IsDiscoverabilityEnabled:bool?
 Microsoft.Graph.Models.fileStorageContainerTypeRegistrationSettings::|public|IsItemVersioningEnabled:bool?
+Microsoft.Graph.Models.fileStorageContainerTypeRegistrationSettings::|public|IsOfficeRestricted:bool?
 Microsoft.Graph.Models.fileStorageContainerTypeRegistrationSettings::|public|IsSearchEnabled:bool?
 Microsoft.Graph.Models.fileStorageContainerTypeRegistrationSettings::|public|IsSharingRestricted:bool?
 Microsoft.Graph.Models.fileStorageContainerTypeRegistrationSettings::|public|ItemMajorVersionLimit:long?
@@ -120491,6 +120680,7 @@ Microsoft.Graph.Models.fileStorageContainerTypeSettings::|public|ConsumingTenant
 Microsoft.Graph.Models.fileStorageContainerTypeSettings::|public|GetFieldDeserializers():IDictionary<string, Action<IParseNode>>
 Microsoft.Graph.Models.fileStorageContainerTypeSettings::|public|IsDiscoverabilityEnabled:bool?
 Microsoft.Graph.Models.fileStorageContainerTypeSettings::|public|IsItemVersioningEnabled:bool?
+Microsoft.Graph.Models.fileStorageContainerTypeSettings::|public|IsOfficeRestricted:bool?
 Microsoft.Graph.Models.fileStorageContainerTypeSettings::|public|IsSearchEnabled:bool?
 Microsoft.Graph.Models.fileStorageContainerTypeSettings::|public|IsSharingRestricted:bool?
 Microsoft.Graph.Models.fileStorageContainerTypeSettings::|public|ItemMajorVersionLimit:long?
@@ -120507,6 +120697,7 @@ Microsoft.Graph.Models.fileStorageContainerTypeSettingsOverride::0003-isItemVers
 Microsoft.Graph.Models.fileStorageContainerTypeSettingsOverride::0004-itemMajorVersionLimit
 Microsoft.Graph.Models.fileStorageContainerTypeSettingsOverride::0005-maxStoragePerContainerInBytes
 Microsoft.Graph.Models.fileStorageContainerTypeSettingsOverride::0006-unknownFutureValue
+Microsoft.Graph.Models.fileStorageContainerTypeSettingsOverride::0007-isOfficeRestricted
 Microsoft.Graph.Models.fileStorageContainerTypeSettings~~>IAdditionalDataHolder; IBackedModel; IParsable
 Microsoft.Graph.Models.fileStorageContainerViewpoint::|public|AdditionalData:IDictionary<string, object>
 Microsoft.Graph.Models.fileStorageContainerViewpoint::|public|BackingStore:IBackingStore
@@ -130740,6 +130931,16 @@ Microsoft.Graph.Models.provisioningSystem::|public|GetFieldDeserializers():IDict
 Microsoft.Graph.Models.provisioningSystem::|public|OdataType:string
 Microsoft.Graph.Models.provisioningSystem::|public|Serialize(writer:ISerializationWriter):void
 Microsoft.Graph.Models.provisioningSystem::|static|public|CreateFromDiscriminatorValue(parseNode:IParseNode):global.Microsoft.Graph.Models.ProvisioningSystem
+Microsoft.Graph.Models.provisionResponse::|public|AdditionalData:IDictionary<string, object>
+Microsoft.Graph.Models.provisionResponse::|public|BackingStore:IBackingStore
+Microsoft.Graph.Models.provisionResponse::|public|Challenge:string
+Microsoft.Graph.Models.provisionResponse::|public|constructor():void
+Microsoft.Graph.Models.provisionResponse::|public|DeviceId:string
+Microsoft.Graph.Models.provisionResponse::|public|GetFieldDeserializers():IDictionary<string, Action<IParseNode>>
+Microsoft.Graph.Models.provisionResponse::|public|OdataType:string
+Microsoft.Graph.Models.provisionResponse::|public|Serialize(writer:ISerializationWriter):void
+Microsoft.Graph.Models.provisionResponse::|static|public|CreateFromDiscriminatorValue(parseNode:IParseNode):global.Microsoft.Graph.Models.ProvisionResponse
+Microsoft.Graph.Models.provisionResponse~~>IAdditionalDataHolder; IBackedModel; IParsable
 Microsoft.Graph.Models.proxiedDomain::|public|AdditionalData:IDictionary<string, object>
 Microsoft.Graph.Models.proxiedDomain::|public|BackingStore:IBackingStore
 Microsoft.Graph.Models.proxiedDomain::|public|constructor():void
@@ -131386,6 +131587,17 @@ Microsoft.Graph.Models.relatedTenantsRefreshRequest::|public|Location:string
 Microsoft.Graph.Models.relatedTenantsRefreshRequest::|public|OdataType:string
 Microsoft.Graph.Models.relatedTenantsRefreshRequest::|public|Serialize(writer:ISerializationWriter):void
 Microsoft.Graph.Models.relatedTenantsRefreshRequest::|static|public|CreateFromDiscriminatorValue(parseNode:IParseNode):global.Microsoft.Graph.Models.RelatedTenantsRefreshRequest
+Microsoft.Graph.Models.relatedTenantsRefreshStatus::|public|AdditionalData:IDictionary<string, object>
+Microsoft.Graph.Models.relatedTenantsRefreshStatus::|public|BackingStore:IBackingStore
+Microsoft.Graph.Models.relatedTenantsRefreshStatus::|public|constructor():void
+Microsoft.Graph.Models.relatedTenantsRefreshStatus::|public|GetFieldDeserializers():IDictionary<string, Action<IParseNode>>
+Microsoft.Graph.Models.relatedTenantsRefreshStatus::|public|IsFirstRefresh:bool?
+Microsoft.Graph.Models.relatedTenantsRefreshStatus::|public|MostRecentRefreshDateTime:DateTimeOffset?
+Microsoft.Graph.Models.relatedTenantsRefreshStatus::|public|MostRecentRefreshRequestStatus:string
+Microsoft.Graph.Models.relatedTenantsRefreshStatus::|public|OdataType:string
+Microsoft.Graph.Models.relatedTenantsRefreshStatus::|public|Serialize(writer:ISerializationWriter):void
+Microsoft.Graph.Models.relatedTenantsRefreshStatus::|static|public|CreateFromDiscriminatorValue(parseNode:IParseNode):global.Microsoft.Graph.Models.RelatedTenantsRefreshStatus
+Microsoft.Graph.Models.relatedTenantsRefreshStatus~~>IAdditionalDataHolder; IBackedModel; IParsable
 Microsoft.Graph.Models.relationshipCreationType::0000-approvedByAdmin
 Microsoft.Graph.Models.relationshipCreationType::0001-addOnTenant
 Microsoft.Graph.Models.relationshipCreationType::0002-unknownFutureValue
@@ -131673,6 +131885,19 @@ Microsoft.Graph.Models.resourceAccessType::0002-write
 Microsoft.Graph.Models.resourceAccessType::0003-create
 Microsoft.Graph.Models.resourceAccessType::0004-unknownFutureValue
 Microsoft.Graph.Models.resourceAccess~~>IAdditionalDataHolder; IBackedModel; IParsable
+Microsoft.Graph.Models.resourceAccountKeyAuthenticationMethod-->global.Microsoft.Graph.Models.AuthenticationMethod
+Microsoft.Graph.Models.resourceAccountKeyAuthenticationMethod::|public|constructor():void
+Microsoft.Graph.Models.resourceAccountKeyAuthenticationMethod::|public|Device:global.Microsoft.Graph.Models.Device
+Microsoft.Graph.Models.resourceAccountKeyAuthenticationMethod::|public|DisplayName:string
+Microsoft.Graph.Models.resourceAccountKeyAuthenticationMethod::|public|GetFieldDeserializers():IDictionary<string, Action<IParseNode>>
+Microsoft.Graph.Models.resourceAccountKeyAuthenticationMethod::|public|OdataType:string
+Microsoft.Graph.Models.resourceAccountKeyAuthenticationMethod::|public|Serialize(writer:ISerializationWriter):void
+Microsoft.Graph.Models.resourceAccountKeyAuthenticationMethod::|static|public|CreateFromDiscriminatorValue(parseNode:IParseNode):global.Microsoft.Graph.Models.ResourceAccountKeyAuthenticationMethod
+Microsoft.Graph.Models.resourceAccountKeyAuthenticationMethodCollectionResponse-->global.Microsoft.Graph.Models.BaseCollectionPaginationCountResponse
+Microsoft.Graph.Models.resourceAccountKeyAuthenticationMethodCollectionResponse::|public|GetFieldDeserializers():IDictionary<string, Action<IParseNode>>
+Microsoft.Graph.Models.resourceAccountKeyAuthenticationMethodCollectionResponse::|public|Serialize(writer:ISerializationWriter):void
+Microsoft.Graph.Models.resourceAccountKeyAuthenticationMethodCollectionResponse::|public|Value:List<global.Microsoft.Graph.Models.ResourceAccountKeyAuthenticationMethod>
+Microsoft.Graph.Models.resourceAccountKeyAuthenticationMethodCollectionResponse::|static|public|CreateFromDiscriminatorValue(parseNode:IParseNode):global.Microsoft.Graph.Models.ResourceAccountKeyAuthenticationMethodCollectionResponse
 Microsoft.Graph.Models.resourceAction::|public|AdditionalData:IDictionary<string, object>
 Microsoft.Graph.Models.resourceAction::|public|AllowedResourceActions:List<string>
 Microsoft.Graph.Models.resourceAction::|public|BackingStore:IBackingStore
@@ -133646,15 +133871,18 @@ Microsoft.Graph.Models.Security.auditData::|static|public|CreateFromDiscriminato
 Microsoft.Graph.Models.Security.auditData~~>IAdditionalDataHolder; IBackedModel; IParsable
 Microsoft.Graph.Models.Security.auditLogQuery-->global.Microsoft.Graph.Models.Entity
 Microsoft.Graph.Models.Security.auditLogQuery::|public|AdministrativeUnitIdFilters:List<string>
+Microsoft.Graph.Models.Security.auditLogQuery::|public|ApproximateReturnedRecordCount:long?
 Microsoft.Graph.Models.Security.auditLogQuery::|public|DisplayName:string
 Microsoft.Graph.Models.Security.auditLogQuery::|public|FilterEndDateTime:DateTimeOffset?
 Microsoft.Graph.Models.Security.auditLogQuery::|public|FilterStartDateTime:DateTimeOffset?
 Microsoft.Graph.Models.Security.auditLogQuery::|public|GetFieldDeserializers():IDictionary<string, Action<IParseNode>>
 Microsoft.Graph.Models.Security.auditLogQuery::|public|IpAddressFilters:List<string>
+Microsoft.Graph.Models.Security.auditLogQuery::|public|IsRecordCountLimitExceeded:bool?
 Microsoft.Graph.Models.Security.auditLogQuery::|public|KeywordFilter:string
 Microsoft.Graph.Models.Security.auditLogQuery::|public|ObjectIdFilters:List<string>
 Microsoft.Graph.Models.Security.auditLogQuery::|public|OdataType:string
 Microsoft.Graph.Models.Security.auditLogQuery::|public|OperationFilters:List<string>
+Microsoft.Graph.Models.Security.auditLogQuery::|public|RecordCountLimit:long?
 Microsoft.Graph.Models.Security.auditLogQuery::|public|Records:List<global.Microsoft.Graph.Models.Security.AuditLogRecord>
 Microsoft.Graph.Models.Security.auditLogQuery::|public|RecordTypeFilters:List<global.Microsoft.Graph.Models.Security.AuditLogRecordType?>
 Microsoft.Graph.Models.Security.auditLogQuery::|public|Serialize(writer:ISerializationWriter):void
@@ -141375,7 +141603,8 @@ Microsoft.Graph.Models.systemBrowserEnabledOn::0000-none
 Microsoft.Graph.Models.systemBrowserEnabledOn::0001-ios
 Microsoft.Graph.Models.systemBrowserEnabledOn::0002-android
 Microsoft.Graph.Models.systemBrowserEnabledOn::0003-mac
-Microsoft.Graph.Models.systemBrowserEnabledOn::0004-unknownFutureValue
+Microsoft.Graph.Models.systemBrowserEnabledOn::0004-linux
+Microsoft.Graph.Models.systemBrowserEnabledOn::0005-unknownFutureValue
 Microsoft.Graph.Models.systemFacet::|public|AdditionalData:IDictionary<string, object>
 Microsoft.Graph.Models.systemFacet::|public|BackingStore:IBackingStore
 Microsoft.Graph.Models.systemFacet::|public|constructor():void
@@ -166144,10 +166373,26 @@ Microsoft.Graph.Shares.Item.List.Items.Item.Permissions.Item.PermissionItemReque
 Microsoft.Graph.Shares.Item.List.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|GetAsync(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Shares.Item.List.Items.Item.Permissions.Item.PermissionItemRequestBuilder.PermissionItemRequestBuilderGetQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
 Microsoft.Graph.Shares.Item.List.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|grant:global.Microsoft.Graph.Shares.Item.List.Items.Item.Permissions.Item.Grant.GrantRequestBuilder
 Microsoft.Graph.Shares.Item.List.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|PatchAsync(body:global.Microsoft.Graph.Models.Permission; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
+Microsoft.Graph.Shares.Item.List.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|revokeGrants:global.Microsoft.Graph.Shares.Item.List.Items.Item.Permissions.Item.RevokeGrants.RevokeGrantsRequestBuilder
 Microsoft.Graph.Shares.Item.List.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|ToDeleteRequestInformation(requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
 Microsoft.Graph.Shares.Item.List.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|ToGetRequestInformation(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Shares.Item.List.Items.Item.Permissions.Item.PermissionItemRequestBuilder.PermissionItemRequestBuilderGetQueryParameters>>):RequestInformation
 Microsoft.Graph.Shares.Item.List.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|ToPatchRequestInformation(body:global.Microsoft.Graph.Models.Permission; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
 Microsoft.Graph.Shares.Item.List.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Shares.Item.List.Items.Item.Permissions.Item.PermissionItemRequestBuilder
+Microsoft.Graph.Shares.Item.List.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|AdditionalData:IDictionary<string, object>
+Microsoft.Graph.Shares.Item.List.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|BackingStore:IBackingStore
+Microsoft.Graph.Shares.Item.List.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|constructor():void
+Microsoft.Graph.Shares.Item.List.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|GetFieldDeserializers():IDictionary<string, Action<IParseNode>>
+Microsoft.Graph.Shares.Item.List.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|Grantees:List<global.Microsoft.Graph.Models.DriveRecipient>
+Microsoft.Graph.Shares.Item.List.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|Serialize(writer:ISerializationWriter):void
+Microsoft.Graph.Shares.Item.List.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|static|public|CreateFromDiscriminatorValue(parseNode:IParseNode):global.Microsoft.Graph.Shares.Item.List.Items.Item.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody
+Microsoft.Graph.Shares.Item.List.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody~~>IAdditionalDataHolder; IBackedModel; IParsable
+Microsoft.Graph.Shares.Item.List.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder-->BaseRequestBuilder
+Microsoft.Graph.Shares.Item.List.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder.revokeGrantsRequestBuilderPostRequestConfiguration-->RequestConfiguration<DefaultQueryParameters>
+Microsoft.Graph.Shares.Item.List.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|constructor(pathParameters:Dictionary<string, object>; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Shares.Item.List.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Shares.Item.List.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|PostAsync(body:global.Microsoft.Graph.Shares.Item.List.Items.Item.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
+Microsoft.Graph.Shares.Item.List.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|ToPostRequestInformation(body:global.Microsoft.Graph.Shares.Item.List.Items.Item.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
+Microsoft.Graph.Shares.Item.List.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Shares.Item.List.Items.Item.Permissions.Item.RevokeGrants.RevokeGrantsRequestBuilder
 Microsoft.Graph.Shares.Item.List.Items.Item.Permissions.permissionsRequestBuilder-->BaseRequestBuilder
 Microsoft.Graph.Shares.Item.List.Items.Item.Permissions.permissionsRequestBuilder.permissionsRequestBuilderGetQueryParameters::|public|Count:bool?
 Microsoft.Graph.Shares.Item.List.Items.Item.Permissions.permissionsRequestBuilder.permissionsRequestBuilderGetQueryParameters::|public|Expand:string[]
@@ -166418,10 +166663,26 @@ Microsoft.Graph.Shares.Item.List.Permissions.Item.PermissionItemRequestBuilder::
 Microsoft.Graph.Shares.Item.List.Permissions.Item.PermissionItemRequestBuilder::|public|GetAsync(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Shares.Item.List.Permissions.Item.PermissionItemRequestBuilder.PermissionItemRequestBuilderGetQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
 Microsoft.Graph.Shares.Item.List.Permissions.Item.PermissionItemRequestBuilder::|public|grant:global.Microsoft.Graph.Shares.Item.List.Permissions.Item.Grant.GrantRequestBuilder
 Microsoft.Graph.Shares.Item.List.Permissions.Item.PermissionItemRequestBuilder::|public|PatchAsync(body:global.Microsoft.Graph.Models.Permission; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
+Microsoft.Graph.Shares.Item.List.Permissions.Item.PermissionItemRequestBuilder::|public|revokeGrants:global.Microsoft.Graph.Shares.Item.List.Permissions.Item.RevokeGrants.RevokeGrantsRequestBuilder
 Microsoft.Graph.Shares.Item.List.Permissions.Item.PermissionItemRequestBuilder::|public|ToDeleteRequestInformation(requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
 Microsoft.Graph.Shares.Item.List.Permissions.Item.PermissionItemRequestBuilder::|public|ToGetRequestInformation(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Shares.Item.List.Permissions.Item.PermissionItemRequestBuilder.PermissionItemRequestBuilderGetQueryParameters>>):RequestInformation
 Microsoft.Graph.Shares.Item.List.Permissions.Item.PermissionItemRequestBuilder::|public|ToPatchRequestInformation(body:global.Microsoft.Graph.Models.Permission; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
 Microsoft.Graph.Shares.Item.List.Permissions.Item.PermissionItemRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Shares.Item.List.Permissions.Item.PermissionItemRequestBuilder
+Microsoft.Graph.Shares.Item.List.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|AdditionalData:IDictionary<string, object>
+Microsoft.Graph.Shares.Item.List.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|BackingStore:IBackingStore
+Microsoft.Graph.Shares.Item.List.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|constructor():void
+Microsoft.Graph.Shares.Item.List.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|GetFieldDeserializers():IDictionary<string, Action<IParseNode>>
+Microsoft.Graph.Shares.Item.List.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|Grantees:List<global.Microsoft.Graph.Models.DriveRecipient>
+Microsoft.Graph.Shares.Item.List.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|Serialize(writer:ISerializationWriter):void
+Microsoft.Graph.Shares.Item.List.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|static|public|CreateFromDiscriminatorValue(parseNode:IParseNode):global.Microsoft.Graph.Shares.Item.List.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody
+Microsoft.Graph.Shares.Item.List.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody~~>IAdditionalDataHolder; IBackedModel; IParsable
+Microsoft.Graph.Shares.Item.List.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder-->BaseRequestBuilder
+Microsoft.Graph.Shares.Item.List.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder.revokeGrantsRequestBuilderPostRequestConfiguration-->RequestConfiguration<DefaultQueryParameters>
+Microsoft.Graph.Shares.Item.List.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|constructor(pathParameters:Dictionary<string, object>; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Shares.Item.List.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Shares.Item.List.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|PostAsync(body:global.Microsoft.Graph.Shares.Item.List.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
+Microsoft.Graph.Shares.Item.List.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|ToPostRequestInformation(body:global.Microsoft.Graph.Shares.Item.List.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
+Microsoft.Graph.Shares.Item.List.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Shares.Item.List.Permissions.Item.RevokeGrants.RevokeGrantsRequestBuilder
 Microsoft.Graph.Shares.Item.List.Permissions.permissionsRequestBuilder-->BaseRequestBuilder
 Microsoft.Graph.Shares.Item.List.Permissions.permissionsRequestBuilder.permissionsRequestBuilderGetQueryParameters::|public|Count:bool?
 Microsoft.Graph.Shares.Item.List.Permissions.permissionsRequestBuilder.permissionsRequestBuilderGetQueryParameters::|public|Expand:string[]
@@ -166558,10 +166819,26 @@ Microsoft.Graph.Shares.Item.Permission.permissionRequestBuilder::|public|DeleteA
 Microsoft.Graph.Shares.Item.Permission.permissionRequestBuilder::|public|GetAsync(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Shares.Item.Permission.PermissionRequestBuilder.PermissionRequestBuilderGetQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
 Microsoft.Graph.Shares.Item.Permission.permissionRequestBuilder::|public|grant:global.Microsoft.Graph.Shares.Item.Permission.Grant.GrantRequestBuilder
 Microsoft.Graph.Shares.Item.Permission.permissionRequestBuilder::|public|PatchAsync(body:global.Microsoft.Graph.Models.Permission; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
+Microsoft.Graph.Shares.Item.Permission.permissionRequestBuilder::|public|revokeGrants:global.Microsoft.Graph.Shares.Item.Permission.RevokeGrants.RevokeGrantsRequestBuilder
 Microsoft.Graph.Shares.Item.Permission.permissionRequestBuilder::|public|ToDeleteRequestInformation(requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
 Microsoft.Graph.Shares.Item.Permission.permissionRequestBuilder::|public|ToGetRequestInformation(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Shares.Item.Permission.PermissionRequestBuilder.PermissionRequestBuilderGetQueryParameters>>):RequestInformation
 Microsoft.Graph.Shares.Item.Permission.permissionRequestBuilder::|public|ToPatchRequestInformation(body:global.Microsoft.Graph.Models.Permission; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
 Microsoft.Graph.Shares.Item.Permission.permissionRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Shares.Item.Permission.PermissionRequestBuilder
+Microsoft.Graph.Shares.Item.Permission.RevokeGrants.revokeGrantsPostRequestBody::|public|AdditionalData:IDictionary<string, object>
+Microsoft.Graph.Shares.Item.Permission.RevokeGrants.revokeGrantsPostRequestBody::|public|BackingStore:IBackingStore
+Microsoft.Graph.Shares.Item.Permission.RevokeGrants.revokeGrantsPostRequestBody::|public|constructor():void
+Microsoft.Graph.Shares.Item.Permission.RevokeGrants.revokeGrantsPostRequestBody::|public|GetFieldDeserializers():IDictionary<string, Action<IParseNode>>
+Microsoft.Graph.Shares.Item.Permission.RevokeGrants.revokeGrantsPostRequestBody::|public|Grantees:List<global.Microsoft.Graph.Models.DriveRecipient>
+Microsoft.Graph.Shares.Item.Permission.RevokeGrants.revokeGrantsPostRequestBody::|public|Serialize(writer:ISerializationWriter):void
+Microsoft.Graph.Shares.Item.Permission.RevokeGrants.revokeGrantsPostRequestBody::|static|public|CreateFromDiscriminatorValue(parseNode:IParseNode):global.Microsoft.Graph.Shares.Item.Permission.RevokeGrants.RevokeGrantsPostRequestBody
+Microsoft.Graph.Shares.Item.Permission.RevokeGrants.revokeGrantsPostRequestBody~~>IAdditionalDataHolder; IBackedModel; IParsable
+Microsoft.Graph.Shares.Item.Permission.RevokeGrants.revokeGrantsRequestBuilder-->BaseRequestBuilder
+Microsoft.Graph.Shares.Item.Permission.RevokeGrants.revokeGrantsRequestBuilder.revokeGrantsRequestBuilderPostRequestConfiguration-->RequestConfiguration<DefaultQueryParameters>
+Microsoft.Graph.Shares.Item.Permission.RevokeGrants.revokeGrantsRequestBuilder::|public|constructor(pathParameters:Dictionary<string, object>; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Shares.Item.Permission.RevokeGrants.revokeGrantsRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Shares.Item.Permission.RevokeGrants.revokeGrantsRequestBuilder::|public|PostAsync(body:global.Microsoft.Graph.Shares.Item.Permission.RevokeGrants.RevokeGrantsPostRequestBody; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
+Microsoft.Graph.Shares.Item.Permission.RevokeGrants.revokeGrantsRequestBuilder::|public|ToPostRequestInformation(body:global.Microsoft.Graph.Shares.Item.Permission.RevokeGrants.RevokeGrantsPostRequestBody; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
+Microsoft.Graph.Shares.Item.Permission.RevokeGrants.revokeGrantsRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Shares.Item.Permission.RevokeGrants.RevokeGrantsRequestBuilder
 Microsoft.Graph.Shares.Item.Root.Content.contentRequestBuilder-->BaseRequestBuilder
 Microsoft.Graph.Shares.Item.Root.Content.contentRequestBuilder.contentRequestBuilderDeleteRequestConfiguration-->RequestConfiguration<DefaultQueryParameters>
 Microsoft.Graph.Shares.Item.Root.Content.contentRequestBuilder.contentRequestBuilderGetQueryParameters::|public|Format:string
@@ -168767,10 +169044,26 @@ Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Permissions.Item.PermissionItem
 Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|GetAsync(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Permissions.Item.PermissionItemRequestBuilder.PermissionItemRequestBuilderGetQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
 Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|grant:global.Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Permissions.Item.Grant.GrantRequestBuilder
 Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|PatchAsync(body:global.Microsoft.Graph.Models.Permission; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
+Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|revokeGrants:global.Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.RevokeGrantsRequestBuilder
 Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|ToDeleteRequestInformation(requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
 Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|ToGetRequestInformation(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Permissions.Item.PermissionItemRequestBuilder.PermissionItemRequestBuilderGetQueryParameters>>):RequestInformation
 Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|ToPatchRequestInformation(body:global.Microsoft.Graph.Models.Permission; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
 Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Permissions.Item.PermissionItemRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Permissions.Item.PermissionItemRequestBuilder
+Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|AdditionalData:IDictionary<string, object>
+Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|BackingStore:IBackingStore
+Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|constructor():void
+Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|GetFieldDeserializers():IDictionary<string, Action<IParseNode>>
+Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|Grantees:List<global.Microsoft.Graph.Models.DriveRecipient>
+Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|Serialize(writer:ISerializationWriter):void
+Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|static|public|CreateFromDiscriminatorValue(parseNode:IParseNode):global.Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody
+Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody~~>IAdditionalDataHolder; IBackedModel; IParsable
+Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder-->BaseRequestBuilder
+Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder.revokeGrantsRequestBuilderPostRequestConfiguration-->RequestConfiguration<DefaultQueryParameters>
+Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|constructor(pathParameters:Dictionary<string, object>; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|PostAsync(body:global.Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
+Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|ToPostRequestInformation(body:global.Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
+Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Permissions.Item.RevokeGrants.RevokeGrantsRequestBuilder
 Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Permissions.permissionsRequestBuilder-->BaseRequestBuilder
 Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Permissions.permissionsRequestBuilder.permissionsRequestBuilderGetQueryParameters::|public|Count:bool?
 Microsoft.Graph.Sites.Item.Lists.Item.Items.Item.Permissions.permissionsRequestBuilder.permissionsRequestBuilderGetQueryParameters::|public|Expand:string[]
@@ -169041,10 +169334,26 @@ Microsoft.Graph.Sites.Item.Lists.Item.Permissions.Item.PermissionItemRequestBuil
 Microsoft.Graph.Sites.Item.Lists.Item.Permissions.Item.PermissionItemRequestBuilder::|public|GetAsync(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Sites.Item.Lists.Item.Permissions.Item.PermissionItemRequestBuilder.PermissionItemRequestBuilderGetQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
 Microsoft.Graph.Sites.Item.Lists.Item.Permissions.Item.PermissionItemRequestBuilder::|public|grant:global.Microsoft.Graph.Sites.Item.Lists.Item.Permissions.Item.Grant.GrantRequestBuilder
 Microsoft.Graph.Sites.Item.Lists.Item.Permissions.Item.PermissionItemRequestBuilder::|public|PatchAsync(body:global.Microsoft.Graph.Models.Permission; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
+Microsoft.Graph.Sites.Item.Lists.Item.Permissions.Item.PermissionItemRequestBuilder::|public|revokeGrants:global.Microsoft.Graph.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.RevokeGrantsRequestBuilder
 Microsoft.Graph.Sites.Item.Lists.Item.Permissions.Item.PermissionItemRequestBuilder::|public|ToDeleteRequestInformation(requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
 Microsoft.Graph.Sites.Item.Lists.Item.Permissions.Item.PermissionItemRequestBuilder::|public|ToGetRequestInformation(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Sites.Item.Lists.Item.Permissions.Item.PermissionItemRequestBuilder.PermissionItemRequestBuilderGetQueryParameters>>):RequestInformation
 Microsoft.Graph.Sites.Item.Lists.Item.Permissions.Item.PermissionItemRequestBuilder::|public|ToPatchRequestInformation(body:global.Microsoft.Graph.Models.Permission; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
 Microsoft.Graph.Sites.Item.Lists.Item.Permissions.Item.PermissionItemRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Sites.Item.Lists.Item.Permissions.Item.PermissionItemRequestBuilder
+Microsoft.Graph.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|AdditionalData:IDictionary<string, object>
+Microsoft.Graph.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|BackingStore:IBackingStore
+Microsoft.Graph.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|constructor():void
+Microsoft.Graph.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|GetFieldDeserializers():IDictionary<string, Action<IParseNode>>
+Microsoft.Graph.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|Grantees:List<global.Microsoft.Graph.Models.DriveRecipient>
+Microsoft.Graph.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|Serialize(writer:ISerializationWriter):void
+Microsoft.Graph.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|static|public|CreateFromDiscriminatorValue(parseNode:IParseNode):global.Microsoft.Graph.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody
+Microsoft.Graph.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody~~>IAdditionalDataHolder; IBackedModel; IParsable
+Microsoft.Graph.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder-->BaseRequestBuilder
+Microsoft.Graph.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder.revokeGrantsRequestBuilderPostRequestConfiguration-->RequestConfiguration<DefaultQueryParameters>
+Microsoft.Graph.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|constructor(pathParameters:Dictionary<string, object>; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|PostAsync(body:global.Microsoft.Graph.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
+Microsoft.Graph.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|ToPostRequestInformation(body:global.Microsoft.Graph.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
+Microsoft.Graph.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Sites.Item.Lists.Item.Permissions.Item.RevokeGrants.RevokeGrantsRequestBuilder
 Microsoft.Graph.Sites.Item.Lists.Item.Permissions.permissionsRequestBuilder-->BaseRequestBuilder
 Microsoft.Graph.Sites.Item.Lists.Item.Permissions.permissionsRequestBuilder.permissionsRequestBuilderGetQueryParameters::|public|Count:bool?
 Microsoft.Graph.Sites.Item.Lists.Item.Permissions.permissionsRequestBuilder.permissionsRequestBuilderGetQueryParameters::|public|Expand:string[]
@@ -171237,10 +171546,26 @@ Microsoft.Graph.Sites.Item.Permissions.Item.PermissionItemRequestBuilder::|publi
 Microsoft.Graph.Sites.Item.Permissions.Item.PermissionItemRequestBuilder::|public|GetAsync(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Sites.Item.Permissions.Item.PermissionItemRequestBuilder.PermissionItemRequestBuilderGetQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
 Microsoft.Graph.Sites.Item.Permissions.Item.PermissionItemRequestBuilder::|public|grant:global.Microsoft.Graph.Sites.Item.Permissions.Item.Grant.GrantRequestBuilder
 Microsoft.Graph.Sites.Item.Permissions.Item.PermissionItemRequestBuilder::|public|PatchAsync(body:global.Microsoft.Graph.Models.Permission; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
+Microsoft.Graph.Sites.Item.Permissions.Item.PermissionItemRequestBuilder::|public|revokeGrants:global.Microsoft.Graph.Sites.Item.Permissions.Item.RevokeGrants.RevokeGrantsRequestBuilder
 Microsoft.Graph.Sites.Item.Permissions.Item.PermissionItemRequestBuilder::|public|ToDeleteRequestInformation(requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
 Microsoft.Graph.Sites.Item.Permissions.Item.PermissionItemRequestBuilder::|public|ToGetRequestInformation(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Sites.Item.Permissions.Item.PermissionItemRequestBuilder.PermissionItemRequestBuilderGetQueryParameters>>):RequestInformation
 Microsoft.Graph.Sites.Item.Permissions.Item.PermissionItemRequestBuilder::|public|ToPatchRequestInformation(body:global.Microsoft.Graph.Models.Permission; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
 Microsoft.Graph.Sites.Item.Permissions.Item.PermissionItemRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Sites.Item.Permissions.Item.PermissionItemRequestBuilder
+Microsoft.Graph.Sites.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|AdditionalData:IDictionary<string, object>
+Microsoft.Graph.Sites.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|BackingStore:IBackingStore
+Microsoft.Graph.Sites.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|constructor():void
+Microsoft.Graph.Sites.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|GetFieldDeserializers():IDictionary<string, Action<IParseNode>>
+Microsoft.Graph.Sites.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|Grantees:List<global.Microsoft.Graph.Models.DriveRecipient>
+Microsoft.Graph.Sites.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|Serialize(writer:ISerializationWriter):void
+Microsoft.Graph.Sites.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|static|public|CreateFromDiscriminatorValue(parseNode:IParseNode):global.Microsoft.Graph.Sites.Item.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody
+Microsoft.Graph.Sites.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody~~>IAdditionalDataHolder; IBackedModel; IParsable
+Microsoft.Graph.Sites.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder-->BaseRequestBuilder
+Microsoft.Graph.Sites.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder.revokeGrantsRequestBuilderPostRequestConfiguration-->RequestConfiguration<DefaultQueryParameters>
+Microsoft.Graph.Sites.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|constructor(pathParameters:Dictionary<string, object>; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Sites.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Sites.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|PostAsync(body:global.Microsoft.Graph.Sites.Item.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
+Microsoft.Graph.Sites.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|ToPostRequestInformation(body:global.Microsoft.Graph.Sites.Item.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
+Microsoft.Graph.Sites.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Sites.Item.Permissions.Item.RevokeGrants.RevokeGrantsRequestBuilder
 Microsoft.Graph.Sites.Item.Permissions.permissionsRequestBuilder-->BaseRequestBuilder
 Microsoft.Graph.Sites.Item.Permissions.permissionsRequestBuilder.permissionsRequestBuilderGetQueryParameters::|public|Count:bool?
 Microsoft.Graph.Sites.Item.Permissions.permissionsRequestBuilder.permissionsRequestBuilderGetQueryParameters::|public|Expand:string[]
@@ -179468,10 +179793,26 @@ Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item.PermissionI
 Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item.PermissionItemRequestBuilder::|public|GetAsync(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item.PermissionItemRequestBuilder.PermissionItemRequestBuilderGetQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
 Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item.PermissionItemRequestBuilder::|public|grant:global.Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item.Grant.GrantRequestBuilder
 Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item.PermissionItemRequestBuilder::|public|PatchAsync(body:global.Microsoft.Graph.Models.Permission; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
+Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item.PermissionItemRequestBuilder::|public|revokeGrants:global.Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item.RevokeGrants.RevokeGrantsRequestBuilder
 Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item.PermissionItemRequestBuilder::|public|ToDeleteRequestInformation(requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
 Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item.PermissionItemRequestBuilder::|public|ToGetRequestInformation(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item.PermissionItemRequestBuilder.PermissionItemRequestBuilderGetQueryParameters>>):RequestInformation
 Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item.PermissionItemRequestBuilder::|public|ToPatchRequestInformation(body:global.Microsoft.Graph.Models.Permission; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
 Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item.PermissionItemRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item.PermissionItemRequestBuilder
+Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|AdditionalData:IDictionary<string, object>
+Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|BackingStore:IBackingStore
+Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|constructor():void
+Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|GetFieldDeserializers():IDictionary<string, Action<IParseNode>>
+Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|Grantees:List<global.Microsoft.Graph.Models.DriveRecipient>
+Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|Serialize(writer:ISerializationWriter):void
+Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|static|public|CreateFromDiscriminatorValue(parseNode:IParseNode):global.Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody
+Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody~~>IAdditionalDataHolder; IBackedModel; IParsable
+Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder-->BaseRequestBuilder
+Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder.revokeGrantsRequestBuilderPostRequestConfiguration-->RequestConfiguration<DefaultQueryParameters>
+Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|constructor(pathParameters:Dictionary<string, object>; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|PostAsync(body:global.Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
+Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|ToPostRequestInformation(body:global.Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
+Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.Item.RevokeGrants.RevokeGrantsRequestBuilder
 Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.permissionsRequestBuilder-->BaseRequestBuilder
 Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.permissionsRequestBuilder.permissionsRequestBuilderGetQueryParameters::|public|Count:bool?
 Microsoft.Graph.Storage.FileStorage.Containers.Item.Permissions.permissionsRequestBuilder.permissionsRequestBuilderGetQueryParameters::|public|Expand:string[]
@@ -180273,10 +180614,26 @@ Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.Perm
 Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.PermissionItemRequestBuilder::|public|GetAsync(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.PermissionItemRequestBuilder.PermissionItemRequestBuilderGetQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
 Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.PermissionItemRequestBuilder::|public|grant:global.Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.Grant.GrantRequestBuilder
 Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.PermissionItemRequestBuilder::|public|PatchAsync(body:global.Microsoft.Graph.Models.Permission; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
+Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.PermissionItemRequestBuilder::|public|revokeGrants:global.Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.RevokeGrants.RevokeGrantsRequestBuilder
 Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.PermissionItemRequestBuilder::|public|ToDeleteRequestInformation(requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
 Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.PermissionItemRequestBuilder::|public|ToGetRequestInformation(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.PermissionItemRequestBuilder.PermissionItemRequestBuilderGetQueryParameters>>):RequestInformation
 Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.PermissionItemRequestBuilder::|public|ToPatchRequestInformation(body:global.Microsoft.Graph.Models.Permission; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
 Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.PermissionItemRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.PermissionItemRequestBuilder
+Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|AdditionalData:IDictionary<string, object>
+Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|BackingStore:IBackingStore
+Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|constructor():void
+Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|GetFieldDeserializers():IDictionary<string, Action<IParseNode>>
+Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|Grantees:List<global.Microsoft.Graph.Models.DriveRecipient>
+Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|public|Serialize(writer:ISerializationWriter):void
+Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody::|static|public|CreateFromDiscriminatorValue(parseNode:IParseNode):global.Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody
+Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.RevokeGrants.revokeGrantsPostRequestBody~~>IAdditionalDataHolder; IBackedModel; IParsable
+Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder-->BaseRequestBuilder
+Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder.revokeGrantsRequestBuilderPostRequestConfiguration-->RequestConfiguration<DefaultQueryParameters>
+Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|constructor(pathParameters:Dictionary<string, object>; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|PostAsync(body:global.Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Permission
+Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|ToPostRequestInformation(body:global.Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.RevokeGrants.RevokeGrantsPostRequestBody; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
+Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.RevokeGrants.revokeGrantsRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.Item.RevokeGrants.RevokeGrantsRequestBuilder
 Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.permissionsRequestBuilder-->BaseRequestBuilder
 Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.permissionsRequestBuilder.permissionsRequestBuilderGetQueryParameters::|public|Count:bool?
 Microsoft.Graph.Storage.FileStorage.DeletedContainers.Item.Permissions.permissionsRequestBuilder.permissionsRequestBuilderGetQueryParameters::|public|Expand:string[]
@@ -186141,6 +186498,7 @@ Microsoft.Graph.Users.Item.Authentication.authenticationRequestBuilder::|public|
 Microsoft.Graph.Users.Item.Authentication.authenticationRequestBuilder::|public|PatchAsync(body:global.Microsoft.Graph.Models.Authentication; requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Authentication
 Microsoft.Graph.Users.Item.Authentication.authenticationRequestBuilder::|public|phoneMethods:global.Microsoft.Graph.Users.Item.Authentication.PhoneMethods.PhoneMethodsRequestBuilder
 Microsoft.Graph.Users.Item.Authentication.authenticationRequestBuilder::|public|platformCredentialMethods:global.Microsoft.Graph.Users.Item.Authentication.PlatformCredentialMethods.PlatformCredentialMethodsRequestBuilder
+Microsoft.Graph.Users.Item.Authentication.authenticationRequestBuilder::|public|resourceAccountKeyAuthenticationMethods:global.Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.ResourceAccountKeyAuthenticationMethodsRequestBuilder
 Microsoft.Graph.Users.Item.Authentication.authenticationRequestBuilder::|public|softwareOathMethods:global.Microsoft.Graph.Users.Item.Authentication.SoftwareOathMethods.SoftwareOathMethodsRequestBuilder
 Microsoft.Graph.Users.Item.Authentication.authenticationRequestBuilder::|public|temporaryAccessPassMethods:global.Microsoft.Graph.Users.Item.Authentication.TemporaryAccessPassMethods.TemporaryAccessPassMethodsRequestBuilder
 Microsoft.Graph.Users.Item.Authentication.authenticationRequestBuilder::|public|ToDeleteRequestInformation(requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
@@ -186577,6 +186935,54 @@ Microsoft.Graph.Users.Item.Authentication.PlatformCredentialMethods.platformCred
 Microsoft.Graph.Users.Item.Authentication.PlatformCredentialMethods.platformCredentialMethodsRequestBuilder::|public|GetAsync(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Users.Item.Authentication.PlatformCredentialMethods.PlatformCredentialMethodsRequestBuilder.PlatformCredentialMethodsRequestBuilderGetQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.PlatformCredentialAuthenticationMethodCollectionResponse
 Microsoft.Graph.Users.Item.Authentication.PlatformCredentialMethods.platformCredentialMethodsRequestBuilder::|public|ToGetRequestInformation(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Users.Item.Authentication.PlatformCredentialMethods.PlatformCredentialMethodsRequestBuilder.PlatformCredentialMethodsRequestBuilderGetQueryParameters>>):RequestInformation
 Microsoft.Graph.Users.Item.Authentication.PlatformCredentialMethods.platformCredentialMethodsRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Users.Item.Authentication.PlatformCredentialMethods.PlatformCredentialMethodsRequestBuilder
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Count.CountRequestBuilder-->BaseRequestBuilder
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters::|public|Filter:string
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters::|public|Search:string
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Count.CountRequestBuilder.CountRequestBuilderGetRequestConfiguration-->RequestConfiguration<global.Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Count.CountRequestBuilder::|public|constructor(pathParameters:Dictionary<string, object>; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Count.CountRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Count.CountRequestBuilder::|public|GetAsync(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>>; cancellationToken?:CancellationToken):int?
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Count.CountRequestBuilder::|public|ToGetRequestInformation(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters>>):RequestInformation
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Count.CountRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Count.CountRequestBuilder
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Item.Device.deviceRequestBuilder-->BaseRequestBuilder
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Item.Device.deviceRequestBuilder.deviceRequestBuilderGetQueryParameters::|public|Expand:string[]
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Item.Device.deviceRequestBuilder.deviceRequestBuilderGetQueryParameters::|public|Select:string[]
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Item.Device.deviceRequestBuilder.deviceRequestBuilderGetRequestConfiguration-->RequestConfiguration<global.Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Item.Device.DeviceRequestBuilder.DeviceRequestBuilderGetQueryParameters>
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Item.Device.deviceRequestBuilder::|public|constructor(pathParameters:Dictionary<string, object>; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Item.Device.deviceRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Item.Device.deviceRequestBuilder::|public|GetAsync(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Item.Device.DeviceRequestBuilder.DeviceRequestBuilderGetQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.Device
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Item.Device.deviceRequestBuilder::|public|ToGetRequestInformation(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Item.Device.DeviceRequestBuilder.DeviceRequestBuilderGetQueryParameters>>):RequestInformation
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Item.Device.deviceRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Item.Device.DeviceRequestBuilder
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Item.ResourceAccountKeyAuthenticationMethodItemRequestBuilder-->BaseRequestBuilder
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Item.ResourceAccountKeyAuthenticationMethodItemRequestBuilder.ResourceAccountKeyAuthenticationMethodItemRequestBuilderDeleteRequestConfiguration-->RequestConfiguration<DefaultQueryParameters>
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Item.ResourceAccountKeyAuthenticationMethodItemRequestBuilder.ResourceAccountKeyAuthenticationMethodItemRequestBuilderGetQueryParameters::|public|Expand:string[]
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Item.ResourceAccountKeyAuthenticationMethodItemRequestBuilder.ResourceAccountKeyAuthenticationMethodItemRequestBuilderGetQueryParameters::|public|Select:string[]
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Item.ResourceAccountKeyAuthenticationMethodItemRequestBuilder.ResourceAccountKeyAuthenticationMethodItemRequestBuilderGetRequestConfiguration-->RequestConfiguration<global.Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Item.ResourceAccountKeyAuthenticationMethodItemRequestBuilder.ResourceAccountKeyAuthenticationMethodItemRequestBuilderGetQueryParameters>
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Item.ResourceAccountKeyAuthenticationMethodItemRequestBuilder::|public|constructor(pathParameters:Dictionary<string, object>; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Item.ResourceAccountKeyAuthenticationMethodItemRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Item.ResourceAccountKeyAuthenticationMethodItemRequestBuilder::|public|DeleteAsync(requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>; cancellationToken?:CancellationToken):void
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Item.ResourceAccountKeyAuthenticationMethodItemRequestBuilder::|public|device:global.Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Item.Device.DeviceRequestBuilder
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Item.ResourceAccountKeyAuthenticationMethodItemRequestBuilder::|public|GetAsync(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Item.ResourceAccountKeyAuthenticationMethodItemRequestBuilder.ResourceAccountKeyAuthenticationMethodItemRequestBuilderGetQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.ResourceAccountKeyAuthenticationMethod
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Item.ResourceAccountKeyAuthenticationMethodItemRequestBuilder::|public|ToDeleteRequestInformation(requestConfiguration?:Action<RequestConfiguration<DefaultQueryParameters>>):RequestInformation
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Item.ResourceAccountKeyAuthenticationMethodItemRequestBuilder::|public|ToGetRequestInformation(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Item.ResourceAccountKeyAuthenticationMethodItemRequestBuilder.ResourceAccountKeyAuthenticationMethodItemRequestBuilderGetQueryParameters>>):RequestInformation
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Item.ResourceAccountKeyAuthenticationMethodItemRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Item.ResourceAccountKeyAuthenticationMethodItemRequestBuilder
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.resourceAccountKeyAuthenticationMethodsRequestBuilder-->BaseRequestBuilder
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.resourceAccountKeyAuthenticationMethodsRequestBuilder.resourceAccountKeyAuthenticationMethodsRequestBuilderGetQueryParameters::|public|Count:bool?
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.resourceAccountKeyAuthenticationMethodsRequestBuilder.resourceAccountKeyAuthenticationMethodsRequestBuilderGetQueryParameters::|public|Expand:string[]
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.resourceAccountKeyAuthenticationMethodsRequestBuilder.resourceAccountKeyAuthenticationMethodsRequestBuilderGetQueryParameters::|public|Filter:string
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.resourceAccountKeyAuthenticationMethodsRequestBuilder.resourceAccountKeyAuthenticationMethodsRequestBuilderGetQueryParameters::|public|Orderby:string[]
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.resourceAccountKeyAuthenticationMethodsRequestBuilder.resourceAccountKeyAuthenticationMethodsRequestBuilderGetQueryParameters::|public|Search:string
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.resourceAccountKeyAuthenticationMethodsRequestBuilder.resourceAccountKeyAuthenticationMethodsRequestBuilderGetQueryParameters::|public|Select:string[]
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.resourceAccountKeyAuthenticationMethodsRequestBuilder.resourceAccountKeyAuthenticationMethodsRequestBuilderGetQueryParameters::|public|Skip:int?
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.resourceAccountKeyAuthenticationMethodsRequestBuilder.resourceAccountKeyAuthenticationMethodsRequestBuilderGetQueryParameters::|public|Top:int?
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.resourceAccountKeyAuthenticationMethodsRequestBuilder.resourceAccountKeyAuthenticationMethodsRequestBuilderGetRequestConfiguration-->RequestConfiguration<global.Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.ResourceAccountKeyAuthenticationMethodsRequestBuilder.ResourceAccountKeyAuthenticationMethodsRequestBuilderGetQueryParameters>
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.resourceAccountKeyAuthenticationMethodsRequestBuilder::[ResourceAccountKeyAuthenticationMethodId:string]:global.Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Item.ResourceAccountKeyAuthenticationMethodItemRequestBuilder
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.resourceAccountKeyAuthenticationMethodsRequestBuilder::|public|constructor(pathParameters:Dictionary<string, object>; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.resourceAccountKeyAuthenticationMethodsRequestBuilder::|public|constructor(rawUrl:string; requestAdapter:IRequestAdapter):void
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.resourceAccountKeyAuthenticationMethodsRequestBuilder::|public|Count:global.Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.Count.CountRequestBuilder
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.resourceAccountKeyAuthenticationMethodsRequestBuilder::|public|GetAsync(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.ResourceAccountKeyAuthenticationMethodsRequestBuilder.ResourceAccountKeyAuthenticationMethodsRequestBuilderGetQueryParameters>>; cancellationToken?:CancellationToken):global.Microsoft.Graph.Models.ResourceAccountKeyAuthenticationMethodCollectionResponse
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.resourceAccountKeyAuthenticationMethodsRequestBuilder::|public|ToGetRequestInformation(requestConfiguration?:Action<RequestConfiguration<global.Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.ResourceAccountKeyAuthenticationMethodsRequestBuilder.ResourceAccountKeyAuthenticationMethodsRequestBuilderGetQueryParameters>>):RequestInformation
+Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.resourceAccountKeyAuthenticationMethodsRequestBuilder::|public|WithUrl(rawUrl:string):global.Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.ResourceAccountKeyAuthenticationMethodsRequestBuilder
 Microsoft.Graph.Users.Item.Authentication.SoftwareOathMethods.Count.CountRequestBuilder-->BaseRequestBuilder
 Microsoft.Graph.Users.Item.Authentication.SoftwareOathMethods.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters::|public|Filter:string
 Microsoft.Graph.Users.Item.Authentication.SoftwareOathMethods.Count.CountRequestBuilder.CountRequestBuilderGetQueryParameters::|public|Search:string

@@ -3,6 +3,7 @@
 using Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.Count;
 using Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.Item;
 using Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.Refresh;
+using Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.RefreshStatus;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -30,6 +31,11 @@ namespace Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants
         public global::Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.Refresh.RefreshRequestBuilder Refresh
         {
             get => new global::Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.Refresh.RefreshRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the refreshStatus method.</summary>
+        public global::Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.RefreshStatus.RefreshStatusRequestBuilder RefreshStatus
+        {
+            get => new global::Microsoft.Graph.DirectoryNamespace.TenantGovernance.RelatedTenants.RefreshStatus.RefreshStatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the relatedTenants property of the microsoft.graph.tenantGovernance entity.</summary>
         /// <param name="position">The unique identifier of relatedTenant</param>

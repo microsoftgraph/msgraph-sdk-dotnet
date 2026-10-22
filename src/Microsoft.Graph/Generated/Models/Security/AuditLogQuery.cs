@@ -29,6 +29,12 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("administrativeUnitIdFilters", value); }
         }
 #endif
+        /// <summary>The approximate number of records retrieved by the query. This value can be higher or lower than recordCountLimit due to distributed counting. Read-only.</summary>
+        public long? ApproximateReturnedRecordCount
+        {
+            get { return BackingStore?.Get<long?>("approximateReturnedRecordCount"); }
+            set { BackingStore?.Set("approximateReturnedRecordCount", value); }
+        }
         /// <summary>The display name of the audit log query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,7 +79,13 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("ipAddressFilters", value); }
         }
 #endif
-        /// <summary>The keyword to filter on.</summary>
+        /// <summary>Indicates whether the query exceeded the per-search record-count limit. The default value is false. A value of true is authoritative and isn&apos;t derived from approximateReturnedRecordCount. Read-only.</summary>
+        public bool? IsRecordCountLimitExceeded
+        {
+            get { return BackingStore?.Get<bool?>("isRecordCountLimitExceeded"); }
+            set { BackingStore?.Set("isRecordCountLimitExceeded", value); }
+        }
+        /// <summary>Free text to match against the non-indexed content of each record: the workload-specific properties inside auditData, including its AppAccessContext object. The indexed common-schema properties, such as the operation name, aren&apos;t matched by keyword; use their own filters, such as operationFilters, for those.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? KeywordFilter
@@ -121,6 +133,12 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("operationFilters", value); }
         }
 #endif
+        /// <summary>The record-count threshold used to limit query result retrieval. Read-only.</summary>
+        public long? RecordCountLimit
+        {
+            get { return BackingStore?.Get<long?>("recordCountLimit"); }
+            set { BackingStore?.Set("recordCountLimit", value); }
+        }
         /// <summary>The collection of audit log records retrieved by the query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -210,13 +228,16 @@ namespace Microsoft.Graph.Models.Security
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "administrativeUnitIdFilters", n => { AdministrativeUnitIdFilters = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "approximateReturnedRecordCount", n => { ApproximateReturnedRecordCount = n.GetLongValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "filterEndDateTime", n => { FilterEndDateTime = n.GetDateTimeOffsetValue(); } },
                 { "filterStartDateTime", n => { FilterStartDateTime = n.GetDateTimeOffsetValue(); } },
                 { "ipAddressFilters", n => { IpAddressFilters = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "isRecordCountLimitExceeded", n => { IsRecordCountLimitExceeded = n.GetBoolValue(); } },
                 { "keywordFilter", n => { KeywordFilter = n.GetStringValue(); } },
                 { "objectIdFilters", n => { ObjectIdFilters = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "operationFilters", n => { OperationFilters = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "recordCountLimit", n => { RecordCountLimit = n.GetLongValue(); } },
                 { "recordTypeFilters", n => { RecordTypeFilters = n.GetCollectionOfEnumValues<global::Microsoft.Graph.Models.Security.AuditLogRecordType>()?.AsList(); } },
                 { "records", n => { Records = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.AuditLogRecord>(global::Microsoft.Graph.Models.Security.AuditLogRecord.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "serviceFilters", n => { ServiceFilters = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },

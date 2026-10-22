@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The max number of retries that Microsoft Entra ID makes to the external API. Values of 0 or 1 are supported. If null, the default for the service applies.</summary>
+        /// <summary>The max number of retries that Microsoft Entra ID makes to the external API. For a roleManagementCustomCalloutExtension, the valid range is from 0 through 5. For other custom extensions, values of 0 or 1 are supported. If null, the default for the service applies.</summary>
         public int? MaximumRetries
         {
             get { return BackingStore?.Get<int?>("maximumRetries"); }
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The max duration in milliseconds that Microsoft Entra ID waits for a response from the external app before it shuts down the connection. The valid range is between 200 and 2000 milliseconds. Default duration is 1000.</summary>
+        /// <summary>The max duration in milliseconds that Microsoft Entra ID waits for a response from the external app before it shuts down the connection. For a roleManagementCustomCalloutExtension, the valid range is from 1000 through 60000 milliseconds. For other custom extensions, the valid range is from 200 through 2000 milliseconds and the default is 1000 milliseconds.</summary>
         public int? TimeoutInMilliseconds
         {
             get { return BackingStore?.Get<int?>("timeoutInMilliseconds"); }

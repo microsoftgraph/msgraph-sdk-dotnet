@@ -9,6 +9,7 @@ using Microsoft.Graph.Me.Authentication.Operations;
 using Microsoft.Graph.Me.Authentication.PasswordMethods;
 using Microsoft.Graph.Me.Authentication.PhoneMethods;
 using Microsoft.Graph.Me.Authentication.PlatformCredentialMethods;
+using Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods;
 using Microsoft.Graph.Me.Authentication.SoftwareOathMethods;
 using Microsoft.Graph.Me.Authentication.TemporaryAccessPassMethods;
 using Microsoft.Graph.Me.Authentication.WindowsHelloForBusinessMethods;
@@ -74,6 +75,11 @@ namespace Microsoft.Graph.Me.Authentication
         public global::Microsoft.Graph.Me.Authentication.PlatformCredentialMethods.PlatformCredentialMethodsRequestBuilder PlatformCredentialMethods
         {
             get => new global::Microsoft.Graph.Me.Authentication.PlatformCredentialMethods.PlatformCredentialMethodsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the resourceAccountKeyAuthenticationMethods property of the microsoft.graph.authentication entity.</summary>
+        public global::Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.ResourceAccountKeyAuthenticationMethodsRequestBuilder ResourceAccountKeyAuthenticationMethods
+        {
+            get => new global::Microsoft.Graph.Me.Authentication.ResourceAccountKeyAuthenticationMethods.ResourceAccountKeyAuthenticationMethodsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the softwareOathMethods property of the microsoft.graph.authentication entity.</summary>
         public global::Microsoft.Graph.Me.Authentication.SoftwareOathMethods.SoftwareOathMethodsRequestBuilder SoftwareOathMethods

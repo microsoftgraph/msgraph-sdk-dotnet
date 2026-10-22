@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class RoleManagementCustomCalloutExtension : global::Microsoft.Graph.Models.CustomCalloutExtension, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The customAttributes property</summary>
+        /// <summary>The custom attribute names to include in the callout payload.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? CustomAttributes

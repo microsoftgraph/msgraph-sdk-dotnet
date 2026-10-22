@@ -39,6 +39,12 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("isItemVersioningEnabled"); }
             set { BackingStore?.Set("isItemVersioningEnabled", value); }
         }
+        /// <summary>Indicates whether Office apps (Word, Excel, and PowerPoint) for desktop and web are restricted for containers of this container type.</summary>
+        public bool? IsOfficeRestricted
+        {
+            get { return BackingStore?.Get<bool?>("isOfficeRestricted"); }
+            set { BackingStore?.Set("isOfficeRestricted", value); }
+        }
         /// <summary>Indicates whether search is enabled.</summary>
         public bool? IsSearchEnabled
         {
@@ -130,6 +136,7 @@ namespace Microsoft.Graph.Models
                 { "consumingTenantOverridables", n => { ConsumingTenantOverridables = n.GetEnumValue<global::Microsoft.Graph.Models.FileStorageContainerTypeSettingsOverride>(); } },
                 { "isDiscoverabilityEnabled", n => { IsDiscoverabilityEnabled = n.GetBoolValue(); } },
                 { "isItemVersioningEnabled", n => { IsItemVersioningEnabled = n.GetBoolValue(); } },
+                { "isOfficeRestricted", n => { IsOfficeRestricted = n.GetBoolValue(); } },
                 { "isSearchEnabled", n => { IsSearchEnabled = n.GetBoolValue(); } },
                 { "isSharingRestricted", n => { IsSharingRestricted = n.GetBoolValue(); } },
                 { "itemMajorVersionLimit", n => { ItemMajorVersionLimit = n.GetLongValue(); } },
@@ -149,6 +156,7 @@ namespace Microsoft.Graph.Models
             writer.WriteEnumValue<global::Microsoft.Graph.Models.FileStorageContainerTypeSettingsOverride>("consumingTenantOverridables", ConsumingTenantOverridables);
             writer.WriteBoolValue("isDiscoverabilityEnabled", IsDiscoverabilityEnabled);
             writer.WriteBoolValue("isItemVersioningEnabled", IsItemVersioningEnabled);
+            writer.WriteBoolValue("isOfficeRestricted", IsOfficeRestricted);
             writer.WriteBoolValue("isSearchEnabled", IsSearchEnabled);
             writer.WriteBoolValue("isSharingRestricted", IsSharingRestricted);
             writer.WriteLongValue("itemMajorVersionLimit", ItemMajorVersionLimit);

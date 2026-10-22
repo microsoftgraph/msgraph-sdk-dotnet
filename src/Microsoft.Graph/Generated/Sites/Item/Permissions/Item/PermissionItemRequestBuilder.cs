@@ -3,6 +3,7 @@
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Sites.Item.Permissions.Item.Grant;
+using Microsoft.Graph.Sites.Item.Permissions.Item.RevokeGrants;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -23,6 +24,11 @@ namespace Microsoft.Graph.Sites.Item.Permissions.Item
         public global::Microsoft.Graph.Sites.Item.Permissions.Item.Grant.GrantRequestBuilder Grant
         {
             get => new global::Microsoft.Graph.Sites.Item.Permissions.Item.Grant.GrantRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the revokeGrants method.</summary>
+        public global::Microsoft.Graph.Sites.Item.Permissions.Item.RevokeGrants.RevokeGrantsRequestBuilder RevokeGrants
+        {
+            get => new global::Microsoft.Graph.Sites.Item.Permissions.Item.RevokeGrants.RevokeGrantsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Sites.Item.Permissions.Item.PermissionItemRequestBuilder"/> and sets the default values.
