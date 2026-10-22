@@ -40,7 +40,7 @@ var newGroup = await graphServiceClient
 							.PostAsync(groupToCreate);
 ```
 
-`AddAsync` returns the created group on success and throws a `ApiException` on error.
+`PostAsync` returns the created group on success and throws an `ApiException` on error.
 
 ## Expanding a collection
 
