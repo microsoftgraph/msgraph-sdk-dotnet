@@ -17,15 +17,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - uses: microsoftgraph/kiota-dom-export-diff-tool/export@main
+      - uses: microsoftgraph/kiota-dom-export-diff-tool/export@4bac01e28c98a4c619612403660b5f9ef4ec6f9d
         id: generatePatch
-      - uses: microsoftgraph/kiota-dom-export-diff-tool/tool@main
+      - uses: microsoftgraph/kiota-dom-export-diff-tool/tool@4bac01e28c98a4c619612403660b5f9ef4ec6f9d
         if: ${{ steps.generatePatch.outputs.patchFilePath != '' }}
         with:
           path: ${{ steps.generatePatch.outputs.patchFilePath }}
           fail-on-removal: true
         id: diff
-      - uses: microsoftgraph/kiota-dom-export-diff-tool/comment@main
+      - uses: microsoftgraph/kiota-dom-export-diff-tool/comment@4bac01e28c98a4c619612403660b5f9ef4ec6f9d
         if: ${{ always() && steps.generatePatch.outputs.patchFilePath != '' && steps.diff.outputs.hasExplanations != '' && github.event_name == 'pull_request' }}
         continue-on-error: true
         with:
