@@ -3,6 +3,7 @@
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.RoleManagement.EntitlementManagement.RoleDefinitions.Item.InheritsPermissionsFrom;
+using Microsoft.Graph.RoleManagement.EntitlementManagement.RoleDefinitions.Item.Restore;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -23,6 +24,11 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleDefinitions.I
         public global::Microsoft.Graph.RoleManagement.EntitlementManagement.RoleDefinitions.Item.InheritsPermissionsFrom.InheritsPermissionsFromRequestBuilder InheritsPermissionsFrom
         {
             get => new global::Microsoft.Graph.RoleManagement.EntitlementManagement.RoleDefinitions.Item.InheritsPermissionsFrom.InheritsPermissionsFromRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the restore method.</summary>
+        public global::Microsoft.Graph.RoleManagement.EntitlementManagement.RoleDefinitions.Item.Restore.RestoreRequestBuilder Restore
+        {
+            get => new global::Microsoft.Graph.RoleManagement.EntitlementManagement.RoleDefinitions.Item.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.RoleManagement.EntitlementManagement.RoleDefinitions.Item.UnifiedRoleDefinitionItemRequestBuilder"/> and sets the default values.

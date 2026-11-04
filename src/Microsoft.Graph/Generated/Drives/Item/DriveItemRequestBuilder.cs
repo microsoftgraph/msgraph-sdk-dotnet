@@ -60,6 +60,7 @@ namespace Microsoft.Graph.Drives.Item
             get => new global::Microsoft.Graph.Drives.Item.List.ListRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the recent method.</summary>
+        [Obsolete("This API is deprecated and will stop returning data after November, 2027. as of 2025-11/Removal on 2025-11-13 and will be removed 2027-11-01")]
         public global::Microsoft.Graph.Drives.Item.Recent.RecentRequestBuilder Recent
         {
             get => new global::Microsoft.Graph.Drives.Item.Recent.RecentRequestBuilder(PathParameters, RequestAdapter);
@@ -70,6 +71,7 @@ namespace Microsoft.Graph.Drives.Item
             get => new global::Microsoft.Graph.Drives.Item.Root.RootRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sharedWithMe method.</summary>
+        [Obsolete("This API is deprecated and will stop returning data after November, 2027. as of 2025-11/Removal on 2025-11-13 and will be removed 2027-11-01")]
         public global::Microsoft.Graph.Drives.Item.SharedWithMe.SharedWithMeRequestBuilder SharedWithMe
         {
             get => new global::Microsoft.Graph.Drives.Item.SharedWithMe.SharedWithMeRequestBuilder(PathParameters, RequestAdapter);

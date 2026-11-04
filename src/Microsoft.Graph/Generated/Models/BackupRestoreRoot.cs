@@ -252,6 +252,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("protectionUnits", value); }
         }
 #endif
+        /// <summary>The backup reports available in the tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.BackupReport? Reports
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.BackupReport?>("reports"); }
+            set { BackingStore?.Set("reports", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.BackupReport Reports
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.BackupReport>("reports"); }
+            set { BackingStore?.Set("reports", value); }
+        }
+#endif
         /// <summary>List of restore points in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -445,6 +461,7 @@ namespace Microsoft.Graph.Models
                 { "oneDriveForBusinessRestoreSessions", n => { OneDriveForBusinessRestoreSessions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.OneDriveForBusinessRestoreSession>(global::Microsoft.Graph.Models.OneDriveForBusinessRestoreSession.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "protectionPolicies", n => { ProtectionPolicies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ProtectionPolicyBase>(global::Microsoft.Graph.Models.ProtectionPolicyBase.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "protectionUnits", n => { ProtectionUnits = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ProtectionUnitBase>(global::Microsoft.Graph.Models.ProtectionUnitBase.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "reports", n => { Reports = n.GetObjectValue<global::Microsoft.Graph.Models.BackupReport>(global::Microsoft.Graph.Models.BackupReport.CreateFromDiscriminatorValue); } },
                 { "restorePoints", n => { RestorePoints = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.RestorePoint>(global::Microsoft.Graph.Models.RestorePoint.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "restoreSessions", n => { RestoreSessions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.RestoreSessionBase>(global::Microsoft.Graph.Models.RestoreSessionBase.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "serviceApps", n => { ServiceApps = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ServiceApp>(global::Microsoft.Graph.Models.ServiceApp.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -480,6 +497,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.OneDriveForBusinessRestoreSession>("oneDriveForBusinessRestoreSessions", OneDriveForBusinessRestoreSessions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ProtectionPolicyBase>("protectionPolicies", ProtectionPolicies);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ProtectionUnitBase>("protectionUnits", ProtectionUnits);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.BackupReport>("reports", Reports);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.RestorePoint>("restorePoints", RestorePoints);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.RestoreSessionBase>("restoreSessions", RestoreSessions);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ServiceApp>("serviceApps", ServiceApps);

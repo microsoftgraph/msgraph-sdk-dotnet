@@ -18,6 +18,12 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.LabelActionSource?>("actionSource"); }
             set { BackingStore?.Set("actionSource", value); }
         }
+        /// <summary>The applicationMode property</summary>
+        public global::Microsoft.Graph.Models.ApplicationMode? ApplicationMode
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.ApplicationMode?>("applicationMode"); }
+            set { BackingStore?.Set("applicationMode", value); }
+        }
         /// <summary>The autoTooltip property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -195,6 +201,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "actionSource", n => { ActionSource = n.GetEnumValue<global::Microsoft.Graph.Models.LabelActionSource>(); } },
+                { "applicationMode", n => { ApplicationMode = n.GetEnumValue<global::Microsoft.Graph.Models.ApplicationMode>(); } },
                 { "autoTooltip", n => { AutoTooltip = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
@@ -219,6 +226,7 @@ namespace Microsoft.Graph.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.LabelActionSource>("actionSource", ActionSource);
+            writer.WriteEnumValue<global::Microsoft.Graph.Models.ApplicationMode>("applicationMode", ApplicationMode);
             writer.WriteStringValue("autoTooltip", AutoTooltip);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);

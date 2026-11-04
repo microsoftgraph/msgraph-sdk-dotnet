@@ -3,6 +3,7 @@
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Count;
+using Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Delta;
 using Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Item;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -24,6 +25,11 @@ namespace Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars
         public global::Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Count.CountRequestBuilder Count
         {
             get => new global::Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Count.CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the delta method.</summary>
+        public global::Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Delta.DeltaRequestBuilder Delta
+        {
+            get => new global::Microsoft.Graph.Users.Item.CalendarGroups.Item.Calendars.Delta.DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the calendars property of the microsoft.graph.calendarGroup entity.</summary>
         /// <param name="position">The unique identifier of calendar</param>

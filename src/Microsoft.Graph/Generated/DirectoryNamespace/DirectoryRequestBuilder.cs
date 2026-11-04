@@ -77,6 +77,7 @@ namespace Microsoft.Graph.DirectoryNamespace
             get => new global::Microsoft.Graph.DirectoryNamespace.Recovery.RecoveryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the remoteTenantGroups property of the microsoft.graph.directory entity.</summary>
+        [Obsolete(" as of 2025-03/PrivatePreview:remoteTenantGroupsAPI on 2025-12-02 and will be removed 2028-12-07")]
         public global::Microsoft.Graph.DirectoryNamespace.RemoteTenantGroups.RemoteTenantGroupsRequestBuilder RemoteTenantGroups
         {
             get => new global::Microsoft.Graph.DirectoryNamespace.RemoteTenantGroups.RemoteTenantGroupsRequestBuilder(PathParameters, RequestAdapter);

@@ -53,6 +53,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("idToken", value); }
         }
 #endif
+        /// <summary>The kerberosTicket property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.OptionalClaim>? KerberosTicket
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.OptionalClaim>?>("kerberosTicket"); }
+            set { BackingStore?.Set("kerberosTicket", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.OptionalClaim> KerberosTicket
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.OptionalClaim>>("kerberosTicket"); }
+            set { BackingStore?.Set("kerberosTicket", value); }
+        }
+#endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -113,6 +129,7 @@ namespace Microsoft.Graph.Models
             {
                 { "accessToken", n => { AccessToken = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.OptionalClaim>(global::Microsoft.Graph.Models.OptionalClaim.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "idToken", n => { IdToken = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.OptionalClaim>(global::Microsoft.Graph.Models.OptionalClaim.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "kerberosTicket", n => { KerberosTicket = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.OptionalClaim>(global::Microsoft.Graph.Models.OptionalClaim.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "saml2Token", n => { Saml2Token = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.OptionalClaim>(global::Microsoft.Graph.Models.OptionalClaim.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -126,6 +143,7 @@ namespace Microsoft.Graph.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.OptionalClaim>("accessToken", AccessToken);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.OptionalClaim>("idToken", IdToken);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.OptionalClaim>("kerberosTicket", KerberosTicket);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.OptionalClaim>("saml2Token", Saml2Token);
             writer.WriteAdditionalData(AdditionalData);

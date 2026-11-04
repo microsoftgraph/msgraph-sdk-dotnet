@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Graph.RoleManagement.EntitlementManagement.DeletedItems;
 using Microsoft.Graph.RoleManagement.EntitlementManagement.ResourceNamespaces;
 using Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentScheduleInstances;
 using Microsoft.Graph.RoleManagement.EntitlementManagement.RoleAssignmentScheduleRequests;
@@ -27,6 +28,11 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EntitlementManagementRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to manage the deletedItems property of the microsoft.graph.rbacApplication entity.</summary>
+        public global::Microsoft.Graph.RoleManagement.EntitlementManagement.DeletedItems.DeletedItemsRequestBuilder DeletedItems
+        {
+            get => new global::Microsoft.Graph.RoleManagement.EntitlementManagement.DeletedItems.DeletedItemsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the resourceNamespaces property of the microsoft.graph.rbacApplication entity.</summary>
         public global::Microsoft.Graph.RoleManagement.EntitlementManagement.ResourceNamespaces.ResourceNamespacesRequestBuilder ResourceNamespaces
         {

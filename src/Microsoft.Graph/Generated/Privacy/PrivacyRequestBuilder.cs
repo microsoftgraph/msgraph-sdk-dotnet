@@ -20,6 +20,7 @@ namespace Microsoft.Graph.Privacy
     public partial class PrivacyRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the subjectRightsRequests property of the microsoft.graph.privacy entity.</summary>
+        [Obsolete("The subject rights request API under Privacy is deprecated and will stop working on  March 22, 2025. Please use the new API under Security. as of 2022-02/PrivacyDeprecate on 2022-03-22 and will be removed 2025-03-20")]
         public global::Microsoft.Graph.Privacy.SubjectRightsRequests.SubjectRightsRequestsRequestBuilder SubjectRightsRequests
         {
             get => new global::Microsoft.Graph.Privacy.SubjectRightsRequests.SubjectRightsRequestsRequestBuilder(PathParameters, RequestAdapter);

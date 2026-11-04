@@ -1891,6 +1891,146 @@ namespace Microsoft.Graph.Models.Security
         #pragma warning disable CS1591
         SparkCoreCustomLivePool,
         #pragma warning restore CS1591
+        [EnumMember(Value = "PlannerCustomFieldDefinition")]
+        #pragma warning disable CS1591
+        PlannerCustomFieldDefinition,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PlannerCustomFieldDefinitionList")]
+        #pragma warning disable CS1591
+        PlannerCustomFieldDefinitionList,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SyntheticMediaDetectionEvent")]
+        #pragma warning disable CS1591
+        SyntheticMediaDetectionEvent,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VivaGlintVivaInsightsIntegration")]
+        #pragma warning disable CS1591
+        VivaGlintVivaInsightsIntegration,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PeopleSkillsAdmin")]
+        #pragma warning disable CS1591
+        PeopleSkillsAdmin,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PeopleSkillsUser")]
+        #pragma warning disable CS1591
+        PeopleSkillsUser,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "DSPMAdminActivity")]
+        #pragma warning disable CS1591
+        DSPMAdminActivity,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "OnDemandExchangeClassification")]
+        #pragma warning disable CS1591
+        OnDemandExchangeClassification,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "UniversalPrintSecureScan")]
+        #pragma warning disable CS1591
+        UniversalPrintSecureScan,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CloudSecurityManagement")]
+        #pragma warning disable CS1591
+        CloudSecurityManagement,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CloudSecurityConnector")]
+        #pragma warning disable CS1591
+        CloudSecurityConnector,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CloudSecurityEnablement")]
+        #pragma warning disable CS1591
+        CloudSecurityEnablement,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "MCSRawEmailContentMetadata")]
+        #pragma warning disable CS1591
+        MCSRawEmailContentMetadata,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "AIGuardrail")]
+        #pragma warning disable CS1591
+        AIGuardrail,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "A365AIGuardrail")]
+        #pragma warning disable CS1591
+        A365AIGuardrail,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "WorkIQAdminActivity")]
+        #pragma warning disable CS1591
+        WorkIQAdminActivity,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VivaGlintClientConfiguration")]
+        #pragma warning disable CS1591
+        VivaGlintClientConfiguration,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "VivaGlintDataRetention")]
+        #pragma warning disable CS1591
+        VivaGlintDataRetention,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "FilteringTeamsMessageFileInfo")]
+        #pragma warning disable CS1591
+        FilteringTeamsMessageFileInfo,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SharePointFileArchivePolicy")]
+        #pragma warning disable CS1591
+        SharePointFileArchivePolicy,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "DefenderAutomationRule")]
+        #pragma warning disable CS1591
+        DefenderAutomationRule,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "DefenderGeneratedPlaybook")]
+        #pragma warning disable CS1591
+        DefenderGeneratedPlaybook,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "DefenderIntegration")]
+        #pragma warning disable CS1591
+        DefenderIntegration,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "P4AIDagSitePermissionsRecord")]
+        #pragma warning disable CS1591
+        P4AIDagSitePermissionsRecord,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PlannerDependency")]
+        #pragma warning disable CS1591
+        PlannerDependency,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PlannerDependencyList")]
+        #pragma warning disable CS1591
+        PlannerDependencyList,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CSCContentMetadata")]
+        #pragma warning disable CS1591
+        CSCContentMetadata,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "MicrosoftSecurityForAIConfiguration")]
+        #pragma warning disable CS1591
+        MicrosoftSecurityForAIConfiguration,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "MicrosoftSecurityForAIRealTimeProtection")]
+        #pragma warning disable CS1591
+        MicrosoftSecurityForAIRealTimeProtection,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "MTPContentMetadata")]
+        #pragma warning disable CS1591
+        MTPContentMetadata,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ComplianceEvaluationIncomplete")]
+        #pragma warning disable CS1591
+        ComplianceEvaluationIncomplete,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ComplianceEndpointEvaluationIncomplete")]
+        #pragma warning disable CS1591
+        ComplianceEndpointEvaluationIncomplete,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "MicrosoftTeamsMoveMessages")]
+        #pragma warning disable CS1591
+        MicrosoftTeamsMoveMessages,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ECSContentMetadata")]
+        #pragma warning disable CS1591
+        ECSContentMetadata,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "MESRawEmailContentMetadata")]
+        #pragma warning disable CS1591
+        MESRawEmailContentMetadata,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknownFutureValue")]
         #pragma warning disable CS1591
         UnknownFutureValue,

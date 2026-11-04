@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models.Partners.Billing;
+using Microsoft.Graph.Reports.Partners.Billing.AggregatedUsage;
 using Microsoft.Graph.Reports.Partners.Billing.Manifests;
 using Microsoft.Graph.Reports.Partners.Billing.Operations;
 using Microsoft.Graph.Reports.Partners.Billing.Reconciliation;
@@ -22,6 +23,11 @@ namespace Microsoft.Graph.Reports.Partners.Billing
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BillingRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to manage the aggregatedUsage property of the microsoft.graph.partners.billing.billing entity.</summary>
+        public global::Microsoft.Graph.Reports.Partners.Billing.AggregatedUsage.AggregatedUsageRequestBuilder AggregatedUsage
+        {
+            get => new global::Microsoft.Graph.Reports.Partners.Billing.AggregatedUsage.AggregatedUsageRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the manifests property of the microsoft.graph.partners.billing.billing entity.</summary>
         public global::Microsoft.Graph.Reports.Partners.Billing.Manifests.ManifestsRequestBuilder Manifests
         {

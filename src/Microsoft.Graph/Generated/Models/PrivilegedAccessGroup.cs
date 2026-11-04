@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("eligibilitySchedules", value); }
         }
 #endif
-        /// <summary>The resources property</summary>
+        /// <summary>The groups managed through PIM for groups.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.GroupResource>? Resources

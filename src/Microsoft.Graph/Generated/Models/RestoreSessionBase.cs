@@ -78,6 +78,22 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
+        /// <summary>The identifier of the protection policy that scopes the restore session. When supplied during creation or update, the service validates that the referenced protection units belong to the specified policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PolicyId
+        {
+            get { return BackingStore?.Get<string?>("policyId"); }
+            set { BackingStore?.Set("policyId", value); }
+        }
+#nullable restore
+#else
+        public string PolicyId
+        {
+            get { return BackingStore?.Get<string>("policyId"); }
+            set { BackingStore?.Set("policyId", value); }
+        }
+#endif
         /// <summary>Indicates whether the restore session was created normally or by a bulk job.</summary>
         public global::Microsoft.Graph.Models.RestoreJobType? RestoreJobType
         {
@@ -137,6 +153,7 @@ namespace Microsoft.Graph.Models
                 { "error", n => { Error = n.GetObjectValue<global::Microsoft.Graph.Models.PublicError>(global::Microsoft.Graph.Models.PublicError.CreateFromDiscriminatorValue); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<global::Microsoft.Graph.Models.IdentitySet>(global::Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "policyId", n => { PolicyId = n.GetStringValue(); } },
                 { "restoreJobType", n => { RestoreJobType = n.GetEnumValue<global::Microsoft.Graph.Models.RestoreJobType>(); } },
                 { "restoreSessionArtifactCount", n => { RestoreSessionArtifactCount = n.GetObjectValue<global::Microsoft.Graph.Models.RestoreSessionArtifactCount>(global::Microsoft.Graph.Models.RestoreSessionArtifactCount.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Microsoft.Graph.Models.RestoreSessionStatus>(); } },
@@ -156,6 +173,7 @@ namespace Microsoft.Graph.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Models.PublicError>("error", Error);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
+            writer.WriteStringValue("policyId", PolicyId);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.RestoreJobType>("restoreJobType", RestoreJobType);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.RestoreSessionArtifactCount>("restoreSessionArtifactCount", RestoreSessionArtifactCount);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.RestoreSessionStatus>("status", Status);

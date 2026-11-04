@@ -22,19 +22,19 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The isFirstRefresh property</summary>
+        /// <summary>Indicates whether the operation is the first refresh of the related tenants list.</summary>
         public bool? IsFirstRefresh
         {
             get { return BackingStore?.Get<bool?>("isFirstRefresh"); }
             set { BackingStore?.Set("isFirstRefresh", value); }
         }
-        /// <summary>The mostRecentRefreshDateTime property</summary>
+        /// <summary>The date and time of the most recent refresh operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2024, is 2024-01-01T00:00:00Z.</summary>
         public DateTimeOffset? MostRecentRefreshDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("mostRecentRefreshDateTime"); }
             set { BackingStore?.Set("mostRecentRefreshDateTime", value); }
         }
-        /// <summary>The mostRecentRefreshRequestStatus property</summary>
+        /// <summary>The status of the most recent refresh operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MostRecentRefreshRequestStatus

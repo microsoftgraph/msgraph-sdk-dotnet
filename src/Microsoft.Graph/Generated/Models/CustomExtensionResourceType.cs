@@ -24,5 +24,13 @@ namespace Microsoft.Graph.Models
         #pragma warning disable CS1591
         UnknownFutureValue,
         #pragma warning restore CS1591
+        [EnumMember(Value = "applicationAuthorization")]
+        #pragma warning disable CS1591
+        ApplicationAuthorization,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "appRoles")]
+        #pragma warning disable CS1591
+        AppRoles,
+        #pragma warning restore CS1591
     }
 }
