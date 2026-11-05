@@ -28,6 +28,12 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("customAttributes", value); }
         }
 #endif
+        /// <summary>When true, enables the custom extension. When false, disables it. Nullable.</summary>
+        public bool? IsEnabled
+        {
+            get { return BackingStore?.Get<bool?>("isEnabled"); }
+            set { BackingStore?.Set("isEnabled", value); }
+        }
         /// <summary>The resourceType property</summary>
         public global::Microsoft.Graph.Models.CustomExtensionResourceType? ResourceType
         {
@@ -66,6 +72,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "customAttributes", n => { CustomAttributes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
                 { "resourceType", n => { ResourceType = n.GetEnumValue<global::Microsoft.Graph.Models.CustomExtensionResourceType>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Microsoft.Graph.Models.CustomCalloutExtensionType>(); } },
             };
@@ -79,6 +86,7 @@ namespace Microsoft.Graph.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfPrimitiveValues<string>("customAttributes", CustomAttributes);
+            writer.WriteBoolValue("isEnabled", IsEnabled);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.CustomExtensionResourceType>("resourceType", ResourceType);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.CustomCalloutExtensionType>("type", Type);
         }

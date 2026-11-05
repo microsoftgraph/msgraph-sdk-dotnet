@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("emailAddress", value); }
         }
 #endif
+        /// <summary>The list of real-time participant interaction behaviors during a meeting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.MeetingEngagement>? Engagements
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.MeetingEngagement>?>("engagements"); }
+            set { BackingStore?.Set("engagements", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.MeetingEngagement> Engagements
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.MeetingEngagement>>("engagements"); }
+            set { BackingStore?.Set("engagements", value); }
+        }
+#endif
         /// <summary>The external information for a virtualEventRegistration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -134,6 +150,7 @@ namespace Microsoft.Graph.Models
             {
                 { "attendanceIntervals", n => { AttendanceIntervals = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AttendanceInterval>(global::Microsoft.Graph.Models.AttendanceInterval.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "emailAddress", n => { EmailAddress = n.GetStringValue(); } },
+                { "engagements", n => { Engagements = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.MeetingEngagement>(global::Microsoft.Graph.Models.MeetingEngagement.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "externalRegistrationInformation", n => { ExternalRegistrationInformation = n.GetObjectValue<global::Microsoft.Graph.Models.VirtualEventExternalRegistrationInformation>(global::Microsoft.Graph.Models.VirtualEventExternalRegistrationInformation.CreateFromDiscriminatorValue); } },
                 { "identity", n => { Identity = n.GetObjectValue<global::Microsoft.Graph.Models.Identity>(global::Microsoft.Graph.Models.Identity.CreateFromDiscriminatorValue); } },
                 { "registrationId", n => { RegistrationId = n.GetStringValue(); } },
@@ -151,6 +168,7 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AttendanceInterval>("attendanceIntervals", AttendanceIntervals);
             writer.WriteStringValue("emailAddress", EmailAddress);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.MeetingEngagement>("engagements", Engagements);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.VirtualEventExternalRegistrationInformation>("externalRegistrationInformation", ExternalRegistrationInformation);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Identity>("identity", Identity);
             writer.WriteStringValue("registrationId", RegistrationId);

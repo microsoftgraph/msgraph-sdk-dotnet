@@ -18,6 +18,7 @@ using Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessProtectionPolic
 using Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessRestoreSessions;
 using Microsoft.Graph.Solutions.BackupRestore.ProtectionPolicies;
 using Microsoft.Graph.Solutions.BackupRestore.ProtectionUnits;
+using Microsoft.Graph.Solutions.BackupRestore.Reports;
 using Microsoft.Graph.Solutions.BackupRestore.RestorePoints;
 using Microsoft.Graph.Solutions.BackupRestore.RestoreSessions;
 using Microsoft.Graph.Solutions.BackupRestore.ServiceApps;
@@ -122,6 +123,11 @@ namespace Microsoft.Graph.Solutions.BackupRestore
         public global::Microsoft.Graph.Solutions.BackupRestore.ProtectionUnits.ProtectionUnitsRequestBuilder ProtectionUnits
         {
             get => new global::Microsoft.Graph.Solutions.BackupRestore.ProtectionUnits.ProtectionUnitsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the reports property of the microsoft.graph.backupRestoreRoot entity.</summary>
+        public global::Microsoft.Graph.Solutions.BackupRestore.Reports.ReportsRequestBuilder Reports
+        {
+            get => new global::Microsoft.Graph.Solutions.BackupRestore.Reports.ReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the restorePoints property of the microsoft.graph.backupRestoreRoot entity.</summary>
         public global::Microsoft.Graph.Solutions.BackupRestore.RestorePoints.RestorePointsRequestBuilder RestorePoints

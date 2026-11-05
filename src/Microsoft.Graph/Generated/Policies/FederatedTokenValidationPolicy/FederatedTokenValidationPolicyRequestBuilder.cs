@@ -57,7 +57,8 @@ namespace Microsoft.Graph.Policies.FederatedTokenValidationPolicy
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get federatedTokenValidationPolicy from policies
+        /// Read the properties and relationships of a federatedTokenValidationPolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/federatedtokenvalidationpolicy-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.FederatedTokenValidationPolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +81,8 @@ namespace Microsoft.Graph.Policies.FederatedTokenValidationPolicy
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.FederatedTokenValidationPolicy>(requestInfo, global::Microsoft.Graph.Models.FederatedTokenValidationPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property federatedTokenValidationPolicy in policies
+        /// Update the properties of a federatedTokenValidationPolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/federatedtokenvalidationpolicy-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.FederatedTokenValidationPolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -124,7 +126,7 @@ namespace Microsoft.Graph.Policies.FederatedTokenValidationPolicy
             return requestInfo;
         }
         /// <summary>
-        /// Get federatedTokenValidationPolicy from policies
+        /// Read the properties and relationships of a federatedTokenValidationPolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +145,7 @@ namespace Microsoft.Graph.Policies.FederatedTokenValidationPolicy
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property federatedTokenValidationPolicy in policies
+        /// Update the properties of a federatedTokenValidationPolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -182,7 +184,7 @@ namespace Microsoft.Graph.Policies.FederatedTokenValidationPolicy
         {
         }
         /// <summary>
-        /// Get federatedTokenValidationPolicy from policies
+        /// Read the properties and relationships of a federatedTokenValidationPolicy object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FederatedTokenValidationPolicyRequestBuilderGetQueryParameters 

@@ -150,6 +150,12 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("isRemovable"); }
             set { BackingStore?.Set("isRemovable", value); }
         }
+        /// <summary>true if someone shared this calendar with the user; false otherwise. This property is always false for a calendar owner. This property is set when sharing is initiated in an Outlook client and can be reset when sharing is canceled through the client or the corresponding calendarPermission resource. Read-only.</summary>
+        public bool? IsSharedWithMe
+        {
+            get { return BackingStore?.Get<bool?>("isSharedWithMe"); }
+            set { BackingStore?.Set("isSharedWithMe", value); }
+        }
         /// <summary>Indicates whether this user calendar supports tracking of meeting responses. Only meeting invites sent from users&apos; primary calendars support tracking of meeting responses.</summary>
         public bool? IsTallyingResponses
         {
@@ -251,6 +257,7 @@ namespace Microsoft.Graph.Models
                 { "hexColor", n => { HexColor = n.GetStringValue(); } },
                 { "isDefaultCalendar", n => { IsDefaultCalendar = n.GetBoolValue(); } },
                 { "isRemovable", n => { IsRemovable = n.GetBoolValue(); } },
+                { "isSharedWithMe", n => { IsSharedWithMe = n.GetBoolValue(); } },
                 { "isTallyingResponses", n => { IsTallyingResponses = n.GetBoolValue(); } },
                 { "multiValueExtendedProperties", n => { MultiValueExtendedProperties = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.MultiValueLegacyExtendedProperty>(global::Microsoft.Graph.Models.MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -279,6 +286,7 @@ namespace Microsoft.Graph.Models
             writer.WriteStringValue("hexColor", HexColor);
             writer.WriteBoolValue("isDefaultCalendar", IsDefaultCalendar);
             writer.WriteBoolValue("isRemovable", IsRemovable);
+            writer.WriteBoolValue("isSharedWithMe", IsSharedWithMe);
             writer.WriteBoolValue("isTallyingResponses", IsTallyingResponses);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.MultiValueLegacyExtendedProperty>("multiValueExtendedProperties", MultiValueExtendedProperties);
             writer.WriteStringValue("name", Name);

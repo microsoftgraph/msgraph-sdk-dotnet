@@ -22,6 +22,7 @@ namespace Microsoft.Graph.Users.Item.Insights
     public partial class InsightsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the shared property of the microsoft.graph.officeGraphInsights entity.</summary>
+        [Obsolete("This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01")]
         public global::Microsoft.Graph.Users.Item.Insights.Shared.SharedRequestBuilder Shared
         {
             get => new global::Microsoft.Graph.Users.Item.Insights.Shared.SharedRequestBuilder(PathParameters, RequestAdapter);
@@ -32,6 +33,7 @@ namespace Microsoft.Graph.Users.Item.Insights
             get => new global::Microsoft.Graph.Users.Item.Insights.Trending.TrendingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the used property of the microsoft.graph.officeGraphInsights entity.</summary>
+        [Obsolete("This API is deprecated and will stop returning data after January, 2028. as of 2026-01/Removal on 2026-01-28 and will be removed 2028-01-01")]
         public global::Microsoft.Graph.Users.Item.Insights.Used.UsedRequestBuilder Used
         {
             get => new global::Microsoft.Graph.Users.Item.Insights.Used.UsedRequestBuilder(PathParameters, RequestAdapter);

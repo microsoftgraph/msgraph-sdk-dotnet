@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<DateTimeOffset?>("protectionDateTime"); }
             set { BackingStore?.Set("protectionDateTime", value); }
         }
-        /// <summary>The site, drive, or mailbox units that are protected under a protection policy.</summary>
+        /// <summary>The site, drive, or mailbox unit protected under a protection policy. Supports $expand and $filter on protectionUnit/policyId using the eq operator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.ProtectionUnitBase? ProtectionUnit

@@ -13,6 +13,7 @@ using Microsoft.Graph.Security.Identities;
 using Microsoft.Graph.Security.Incidents;
 using Microsoft.Graph.Security.Labels;
 using Microsoft.Graph.Security.MicrosoftGraphSecurityRunHuntingQuery;
+using Microsoft.Graph.Security.Rules;
 using Microsoft.Graph.Security.SecureScoreControlProfiles;
 using Microsoft.Graph.Security.SecureScores;
 using Microsoft.Graph.Security.SubjectRightsRequests;
@@ -36,6 +37,7 @@ namespace Microsoft.Graph.Security
     public partial class SecurityRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the alerts property of the microsoft.graph.security entity.</summary>
+        [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation on 2024-04-10 and will be removed 2026-04-10")]
         public global::Microsoft.Graph.Security.Alerts.AlertsRequestBuilder Alerts
         {
             get => new global::Microsoft.Graph.Security.Alerts.AlertsRequestBuilder(PathParameters, RequestAdapter);
@@ -89,6 +91,11 @@ namespace Microsoft.Graph.Security
         public global::Microsoft.Graph.Security.MicrosoftGraphSecurityRunHuntingQuery.MicrosoftGraphSecurityRunHuntingQueryRequestBuilder MicrosoftGraphSecurityRunHuntingQuery
         {
             get => new global::Microsoft.Graph.Security.MicrosoftGraphSecurityRunHuntingQuery.MicrosoftGraphSecurityRunHuntingQueryRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the rules property of the microsoft.graph.security entity.</summary>
+        public global::Microsoft.Graph.Security.Rules.RulesRequestBuilder Rules
+        {
+            get => new global::Microsoft.Graph.Security.Rules.RulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the secureScoreControlProfiles property of the microsoft.graph.security entity.</summary>
         public global::Microsoft.Graph.Security.SecureScoreControlProfiles.SecureScoreControlProfilesRequestBuilder SecureScoreControlProfiles

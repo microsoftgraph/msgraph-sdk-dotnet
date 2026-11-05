@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.RestorePoints.Search
         {
         }
         /// <summary>
-        /// Search for the restorePoint objects associated with a protectionUnit.
+        /// Search for the restorePoint objects associated with a protectionUnit. You can also provide policyId to scope the search to a protection policy and validate that the specified protection units belong to that policy.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/restorepoint-search?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.RestorePointSearchResponse"/></returns>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.RestorePoints.Search
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.RestorePointSearchResponse>(requestInfo, global::Microsoft.Graph.Models.RestorePointSearchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Search for the restorePoint objects associated with a protectionUnit.
+        /// Search for the restorePoint objects associated with a protectionUnit. You can also provide policyId to scope the search to a protection policy and validate that the specified protection units belong to that policy.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
