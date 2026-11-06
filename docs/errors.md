@@ -41,4 +41,4 @@ catch (ODataError odataError) when (odataError.Error.Code.Equals(GraphErrorCode.
 }
 ```
 
-Each error object has a `Message` property as well as code. This message is for debugging purposes and is not be meant to be displayed to the user. Common error codes are defined in [GraphErrorCode.cs](../src/Microsoft.Graph/Enums/GraphErrorCode.cs).
+Each error object has a `Message` property as well as code. This message is for debugging purposes and is not meant to be displayed to the user. Common error codes are defined in [GraphErrorCode.cs](../src/Microsoft.Graph/Enums/GraphErrorCode.cs).

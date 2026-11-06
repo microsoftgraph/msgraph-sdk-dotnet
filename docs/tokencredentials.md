@@ -60,8 +60,7 @@ User me = await graphClient.Me.GetAsync();
 
 ## 4. ClientSecretCredential
 
-This credential class provides the [Client credentials authentication flow using an app secret](https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-authentication-flows#client-credentials) a similar use to the **deprecated Client Credential AuthProvider** with the use of a client secret and can be used as follows.
-The device code flow enables sign in to devices by way of another device.
+This credential class provides the [Client credentials authentication flow using an app secret](https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-authentication-flows#client-credentials) and similar use to the **deprecated Client Credential AuthProvider** with the use of a client secret and can be used as follows.
 
 ```cs
 string[] scopes = {"https://graph.microsoft.com/.default"};
@@ -75,7 +74,7 @@ User me = await graphClient.Users["user-id"].GetAsync();
 
 ## 5. ClientCertificateCredential
 
-This credential class provides the [Client credentials authentication flow using an certificate](https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-authentication-flows#client-credentials) a similar use to the **deprecated Client Credential AuthProvider** with the use of a client certificate and can be used as follows.
+This credential class provides the [Client credentials authentication flow using a certificate](https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-authentication-flows#client-credentials) a similar use to the **deprecated Client Credential AuthProvider** with the use of a client certificate and can be used as follows.
 
 ```cs
 string[] scopes = {"https://graph.microsoft.com/.default"};
@@ -110,7 +109,7 @@ It is also useful to know that Azure.Identity provides other TokenCredentials th
 
 ## 1. EnvironmentCredential
 
-This credential enables the used of defined environment variables to configure authentication. The environment variables used are as follows.
+This credential enables the use of defined environment variables to configure authentication. The environment variables used are as follows.
 
 - AZURE_TENANT_ID -   The Azure Active Directory tenant(directory) ID.
 - AZURE_CLIENT_ID -   The client(application) ID of an App Registration in the tenant.
