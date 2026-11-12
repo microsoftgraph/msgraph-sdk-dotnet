@@ -5,7 +5,7 @@
 
 Integrate the [Microsoft Graph API](https://graph.microsoft.com) into your .NET project!
 
-The Microsoft Graph .NET Client Library targets .NetStandard 2.0.
+The Microsoft Graph .NET Client Library targets .NET Standard 2.0, .NET Standard 2.1, .NET 10, and .NET 11. The dedicated .NET 8 target has been removed; the .NET Standard targets remain available for compatible applications.
 
 ## Installation via NuGet
 
@@ -138,7 +138,7 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 
 If you are looking to build the library locally for the purposes of contributing code or running tests, you will need to:
 
-- Have the .NET Core SDK (> 1.0) installed
+- Have the .NET 11 SDK and .NET 10 runtime installed to build all targets and run tests for .NET 10 and .NET 11
 - Run `dotnet restore` from the command line in your package directory
 - Run `nuget restore` and `msbuild` from CLI or run Build from Visual Studio to restore Nuget packages and build the project
 
