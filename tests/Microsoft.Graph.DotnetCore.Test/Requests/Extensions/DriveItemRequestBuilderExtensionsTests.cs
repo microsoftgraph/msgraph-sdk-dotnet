@@ -75,7 +75,42 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Extensions
             Assert.Equal(expectedRequestUri, itemRequestInformation.URI);
 
         }
-        
+
+        // Only the last non-empty part of a path containing colons is used, and trailing colons are dropped.
+        [Theory]
+        [InlineData("a:b", "b")]
+        [InlineData("a:b::", "b")]
+        [InlineData("/::", "/")]
+        [InlineData("folder:name/file.txt", "name/file.txt")]
+        [InlineData("item/with/path:", "/item/with/path")]
+        public void ItemByPath_BuildRequestWithColonInPath_Root(string pathInput, string expectedEncodedPath)
+        {
+            var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
+            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0") + "/drives/driveId/root:" + expectedEncodedPath + ":");
+            var expectedChildrenRequestUri = new Uri(expectedRequestUri.OriginalString + "/children");
+            var itemRequestBuilder = graphServiceClient.Drives["driveId"].Root.ItemWithPath(pathInput);
+
+            Assert.Equal(expectedRequestUri, itemRequestBuilder.ToGetRequestInformation().URI);
+            Assert.Equal(expectedChildrenRequestUri, itemRequestBuilder.Children.ToGetRequestInformation().URI);
+        }
+
+        [Theory]
+        [InlineData("a:b", "b")]
+        [InlineData("a:b::", "b")]
+        [InlineData("/::", "/")]
+        [InlineData("folder:name/file.txt", "name/file.txt")]
+        [InlineData("item/with/path:", "/item/with/path")]
+        public void ItemByPath_BuildRequestWithColonInPath_DriveItem(string pathInput, string expectedEncodedPath)
+        {
+            var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
+            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0") + "/drives/driveId/items/itemId:" + expectedEncodedPath + ":");
+            var expectedChildrenRequestUri = new Uri(expectedRequestUri.OriginalString + "/children");
+            var itemRequestBuilder = graphServiceClient.Drives["driveId"].Items["itemId"].ItemWithPath(pathInput);
+
+            Assert.Equal(expectedRequestUri, itemRequestBuilder.ToGetRequestInformation().URI);
+            Assert.Equal(expectedChildrenRequestUri, itemRequestBuilder.Children.ToGetRequestInformation().URI);
+        }
+
         [Fact]
         public void ItemByPath_BuildRequestWithNestedPathSlash()
         {
