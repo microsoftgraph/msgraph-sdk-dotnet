@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -81,32 +82,27 @@ public static class DriveItemRequestBuilderExtensions
         return path;
     }
 
+    private static readonly ConcurrentDictionary<(Type BuilderBaseType, Type FieldType), FieldInfo> BackingFieldCache = new();
+
+    private static FieldInfo GetBackingField(object obj, Type fieldType) =>
+        BackingFieldCache.GetOrAdd((obj.GetType().BaseType!, fieldType), key =>
+            key.BuilderBaseType.GetFields(BindingFlags.NonPublic | BindingFlags.Instance)
+                .FirstOrDefault(f => f.FieldType == key.FieldType));
+
     private static IRequestAdapter GetRequestAdapter(this object obj) {
-        var field = obj.GetType()
-                        .BaseType!
-                        .GetFields(BindingFlags.NonPublic | BindingFlags.Instance)
-                        .FirstOrDefault( field => field.FieldType == typeof(IRequestAdapter));
+        var field = GetBackingField(obj, typeof(IRequestAdapter));
         return (IRequestAdapter)field?.GetValue(obj);
     }
     private static Dictionary<string, object> GetPathParameters(this object obj) {
-        var field = obj.GetType()
-            .BaseType!
-            .GetFields(BindingFlags.NonPublic | BindingFlags.Instance)
-            .FirstOrDefault( field => field.FieldType == typeof(Dictionary<string, object>));
+        var field = GetBackingField(obj, typeof(Dictionary<string, object>));
         return (Dictionary<string, object>)field?.GetValue(obj);
     }
     private static string GetUrlTemplate(this object obj) {
-        var field = obj.GetType()
-            .BaseType!
-            .GetFields(BindingFlags.NonPublic | BindingFlags.Instance)
-            .FirstOrDefault( field => field.FieldType == typeof(string));
+        var field = GetBackingField(obj, typeof(string));
         return (string)field?.GetValue(obj);
     }
     internal static T UpdateUrlTemplate<T>(this T obj, string baseTemplate) where T : BaseRequestBuilder{
-        var field = obj.GetType()
-            .BaseType!
-            .GetFields(BindingFlags.NonPublic | BindingFlags.Instance)
-            .FirstOrDefault( field => field.FieldType == typeof(string));
+        var field = GetBackingField(obj, typeof(string));
         var currentTemplate = (string)field?.GetValue(obj);
         var templateSuffix = currentTemplate.Substring(currentTemplate.LastIndexOf('/'));
         var originalPrefix = baseTemplate.Substring(0,baseTemplate.LastIndexOf(':')+1);
