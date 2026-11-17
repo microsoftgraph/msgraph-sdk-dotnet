@@ -59,13 +59,13 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             // Go through all of the delta pages so that we can get the delta link on the last page.
             while (messagesDeltaCollectionPage.OdataNextLink != null)
             {
-                messagesDeltaCollectionPage = await new Microsoft.Graph.Me.MailFolders.Item.Messages.Delta.DeltaRequestBuilder(messagesDeltaCollectionPage.OdataNextLink,graphClient.RequestAdapter).GetAsDeltaGetResponseAsync();
+                messagesDeltaCollectionPage = await new Microsoft.Graph.Users.Item.MailFolders.Item.Messages.Delta.DeltaRequestBuilder(messagesDeltaCollectionPage.OdataNextLink,graphClient.RequestAdapter).GetAsDeltaGetResponseAsync();
             }
             
             // Now let's use the deltalink to make sure there aren't any changes. There shouldn't be.
             if (messagesDeltaCollectionPage.OdataDeltaLink != null)
             {
-                messagesDeltaCollectionPage = await new Microsoft.Graph.Me.MailFolders.Item.Messages.Delta.DeltaRequestBuilder(messagesDeltaCollectionPage.OdataNextLink,graphClient.RequestAdapter).GetAsDeltaGetResponseAsync();
+                messagesDeltaCollectionPage = await new Microsoft.Graph.Users.Item.MailFolders.Item.Messages.Delta.DeltaRequestBuilder(messagesDeltaCollectionPage.OdataNextLink,graphClient.RequestAdapter).GetAsDeltaGetResponseAsync();
             }
             Assert.Empty(messagesDeltaCollectionPage.Value);
 
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             // Now let's use the deltalink to make sure there aren't any changes. We expect to see a new message.
             if (messagesDeltaCollectionPage.OdataDeltaLink != null)
             {
-                messagesDeltaCollectionPage = await new Microsoft.Graph.Me.MailFolders.Item.Messages.Delta.DeltaRequestBuilder(messagesDeltaCollectionPage.OdataNextLink,graphClient.RequestAdapter).GetAsDeltaGetResponseAsync();
+                messagesDeltaCollectionPage = await new Microsoft.Graph.Users.Item.MailFolders.Item.Messages.Delta.DeltaRequestBuilder(messagesDeltaCollectionPage.OdataNextLink,graphClient.RequestAdapter).GetAsDeltaGetResponseAsync();
             }
 
             // We expect two changes, one new item, and the root folder will have a change.

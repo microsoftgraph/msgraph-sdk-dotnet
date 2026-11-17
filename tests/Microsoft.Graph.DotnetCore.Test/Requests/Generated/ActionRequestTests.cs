@@ -8,9 +8,9 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Graph.Drives.Item.Items.Item.CreateLink;
-using Microsoft.Graph.Me.AssignLicense;
-using Microsoft.Graph.Me.CheckMemberGroups;
-using Microsoft.Graph.Me.GetMemberGroups;
+using Microsoft.Graph.Users.Item.AssignLicense;
+using Microsoft.Graph.Users.Item.CheckMemberGroups;
+using Microsoft.Graph.Users.Item.GetMemberGroups;
 using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -29,7 +29,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         public void MultipleRequiredParameters()
         {
             var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
-            var expectedRequestUrl = $"{string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0")}/me/assignLicense";
+            var expectedRequestUrl = $"{string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0")}/users/TokenToReplace/assignLicense";
             
             
             var addLicenses = new List<AssignedLicense> { new AssignedLicense() };
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         public void OptionalParameterWithNonNullableType_NullValue()
         {
             var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
-            var expectedRequestUrl = $"{string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0")}/me/getMemberGroups";
+            var expectedRequestUrl = $"{string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0")}/users/TokenToReplace/getMemberGroups";
             
             
             var requestBody = new GetMemberGroupsPostRequestBody { };
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         public void OptionalParameterWithNonNullableType_ValueSet()
         {
             var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
-            var expectedRequestUrl = string.Format("{0}/me/getMemberGroups", string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0"));
+            var expectedRequestUrl = string.Format("{0}/users/TokenToReplace/getMemberGroups", string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0"));
 
             
             var requestBody = new GetMemberGroupsPostRequestBody { SecurityEnabledOnly = true};
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         {
             var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
             var messageId = "messageId";
-            var expectedRequestUrl = string.Format("{0}/me/mailFolders/Drafts/messages/{1}/send", string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0"), messageId);
+            var expectedRequestUrl = string.Format("{0}/users/TokenToReplace/mailFolders/Drafts/messages/{1}/send", string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0"), messageId);
 
             var requestInformation = graphServiceClient.Me.MailFolders["Drafts"].Messages[messageId].Send.ToPostRequestInformation();
             

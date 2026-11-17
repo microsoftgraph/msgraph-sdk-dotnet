@@ -23,7 +23,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         public void RequestBuilder()
         {
             var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
-            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0") + "/me/photo/$value");
+            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0") + "/users/TokenToReplace/photo/$value");
             var requestInformation = graphServiceClient.Me.Photo.Content.ToGetRequestInformation();
             
             Assert.NotNull(requestInformation);

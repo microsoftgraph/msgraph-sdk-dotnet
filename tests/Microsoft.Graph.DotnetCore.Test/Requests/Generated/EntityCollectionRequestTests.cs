@@ -25,7 +25,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         public void BuildRequest()
         {
             var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
-            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0") + "/me/calendars");
+            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0") + "/users/TokenToReplace/calendars");
             var requestInformation = graphServiceClient.Me.Calendars.ToGetRequestInformation();
             
             Assert.NotNull(requestInformation);
@@ -139,7 +139,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         {
             var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
             
-            var expectedRequestUrl = string.Format("{0}/me/contactFolders?%24select=contacts", string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0"));
+            var expectedRequestUrl = string.Format("{0}/users/TokenToReplace/contactFolders?%24select=contacts", string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0"));
 
             var requestInformation = graphServiceClient.Me.ContactFolders.ToGetRequestInformation( requestConfiguration => requestConfiguration.QueryParameters.Select = new []{"contacts"});
             
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         public void Select()
         {
             var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
-            var expectedRequestUrl = string.Format("{0}/me/contactFolders?%24select=value", string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0"));
+            var expectedRequestUrl = string.Format("{0}/users/TokenToReplace/contactFolders?%24select=value", string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0"));
 
             var requestInformation = graphServiceClient.Me.ContactFolders.ToGetRequestInformation( requestConfiguration => requestConfiguration.QueryParameters.Select = new []{"value"});
             
@@ -169,7 +169,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         public void Top()
         {
             var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
-            var expectedRequestUrl = string.Format("{0}/me/contactFolders?%24top=1", string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0"));
+            var expectedRequestUrl = string.Format("{0}/users/TokenToReplace/contactFolders?%24top=1", string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0"));
 
             var requestInformation = graphServiceClient.Me.ContactFolders.ToGetRequestInformation( requestConfiguration => requestConfiguration.QueryParameters.Top = 1);
             
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         public void Filter()
         {
             var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
-            var expectedRequestUrl = string.Format("{0}/me/contactFolders?%24filter=value", string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0"));
+            var expectedRequestUrl = string.Format("{0}/users/TokenToReplace/contactFolders?%24filter=value", string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0"));
 
             var requestInformation = graphServiceClient.Me.ContactFolders.ToGetRequestInformation( requestConfiguration => requestConfiguration.QueryParameters.Filter = "value");
             
@@ -199,7 +199,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         public void Skip()
         {
             var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
-            var expectedRequestUrl = string.Format("{0}/me/contactFolders?%24skip=2", string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0"));
+            var expectedRequestUrl = string.Format("{0}/users/TokenToReplace/contactFolders?%24skip=2", string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0"));
 
             var requestInformation = graphServiceClient.Me.ContactFolders.ToGetRequestInformation( requestConfiguration => requestConfiguration.QueryParameters.Skip = 2);
             
@@ -214,7 +214,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         public void OrderBy()
         {
             var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
-            var expectedRequestUrl = string.Format("{0}/me/contactFolders?%24orderby=value", string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0"));
+            var expectedRequestUrl = string.Format("{0}/users/TokenToReplace/contactFolders?%24orderby=value", string.Format(Constants.Url.GraphBaseUrlFormatString, "v1.0"));
 
             var requestInformation = graphServiceClient.Me.ContactFolders.ToGetRequestInformation( requestConfiguration => requestConfiguration.QueryParameters.Orderby = new []{"value"});
             

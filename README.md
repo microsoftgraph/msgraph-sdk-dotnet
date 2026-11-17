@@ -124,6 +124,26 @@ Between 4.x and 5.x there were several major breaking changes as the SDK now use
 
 View the upgrade guide [here](https://github.com/microsoftgraph/msgraph-sdk-dotnet/blob/main/docs/upgrade-to-v5.md).
 
+### Signed-in user request builders
+
+`graphClient.Me` reuses the `Microsoft.Graph.Users.Item` request builders.
+Requests still reach `/me`; no user ID lookup is required. Request information
+contains the intermediate `/users/TokenToReplace` path until the core HTTP
+pipeline (or batch handling) rewrites it.
+
+**Breaking change:** replace explicit `Microsoft.Graph.Me.*` references with
+their `Microsoft.Graph.Users.Item.*` equivalents, including action request
+bodies, responses, and query parameter types. Access `Me` through
+`GraphServiceClient`, not `BaseGraphServiceClient`.
+
+If you supply an `HttpClient`, create it with `GraphClientFactory.Create()` or
+include `UriReplacementHandler<GraphUriReplacementHandlerOption>` configured
+with `new GraphUriReplacementHandlerOption()` in your custom pipeline. The handler
+is in `Microsoft.Kiota.Http.HttpClientLibrary.Middleware`; its option is in
+`Microsoft.Graph`. Custom request adapters must implement equivalent path
+replacement. The SDK preserves supplied clients and adapters rather than
+replacing their pipelines.
+
 ## Issues
 
 To view or log issues, see [issues](https://github.com/microsoftgraph/msgraph-sdk-dotnet/issues).

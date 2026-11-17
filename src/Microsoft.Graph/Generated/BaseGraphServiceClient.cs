@@ -47,7 +47,6 @@ using Microsoft.Graph.IdentityProtection;
 using Microsoft.Graph.IdentityProviders;
 using Microsoft.Graph.InformationProtection;
 using Microsoft.Graph.Invitations;
-using Microsoft.Graph.Me;
 using Microsoft.Graph.Oauth2PermissionGrants;
 using Microsoft.Graph.Organization;
 using Microsoft.Graph.PermissionGrants;
@@ -305,11 +304,6 @@ namespace Microsoft.Graph
         public global::Microsoft.Graph.Invitations.InvitationsRequestBuilder Invitations
         {
             get => new global::Microsoft.Graph.Invitations.InvitationsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the user singleton.</summary>
-        public global::Microsoft.Graph.Me.MeRequestBuilder Me
-        {
-            get => new global::Microsoft.Graph.Me.MeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of oAuth2PermissionGrant entities.</summary>
         public global::Microsoft.Graph.Oauth2PermissionGrants.Oauth2PermissionGrantsRequestBuilder Oauth2PermissionGrants

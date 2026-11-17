@@ -99,6 +99,14 @@ namespace Microsoft.Graph
         public new IRequestAdapter RequestAdapter { get; set; }
 
         /// <summary>
+        /// Provides operations for the signed-in user using the user request builders.
+        /// </summary>
+        public Users.Item.UserItemRequestBuilder Me
+        {
+            get => new Users.UsersRequestBuilder(PathParameters, RequestAdapter)[CoreConstants.ReplacementConstants.UserIdTokenToReplace];
+        }
+
+        /// <summary>
         /// Gets the <see cref="BatchRequestBuilder"/> for building batch Requests
         /// </summary>
         public BatchRequestBuilder Batch
