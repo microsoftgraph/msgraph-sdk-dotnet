@@ -4,9 +4,9 @@
 
 namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 {
-    using Microsoft.Graph.Me.GetMailTips;
-    using Microsoft.Graph.Me.GetMemberGroups;
-    using AssignLicensePostRequestBody = Microsoft.Graph.Me.AssignLicense.AssignLicensePostRequestBody;
+    using Microsoft.Graph.Users.Item.GetMailTips;
+    using Microsoft.Graph.Users.Item.GetMemberGroups;
+    using AssignLicensePostRequestBody = Microsoft.Graph.Users.Item.AssignLicense.AssignLicensePostRequestBody;
     using Microsoft.Graph.DotnetCore.Test.Requests.Functional.Resources;
     using Microsoft.Graph.Models;
     using System;

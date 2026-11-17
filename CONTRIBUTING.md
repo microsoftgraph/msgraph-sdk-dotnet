@@ -54,6 +54,22 @@ You can view the [README](https://github.com/microsoft/kiota/blob/main/README.md
 
 For the purposes of the .Net client library, the generator runs through an openApi file generated from the CSDL document file published by Microsoft Graph (https://graph.microsoft.com/v1.0/$metadata) and builds up an in-memory list of models.
 
+The generation configuration in `src/Microsoft.Graph/Generated/kiota-lock.json`
+excludes `/me` and `/me/**`. Keep these exclusions when regenerating: the
+handwritten `GraphServiceClient.Me` property reuses the `/users/{user-id}`
+request builders with `CoreConstants.ReplacementConstants.UserIdTokenToReplace`.
+Request information therefore contains `/users/TokenToReplace`; Microsoft.Graph.Core
+rewrites that path to `/me` before sending, including requests in a batch.
+No user lookup is performed.
+
+See the [signed-in user migration notes](README.md#signed-in-user-request-builders)
+for the breaking namespace changes and custom HTTP pipeline requirements.
+
+This SDK change must ship with the Microsoft.Graph.Core implementation of that
+replacement constant and URI replacement handler; the existing `4.*` dependency
+does not establish a minimum release containing it. Once that core release is
+published, set the package dependency to its actual minimum supported version.
+
 ### When new features are added to the library
 Generation happens as part of a manual process that occurs once a significant change or set of changes has been added to the Graph. This may include:
  - A new workload comes to v1.0 of Graph (Microsoft Teams, Batching, etc.)

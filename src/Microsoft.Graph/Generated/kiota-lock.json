@@ -30,6 +30,8 @@
   ],
   "includePatterns": [],
   "excludePatterns": [
+    "/me",
+    "/me/**",
     "/copilot",
     "/copilot/**"
   ],
