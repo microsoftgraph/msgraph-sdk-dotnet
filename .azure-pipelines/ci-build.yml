@@ -303,13 +303,6 @@ extends:
               deploy:
                 steps:
                 - task: PowerShell@2
-                  displayName: 'Get Latest Commit SHA from repo'
-                  inputs:
-                    targetType: filePath
-                    filePath: '$(Pipeline.Workspace)\scripts\GetLatestCommitSHA.ps1'
-                    arguments: '-repo "msgraph-sdk-dotnet" -owner "microsoftgraph" -branchName "main"'
-                    pwsh: true
-                - task: PowerShell@2
                   displayName: 'Extract release information to pipeline'
                   inputs:
                     targetType: 'filePath'
