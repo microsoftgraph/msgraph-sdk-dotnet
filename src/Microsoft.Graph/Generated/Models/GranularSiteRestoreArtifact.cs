@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class GranularSiteRestoreArtifact : global::Microsoft.Graph.Models.GranularRestoreArtifactBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Id of the site in which artifact is present.</summary>
+        /// <summary>The ID of the site in which the artifact is present.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SiteId

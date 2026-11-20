@@ -69,6 +69,7 @@ namespace Microsoft.Graph.Models
             {
                 "#microsoft.graph.calendarSharingMessage" => new global::Microsoft.Graph.Models.CalendarSharingMessage(),
                 "#microsoft.graph.contact" => new global::Microsoft.Graph.Models.Contact(),
+                "#microsoft.graph.distributionList" => new global::Microsoft.Graph.Models.DistributionList(),
                 "#microsoft.graph.event" => new global::Microsoft.Graph.Models.Event(),
                 "#microsoft.graph.eventMessage" => new global::Microsoft.Graph.Models.EventMessage(),
                 "#microsoft.graph.eventMessageRequest" => new global::Microsoft.Graph.Models.EventMessageRequest(),

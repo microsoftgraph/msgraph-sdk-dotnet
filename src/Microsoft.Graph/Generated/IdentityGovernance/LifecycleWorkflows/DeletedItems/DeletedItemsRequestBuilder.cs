@@ -63,7 +63,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deleted workflows in your lifecycle workflows instance.
+        /// Deleted workflows and lifecycle policies in your lifecycle workflows instance.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.DeletedItemContainer"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems
             return requestInfo;
         }
         /// <summary>
-        /// Deleted workflows in your lifecycle workflows instance.
+        /// Deleted workflows and lifecycle policies in your lifecycle workflows instance.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.IdentityGovernance.LifecycleWorkflows.DeletedItems
         {
         }
         /// <summary>
-        /// Deleted workflows in your lifecycle workflows instance.
+        /// Deleted workflows and lifecycle policies in your lifecycle workflows instance.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeletedItemsRequestBuilderGetQueryParameters 

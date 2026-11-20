@@ -13,6 +13,38 @@ namespace Microsoft.Graph.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Win32LobApp : global::Microsoft.Graph.Models.MobileLobApp, IParsable
     {
+        /// <summary>Contains the unique identifier of the associated install script for this Win32 app to be used instead of the install command line by the managed device during app installation. When null, the install command line is used instead.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.MobileAppScriptReference? ActiveInstallScript
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.MobileAppScriptReference?>("activeInstallScript"); }
+            set { BackingStore?.Set("activeInstallScript", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.MobileAppScriptReference ActiveInstallScript
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.MobileAppScriptReference>("activeInstallScript"); }
+            set { BackingStore?.Set("activeInstallScript", value); }
+        }
+#endif
+        /// <summary>Contains the unique identifier of the associated uninstall script for this Win32 app to be used instead of the uninstall command line by the managed device during app uninstallation. When null, the uninstall command line is used instead.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.MobileAppScriptReference? ActiveUninstallScript
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.MobileAppScriptReference?>("activeUninstallScript"); }
+            set { BackingStore?.Set("activeUninstallScript", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.MobileAppScriptReference ActiveUninstallScript
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.MobileAppScriptReference>("activeUninstallScript"); }
+            set { BackingStore?.Set("activeUninstallScript", value); }
+        }
+#endif
         /// <summary>Indicates the Windows architecture(s) this app should be installed on. The app will be treated as not applicable for devices with architectures not matching the selected value. When a non-null value is provided for the allowedArchitectures property, the value of the applicableArchitectures property is set to none. The possible values are: null, x86, x64, arm64. The possible values are: none, x86, x64, arm, neutral.</summary>
         public global::Microsoft.Graph.Models.WindowsArchitecture? AllowedArchitectures
         {
@@ -202,6 +234,8 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "activeInstallScript", n => { ActiveInstallScript = n.GetObjectValue<global::Microsoft.Graph.Models.MobileAppScriptReference>(global::Microsoft.Graph.Models.MobileAppScriptReference.CreateFromDiscriminatorValue); } },
+                { "activeUninstallScript", n => { ActiveUninstallScript = n.GetObjectValue<global::Microsoft.Graph.Models.MobileAppScriptReference>(global::Microsoft.Graph.Models.MobileAppScriptReference.CreateFromDiscriminatorValue); } },
                 { "allowedArchitectures", n => { AllowedArchitectures = n.GetEnumValue<global::Microsoft.Graph.Models.WindowsArchitecture>(); } },
                 { "applicableArchitectures", n => { ApplicableArchitectures = n.GetEnumValue<global::Microsoft.Graph.Models.WindowsArchitecture>(); } },
                 { "installCommandLine", n => { InstallCommandLine = n.GetStringValue(); } },
@@ -226,6 +260,8 @@ namespace Microsoft.Graph.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.MobileAppScriptReference>("activeInstallScript", ActiveInstallScript);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.MobileAppScriptReference>("activeUninstallScript", ActiveUninstallScript);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.WindowsArchitecture>("allowedArchitectures", AllowedArchitectures);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.WindowsArchitecture>("applicableArchitectures", ApplicableArchitectures);
             writer.WriteStringValue("installCommandLine", InstallCommandLine);

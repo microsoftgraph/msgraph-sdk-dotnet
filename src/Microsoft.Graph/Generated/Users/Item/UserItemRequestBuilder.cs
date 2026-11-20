@@ -24,6 +24,7 @@ using Microsoft.Graph.Users.Item.CreatedObjects;
 using Microsoft.Graph.Users.Item.DataSecurityAndGovernance;
 using Microsoft.Graph.Users.Item.DeviceManagementTroubleshootingEvents;
 using Microsoft.Graph.Users.Item.DirectReports;
+using Microsoft.Graph.Users.Item.DistributionLists;
 using Microsoft.Graph.Users.Item.Drive;
 using Microsoft.Graph.Users.Item.Drives;
 using Microsoft.Graph.Users.Item.EmployeeExperience;
@@ -209,6 +210,11 @@ namespace Microsoft.Graph.Users.Item
         public global::Microsoft.Graph.Users.Item.DirectReports.DirectReportsRequestBuilder DirectReports
         {
             get => new global::Microsoft.Graph.Users.Item.DirectReports.DirectReportsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the distributionLists property of the microsoft.graph.user entity.</summary>
+        public global::Microsoft.Graph.Users.Item.DistributionLists.DistributionListsRequestBuilder DistributionLists
+        {
+            get => new global::Microsoft.Graph.Users.Item.DistributionLists.DistributionListsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the drive property of the microsoft.graph.user entity.</summary>
         public global::Microsoft.Graph.Users.Item.Drive.DriveRequestBuilder Drive

@@ -22,6 +22,7 @@ using Microsoft.Graph.Me.CreatedObjects;
 using Microsoft.Graph.Me.DataSecurityAndGovernance;
 using Microsoft.Graph.Me.DeviceManagementTroubleshootingEvents;
 using Microsoft.Graph.Me.DirectReports;
+using Microsoft.Graph.Me.DistributionLists;
 using Microsoft.Graph.Me.Drive;
 using Microsoft.Graph.Me.Drives;
 using Microsoft.Graph.Me.EmployeeExperience;
@@ -209,6 +210,11 @@ namespace Microsoft.Graph.Me
         public global::Microsoft.Graph.Me.DirectReports.DirectReportsRequestBuilder DirectReports
         {
             get => new global::Microsoft.Graph.Me.DirectReports.DirectReportsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the distributionLists property of the microsoft.graph.user entity.</summary>
+        public global::Microsoft.Graph.Me.DistributionLists.DistributionListsRequestBuilder DistributionLists
+        {
+            get => new global::Microsoft.Graph.Me.DistributionLists.DistributionListsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the drive property of the microsoft.graph.user entity.</summary>
         public global::Microsoft.Graph.Me.Drive.DriveRequestBuilder Drive

@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("idToken", value); }
         }
 #endif
-        /// <summary>The kerberosTicket property</summary>
+        /// <summary>Optional claims that control group SID resolution for Kerberos tickets. The supported claim name is groups.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.OptionalClaim>? KerberosTicket

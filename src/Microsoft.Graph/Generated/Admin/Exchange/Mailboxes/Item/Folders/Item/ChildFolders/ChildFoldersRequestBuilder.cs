@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item.ChildFolder
         {
         }
         /// <summary>
-        /// Get the mailboxFolder collection under the specified mailboxFolder in a mailbox.
+        /// Get the mailboxFolder collection under the specified mailboxFolder in a mailbox. By default, hidden child folders aren&apos;t returned. To include them, specify includeHiddenFolders=true.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailboxfolder-list-childfolders?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.MailboxFolderCollectionResponse"/></returns>
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item.ChildFolder
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.MailboxFolder>(requestInfo, global::Microsoft.Graph.Models.MailboxFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the mailboxFolder collection under the specified mailboxFolder in a mailbox.
+        /// Get the mailboxFolder collection under the specified mailboxFolder in a mailbox. By default, hidden child folders aren&apos;t returned. To include them, specify includeHiddenFolders=true.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item.ChildFolder
             return new global::Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item.ChildFolders.ChildFoldersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the mailboxFolder collection under the specified mailboxFolder in a mailbox.
+        /// Get the mailboxFolder collection under the specified mailboxFolder in a mailbox. By default, hidden child folders aren&apos;t returned. To include them, specify includeHiddenFolders=true.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ChildFoldersRequestBuilderGetQueryParameters 
