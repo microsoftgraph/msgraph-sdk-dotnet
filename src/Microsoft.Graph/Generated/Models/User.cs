@@ -548,6 +548,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>The personal distribution lists in the user&apos;s mailbox. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.DistributionList>? DistributionLists
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.DistributionList>?>("distributionLists"); }
+            set { BackingStore?.Set("distributionLists", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.DistributionList> DistributionLists
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.DistributionList>>("distributionLists"); }
+            set { BackingStore?.Set("distributionLists", value); }
+        }
+#endif
         /// <summary>The user&apos;s OneDrive. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -2104,6 +2120,7 @@ namespace Microsoft.Graph.Models
                 { "deviceManagementTroubleshootingEvents", n => { DeviceManagementTroubleshootingEvents = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DeviceManagementTroubleshootingEvent>(global::Microsoft.Graph.Models.DeviceManagementTroubleshootingEvent.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "directReports", n => { DirectReports = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DirectoryObject>(global::Microsoft.Graph.Models.DirectoryObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "distributionLists", n => { DistributionLists = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.DistributionList>(global::Microsoft.Graph.Models.DistributionList.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "drive", n => { Drive = n.GetObjectValue<global::Microsoft.Graph.Models.Drive>(global::Microsoft.Graph.Models.Drive.CreateFromDiscriminatorValue); } },
                 { "drives", n => { Drives = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Drive>(global::Microsoft.Graph.Models.Drive.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "employeeExperience", n => { EmployeeExperience = n.GetObjectValue<global::Microsoft.Graph.Models.EmployeeExperienceUser>(global::Microsoft.Graph.Models.EmployeeExperienceUser.CreateFromDiscriminatorValue); } },
@@ -2250,6 +2267,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DeviceManagementTroubleshootingEvent>("deviceManagementTroubleshootingEvents", DeviceManagementTroubleshootingEvents);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DirectoryObject>("directReports", DirectReports);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.DistributionList>("distributionLists", DistributionLists);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Drive>("drive", Drive);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Drive>("drives", Drives);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.EmployeeExperienceUser>("employeeExperience", EmployeeExperience);

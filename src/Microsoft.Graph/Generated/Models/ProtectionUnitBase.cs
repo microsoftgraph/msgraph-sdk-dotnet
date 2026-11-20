@@ -12,6 +12,12 @@ namespace Microsoft.Graph.Models
     public partial class ProtectionUnitBase : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The policy-configured retention period of the backup, in days. Not nullable.</summary>
+        public int? BackupRetentionPeriodInDays
+        {
+            get { return BackingStore?.Get<int?>("backupRetentionPeriodInDays"); }
+            set { BackingStore?.Set("backupRetentionPeriodInDays", value); }
+        }
         /// <summary>The identity of the person who created the protection unit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -78,6 +84,22 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<DateTimeOffset?>("offboardRequestedDateTime"); }
             set { BackingStore?.Set("offboardRequestedDateTime", value); }
         }
+        /// <summary>The retention period change to be applied to the protection unit when it moves between policies with different retention periods. Read-only. null when no change is pending.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.RetentionPeriodChange? PendingRetentionPeriodChange
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.RetentionPeriodChange?>("pendingRetentionPeriodChange"); }
+            set { BackingStore?.Set("pendingRetentionPeriodChange", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.RetentionPeriodChange PendingRetentionPeriodChange
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.RetentionPeriodChange>("pendingRetentionPeriodChange"); }
+            set { BackingStore?.Set("pendingRetentionPeriodChange", value); }
+        }
+#endif
         /// <summary>The unique identifier of the protection policy based on which protection unit was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -131,12 +153,14 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "backupRetentionPeriodInDays", n => { BackupRetentionPeriodInDays = n.GetIntValue(); } },
                 { "createdBy", n => { CreatedBy = n.GetObjectValue<global::Microsoft.Graph.Models.IdentitySet>(global::Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "error", n => { Error = n.GetObjectValue<global::Microsoft.Graph.Models.PublicError>(global::Microsoft.Graph.Models.PublicError.CreateFromDiscriminatorValue); } },
                 { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<global::Microsoft.Graph.Models.IdentitySet>(global::Microsoft.Graph.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "offboardRequestedDateTime", n => { OffboardRequestedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "pendingRetentionPeriodChange", n => { PendingRetentionPeriodChange = n.GetObjectValue<global::Microsoft.Graph.Models.RetentionPeriodChange>(global::Microsoft.Graph.Models.RetentionPeriodChange.CreateFromDiscriminatorValue); } },
                 { "policyId", n => { PolicyId = n.GetStringValue(); } },
                 { "protectionSources", n => { ProtectionSources = n.GetEnumValue<global::Microsoft.Graph.Models.ProtectionSource>(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Microsoft.Graph.Models.ProtectionUnitStatus>(); } },
@@ -150,6 +174,7 @@ namespace Microsoft.Graph.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteIntValue("backupRetentionPeriodInDays", BackupRetentionPeriodInDays);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.IdentitySet>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.PublicError>("error", Error);

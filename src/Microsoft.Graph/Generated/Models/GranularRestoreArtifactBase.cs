@@ -34,6 +34,22 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<DateTimeOffset?>("completionDateTime"); }
             set { BackingStore?.Set("completionDateTime", value); }
         }
+        /// <summary>Contains error details if the restoration fails or completes with an error.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.PublicError? Error
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.PublicError?>("error"); }
+            set { BackingStore?.Set("error", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.PublicError Error
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.PublicError>("error"); }
+            set { BackingStore?.Set("error", value); }
+        }
+#endif
         /// <summary>The unique identifier for the restored artifact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -142,6 +158,7 @@ namespace Microsoft.Graph.Models
             {
                 { "browseSessionId", n => { BrowseSessionId = n.GetStringValue(); } },
                 { "completionDateTime", n => { CompletionDateTime = n.GetDateTimeOffsetValue(); } },
+                { "error", n => { Error = n.GetObjectValue<global::Microsoft.Graph.Models.PublicError>(global::Microsoft.Graph.Models.PublicError.CreateFromDiscriminatorValue); } },
                 { "restorePointDateTime", n => { RestorePointDateTime = n.GetDateTimeOffsetValue(); } },
                 { "restoredItemKey", n => { RestoredItemKey = n.GetStringValue(); } },
                 { "restoredItemPath", n => { RestoredItemPath = n.GetStringValue(); } },
@@ -161,6 +178,7 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteStringValue("browseSessionId", BrowseSessionId);
             writer.WriteDateTimeOffsetValue("completionDateTime", CompletionDateTime);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.PublicError>("error", Error);
             writer.WriteStringValue("restoredItemKey", RestoredItemKey);
             writer.WriteStringValue("restoredItemPath", RestoredItemPath);
             writer.WriteStringValue("restoredItemWebUrl", RestoredItemWebUrl);

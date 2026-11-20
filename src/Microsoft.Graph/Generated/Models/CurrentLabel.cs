@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>The applicationMode property</summary>
+        /// <summary>The application mode associated with the sensitivity label. The possible values are: manual, automatic, recommended, unknownFutureValue.</summary>
         public global::Microsoft.Graph.Models.ApplicationMode? ApplicationMode
         {
             get { return BackingStore?.Get<global::Microsoft.Graph.Models.ApplicationMode?>("applicationMode"); }
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The id property</summary>
+        /// <summary>The GUID that identifies the sensitivity label.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id

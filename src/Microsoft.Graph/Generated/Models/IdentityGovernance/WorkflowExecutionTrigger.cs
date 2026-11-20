@@ -60,6 +60,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
                 "#microsoft.graph.identityGovernance.guestSponsorTrigger" => new global::Microsoft.Graph.Models.IdentityGovernance.GuestSponsorTrigger(),
                 "#microsoft.graph.identityGovernance.membershipChangeTrigger" => new global::Microsoft.Graph.Models.IdentityGovernance.MembershipChangeTrigger(),
                 "#microsoft.graph.identityGovernance.timeBasedAttributeTrigger" => new global::Microsoft.Graph.Models.IdentityGovernance.TimeBasedAttributeTrigger(),
+                "#microsoft.graph.identityGovernance.timeBasedAttributeTriggerV2" => new global::Microsoft.Graph.Models.IdentityGovernance.TimeBasedAttributeTriggerV2(),
                 "#microsoft.graph.identityGovernance.userInactivityTrigger" => new global::Microsoft.Graph.Models.IdentityGovernance.UserInactivityTrigger(),
                 _ => new global::Microsoft.Graph.Models.IdentityGovernance.WorkflowExecutionTrigger(),
             };

@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The sensitivityLabels property</summary>
+        /// <summary>Caller-supplied sensitivity labels describing the content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.CurrentLabel>? SensitivityLabels

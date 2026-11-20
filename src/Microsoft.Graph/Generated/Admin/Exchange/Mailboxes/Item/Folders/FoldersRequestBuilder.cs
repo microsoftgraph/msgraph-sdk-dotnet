@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders
         {
         }
         /// <summary>
-        /// Get all the mailboxFolder objects in the specified mailbox, including any search folders.
+        /// Get all the mailboxFolder objects in the specified mailbox, including any search folders. By default, hidden folders aren&apos;t returned. To include them, specify includeHiddenFolders=true.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailbox-list-folders?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.MailboxFolderCollectionResponse"/></returns>
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.MailboxFolder>(requestInfo, global::Microsoft.Graph.Models.MailboxFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all the mailboxFolder objects in the specified mailbox, including any search folders.
+        /// Get all the mailboxFolder objects in the specified mailbox, including any search folders. By default, hidden folders aren&apos;t returned. To include them, specify includeHiddenFolders=true.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -160,7 +160,7 @@ namespace Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders
             return new global::Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.FoldersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get all the mailboxFolder objects in the specified mailbox, including any search folders.
+        /// Get all the mailboxFolder objects in the specified mailbox, including any search folders. By default, hidden folders aren&apos;t returned. To include them, specify includeHiddenFolders=true.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FoldersRequestBuilderGetQueryParameters 

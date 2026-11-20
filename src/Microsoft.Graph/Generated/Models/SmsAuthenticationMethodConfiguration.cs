@@ -28,6 +28,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("includeTargets", value); }
         }
 #endif
+        /// <summary>Settings for routing SMS authentication traffic through a telecom provider integration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.TelecomProviderSettings? TelecomProviderSettings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.TelecomProviderSettings?>("telecomProviderSettings"); }
+            set { BackingStore?.Set("telecomProviderSettings", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.TelecomProviderSettings TelecomProviderSettings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.TelecomProviderSettings>("telecomProviderSettings"); }
+            set { BackingStore?.Set("telecomProviderSettings", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Models.SmsAuthenticationMethodConfiguration"/> and sets the default values.
         /// </summary>
@@ -54,6 +70,7 @@ namespace Microsoft.Graph.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "includeTargets", n => { IncludeTargets = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.SmsAuthenticationMethodTarget>(global::Microsoft.Graph.Models.SmsAuthenticationMethodTarget.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "telecomProviderSettings", n => { TelecomProviderSettings = n.GetObjectValue<global::Microsoft.Graph.Models.TelecomProviderSettings>(global::Microsoft.Graph.Models.TelecomProviderSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -65,6 +82,7 @@ namespace Microsoft.Graph.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.SmsAuthenticationMethodTarget>("includeTargets", IncludeTargets);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.TelecomProviderSettings>("telecomProviderSettings", TelecomProviderSettings);
         }
     }
 }
