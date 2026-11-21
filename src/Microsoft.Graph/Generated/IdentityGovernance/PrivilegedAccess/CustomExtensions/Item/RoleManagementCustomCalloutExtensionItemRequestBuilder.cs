@@ -35,7 +35,8 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.CustomExtensions.I
         {
         }
         /// <summary>
-        /// Delete navigation property customExtensions for identityGovernance
+        /// Delete a roleManagementCustomCalloutExtension object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/rolemanagementcustomcalloutextension-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -57,7 +58,8 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.CustomExtensions.I
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get customExtensions from identityGovernance
+        /// Retrieve the properties of a roleManagementCustomCalloutExtension object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/rolemanagementcustomcalloutextension-get?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.RoleManagementCustomCalloutExtension"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +82,8 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.CustomExtensions.I
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.RoleManagementCustomCalloutExtension>(requestInfo, global::Microsoft.Graph.Models.RoleManagementCustomCalloutExtension.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property customExtensions in identityGovernance
+        /// Update the properties of a roleManagementCustomCalloutExtension object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/rolemanagementcustomcalloutextension-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.RoleManagementCustomCalloutExtension"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +108,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.CustomExtensions.I
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.RoleManagementCustomCalloutExtension>(requestInfo, global::Microsoft.Graph.Models.RoleManagementCustomCalloutExtension.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property customExtensions for identityGovernance
+        /// Delete a roleManagementCustomCalloutExtension object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +127,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.CustomExtensions.I
             return requestInfo;
         }
         /// <summary>
-        /// Get customExtensions from identityGovernance
+        /// Retrieve the properties of a roleManagementCustomCalloutExtension object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +146,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.CustomExtensions.I
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property customExtensions in identityGovernance
+        /// Update the properties of a roleManagementCustomCalloutExtension object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -182,7 +185,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.CustomExtensions.I
         {
         }
         /// <summary>
-        /// Get customExtensions from identityGovernance
+        /// Retrieve the properties of a roleManagementCustomCalloutExtension object.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RoleManagementCustomCalloutExtensionItemRequestBuilderGetQueryParameters 

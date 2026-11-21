@@ -172,6 +172,22 @@ namespace Microsoft.Graph.Models.Security
             set { BackingStore?.Set("labels", value); }
         }
 #endif
+        /// <summary>Container for the security rules configured in Microsoft Defender XDR, including custom detection rules.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.Security.RulesRoot? Rules
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.RulesRoot?>("rules"); }
+            set { BackingStore?.Set("rules", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.Security.RulesRoot Rules
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.Security.RulesRoot>("rules"); }
+            set { BackingStore?.Set("rules", value); }
+        }
+#endif
         /// <summary>The secureScoreControlProfiles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -296,6 +312,7 @@ namespace Microsoft.Graph.Models.Security
                 { "identities", n => { Identities = n.GetObjectValue<global::Microsoft.Graph.Models.Security.IdentityContainer>(global::Microsoft.Graph.Models.Security.IdentityContainer.CreateFromDiscriminatorValue); } },
                 { "incidents", n => { Incidents = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.Incident>(global::Microsoft.Graph.Models.Security.Incident.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "labels", n => { Labels = n.GetObjectValue<global::Microsoft.Graph.Models.Security.LabelsRoot>(global::Microsoft.Graph.Models.Security.LabelsRoot.CreateFromDiscriminatorValue); } },
+                { "rules", n => { Rules = n.GetObjectValue<global::Microsoft.Graph.Models.Security.RulesRoot>(global::Microsoft.Graph.Models.Security.RulesRoot.CreateFromDiscriminatorValue); } },
                 { "secureScoreControlProfiles", n => { SecureScoreControlProfiles = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.SecureScoreControlProfile>(global::Microsoft.Graph.Models.SecureScoreControlProfile.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "secureScores", n => { SecureScores = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.SecureScore>(global::Microsoft.Graph.Models.SecureScore.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "subjectRightsRequests", n => { SubjectRightsRequests = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.SubjectRightsRequest>(global::Microsoft.Graph.Models.SubjectRightsRequest.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -322,6 +339,7 @@ namespace Microsoft.Graph.Models.Security
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.IdentityContainer>("identities", Identities);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Security.Incident>("incidents", Incidents);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.LabelsRoot>("labels", Labels);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.Security.RulesRoot>("rules", Rules);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.SecureScoreControlProfile>("secureScoreControlProfiles", SecureScoreControlProfiles);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.SecureScore>("secureScores", SecureScores);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.SubjectRightsRequest>("subjectRightsRequests", SubjectRightsRequests);

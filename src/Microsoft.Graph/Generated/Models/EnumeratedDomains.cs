@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class EnumeratedDomains : global::Microsoft.Graph.Models.ValidatingDomains, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The domainNames property</summary>
+        /// <summary>List of federated or managed root domains that Microsoft Entra ID validates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? DomainNames

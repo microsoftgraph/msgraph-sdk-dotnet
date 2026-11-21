@@ -97,6 +97,7 @@ namespace Microsoft.Graph.Models
                 "#microsoft.graph.communicationsGuestIdentity" => new global::Microsoft.Graph.Models.CommunicationsGuestIdentity(),
                 "#microsoft.graph.communicationsPhoneIdentity" => new global::Microsoft.Graph.Models.CommunicationsPhoneIdentity(),
                 "#microsoft.graph.communicationsUserIdentity" => new global::Microsoft.Graph.Models.CommunicationsUserIdentity(),
+                "#microsoft.graph.copilotPackageRequestPrincipal" => new global::Microsoft.Graph.Models.CopilotPackageRequestPrincipal(),
                 "#microsoft.graph.emailIdentity" => new global::Microsoft.Graph.Models.EmailIdentity(),
                 "#microsoft.graph.initiator" => new global::Microsoft.Graph.Models.Initiator(),
                 "#microsoft.graph.provisionedIdentity" => new global::Microsoft.Graph.Models.ProvisionedIdentity(),

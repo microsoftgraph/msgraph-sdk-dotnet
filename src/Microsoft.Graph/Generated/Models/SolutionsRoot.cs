@@ -69,6 +69,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("bookingCurrencies", value); }
         }
 #endif
+        /// <summary>The entry point for cross-tenant migration operations.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.MigrationsRoot? Migrations
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.MigrationsRoot?>("migrations"); }
+            set { BackingStore?.Set("migrations", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.MigrationsRoot Migrations
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.MigrationsRoot>("migrations"); }
+            set { BackingStore?.Set("migrations", value); }
+        }
+#endif
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -130,6 +146,7 @@ namespace Microsoft.Graph.Models
                 { "backupRestore", n => { BackupRestore = n.GetObjectValue<global::Microsoft.Graph.Models.BackupRestoreRoot>(global::Microsoft.Graph.Models.BackupRestoreRoot.CreateFromDiscriminatorValue); } },
                 { "bookingBusinesses", n => { BookingBusinesses = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.BookingBusiness>(global::Microsoft.Graph.Models.BookingBusiness.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "bookingCurrencies", n => { BookingCurrencies = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.BookingCurrency>(global::Microsoft.Graph.Models.BookingCurrency.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "migrations", n => { Migrations = n.GetObjectValue<global::Microsoft.Graph.Models.MigrationsRoot>(global::Microsoft.Graph.Models.MigrationsRoot.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "virtualEvents", n => { VirtualEvents = n.GetObjectValue<global::Microsoft.Graph.Models.VirtualEventsRoot>(global::Microsoft.Graph.Models.VirtualEventsRoot.CreateFromDiscriminatorValue); } },
             };
@@ -144,6 +161,7 @@ namespace Microsoft.Graph.Models
             writer.WriteObjectValue<global::Microsoft.Graph.Models.BackupRestoreRoot>("backupRestore", BackupRestore);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.BookingBusiness>("bookingBusinesses", BookingBusinesses);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.BookingCurrency>("bookingCurrencies", BookingCurrencies);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.MigrationsRoot>("migrations", Migrations);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.VirtualEventsRoot>("virtualEvents", VirtualEvents);
             writer.WriteAdditionalData(AdditionalData);

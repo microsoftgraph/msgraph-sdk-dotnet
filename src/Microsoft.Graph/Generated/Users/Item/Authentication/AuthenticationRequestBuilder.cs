@@ -11,6 +11,7 @@ using Microsoft.Graph.Users.Item.Authentication.Operations;
 using Microsoft.Graph.Users.Item.Authentication.PasswordMethods;
 using Microsoft.Graph.Users.Item.Authentication.PhoneMethods;
 using Microsoft.Graph.Users.Item.Authentication.PlatformCredentialMethods;
+using Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods;
 using Microsoft.Graph.Users.Item.Authentication.SoftwareOathMethods;
 using Microsoft.Graph.Users.Item.Authentication.TemporaryAccessPassMethods;
 using Microsoft.Graph.Users.Item.Authentication.WindowsHelloForBusinessMethods;
@@ -74,6 +75,11 @@ namespace Microsoft.Graph.Users.Item.Authentication
         public global::Microsoft.Graph.Users.Item.Authentication.PlatformCredentialMethods.PlatformCredentialMethodsRequestBuilder PlatformCredentialMethods
         {
             get => new global::Microsoft.Graph.Users.Item.Authentication.PlatformCredentialMethods.PlatformCredentialMethodsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the resourceAccountKeyAuthenticationMethods property of the microsoft.graph.authentication entity.</summary>
+        public global::Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.ResourceAccountKeyAuthenticationMethodsRequestBuilder ResourceAccountKeyAuthenticationMethods
+        {
+            get => new global::Microsoft.Graph.Users.Item.Authentication.ResourceAccountKeyAuthenticationMethods.ResourceAccountKeyAuthenticationMethodsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the softwareOathMethods property of the microsoft.graph.authentication entity.</summary>
         public global::Microsoft.Graph.Users.Item.Authentication.SoftwareOathMethods.SoftwareOathMethodsRequestBuilder SoftwareOathMethods

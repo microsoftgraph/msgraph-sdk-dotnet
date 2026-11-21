@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item.ChildFolder
         {
         }
         /// <summary>
-        /// Get the mailboxFolder collection under the specified mailboxFolder in a mailbox.
+        /// Get the mailboxFolder collection under the specified mailboxFolder in a mailbox. By default, hidden child folders aren&apos;t returned. To include them, specify includeHiddenFolders=true.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/mailboxfolder-list-childfolders?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.MailboxFolderCollectionResponse"/></returns>
@@ -84,7 +84,32 @@ namespace Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item.ChildFolder
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.MailboxFolderCollectionResponse>(requestInfo, global::Microsoft.Graph.Models.MailboxFolderCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the mailboxFolder collection under the specified mailboxFolder in a mailbox.
+        /// Create new navigation property to childFolders for admin
+        /// </summary>
+        /// <returns>A <see cref="global::Microsoft.Graph.Models.MailboxFolder"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Microsoft.Graph.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Microsoft.Graph.Models.MailboxFolder?> PostAsync(global::Microsoft.Graph.Models.MailboxFolder body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Microsoft.Graph.Models.MailboxFolder> PostAsync(global::Microsoft.Graph.Models.MailboxFolder body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "XXX", global::Microsoft.Graph.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.MailboxFolder>(requestInfo, global::Microsoft.Graph.Models.MailboxFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Get the mailboxFolder collection under the specified mailboxFolder in a mailbox. By default, hidden child folders aren&apos;t returned. To include them, specify includeHiddenFolders=true.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,6 +128,28 @@ namespace Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item.ChildFolder
             return requestInfo;
         }
         /// <summary>
+        /// Create new navigation property to childFolders for admin
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.MailboxFolder body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Graph.Models.MailboxFolder body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
+            return requestInfo;
+        }
+        /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item.ChildFolders.ChildFoldersRequestBuilder"/></returns>
@@ -112,7 +159,7 @@ namespace Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item.ChildFolder
             return new global::Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item.ChildFolders.ChildFoldersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the mailboxFolder collection under the specified mailboxFolder in a mailbox.
+        /// Get the mailboxFolder collection under the specified mailboxFolder in a mailbox. By default, hidden child folders aren&apos;t returned. To include them, specify includeHiddenFolders=true.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ChildFoldersRequestBuilderGetQueryParameters 
@@ -183,6 +230,14 @@ namespace Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item.ChildFolder
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ChildFoldersRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Microsoft.Graph.Admin.Exchange.Mailboxes.Item.Folders.Item.ChildFolders.ChildFoldersRequestBuilder.ChildFoldersRequestBuilderGetQueryParameters>
+        {
+        }
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class ChildFoldersRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

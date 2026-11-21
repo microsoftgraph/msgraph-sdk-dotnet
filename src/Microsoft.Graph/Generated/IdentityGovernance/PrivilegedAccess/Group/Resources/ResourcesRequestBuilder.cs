@@ -54,7 +54,8 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.Resources
         {
         }
         /// <summary>
-        /// Get resources from identityGovernance
+        /// Get a list of the groupResource objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/privilegedaccessgroup-list-resources?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.GroupResourceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -102,7 +103,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.Resources
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.GroupResource>(requestInfo, global::Microsoft.Graph.Models.GroupResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get resources from identityGovernance
+        /// Get a list of the groupResource objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -152,7 +153,7 @@ namespace Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.Resources
             return new global::Microsoft.Graph.IdentityGovernance.PrivilegedAccess.Group.Resources.ResourcesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get resources from identityGovernance
+        /// Get a list of the groupResource objects and their properties.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ResourcesRequestBuilderGetQueryParameters 

@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The bypassApproval property</summary>
+        /// <summary>When true, bypasses the approval requirement configured on the access package policy for this request.</summary>
         public bool? BypassApproval
         {
             get { return BackingStore?.Get<bool?>("bypassApproval"); }

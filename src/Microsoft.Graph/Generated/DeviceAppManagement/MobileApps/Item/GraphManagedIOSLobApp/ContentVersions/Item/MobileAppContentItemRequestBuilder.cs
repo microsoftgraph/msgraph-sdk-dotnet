@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphManagedIOSLobApp.ContentVersions.Item.ContainedApps;
 using Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphManagedIOSLobApp.ContentVersions.Item.Files;
+using Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphManagedIOSLobApp.ContentVersions.Item.Scripts;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Kiota.Abstractions.Extensions;
@@ -29,6 +30,11 @@ namespace Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphManagedIOSLob
         public global::Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphManagedIOSLobApp.ContentVersions.Item.Files.FilesRequestBuilder Files
         {
             get => new global::Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphManagedIOSLobApp.ContentVersions.Item.Files.FilesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the scripts property of the microsoft.graph.mobileAppContent entity.</summary>
+        public global::Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphManagedIOSLobApp.ContentVersions.Item.Scripts.ScriptsRequestBuilder Scripts
+        {
+            get => new global::Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphManagedIOSLobApp.ContentVersions.Item.Scripts.ScriptsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.DeviceAppManagement.MobileApps.Item.GraphManagedIOSLobApp.ContentVersions.Item.MobileAppContentItemRequestBuilder"/> and sets the default values.

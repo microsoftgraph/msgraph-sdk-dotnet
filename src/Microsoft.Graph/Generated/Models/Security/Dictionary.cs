@@ -53,7 +53,12 @@ namespace Microsoft.Graph.Models.Security
         public static global::Microsoft.Graph.Models.Security.Dictionary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Microsoft.Graph.Models.Security.Dictionary();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "#microsoft.graph.security.alertCustomDetails" => new global::Microsoft.Graph.Models.Security.AlertCustomDetails(),
+                _ => new global::Microsoft.Graph.Models.Security.Dictionary(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

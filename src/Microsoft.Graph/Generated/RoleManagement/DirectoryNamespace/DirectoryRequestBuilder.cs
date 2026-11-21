@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Graph.RoleManagement.DirectoryNamespace.DeletedItems;
 using Microsoft.Graph.RoleManagement.DirectoryNamespace.ResourceNamespaces;
 using Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleInstances;
 using Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleAssignmentScheduleRequests;
@@ -27,6 +28,11 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DirectoryRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to manage the deletedItems property of the microsoft.graph.rbacApplication entity.</summary>
+        public global::Microsoft.Graph.RoleManagement.DirectoryNamespace.DeletedItems.DeletedItemsRequestBuilder DeletedItems
+        {
+            get => new global::Microsoft.Graph.RoleManagement.DirectoryNamespace.DeletedItems.DeletedItemsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the resourceNamespaces property of the microsoft.graph.rbacApplication entity.</summary>
         public global::Microsoft.Graph.RoleManagement.DirectoryNamespace.ResourceNamespaces.ResourceNamespacesRequestBuilder ResourceNamespaces
         {

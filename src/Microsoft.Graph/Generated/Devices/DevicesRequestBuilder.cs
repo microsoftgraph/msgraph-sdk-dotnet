@@ -5,6 +5,7 @@ using Microsoft.Graph.Devices.Delta;
 using Microsoft.Graph.Devices.GetAvailableExtensionProperties;
 using Microsoft.Graph.Devices.GetByIds;
 using Microsoft.Graph.Devices.Item;
+using Microsoft.Graph.Devices.Provision;
 using Microsoft.Graph.Devices.ValidateProperties;
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
@@ -43,6 +44,11 @@ namespace Microsoft.Graph.Devices
         public global::Microsoft.Graph.Devices.GetByIds.GetByIdsRequestBuilder GetByIds
         {
             get => new global::Microsoft.Graph.Devices.GetByIds.GetByIdsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the provision method.</summary>
+        public global::Microsoft.Graph.Devices.Provision.ProvisionRequestBuilder Provision
+        {
+            get => new global::Microsoft.Graph.Devices.Provision.ProvisionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the validateProperties method.</summary>
         public global::Microsoft.Graph.Devices.ValidateProperties.ValidatePropertiesRequestBuilder ValidateProperties

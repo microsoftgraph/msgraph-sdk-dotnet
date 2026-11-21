@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("featureRolloutPolicies", value); }
         }
 #endif
-        /// <summary>The federatedTokenValidationPolicy property</summary>
+        /// <summary>Represents a policy to control enabling or disabling validation of federation authentication tokens.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.FederatedTokenValidationPolicy? FederatedTokenValidationPolicy

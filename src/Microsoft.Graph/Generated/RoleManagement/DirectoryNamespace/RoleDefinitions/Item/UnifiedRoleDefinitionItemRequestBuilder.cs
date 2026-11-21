@@ -3,6 +3,7 @@
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
 using Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleDefinitions.Item.InheritsPermissionsFrom;
+using Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleDefinitions.Item.Restore;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -24,6 +25,11 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleDefinitions.Item
         {
             get => new global::Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleDefinitions.Item.InheritsPermissionsFrom.InheritsPermissionsFromRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the restore method.</summary>
+        public global::Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleDefinitions.Item.Restore.RestoreRequestBuilder Restore
+        {
+            get => new global::Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleDefinitions.Item.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleDefinitions.Item.UnifiedRoleDefinitionItemRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -41,7 +47,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleDefinitions.Item
         {
         }
         /// <summary>
-        /// Delete a unifiedRoleDefinition object. You can&apos;t delete built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license.
+        /// Delete a unifiedRoleDefinition object. You can&apos;t delete built-in roles. Deleting an active custom role definition soft-deletes it. You can then restore the role or permanently delete it from the deleted-items collection. This feature requires a Microsoft Entra ID P1 or P2 license.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/unifiedroledefinition-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -114,7 +120,7 @@ namespace Microsoft.Graph.RoleManagement.DirectoryNamespace.RoleDefinitions.Item
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.UnifiedRoleDefinition>(requestInfo, global::Microsoft.Graph.Models.UnifiedRoleDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a unifiedRoleDefinition object. You can&apos;t delete built-in roles. This feature requires a Microsoft Entra ID P1 or P2 license.
+        /// Delete a unifiedRoleDefinition object. You can&apos;t delete built-in roles. Deleting an active custom role definition soft-deletes it. You can then restore the role or permanently delete it from the deleted-items collection. This feature requires a Microsoft Entra ID P1 or P2 license.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

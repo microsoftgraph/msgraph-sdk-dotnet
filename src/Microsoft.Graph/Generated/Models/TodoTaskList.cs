@@ -56,6 +56,22 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("isShared"); }
             set { BackingStore?.Set("isShared", value); }
         }
+        /// <summary>The collection of single-value extended properties defined for the task list. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.SingleValueExtendedProperty>? SingleValueExtendedProperties
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.SingleValueExtendedProperty>?>("singleValueExtendedProperties"); }
+            set { BackingStore?.Set("singleValueExtendedProperties", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.SingleValueExtendedProperty> SingleValueExtendedProperties
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.SingleValueExtendedProperty>>("singleValueExtendedProperties"); }
+            set { BackingStore?.Set("singleValueExtendedProperties", value); }
+        }
+#endif
         /// <summary>The tasks in this task list. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,6 +116,7 @@ namespace Microsoft.Graph.Models
                 { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.Extension>(global::Microsoft.Graph.Models.Extension.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "isOwner", n => { IsOwner = n.GetBoolValue(); } },
                 { "isShared", n => { IsShared = n.GetBoolValue(); } },
+                { "singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.SingleValueExtendedProperty>(global::Microsoft.Graph.Models.SingleValueExtendedProperty.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "tasks", n => { Tasks = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.TodoTask>(global::Microsoft.Graph.Models.TodoTask.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "wellknownListName", n => { WellknownListName = n.GetEnumValue<global::Microsoft.Graph.Models.WellknownListName>(); } },
             };
@@ -116,6 +133,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.Extension>("extensions", Extensions);
             writer.WriteBoolValue("isOwner", IsOwner);
             writer.WriteBoolValue("isShared", IsShared);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.SingleValueExtendedProperty>("singleValueExtendedProperties", SingleValueExtendedProperties);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.TodoTask>("tasks", Tasks);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.WellknownListName>("wellknownListName", WellknownListName);
         }

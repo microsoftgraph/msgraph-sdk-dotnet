@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class HttpRequestEndpoint : global::Microsoft.Graph.Models.CustomExtensionEndpointConfiguration, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The HTTP endpoint that a custom extension calls.</summary>
+        /// <summary>The URL of the HTTP endpoint that Microsoft Entra ID calls for the custom extension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetUrl

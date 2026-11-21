@@ -37,5 +37,9 @@ namespace Microsoft.Graph.Models
         #pragma warning disable CS1591
         UnknownFutureValue = 64,
         #pragma warning restore CS1591
+        [EnumMember(Value = "isOfficeRestricted")]
+        #pragma warning disable CS1591
+        IsOfficeRestricted = 128,
+        #pragma warning restore CS1591
     }
 }

@@ -12,6 +12,22 @@ namespace Microsoft.Graph.Models
     public partial class AgentUser : global::Microsoft.Graph.Models.User, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The application IDs (appId values) authorized to manage the agent user&apos;s backing agent blueprint. Read-only. Not nullable. Returns an empty collection when no manager applications are configured. Returned only with $select and the microsoft.graph.agentUser type cast; see Get agentUser. Doesn&apos;t support $filter.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Guid?>? ManagerApplications
+        {
+            get { return BackingStore?.Get<List<Guid?>?>("managerApplications"); }
+            set { BackingStore?.Set("managerApplications", value); }
+        }
+#nullable restore
+#else
+        public List<Guid?> ManagerApplications
+        {
+            get { return BackingStore?.Get<List<Guid?>>("managerApplications"); }
+            set { BackingStore?.Set("managerApplications", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Models.AgentUser"/> and sets the default values.
         /// </summary>
@@ -37,6 +53,7 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "managerApplications", n => { ManagerApplications = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
             };
         }
         /// <summary>

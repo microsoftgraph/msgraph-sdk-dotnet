@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Graph.Models.ODataErrors;
 using Microsoft.Graph.Models;
+using Microsoft.Graph.RoleManagement.EntitlementManagement.RoleDefinitions.Item.InheritsPermissionsFrom.Item.Restore;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
@@ -18,6 +19,11 @@ namespace Microsoft.Graph.RoleManagement.EntitlementManagement.RoleDefinitions.I
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UnifiedRoleDefinitionItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Provides operations to call the restore method.</summary>
+        public global::Microsoft.Graph.RoleManagement.EntitlementManagement.RoleDefinitions.Item.InheritsPermissionsFrom.Item.Restore.RestoreRequestBuilder Restore
+        {
+            get => new global::Microsoft.Graph.RoleManagement.EntitlementManagement.RoleDefinitions.Item.InheritsPermissionsFrom.Item.Restore.RestoreRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.RoleManagement.EntitlementManagement.RoleDefinitions.Item.InheritsPermissionsFrom.Item.UnifiedRoleDefinitionItemRequestBuilder"/> and sets the default values.
         /// </summary>

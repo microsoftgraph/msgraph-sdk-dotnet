@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.RestorePoints.Item.ProtectionU
         {
         }
         /// <summary>
-        /// The site, drive, or mailbox units that are protected under a protection policy.
+        /// The site, drive, or mailbox unit protected under a protection policy. Supports $expand and $filter on protectionUnit/policyId using the eq operator.
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.ProtectionUnitBase"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.RestorePoints.Item.ProtectionU
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.ProtectionUnitBase>(requestInfo, global::Microsoft.Graph.Models.ProtectionUnitBase.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The site, drive, or mailbox units that are protected under a protection policy.
+        /// The site, drive, or mailbox unit protected under a protection policy. Supports $expand and $filter on protectionUnit/policyId using the eq operator.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.RestorePoints.Item.ProtectionU
             return new global::Microsoft.Graph.Solutions.BackupRestore.RestorePoints.Item.ProtectionUnit.ProtectionUnitRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The site, drive, or mailbox units that are protected under a protection policy.
+        /// The site, drive, or mailbox unit protected under a protection policy. Supports $expand and $filter on protectionUnit/policyId using the eq operator.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ProtectionUnitRequestBuilderGetQueryParameters 

@@ -38,6 +38,22 @@ namespace Microsoft.Graph.Solutions.BackupRestore.RestorePoints.Search
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The policyId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PolicyId
+        {
+            get { return BackingStore?.Get<string?>("policyId"); }
+            set { BackingStore?.Set("policyId", value); }
+        }
+#nullable restore
+#else
+        public string PolicyId
+        {
+            get { return BackingStore?.Get<string>("policyId"); }
+            set { BackingStore?.Set("policyId", value); }
+        }
+#endif
         /// <summary>The protectionTimePeriod property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -109,6 +125,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.RestorePoints.Search
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "artifactQuery", n => { ArtifactQuery = n.GetObjectValue<global::Microsoft.Graph.Models.ArtifactQuery>(global::Microsoft.Graph.Models.ArtifactQuery.CreateFromDiscriminatorValue); } },
+                { "policyId", n => { PolicyId = n.GetStringValue(); } },
                 { "protectionTimePeriod", n => { ProtectionTimePeriod = n.GetObjectValue<global::Microsoft.Graph.Models.TimePeriod>(global::Microsoft.Graph.Models.TimePeriod.CreateFromDiscriminatorValue); } },
                 { "protectionUnitIds", n => { ProtectionUnitIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "restorePointPreference", n => { RestorePointPreference = n.GetEnumValue<global::Microsoft.Graph.Models.RestorePointPreference>(); } },
@@ -123,6 +140,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.RestorePoints.Search
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Microsoft.Graph.Models.ArtifactQuery>("artifactQuery", ArtifactQuery);
+            writer.WriteStringValue("policyId", PolicyId);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.TimePeriod>("protectionTimePeriod", ProtectionTimePeriod);
             writer.WriteCollectionOfPrimitiveValues<string>("protectionUnitIds", ProtectionUnitIds);
             writer.WriteEnumValue<global::Microsoft.Graph.Models.RestorePointPreference>("restorePointPreference", RestorePointPreference);

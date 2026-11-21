@@ -5,6 +5,7 @@ using Microsoft.Graph.Models;
 using Microsoft.Graph.Solutions.BackupRestore;
 using Microsoft.Graph.Solutions.BookingBusinesses;
 using Microsoft.Graph.Solutions.BookingCurrencies;
+using Microsoft.Graph.Solutions.Migrations;
 using Microsoft.Graph.Solutions.VirtualEvents;
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -36,6 +37,11 @@ namespace Microsoft.Graph.Solutions
         public global::Microsoft.Graph.Solutions.BookingCurrencies.BookingCurrenciesRequestBuilder BookingCurrencies
         {
             get => new global::Microsoft.Graph.Solutions.BookingCurrencies.BookingCurrenciesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the migrations property of the microsoft.graph.solutionsRoot entity.</summary>
+        public global::Microsoft.Graph.Solutions.Migrations.MigrationsRequestBuilder Migrations
+        {
+            get => new global::Microsoft.Graph.Solutions.Migrations.MigrationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the virtualEvents property of the microsoft.graph.solutionsRoot entity.</summary>
         public global::Microsoft.Graph.Solutions.VirtualEvents.VirtualEventsRequestBuilder VirtualEvents

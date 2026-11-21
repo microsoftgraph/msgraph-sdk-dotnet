@@ -12,6 +12,12 @@ namespace Microsoft.Graph.Models
     public partial class UnifiedRoleDefinition : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The date and time when the custom role definition was deleted. The value is null for active and restored role definitions. Read-only.</summary>
+        public DateTimeOffset? DeletedDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("deletedDateTime"); }
+            set { BackingStore?.Set("deletedDateTime", value); }
+        }
         /// <summary>The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,6 +77,12 @@ namespace Microsoft.Graph.Models
         {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
+        }
+        /// <summary>Flag indicating whether the role is privileged. Microsoft Entra ID defines a role as privileged if it contains at least one sensitive resource action in the allowedResourceActions collection of rolePermissions. Applies only to actions in the microsoft.directory resource namespace. Nullable. A value of null indicates that the privileged classification is unavailable, not that the role is nonprivileged. Read-only. Supports $filter (eq).</summary>
+        public bool? IsPrivileged
+        {
+            get { return BackingStore?.Get<bool?>("isPrivileged"); }
+            set { BackingStore?.Set("isPrivileged", value); }
         }
         /// <summary>List of the scopes or permissions the role definition applies to. Currently only / is supported. Read-only when isBuiltIn is true. DO NOT USE. This will be deprecated soon. Attach scope to role assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -154,11 +166,13 @@ namespace Microsoft.Graph.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "deletedDateTime", n => { DeletedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "inheritsPermissionsFrom", n => { InheritsPermissionsFrom = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.UnifiedRoleDefinition>(global::Microsoft.Graph.Models.UnifiedRoleDefinition.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "isBuiltIn", n => { IsBuiltIn = n.GetBoolValue(); } },
                 { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                { "isPrivileged", n => { IsPrivileged = n.GetBoolValue(); } },
                 { "resourceScopes", n => { ResourceScopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "rolePermissions", n => { RolePermissions = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.UnifiedRolePermission>(global::Microsoft.Graph.Models.UnifiedRolePermission.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "templateId", n => { TemplateId = n.GetStringValue(); } },
@@ -173,11 +187,13 @@ namespace Microsoft.Graph.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteDateTimeOffsetValue("deletedDateTime", DeletedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.UnifiedRoleDefinition>("inheritsPermissionsFrom", InheritsPermissionsFrom);
             writer.WriteBoolValue("isBuiltIn", IsBuiltIn);
             writer.WriteBoolValue("isEnabled", IsEnabled);
+            writer.WriteBoolValue("isPrivileged", IsPrivileged);
             writer.WriteCollectionOfPrimitiveValues<string>("resourceScopes", ResourceScopes);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.UnifiedRolePermission>("rolePermissions", RolePermissions);
             writer.WriteStringValue("templateId", TemplateId);

@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class Presence : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The supplemental information to a user&apos;s availability. Possible values are available, away, beRightBack, busy, doNotDisturb, offline, outOfOffice, presenceUnknown.</summary>
+        /// <summary>The supplemental information to a user&apos;s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, Offline, OutOfOffice, PresenceUnknown.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Activity
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("activity", value); }
         }
 #endif
-        /// <summary>The base presence information for a user. Possible values are available, away, beRightBack, busy, doNotDisturb, focusing, inACall, inAMeeting, offline, presenting, presenceUnknown.</summary>
+        /// <summary>The base presence information for a user. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, Focusing, InACall, InAMeeting, Offline, Presenting, PresenceUnknown.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Availability

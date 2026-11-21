@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Models.IdentityGovernance
             set { BackingStore?.Set("customTaskExtensions", value); }
         }
 #endif
-        /// <summary>Deleted workflows in your lifecycle workflows instance.</summary>
+        /// <summary>Deleted workflows and lifecycle policies in your lifecycle workflows instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.DeletedItemContainer? DeletedItems

@@ -44,6 +44,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("checkIns", value); }
         }
 #endif
+        /// <summary>Custom properties for the place. Each property has a string key and a string value. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.StringDictionary? CustomProperties
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.StringDictionary?>("customProperties"); }
+            set { BackingStore?.Set("customProperties", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.StringDictionary CustomProperties
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.StringDictionary>("customProperties"); }
+            set { BackingStore?.Set("customProperties", value); }
+        }
+#endif
         /// <summary>The name that is associated with the place.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -98,6 +114,12 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("label", value); }
         }
 #endif
+        /// <summary>The date and time when the place was last updated. The timestamp is in ISO 8601 format and is always in UTC. Read-only. Nullable.</summary>
+        public DateTimeOffset? LastUpdatedTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedTime"); }
+            set { BackingStore?.Set("lastUpdatedTime", value); }
+        }
         /// <summary>The ID of a parent place.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -193,10 +215,12 @@ namespace Microsoft.Graph.Models
             {
                 { "address", n => { Address = n.GetObjectValue<global::Microsoft.Graph.Models.PhysicalAddress>(global::Microsoft.Graph.Models.PhysicalAddress.CreateFromDiscriminatorValue); } },
                 { "checkIns", n => { CheckIns = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.CheckInClaim>(global::Microsoft.Graph.Models.CheckInClaim.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "customProperties", n => { CustomProperties = n.GetObjectValue<global::Microsoft.Graph.Models.StringDictionary>(global::Microsoft.Graph.Models.StringDictionary.CreateFromDiscriminatorValue); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "geoCoordinates", n => { GeoCoordinates = n.GetObjectValue<global::Microsoft.Graph.Models.OutlookGeoCoordinates>(global::Microsoft.Graph.Models.OutlookGeoCoordinates.CreateFromDiscriminatorValue); } },
                 { "isWheelChairAccessible", n => { IsWheelChairAccessible = n.GetBoolValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
+                { "lastUpdatedTime", n => { LastUpdatedTime = n.GetDateTimeOffsetValue(); } },
                 { "parentId", n => { ParentId = n.GetStringValue(); } },
                 { "phone", n => { Phone = n.GetStringValue(); } },
                 { "placeId", n => { PlaceId = n.GetStringValue(); } },
@@ -213,6 +237,7 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.PhysicalAddress>("address", Address);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.CheckInClaim>("checkIns", CheckIns);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.StringDictionary>("customProperties", CustomProperties);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<global::Microsoft.Graph.Models.OutlookGeoCoordinates>("geoCoordinates", GeoCoordinates);
             writer.WriteBoolValue("isWheelChairAccessible", IsWheelChairAccessible);

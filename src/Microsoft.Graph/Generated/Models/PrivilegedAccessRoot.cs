@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Models
     public partial class PrivilegedAccessRoot : global::Microsoft.Graph.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The customExtensions property</summary>
+        /// <summary>The custom extensions configured for PIM role management operations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Graph.Models.RoleManagementCustomCalloutExtension>? CustomExtensions

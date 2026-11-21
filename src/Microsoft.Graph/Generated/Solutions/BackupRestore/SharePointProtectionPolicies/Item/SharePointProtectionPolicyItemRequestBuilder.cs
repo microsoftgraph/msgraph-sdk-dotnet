@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.SharePointProtectionPolicies.I
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.SharePointProtectionPolicy>(requestInfo, global::Microsoft.Graph.Models.SharePointProtectionPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a SharePoint protection policy. This method adds a siteprotectionunit to or removes it from the protection policy.
+        /// Update a SharePoint protection policy. This method updates retention settings or adds a siteProtectionUnit to or removes it from the protection policy.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/sharepointprotectionpolicy-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.SharePointProtectionPolicy"/></returns>
@@ -162,7 +162,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.SharePointProtectionPolicies.I
             return requestInfo;
         }
         /// <summary>
-        /// Update a SharePoint protection policy. This method adds a siteprotectionunit to or removes it from the protection policy.
+        /// Update a SharePoint protection policy. This method updates retention settings or adds a siteProtectionUnit to or removes it from the protection policy.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

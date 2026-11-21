@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("justification", value); }
         }
 #endif
-        /// <summary>The parameters property</summary>
+        /// <summary>Additional parameters that control how the request is processed, such as bypassing the approval requirement configured on the access package policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Microsoft.Graph.Models.AccessPackageAssignmentRequestParameters? Parameters

@@ -50,6 +50,12 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>Indicates whether the folder is hidden. The default value is false. This property can be set only when you create the folder; it can&apos;t be updated using PATCH. By default, listing folders or listing child folders returns only folders that aren&apos;t hidden. To include hidden folders in the response, use the optional query parameter includeHiddenFolders=true. The response includes both hidden and nonhidden folders. If you use $select to limit the returned properties, include isHidden in the selection.</summary>
+        public bool? IsHidden
+        {
+            get { return BackingStore?.Get<bool?>("isHidden"); }
+            set { BackingStore?.Set("isHidden", value); }
+        }
         /// <summary>The collection of items in this folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -173,6 +179,7 @@ namespace Microsoft.Graph.Models
                 { "childFolderCount", n => { ChildFolderCount = n.GetIntValue(); } },
                 { "childFolders", n => { ChildFolders = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.MailboxFolder>(global::Microsoft.Graph.Models.MailboxFolder.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "isHidden", n => { IsHidden = n.GetBoolValue(); } },
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.MailboxItem>(global::Microsoft.Graph.Models.MailboxItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "multiValueExtendedProperties", n => { MultiValueExtendedProperties = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.MultiValueLegacyExtendedProperty>(global::Microsoft.Graph.Models.MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "parentFolderId", n => { ParentFolderId = n.GetStringValue(); } },
@@ -193,6 +200,7 @@ namespace Microsoft.Graph.Models
             writer.WriteIntValue("childFolderCount", ChildFolderCount);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.MailboxFolder>("childFolders", ChildFolders);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteBoolValue("isHidden", IsHidden);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.MailboxItem>("items", Items);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.MultiValueLegacyExtendedProperty>("multiValueExtendedProperties", MultiValueExtendedProperties);
             writer.WriteStringValue("parentFolderId", ParentFolderId);

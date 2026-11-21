@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessProtectionP
             return await RequestAdapter.SendAsync<global::Microsoft.Graph.Models.OneDriveForBusinessProtectionPolicy>(requestInfo, global::Microsoft.Graph.Models.OneDriveForBusinessProtectionPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the protection policy for the OneDrive service in Microsoft 365. This method adds a driveProtectionUnit to or removes it from a oneDriveForBusinessProtectionPolicy object.
+        /// Update the protection policy for the OneDrive service in Microsoft 365. This method updates retention settings or adds a driveProtectionUnit to or removes it from a oneDriveForBusinessProtectionPolicy object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/onedriveforbusinessprotectionpolicy-update?view=graph-rest-1.0" />
         /// </summary>
         /// <returns>A <see cref="global::Microsoft.Graph.Models.OneDriveForBusinessProtectionPolicy"/></returns>
@@ -162,7 +162,7 @@ namespace Microsoft.Graph.Solutions.BackupRestore.OneDriveForBusinessProtectionP
             return requestInfo;
         }
         /// <summary>
-        /// Update the protection policy for the OneDrive service in Microsoft 365. This method adds a driveProtectionUnit to or removes it from a oneDriveForBusinessProtectionPolicy object.
+        /// Update the protection policy for the OneDrive service in Microsoft 365. This method updates retention settings or adds a driveProtectionUnit to or removes it from a oneDriveForBusinessProtectionPolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

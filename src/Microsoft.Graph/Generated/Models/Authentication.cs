@@ -156,6 +156,22 @@ namespace Microsoft.Graph.Models
             set { BackingStore?.Set("platformCredentialMethods", value); }
         }
 #endif
+        /// <summary>Represents the resource account key credentials registered to a user for authentication on shared devices.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Microsoft.Graph.Models.ResourceAccountKeyAuthenticationMethod>? ResourceAccountKeyAuthenticationMethods
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.ResourceAccountKeyAuthenticationMethod>?>("resourceAccountKeyAuthenticationMethods"); }
+            set { BackingStore?.Set("resourceAccountKeyAuthenticationMethods", value); }
+        }
+#nullable restore
+#else
+        public List<global::Microsoft.Graph.Models.ResourceAccountKeyAuthenticationMethod> ResourceAccountKeyAuthenticationMethods
+        {
+            get { return BackingStore?.Get<List<global::Microsoft.Graph.Models.ResourceAccountKeyAuthenticationMethod>>("resourceAccountKeyAuthenticationMethods"); }
+            set { BackingStore?.Set("resourceAccountKeyAuthenticationMethods", value); }
+        }
+#endif
         /// <summary>The software OATH time-based one-time password (TOTP) applications registered to a user for authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -231,6 +247,7 @@ namespace Microsoft.Graph.Models
                 { "passwordMethods", n => { PasswordMethods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.PasswordAuthenticationMethod>(global::Microsoft.Graph.Models.PasswordAuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "phoneMethods", n => { PhoneMethods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.PhoneAuthenticationMethod>(global::Microsoft.Graph.Models.PhoneAuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "platformCredentialMethods", n => { PlatformCredentialMethods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.PlatformCredentialAuthenticationMethod>(global::Microsoft.Graph.Models.PlatformCredentialAuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "resourceAccountKeyAuthenticationMethods", n => { ResourceAccountKeyAuthenticationMethods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.ResourceAccountKeyAuthenticationMethod>(global::Microsoft.Graph.Models.ResourceAccountKeyAuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "softwareOathMethods", n => { SoftwareOathMethods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.SoftwareOathAuthenticationMethod>(global::Microsoft.Graph.Models.SoftwareOathAuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "temporaryAccessPassMethods", n => { TemporaryAccessPassMethods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.TemporaryAccessPassAuthenticationMethod>(global::Microsoft.Graph.Models.TemporaryAccessPassAuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "windowsHelloForBusinessMethods", n => { WindowsHelloForBusinessMethods = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.WindowsHelloForBusinessAuthenticationMethod>(global::Microsoft.Graph.Models.WindowsHelloForBusinessAuthenticationMethod.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -253,6 +270,7 @@ namespace Microsoft.Graph.Models
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.PasswordAuthenticationMethod>("passwordMethods", PasswordMethods);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.PhoneAuthenticationMethod>("phoneMethods", PhoneMethods);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.PlatformCredentialAuthenticationMethod>("platformCredentialMethods", PlatformCredentialMethods);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.ResourceAccountKeyAuthenticationMethod>("resourceAccountKeyAuthenticationMethods", ResourceAccountKeyAuthenticationMethods);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.SoftwareOathAuthenticationMethod>("softwareOathMethods", SoftwareOathMethods);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.TemporaryAccessPassAuthenticationMethod>("temporaryAccessPassMethods", TemporaryAccessPassMethods);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.WindowsHelloForBusinessAuthenticationMethod>("windowsHelloForBusinessMethods", WindowsHelloForBusinessMethods);

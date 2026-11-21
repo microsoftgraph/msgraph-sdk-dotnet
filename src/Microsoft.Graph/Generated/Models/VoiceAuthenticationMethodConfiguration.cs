@@ -34,6 +34,22 @@ namespace Microsoft.Graph.Models
             get { return BackingStore?.Get<bool?>("isOfficePhoneAllowed"); }
             set { BackingStore?.Set("isOfficePhoneAllowed", value); }
         }
+        /// <summary>Settings for routing voice authentication traffic through a telecom provider integration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Microsoft.Graph.Models.TelecomProviderSettings? TelecomProviderSettings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.TelecomProviderSettings?>("telecomProviderSettings"); }
+            set { BackingStore?.Set("telecomProviderSettings", value); }
+        }
+#nullable restore
+#else
+        public global::Microsoft.Graph.Models.TelecomProviderSettings TelecomProviderSettings
+        {
+            get { return BackingStore?.Get<global::Microsoft.Graph.Models.TelecomProviderSettings>("telecomProviderSettings"); }
+            set { BackingStore?.Set("telecomProviderSettings", value); }
+        }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Microsoft.Graph.Models.VoiceAuthenticationMethodConfiguration"/> and sets the default values.
         /// </summary>
@@ -61,6 +77,7 @@ namespace Microsoft.Graph.Models
             {
                 { "includeTargets", n => { IncludeTargets = n.GetCollectionOfObjectValues<global::Microsoft.Graph.Models.AuthenticationMethodTarget>(global::Microsoft.Graph.Models.AuthenticationMethodTarget.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "isOfficePhoneAllowed", n => { IsOfficePhoneAllowed = n.GetBoolValue(); } },
+                { "telecomProviderSettings", n => { TelecomProviderSettings = n.GetObjectValue<global::Microsoft.Graph.Models.TelecomProviderSettings>(global::Microsoft.Graph.Models.TelecomProviderSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -73,6 +90,7 @@ namespace Microsoft.Graph.Models
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Microsoft.Graph.Models.AuthenticationMethodTarget>("includeTargets", IncludeTargets);
             writer.WriteBoolValue("isOfficePhoneAllowed", IsOfficePhoneAllowed);
+            writer.WriteObjectValue<global::Microsoft.Graph.Models.TelecomProviderSettings>("telecomProviderSettings", TelecomProviderSettings);
         }
     }
 }
