@@ -45,12 +45,7 @@ public static class DriveItemRequestBuilderExtensions
     public static CustomDriveItemItemRequestBuilder ItemWithPath(this Microsoft.Graph.Drives.Item.Root.RootRequestBuilder rootRequestBuilder, string path)
     {
         path = NormalizePathOrThrow(path);
-        var requestInformation = rootRequestBuilder.ToGetRequestInformation();
-        // Encode the path in accordance with the one drive spec
-        // https://docs.microsoft.com/en-us/onedrive/developer/rest-api/concepts/addressing-driveitems
-        UriBuilder builder = new UriBuilder(requestInformation.URI.OriginalString);
-        builder.Path += $":{path}:";
-        var parameter = builder.Uri.OriginalString.Split(new []{':'},StringSplitOptions.RemoveEmptyEntries).Last();
+        var parameter = EncodePath(path);
         return new CustomDriveItemItemRequestBuilder(rootRequestBuilder.GetPathParameters(),rootRequestBuilder.GetRequestAdapter(), rootRequestBuilder.GetUrlTemplate().Replace("root",$"root:{parameter}:"));
     }
 
@@ -61,13 +56,24 @@ public static class DriveItemRequestBuilderExtensions
     public static CustomDriveItemItemRequestBuilder ItemWithPath(this Microsoft.Graph.Drives.Item.Items.Item.DriveItemItemRequestBuilder rootRequestBuilder, string path)
     {
         path = NormalizePathOrThrow(path);
-        var requestInformation = rootRequestBuilder.ToGetRequestInformation();
-        // Encode the path in accordance with the one drive spec
-        // https://docs.microsoft.com/en-us/onedrive/developer/rest-api/concepts/addressing-driveitems
-        UriBuilder builder = new UriBuilder(requestInformation.URI.OriginalString);
-        builder.Path += $":{path}:";
-        var parameter = builder.Uri.OriginalString.Split(new []{':'},StringSplitOptions.RemoveEmptyEntries).Last();
+        var parameter = EncodePath(path);
         return new CustomDriveItemItemRequestBuilder(rootRequestBuilder.GetPathParameters(), rootRequestBuilder.GetRequestAdapter(),rootRequestBuilder.GetUrlTemplate().Replace("{driveItem%2Did}",$"{{driveItem%2Did}}:{parameter}:"));
+    }
+
+    /// <summary>
+    /// Encodes the path in accordance with the one drive spec
+    /// https://docs.microsoft.com/en-us/onedrive/developer/rest-api/concepts/addressing-driveitems
+    /// </summary>
+    private static string EncodePath(string path)
+    {
+        // UriBuilder escapes the path when it is assigned, so only the path is needed here, not the full request URL.
+        var encoded = new UriBuilder { Path = path }.Path;
+        // Keep the last non-empty ':' separated part, as before.
+        var end = encoded.Length;
+        while (end > 0 && encoded[end - 1] == ':')
+            end--;
+        var start = end == 0 ? 0 : encoded.LastIndexOf(':', end - 1) + 1;
+        return encoded.Substring(start, end - start);
     }
 
     private static string NormalizePathOrThrow(string path)
